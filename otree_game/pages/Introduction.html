@@ -1,0 +1,21 @@
+{% block title %}
+    Introduction
+{%  endblock %}
+{% block content %}
+
+    {{ rules }}
+    {{ if is_bonus_text %}
+        <br>
+        <p>{{ bonus_text }}</p>
+    {{ endif }}
+    <br>
+    <form id="quiz-form" method="post">
+        <label for="quiz_answer">If you have questions about the instructions, write them here:</label>
+        <br><br>
+        <textarea name="quiz_answer" id="quiz_answer" rows="2" cols="50"></textarea>
+        <br><br>
+        <button type="submit" class="btn btn-primary">Continue</button>
+    </form>
+<!--    {{ next_button }}-->
+
+{% endblock %}

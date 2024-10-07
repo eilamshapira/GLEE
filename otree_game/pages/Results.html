@@ -1,0 +1,16 @@
+{% block title %}
+    Game Over
+{% endblock %}
+
+{% block content %}
+<!--    {{ final_text }} Total Reward: payoff-->
+{% if is_final_text %}
+    {{ final_text }}
+    <br>
+    <br>
+{% endif %}
+    <p>You have completed the study. Your completion code is: <b>ManyGames-{{ complete_code }}</b></p>
+    <p>Your bonus payment will be calculated based on your performance in the game.</p>
+{% endblock %}
+
+

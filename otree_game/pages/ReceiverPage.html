@@ -1,0 +1,79 @@
+{% block content %}
+
+    <p>{{ receiver_text }}</p>
+    <form method="post">
+        {% if is_receiver_message %}
+            <label for="receiver_message">Message: &nbsp;</label><br>
+<!--            <input type="text" name="receiver_message" id="receiver_message" value="" required>-->
+            <textarea name="receiver_message" id="receiver_message" style="width:70%" required></textarea>
+<!--            {% formfield_errors 'receiver_message' %}-->
+            <br>
+            <br>
+        {% endif %}
+        {% if is_special_decision %}
+            {% for i, value, button_text, color in value_button_text_color_list %}
+                <button type="submit" class="btn btn-primary" id="btn_{{ i }}" value="{{ value }}"
+                        name="accepted">{{ button_text }}</button>&nbsp;&nbsp;&nbsp;
+                <input type="hidden" id="color_{{ i }}" value="{{ color }}">
+            {% endfor %}
+        {% else %}
+            <button type="submit" class="btn btn-primary"
+                    style="background-color: green" value="1" name="accepted">Accept</button>&nbsp;&nbsp;&nbsp;
+            <button type="submit" class="btn btn-primary"
+                    style="background-color: red" value="0" name="accepted">Reject</button>
+        {% endif %}
+<!--        {% formfield_errors 'accepted' %}-->
+        <input type="hidden" name="show_instructions" id="show_instructions" value="{{ show_instructions }}">
+        <input type="hidden" name="is_special" id="is_special" value="{{ is_special_decision }}">
+
+    </form>
+    <br>
+    <br>
+    <br>
+    <div>
+        <button type="button" id="toggleButton" onclick="toggleInstructions()">Show Instructions</button><br><br>
+        <div id="instructions" style="display: none;border:1px solid black;padding-left: 10px;padding-right: 10px;">
+            <p>
+                {{ instructions }}
+            </p>
+        </div>
+    </div>
+{% endblock %}
+{% block scripts %}
+    <script>
+        function updateInstructions() {
+            const content = document.getElementById("instructions");
+            const button = document.getElementById("toggleButton");
+            const hiddenInput = document.getElementById("show_instructions");
+            if (hiddenInput.value === "1") {
+                content.style.display = "block";
+                button.textContent = "Hide Instructions";
+            }
+            else {
+                content.style.display = "none";
+                button.textContent = "Show Instructions";
+            }
+        }
+        function toggleInstructions() {
+            const hiddenInput = document.getElementById("show_instructions");
+
+            if (hiddenInput.value === "0") {
+                hiddenInput.value = "1";
+            } else {
+                hiddenInput.value = "0";
+            }
+            updateInstructions();
+        }
+        updateInstructions();
+    </script>
+    <script>
+        const is_special = document.getElementById("is_special").value === "True";
+        if (is_special) {
+            for (let some_button of document.querySelectorAll("button")) {
+                const btn_id = some_button.id;
+                const color_input = document.getElementById("color_" + btn_id.split("_")[1]);
+                some_button.style.backgroundColor = color_input.value;
+            }
+        }
+    </script>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% block title %}
+    Enter Details
+{%  endblock %}
+{% block content %}
+    <form id="details-form" method="post">
+        <label for="player_name">Enter your name: &nbsp;</label>
+        <input type="text" id="player_name" name="player_name" pattern="[a-zA-Z]+"
+               title="Only English alphabet letters are allowed." required>
+        <br>
+    <!--    {% formfield_errors 'player_name' %}-->
+        <br>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <input type="hidden" id="hiddenBotName" value="{{ bot_name }}">
+    </form>
+{% endblock %}
+{% block scripts %}
+    <script>
+        document.getElementById('player_name').addEventListener('input', function () {
+            const inputField = this;
+            const trimmedValue = inputField.value.trim().toLowerCase();
+            const botName = document.getElementById('hiddenBotName').value.toLowerCase();
+            if (trimmedValue === botName) {
+                inputField.setCustomValidity('This name is not allowed.'); // Set custom validity message
+            } else {
+                inputField.setCustomValidity('');  // Reset validity
+            }
+        });
+    </script>
+{% endblock %}

@@ -1,0 +1,138 @@
+{% block content %}
+    <p>{{ proposer_text }}</p>
+    {% if is_offer %}
+        {% if offer_type_slider %}
+            <label for="currentValueInput"> You gain:</label>
+            <input type="number" id="currentValueInput" min="0" max="{{ max_offer }}"
+                   style="width: 90px;" required> &nbsp;&nbsp;&nbsp;
+            <label for="slider"></label>
+            <input type="range" min="0" max="{{ max_offer }}" class="slider" id="slider"
+                   style="width: 50%; height: 15px;" required>
+            <label for="remainingValueInput"> &nbsp;&nbsp;&nbsp; {{ bot_name }} gain:</label>
+            <input type="number" id="remainingValueInput" min="0" max="{{ max_offer }}"
+                   style="width: 90px;" required>
+<!--            {% formfield_errors 'offer' %}-->
+        {% endif %}
+    {% endif %}
+    <form id="proposerForm" method="post">
+        {% if is_offer %}
+            {% if offer_type_slider %}
+                <input type="hidden" name="offer" id="OfferValue" required>
+            {% else %}
+                <label for="offer">Offer: &nbsp;</label>
+                <input type="number" name="offer" id='offer' min="0" style="width: 90px;" required>
+<!--                {% formfield_errors 'offer' %}-->
+            {% endif %}
+            <br>
+            <br>
+        {% endif %}
+        {% if is_proposer_message %}
+            <label for="proposer_message">Message: &nbsp;</label><br>
+            <textarea name="proposer_message" id="proposer_message" style="width:70%" required></textarea>
+<!--            {% formfield_errors 'proposer_message' %}-->
+            <br>
+            <br>
+        {% endif %}
+        {% if is_proposer_recommendation %}
+            <button type="submit" class="btn btn-primary" style="background-color: green"
+                    value="1" name="proposer_recommendation">Yes</button>&nbsp;&nbsp;&nbsp;
+            <button type="submit" class="btn btn-primary" style="background-color: red"
+                    value="0" name="proposer_recommendation">No</button>
+<!--            {% formfield_errors 'proposer_recommendation' %}-->
+        {% else %}
+            <button type="submit" class="btn btn-primary">Submit</button>
+        {% endif %}
+        <input type="hidden" id="hiddenMaxOffer" value="{{ max_offer }}">
+        <input type="hidden" id="hiddenIsOffer" value="{{ is_offer }}">
+        <input type="hidden" name="show_instructions" id="show_instructions" value="{{ show_instructions }}">
+    </form>
+    <br>
+    <br>
+    <br>
+    <div>
+        <button type="button" id="toggleButton" onclick="toggleInstructions()">Show Instructions</button><br><br>
+        <div id="instructions" style="display: none;border:1px solid black;padding-left: 10px;padding-right: 10px;">
+            <p>
+                {{ instructions }}
+            </p>
+        </div>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    <script>
+        const slider = document.getElementById("slider");
+        const proposer_gain = document.getElementById("currentValueInput");
+        const receiver_gain = document.getElementById("remainingValueInput");
+        const offer_value = document.getElementById("OfferValue");
+
+        const max_value = Number(document.getElementById("hiddenMaxOffer").value);
+        const is_offer = document.getElementById("hiddenIsOffer").value === "True";
+        if (is_offer) {
+            function updateValues(value) {
+                proposer_gain.value = value;
+                receiver_gain.value = max_value - value;
+                slider.value = value;
+                offer_value.value = max_value - value;
+            }
+
+            slider.oninput = function () {
+                updateValues(this.value);
+            }
+
+            proposer_gain.oninput = function () {
+                const value = this.value;
+                if (value >= 0 && value <= max_value) {
+                    updateValues(value);
+                }
+                else if (value < 0) {
+                    updateValues(0);
+                }
+                else if (value > max_value) {
+                    updateValues(max_value);
+                }
+            }
+
+            receiver_gain.oninput = function () {
+                const value = max_value - this.value;
+                if (value >= 0 && value <= max_value) {
+                    updateValues(value);
+                }
+                else if (value < 0) {
+                    updateValues(0);
+                }
+                else if (value > max_value) {
+                    updateValues(max_value);
+                }
+            }
+        }
+    </script>
+    <script>
+        function updateInstructions() {
+            const content = document.getElementById("instructions");
+            const button = document.getElementById("toggleButton");
+            const hiddenInput = document.getElementById("show_instructions");
+            if (hiddenInput.value === "1") {
+                content.style.display = "block";
+                button.textContent = "Hide Instructions";
+            }
+            else {
+                content.style.display = "none";
+                button.textContent = "Show Instructions";
+            }
+        }
+        function toggleInstructions() {
+            const hiddenInput = document.getElementById("show_instructions");
+
+            if (hiddenInput.value === "0") {
+                hiddenInput.value = "1";
+            } else {
+                hiddenInput.value = "0";
+            }
+            updateInstructions();
+        }
+        updateInstructions();
+    </script>
+{% endblock %}
+
+

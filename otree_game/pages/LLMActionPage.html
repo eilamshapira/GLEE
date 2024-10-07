@@ -1,0 +1,9 @@
+{% block content %}
+    <h1>Waiting for {{ bot_name }}'s turn...</h1>
+{% endblock %}
+{% block scripts %}
+    {{ super() }}
+    <script>
+        document.querySelector('form').submit();
+    </script>
+{% endblock %}

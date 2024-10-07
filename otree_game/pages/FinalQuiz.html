@@ -1,0 +1,15 @@
+{% block title %}
+    Final Quiz
+{%  endblock %}
+{% block content %}
+    <h4>{{ question_text }} &nbsp;</h4>
+    <form id="final-quiz-form" method="post">
+        {% for i, choice in options %}
+            <input type="radio" name="quiz_answer" value="{{ choice }}" id="choice{{ i }}">
+            <label for="choice{{ i }}">{{ choice }}</label>
+            <br>
+        {% endfor %}
+        <br>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+{% endblock %}

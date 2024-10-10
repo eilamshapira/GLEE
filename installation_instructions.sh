@@ -1,5 +1,5 @@
 # clone the repository
-# git clone https://github.com/gleeframework/GLEE.git
+# git clone https://github.com/eilamshapira/GLEE.git
 
 # create a conda environment
 source ~/anaconda3/etc/profile.d/conda.sh
@@ -38,4 +38,3 @@ cd ..
 #pip install boto3
 
 # Don't forget to add google key to google_key.json if you want to use the google api
-

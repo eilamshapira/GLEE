@@ -51,8 +51,8 @@ parser.add_argument('--game_type', type=str, help='Type of the game',
 parser.add_argument('--game_args_is_myopic', type=str2bool, help='Is the game myopic')
 parser.add_argument('--game_args_product_price', type=int, help='Product price')
 parser.add_argument('--game_args_p', type=float, help='Probability p')
-parser.add_argument('--game_args_c', type=float, help='Cost c')  # FIXME
-parser.add_argument('--game_args_v', type=float, help='Value v')  # FIXME
+parser.add_argument('--game_args_c', type=float, help='Cost c')
+parser.add_argument('--game_args_v', type=float, help='Value v')
 parser.add_argument('--game_args_total_rounds', type=int, help='Total rounds in the game')
 parser.add_argument('--game_args_is_seller_know_cv', type=str2bool, help='Does the seller know cv')
 parser.add_argument('--game_args_is_buyer_know_p', type=str2bool, help='Does the buyer know p')

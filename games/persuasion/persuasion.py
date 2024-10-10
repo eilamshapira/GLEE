@@ -19,7 +19,6 @@ class PersuasionGame(Game):
         self.is_myopic = is_myopic
         self.product_price = product_price
         assert 0 <= p <= 1
-        # FIXME c and v in the data repository
         assert 0 <= c <= 1
         assert 1 <= v
         self.p = p  # FIXME make sure that every config variable from the games classes is in the config files

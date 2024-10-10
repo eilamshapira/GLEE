@@ -61,6 +61,14 @@
 
 {% block scripts %}
     <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const inputField = document.getElementById('proposer_message');
+            inputField.addEventListener('paste', function(e) {
+                e.preventDefault();  // Completely block pasting
+            });
+        });
+    </script>
+    <script>
         const slider = document.getElementById("slider");
         const proposer_gain = document.getElementById("currentValueInput");
         const receiver_gain = document.getElementById("remainingValueInput");

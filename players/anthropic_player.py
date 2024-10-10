@@ -4,7 +4,7 @@ from vertexai.generative_models import HarmCategory, HarmBlockThreshold
 from fastchat.model import load_model, get_conversation_template
 
 
-class ClaudePlayer(Player):   # FIXME dont working...
+class ClaudePlayer(Player):   # FIXME currently have some problems - not recommended to use
     def __init__(self, public_name, delta=1, player_id=0, **kwargs):
         super().__init__(public_name, delta, player_id)
         self.client = anthropic.AnthropicVertex(region="europe-west1", project_id="generative-bot")

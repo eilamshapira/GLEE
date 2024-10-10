@@ -119,4 +119,3 @@ the terminal player, the oTree player, the LLM player for the oTree system and t
 - **settings.py**: The file includes the otree settings for the human data collection system.
 - **utils/**: The directory includes some utility functions for the whole project.
 - **templates/**: The directory includes the templates for the human data collection system.
-

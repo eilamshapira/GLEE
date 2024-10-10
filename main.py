@@ -51,6 +51,3 @@ if __name__ == "__main__":
     parser.add_argument('-n', '--n_games', type=int, help="Number of games to run with this configuration", default=1)
     args = parser.parse_args()
     main(**vars(args))
-
-# FIXME update README
-# FIXME update installation_instructions

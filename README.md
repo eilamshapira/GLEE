@@ -34,6 +34,30 @@ Before you begin, ensure you have the following tools installed on your system:
 
 ### Installation
 
+
+1. Clone the repository
+
+```
+git clone https://github.com/eilamshapira/GLEE.git
+```
+
+2. Create a new conda environment and install the required packages
+
+```
+cd GLEE
+bash installation_instructions.sh
+```
+
+3. Optional - Download GLEE dataset
+```
+wget "https://technionmail-my.sharepoint.com/:u:/g/personal/eilamshapira_campus_technion_ac_il/EXFmHZ8eKg1Pp6-k25WVD38Bu1uQ_tGlOZI70y_vQ5YmMw?download=1" -O GLEE_data.zip
+unzip GLEE_data.zip -d DataStore
+```
+
+Complete installation instructions are in the installation_instructions.sh file. Notice that there are 
+different instructions for the code directory, the data directory, the human data collection system and the analysis subdirectory
+in the code directory.
+
 Complete installation instructions are in the installation_instructions.sh file. Notice that there are 
 different instructions for the code directory, the data directory, the human data collection system and the analysis subdirectory
 in the code directory.

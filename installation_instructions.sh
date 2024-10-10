@@ -1,5 +1,5 @@
 # clone the repository
-git clone https://github.com/gleeframework/GLEE.git
+# git clone https://github.com/gleeframework/GLEE.git
 
 # create a conda environment
 source ~/anaconda3/etc/profile.d/conda.sh

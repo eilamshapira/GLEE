@@ -8,7 +8,9 @@ class ClaudePlayer(Player):   # FIXME currently have some problems - not recomme
     def __init__(self, public_name, delta=1, player_id=0, **kwargs):
         super().__init__(public_name, delta, player_id)
         self.client = anthropic.AnthropicVertex(region="europe-west1", project_id="generative-bot")
-        self.model_name = kwargs.get("model", "claude-3-5-sonnet@20240620")
+        
+        assert "model" in kwargs, "Model name is required"
+        self.model = kwargs["model"]
 
         self.conv = get_conversation_template("claude-3-5-sonnet-20240620")
 

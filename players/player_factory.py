@@ -4,6 +4,7 @@ from players.gemini_player import GeminiPlayer
 from players.anthropic_player import ClaudePlayer
 from players.hf_player import HFPlayer
 from players.vertexai_player import VertexAIPlayer
+from players.litellm_player import LiteLLMPlayer
 
 from players.otree_player import OtreePlayer
 from players.demo_player import DemoPlayer
@@ -19,7 +20,8 @@ PLAYERS = {
     'vertexai': VertexAIPlayer,
     'otree': OtreePlayer,
     'demo': DemoPlayer,
-    'otree_LLM': OtreeVertexAIPlayer
+    'otree_LLM': OtreeVertexAIPlayer,
+    'litellm': LiteLLMPlayer
 }
 
 

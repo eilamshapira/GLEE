@@ -212,11 +212,14 @@ class NegotiationGame(Game):
                                     round_number=round_number)
 
     def get_receiver_text(self, **kwargs):
-        (round_number, proposer_name, proposer_offer, proposer_message,
+        (round_number, proposer_name,
          receiver_jhon_caption, receiver_act_name, receiver_jhon_text, counteroffer_is_option) = \
-            (kwargs["round_number"], kwargs["proposer_name"], kwargs["proposer_offer"], kwargs["proposer_message"],
+            (kwargs["round_number"], kwargs["proposer_name"],
              kwargs["receiver_jhon_caption"], kwargs["receiver_act_name"], kwargs["receiver_jhon_text"],
              kwargs["counteroffer_is_option"])
+        proposer_message_part = {"proposer_offer": kwargs["proposer_offer"]}
+        if self.messages_allowed:
+            proposer_message_part["proposer_message"] = kwargs["proposer_message"]
         receiver_message_format = f"Answer with {{\"decision\": \"AcceptOffer\"}}, " + \
                                   (f"or {{\"decision\": \"RejectOffer\"}}, "
                                    if counteroffer_is_option else f"or {{\"decision\": \"RejectOffer\"}}, ") + \
@@ -224,11 +227,11 @@ class NegotiationGame(Game):
         receiver_text = (
                 (f"Round {round_number}\n" if 1 < self.max_rounds <= 20 else "")
                 + f"{proposer_name}'s offer:"
-                + (f"\n# {proposer_name}'s message: {proposer_message} \n" +
+                + (f"\n# {proposer_name}'s message: {proposer_message_part['proposer_message']} \n" +
                    f"# {proposer_name}'s offer:" if self.messages_allowed
-                   else "") + f" The product price will be ${pretty_number(proposer_offer)}. \n" +
+                   else "") + f" The product price will be ${pretty_number(proposer_message_part['proposer_offer'])}. \n" +
                 f"You have three options:\n"
-                f"(1) Accept {proposer_name}'s offer, and {receiver_act_name} for ${pretty_number(proposer_offer)}\n" +
+                f"(1) Accept {proposer_name}'s offer, and {receiver_act_name} for ${pretty_number(proposer_message_part['proposer_offer'])}\n" +
                 (f"(2) Reject {proposer_name}'s offer and proceed to the next round, where you will send "
                  f"{proposer_name} a counteroffer\n"
                  if counteroffer_is_option else f"(2) Reject {proposer_name}'s offer\n") +
@@ -237,19 +240,19 @@ class NegotiationGame(Game):
 
     def receiver_turn(self, **kwargs):
         round_number, receiver, proposer = kwargs["round_number"], kwargs["receiver"], kwargs["proposer"]
-        proposer_offer, proposer_message = \
-            (proposer.last_action_json['product_price'], proposer.last_action_json['message'])
+        proposer_message_parts = {"proposer_offer": proposer.last_action_json['product_price']}
+        if self.messages_allowed:
+            proposer_message_parts["proposer_message"] = proposer.last_action_json['message']
         receiver_jhon_caption, receiver_act_name, receiver_jhon_text = \
             (receiver.deal_with_jhon_caption, receiver.act_name, receiver.deal_with_jhon_text)
         counteroffer_is_option = round_number < self.max_rounds
         receiver_message_format, receiver_text = self.get_receiver_text(round_number=round_number,
                                                                         proposer_name=proposer.public_name,
-                                                                        proposer_offer=proposer_offer,
-                                                                        proposer_message=proposer_message,
                                                                         receiver_jhon_caption=receiver_jhon_caption,
                                                                         receiver_act_name=receiver_act_name,
                                                                         receiver_jhon_text=receiver_jhon_text,
-                                                                        counteroffer_is_option=counteroffer_is_option)
+                                                                        counteroffer_is_option=counteroffer_is_option,
+                                                                        **proposer_message_parts)
         receiver.add_to_buffer(receiver_text)
         receiver.edit_system_message(receiver_message_format)
         receiver.act(self.is_decision_in_format)

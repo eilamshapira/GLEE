@@ -6,11 +6,11 @@ import numpy as np
 from joblib import Parallel, delayed
 import multiprocessing
 import matplotlib
-import generate_tables
+from . import generate_tables
 import subprocess
-from metrics import calc_metrics
-from calc_adj_r2 import calc_adj_r2
-from parameters import create_figures
+from .metrics import calc_metrics
+from .calc_adj_r2 import calc_adj_r2
+from .parameters import create_figures
 from consts import *
 
 os.makedirs("plots", exist_ok=True)
@@ -18,25 +18,27 @@ os.makedirs("tables", exist_ok=True)
 
 matplotlib.use('Agg')  # Use the 'Agg' backend
 
+MAIN_DATA_FOLDER = DataStore
 
-def load_data(game_type, game_id):
+def load_data(game_type, game_id, main_data_folder):
     if isinstance(game_id, str):
         is_human = False
     else:
         assert isinstance(game_id, tuple)
         game_id, is_human = game_id
-    if is_human:
-        main_folder = HUMAN_DIR
-    else:
-        main_folder = DataStore
+    # if is_human:
+    #     main_folder = HUMAN_DIR
+    # else:
+    #     main_folder = main_data_folder
+    main_folder = main_data_folder
     game_dir = os.path.join(main_folder, game_type, *game_id[:3], game_id)
     game_csv_path = os.path.join(game_dir, "game.csv")
     df = pd.read_csv(game_csv_path)
     return df
 
 
-def get_stats_bargaining(game_type, game_id):
-    df = load_data(game_type, game_id)
+def get_stats_bargaining(game_type, game_id, main_data_folder=MAIN_DATA_FOLDER):
+    df = load_data(game_type, game_id, main_data_folder)
     stats = dict()
     stats["rounds_played"] = df["round"].iloc[-1]
     result = df["decision"].iloc[-1]
@@ -50,8 +52,8 @@ def get_stats_bargaining(game_type, game_id):
     return stats
 
 
-def get_stats_negotiation(game_type, game_id):
-    df = load_data(game_type, game_id)
+def get_stats_negotiation(game_type, game_id, main_data_folder=MAIN_DATA_FOLDER):
+    df = load_data(game_type, game_id, main_data_folder)
     stats = dict()
     stats["rounds_played"] = df["round"].iloc[-1]
     result = df["decision"].iloc[-1]
@@ -69,8 +71,8 @@ def get_stats_negotiation(game_type, game_id):
     return stats
 
 
-def get_stats_persuasion(game_type, game_id):
-    df = load_data(game_type, game_id)
+def get_stats_persuasion(game_type, game_id, main_data_folder=MAIN_DATA_FOLDER):
+    df = load_data(game_type, game_id, main_data_folder)
     stats = dict()
     stats["rounds_played"] = df["round"].iloc[-1]
     qualities = df.drop_duplicates("round", keep="first")["round_quality"]
@@ -137,7 +139,8 @@ def is_commit_before(commit1, commit2, repo_path=None):
         os.chdir(original_dir)
 
 
-def create_configs_file(game_type, first_eligible_commit=None):
+def create_configs_file(game_type, first_eligible_commit=None, data_path=DataStore, exp_name=None, include_human=True):
+    full_data_path = f"{data_path}/{exp_name}" if exp_name else data_path
     data = []
 
     def process_directory(root):
@@ -154,7 +157,11 @@ def create_configs_file(game_type, first_eligible_commit=None):
 
     # Collect all directories first
     all_directories = []
-    for main_dir in [DataStore, HUMAN_DIR]:
+    all_paths = [full_data_path]
+    if include_human:
+        all_paths.append(HUMAN_DIR)
+    print("all_paths:", all_paths)
+    for main_dir in all_paths:
         for root, dirs, files in tqdm(os.walk(os.path.join(main_dir, game_type))):
             all_directories.append(root)
 
@@ -191,7 +198,6 @@ def create_configs_file(game_type, first_eligible_commit=None):
         for col, new_df in processed_columns:
             if col:  # If column was split into new columns
                 df = pd.concat([df.drop(col, axis=1), new_df], axis=1)
-
         return df
 
     # Example of usage:
@@ -211,16 +217,20 @@ def create_configs_file(game_type, first_eligible_commit=None):
         df["delta_diff"] = (df["player_1_args_delta"] - df["player_2_args_delta"]).apply(lambda x: f"{x:.2f}")
 
     os.makedirs("configs", exist_ok=True)
-    df.to_csv(f"configs/{game_type}.csv", index=False)
-    print(f"Saved {len(df)} configs to configs/{game_type}.csv" + (
+    origin_path = full_data_path.replace("/", "_").replace(":", "_")
+    config_path = f"configs/{origin_path}_{game_type}.csv"
+    df.to_csv(config_path, index=False)
+    print(f"Saved {len(df)} configs to {config_path}" + (
         f" with first commit {first_eligible_commit}" if first_eligible_commit else ""))
     print(f"That include human data from {len(df[df['human_game']])} games.")
 
 
-def create_config_with_stats(game_type, configs=None):
-    # Define the number of CPUs to use (all available CPUs)
-    if configs is None:
-        configs = pd.read_csv(f"configs/{game_type}.csv")
+def create_config_with_stats(game_type, data_path=DataStore, exp_name=None):
+    global MAIN_DATA_FOLDER    
+    MAIN_DATA_FOLDER = f"{data_path}/{exp_name}" if exp_name else data_path
+
+    full_exp_path = f"{data_path}_{exp_name}" if exp_name else data_path
+    configs = pd.read_csv(f"configs/{full_exp_path}_{game_type}.csv")
 
     get_stats_func = None
     if game_type == "bargaining":
@@ -236,7 +246,7 @@ def create_config_with_stats(game_type, configs=None):
 
     # Wrap the function to show the progress bar
     def process_game_id(game_id):
-        return get_stats_func(game_type, game_id)
+        return get_stats_func(game_type, game_id, main_data_folder=MAIN_DATA_FOLDER)
 
     # Test the function
     print("Testing the function")
@@ -256,14 +266,14 @@ def create_config_with_stats(game_type, configs=None):
     if game_type != "bargaining":
         configs = configs[[col for col in configs.columns if "delta" not in col]]
     if game_type == "negotiation":
-        configs.to_csv(f"configs/tmp_{game_type}_with_stats.csv")
+        configs.to_csv(f"configs/tmp_{full_exp_path}_{game_type}_with_stats.csv")
         bad_games = (configs["n_messages"] > configs["n_decisions"]) & (configs["n_messages"] > 1)
         print(f"Removing {bad_games.sum()} games with more messages than decisions")
         bad_games = bad_games | ((configs["n_decisions"] > configs["rounds_played"]) & ~configs["human_game"])
         print(f"Removing {bad_games.sum()} games with the last condition and more decisions than rounds played")
         configs = configs[~bad_games]
 
-    print(f"Saved {len(configs)} configs to configs/{game_type}_with_stats.csv")
+    print(f"Saved {len(configs)} configs to configs/{full_exp_path}_{game_type}_with_stats.csv")
 
     def change_otree_names(x):
         if x == "otree":
@@ -274,9 +284,9 @@ def create_config_with_stats(game_type, configs=None):
 
     for player_col in ["player_1_args_model_name", "player_2_args_model_name"]:
         configs[player_col] = configs[player_col].apply(lambda x: change_otree_names(x))
-    print(f"Saved {len(configs)} configs to configs/{game_type}_with_stats.csv")
+    print(f"Saved {len(configs)} configs to configs/{full_exp_path}_{game_type}_with_stats.csv")
 
-    file_path = f"configs/{game_type}_with_stats.csv"
+    file_path = f"configs/{full_exp_path}_{game_type}_with_stats.csv"
     if os.path.exists(file_path):
         os.remove(file_path)
     configs.to_csv(file_path)

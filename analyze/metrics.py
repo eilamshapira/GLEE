@@ -22,8 +22,13 @@ llm_short_names = {
 }
 
 class Metrics:
-    def __init__(self, config_with_statistics_path, family_name, player_1_name, player_2_name):
-        self.data = pd.read_csv(config_with_statistics_path)
+    def __init__(self, config_with_statistics_path, family_name, player_1_name, player_2_name, drop_unknown_llms=True):
+        # skip otree columns
+        data_columns = pd.read_csv(config_with_statistics_path, index_col=0, nrows=0).columns
+        skip_columns = ['name_0', 'display_name_0', 'title_0', 'description_0', 'qualification_id_0', 'qualification_base_0', 'date_0', 'game_args_show_inflation_update']
+        use_columns = [c for c in data_columns if c not in skip_columns]
+        
+        self.data = pd.read_csv(config_with_statistics_path, usecols=use_columns)       
         self.game_name = family_name
         self.player_1_name = player_1_name
         self.player_2_name = player_2_name
@@ -39,7 +44,8 @@ class Metrics:
         columns_to_drop = ["player_1_args_model_kwargs", "player_2_args_model_kwargs", commit_col, "player_2_args_player_id"]
         self.data = self.data.drop(columns=[c for c in columns_to_drop if c in self.data.columns])
 
-        self.drop_other_llm(eligible_llms=llm_short_names.keys())
+        if drop_unknown_llms:
+            self.drop_other_llm(eligible_llms=llm_short_names.keys())
         self.calculate_metrics()
         self.grouped_data = {}
 
@@ -271,11 +277,11 @@ class Metrics:
 
 
 class NegotiationMetrics(Metrics):
-    def __init__(self, config_with_statistics_path):
+    def __init__(self, config_with_statistics_path,  **args):
         super().__init__(config_with_statistics_path,
                          family_name="Negotiation",
                          player_1_name="Alice",
-                         player_2_name="Bob")
+                         player_2_name="Bob",  **args)
         self.interaction_features_couples = [("game_args_seller_value", "game_args_buyer_value")]
 
     def calculate_metrics(self):
@@ -297,17 +303,21 @@ class NegotiationMetrics(Metrics):
         self.data["efficiency"] = np.where(self.data["game_args_buyer_value"] < self.data["game_args_seller_value"],
                                            ~self.data["trade_is_made"],
                                            self.data["efficiency"])
+        
+        self.data["alice_self_gain"] = self.data["alice_gain"]
+        self.data["bob_self_gain"] = self.data["bob_gain"]
+        
         self.metrics = {"Alice": {"alice_gain": "Self Gain", "efficiency": "Efficiency", "fairness": "Fairness"},
                         "Bob": {"bob_gain": "Self Gain", "efficiency": "Efficiency", "fairness": "Fairness"}}
         self.metrics_range = {"alice_gain": (None, None), "bob_gain": (None, None),
                               "efficiency": (0, 1), "fairness": (0, 1)}
 
-class bargainingMetrics(Metrics):
-    def __init__(self, config_with_statistics_path):
+class BargainingMetrics(Metrics):
+    def __init__(self, config_with_statistics_path, **args):
         super().__init__(config_with_statistics_path,
                          family_name="Bargaining",
                          player_1_name="Alice",
-                         player_2_name="Bob")
+                         player_2_name="Bob", **args)
         self.add_to_drop("delta_diff")
         self.interaction_features_couples = [("player_1_args_delta", "player_2_args_delta")]
 
@@ -323,7 +333,10 @@ class bargainingMetrics(Metrics):
                                         self.data["player_2_args_delta"] ** (self.data["rounds_played"] - 1))
         self.data["efficiency"] = self.data["alice_final_share"] + self.data["bob_final_share"]
         self.data["fairness"] = 1 - 4 * (self.data["p_ev"] - 0.5) ** 2
-
+        
+        self.data["alice_self_gain"] = self.data["alice_final_share"]
+        self.data["bob_self_gain"] = self.data["bob_final_share"]
+        
         self.metrics = {"Alice": {"alice_final_share": "Self Gain", "efficiency": "Efficiency",
                                          "fairness": "Fairness", #"rationality": "Rationality"
                                          },
@@ -336,18 +349,18 @@ class bargainingMetrics(Metrics):
 
 
 class PersuasionMetrics(Metrics):
-    def __init__(self, config_with_statistics_path):
+    def __init__(self, config_with_statistics_path,  **args):
         super().__init__(config_with_statistics_path,
                          family_name="Persuasion",
                          player_1_name="Alice",
-                         player_2_name="Bob")
+                         player_2_name="Bob",  **args)
         self.interaction_features_couples = [("game_args_p", "game_args_c")]
 
     def calculate_metrics(self):
         quality_cols = [c for c in self.data.columns if "quality" in c]
         deal_cols = [c for c in self.data.columns if "deal" in c]
         # set default values for missing data
-        self.data["game_args_v"] = 0
+        self.data["game_args_c"] = 0
         self.data["game_args_total_rounds"] = 20
         self.data["game_args_is_buyer_know_p"] = True
         self.data["game_args_allow_buyer_message"] = False
@@ -359,8 +372,11 @@ class PersuasionMetrics(Metrics):
         self.data["fairness"] = np.where(self.data["n_ev"] < 20, self.data["r_ev"] / (20 - self.data["n_ev"]), np.nan)
 
         self.data["alice_final_share"] = self.data[deal_cols].sum(axis=1) / 20
-        self.data["bob_final_share"] = (self.data["k_ev"] * (self.data["game_args_v"] - 1) + \
-                                       (20 - self.data["r_ev"]) * (self.data["game_args_c"] - 1)) /20
+        self.data["bob_final_share"] = ( self.data["k_ev"] * (self.data["game_args_v"] - 1) + \
+                                         self.data["r_ev"] * (self.data["game_args_c"] - 1) ) /20
+        
+        self.data["alice_self_gain"] = self.data["alice_final_share"]
+        self.data["bob_self_gain"] = self.data["bob_final_share"]
 
         self.metrics = {"Alice": {"alice_final_share": "Self Gain", "efficiency": "Efficiency", "fairness": "Fairness"},
                         "Bob": {"bob_final_share": "Self Gain", "efficiency": "Efficiency", "fairness": "Fairness",}}
@@ -428,7 +444,7 @@ def create_table_for_paper():
 
     nego = NegotiationMetrics("configs/negotiation_with_stats.csv")
     pers = PersuasionMetrics("configs/persuasion_with_stats.csv")
-    rubin = bargainingMetrics("configs/bargaining_with_stats.csv")
+    rubin = BargainingMetrics("configs/bargaining_with_stats.csv")
     # data = [pers]
     data = [rubin, nego, pers]
 

@@ -7,7 +7,8 @@ class GeminiPlayer(Player):
         super().__init__(public_name, delta, player_id)
         self.api_key = open("google.key", "r").read().strip()
         genai.configure(api_key=self.api_key)
-        self.model_name = kwargs.get('model_name', 'gemini-1.5-flash')
+        assert "model_name" in kwargs, "Model name is required"
+        self.model_name = kwargs["model_name"]
         self.model = genai.GenerativeModel(self.model_name)
         self.messages = list()
         self.user_name = "user"

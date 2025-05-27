@@ -4,7 +4,7 @@ from abc import ABC, abstractmethod
 
 
 class Player(ABC):
-    def __init__(self, public_name, delta=1.0, player_id=0):
+    def __init__(self, public_name, delta=None, player_id=0):
         self.public_name = public_name
         self.delta = delta
         self.buffer = ""

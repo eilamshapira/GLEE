@@ -1,0 +1,29 @@
+prompt,response
+"Round 1
+Send your offer to divide $10,000.","Based on rational play and backward‐induction reasoning—with fewer dollars available as rounds pass (a 20% per–round “inflation”) and with only 12 rounds before everything vanishes—a standard equilibrium analysis yields the following idea.
+
+Here’s a sketch of the reasoning:  
+
+1. In the final round (round 12) the proposer “dictates” almost the entire pie because if the responder rejects, both get nothing.
+2. Working backward, in round 11 (when Alice is the proposer) Bob’s best alternative is to wait until round 12 when, as proposer, he would get almost all of the (now deflated) money. That continuation value turns out to be about 
+  V(12) = 10,000 × 0.8^(11) ≈ 858.99 dollars.  
+ Thus, in round 11 Alice must offer Bob approximately 858.99 dollars, leaving herself about 10,000×0.8^(10) – 858.99 ≈ 214.75 dollars.
+3. Continuing this process—always “equalizing” the responder’s offer with their next-round continuation value—we work all the way back to round 1.  
+   For example, in round 2 (with Bob as proposer) the amount available is 10,000×0.8 = 8,000 dollars and Alice’s continuation (if she were to reject) would be her proposer’s share from round 3 (calculated in the backwards induction).
+4. After “backing up” through all 12 rounds, one finds that the equilibrium proposal in round 1, where Alice is making the offer to Bob, is to keep roughly 5,173.78 dollars for herself and give Bob roughly 4,826.22 dollars.
+
+(The numbers come from a recursive calculation. In brief, using a discount factor of 0.8 per round and knowing which player proposes in each round – with rounds 1, 3, 5, …, 11 for Alice and rounds 2, 4, …, 12 for Bob—the equilibrium division works out approximately as above.)
+
+Thus, in round 1 my offer is:
+
+{""alice_gain"": 5173.78, ""bob_gain"": 4826.22}
+
+Let’s use that as my proposal for dividing the $10,000 in round 1."
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 20% less than in the first round.
+Bob's offer:
+# Alice gain: 4500 
+# Bob gain: 5500 
+Do you accept this offer?","{""decision"": ""accept""}"

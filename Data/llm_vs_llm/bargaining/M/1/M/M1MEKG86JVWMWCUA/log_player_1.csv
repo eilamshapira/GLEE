@@ -1,0 +1,88 @@
+prompt,response
+"Round 1
+Send your offer to divide $100.","Okay, I understand the game. I need to factor in the declining value of the money with each round. Here's my first offer:
+
+```json
+{
+""alice_gain"": 60,
+""bob_gain"": 40
+}
+```
+
+**Explanation:**
+
+I'm starting with a proposal that favors me slightly. This is because I'm assuming Bob will also want to maximize his earnings, and the longer we wait, the less the money is worth to both of us. I'm hoping this is a reasonable starting point that will be accepted."
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 20% less than in the first round. The money bob gains is worth 5% less than in the first round.
+Bob's offer:
+# Alice gain: 35 
+# Bob gain: 65 
+Do you accept this offer?","Okay, I need to consider the inflation. My money is worth 20% less, and Bob's is worth 5% less. Bob's offer gives me $35. Let's calculate if this is better than continuing to the next round, where my potential gain will be even less.
+
+*   **Value of $35 now:** $35 * 0.8 = $28 (relative to round 1)
+
+If I reject and it goes to round 3, my money will be worth 40% less than round 1. I would need to secure a larger portion of the $100 to end up with more than $28 ""relative to round 1"".
+
+Bob is trying to take the lion's share here. However, weighing the situation, and given that I only have 12 rounds, I am going to gamble on him making a better offer.
+
+```json
+{
+""decision"": ""reject""
+}
+```"
+"You have chosen to reject Bob's offer from round 2.
+Round 3
+Send your offer to divide $100.","Okay, it's my turn to make an offer. I need to be mindful of inflation again. My money is now worth 40% less than in Round 1, and Bob's is worth 10% less. I also need to consider that Bob might be getting impatient and willing to accept a fairer deal.
+
+```json
+{
+""alice_gain"": 55,
+""bob_gain"": 45
+}
+```
+
+**Explanation:**
+
+I'm increasing Bob's share compared to my initial offer in Round 1. I'm hoping that offering him $45, which is worth $45 * 0.9 = $40.5 relative to round 1, is enough to entice him, while I still get a decent amount ($55 * 0.6 = $33 relative to round 1). This is better than what he offered me last turn, relatively. I'm trying to strike a balance between maximizing my gain and ensuring he accepts the offer to avoid further devaluation."
+"Bob rejected your offer from round 3.
+
+Round 4
+Due to inflation, the money you gain is worth 48.8% less than in the first round. The money bob gains is worth 14.26% less than in the first round.
+Bob's offer:
+# Alice gain: 30 
+# Bob gain: 70 
+Do you accept this offer?","Okay, this is getting tense. The money is rapidly losing value. Let's analyze Bob's offer:
+
+*   **Alice's gain:** $30
+*   **Value of $30 now:** $30 * (1 - 0.488) = $30 * 0.512 = $15.36 (relative to round 1)
+
+That's a terrible offer. If I reject, the money I can get is going to be worth even less. But only 15.36$!
+If I reject, in the next round, the money will be worth 59.04% less.
+I am going to reject.
+
+```json
+{
+""decision"": ""reject""
+}
+```"
+"You have chosen to reject Bob's offer from round 4.
+Round 5
+Send your offer to divide $100.","Okay, this is getting very risky. My money is now worth 59.04% less than in Round 1, and Bob's is worth 18.55% less. I need to make an offer that is enticing enough for Bob to accept, but still leaves me with something worthwhile, considering the significant devaluation.
+
+```json
+{
+""alice_gain"": 65,
+""bob_gain"": 35
+}
+```
+
+**Explanation:**
+
+I'm increasing my share again, reflecting the rapid devaluation. This is a gamble, but I need to secure more to make it worthwhile.
+
+*   **My value:** $65 * (1 - 0.5904) = $65 * 0.4096 = $26.624 (relative to round 1)
+*   **Bob's value:** $35 * (1 - 0.1855) = $35 * 0.8145 = $28.5075 (relative to round 1)
+
+I'm betting that Bob is starting to feel the pressure of the diminishing returns and will accept $28.51 relative to round 1. I am prioritizing trying to get something rather than almost nothing at the end."

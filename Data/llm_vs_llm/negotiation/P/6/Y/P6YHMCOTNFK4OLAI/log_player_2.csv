@@ -1,0 +1,40 @@
+prompt,response
+"Alice's offer: The product price will be $8,200. 
+You have three options:
+(1) Accept Alice's offer, and buy the product for $8,200
+(2) Reject Alice's offer and proceed to the next round, where you will send Alice a counteroffer
+(3) Buy the product from Jhon for $8,000","Given that:
+1. The product is worth $8,000 to me
+2. Alice's offer is $8,200
+3. John is willing to sell it for $8,000
+
+I will reject Alice's offer because:
+1. It's above my maximum value ($8,000)
+2. It's higher than John's price ($8,000)
+3. I can either make a counteroffer to Alice or buy from John
+
+{""decision"": ""RejectOffer""}"
+"You chose to make a counteroffer to Alice.
+
+Send your counteroffer to Alice.","Since I know that:
+1. The product is worth $8,000 to Alice
+2. I can always buy from John for $8,000
+3. Alice's initial offer was too high at $8,200
+
+I'll make a counteroffer below $8,000 to try to get a better deal than John's price. I'll offer $7,600, which gives Alice some room for negotiation while potentially saving me money compared to John's price.
+
+{""product_price"": 7600}"
+"Alice rejected your offer from round 2.
+
+Alice's offer: The product price will be $8,050. 
+You have three options:
+(1) Accept Alice's offer, and buy the product for $8,050
+(2) Reject Alice's offer and proceed to the next round, where you will send Alice a counteroffer
+(3) Buy the product from Jhon for $8,000","Given that:
+1. Alice's new offer is $8,050
+2. John's price is $8,000
+3. The difference is only $50
+
+Since John's price ($8,000) is lower than Alice's current offer ($8,050), and we know John's price is guaranteed, it makes the most sense to buy from John. There's no reason to accept a higher price from Alice or continue negotiating when we have a better option readily available.
+
+{""decision"": ""BuyFromJhon""}"

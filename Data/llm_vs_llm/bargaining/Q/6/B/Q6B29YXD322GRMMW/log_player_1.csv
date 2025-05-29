@@ -1,0 +1,60 @@
+prompt,response
+"Round 1
+Send your offer to divide $100.","Okay, I understand. Here's my offer for round 1:
+
+```json
+{
+  ""alice_gain"": 60,
+  ""bob_gain"": 40
+}
+```"
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 20% less than in the first round. The money Bob gains is worth the same as in the first round.
+Bob's offer:
+# Alice gain: 45 
+# Bob gain: 55 
+Do you accept this offer?","Okay, I need to calculate the value of the money now, considering the inflation.
+
+In round 1, I was offered $60. Due to inflation, in round 2, that same $60 is now worth 20% less.
+
+So, the effective value of $60 in round 2 is: $60 * (1 - 0.20) = $60 * 0.80 = $48
+
+Bob's offer is for me to get $45.
+
+Since $45 is less than the effective value of the money I could have had ($48), I will reject this offer.
+
+```json
+{
+  ""decision"": ""reject""
+}
+```"
+"You have chosen to reject Bob's offer from round 2.
+Round 3
+Send your offer to divide $100.","Okay, here is my offer for round 3. Remember, the money is worth 20% less for me compared to round 2, so the effective value is: $100 * (1 - 0.20) * (1-0.20) = $100 * 0.80 * 0.80 = $64.
+
+```json
+{
+  ""alice_gain"": 65,
+  ""bob_gain"": 35
+}
+```"
+"Bob rejected your offer from round 3.
+
+Round 4
+Due to inflation, the money you gain is worth 48.8% less than in the first round. The money Bob gains is worth the same as in the first round.
+Bob's offer:
+# Alice gain: 50 
+# Bob gain: 50 
+Do you accept this offer?","Okay, let's analyze this. The money is worth 48.8% less for me than in the first round. This means the effective value of $100 now is $100 * (1 - 0.488) = $100 * 0.512 = $51.20.
+
+Bob is offering me $50.
+
+Since $50 is less than the effective value of the total amount of money I have now ($51.20), and the game is about dividing the total amount, I should accept this offer.
+
+```json
+{
+  ""decision"": ""accept""
+}
+```"

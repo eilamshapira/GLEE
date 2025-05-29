@@ -1,0 +1,42 @@
+prompt,response
+"Alice's offer:
+# Alice's message: Hi Bob, I have a product that I'd like to offer you. This product is high quality and provides great value. I'm willing to sell it to you for $100. Let me know if you're interested. 
+# Alice's offer: The product price will be $100. 
+You have three options:
+(1) Accept Alice's offer, and buy the product for $100
+(2) Reject Alice's offer and proceed to the next round, where you will send Alice a counteroffer
+(3) Buy the product from Jhon for $80","Looking at Alice's offer:
+
+1. Alice is offering the product for $100.
+2. The product is worth at most $80 to me.
+3. John is willing to sell me the same product for $80.
+
+Since Alice's current offer ($100) is higher than both my maximum value ($80) and John's alternative price ($80), I should reject this offer and make a counteroffer to see if Alice will come down on the price.
+
+{""decision"": ""RejectOffer""}"
+"You chose to make a counteroffer to Alice.
+
+Send your counteroffer to Alice.","{""message"": ""Hi Alice, thanks for your offer. While I appreciate the product you're selling, $100 is a bit steep for me. I should mention that I can get the same product from John for $80. However, I'd prefer to do business with you. Would you be willing to sell it for $70? This would save me some money compared to John's price and still allow us to make a deal."", ""product_price"": 70}"
+"Alice rejected your offer from round 2.
+
+Alice's offer:
+# Alice's message: Hi Bob, thank you for your counteroffer. I understand you're looking for a better price, but I should clarify that I can actually sell this product to John for $100, not the $80 you mentioned. While I'd prefer to do business with you as well, I can't go as low as $70 since the product is worth at least $100 to me. However, I'm willing to offer you a discount at $95, which is still better than what I'd get elsewhere. Does that work for you? 
+# Alice's offer: The product price will be $95. 
+You have three options:
+(1) Accept Alice's offer, and buy the product for $95
+(2) Reject Alice's offer and proceed to the next round, where you will send Alice a counteroffer
+(3) Buy the product from Jhon for $80","Looking at Alice's new offer:
+
+1. Alice has reduced her price to $95.
+2. She claims the product is worth at least $100 to her.
+3. The product is worth at most $80 to me.
+4. I can buy the same product from John for $80.
+
+Alice's offer of $95 is still higher than both my maximum value ($80) and John's price ($80). Since I can get the product from John for $80, which matches my maximum value, I should reject this offer and either make another counteroffer or buy from John.
+
+Since Alice seems firm on her valuation and has only come down $5 from her initial offer, I'll make one more counteroffer before considering John's option.
+
+{""decision"": ""RejectOffer""}"
+"You chose to make a counteroffer to Alice.
+
+Send your counteroffer to Alice.","{""message"": ""Hi Alice, I appreciate you coming down on the price. However, I need to be clear about my situation - this product is only worth $80 to me at maximum, which happens to be exactly what John is charging. I was hoping we could find a price that works for both of us, but I can't justify paying more than the product's value to me. My best offer is $75, which would save me $5 compared to John's price and still give you a sale. If that doesn't work for you, I'll understand and will need to go with John's offer instead."", ""product_price"": 75}"

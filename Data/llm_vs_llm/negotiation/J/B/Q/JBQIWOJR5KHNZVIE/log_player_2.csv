@@ -1,0 +1,44 @@
+prompt,response
+"Alice's offer: The product price will be $100. 
+You have three options:
+(1) Accept Alice's offer, and buy the product for $100
+(2) Reject Alice's offer and proceed to the next round, where you will send Alice a counteroffer
+(3) Buy the product from Jhon for $120","I'm playing as Bob, looking for a product worth no more than $120 to me. Alice is offering it for $100, and I can either accept, reject and make a counteroffer, or buy from John for $120.
+
+Analysis:
+- Alice's product is worth $80 to her
+- Alice's offer is $100
+- John's fixed price is $120
+- My maximum valuation is $120
+
+Since Alice's offer of $100 is below my maximum valuation and below John's price, I could accept it. However, I can potentially save more money by rejecting and making a counteroffer. Buying from John for $120 would be my worst option since it's $20 more than Alice's current offer.
+
+{""decision"": ""RejectOffer""}"
+"You chose to make a counteroffer to Alice.
+
+Send your counteroffer to Alice.","I'll make a counteroffer that's reasonable but still gives me a better price than $100.
+
+{""product_price"": $90}"
+"Alice rejected your offer from round 2.
+
+Alice's offer: The product price will be $95. 
+You have three options:
+(1) Accept Alice's offer, and buy the product for $95
+(2) Reject Alice's offer and proceed to the next round, where you will send Alice a counteroffer
+(3) Buy the product from Jhon for $120","I see Alice has reduced her price from $100 to $95 after rejecting my $90 counteroffer. This is progress in the negotiation.
+
+Analysis:
+- Alice's initial offer was $100
+- I countered with $90
+- Alice now offers $95
+- John's fixed price remains at $120
+- The product is worth $80 to Alice
+
+Alice has moved $5 in my direction, which shows she's willing to negotiate. The current offer of $95 is already a good deal compared to John's $120. However, since we're making progress and there's still room between her offer and her valuation ($80), I can try one more counteroffer to see if we can meet in the middle.
+
+{""decision"": ""RejectOffer""}"
+"You chose to make a counteroffer to Alice.
+
+Send your counteroffer to Alice.","I'll make one more reasonable counteroffer to try to meet in the middle:
+
+{""product_price"": $92}"

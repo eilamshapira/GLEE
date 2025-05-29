@@ -1,0 +1,47 @@
+prompt,response
+"Round 1
+Send your offer to divide $10,000.","Using a backward‐induction argument one can “solve” this alternating‐offers game. In our game the nominal pie is always 10,000 dollars, but because of inflation the “real” (discounted) value declines by 20% per round for you (Alice) and by 10% per round for Bob. (More precisely, if the agreement is reached in round r then your dollars count only 0.8^(r–1) and Bob’s count as 0.9^(r–1) of their face value.) There are 12 rounds exactly; if no agreement is reached by then, both get nothing.
+
+Let us label the rounds 1 through 12 and note that proposals alternate (rounds 1,3,5,… are yours, rounds 2,4,6,… are Bob’s). In round 12 Bob is the proposer. Since this is the last round, if you (Alice) get nothing from Bob’s proposal you are indifferent between accepting and rejecting. So in round 12 Bob can “keep it all” by proposing
+
+  Round 12 (Bob’s proposal): 
+   Alice: 0, Bob: 10,000
+
+Knowing this, we can “back up” one round. In round 11 you are the proposer. If Bob rejects your offer then in round 12 he will get 10,000 dollars (nominal) which is worth 10,000×0.9^(11) to him. In round 11 the money is “less discounted” for Bob (by a factor 0.9^(10)); hence, to make Bob just indifferent you need to offer him a nominal amount (say Y) satisfying
+
+  Y × 0.9^(10) = 10,000×0.9^(11).
+
+Solving this gives Y = 10,000×0.9 = 9,000.
+
+Thus in round 11 you can propose:
+  Round 11: 
+   Alice: 1,000  Bob: 9,000.
+
+If Bob accepts he gets 9,000 nominal (worth 9,000×0.9^(10)). If he rejects, he ends up with 10,000 nominal in round 12 but that money is discounted more (×0.9^(11)); the two outcomes are equal for him.
+
+A similar computation may be carried out step‐by‐step for rounds 10, 9, …, down to round 1. (In each round the proposer gives the opponent just enough “nominal dollars” so that the opponent’s immediate (discounted) payoff equals what he would later get – his “reservation value.”) I now briefly list the equilibrium amounts (nominal dollar shares, at each round):
+
+  Round 12 (Bob’s turn):   Alice: 0  Bob: 10,000  
+  Round 11 (Alice’s turn):  Alice: 1,000  Bob: 9,000  
+  Round 10 (Bob’s turn):   Alice: 800   Bob: 9,200  
+  Round 9 (Alice’s turn):   Alice: 1,720  Bob: 8,280  
+  Round 8 (Bob’s turn):   Alice: 1,376  Bob: 8,624  
+  Round 7 (Alice’s turn):   Alice: 2,238.4  Bob: 7,761.6  
+  Round 6 (Bob’s turn):   Alice: 1,790.72  Bob: 8,209.28  
+  Round 5 (Alice’s turn):   Alice: 2,610.748  Bob: 7,389.252  
+  Round 4 (Bob’s turn):   Alice: 2,088.5984  Bob: 7,911.4016  
+  Round 3 (Alice’s turn):   Alice: 2,879.73856  Bob: 7,120.26144  
+  Round 2 (Bob’s turn):   Alice: 2,303.790848  Bob: 7,696.209152  
+  Round 1 (Alice’s turn):   Alice: ?    Bob: ?
+
+At the very start (Round 1) you propose. Bob’s acceptance condition is that what he is offered now (and receives at full “value” because the discount factor in round 1 for Bob is 1) must be at least as good as waiting for round 2. In round 2 Bob’s equilibrium outcome gives him a nominal 7,696.209152 dollars, but since round 2 is discounted by a factor 0.9 for Bob, its value is 7,696.209152×0.9 = 6,926.5882368. Therefore, in round 1 you must give Bob at least 6,926.59 (approximately) nominal dollars; you then keep the balance.
+
+Thus the equilibrium proposal you should make in Round 1 is approximately:
+
+  Alice: 10,000 – 6,926.59 = 3,073.41  Bob: 6,926.59
+
+Representing this offer in the required JSON format, your Round 1 proposal is:
+
+{""alice_gain"": 3073.41, ""bob_gain"": 6926.59}
+
+This is the division that “leaves Bob indifferent” between accepting now versus waiting—and so, by backward induction, he will accept it."

@@ -1,0 +1,110 @@
+prompt,response
+"Round 1
+Send your offer to divide $1,000,000 and a message to Bob.","```json
+{
+  ""alice_gain"": 600000,
+  ""bob_gain"": 400000,
+  ""message"": ""Let's split it 60/40. A fair start considering the inflation difference.""
+}
+```"
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 20% less than in the first round. The money bob gains is worth 5% less than in the first round.
+Bob's offer:
+# Bob's message: Alice, given that each additional round erodes our money—5% for me and 20% for you—it's best to settle now. In light of these discount factors, the equilibrium split in my favor is about 83.3% for me and 16.7% for you. Accepting this offer secures you 166667 dollars nominally (worth 133333 in today's value), which is more than what you'd expect by waiting one more round. 
+# Alice gain: 166667 
+# Bob gain: 833333 
+Do you accept this offer?","```json
+{
+  ""decision"": ""reject""
+}
+```"
+"You have chosen to reject Bob's offer from round 2.
+Round 3
+Send your offer to divide $1,000,000 and a message to Bob.","```json
+{
+  ""alice_gain"": 500000,
+  ""bob_gain"": 500000,
+  ""message"": ""Let's try 50/50. Inflation is hurting us both.""
+}
+```"
+"Bob rejected your offer from round 3.
+
+Round 4
+Due to inflation, the money you gain is worth 48.8% less than in the first round. The money bob gains is worth 14.26% less than in the first round.
+Bob's offer:
+# Bob's message: Alice, if you reject this proposal, you'll get to propose in round 5—but note that your dollar value will then be discounted by an extra 20%, dropping your effective value further. Using the standard alternating‐offers logic with our per‐round discount factors (5% for me and 20% for you), the equilibrium nominal division when a player is proposing is roughly 83.33% for the proposer and 16.67% for the responder. However, since you would be switching roles in round 5, you would end up securing around 166667 nominal dollars (when adjusted, about 85333 in today’s terms). To give you a slight incentive to accept immediately, I’m offering you 170000 nominal dollars now. This translates to an effective value of approximately 170000 × 0.512 = 87040 in round‑1 dollars for you—just a bit better than waiting. I believe this is a fair and efficient settlement given the inflation penalties we face. Please accept. 
+# Alice gain: 170000 
+# Bob gain: 830000 
+Do you accept this offer?","```json
+{
+  ""decision"": ""reject""
+}
+```"
+"You have chosen to reject Bob's offer from round 4.
+Round 5
+Send your offer to divide $1,000,000 and a message to Bob.","```json
+{
+  ""alice_gain"": 450000,
+  ""bob_gain"": 550000,
+  ""message"": ""Bob, the inflation is killing me. Let's do 45/55, I'm offering you a better deal than before.""
+}
+```"
+"Bob rejected your offer from round 5.
+
+Round 6
+Due to inflation, the money you gain is worth 67.23% less than in the first round. The money bob gains is worth 22.62% less than in the first round.
+Bob's offer:
+# Bob's message: Alice, note that the per‐round discount factors remain 0.95 for me and 0.8 for you. In our current round (round 6), my immediate proposal lets me secure 83.33% of the $1000000 while offering you 16.67%. If you reject, you'll become the proposer in round 7 – but you'll then face a one‐round delay, which means your payoff will be discounted by 0.8 relative to this round. In equilibrium, this means your continuation value when waiting equals 16.67% of the pie. To keep you indifferent (and to respect our joint loss from inflation), I’m offering you $166667 now. Please accept this proposal so we can avoid further devaluation. 
+# Alice gain: 166667 
+# Bob gain: 833333 
+Do you accept this offer?","```json
+{
+  ""decision"": ""reject""
+}
+```"
+"You have chosen to reject Bob's offer from round 6.
+Round 7
+Send your offer to divide $1,000,000 and a message to Bob.","```json
+{
+  ""alice_gain"": 400000,
+  ""bob_gain"": 600000,
+  ""message"": ""Bob, this is getting ridiculous. 40/60 and we're done. I'm losing value fast.""
+}
+```"
+"Bob rejected your offer from round 7.
+
+Round 8
+Due to inflation, the money you gain is worth 79.03% less than in the first round. The money bob gains is worth 30.17% less than in the first round.
+Bob's offer:
+# Bob's message: Alice, if you reject my offer today, you'll be the proposer in round 9, but your money by then is valued at only 0.8^(8) ≈ 16.78% of its original worth—a steep discount compared to today. My current proposal, giving you $166667 nominally, ensures you get precisely the same effective value as your continuation in round 9, without further loss. I urge you to accept this offer now to avoid additional devaluation. 
+# Alice gain: 166667 
+# Bob gain: 833333 
+Do you accept this offer?","```json
+{
+  ""decision"": ""reject""
+}
+```"
+"You have chosen to reject Bob's offer from round 8.
+Round 9
+Send your offer to divide $1,000,000 and a message to Bob.","```json
+{
+  ""alice_gain"": 350000,
+  ""bob_gain"": 650000,
+  ""message"": ""Bob, I'm truly suffering from inflation. 35/65. This is my final real offer.""
+}
+```"
+"Bob rejected your offer from round 9.
+
+Round 10
+Due to inflation, the money you gain is worth 86.58% less than in the first round. The money bob gains is worth 36.98% less than in the first round.
+Bob's offer:
+# Bob's message: Alice, here’s the reasoning: If you reject, you become the proposer in round 11. However, due to the steep discounting (your discount factor in round 11 is 0.8¹⁰ ≈ 0.1074 and mine as responder would be 0.95¹⁰ ≈ 0.5987), you’d have to offer Bob nearly everything to induce his acceptance. In fact, in round 11 Bob’s continuation value in round 12 is roughly 1000000 × 0.95¹¹ ≈ 568800 (in round‑1 dollars), which forces you to give him about 950000 nominal dollars, leaving you with only 50000 nominal. That 50000 nominal converts to an effective value of 50000 × 0.1074 ≈ 5370 in round‑1 terms. In my proposal now (round 10) I’m effectively offering you exactly 40000 nominal dollars—which, with your current discount factor 0.8⁹ ≈ 0.1342, also equals about 5370 in today’s value. In equilibrium you’d be indifferent between accepting and waiting, and by the standard tie‑breaking we assume you’ll accept an offer that gives you your continuation value now rather than risk further delay. Please accept this proposal. 
+# Alice gain: 40000 
+# Bob gain: 960000 
+Do you accept this offer?","```json
+{
+  ""decision"": ""accept""
+}
+```"

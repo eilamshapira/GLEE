@@ -1,0 +1,40 @@
+prompt,response
+"Round 1
+Send your offer to divide $100.","```json
+{
+""alice_gain"": 60,
+""bob_gain"": 40
+}
+```"
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 10% less than in the first round.
+Bob's offer:
+# Alice gain: 45 
+# Bob gain: 55 
+Do you accept this offer?","{""decision"": ""reject""}"
+"You have chosen to reject Bob's offer from round 2.
+Round 3
+Send your offer to divide $100.","```json
+{
+""alice_gain"": 55,
+""bob_gain"": 45
+}
+``` 
+
+**Reasoning:**
+
+This round, Bob would be acutely aware that he'll be getting a worse deal if I reject his offer and he's forced to accept mine in round 4 (due to the 10% inflation).  My offer is slightly better than what he offered me, and significantly better than what he'd be left with if he declines. This puts the pressure on him to accept."
+"Bob rejected your offer from round 3.
+
+Round 4
+Due to inflation, the money you gain is worth 27.1% less than in the first round.
+Bob's offer:
+# Alice gain: 40 
+# Bob gain: 60 
+Do you accept this offer?","{""decision"": ""accept""} 
+
+**Reasoning:**
+
+While not ideal, accepting this offer guarantees me $40 (worth $27.90 of the original value). If I reject Bob's offer, the money will be worth even less in the next round, and there's no guarantee he'll offer me a better deal. It's better to take a reasonable offer now than risk getting a worse one later."

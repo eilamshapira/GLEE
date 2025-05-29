@@ -1,0 +1,32 @@
+prompt,response
+"Round 1
+Send your offer to divide $100.","Okay, I understand the game. I need to make an offer to Bob, keeping in mind the declining value of the money for both of us in later rounds.
+
+Here's my offer for Round 1:
+
+```json
+{
+""alice_gain"": 60,
+""bob_gain"": 40
+}
+```
+
+I'm offering Bob $40. This is a reasonable starting point that might incentivize him to accept in the first round, avoiding the value decay."
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation,  the money Bob gains is worth 10% less than in the first round. The money you gains is worth the same as in the first round.
+Bob's offer:
+# Alice gain: 45 
+# Bob gain: 55 
+Do you accept this offer?","Okay, I understand. Bob rejected my initial offer and is now proposing $45 for me and $55 for himself. I need to consider the value decay for Bob in the previous round and for me if we reject again.
+
+Given that the money is worth 10% less to Bob than in round 1, his $55 is equivalent to $55/1.1 = $50 pre-inflation. If I reject now, the money will be worth 0% less for me in round 3, and 20% less for Bob.
+
+I will accept Bob's offer.
+
+```json
+{
+""decision"": ""accept""
+}
+```"

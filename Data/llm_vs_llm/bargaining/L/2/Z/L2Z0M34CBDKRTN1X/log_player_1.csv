@@ -1,0 +1,23 @@
+prompt,response
+"Round 1
+Send your offer to divide $100.","Based on a backward‐induction analysis—and “discounting” each dollar by 20% per later round for you (Alice) and 5% per later round for Bob—the subgame‐perfect equilibrium (in “nominal dollars”) in Round 1 turns out to be very unequal. In outline, here’s how one can think about it:
+
+• In Round 12 (the last round) the proposer (Bob, because turns alternate and Round 12 falls to him) can “keep” nearly all of the $100 (offering nearly nothing to Alice) because if she rejects she gets nothing.  
+• Rolling the analysis back through each round (noting that in each period the receiving player compares the immediate dollar–amount offered 
+  (with its “current” value) to what he/she would get in the next round after appropriate discounting), one finds that in equilibrium the responder is always offered just enough so that his/her immediate (undiscounted) dollars equal the future “threat‐value.”  
+• When you (Alice) are the proposer in Round 1 the “threat” for Bob is that if he rejects now he will propose in Round 2. In Round 2 Bob (as proposer) would ultimately get nearly $100 nominal but only later money is worth 5% less per round. In fact, carrying out the backward induction carefully from Round 12 back to Round 1 (see details below) one obtains that Bob’s continuation value—expressed in Round 1 nominal dollars—is about $83.18, leaving you a remaining $16.82.
+
+(The sequence of calculations goes roughly as follows. In Round 11 (your move) you must offer Bob an amount y satisfying  
+  y · (0.95^(10)) = 100 · (0.95^(11))  ⟹ y = 100 · 0.95 = 95.  
+Then in Round 10 Bob offers you x such that  
+  x · (0.8^9) = 5 · (0.8^10)  ⟹ x = 5 · 0.8 = 4,  
+and so on, working back to Round 1. In that final comparison the Bob–side condition is  
+  y (Round 1, no discount) = (continuation value in Round 2 for Bob) = 87.56 · 0.95 ≈ 83.18  
+so that you get 100 – 83.18 = 16.82 nominal dollars.  
+Note that the exact numbers depend on the repeated 20% versus 5% discounting over 12 rounds.)
+
+Thus, in Round 1 (with all values rounded to two decimals) you should propose the following division:
+
+{""alice_gain"": 16.82, ""bob_gain"": 83.18}
+
+You can send this JSON offer as your Round 1 proposal."

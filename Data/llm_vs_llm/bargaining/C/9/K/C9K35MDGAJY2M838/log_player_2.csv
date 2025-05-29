@@ -1,0 +1,63 @@
+prompt,response
+"Round 1
+Alice's offer:
+# Alice's message: Hi Bob, I propose we settle right away given the cost of delay. I suggest that I receive $7143 and you receive $2857. This split considers the fact that with each round the overall money loses value—10% for me and 20% for you—so waiting hurts more. I believe this offer reflects our respective time‐preferences and is fair for both of us. Let’s agree and conclude the division. 
+# Bob gain: 2857 
+# Alice gain: 7143 
+Do you accept this offer?","Let me analyze this situation:
+
+1. Current offer: $2,857 for me, $7,143 for Alice
+2. If I reject:
+   * Money will be worth 20% less for me next round
+   * Money will be worth 10% less for Alice next round
+   * I'll get to make the next proposal
+3. Maximum I could propose next round: $10,000
+   * But it would be worth 20% less to me
+   * And 10% less to Alice
+
+The current offer of $2,857 is quite low, only about 28.6% of the total. Even with the higher depreciation rate on my side, I can likely do better by making a counter-offer in the next round. The depreciation would still leave me with the ability to propose a better split for myself.
+
+{""decision"": ""reject""}"
+"You have chosen to reject Alice's offer from round 1.
+Round 2
+Send your offer to divide $10,000 and a message to Alice.","Let me make a strategic offer considering the depreciation rates:
+
+Due to depreciation:
+- For me: $10,000 is now worth $8,000 (20% less)
+- For Alice: $10,000 is now worth $9,000 (10% less)
+
+I'll propose a more balanced split that accounts for the depreciation while being more favorable to me than Alice's initial offer.
+
+{""bob_gain"": 5500,
+""alice_gain"": 4500,
+""message"": ""Hi Alice, considering the depreciation rates, I propose a more balanced split. While you offered me only 28.6%, I'm offering you 45% which is still substantial. This split better reflects the fair value for both of us, and accepting now prevents further depreciation affecting both our shares.""}"
+"Alice rejected your offer from round 2.
+
+Round 3
+Due to inflation, the money you gain is worth 36% less than in the first round. The money alice gains is worth 19% less than in the first round.
+Alice's offer:
+# Alice's message: Hi Bob,
+
+I understand the stakes with the decreasing value each round. In round 3 the nominal amounts we’re splitting still sum to $10000, but due to depreciation you effectively get only 60% of your nominal share and I get 80% of mine. If you reject this offer, you'll get to propose in round 4, but then the discount for you will be even harsher (only 40% of any nominal amount), and by backward reasoning you’d only secure roughly an effective $570. To avoid further loss, I’m offering you $952 nominal—which gives you an effective value of about $571 (952 × 0.6)—exactly matching your continuation value. This way, you lock in the best you can expect from waiting, while I secure the larger remaining share (9048 nominal, 9048 × 0.8 ≈ $7238 effective).
+
+I believe this is the most efficient outcome for both of us considering the inflation penalty. I hope you’ll agree to conclude the deal now. 
+# Bob gain: 952 
+# Alice gain: 9048 
+Do you accept this offer?","Let me analyze this situation carefully:
+
+1. Current offer: $952 for me, $9,048 for Alice
+2. Current depreciation:
+   * My share is worth 64% of nominal (36% less)
+   * Alice's share is worth 81% of nominal (19% less)
+3. Effective value of current offer:
+   * For me: $952 × 0.64 = $609
+   * For Alice: $9,048 × 0.81 = $7,329
+
+4. If I reject:
+   * Next round depreciation will be even worse (40% for me)
+   * I'll get to make an offer, but the effective value will be significantly reduced
+   * Alice's calculations about my continuation value seem accurate
+
+Alice is using game theory and backward induction to show that this is approximately the best outcome I can achieve given the depreciation rates. While the nominal amount seems very low, she's correct that due to the severe depreciation penalties, especially on my side, waiting longer will only decrease my effective gain.
+
+{""decision"": ""accept""}"

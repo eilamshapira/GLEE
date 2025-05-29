@@ -1,0 +1,43 @@
+prompt,response
+"Round 1
+Alice's offer:
+# Bob gain: 20 
+# Alice gain: 80 
+Do you accept this offer?","{""decision"": ""reject""}"
+"You have chosen to reject Alice's offer from round 1.
+Round 2
+Send your offer to divide $100.","Since I rejected Alice's offer, the money is now worth 10% less to me, so the total amount I'm considering is $100 * 0.9 = $90. I'll make an offer that gives me a bit more than half of this reduced amount.
+
+{""bob_gain"": 50, ""alice_gain"": 50}"
+"Alice rejected your offer from round 2.
+
+Round 3
+Due to inflation, the money you gain is worth 19% less than in the first round. The money Alice gains is worth the same as in the first round.
+Alice's offer:
+# Bob gain: 1 
+# Alice gain: 99 
+Do you accept this offer?","Considering the inflation, the money I gain is now worth 81% of its original value (1 - 0.19 = 0.81). However, since Alice's offer gives me only $1, the actual value I'd get is $1 * 0.81 = $0.81. This is an extremely low offer.
+
+{""decision"": ""reject""}"
+"You have chosen to reject Alice's offer from round 3.
+Round 4
+Send your offer to divide $100.","The money is now worth even less to me due to inflation. Since I've already lost 19% of its value, and with each round, the value decreases by 10%, I've lost a total of 19% + 10% = 29% of its value in the first two rounds, considering my perspective. However, the correct calculation for the decrease in value from my perspective is: 
+Round 1 to Round 2: 10% decrease (100 * 0.9 = 90)
+Round 2 to Round 3: 10% decrease (90 * 0.9 = 81)
+Round 3 to Round 4: 10% decrease (81 * 0.9 = 72.9)
+
+So, the total amount I'm considering is $100 * 0.729 = $72.90. I'll make an offer that gives me a bit more than half of this reduced amount, but also considering that Alice's value hasn't decreased.
+
+{""bob_gain"": 40, ""alice_gain"": 60}"
+"Alice rejected your offer from round 4.
+
+Round 5
+Due to inflation, the money you gain is worth 34.39% less than in the first round. The money Alice gains is worth the same as in the first round.
+Alice's offer:
+# Bob gain: 30 
+# Alice gain: 70 
+Do you accept this offer?","Considering the inflation, the money I gain is now worth 65.61% of its original value (1 - 0.3439 = 0.6561). Alice's offer gives me $30, but due to inflation, the actual value I'd get is $30 * 0.6561 = $19.683.
+
+However, if I reject this offer, the money will be worth even less to me in the next round. I need to weigh the potential benefits of waiting against the risk of further devaluation.
+
+{""decision"": ""accept""}"

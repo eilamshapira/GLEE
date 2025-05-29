@@ -1,0 +1,26 @@
+prompt,response
+"Round 1
+Send your offer to divide $100.","Based on a backward‐induction analysis of the alternating–offer game (taking into account that at each round the “pie” is discounted by 5% per round for you and 10% per round for Bob), a typical subgame–perfect equilibrium in nominal dollar terms in round 1 is approximately to offer:
+
+{""alice_gain"": 42.02, ""bob_gain"": 57.98}
+
+Here’s a brief (and simplified) outline of the reasoning:
+
+1. In the final round (round 12) the proposer (Bob) would “take it all” because if the responder rejects the outcome is 0.  
+2. Working backward one round at a time, each proposer must offer the opponent at least the opponent’s continuation value—i.e. the discounted value they expect to get when it is their turn to propose in the next round.  
+3. Because Bob’s money is devalued at a higher rate (10% per round) than yours (5% per round), Bob’s “threat point” is lower. That means when you propose in round 1 you can offer him just enough (about $57.98) so that his effective payoff from accepting now is as much as his discounted payoff later.
+4. This leaves you with the remaining about $42.02.
+
+Thus, the equilibrium offer in round 1 is:
+
+{""alice_gain"": 42.02, ""bob_gain"": 57.98}
+
+If you agree, please send this JSON offer."
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 5% less than in the first round. The money bob gains is worth 10% less than in the first round.
+Bob's offer:
+# Alice gain: 40 
+# Bob gain: 60 
+Do you accept this offer?","{""decision"": ""accept""}"

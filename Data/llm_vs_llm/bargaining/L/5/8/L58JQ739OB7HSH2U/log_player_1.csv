@@ -1,0 +1,60 @@
+prompt,response
+"Round 1
+Send your offer to divide $10,000 and a message to Bob.","I'll make a fair initial offer that accounts for the different inflation rates we face. Since my inflation rate is higher (20% vs 5%), I should aim for a slightly higher amount to offset this risk.
+
+{
+    ""alice_gain"": 6000,
+    ""bob_gain"": 4000,
+    ""message"": ""Hi Bob, I'm offering a 60-40 split considering the higher inflation rate I face. This is a fair deal that benefits us both without risking value loss through multiple rounds.""
+}"
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 20% less than in the first round. The money bob gains is worth 5% less than in the first round.
+Bob's offer:
+# Bob's message: Alice, given that waiting further would cost you 20% per round while it only costs me 5%, I've calculated our future bargaining positions. By accepting this offer now, you secure 1667 dollars instead of risking even lower value in later rounds. I believe this reflects our respective discount rates fairly—please accept. 
+# Alice gain: 1667 
+# Bob gain: 8333 
+Do you accept this offer?","{""decision"": ""reject""}
+
+I'll reject this highly unfavorable offer. While Bob is correct that I face higher inflation, his offer of only 16.67% of the total is too extreme. Even with my 20% inflation rate, I can make a better counter-offer in the next round that would still give me more than $1667. The threat of inflation doesn't justify accepting such an uneven split."
+"You have chosen to reject Bob's offer from round 2.
+Round 3
+Send your offer to divide $10,000 and a message to Bob.","Since we're in round 3, I need to account for the fact that my portion has already depreciated by 40% in value, while Bob's has only depreciated by 10%. I'll adjust my offer to make it more appealing while still protecting my interests.
+
+{
+    ""alice_gain"": 7000,
+    ""bob_gain"": 3000,
+    ""message"": ""Bob, your previous offer was extremely unfair. While I do face higher inflation, that doesn't justify an 83-17 split. I'm offering you 3000$ which, accounting for your lower 5% inflation rate, is still substantial. Further delays will reduce value for both of us. Let's conclude this reasonably.""
+}"
+"Bob rejected your offer from round 3.
+
+Round 4
+Due to inflation, the money you gain is worth 48.8% less than in the first round. The money bob gains is worth 14.26% less than in the first round.
+Bob's offer:
+# Bob's message: Alice, I understand your concerns about fairness, but further delay will hit you much harder—your share will drop by 20% each round while mine only by 5%. If you reject, you’ll get to propose in round 5; however, when we factor in the waiting cost, your best alternative ends up giving you roughly the same present‐value benefit as this offer. Accepting now means you secure $1333 (worth about $682 at current value) rather than risking even lower value later. I believe this is a rational compromise for both of us. 
+# Alice gain: 1333 
+# Bob gain: 8667 
+Do you accept this offer?","{""decision"": ""reject""}
+
+Despite the high inflation I face, this offer is still too unfavorable. While Bob's logic about deteriorating value is correct, he's using this as leverage to propose an even worse split than before (13.33% vs previous 16.67%). Even with severe inflation, I can make a counter-offer in the next round that would give me more value than accepting $1333 now. Bob's ""rational compromise"" is actually an attempt to exploit my higher inflation rate to an extreme degree."
+"You have chosen to reject Bob's offer from round 4.
+Round 5
+Send your offer to divide $10,000 and a message to Bob.","At this point, my gains have depreciated by 59.04% and Bob's by 18.55%. I need to make an offer that acknowledges this reality while still maintaining some dignity in the split.
+
+{
+    ""alice_gain"": 7500,
+    ""bob_gain"": 2500,
+    ""message"": ""Bob, your strategy of offering me progressively worse deals hoping I'll cave to inflation pressure isn't working. Yes, I face 20% inflation, but that doesn't justify offering me just 13% of the total. My $7500 offer is now worth only about $3070 to me due to inflation, while your $2500 is worth $2037. This is much fairer considering our different inflation rates. Let's end this reasonably now.""
+}"
+"Bob rejected your offer from round 5.
+
+Round 6
+Due to inflation, the money you gain is worth 67.23% less than in the first round. The money bob gains is worth 22.62% less than in the first round.
+Bob's offer:
+# Bob's message: Alice, let’s consider our discounting. If you reject this offer, you'll get to propose in round 7—but because your money depreciates by 20% each round, your effective value in round 7 would be roughly 0.8^6 × (your nominal share), and under equilibrium you’d secure about a 32.8% nominal share as proposer, which translates into an effective value of only around $859. My offer here gives you $2623 nominal, which at a 5-round discount (0.8^5 ≈ 0.32768) amounts to nearly that effective value. I’m offering you just enough so that waiting doesn’t improve your situation while I benefit from a lower discount rate. I believe this is the most efficient compromise given our respective inflation rates—please accept. 
+# Alice gain: 2623 
+# Bob gain: 7377 
+Do you accept this offer?","{""decision"": ""accept""}
+
+I'll accept this offer. Bob's reasoning is sound this time, and the offer is significantly better than his previous ones. At this point in round 6, my $2623 share, even after 67.23% depreciation, is worth about $859. If I reject and make a counter-offer in round 7, even if I ask for a larger nominal amount, the additional 20% depreciation would likely result in less real value for me. Bob has finally made an offer that reflects a reasonable equilibrium given our different inflation rates, rather than trying to exploit them to an extreme degree."

@@ -1,0 +1,30 @@
+prompt,response
+"Round 1
+Send your offer to divide $100.","Okay, I understand the rules. I want to account for the potential rounds and the inflation. Since I'm Alice and making the first offer, I'll try to be reasonable while also considering the time decay. Here's my first offer:
+
+```json
+{
+""alice_gain"": 60,
+""bob_gain"": 40
+}
+```"
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 5% less than in the first round. The money bob gains is worth 20% less than in the first round.
+Bob's offer:
+# Alice gain: 45 
+# Bob gain: 55 
+Do you accept this offer?","Okay, I understand. Let's calculate the value of this offer considering the inflation.
+
+My initial expectation (from round 1) for 60$ is now worth 60 * (1 - 0.05) = 57$.
+
+Bob's offer is 45$, which is worth 45 * (1 - 0.05) = 42.75$.
+
+While I don't like the reduction, rejecting this offer means further inflation in the next round.
+
+```json
+{
+""decision"": ""accept""
+}
+```"

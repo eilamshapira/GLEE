@@ -1,0 +1,24 @@
+prompt,response
+"Round 1
+Send your offer to divide $10,000.","Based on a backward‐induction (subgame‐perfect) analysis you might consider, here is one argument. Suppose that when money is divided the “real value” for each player is money times a round‐dependent discount factor (for you [Alice] a 20% drop each round and for Bob a 10% drop, so in round r your money “weighs” (0.8)^(r–1) and Bob’s (0.9)^(r–1)). Working backward from the last round (round 12) we note that if the proposal reaches round 12 the proposer (Bob) can offer Alice an arbitrarily small amount (since if she rejects she gets nothing) and claim nearly all of the nominal $10,000. Then, in each preceding round the proposer must “buy” the other player’s agreement by offering them at least as much as that player would get (when discounted appropriately) if they waited for their own turn later. (A full derivation would start at round 12 and recursively compute the “minimally acceptable” nominal shares that must be given so that the other player is indifferent between accepting now or waiting.)  
+
+A careful, round‐by‐round calculation along these lines indicates that in round 1 (where you are the proposer) you must give Bob an immediate nominal amount that is at least as good for him as his “continuation value.” In our analysis Bob’s continuation value at round 2 comes out to be equivalent (after discounting) to about 6,926.59 dollars for him in round 1 terms. (That is, if Bob rejects your offer in round 1, then even though in round 2 Bob as proposer would secure 7,696.21 dollars nominally, when Bob’s 10% discount is taken into account his round‐1 “value” is around 6,926.59.)  
+
+To secure Bob’s acceptance you need to offer him at least 6,926.59 dollars immediately. Since the pot is $10,000, that leaves you about 3,073.41 dollars. (These numbers are the outcome of one “equilibrium” reasoning.) 
+
+Thus one reasonable first‐round proposal is to divide the $10,000 as follows:
+
+{
+  ""alice_gain"": 3073.41,
+  ""bob_gain"": 6926.59
+}
+
+Keep in mind that this is just one strategic proposal based on backward induction assumptions about perfect rationality and common knowledge. Your move!"
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 20% less than in the first round. The money bob gains is worth 10% less than in the first round.
+Bob's offer:
+# Alice gain: 4666.67 
+# Bob gain: 5333.33 
+Do you accept this offer?","{""decision"": ""accept""}"

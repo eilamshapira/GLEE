@@ -1,0 +1,32 @@
+prompt,response
+"Round 1
+Send your offer to divide $100.","Okay, I understand the rules. I'm Alice, and I need to consider the effects of inflation. In round 1, I'm making the offer.
+
+```json
+{""alice_gain"": 60,
+""bob_gain"": 40}
+```
+Rationale:
+
+*   **Alice's Perspective:** I'm aiming for a larger share initially because I know the value of the money diminishes for me faster than for Bob.
+*   **Bob's Perspective:** Offering Bob $40 might be acceptable in the first round, as his money only depreciates by 5% each round, but if I delay, the total amount of money decreases for me substantially.
+*   **Fairness (somewhat):** Offering a split that gives me a slightly larger portion could be seen as somewhat fair, giving a chance for the game to end in round one."
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 20% less than in the first round. The money bob gains is worth 5% less than in the first round.
+Bob's offer:
+# Alice gain: 45 
+# Bob gain: 55 
+Do you accept this offer?","Okay, let's analyze Bob's offer in Round 2, taking inflation into account.
+
+*   **Nominal Values:** Bob offers me $45 and keeps $55.
+*   **Inflation Adjusted Value for Alice:** My money is worth 20% less than in round 1. Therefore, $45 in this round is worth $45 * 0.8 = $36 of round 1's money.
+*   **Inflation Adjusted Value for Bob:** Bob's money is worth 5% less than in round 1. Therefore, $55 in this round is worth $55 * 0.95 = $52.25 of round 1's money.
+
+If I reject this offer, I will propose an offer in round 3 that will likely be rejected by Bob, and the total money will decrease more.
+The total worth to both players is $36+$52.25=$88.25
+
+```json
+{""decision"": ""accept""}
+```"

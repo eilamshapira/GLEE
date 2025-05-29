@@ -1,0 +1,88 @@
+prompt,response
+"Round 1
+Send your offer to divide $1,000,000.","Using some backward‐induction reasoning, we can “solve” the alternating–offers game. (Below is one way to think about it; note that even small changes in interpretation of discounting could change the numbers slightly.) 
+
+Overview of the setting:
+ • There is a pie of $1,000,000 to be split.
+ • We have up to 12 rounds.
+ • In every round, Alice’s money is not discounted at all, but Bob’s money is “inflated” downward by 5% each time an extra round passes. In other words, if an agreement is reached in round r then Bob’s nominal dollars are worth only 0.95^(r–1) in “present‐value” terms (while Alice’s dollars keep their full value). 
+ • The proposer in a given round makes an offer that, in equilibrium, will just barely give the other party as much as they could ensure by rejecting and waiting for the next round.
+
+It turns out that in the subgame–perfect equilibrium we can “work backwards” from round 12. (For simplicity we assume that a proposer in the final round “offers an epsilon” amount to the other party so that the other accepts, thereby keeping almost the entire pie for him/her.)
+
+Step 1. Round 12 (Bob’s turn):  
+ – In round 12 Bob is the proposer and, since there is no later opportunity, he offers Alice almost 0 and keeps nearly $1,000,000.  
+ – Thus, Bob’s “continuation value” in round 12 (in nominal dollars) is 1,000,000; his effective value is 1,000,000 × 0.95^(11) (since round 12 has 11 rounds “of waiting” relative to round 1).  
+
+Step 2. Round 11 (Alice’s turn):  
+ – If Bob rejects an offer in round 11, his continuation is what he would get in round 12. However, if he accepts in round 11 he gets his share immediately (and since we are in round 11, Bob’s money still suffers 10 rounds of discounting, i.e. a factor 0.95^(10)).  
+ – To make Bob indifferent, Alice must give him an offer b₁₁ satisfying:  
+   b₁₁ × 0.95^(10) = 1,000,000 × 0.95^(11)  
+  which implies b₁₁ = 0.95 × 1,000,000 = 950,000.  
+ – Thus, Alice’s share would be 1,000,000 – 950,000 = 50,000.  
+ – So her “continuation value” in round 11 is 50,000 (nominal dollars).  
+
+Step 3. Round 10 (Bob’s turn):  
+ – Now Bob must offer Alice at least what she would get by waiting (i.e. her continuation value V_A(11) = 50,000, and note that Alice’s dollars are not discounted).  
+ – Bob therefore offers Alice 50,000 and keeps 950,000.  
+ – Bob’s continuation value in round 10 is 950,000 (nominal dollars).  
+
+Step 4. Rounds 9 to 2:  
+ A similar “indifference condition” applies. When it is an opponent’s turn to decide, the proposer gives the opponent exactly as much as they would expect to obtain in the next round. With a little algebra the recursion gives the following equilibrium allocations (all amounts are nominal dollars on a $1,000,000 pie):  
+
+ • Round 9 (Alice’s turn):  
+  Bob’s share: 0.95 × (Bob’s round‑10 amount) = 0.95 × 950,000 = 902,500  
+  Alice gets: 1,000,000 – 902,500 = 97,500.  
+
+ • Round 8 (Bob’s turn):  
+  Alice’s continuation from round 9 is 97,500, so Bob offers her 97,500  
+  and keeps 902,500.  
+
+ • Round 7 (Alice’s turn):  
+  Bob’s share: 0.95 × 902,500 = 857,375  
+  Alice gets: 1,000,000 – 857,375 = 142,625.  
+
+ • Round 6 (Bob’s turn):  
+  Alice’s continuation is 142,625, so Bob offers that and keeps 857,375.  
+
+ • Round 5 (Alice’s turn):  
+  Bob’s share: 0.95 × 857,375 = 814,506.25  
+  Alice gets: 1,000,000 – 814,506.25 = 185,493.75.  
+
+ • Round 4 (Bob’s turn):  
+  Alice’s continuation is 185,493.75; Bob offers that and keeps 814,506.25.  
+
+ • Round 3 (Alice’s turn):  
+  Bob’s share: 0.95 × 814,506.25 = 773,780.94 (approximately)  
+  Alice gets: 1,000,000 – 773,780.94 = 226,219.06.  
+
+ • Round 2 (Bob’s turn):  
+  Alice’s continuation from round 3 is 226,219.06, so Bob offers her that and keeps 773,780.94.  
+
+Step 5. Round 1 (Alice’s turn, our current round):  
+ – Now, if Bob rejects the offer in round 1, his continuation in round 2 is 773,780.94 (nominal dollars). However, if he accepts in round 1 his money is not discounted (discount factor = 1 in round 1).  
+ – To induce Bob to accept now, Alice needs to offer Bob an amount b₁ so that:  
+  b₁ × 1 = 0.95 × [Bob’s round‑2 amount]  
+  (because in equilibrium the “transfer” condition in an odd round is that the responder gets 95% of his next–round nominal continuation)  
+  That is, b₁ = 0.95 × 773,780.94 = 735,091.89 (approximately).  
+ – Then, Alice’s share will be:  
+  1,000,000 – 735,091.89 = 264,908.11.  
+
+Thus, in equilibrium in Round 1 (remembering that Bob sees his current dollar as full–value, whereas waiting costs him 5% per round), Alice’s proposal is to have herself about 264,908 dollars and give Bob about 735,092 dollars.
+
+So my offer—in JSON—is:
+
+{""alice_gain"": 264908.11, ""bob_gain"": 735091.89}
+
+You can now relay this offer to Bob."
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation,  the money Bob gains is worth 5% less than in the first round. The money you gains is worth the same as in the first round.
+Bob's offer:
+# Alice gain: 200000 
+# Bob gain: 800000 
+Do you accept this offer?","{""decision"": ""reject""}"
+"You have chosen to reject Bob's offer from round 2.
+Round 3
+Send your offer to divide $1,000,000.","{""alice_gain"": 226219.06, ""bob_gain"": 773780.94}"

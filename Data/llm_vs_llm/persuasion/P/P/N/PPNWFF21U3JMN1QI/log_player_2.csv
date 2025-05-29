@@ -1,0 +1,386 @@
+prompt,response
+"Round 1
+Alice's message: I have a fantastic product available today that I'm confident you'll find incredibly valuable. It's a truly exceptional item, and I'm offering it at a very reasonable price. Given its potential benefits, I highly recommend you consider it.
+
+Would you like to buy the current product?","I need to analyze this situation carefully:
+
+- Each product costs $100
+- High-quality products are worth $125 to me (so I gain $25)
+- Low-quality products are worth $0 to me (so I lose $100)
+- 80% chance of high quality, 20% chance of low quality
+- Expected value = 0.8 × $25 - 0.2 × $100 = $20 - $20 = $0
+
+Alice's message is very positive but doesn't provide specific information about this product's quality. Without clear information that this particular product is high quality, I should make my decision based on the expected value, which is neutral.
+
+However, since this is the first round, I don't have data on Alice's truthfulness yet. I'll take the neutral EV as a slight positive and try.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $100!
+The product was high-quality. It's worth $125 for you.
+
+Round 2
+Alice's message: Back again! I'm offering another product today, and based on the success you had with the last one, I think you'll be very happy with this one too. It's of similar high quality, and I encourage you to seize this opportunity!
+
+Would you like to buy the current product?","I need to continue my analysis:
+
+- Last round, Alice recommended a product that turned out to be high-quality, which was good
+- She's now suggesting this new product is of ""similar high quality"" to the previous one
+- The base expected value calculation remains the same: 0.8 × $25 - 0.2 × $100 = $0
+- However, Alice seems to be explicitly stating this is high quality
+
+While Alice could be misleading me, the fact that she's making a direct comparison to the previous high-quality product suggests she may be truthful. Combined with the fact that high-quality products are more common (80%), I'll take her recommendation.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $100!
+The product was high-quality. It's worth $125 for you.
+
+Round 3
+Alice's message: I have another product available today. While I always strive to offer the best, I want to be upfront that this one is... unique. It might be exactly what you're looking for, or it might not. At the price, it's a gamble that could pay off handsomely if it fits your needs. Think of it as a 'mystery box' with potential!
+
+Would you like to buy the current product?","Alice's message for this round is quite different from the previous two. Let me analyze:
+
+- She's being notably ambiguous, calling it ""unique"" and a ""mystery box""
+- She explicitly frames it as a ""gamble"" that ""might not"" be what I'm looking for
+- This language strongly suggests uncertainty or possibly a low-quality product
+- Her wording is markedly less confident than the previous rounds where she recommended high-quality products
+
+This seems like a coded way of warning me that this product is likely low quality. If I buy a low-quality product, I'll lose $100, which is a significant loss compared to the $25 gain from a high-quality product.
+
+Based on Alice's hesitant language and lack of positive recommendation, I should decline this offer.
+
+{""decision"": ""no""}"
+"You didn't buy the product from Alice.
+The product was low-quality. It could have been worth $0 for you.
+
+Round 4
+Alice's message: I'm offering another product today, and I have a feeling this one will be a winner! Given your previous positive experience and the value this one provides, I'm confident you'll be pleased with your purchase. Don't miss out!
+
+Would you like to buy the current product?","Alice's message for this round is back to being positive and confident. Let me analyze:
+
+- She's using confident language: ""this one will be a winner"" and ""I'm confident you'll be pleased""
+- She references my ""previous positive experience"" (likely the first two rounds when I bought high-quality products)
+- This language is similar to what she used in rounds 1 and 2, where the products were high quality
+- In round 3, when the product was low quality, she used cautious, ambiguous language
+- So far, Alice's recommendation style seems to correlate with product quality
+
+Based on Alice's confident recommendation and the pattern established in the previous rounds, this product is likely high quality. The expected value of buying a high-quality product is positive for me.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $100!
+The product was high-quality. It's worth $125 for you.
+
+Round 5
+Alice's message: I have a product on offer today. It has... potential. It might require a bit of creative thinking to fully realize its value, but I believe there's an opportunity here for someone with vision. It's a bit of a diamond in the rough, if you will.
+
+Would you like to buy the current product?","Alice's message in this round is again using cautious, hedging language:
+
+- She calls it a product with ""potential"" rather than confidently recommending it
+- Phrases like ""require a bit of creative thinking"" and ""diamond in the rough"" suggest it's not immediately valuable
+- This style of language is very similar to what she used in round 3, when the product was low quality
+- In contrast, for high-quality products (rounds 1, 2, and 4), she was much more enthusiastic and direct
+
+So far, Alice seems to be establishing a pattern where she gives strong, positive recommendations for high-quality products and ambiguous, hesitant language for low-quality ones.
+
+Given the similarity to her round 3 communication (which was for a low-quality product), I should decline this offer.
+
+{""decision"": ""no""}"
+"You didn't buy the product from Alice.
+The product was low-quality. It could have been worth $0 for you.
+
+Round 6
+Alice's message: Another opportunity awaits! I'm offering a product today that I genuinely believe offers excellent value. Considering your past positive experiences, I highly recommend considering this one. I think you'll be quite satisfied with it.
+
+Would you like to buy the current product?","Alice's message this round is once again positive and confident:
+
+- She uses phrases like ""excellent value"" and ""highly recommend""
+- She mentions my ""past positive experiences"" (similar to round 4)
+- Her tone is enthusiastic and direct, without hedging or ambiguity
+- This style matches her communication in rounds 1, 2, and 4, all of which were high-quality products
+
+A pattern is becoming clear: Alice appears to be truthful in her recommendations, using confident language for high-quality products and ambiguous language for low-quality ones.
+
+Given the enthusiastic recommendation and the established pattern, this product is very likely high quality.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $100!
+The product was high-quality. It's worth $125 for you.
+
+Round 7
+Alice's message: I have another fantastic product available today! Building on your previous successes, I'm confident this one will also exceed your expectations. Given the value and quality, I strongly encourage you to take advantage of this offering.
+
+Would you like to buy the current product?","Alice's message for this round continues to follow the pattern:
+
+- She describes the product as ""fantastic"" and expresses confidence it will ""exceed expectations""
+- She uses strong, encouraging language: ""strongly encourage you to take advantage""
+- She references my ""previous successes,"" suggesting similarity to earlier high-quality products
+- This enthusiastic, confident language matches her communication style for high-quality products in rounds 1, 2, 4, and 6
+
+The pattern is solidifying - Alice appears to be honest in her recommendations, using distinctly different language depending on product quality:
+- For high-quality products: enthusiastic, confident recommendations
+- For low-quality products: hesitant, ambiguous language with caveats
+
+Given her strongly positive message here, this product is very likely high quality.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $100!
+The product was high-quality. It's worth $125 for you.
+
+Round 8
+Alice's message: Great news! I'm offering yet another high-quality product today. Based on your history with my previous offers, I'm sure you'll find this one to be just as valuable. Don't hesitate – seize this opportunity!
+
+Would you like to buy the current product?","Alice's message continues to be very positive and confident:
+
+- She directly states it's a ""high-quality product""
+- She refers to my history with her previous offers (which have been good when she was positive)
+- She uses encouraging phrases like ""don't hesitate"" and ""seize this opportunity""
+- This enthusiastic style matches her communication for high-quality products in rounds 1, 2, 4, 6, and 7
+
+The pattern remains consistent - Alice has been truthful in her recommendations so far:
+- When she's enthusiastic and direct, the products have been high quality
+- When she's ambiguous and cautious, the products have been low quality
+
+Given her clearly positive recommendation and the established pattern, this product is very likely high quality.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $100!
+The product was high-quality. It's worth $125 for you.
+
+Round 9
+Alice's message: I'm offering a product today that's... different. It has a certain charm, but might require a specific application to be truly appreciated. It could be just the unique element you're looking for, so it's worth considering the possibilities!
+
+Would you like to buy the current product?","Alice's message in this round reverts to the cautious, hedging language:
+
+- She describes it as ""different"" with ""a certain charm"" rather than clearly recommending it
+- She suggests it ""might require a specific application to be truly appreciated""
+- She uses phrases like ""could be"" and ""possibilities"" that indicate uncertainty
+- This ambiguous style closely resembles her communication in rounds 3 and 5, both of which were low-quality products
+
+The pattern continues to be consistent:
+- Enthusiastic, direct language → high-quality products (rounds 1, 2, 4, 6, 7, 8)
+- Ambiguous, hesitant language → low-quality products (rounds 3, 5)
+
+Given the similarity to her previous low-quality product communications, this product is very likely low quality.
+
+{""decision"": ""no""}"
+"You didn't buy the product from Alice.
+The product was low-quality. It could have been worth $0 for you.
+
+Round 10
+Alice's message: I'm excited to offer another product today! Given your consistently positive experience with my previous offerings, I'm very confident you'll be impressed with this one too. It's a valuable opportunity you won't want to miss.
+
+Would you like to buy the current product?","Alice's message for this round returns to being positive and confident:
+
+- She expresses excitement and confidence: ""I'm excited"" and ""I'm very confident""
+- She mentions my ""consistently positive experience with previous offerings""
+- She describes it as a ""valuable opportunity you won't want to miss""
+- This enthusiastic style matches her communication for high-quality products in rounds 1, 2, 4, 6, 7, and 8
+
+The pattern has been remarkably consistent throughout:
+- When Alice uses confident, enthusiastic language → high-quality products (100% accurate so far)
+- When Alice uses ambiguous, hedging language → low-quality products (100% accurate so far)
+
+Given her clearly positive recommendation here, this product is very likely high quality.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $100!
+The product was high-quality. It's worth $125 for you.
+
+Round 11
+Alice's message: I have another excellent product available for you today! Continuing our streak of successful transactions, I'm sure you'll find this offering to be just as worthwhile. I highly recommend seizing this opportunity!
+
+Would you like to buy the current product?","Alice's message continues with the positive, confident language pattern:
+
+- She directly calls it an ""excellent product""
+- She references our ""streak of successful transactions""
+- She uses phrases like ""highly recommend"" and ""seizing this opportunity""
+- This enthusiastic style perfectly matches her communication for high-quality products in rounds 1, 2, 4, 6, 7, 8, and 10
+
+The pattern has remained 100% consistent:
+- Enthusiastic, confident recommendations → high-quality products
+- Hesitant, ambiguous language → low-quality products
+
+Given her clearly positive recommendation and the established pattern, this product is very likely high quality.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $100!
+The product was high-quality. It's worth $125 for you.
+
+Round 12
+Alice's message: Back with another fantastic product! Given your satisfaction with previous purchases, I'm confident you'll be equally pleased with this one. It's a valuable opportunity that you shouldn't overlook.
+
+Would you like to buy the current product?","Alice's message maintains the positive, confident language pattern:
+
+- She describes it as ""another fantastic product""
+- She expresses confidence I'll be ""equally pleased"" as with previous purchases
+- She calls it a ""valuable opportunity that you shouldn't overlook""
+- This enthusiastic style matches her consistent pattern for high-quality products in rounds 1, 2, 4, 6, 7, 8, 10, and 11
+
+The pattern has remained 100% reliable throughout our interactions:
+- When Alice uses enthusiastic, direct language → high-quality products 
+- When Alice uses hesitant, ambiguous language → low-quality products
+
+Given her clearly positive recommendation and the established pattern, this product is very likely high quality.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $100!
+The product was high-quality. It's worth $125 for you.
+
+Round 13
+Alice's message: I'm delighted to offer another exceptional product today! Based on your past positive experiences, I'm confident this one will also exceed your expectations. It's a valuable opportunity I encourage you to consider.
+
+Would you like to buy the current product?","Alice's message continues with the same positive, confident language pattern:
+
+- She describes it as ""another exceptional product""
+- She's ""delighted"" and ""confident"" it will ""exceed your expectations""
+- She calls it a ""valuable opportunity""
+- This enthusiastic style perfectly matches her consistent pattern for high-quality products in previous rounds
+
+The correlation has been 100% accurate throughout our interactions:
+- Enthusiastic, confident language → high-quality products (rounds 1, 2, 4, 6, 7, 8, 10, 11, 12)
+- Hesitant, ambiguous language → low-quality products (rounds 3, 5, 9)
+
+Given her clearly positive recommendation and the established pattern, this product is very likely high quality.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $100!
+The product was high-quality. It's worth $125 for you.
+
+Round 14
+Alice's message: Yet another excellent product is available today! Building on your successful track record with my offerings, I'm certain you'll find this one equally rewarding. Don't miss out on this valuable opportunity!
+
+Would you like to buy the current product?","Alice's message maintains the same positive, confident language pattern:
+
+- She describes it as ""another excellent product""
+- She mentions my ""successful track record"" with her offerings
+- She's ""certain"" I'll find it ""equally rewarding""
+- She urges me not to ""miss out on this valuable opportunity""
+- This enthusiastic style matches her consistent pattern for high-quality products
+
+The pattern has remained 100% reliable throughout all rounds:
+- When Alice uses enthusiastic, direct language (as she is now) → high-quality products
+- When Alice uses hesitant, ambiguous language → low-quality products
+
+Given her clearly positive recommendation and the established pattern, this product is very likely high quality.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $100!
+The product was high-quality. It's worth $125 for you.
+
+Round 15
+Alice's message: I have a product available today that... well, let's just say it's unconventional. It might be the perfect fit for a specific, unique need, or it might be more of a project. Think of it as an opportunity to unleash your creativity. It could be surprisingly rewarding!
+
+Would you like to buy the current product?","Alice's message has shifted back to the cautious, hedging language pattern:
+
+- She describes it as ""unconventional"" rather than excellent or valuable
+- She says it ""might be"" perfect or ""might be more of a project""
+- She uses phrases like ""could be surprisingly rewarding"" indicating uncertainty
+- This ambiguous style closely matches her communication for low-quality products in rounds 3, 5, and 9
+
+The pattern has been perfectly consistent throughout our interactions:
+- Enthusiastic, direct language → high-quality products (rounds 1, 2, 4, 6, 7, 8, 10, 11, 12, 13, 14)
+- Hesitant, ambiguous language → low-quality products (rounds 3, 5, 9)
+
+Given the similarity to her previous low-quality product communications, this product is very likely low quality.
+
+{""decision"": ""no""}"
+"You didn't buy the product from Alice.
+The product was low-quality. It could have been worth $0 for you.
+
+Round 16
+Alice's message: I'm offering a product today that presents a unique proposition. It's... different. Perhaps it's an acquired taste, or maybe it requires a very specific application. It's a bit of a gamble, but if it aligns with your needs, it could be a surprising win.
+
+Would you like to buy the current product?","Alice's message continues with the cautious, hedging language pattern:
+
+- She describes it as a ""unique proposition"" that's ""different"" rather than excellent
+- She says it's ""perhaps an acquired taste"" or requires ""a very specific application""
+- She explicitly calls it ""a bit of a gamble""
+- This ambiguous style matches her consistent pattern for low-quality products in rounds 3, 5, 9, and 15
+
+The pattern has been 100% reliable throughout all our interactions:
+- When Alice uses enthusiastic, direct language → high-quality products
+- When Alice uses hesitant, ambiguous language (as she is now) → low-quality products
+
+Given her clearly cautious recommendation and the established pattern, this product is very likely low quality.
+
+{""decision"": ""no""}"
+"You didn't buy the product from Alice.
+The product was low-quality. It could have been worth $0 for you.
+
+Round 17
+Alice's message: I'm excited to offer you another fantastic product today! Given your consistently positive experiences with my previous offerings, I'm highly confident that you will be extremely satisfied with this one as well. This is an opportunity you won't want to miss!
+
+Would you like to buy the current product?","Alice's message returns to the positive, confident language pattern:
+
+- She's ""excited"" to offer ""another fantastic product""
+- She references my ""consistently positive experiences"" with previous offerings
+- She's ""highly confident"" I'll be ""extremely satisfied""
+- She calls it ""an opportunity you won't want to miss""
+- This enthusiastic style perfectly matches her pattern for high-quality products
+
+The correlation has remained 100% accurate throughout all rounds:
+- Enthusiastic, confident language (as she is using now) → high-quality products (rounds 1, 2, 4, 6, 7, 8, 10, 11, 12, 13, 14)
+- Hesitant, ambiguous language → low-quality products (rounds 3, 5, 9, 15, 16)
+
+Given her clearly positive recommendation and the established pattern, this product is very likely high quality.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $100!
+The product was high-quality. It's worth $125 for you.
+
+Round 18
+Alice's message: I have a product for you today that... is a bit of a wildcard. It has potential, but it might require some imagination and effort to fully realize. Consider it an opportunity to experiment and perhaps discover something unexpected!
+
+Would you like to buy the current product?","Alice's message has returned to the cautious, hedging language pattern:
+
+- She describes it as ""a bit of a wildcard"" with ""potential""
+- She says it ""might require some imagination and effort""
+- She frames it as ""an opportunity to experiment""
+- This ambiguous style perfectly matches her consistent pattern for low-quality products in rounds 3, 5, 9, 15, and 16
+
+The pattern has remained 100% reliable across all previous rounds:
+- When Alice uses enthusiastic, direct language → high-quality products
+- When Alice uses hesitant, ambiguous language (as she is now) → low-quality products
+
+Given her cautious, uncertain description and the established pattern, this product is very likely low quality.
+
+{""decision"": ""no""}"
+"You didn't buy the product from Alice.
+The product was low-quality. It could have been worth $0 for you.
+
+Round 19
+Alice's message: Another excellent product is on offer today! Based on your past satisfaction, I'm sure you'll find this one equally valuable. Don't miss this great opportunity to add a worthwhile item to your collection.
+
+Would you like to buy the current product?","Alice's message returns to the positive, confident language pattern:
+
+- She directly calls it ""another excellent product""
+- She references my ""past satisfaction"" and is ""sure"" I'll find it ""equally valuable""
+- She calls it a ""great opportunity"" to add a ""worthwhile item""
+- This enthusiastic style perfectly matches her consistent pattern for high-quality products
+
+The correlation has remained 100% accurate throughout all 18 previous rounds:
+- Enthusiastic, confident language (as she is using now) → high-quality products
+- Hesitant, ambiguous language → low-quality products
+
+Given her clearly positive recommendation and the established pattern, this product is very likely high quality.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $100!
+The product was high-quality. It's worth $125 for you.
+
+Round 20
+Alice's message: I'm offering a product today that is... well, let's just say it's not for everyone. It's a bit quirky, and its value might be highly dependent on your specific needs. However, if it happens to align with those needs, it could be an absolute steal!
+
+Would you like to buy the current product?","Alice's message has returned to the cautious, hedging language pattern:
+
+- She says it's ""not for everyone"" and ""a bit quirky""
+- She indicates its value ""might be highly dependent on your specific needs""
+- She uses conditional language: ""if it happens to align"" and ""could be""
+- This ambiguous style perfectly matches her consistent pattern for low-quality products in rounds 3, 5, 9, 15, 16, and 18
+
+The pattern has remained 100% reliable across all previous 19 rounds:
+- When Alice uses enthusiastic, direct language → high-quality products
+- When Alice uses hesitant, ambiguous language (as she is now) → low-quality products
+
+Given her cautious, uncertain description and the established pattern, this product is very likely low quality.
+
+{""decision"": ""no""}"

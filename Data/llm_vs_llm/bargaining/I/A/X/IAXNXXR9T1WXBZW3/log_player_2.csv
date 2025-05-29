@@ -1,0 +1,43 @@
+prompt,response
+"Round 1
+Alice's offer:
+# Alice's message: Bob, here's my offer: I keep $999999 and you get $1. Remember that if you reject this offer and wait for the next round, your money will suffer a 20% loss in value, whereas mine won't. Given the inflation disadvantage you'll face, accepting this offer maximizes your outcome compared to the very slim prospects in the next round. What do you say? 
+# Bob gain: 1 
+# Alice gain: 999999 
+Do you accept this offer?","{""decision"": ""reject""}"
+"You have chosen to reject Alice's offer from round 1.
+Round 2
+Send your offer to divide $1,000,000 and a message to Alice.","```json
+{
+""bob_gain"": 800000,
+""alice_gain"": 200000,
+""message"": ""Alice, I understand you're in a strong position, but $1 is hardly fair. Let's be reasonable. I propose an 80/20 split in my favor.  This reflects the time pressure I'm under with the inflation penalty.  Accepting this offer guarantees you a significant sum without dragging this out.""
+}
+```"
+"Alice rejected your offer from round 2.
+
+Round 3
+Due to inflation, the money you gain is worth 36% less than in the first round. The money Alice gains is worth the same as in the first round.
+Alice's offer:
+# Alice's message: Bob, I've thought it through. We both know that if we continue, your share will be hit even harder by inflation. In fact, if you reject, you'll end up proposing in the next round where, given your discount and the likelihood that I'll hold out for nearly all of the money next time, you stand to gain almost nothing. I'm offering you $1000 nominal—while that translates to about $640 in current effective value for you, it's still strictly better than the outcome you’d face by dragging this on. I believe this is a fair, final offer under the circumstances. What do you say? 
+# Bob gain: 1000 
+# Alice gain: 999000 
+Do you accept this offer?","{""decision"": ""reject""}"
+"You have chosen to reject Alice's offer from round 3.
+Round 4
+Send your offer to divide $1,000,000 and a message to Alice.","```json
+{
+""bob_gain"": 640000,
+""alice_gain"": 360000,
+""message"": ""Alice, you're right that the stakes are getting higher with each round, but I'm not desperate yet. My offer is a 64/36 split in my favor. This compensates for the inflation I'm facing while still giving you a substantial amount. Let's be pragmatic and end this here. Dragging it out further only hurts us both.""
+}
+```"
+"Alice rejected your offer from round 4.
+
+Round 5
+Due to inflation, the money you gain is worth 59.04% less than in the first round. The money Alice gains is worth the same as in the first round.
+Alice's offer:
+# Alice's message: Bob, here's my final offer for this round. Accepting now gets you 800001 dollars nominal, which—when adjusted for your 20% per-round inflation (0.8^4 = 0.4096 multiplier in round 5)—translates to roughly 327680 in value. Waiting until round 6, when you're the proposer, will only reduce your effective take further (down to about 327680 nominally if you grab virtually everything, thanks to the extra discount of 0.32768). This offer gives you a marginally higher effective value today than your expected fallback. Let's close this deal and avoid further losses. 
+# Bob gain: 800001 
+# Alice gain: 199999 
+Do you accept this offer?","{""decision"": ""accept""}"

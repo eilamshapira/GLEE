@@ -1,0 +1,35 @@
+prompt,response
+"Round 1
+Alice's offer:
+# Bob gain: 16.67 
+# Alice gain: 83.33 
+Do you accept this offer?","Let's analyze this offer. I'm being offered $16.67, while Alice gets $83.33. If I reject, the money's value decreases by 20% for me, meaning that $16.67 today would be equivalent to $16.67 / 0.8 = $20.84 if I were to receive it in the next round. However, there's no guarantee I'll get that much. In fact, Alice might offer even less. Given the large disparity in the offer, I should reject it and make a more favorable proposal in the next round.
+
+```json
+{""decision"": ""reject""}
+```"
+"You have chosen to reject Alice's offer from round 1.
+Round 2
+Send your offer to divide $100.","Okay, it's my turn. Considering the inflation, I need to make an offer that benefits me significantly more than Alice's original offer. I also need to consider what Alice might accept, considering her inflation rate is lower. I'll aim for a split that gives me a slight advantage, banking on the fact that she also loses value if we proceed to another round.
+
+```json
+{""bob_gain"": 55, ""alice_gain"": 45}
+```"
+"Alice rejected your offer from round 2.
+
+Round 3
+Due to inflation, the money you gain is worth 36% less than in the first round. The money alice gains is worth 9.75% less than in the first round.
+Alice's offer:
+# Bob gain: 66.67 
+# Alice gain: 33.33 
+Do you accept this offer?","Alright, let's break this down. Alice is offering me $66.67. Due to inflation, the value of the money is 36% less than in the first round. So, $66.67 is worth $66.67 * (1 - 0.36) = $42.67 (in original value).
+
+If I reject, the value of the money will drop again. My money is worth 20% less and hers is 5% less.
+
+If I reject, in the next round the money I gain will be worth 48.8% less than in the first round. (36% + 20% of the remaining 64%)
+
+It's tempting to reject and make another offer, but the inflation is hurting me more than Alice. Given that $42.67 is a decent amount (in original value), it might be wise to accept. While not ideal, avoiding further loss seems prudent.
+
+```json
+{""decision"": ""accept""}
+```"

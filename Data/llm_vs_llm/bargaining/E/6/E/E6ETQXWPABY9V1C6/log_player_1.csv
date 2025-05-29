@@ -1,0 +1,38 @@
+prompt,response
+"Round 1
+Send your offer to divide $100.","Okay, I understand the game. I need to consider the decreasing value of the money for both of us with each round. Here's my offer for round 1:
+
+```json
+{
+  ""alice_gain"": 51,
+  ""bob_gain"": 49
+}
+```
+
+**Explanation:**
+
+*   I'm offering slightly more than half to myself. Since I'm Alice, and I'm making the first offer, I'm hoping Bob will accept a slightly smaller portion.
+*   I'm accounting for the fact that the value of money decreases for Bob by 5% each round. If this goes to round 2, the money will be worth less to him. This offer is structured to be appealing enough that he might accept it to avoid that loss."
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation,  the money Bob gains is worth 5% less than in the first round. The money you gains is worth the same as in the first round.
+Bob's offer:
+# Alice gain: 47.5 
+# Bob gain: 52.5 
+Do you accept this offer?","Okay, I understand the situation. Bob rejected my initial offer and now he's countered with this offer.
+
+Let's analyze:
+
+*   **My perspective:** I get $47.5. The value of the money to me is the same as in round 1.
+*   **Bob's perspective:** He gets $52.5, but its value to him is reduced by 5%. So it's worth $52.5 * 0.95 = $49.875 in round 1 dollars.
+
+If I reject, we move to round 3. In round 3, I'll make an offer, but the money *then* will be worth nothing less to me and 10% less to Bob than at the start. Given that Bob is already getting a reduced value for his money, and I'm still getting full value if I accept now, it's likely that I will get much less in round 3.
+
+Therefore, I will accept this offer.
+
+```json
+{
+  ""decision"": ""accept""
+}
+```"

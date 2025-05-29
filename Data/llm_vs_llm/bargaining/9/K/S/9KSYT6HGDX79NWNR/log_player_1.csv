@@ -1,0 +1,19 @@
+prompt,response
+"Round 1
+Send your offer to divide $100.","Based on a simple bargaining analysis (similar in spirit to the Rubinstein alternating‐offers model) where each round’s delay discounts the shares—20% per round for me (Alice) and 10% for Bob—if I propose a split in round 1, you (Bob) know that if you reject, you’d get to propose in round 2. In equilibrium the “pie” is divided so that the proposer takes a smaller share when discounting is steep. 
+
+Using discount factors δA = 0.8 for me and δB = 0.9 for you, the equilibrium split when I propose is calculated as follows:
+
+ • Alice’s share = [1 – δB]⁄[1 – (δA * δB)] × 100  
+  = (1 – 0.9)/(1 – (0.8×0.9)) × 100  
+  = 0.1/0.28 × 100  
+  ≈ 35.71
+
+ • Bob’s share = 100 – 35.71  
+  ≈ 64.29
+
+This outcome reflects that your cost of waiting (a 10% drop each round) is less severe than mine (20%), giving you a stronger bargaining position if you were to wait.
+
+Here’s my proposal in JSON format:
+
+{""alice_gain"": 35.71, ""bob_gain"": 64.29}"

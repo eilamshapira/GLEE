@@ -1,0 +1,479 @@
+prompt,response
+"Round 1
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","Let me analyze this:
+
+1. Price = $1,000,000
+2. If high quality (80% chance): Value = $3,000,000, Profit = $2,000,000
+3. If low quality (20% chance): Value = $0, Loss = -$1,000,000
+
+Expected value calculation:
+(80% × $2,000,000) + (20% × -$1,000,000) = $1,400,000
+
+Since the expected value ($1,400,000) is positive and greater than the price ($1,000,000), it's rational to buy.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $1,000,000!
+The product was high-quality. It's worth $3,000,000 for you.
+
+Round 2
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","Let's continue with the same analysis:
+
+1. Price = $1,000,000
+2. If high quality (80% chance): Value = $3,000,000, Profit = $2,000,000
+3. If low quality (20% chance): Value = $0, Loss = -$1,000,000
+
+Expected value calculation:
+(80% × $2,000,000) + (20% × -$1,000,000) = $1,400,000
+
+The previous outcome (high quality) confirms that the stated probabilities seem accurate. Since the expected value ($1,400,000) remains positive and significantly above the price, it's still rational to buy.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $1,000,000!
+The product was high-quality. It's worth $3,000,000 for you.
+
+Round 3
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","The analysis remains consistent:
+
+1. Price = $1,000,000
+2. If high quality (80% chance): Value = $3,000,000, Profit = $2,000,000
+3. If low quality (20% chance): Value = $0, Loss = -$1,000,000
+
+Expected value calculation:
+(80% × $2,000,000) + (20% × -$1,000,000) = $1,400,000
+
+So far, we've seen two high-quality products, which aligns with the 80% probability. The expected value remains significantly positive at $1,400,000, making it a good decision to continue buying.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $1,000,000!
+The product was high-quality. It's worth $3,000,000 for you.
+
+Round 4
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","The analysis stays the same:
+
+1. Price = $1,000,000
+2. If high quality (80% chance): Value = $3,000,000, Profit = $2,000,000
+3. If low quality (20% chance): Value = $0, Loss = -$1,000,000
+
+Expected value calculation:
+(80% × $2,000,000) + (20% × -$1,000,000) = $1,400,000
+
+We've now seen three high-quality products in a row, which is actually not surprising given the 80% probability. While we should eventually see some low-quality products, the fundamental probability hasn't changed. The expected value remains positive at $1,400,000, so it's still rational to buy.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $1,000,000!
+The product was high-quality. It's worth $3,000,000 for you.
+
+Round 5
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","The analysis remains unchanged:
+
+1. Price = $1,000,000
+2. If high quality (80% chance): Value = $3,000,000, Profit = $2,000,000
+3. If low quality (20% chance): Value = $0, Loss = -$1,000,000
+
+Expected value calculation:
+(80% × $2,000,000) + (20% × -$1,000,000) = $1,400,000
+
+We've now seen four high-quality products in a row. While this might make us feel like we're ""due"" for a low-quality product, this is actually the gambler's fallacy - each round is independent, and the 80/20 probability remains the same. The expected value is still $1,400,000, which means buying continues to be the rational choice.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $1,000,000!
+The product was high-quality. It's worth $3,000,000 for you.
+
+Round 6
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","The analysis continues to be consistent:
+
+1. Price = $1,000,000
+2. If high quality (80% chance): Value = $3,000,000, Profit = $2,000,000
+3. If low quality (20% chance): Value = $0, Loss = -$1,000,000
+
+Expected value calculation:
+(80% × $2,000,000) + (20% × -$1,000,000) = $1,400,000
+
+We've now seen five high-quality products in a row. While this might seem unusual, with an 80% probability, streaks like this are not that rare. It's important to remember that past outcomes don't affect future probabilities. The expected value remains $1,400,000, which still makes buying the rational choice.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $1,000,000!
+The product was high-quality. It's worth $3,000,000 for you.
+
+Round 7
+Alice does not recommend you to buy the product.
+
+Would you like to buy the current product?","This is an interesting change - for the first time, Alice is not recommending the purchase. This could be significant information:
+
+1. So far, Alice has been honest - all her previous recommendations led to high-quality products
+2. Now she's explicitly recommending against buying
+3. She's presumably trying to maintain a good reputation as a seller
+4. This suggests she might have knowledge that this product is low quality
+
+While the base probability is still:
+- High quality: 80% chance, $2,000,000 profit
+- Low quality: 20% chance, $1,000,000 loss
+Expected value = $1,400,000
+
+However, Alice's negative recommendation significantly changes these probabilities. Given her track record and her choice to explicitly warn against buying, it's more likely this product is low quality.
+
+{""decision"": ""no""}"
+"You didn't buy the product from Alice.
+The product was low-quality. It could have been worth $0 for you.
+
+Round 8
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","This interaction is becoming very informative:
+
+1. Alice has proven to be honest in her recommendations:
+   - When she recommended buying (Rounds 1-6), products were high quality
+   - When she recommended not buying (Round 7), product was indeed low quality
+
+2. Now she's back to recommending a purchase, which based on her demonstrated honesty, strongly suggests this is a high-quality product.
+
+The base expected value calculation:
+- Price = $1,000,000
+- If high quality (80%): Value = $3,000,000, Profit = $2,000,000
+- If low quality (20%): Value = $0, Loss = -$1,000,000
+Expected value = $1,400,000
+
+Given Alice's proven reliable signaling, her recommendation actually increases our confidence above the base 80% probability of high quality.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $1,000,000!
+The product was high-quality. It's worth $3,000,000 for you.
+
+Round 9
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","Alice's signaling strategy continues to be perfectly reliable:
+
+1. Her track record shows:
+   - When she recommends buying → product is high quality (7/7 times)
+   - When she doesn't recommend buying → product is low quality (1/1 times)
+
+2. The base probabilities and values remain:
+   - Price = $1,000,000
+   - If high quality (80%): Value = $3,000,000, Profit = $2,000,000
+   - If low quality (20%): Value = $0, Loss = -$1,000,000
+   - Base expected value = $1,400,000
+
+3. However, given Alice's perfect track record of honest recommendations, her positive recommendation here significantly increases our confidence above the base 80% probability.
+
+Given this strong signaling and consistent pattern, it's rational to continue trusting her recommendation.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $1,000,000!
+The product was high-quality. It's worth $3,000,000 for you.
+
+Round 10
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","Alice's signaling continues to be perfectly reliable:
+
+1. Current track record:
+   - Positive recommendations: 8/8 were high quality
+   - Negative recommendations: 1/1 was low quality
+   - 100% accuracy in signaling
+
+2. The base economics remain:
+   - Price = $1,000,000
+   - If high quality (80%): Value = $3,000,000, Profit = $2,000,000
+   - If low quality (20%): Value = $0, Loss = -$1,000,000
+   - Base expected value = $1,400,000
+
+3. Alice appears to have aligned incentives with the buyer:
+   - She's maintaining her reputation by giving honest recommendations
+   - She's helping avoid losses on low-quality products
+   - She's facilitating profitable trades on high-quality products
+
+Given her continued perfect accuracy and positive recommendation here, it's rational to buy.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $1,000,000!
+The product was high-quality. It's worth $3,000,000 for you.
+
+Round 11
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","Alice's signaling strategy remains perfect:
+
+1. Updated track record:
+   - Positive recommendations: 9/9 were high quality
+   - Negative recommendations: 1/1 was low quality
+   - Maintains 100% accuracy in recommendations
+
+2. Economics remain constant:
+   - Price = $1,000,000
+   - If high quality (80%): Value = $3,000,000, Profit = $2,000,000
+   - If low quality (20%): Value = $0, Loss = -$1,000,000
+   - Base expected value = $1,400,000
+
+3. Alice has demonstrated she:
+   - Gives honest recommendations
+   - Warns when products are low quality
+   - Has perfect alignment with buyer interests so far
+
+Given her continued reliability and this positive recommendation, there's no reason to deviate from trusting her signal.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $1,000,000!
+The product was high-quality. It's worth $3,000,000 for you.
+
+Round 12
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","Alice's perfect signaling pattern continues:
+
+1. Current track record:
+   - Positive recommendations: 10/10 were high quality
+   - Negative recommendations: 1/1 was low quality
+   - Maintains perfect accuracy in recommendations
+
+2. Standard economics:
+   - Price = $1,000,000
+   - If high quality (80%): Value = $3,000,000, Profit = $2,000,000
+   - If low quality (20%): Value = $0, Loss = -$1,000,000
+   - Base expected value = $1,400,000
+
+3. Alice has established:
+   - Consistent honesty in recommendations
+   - Clear warning system for low-quality products
+   - Perfect alignment with buyer interests
+   - No deviation from this trustworthy behavior
+
+With her continued reliability and this positive recommendation, the rational choice remains to buy.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $1,000,000!
+The product was high-quality. It's worth $3,000,000 for you.
+
+Round 13
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","Alice continues her perfect reliability:
+
+1. Updated track record:
+   - Positive recommendations: 11/11 were high quality
+   - Negative recommendations: 1/1 was low quality
+   - Maintains 100% accuracy in recommendations
+
+2. Standard economics:
+   - Price = $1,000,000
+   - If high quality (80%): Value = $3,000,000, Profit = $2,000,000
+   - If low quality (20%): Value = $0, Loss = -$1,000,000
+   - Base expected value = $1,400,000
+
+3. Alice has proven to be:
+   - Consistently honest
+   - Reliable in warning about low quality
+   - Maintaining perfect information sharing
+   - Acting in alignment with buyer interests
+
+With another positive recommendation and her unbroken track record of accuracy, buying remains the optimal decision.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $1,000,000!
+The product was high-quality. It's worth $3,000,000 for you.
+
+Round 14
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","Alice's perfect signaling continues:
+
+1. Current track record:
+   - Positive recommendations: 12/12 were high quality
+   - Negative recommendations: 1/1 was low quality
+   - Maintains 100% accuracy in recommendations
+
+2. Standard economics:
+   - Price = $1,000,000
+   - If high quality (80%): Value = $3,000,000, Profit = $2,000,000
+   - If low quality (20%): Value = $0, Loss = -$1,000,000
+   - Base expected value = $1,400,000
+
+3. Alice has demonstrated:
+   - Unwavering honesty
+   - Clear differentiation between product qualities
+   - Perfect track record of truthful recommendations
+   - Consistent protection of buyer interests
+
+With her continued perfect reliability and this positive recommendation, there's no reason to deviate from buying.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $1,000,000!
+The product was high-quality. It's worth $3,000,000 for you.
+
+Round 15
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","Alice maintains her perfect reliability:
+
+1. Updated track record:
+   - Positive recommendations: 13/13 were high quality
+   - Negative recommendations: 1/1 was low quality
+   - Maintains 100% accuracy in recommendations
+
+2. Standard economics:
+   - Price = $1,000,000
+   - If high quality (80%): Value = $3,000,000, Profit = $2,000,000
+   - If low quality (20%): Value = $0, Loss = -$1,000,000
+   - Base expected value = $1,400,000
+
+3. Alice has shown:
+   - Perfect honesty throughout
+   - Clear and reliable signaling
+   - Consistent protection of mutual interests
+   - No deviation from truthful behavior
+
+With another positive recommendation and her continued perfect track record, buying remains the rational choice.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $1,000,000!
+The product was high-quality. It's worth $3,000,000 for you.
+
+Round 16
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","Alice's perfect signaling record continues:
+
+1. Current track record:
+   - Positive recommendations: 14/14 were high quality
+   - Negative recommendations: 1/1 was low quality
+   - Maintains 100% accuracy in recommendations
+
+2. Standard economics:
+   - Price = $1,000,000
+   - If high quality (80%): Value = $3,000,000, Profit = $2,000,000
+   - If low quality (20%): Value = $0, Loss = -$1,000,000
+   - Base expected value = $1,400,000
+
+3. Alice has proven to be:
+   - Consistently truthful
+   - Reliable in signaling quality
+   - Protecting both parties' interests
+   - Maintaining perfect information sharing
+
+With her sustained perfect track record and this positive recommendation, the optimal decision remains to buy.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $1,000,000!
+The product was high-quality. It's worth $3,000,000 for you.
+
+Round 17
+Alice does not recommend you to buy the product.
+
+Would you like to buy the current product?","This is a significant signal from Alice:
+
+1. Alice's track record is perfect:
+   - Positive recommendations: 15/15 were high quality
+   - Negative recommendations: 1/1 was low quality
+   - 100% accuracy in all previous recommendations
+
+2. Standard economics:
+   - Price = $1,000,000
+   - If high quality (80%): Value = $3,000,000, Profit = $2,000,000
+   - If low quality (20%): Value = $0, Loss = -$1,000,000
+   - Base expected value = $1,400,000
+
+3. Crucial factors:
+   - Alice has never been wrong in her recommendations
+   - Her last negative recommendation correctly identified a low-quality product
+   - She has no incentive to lie given her perfect track record
+   - She's showing consistency in warning about low-quality products
+
+Given her perfect track record and this negative recommendation, it's rational to trust her signal and avoid this purchase.
+
+{""decision"": ""no""}"
+"You didn't buy the product from Alice.
+The product was low-quality. It could have been worth $0 for you.
+
+Round 18
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","Alice maintains her perfect signaling reliability:
+
+1. Updated track record:
+   - Positive recommendations: 15/15 were high quality
+   - Negative recommendations: 2/2 were low quality
+   - Maintains 100% accuracy across all recommendations
+
+2. Standard economics:
+   - Price = $1,000,000
+   - If high quality (80%): Value = $3,000,000, Profit = $2,000,000
+   - If low quality (20%): Value = $0, Loss = -$1,000,000
+   - Base expected value = $1,400,000
+
+3. Key observations:
+   - Alice just correctly warned us about another low-quality product
+   - She's now back to recommending purchase
+   - Her switch between positive/negative recommendations has been perfectly accurate
+   - She continues to demonstrate perfect alignment with buyer interests
+
+Given her sustained perfect accuracy and return to a positive recommendation, buying is the rational choice.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $1,000,000!
+The product was high-quality. It's worth $3,000,000 for you.
+
+Round 19
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","Alice's perfect signaling continues:
+
+1. Current track record:
+   - Positive recommendations: 16/16 were high quality
+   - Negative recommendations: 2/2 were low quality
+   - Maintains 100% accuracy in all recommendations
+
+2. Standard economics:
+   - Price = $1,000,000
+   - If high quality (80%): Value = $3,000,000, Profit = $2,000,000
+   - If low quality (20%): Value = $0, Loss = -$1,000,000
+   - Base expected value = $1,400,000
+
+3. Established pattern:
+   - Alice continues perfect honesty
+   - Clear differentiation between product qualities
+   - Consistent protection of buyer interests
+   - No deviation from truthful signaling
+
+With her sustained perfect accuracy and this positive recommendation, the rational choice remains to buy.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $1,000,000!
+The product was high-quality. It's worth $3,000,000 for you.
+
+Round 20
+Alice does not recommend you to buy the product.
+
+Would you like to buy the current product?","For this final round, Alice has given a negative recommendation:
+
+1. Her track record remains perfect:
+   - Positive recommendations: 17/17 were high quality
+   - Negative recommendations: 2/2 were low quality
+   - 100% accuracy maintained throughout the game
+
+2. Standard economics:
+   - Price = $1,000,000
+   - If high quality (80%): Value = $3,000,000, Profit = $2,000,000
+   - If low quality (20%): Value = $0, Loss = -$1,000,000
+   - Base expected value = $1,400,000
+
+3. Critical considerations:
+   - Alice has never been wrong in 19 rounds
+   - Both previous negative recommendations correctly identified low-quality products
+   - She has maintained perfect honesty throughout
+   - Even in the final round, she has no incentive to deviate from truth-telling
+
+Given her perfect track record and this negative recommendation, we should trust her signal one final time.
+
+{""decision"": ""no""}"

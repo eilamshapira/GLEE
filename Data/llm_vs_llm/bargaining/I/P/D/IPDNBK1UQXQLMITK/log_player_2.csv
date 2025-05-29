@@ -1,0 +1,54 @@
+prompt,response
+"Round 1
+Alice's offer:
+# Bob gain: 5000 
+# Alice gain: 5000 
+Do you accept this offer?","Let me think about this strategically. 
+
+Since Alice's money loses 10% value each round, while mine doesn't depreciate, I have an advantage by rejecting and making a counter-offer in the next round. When Alice receives money in round 2, it will only be worth 90% of its nominal value to her.
+
+Therefore, if I reject this 50-50 split now, I can propose a split in round 2 that gives me more than $5000 while still being attractive to Alice (since any amount she gets will be worth less to her then).
+
+{""decision"": ""reject""}"
+"You have chosen to reject Alice's offer from round 1.
+Round 2
+Send your offer to divide $10,000.","Since Alice's money will be worth 10% less to her this round, I can propose a split that gives me more while still being attractive to her from her perspective.
+
+If I offer her $5500, it will be worth $4950 to her (90% of $5500), which is slightly less than the $5000 she proposed in round 1. Meanwhile, I would get $4500, which is worth the full $4500 to me.
+
+{""bob_gain"": 4500,
+""alice_gain"": 5500}
+
+I'll propose this split as it's reasonable and accounts for the time value depreciation for Alice."
+"Alice rejected your offer from round 2.
+
+Round 3
+Due to inflation,  the money Alice gains is worth 19% less than in the first round. The money you gains is worth the same as in the first round.
+Alice's offer:
+# Bob gain: 4000 
+# Alice gain: 6000 
+Do you accept this offer?","Let me analyze this offer:
+
+1. Alice is offering me $4000 (worth full value to me)
+2. Alice would get $6000, but it's only worth $4,860 to her (81% of $6000 due to 19% depreciation)
+3. If I reject, we go to round 4 where:
+   - I can make a new offer
+   - Alice's money will be worth 29% less
+   - My leverage increases further
+
+Since this offer gives me less than the initial 50-50 split ($4000 vs $5000), and I maintain negotiating power due to the increasing depreciation on Alice's side, I should reject this offer and make a more favorable counter-offer in the next round.
+
+{""decision"": ""reject""}"
+"You have chosen to reject Alice's offer from round 3.
+Round 4
+Send your offer to divide $10,000.","Given that any money Alice receives in this round is worth 29% less to her, I can make an offer that appears generous in nominal terms but accounts for her depreciation.
+
+If I offer Alice $7000, it will be worth $4,970 to her (71% of $7000), which is close to the original $5000 value from round 1. Meanwhile, I would get $3000, which is worth the full $3000 to me.
+
+This offer should be attractive to Alice because:
+1. In nominal terms, she gets 70% of the total
+2. After depreciation, it's still worth nearly $5000 to her
+3. If she rejects, her next round's money will be worth even less
+
+{""bob_gain"": 3000,
+""alice_gain"": 7000}"

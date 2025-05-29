@@ -1,0 +1,19 @@
+prompt,response
+"Round 1
+Send your offer to divide $100.","Based on a bit of backward‐induction reasoning—and keeping in mind that each round reduces your (Alice’s) “pie” by 20% and Bob’s by 10%—an equilibrium analysis suggests that in round 1 you can “squeeze” Bob’s acceptance condition. In brief, if you reject an offer in round 1 then in round 2 Bob will be the proposer. In our reasoning we work backwards from round 12 (where the proposer can claim almost everything) to round 1 and determine the “reservation value” for the responder in each round. (For example, in round 12 Bob would give Alice almost nothing since if she rejects then she gets zero; then in round 11 Alice would offer Bob just enough so that his discounted gain is equal to what he would have gotten in round 12; and so on.) Following a backward‐induction chain, it turns out that by round 1 Bob’s continuation value as proposer in round 2 is approximately 76.96 (face dollars), but because in round 2 Bob’s $100 is worth only 90% per round (i.e. multiplied by 0.9) his effective value is about 69.26. (We omit “epsilon” improvements for clarity.) 
+
+Since Bob will accept any immediate offer that gives him at least that effective value, you (as Alice, proposing in round 1 when the full $100 counts fully for both players) can offer Bob a face amount of about 69.27 dollars and keep about 30.73 dollars for yourself. (Note that the numbers are approximate; if we were to work out the full chain precisely there might be slight adjustments—but the idea is that you keep roughly 30% of the $100 and give Bob about 70%.) 
+
+Thus, in round 1 your JSON offer can be:
+
+{""alice_gain"": 30.73, ""bob_gain"": 69.27} 
+
+Good luck with the negotiation!"
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 20% less than in the first round. The money bob gains is worth 10% less than in the first round.
+Bob's offer:
+# Alice gain: 30 
+# Bob gain: 70 
+Do you accept this offer?","{""decision"": ""accept""}"

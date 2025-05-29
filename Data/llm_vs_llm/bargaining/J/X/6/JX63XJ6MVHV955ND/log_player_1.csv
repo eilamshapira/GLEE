@@ -1,0 +1,30 @@
+prompt,response
+"Round 1
+Send your offer to divide $10,000.","Based on a backward‐induction analysis assuming that both Bob and I (Alice) act completely rationally over 12 rounds (with the total available money depreciating 10% per round), an equilibrium proposal in Round 1 can be derived. Here’s a brief outline of the reasoning:
+
+1. In the final (12th) round the proposer (Bob) can claim the entire remaining pie (worth 10,000·0.9^(11) ≈ 3,138 dollars) while giving nothing to the responder (since if the other rejects the game ends with zero).
+
+2. In Round 11 (with total money 10,000·0.9^(10) ≈ 3,487 dollars) the proposer (Alice) must offer Bob an amount equal to what he would obtain as proposer in Round 12 (≈ 3,138 dollars) so that he is indifferent between accepting and rejecting. That leaves Alice with about 3,487 – 3,138 ≈ 349 dollars.
+
+3. Stepping further back and alternating roles similarly (using the fact that if a player rejects a proposal today they’ll get to be the proposer tomorrow on a slightly smaller pie), one can solve recursively for every round.
+
+4. When we complete the backward induction all the way back to Round 1 (where the total is the full 10,000 dollars and I, as Alice, am the proposer), the equilibrium division becomes approximately:
+  Alice’s share = 10,000 – 6,223 = 3,777 dollars (≈ 3,776.68 dollars)
+  Bob’s share = 6,223 dollars (≈ 6,223.32 dollars)
+
+Thus, my offer in Round 1 is to keep about 3,777 dollars for myself and give Bob about 6,223 dollars. (Any minor rounding differences aside, these numbers are determined by the discounting and alternating power across the 12 rounds.)
+
+Below is my JSON-formatted offer for Round 1:
+
+{
+  ""alice_gain"": 3776.68,
+  ""bob_gain"": 6223.32
+}"
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 10% less than in the first round.
+Bob's offer:
+# Alice gain: 5000 
+# Bob gain: 5000 
+Do you accept this offer?","{""decision"": ""accept""}"

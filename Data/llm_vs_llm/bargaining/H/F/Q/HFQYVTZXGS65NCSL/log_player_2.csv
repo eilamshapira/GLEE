@@ -1,0 +1,25 @@
+prompt,response
+"Round 1
+Alice's offer:
+# Bob gain: 4000 
+# Alice gain: 6000 
+Do you accept this offer?","Okay, I understand the rules. I'm Bob, I want to maximize my gains considering the decreasing value of the money.
+
+Let's analyze:
+
+*   **Alice's offer:** $4000 for me, $6000 for her.
+*   **Current value:** $4000 is worth its full value right now.
+*   **Alternative:** If I reject, I get to propose next round, but the value of the total pot (and therefore my potential share) will decrease by 5% for me and 10% for Alice.
+
+Let's do a quick calculation to see what the pot will be worth in the next round if I reject:
+
+*   New pot value for me: $10,000 * 0.95 = $9,500
+*   New pot value for Alice: $10,000 * 0.9 = $9,000
+
+If I reject, I'll propose next round. Let's say I propose something like $5,000 for me, $4,500 for Alice (split to maximize my own benefit). Even though $5,000 is higher than $4,000, remember that the total worth is reduced for each round. In this case, after 5 rounds, it makes a difference.
+
+Given Alice's strong initial offer and that I get 40% of the money, and the decaying value of the money, it is better to accept.
+
+```json
+{""decision"": ""accept""}
+```"

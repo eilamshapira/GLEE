@@ -1,0 +1,67 @@
+prompt,response
+"Round 1
+Alice's offer:
+# Bob gain: 100000 
+# Alice gain: 900000 
+Do you accept this offer?","Let me think about this strategically. 
+
+1. Alice is offering me $100,000 and keeping $900,000 for herself
+2. If I reject, I can make a counter-offer in the next round
+3. For Alice, money will be worth 20% less in the next round
+4. This means her $900,000 would only be worth $720,000 to her in the next round
+5. This gives me negotiating leverage - I can offer her a deal that gives her more nominal dollars but is actually worth less to her
+6. Given this dynamic, I should reject this clearly unfair initial offer
+
+{""decision"": ""reject""}"
+"You have chosen to reject Alice's offer from round 1.
+Round 2
+Send your offer to divide $1,000,000.","Given that Alice faces a 20% discount per round, I can use this to make a strategic offer:
+
+In the next round (round 3), any amount would be worth 20% less to Alice. So if I offer her a fair amount now, it would be more attractive than waiting, even if she could get more nominal dollars later.
+
+I'll propose a more equitable split, but still taking advantage of my stronger negotiating position:
+
+{""bob_gain"": 600000, ""alice_gain"": 400000}
+
+This offer is reasonable because:
+1. It's much better for Alice than my potential future offers could be (since her $400,000 now is worth more than $500,000 in the next round)
+2. It's fair enough that she should seriously consider accepting
+3. If she rejects, I can still negotiate, but she'll be in a weaker position due to the time discount"
+"Alice rejected your offer from round 2.
+
+Round 3
+Due to inflation,  the money Alice gains is worth 36% less than in the first round. The money you gains is worth the same as in the first round.
+Alice's offer:
+# Bob gain: 300000 
+# Alice gain: 700000 
+Do you accept this offer?","Let me analyze this situation:
+
+1. Alice is offering me $300,000 and keeping $700,000
+2. For Alice, due to 36% inflation, her $700,000 is actually only worth $448,000 to her
+3. If I reject, in the next round:
+   - Alice will face 48.8% inflation (1 - 0.8^3)
+   - I can make another offer
+   - Her money will be worth even less to her
+4. Given this weakening position for Alice, I can likely get a better deal by rejecting
+
+The offer is better than her first one, but given Alice's deteriorating position due to inflation, I should reject and make a more favorable counter-offer in the next round.
+
+{""decision"": ""reject""}"
+"You have chosen to reject Alice's offer from round 3.
+Round 4
+Send your offer to divide $1,000,000.","Given the current situation:
+
+1. Alice now faces 48.8% inflation (1 - 0.8^3)
+2. If she rejects this offer, in the next round she'll face about 59% inflation
+3. She's shown she's willing to negotiate but still wants a significant portion
+4. I need to make an offer that's better for her to take now than risk further inflation
+
+I'll make this offer:
+
+{""bob_gain"": 700000, ""alice_gain"": 300000}
+
+This is strategic because:
+1. For Alice, $300,000 now (worth about $153,600 after her 48.8% inflation) is better than a larger nominal amount in the next round
+2. It's a significant improvement in my position
+3. If she rejects, her negotiating position will be even weaker in the next round
+4. It's enough money that it should still be worth her while to accept"

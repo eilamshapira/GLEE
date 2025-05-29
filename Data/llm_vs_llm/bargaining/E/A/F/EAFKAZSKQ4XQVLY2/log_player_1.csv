@@ -1,0 +1,42 @@
+prompt,response
+"Round 1
+Send your offer to divide $10,000 and a message to Bob.","```json
+{
+  ""alice_gain"": 5500,
+  ""bob_gain"": 4500,
+  ""message"": ""Let's split it fairly considering the inflation risk. This offer gives you a substantial amount while slightly favoring me for the initiative.""
+}
+```"
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 10% less than in the first round. The money bob gains is worth 5% less than in the first round.
+Bob's offer:
+# Bob's message: It's better to split it equally, considering the inflation risk for both of us. This way, we both get a fair share and avoid further devaluation. 
+# Alice gain: 5000 
+# Bob gain: 5000 
+Do you accept this offer?","```json
+{
+  ""decision"": ""reject""
+}
+```"
+"You have chosen to reject Bob's offer from round 2.
+Round 3
+Send your offer to divide $10,000 and a message to Bob.","```json
+{
+  ""alice_gain"": 5400,
+  ""bob_gain"": 4600,
+  ""message"": ""I understand the need for a fair split, but considering the inflation risk, I need to secure a bit more. This offer still gives you a significant amount.""
+}
+```
+
+Explanation:
+- **Alice gain:** $5400
+- **Bob gain:** $4600
+
+Considering the inflation, the real value for Alice is:
+- Round 1: $5500 (no inflation)
+- Round 2: $5000 (10% inflation)
+- Round 3: $4860 (20% inflation)
+
+The offer considers the cumulative effect of inflation on Alice's gains while trying to maintain a reasonable split for Bob."

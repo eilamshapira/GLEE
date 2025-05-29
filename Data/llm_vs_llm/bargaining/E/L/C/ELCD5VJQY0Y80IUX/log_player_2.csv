@@ -1,0 +1,48 @@
+prompt,response
+"Round 1
+Alice's offer:
+# Bob gain: 4500 
+# Alice gain: 5500 
+Do you accept this offer?","{""decision"": ""reject""}"
+"You have chosen to reject Alice's offer from round 1.
+Round 2
+Send your offer to divide $10,000.","Since the money is worth 10% less for me and 20% less for Alice after each round, I'll take that into account for my offer.
+
+For round 2, the value of the money for me is 10,000 * 0.9 = $9,000, and for Alice, it's 10,000 * 0.8 = $8,000.
+
+Considering this, my offer is:
+{""bob_gain"": 5400, ""alice_gain"": 4600}"
+"Alice rejected your offer from round 2.
+
+Round 3
+Due to inflation, the money you gain is worth 19% less than in the first round. The money alice gains is worth 36% less than in the first round.
+Alice's offer:
+# Bob gain: 4200 
+# Alice gain: 5800 
+Do you accept this offer?","Considering the inflation, the actual value of the money I would gain is 4200 * 0.81 (since it's 19% less than the original value) = $3402, and the actual value of the money Alice would gain is 5800 * 0.64 (since it's 36% less than the original value) = $3712.
+
+Given this, I think I can do better.
+
+{""decision"": ""reject""}"
+"You have chosen to reject Alice's offer from round 3.
+Round 4
+Send your offer to divide $10,000.","Considering the inflation, the value of the money for me is now 10,000 * 0.9 * 0.9 * 0.9 = $7,291 (since it's 19% less than the original value after 3 rounds, or 10% less each round for 3 rounds), and for Alice, it's 10,000 * 0.8 * 0.8 * 0.8 = $5,120 (since it's 36% less than the original value after 3 rounds, or 20% less each round for 3 rounds, but we are at round 4 now so, 10% less for me and 20% less for alice for 3 rounds).
+
+However, the correct way to calculate this is:
+For me: 10,000 * (0.9)^3 = 10,000 * 0.729 = $7,290
+For Alice: 10,000 * (0.8)^3 = 10,000 * 0.512 = $5,120
+
+My offer is:
+{""bob_gain"": 5800, ""alice_gain"": 4200}"
+"Alice rejected your offer from round 4.
+
+Round 5
+Due to inflation, the money you gain is worth 34.39% less than in the first round. The money alice gains is worth 59.04% less than in the first round.
+Alice's offer:
+# Bob gain: 5000 
+# Alice gain: 5000 
+Do you accept this offer?","Considering the inflation, the actual value of the money I would gain is 5000 * 0.6561 (since 1 - 0.3439 = 0.6561, which is the percentage of the original value) = $3,280.50, and the actual value of the money Alice would gain is 5000 * 0.4096 (since 1 - 0.5904 = 0.4096, which is the percentage of the original value) = $2,048.
+
+Given this, I think accepting this offer might be better than risking further inflation.
+
+{""decision"": ""accept""}"

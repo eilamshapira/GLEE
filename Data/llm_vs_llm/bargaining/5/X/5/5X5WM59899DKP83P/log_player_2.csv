@@ -1,0 +1,57 @@
+prompt,response
+"Round 1
+Alice's offer:
+# Bob gain: 40 
+# Alice gain: 60 
+Do you accept this offer?","Okay, I'm playing as Bob.
+
+Let's analyze this offer. I would get $40, and Alice would get $60. Since this is Round 1, the money is worth its full value to both of us. I need to consider the potential loss due to inflation in later rounds if I reject.
+
+If I reject, I get to make a proposal in Round 2, but the total money is worth 5% less to me and 10% less to Alice.
+
+For now, I'll reject and see what I can offer in the next round.
+
+```json
+{""decision"": ""reject""}
+```"
+"You have chosen to reject Alice's offer from round 1.
+Round 2
+Send your offer to divide $100.","Okay, it's Round 2. The money is now worth 5% less to me and 10% less to Alice. I need to factor this in. I want to make an offer that's good enough for Alice to accept, but still maximizes my gain.
+
+Let's try offering Alice a bit more than she offered me last time, hoping she'll see it as a good deal considering the inflation.
+
+```json
+{""bob_gain"": 55, ""alice_gain"": 45}
+```"
+"Alice rejected your offer from round 2.
+
+Round 3
+Due to inflation, the money you gain is worth 9.75% less than in the first round. The money alice gains is worth 19% less than in the first round.
+Alice's offer:
+# Bob gain: 45 
+# Alice gain: 55 
+Do you accept this offer?","Alright, Round 3. Alice is offering me $45. Let's analyze the situation:
+
+*   **My Inflation:** The money is worth 9.75% less to me. So, $45 is actually worth $45 * (1 - 0.0975) = $40.69 (approximately) in Round 1 dollars.
+
+*   **Alice's Inflation:** The money is worth 19% less to Alice. So, $55 is actually worth $55 * (1 - 0.19) = $44.55 (approximately) in Round 1 dollars.
+
+I need to decide if accepting $40.69 (in Round 1 dollars) is better than potentially getting less in future rounds due to more inflation.
+
+I'm going to reject again. It's close, but I'm hoping I can get a better deal.
+
+```json
+{""decision"": ""reject""}
+```"
+"You have chosen to reject Alice's offer from round 3.
+Round 4
+Send your offer to divide $100.","Okay, Round 4. The inflation is really starting to bite!
+
+*   My inflation is now 14.2625% (1 - (0.95^3))
+*   Alice's inflation is now 27.1% (1 - (0.9^3))
+
+I need to make an offer that is very attractive to Alice, given her inflation rate. Let's try offering her a significant portion of the remaining money.
+
+```json
+{""bob_gain"": 40, ""alice_gain"": 60}
+```"

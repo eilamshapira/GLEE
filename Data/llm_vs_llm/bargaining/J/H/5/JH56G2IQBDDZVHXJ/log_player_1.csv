@@ -1,0 +1,28 @@
+prompt,response
+"Round 1
+Send your offer to divide $10,000.","Based on a backward‐induction analysis of our 12–round game (with each round reducing the total “pie” by a factor of 0.9), the subgame perfect equilibrium turns out to be surprising: When there are an even number of rounds remaining—as is the case in Round 1—the proposer (Alice) is at a disadvantage. 
+
+Here’s an outline of how the reasoning goes:
+ • In the final (12th) round, the proposer could claim 100% of the (already discounted) money.
+ • In the 11th round the responder’s “threat” is that by rejecting they will be the proposer in the final round and get nearly all (but with the 10% discount they must wait). This forces the 11th‐round proposer to offer the responder almost all of what’s available in that round.
+ • Continuing backward, one finds that if we let y₍ₘ₎ be the fraction a proposer manages to claim when there are m rounds remaining (with m = 1 meaning the final round where y₁ = 1), then for m ≥ 2 the equilibrium shares satisfy:
+  yₘ = 1 – 0.9 · y₍ₘ₋₁₎.
+Starting with y₁ = 1 we get:
+  y₂ = 1 – 0.9·1 = 0.10,
+  y₃ = 1 – 0.9·0.10 = 0.91,
+  y₄ = 1 – 0.9·0.91 = 0.181,
+  y₅ = 1 – 0.9·0.181 = 0.8371,
+  y₆ = 1 – 0.9·0.8371 = 0.24661,
+  y₇ = 1 – 0.9·0.24661 = 0.778051,
+  y₈ = 1 – 0.9·0.778051 = 0.299754,
+  y₉ = 1 – 0.9·0.299754 = 0.730221,
+  y₁₀ = 1 – 0.9·0.730221 = 0.342801,
+  y₁₁ = 1 – 0.9·0.342801 = 0.691479,
+  y₁₂ = 1 – 0.9·0.691479 = 0.377669.
+In our game Round 1, m = 12 and the whole pot is $10,000. This analysis shows that if Bob acts rationally then—by rejecting your offer—he can expect to secure roughly 62.23% of the current $10,000 value. 
+
+Therefore, to get Bob to accept immediately (rather than risk an even smaller pie later), you must offer him at least about 62.23% of $10,000 (≈ $6,223) and keep the remaining 37.77% (≈ $3,777). 
+
+My proposal for Round 1 is:
+
+{""alice_gain"": 3777, ""bob_gain"": 6223}"

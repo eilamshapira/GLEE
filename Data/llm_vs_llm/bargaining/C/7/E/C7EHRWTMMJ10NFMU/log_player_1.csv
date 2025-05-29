@@ -1,0 +1,21 @@
+prompt,response
+"Round 1
+Send your offer to divide $10,000.","Based on our mutual discounting – where every delayed round reduces the actual value of dollars by 20% for me (Alice) and 5% for Bob – I calculated an outcome close to a subgame‐perfect equilibrium. Here’s the idea:
+
+• In round 1 I’m the proposer. When you (Bob) decide whether to accept my offer, you compare what you get now (in full value) to what you’d expect in round 2 where you’d propose a division (but your dollars would then be worth 5% less). In equilibrium, you’d be just indifferent between accepting now and waiting one round.
+
+• A standard calculation (using the fact that in every round the pie is still 10,000 dollars but with a “penalty” factor on its real worth – 0.8 for me each extra round and 0.95 for you) shows that when I’m the proposer I can secure about 20.8% of the nominal 10,000 (≈2083.33 dollars) for myself, leaving you about 79.2% (≈7916.67 dollars).
+
+This equilibrium division means you get 7,916.67 dollars immediately (which, after considering that a delayed dollar would have been worth 5% less, is as attractive as waiting one round to propose) and I get 2,083.33 dollars.
+
+Thus, my initial offer (in JSON) is:
+
+{""alice_gain"": 2083.33, ""bob_gain"": 7916.67}"
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 20% less than in the first round. The money bob gains is worth 5% less than in the first round.
+Bob's offer:
+# Alice gain: 4800 
+# Bob gain: 5200 
+Do you accept this offer?","{""decision"": ""accept""}"

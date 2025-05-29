@@ -1,0 +1,54 @@
+prompt,response
+"Round 1
+Alice's offer:
+# Bob gain: 40 
+# Alice gain: 60 
+Do you accept this offer?","Let's analyze this offer.
+
+*   **Alice's Offer:** Bob gets $40, Alice gets $60.
+
+*   **Current Value:** Since this is round 1, the money is still worth $100 for both of us.
+
+*   **My Perspective (Bob):** I would get $40. If I reject, I risk getting less later due to inflation and the limited number of rounds.
+
+*   **Alice's Perspective:** Alice gets $60. If she continues to the next round, it will be me making the decision.
+
+Considering the immediate gain and the risk of diminishing returns in later rounds due to inflation, $40 is not a great deal, but it's something. I will reject this offer to try and negotiate for more.
+
+```json
+{""decision"": ""reject""}
+```"
+"You have chosen to reject Alice's offer from round 1.
+Round 2
+Send your offer to divide $100.","Okay, it's my turn to propose. I need to balance getting a good share now with Alice potentially rejecting and the value of the money decreasing in future rounds. I will propose a more favorable split for myself, but still leave Alice with a reasonable amount to encourage acceptance.
+
+```json
+{
+  ""bob_gain"": 60,
+  ""alice_gain"": 40
+}
+```"
+"Alice rejected your offer from round 2.
+
+Round 3
+Due to inflation, the money you gain is worth 36% less than in the first round. The money alice gains is worth 19% less than in the first round.
+Alice's offer:
+# Bob gain: 45 
+# Alice gain: 55 
+Do you accept this offer?","Okay, let's analyze this offer, taking into account the inflation.
+
+*   **Alice's Offer:** Bob gets $45, Alice gets $55.
+*   **Inflation:** My money is worth 36% less and hers is worth 19% less than in round 1. That is:
+    *   Bob's money is worth 1 - 0.36 = 0.64 of its original value.
+    *   Alice's money is worth 1 - 0.19 = 0.81 of its original value.
+
+Let's determine the real value of the offer for both:
+
+*   **Bob's perspective:** $45 * 0.64 = $28.8
+*   **Alice's perspective:** $55 * 0.81 = $44.55
+
+This offer is not very good for me because the real value for me is 28.8. Let's consider my alternatives. If I reject, I will have to create a proposal in the next round, in which my money will be worth even less. I don't think I can make any better proposal than this. Let's accept.
+
+```json
+{""decision"": ""accept""}
+```"

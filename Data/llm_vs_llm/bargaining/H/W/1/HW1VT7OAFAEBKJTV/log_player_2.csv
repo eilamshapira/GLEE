@@ -1,0 +1,47 @@
+prompt,response
+"Round 1
+Alice's offer:
+# Alice's message: Let's start fair and split it 50-50. What do you say, Bob? 
+# Bob gain: 500000 
+# Alice gain: 500000 
+Do you accept this offer?","Let me think about this strategically. 
+
+Alice has offered a 50-50 split ($500,000 each). While this appears fair on the surface, I need to consider:
+
+1. I get to make the next offer if I reject
+2. Money loses value faster for Alice (10% per round) than for me (5% per round)
+3. This differential in value decay gives me some negotiating leverage
+
+Since this is the first round and I have minimal value decay so far, I could potentially get a better deal by making a counter-offer. With Alice's steeper value decay rate, she may be more inclined to accept a less equal split in later rounds.
+
+{""decision"": ""reject""}"
+"You have chosen to reject Alice's offer from round 1.
+Round 2
+Send your offer to divide $1,000,000 and a message to Alice.","Given that money devalues faster for Alice than for me, I'll propose a split slightly in my favor, but not too aggressive to avoid multiple rounds of negotiation which would hurt us both.
+
+{""bob_gain"": 600000,
+""alice_gain"": 400000,
+""message"": ""Since money devalues faster for you (10% vs my 5% per round), this split actually helps us both reach a fair outcome when accounting for time value. Let's avoid multiple rounds of negotiation which would hurt us both.""}"
+"Alice rejected your offer from round 2.
+
+Round 3
+Due to inflation, the money you gain is worth 9.75% less than in the first round. The money alice gains is worth 19% less than in the first round.
+Alice's offer:
+# Alice's message: Bob, considering the inflation rates, I propose we split it 45-55 in your favor. This way, we both get a fair share adjusted for the devaluation. What do you think? 
+# Bob gain: 550000 
+# Alice gain: 450000 
+Do you accept this offer?","Let me analyze this offer:
+
+1. Alice is offering me $550,000 (55%) and taking $450,000 (45%)
+2. Due to inflation:
+   * My $550,000 is worth about $496,375 (after 9.75% devaluation)
+   * Alice's $450,000 is worth about $364,500 (after 19% devaluation)
+3. This is actually a worse deal for me than her initial 50-50 offer
+4. However, if I reject:
+   * Next round will have even more devaluation
+   * We're already in round 3 of 12
+   * The risk of continued negotiation could lead to worse outcomes for both
+
+Given that Alice has shown willingness to negotiate and the increasing risk of further devaluation, this offer is reasonable enough to accept.
+
+{""decision"": ""accept""}"

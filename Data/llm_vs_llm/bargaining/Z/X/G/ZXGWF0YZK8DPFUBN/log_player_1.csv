@@ -1,0 +1,54 @@
+prompt,response
+"Round 1
+Send your offer to divide $1,000,000.","Based on a backwards‐induction analysis (taking into account that with each round your dollar loses 5% of its original value while Bob’s loses 20%), here is one equilibrium calculation. Think of the game “backwards” from round 12:
+
+• In round 12 Bob would be the proposer. Since if Bob’s proposal is rejected both get nothing, he could offer Alice almost nothing and pocket nearly 1,000,000.
+
+• In round 11 (Alice’s turn) Bob’s “reservation” value (what he expects to get by waiting until round 12) forces Alice to offer him at least 800,000 (so that when Bob’s round‐11 discount 0.80^(11)/0.80^(10) is taken into account, Bob is as well off accepting as waiting). That would leave Alice 200,000 in nominal dollars.
+
+• In round 10 (Bob’s turn) a similar calculation shows that Bob can offer Alice about 190,000 and keep 810,000.
+
+• Continuing this procedure through rounds 9 down to round 2, one finds that at round 2 (Bob’s turn) his equilibrium offer would give Alice roughly 590,937 and himself 409,063 in nominal dollars.
+
+• Finally, with you (Alice) starting in round 1, you must take into account Bob’s continuation value from round 2. Since Bob’s round‐2 deal gives him 409,063 nominal dollars—but note that in round 2 Bob’s money is already discounted by 20% (i.e. multiplied by 0.80)—his effective “reservation” value when deciding in round 1 is about 409,063×0.80 ≈ 327,250 (nominal dollars). 
+
+Thus, to have Bob accept immediately in round 1 you must offer him at least about 327,250. In order for the whole pie to add to 1,000,000, you’d keep about 672,750.
+
+Below is the JSON proposal for round 1:
+
+{
+  ""alice_gain"": 672750,
+  ""bob_gain"": 327250
+}
+
+This offer reflects one equilibrium outcome assuming both players use backward‐induction reasoning and factor in the differing “inflation” (discount) rates."
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 5% less than in the first round. The money bob gains is worth 20% less than in the first round.
+Bob's offer:
+# Alice gain: 400000 
+# Bob gain: 600000 
+Do you accept this offer?","{""decision"": ""reject""}"
+"You have chosen to reject Bob's offer from round 2.
+Round 3
+Send your offer to divide $1,000,000.","{""alice_gain"": 833333, ""bob_gain"": 166667}"
+"Bob rejected your offer from round 3.
+
+Round 4
+Due to inflation, the money you gain is worth 14.26% less than in the first round. The money bob gains is worth 48.8% less than in the first round.
+Bob's offer:
+# Alice gain: 500000 
+# Bob gain: 500000 
+Do you accept this offer?","{""decision"": ""reject""}"
+"You have chosen to reject Bob's offer from round 4.
+Round 5
+Send your offer to divide $1,000,000.","{""alice_gain"": 561434, ""bob_gain"": 438566}"
+"Bob rejected your offer from round 5.
+
+Round 6
+Due to inflation, the money you gain is worth 22.62% less than in the first round. The money bob gains is worth 67.23% less than in the first round.
+Bob's offer:
+# Alice gain: 550000 
+# Bob gain: 450000 
+Do you accept this offer?","{""decision"": ""accept""}"

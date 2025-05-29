@@ -1,0 +1,17 @@
+prompt,response
+"Round 1
+Send your offer to divide $1,000,000.","Based on standard alternating‐offers bargaining logic with discounting—and assuming both players behave fully rationally—we can “solve” the game by backward induction. (Note: Although the full derivation is quite detailed, here’s an outline of the reasoning.)
+
+Let the game’s rounds be numbered 1 through 12. In the event of delay the “real” money each receives is discounted:
+• For you (Alice) the discount factor is 0.9 per round waited.
+• For Bob the discount factor is 0.95 per round waited.
+
+In the final round (round 12) Bob is the proposer. There Bob can “keep it all” (offering Alice an arbitrarily small amount) because if she rejects she ends up with nothing. Working backward one finds that in round 11, when you are the proposer, you must offer Bob just enough (in nominal dollars) so that the value he would get—if he waited to propose in round 12 after an extra 5% discount—is exactly matched. Repeating this step‐by‐step all the way back to round 1 (where you are the proposer) yields an equilibrium in which Bob’s continuation value if he rejects your round‑1 offer equals what he would gain in round 2 (after his discount for waiting a round).
+
+A (fairly standard) backward–induction calculation along these lines shows that in equilibrium your round‑1 offer should give Bob a nominal amount of about 790,882 dollars and you about 209,118 dollars. (The key step is as follows: In round 2, Bob, as proposer, would get about 831,455 dollars nominal, but because round 2’s money is discounted by 5% for him, his effective continuation value is 831,455×0.95 ≈ 790,882 dollars. Thus, in round 1 when Bob faces no discount, you must offer him at least 790,882 dollars so that he is indifferent between accepting now or waiting.)
+
+Thus, in round 1 your offer in JSON is as follows:
+
+{""alice_gain"": 209118, ""bob_gain"": 790882} 
+
+You may now relay this offer to Bob."

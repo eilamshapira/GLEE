@@ -1,0 +1,51 @@
+prompt,response
+"Round 1
+Send your offer to divide $1,000,000 and a message to Bob.","To start the game, I'll make a reasonable offer. Since the money decreases in value over rounds, it's beneficial to reach an agreement sooner rather than later. Considering the inflation rates, I'll propose a division that slightly favors me to account for the higher inflation rate I'm subject to, but still keeps the offer attractive enough for Bob to consider accepting.
+
+```json
+{
+  ""alice_gain"": 550000,
+  ""bob_gain"": 450000,
+  ""message"": ""Let's settle early to maximize value.""
+}
+```
+
+This offer gives me $550,000 and Bob $450,000, aiming to find a middle ground that acknowledges the different inflation rates we're both facing. The message encourages Bob to accept the offer to avoid further devaluation of the money."
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 20% less than in the first round. The money bob gains is worth 5% less than in the first round.
+Bob's offer:
+# Bob's message: I'm willing to share, but I believe my contribution is worth more. Let's see if we can find common ground. 
+# Alice gain: 400000 
+# Bob gain: 600000 
+Do you accept this offer?","Given the inflation rates, the actual values for us in this round are:
+- For me (Alice), 20% less than the original $1,000,000, which is $1,000,000 * 0.8 = $800,000.
+- For Bob, 5% less than the original $1,000,000, which is $1,000,000 * 0.95 = $950,000.
+
+Bob's offer gives me $400,000 out of the $800,000 (considering my inflation rate), which is 50% of the devalued amount I could get, and gives him $600,000 out of the $950,000 (considering his inflation rate), which is approximately 63.2% of what he could get.
+
+Considering the significant disparity in the offer and the fact that I'm facing a much higher inflation rate, which will further reduce my potential gain in subsequent rounds, I should reject this offer. It does not fairly account for my share, given the conditions.
+
+```json
+{
+  ""decision"": ""reject""
+}
+```"
+"You have chosen to reject Bob's offer from round 2.
+Round 3
+Send your offer to divide $1,000,000 and a message to Bob.","Given that we're in Round 3, the inflation has further reduced the value of the money:
+- For me (Alice), another 20% reduction from the $800,000, which is $800,000 * 0.8 = $640,000.
+- For Bob, another 5% reduction from the $950,000, which is $950,000 * 0.95 = $902,500.
+
+To make an attractive offer that considers the diminishing value and encourages Bob to accept, I'll aim for a more balanced distribution, keeping in mind the different inflation rates we're experiencing.
+
+```json
+{
+  ""alice_gain"": 520000,
+  ""bob_gain"": 480000,
+  ""message"": ""Considering the inflation, let's find a fair middle ground before it's too late.""
+}
+```
+
+This offer gives me $520,000 and Bob $480,000, which, considering the current values after inflation ($640,000 for me and $902,500 for Bob), translates to approximately 81.3% of my potential share and about 53.3% of Bob's potential share. The message emphasizes the urgency of reaching an agreement due to the ongoing inflation."

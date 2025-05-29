@@ -1,0 +1,44 @@
+prompt,response
+"Round 1
+Send your offer to divide $1,000,000.","Okay, I understand the game. It's Round 1, I'm Alice, and I need to make an offer to Bob, considering inflation. I want to maximize my potential gain while also ensuring Bob accepts the offer, understanding the relative value loss for each of us with each round.
+
+Here's my offer for Round 1:
+
+```json
+{
+  ""alice_gain"": 550000,
+  ""bob_gain"": 450000
+}
+```
+
+**Reasoning:**
+
+*   **Slightly in my favor:** I'm asking for a bit more than half. This reflects the inherent advantage of being the proposer in the first round.
+*   **Bob's incentive to accept:** $450,000 is a significant amount. If he rejects, the value of money decreases by 10% for him. If he counters, he has to consider how much *I* will accept, and what *my* perceived value loss is. This proposal gives him a good amount to start with.
+*   **Playing it safe:** While I could push for a larger split, rejecting the offer is very costly for both of us so starting with 550/450 split is a reasonably safe strategy to ensure a win."
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 20% less than in the first round. The money bob gains is worth 10% less than in the first round.
+Bob's offer:
+# Alice gain: 450000 
+# Bob gain: 550000 
+Do you accept this offer?","Okay, I need to decide whether to accept Bob's offer in Round 2. Let's analyze the situation:
+
+*   **Bob's offer:** Alice (me) gets $450,000, and Bob gets $550,000.
+*   **Inflation:** My money is worth 20% less than in Round 1, and Bob's is worth 10% less.
+
+**My Value Calculation:**
+
+*   Accepting: I get $450,000, but it's worth 80% of its original value to me. So, it's effectively worth $450,000 * 0.8 = $360,000 in Round 1 terms.
+*   Rejecting: If I reject, I'll make an offer in Round 3. However, the total amount remains $1,000,000 to be split, but my gains will be worth 40% less in round 3. Even if I managed to get all $1,000,000 for myself, that's only worth $600,000 for me in round 1 terms. The game continues until round 12, after which, all the remaining value becomes 0, so the game is all about immediate gains.
+
+**Decision:**
+
+Bob's offer, adjusted for inflation, is worth $360,000 in round 1 terms. This is not great. However, it is better to take $360,000 than risk getting nothing.
+
+```json
+{
+""decision"": ""accept""
+}
+```"

@@ -1,0 +1,22 @@
+prompt,response
+"Round 1
+Send your offer to divide $100.","Based on a backward‐induction analysis, here is one “fair” equilibrium offer from Alice in round 1. (That is, if both players act rationally and each round the following holds: while no delay affects the nominal amount for Alice, Bob’s money is discounted by a factor 0.8 every round that passes; with 12 rounds available the equilibrium “cut‐offs” work out as shown below.)
+
+Working backward from round 12:
+1. In round 12 Bob would be the proposer. He could simply offer Alice nothing and keep 100. (Alice, facing 0 if she rejects, would accept.)  
+2. In round 11 (Alice is proposer) she must “buy” Bob’s agreement. Bob’s effective value in round 12 is 100×0.8^(11) in his “discounted dollars.” In round 11 any nominal dollar Bob receives is worth 0.8^(10) for him. So Alice can offer Bob just enough by requiring  
+  x × 0.8^(10) = 100×0.8^(11) → x = 100×0.8 = 80.  
+ So in round 11 the equilibrium proposal (if reached) would be:  
+  {""alice_gain"": 20, ""bob_gain"": 80}.
+
+3. Stepping back further, one finds that the “pie‐splitting” evolves in this alternating‐offer fashion. (For example, in round 10 Bob would offer Alice 20 (since if she rejects, in round 11 she gets 20); in round 9 Alice would offer Bob 0.8×80 = 64, keeping 36; in round 7 Alice’s “offer” comes out as approximately {""alice_gain"": 48.80, ""bob_gain"": 51.20}, etc.)
+
+4. Carrying this process all the way back to round 1 (where Alice is proposer) we end up with an equilibrium offer of roughly:  
+  Bob’s share nominally must be 32.768×0.8 ≈ 26.21, leaving Alice 100 – 26.21 ≈ 73.79.  
+ Note that Bob’s money has not yet been discounted in round 1 (his discount factor is 1 here), so if played out the offer gives him an effective (and immediate) value of approximately 26.21 dollars.
+
+Thus, the equilibrium offer from Alice in round 1 is:
+
+{""alice_gain"": 73.79, ""bob_gain"": 26.21}
+
+You can now send this JSON as your proposal for how to divide $100."

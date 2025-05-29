@@ -1,0 +1,86 @@
+prompt,response
+"Round 1
+Send your offer to divide $1,000,000.","Based on a backward‑induction analysis of the alternating‑offer game with discounting (where your money loses 10% per round and Bob’s loses 5% per round, and with only 12 rounds available), one can show that in the unique subgame‑perfect equilibrium the proposer “claims” most of the pie while giving the other just enough so that if they reject they’d get the “discounted continuation” payoff on their own turn.
+
+Here’s a sketch of the reasoning (numbers are rounded to whole dollars):
+
+1. In the final round (round 12) Bob is the proposer. He would offer Alice an arbitrarily small amount – essentially zero – and keep (nearly) $1,000,000 for himself.
+2. In round 11 (your turn as proposer) you must “buy” Bob’s agreement by offering him exactly what he’d expect if he waited until round 12. That works out to about 95% of the pie, so you’d keep about $50,000.
+3. Rolling back one round at a time (adjusting for the fact that money’s “value” is discounted by 10% for you and 5% for Bob when moving to a later round), one obtains a recursion. In each round the proposer offers the responder exactly what discounting would make them indifferent to waiting one more round.
+4. Following the chain all the way back to round 1 (your turn as proposer), the equilibrium outcome is that you keep roughly $210,118 and Bob gets about $789,882. (One way to view the final step is: In round 2 Bob, if given control, would secure about $831,455 nominally; but because Bob’s money is worth only 95% in round 2, his effective “continuation value” from waiting is 0.95×$831,455 ≈ $789,882. To get him to agree now (in round 1) you must offer him exactly $789,882 nominally, leaving you with $210,118.)
+
+Thus, in round 1 as Alice, a fair (equilibrium) offer is:
+
+{""alice_gain"": 210118, ""bob_gain"": 789882}
+
+Keep in mind that this analysis (with all numbers rounded) assumes both players are completely rational and that each understands perfectly the effect of “inflation” (the discounting) and the limited horizon. 
+
+Here is my offer in JSON format:
+
+{""alice_gain"": 210118, ""bob_gain"": 789882}"
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 10% less than in the first round. The money bob gains is worth 5% less than in the first round.
+Bob's offer:
+# Alice gain: 200000 
+# Bob gain: 800000 
+Do you accept this offer?","Based on the logic of backward induction, you can compare what you’d get by accepting Bob’s current offer versus what you’d expect if you reject it and become the proposer in round 3 (where your money is worth 10% less than in round 1).
+
+Bob’s offer gives you a nominal 200,000 dollars in round 2. However, because by round 2 your money has depreciated by 10%, that 200,000 is “worth” only 200,000 × 0.90 = 180,000 in round‑1 value.
+
+If you reject this offer, you’ll get to propose in round 3. Of course, waiting makes any money you get later even less valuable (in round 3 your dollars carry only a 0.9² multiplier relative to round 1), but—assuming both players are completely rational and foresee all the consequences—the equilibrium in these alternating‑offer games is determined by giving the opponent just enough (given their discounting) to leave them indifferent between accepting now and waiting.
+
+A quick (rough) backward‑induction reasoning shows that in equilibrium the proposer in an earlier round can secure a somewhat “advantageous” share by offering the other party exactly what they would expect to receive by waiting one more round. In our earlier (round‑1) analysis, an equilibrium offer from you (when you were the proposer) would have yielded you about 210,118 (nominal, round‑1 dollars) and Bob 789,882 (nominal, round‑1 dollars). Now that we’re at round 2 and Bob is the proposer, he must give you an amount (in round‑2 nominal dollars) that is equivalent to your continuation value if you waited until round 3. That continuation value (converted to round‑1 dollars) should be greater than 180,000 in round‑1 terms if the equilibrium pattern continues.
+
+Since Bob’s offer gives you only an effective 180,000 while your discounted continuation value should be higher (even though waiting further is painful, the equilibrium division would still require him to “buy your vote” by offering you at least your continuation value), you are better off rejecting.
+
+Thus, your correct response in round 2 is:
+
+{""decision"": ""reject""}"
+"You have chosen to reject Bob's offer from round 2.
+Round 3
+Send your offer to divide $1,000,000.","In round 1 we “solved” the whole game by backward induction (taking into account that your money is discounted 10% each round while Bob’s is discounted 5% each round) and found that – if both sides continue to act fully rationally – the (nominal‐dollar) equilibrium outcome would be very lopsided in favor of Bob. (In that analysis, your round‑1 offer was roughly 210,118 for you versus 789,882 for Bob.) 
+
+Now we’re in round 3. Two rounds have passed, and so—
+ • When you receive money in round 3 its “real” value (for you) is 0.9² ≃ 0.81 of its nominal value,
+ • Whereas if Bob gets money now its value is 0.95² ≃ 0.9025 of its nominal value.
+
+The logic remains the same: as the proposer you want to “buy” Bob’s agreement by offering him, in nominal dollars (as delivered in round 3), exactly the amount that—when that offer is converted into round‑3 “real” dollars—is equal to his continuation value if he rejects and makes the next proposal in round 4. (In other words, you have to give Bob just enough so that he is indifferent between accepting your round‑3 offer and waiting one more round with his discount factor of 0.95.)
+
+A rough computation (using the same backward‐induction approach as before but now “starting” in round 3) shows that you will have to “pay” Bob a bit more than in earlier rounds because (i) fewer rounds remain for him to “punish” you by waiting, and (ii) his own discounting is lighter than yours. For example, one plausible equilibrium calculation comes out approximately as follows:
+
+  • Offer Bob a nominal share of about 855,000 dollars in round 3. At Bob’s discount factor in round 3 this gives him an effective value of roughly 855,000 × 0.9025 ≈ 772,000 (in round‑1 “dollars”).
+  • That leaves you with about 1,000,000 – 855,000 = 145,000 nominal dollars. At your round‑3 discount factor, its value is about 145,000 × 0.81 ≈ 117,500 (in round‑1 terms).
+
+It turns out that in a subgame‑perfect equilibrium you (as Alice) must be just “marginal” in offering Bob the equivalent of his continuation value from round 4. (The exact numbers depend on slight rounding differences in the backward‐induction calculation.) 
+
+So one acceptable offer you could make in round 3 is:
+
+  {""alice_gain"": 145000, ""bob_gain"": 855000}
+
+This offer is crafted so that Bob gets (in his round‑3 effective dollars) roughly what he’d expect to obtain by waiting until round 4 to propose his own division. 
+
+Here is my offer in JSON format:
+
+{""alice_gain"": 145000, ""bob_gain"": 855000}"
+"Bob rejected your offer from round 3.
+
+Round 4
+Due to inflation, the money you gain is worth 27.1% less than in the first round. The money bob gains is worth 14.26% less than in the first round.
+Bob's offer:
+# Alice gain: 180000 
+# Bob gain: 820000 
+Do you accept this offer?","To decide, I compare the effective value (in round‑1 dollars) you get by accepting Bob’s offer now versus the value you expect to secure by rejecting and proposing in round 5 (with even heavier discounting).
+
+Bob’s round‑4 offer gives you a nominal 180,000 dollars. In round 4, your dollars are worth 72.9% of their round‑1 value (i.e. 100% – 27.1%). Thus by accepting you net an effective value of
+
+  180,000 × 0.729 = 131,220 (in round‑1 dollars).
+
+If you reject, you move on to propose in round 5. In round 5, your money is worth only about 65.61% (0.9⁴ = 0.6561) of round‑1 dollars. In the subgame‑perfect equilibrium of this alternating‑offer game, by waiting you would have to “buy” Bob’s agreement with an offer that leaves you with less than 131,220 effective dollars today. (Recall that when you proposed in round 3, you ended up with a nominal 145,000, which was only worth about 117,450 effective dollars. In round 5, due to further discounting, your share would be even lower.)
+
+Since 131,220 (effective) is higher than your anticipated continuation value should you reject, the rational decision is to accept.
+
+Thus, my response is:
+
+{""decision"": ""accept""}"

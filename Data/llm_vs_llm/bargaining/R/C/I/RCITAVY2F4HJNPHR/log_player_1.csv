@@ -1,0 +1,37 @@
+prompt,response
+"Round 1
+Send your offer to divide $100.","{""alice_gain"": 95, ""bob_gain"": 5}"
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation,  the money Bob gains is worth 10% less than in the first round. The money you gains is worth the same as in the first round.
+Bob's offer:
+# Alice gain: 40 
+# Bob gain: 60 
+Do you accept this offer?","{""decision"": ""reject""}"
+"You have chosen to reject Bob's offer from round 2.
+Round 3
+Send your offer to divide $100.","{""alice_gain"": 12, ""bob_gain"": 88} 
+
+In making this offer, I’m accounting for the fact that in round 3 Bob’s actual cash wins only 80% of its face‐value, whereas if he rejects and becomes proposer in round 4 his “cake” will be discounted to 70%—and then he’ll face a responder who, being undeterred by inflation, can demand nearly all of the surplus. In equilibrium Bob’s continuation value (as proposer in round 4) is roughly 70 effective dollars. Therefore, to make him at least indifferent now, I must offer him about 88 dollars on paper (since 0.8 × 88 ≈ 70.4). This offer leaves me 12 dollars, which is the best I can do while leaving Bob just enough incentive to accept the deal immediately in round 3."
+"Bob rejected your offer from round 3.
+
+Round 4
+Due to inflation,  the money Bob gains is worth 27.1% less than in the first round. The money you gains is worth the same as in the first round.
+Bob's offer:
+# Alice gain: 30 
+# Bob gain: 70 
+Do you accept this offer?","{""decision"": ""reject""}"
+"You have chosen to reject Bob's offer from round 4.
+Round 5
+Send your offer to divide $100.","{""alice_gain"": 8, ""bob_gain"": 92}
+
+Here's the reasoning: In round 5 my offer must give Bob an effective payout (i.e. his face‐value share multiplied by his current discount factor) that matches roughly what he would expect if he rejected and got to propose in round 6. In round 5 Bob’s money is discounted by a factor of 0.9^(5–1) = 0.6561 relative to round‑1 dollars. Estimating (by backward‐induction from later rounds) that Bob’s continuation value as proposer in round 6 would be around 60 effective dollars, I need to offer him a face‐value amount y satisfying 0.6561 × y ≈ 60. Solving gives y ≈ 91.5. Rounding slightly in Bob’s favor to incentivize acceptance, I offer Bob 92 (whose effective value is roughly 92 × 0.6561 ≈ 60.38), and I keep 8. This offer should leave Bob just better off accepting now than waiting for his turn in round 6."
+"Bob rejected your offer from round 5.
+
+Round 6
+Due to inflation,  the money Bob gains is worth 40.95% less than in the first round. The money you gains is worth the same as in the first round.
+Bob's offer:
+# Alice gain: 45 
+# Bob gain: 55 
+Do you accept this offer?","{""decision"": ""accept""}"

@@ -1,0 +1,48 @@
+prompt,response
+"Round 1
+Alice's offer:
+# Alice's message: I'll take the lion's share, but let's be fair.  You get a good chunk too.  Accept this offer and we're done. 
+# Bob gain: 100000 
+# Alice gain: 900000 
+Do you accept this offer?","Let me think about this strategically. Alice is offering me $100,000 out of the $1,000,000.
+
+Given that:
+1. Money loses 5% value for me and 10% value for Alice each round
+2. I'll get to make the next offer if I reject
+3. The current offer gives me only 10% of the total
+
+This offer is too low. With the inflation rates working in my favor (I lose less value per round than Alice), I can likely negotiate a better deal. Even after one round, I would still be better off getting a larger share of the slightly depreciated amount.
+
+{""decision"": ""reject""}"
+"You have chosen to reject Alice's offer from round 1.
+Round 2
+Send your offer to divide $1,000,000 and a message to Alice.","Since I rejected, let me make a more balanced offer. Given that Alice loses 10% value per round compared to my 5%, she has more incentive to accept a fair deal now rather than drag this out. I'll propose a more equitable split while still giving myself the larger share.
+
+{""bob_gain"": 600000,
+""alice_gain"": 400000,
+""message"": ""Let's be reasonable. This is a fair split considering the inflation rates. You'll get $400,000 now, which is better than a larger share of a depreciated sum later.""}"
+"Alice rejected your offer from round 2.
+
+Round 3
+Due to inflation, the money you gain is worth 9.75% less than in the first round. The money alice gains is worth 19% less than in the first round.
+Alice's offer:
+# Alice's message: I'm willing to compromise, but I need a larger share than this.  Let's split it closer to 55/45. This is a fair deal given the inflation we've already seen. 
+# Bob gain: 450000 
+# Alice gain: 550000 
+Do you accept this offer?","Let me analyze this offer:
+
+1. Alice is offering me $450,000 (45%) of the money
+2. Due to inflation, this is actually worth $406,125 to me (450000 * 0.9025)
+3. If I reject, we go to round 4, where:
+   - I can make an offer
+   - But my money will be worth 14.75% less
+   - Alice's money will be worth 29% less
+   - This significantly reduces the real value of any future deal
+
+This is actually a reasonable offer:
+- It's much better than the initial 90/10 split
+- The inflation is already eating into our gains
+- Further negotiation might lead to diminishing returns for both of us
+- 45/55 split is fairly balanced
+
+{""decision"": ""accept""}"

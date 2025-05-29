@@ -1,0 +1,41 @@
+prompt,response
+"Round 1
+Send your offer to divide $10,000.","Okay, I understand the game. I need to make an offer that Bob is likely to accept, considering the diminishing value of the money for both of us with each passing round. I also need to factor in that I will be receiving offers from Bob in future rounds with even lower value.
+
+Here's my offer for round 1:
+
+```json
+{
+  ""alice_gain"": 6000,
+  ""bob_gain"": 4000
+}
+```
+
+**Reasoning:**
+
+*   I'm aiming for a significant share, as I'd prefer to secure a decent amount early on.
+*   Giving Bob $4000 provides him with a substantial amount that might be tempting to accept right away.
+*   It leaves some room for negotiation if Bob rejects the offer, considering the rapidly declining value of the money for him."
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 5% less than in the first round. The money bob gains is worth 20% less than in the first round.
+Bob's offer:
+# Alice gain: 4500 
+# Bob gain: 5500 
+Do you accept this offer?","Okay, let's analyze Bob's offer.
+
+*   **My perspective:** $4500 in this round is worth 5% less than in round 1. So it is actually worth $4500 * 0.95 = $4275.
+*   **Bob's perspective:** $5500 in this round is worth 20% less than in round 1. So it is actually worth $5500 * 0.80 = $4400.
+
+I need to consider if rejecting this and making a counter-offer in the next round is worth the risk, knowing the money will be worth even less. I need to figure out what I'd be willing to offer Bob in the next round, and whether that would realistically be accepted.
+
+If I accept this offer, I get $4275. If I reject, the money is worth 5% less next round. I need to make at least $4275/0.95 = $4500 in value in the next round. In other words, I will need to earn at least 4500$ in value.
+
+Given the situation, while Bob's offer isn't ideal, it's probably wise to accept it to avoid the risk of getting even less in later rounds due to the rapid depreciation for both of us.
+
+```json
+{
+  ""decision"": ""accept""
+}
+```"

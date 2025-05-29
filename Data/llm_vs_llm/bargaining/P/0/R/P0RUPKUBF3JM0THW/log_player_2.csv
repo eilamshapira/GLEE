@@ -1,0 +1,75 @@
+prompt,response
+"Round 1
+Alice's offer:
+# Alice's message: I propose a 55-45 split considering our different inflation rates. This is fair since my money loses value faster than yours. 
+# Bob gain: 450000 
+# Alice gain: 550000 
+Do you accept this offer?","Here's my thought process:
+
+*   **Current Situation:** Alice is proposing a 55/45 split, giving me $450,000.
+
+*   **Inflation:** My money loses 5% of its value each round. Alice's loses 10%.
+
+*   **Potential Future Rounds:** If I reject, I'll have to propose a split next round. The money will be worth less to both of us.
+
+*   **Decision:** $450,000 now is a significant amount. If I reject, I risk getting less in future rounds due to inflation and the possibility of the game ending without a deal. Considering Alice's higher inflation rate might make her agree to a lower value of the money. Since there are many rounds left, rejecting is a valid option.
+
+```json
+{""decision"": ""reject""}
+```"
+"You have chosen to reject Alice's offer from round 1.
+Round 2
+Send your offer to divide $1,000,000 and a message to Alice.","Okay, it's my turn to make an offer. Given the information I have, here's my strategy:
+
+*   **Alice's Inflation:** Alice loses 10% of the value each round, so she's likely more motivated to make a deal sooner rather than later.
+*   **My Inflation:** I lose 5% each round, which is still significant, but less urgent than Alice's situation.
+*   **Risk Tolerance:** We have 11 rounds left, so there's still time to negotiate, but the risk of getting nothing increases with each round.
+*   **Initial Offer:** I will make an offer that favors me, but is still reasonable enough to be considered by Alice, since she is in a bit of a hurry.
+    I'll aim for a 60/40 split in my favor.
+
+```json
+{
+  ""bob_gain"": 600000,
+  ""alice_gain"": 400000,
+  ""message"": ""I propose a 60-40 split. You're losing value faster. Let's make a deal.""
+}
+```"
+"Alice rejected your offer from round 2.
+
+Round 3
+Due to inflation, the money you gain is worth 9.75% less than in the first round. The money alice gains is worth 19% less than in the first round.
+Alice's offer:
+# Alice's message: Let's be reasonable. Each round costs me 10% and you 5%. A 52.5-47.5 split is fair and we both lose by delaying. Let's make this deal now. 
+# Bob gain: 475000 
+# Alice gain: 525000 
+Do you accept this offer?","Okay, let's analyze this situation:
+
+*   **Current Offer:** Alice offers a 52.5/47.5 split, giving me $475,000.
+*   **My Inflation:** The money is worth 9.75% less to me than in Round 1.
+*   **Alice's Inflation:** The money is worth 19% less to Alice than in Round 1.
+*   **Alice's Argument:** She emphasizes the cost of delay due to inflation, which is true for both of us, but more for her.
+
+Let's think about rejecting:
+* Each round i lose 5% and Alice loses 10%.
+* So, rejecting means Alice will lose twice as much as I do.
+
+Given that she is losing twice as much money as I am, I will try to capitalize on it and propose a better deal next round.
+
+```json
+{""decision"": ""reject""}
+```"
+"You have chosen to reject Alice's offer from round 3.
+Round 4
+Send your offer to divide $1,000,000 and a message to Alice.","Alright, it's my turn again. I'll factor in the continued inflation and try to make a compelling offer, leveraging Alice's higher rate of loss.
+
+*   **My Inflation:** I'm down 5% each round compared to the previous round. So in total, my money is now worth 1 - 0.05 - 0.05*(1-0.05) - 0.05*(1-0.05)^2 = 0.857375 of original money.
+*   **Alice's Inflation:** Alice is down 10% each round compared to the previous round. So in total, her money is now worth 1 - 0.1 - 0.1*(1-0.1) - 0.1*(1-0.1)^2 = 0.729 of original money.
+*   **Strategy:** I will offer Alice slightly better than before, and better than what she would get if she rejects. This will put pressure on her because her value loss is greater than mine.
+
+```json
+{
+  ""bob_gain"": 570000,
+  ""alice_gain"": 430000,
+  ""message"": ""Considering inflation, my offer is 57-43. You're losing value faster than I am. This is more beneficial for both of us than delaying any further.""
+}
+```"

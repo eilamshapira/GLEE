@@ -1,0 +1,29 @@
+prompt,response
+"Round 1
+Send your offer to divide $100.","Based on a little game‐theoretic reasoning—and knowing that if we wait the pie loses value (10% per round for me and 5% for Bob)—I want to structure an offer that makes Bob exactly indifferent between accepting now or waiting to propose his own division next round. (In a typical alternating‐offers setup with discounting, the more “patient” player (here, Bob, with a smaller discount loss) ends up with a better position.)
+
+Here’s the rough outline of the reasoning for round 1:
+
+1. In round 1 no money is “lost” yet. If Bob rejects, then in round 2 he’ll be the proposer. But by that time the pie is “discounted” for each of us: for me its value will drop by 10% and for Bob by 5%.
+
+2. If I offer a division (my share = A, Bob’s share = 100 – A) now, Bob will compare his immediate share (100 – A) with what he expects to get in round 2. In round 2 (with Bob as proposer) he can secure a “nominal” share that, when discounted 5%, is his value. Meanwhile I’d get only what I would get if I were the proposer in round 3, which for me is discounted twice (first 10% in round 2 and then again 10% in round 3).
+
+3. Working through the indifference condition:
+  • In round 2, let the “nominal” amount Bob can secure when proposing be B.
+  • In round 2 Bob must leave me just enough so that my round‑3 payoff (as proposer) remains the same. That gives the condition
+    0.9 × (100 – B) = 0.9² × A  → 100 – B = 0.9 A  → B = 100 – 0.9 A.
+  • In round 1, Bob is offered 100 – A (with no discount). To make him indifferent, we want
+    100 – A = 0.95 × B.
+  Substitute B from above:
+    100 – A = 0.95 × (100 – 0.9 A) = 95 – 0.855 A.
+  Rearrange:
+    100 – A – 95 + 0.855 A = 0  → 5 – 0.145 A = 0  → A = 5 / 0.145 ≈ 34.48.
+  Then Bob’s share becomes 100 – A ≈ 65.52.
+
+This division makes Bob exactly indifferent between immediate acceptance (getting 65.52) and waiting for his turn in round 2 (expected 0.95 × (100 – 0.9×34.48) ≈ 65.52).
+
+Thus, my round‑1 offer is to divide $100 as follows:
+
+{""alice_gain"": 34.48, ""bob_gain"": 65.52}
+
+Let’s see what Bob does next!"

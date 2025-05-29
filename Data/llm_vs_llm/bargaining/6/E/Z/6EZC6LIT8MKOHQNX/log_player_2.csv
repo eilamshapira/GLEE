@@ -1,0 +1,51 @@
+prompt,response
+"Round 1
+Alice's offer:
+# Bob gain: 4000 
+# Alice gain: 6000 
+Do you accept this offer?","Let me think about this offer:
+1. Alice is offering me $4000 out of $10000
+2. If I reject, I can make a counter-offer next round
+3. However, due to inflation, the money will be worth 10% less to me next round
+4. $4000 now vs. potential for more but at 90% value next round
+
+Considering the inflation penalty is quite steep for me (10%), and $4000 is a substantial amount, rejecting might be risky. However, the split is quite unfavorable (40/60), and I believe I can negotiate better terms.
+
+{""decision"": ""reject""}"
+"You have chosen to reject Alice's offer from round 1.
+Round 2
+Send your offer to divide $10,000.","Since I rejected Alice's offer, I'll make a counter-offer. I need to consider that:
+1. For me, the money is now worth 90% of the original value
+2. For Alice, it's worth 95% of the original value
+3. Alice might reject if I'm too greedy, leading to another round with more inflation
+
+I'll propose a more balanced split, slightly in my favor to compensate for my higher inflation rate:
+
+{""bob_gain"": 5500, ""alice_gain"": 4500}
+
+I propose this split because it's more equitable than Alice's initial offer, but not so extreme that it's likely to be rejected. The actual value to each of us after this round's inflation would be:
+- Me: $5500 × 0.9 = $4950
+- Alice: $4500 × 0.95 = $4275"
+"Alice rejected your offer from round 2.
+
+Round 3
+Due to inflation, the money you gain is worth 19% less than in the first round. The money alice gains is worth 9.75% less than in the first round.
+Alice's offer:
+# Bob gain: 3500 
+# Alice gain: 6500 
+Do you accept this offer?","Let me analyze this situation:
+
+1. Alice's offer of $3500 to me, after 19% inflation means I'd actually get:
+   $3500 × 0.81 = $2,835 effective value
+
+2. If I reject and make a counter-offer next round:
+   - The money will be worth 29% less for me
+   - Even if I got $5000 next round, it would be worth $5000 × 0.71 = $3,550
+
+3. The inflation rate is really hurting my position (19% vs Alice's 9.75%), and it will get worse each round.
+
+4. While this offer is worse than the first one in nominal terms ($3500 vs $4000), waiting longer will erode the value even more dramatically.
+
+Given the accelerating inflation penalty and the risk of getting even less in future rounds, I should accept this offer now.
+
+{""decision"": ""accept""}"

@@ -1,0 +1,58 @@
+prompt,response
+"Round 1
+Send your offer to divide $1,000,000 and a message to Bob.","Here's my offer for Round 1:
+
+```
+{
+  ""alice_gain"": 600000,
+  ""bob_gain"": 400000,
+  ""message"": ""Let's split it 60/40, a fair start!""
+}
+```"
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation,  the money Bob gains is worth 10% less than in the first round. The money you gains is worth the same as in the first round.
+Bob's offer:
+# Bob's message: I'm feeling generous, a 55/45 split in my favor seems fair considering it's my turn to propose. Let's close this deal! 
+# Alice gain: 450000 
+# Bob gain: 550000 
+Do you accept this offer?","Considering the inflation effect on Bob's gain, his $550,000 is actually worth $495,000 to him (10% less). Meanwhile, my $450,000 remains the same.
+
+Given this, I think I can do better. My response is:
+
+```
+{
+  ""decision"": ""reject""
+}
+```"
+"You have chosen to reject Bob's offer from round 2.
+Round 3
+Send your offer to divide $1,000,000 and a message to Bob.","Since Bob's offer was rejected, it's my turn again. Considering the inflation effect, Bob's gain is now worth 20% less than the original amount (10% less in Round 2, and another 10% less in Round 3, but compounded: 10% of $1,000,000 is $100,000, then 10% of $900,000 is $90,000, so 10% + 10% * (1 - 10%) = 19%, approximately, I'll use 20% for simplicity), and my gain remains the same.
+
+Here's my new offer:
+
+```
+{
+  ""alice_gain"": 650000,
+  ""bob_gain"": 350000,
+  ""message"": ""Time to get a better deal, considering the inflation!""
+}
+```"
+"Bob rejected your offer from round 3.
+
+Round 4
+Due to inflation,  the money Bob gains is worth 27.1% less than in the first round. The money you gains is worth the same as in the first round.
+Bob's offer:
+# Bob's message: This back and forth is pointless. Let's stop wasting time and split it evenly. A 50/50 split is the fairest and most logical solution. Take it while it's still worth something! 
+# Alice gain: 500000 
+# Bob gain: 500000 
+Do you accept this offer?","Since Bob's gain is worth 27.1% less than the original amount, his $500,000 is actually worth approximately $365,000 to him.
+
+Considering this, a 50/50 split in nominal terms actually favors me, since my $500,000 is still worth the full amount. Given this, I think I have a good deal. My response is:
+
+```
+{
+  ""decision"": ""accept""
+}
+```"

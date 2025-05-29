@@ -1,0 +1,35 @@
+prompt,response
+"Round 1
+Send your offer to divide $100.","Based on a backward‐induction analysis—and assuming both players are perfectly rational—the idea is that in later rounds Bob (the “impatient” player whose dollars lose 10% value each round) will be forced to accept even a low share, while I (Alice) can “wait” without any discount. (Note: In each round the nominal amount is always 100, but Bob’s future dollars are “worth” 10% less per round of delay.)
+
+Here’s a brief outline of the reasoning (working backward from round 12):
+
+• In round 12 Bob is the proposer. Since if the offer is rejected both get nothing, Bob can offer Alice almost nothing (0) and keep 100.
+  
+• In round 11 Alice is the proposer. If Bob rejects then he becomes proposer in round 12 and will get 100 (nominal), but waiting one round costs him 10% so his “continuation value” is 0.9×100 = 90 in round‑11 terms. Hence, to secure acceptance, I must offer Bob at least 90 in round 11—leaving me with 10.
+
+• In round 10 Bob is the proposer. If Alice rejects, she’ll be proposer in round 11 and get 10 (without discount). Therefore Bob needs to offer her 10 (and keep 90).
+
+• In round 9 I am the proposer. Bob’s continuation if he rejects is what he can get in round 10 (90) discounted one round: 0.9×90 = 81. So I must offer him at least 81, leaving me 19.
+
+• In round 8 Bob is proposer. If Alice rejects, she’ll get 19 (in round 9) so Bob must offer her 19 (and keep 81).
+
+• In round 7 I propose. Bob’s rejection payoff would be his round‑8 share of 81 (as proposer) but discounted one round: 0.9×81 = 72.9. So I need to give him at least 72.9 and I can keep 27.1.
+
+• In round 6 Bob proposes. If I reject, then in round 7 (as proposer) I would get 27.1; so Bob must offer me at least 27.1, keeping 72.9.
+
+• In round 5 I propose. Bob’s continuation would be his round‑6 share, 72.9 (as proposer) discounted one round: 0.9×72.9 = 65.61. Thus I offer him 65.61 and keep 34.39.
+
+• In round 4 Bob proposes. If I reject, I’d get 34.39 in round 5; so Bob offers me 34.39 and keeps 65.61.
+
+• In round 3 I propose. Bob’s continuation (from round 4) is 65.61 discounted one round: 0.9×65.61 = 59.049. So I offer Bob 59.05 (approximately) and keep 40.95.
+
+• In round 2 Bob proposes. If I reject, then I’d be proposer in round 3 and get 40.95; so Bob offers me 40.95 and keeps 59.05.
+
+• Now here’s round 1. I am the proposer and must make Bob at least as well‐off as his “continuation value” if he rejects. In round 2 Bob would be proposer and, as computed, his share would be 59.05, but because he will have to wait one round his effective value is 0.9×59.05 ≈ 53.14 in current (round‑1) nominal dollars. 
+
+That means in round 1 I can propose to give Bob $53.14 while keeping $46.86 for myself. (Rounding to two decimals.)
+
+Below is my round‑1 offer in the requested JSON format:
+
+{""alice_gain"": 46.86, ""bob_gain"": 53.14}"

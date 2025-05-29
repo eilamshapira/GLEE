@@ -1,0 +1,39 @@
+prompt,response
+"Round 1
+Send your offer to divide $10,000.","Okay, I understand the rules. I want to make a fair offer to maximize my gains while also ensuring Bob accepts it, considering the diminishing value of the money with each passing round.
+
+Here's my offer for Round 1:
+
+```json
+{
+""alice_gain"": 5500,
+""bob_gain"": 4500
+}
+```
+
+**Reasoning:**
+
+*   **Fairness:** This split is slightly in my favor, but not excessively so. It's a reasonable starting point for negotiation.
+*   **Bob's Perspective:** In the first round, Bob might be tempted to reject any offer that doesn't seem close to a 50/50 split. Offering him $4500 should be enticing enough, especially considering the immediate 10% loss he'd face if we moved to the next round.
+*   **My Perspective:** I need to get a good deal early, while the money is worth more to me. I need to leave a little on the table so that Bob doesn't reject the offer."
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 5% less than in the first round. The money bob gains is worth 10% less than in the first round.
+Bob's offer:
+# Alice gain: 4500 
+# Bob gain: 5500 
+Do you accept this offer?","Okay, I understand the situation. Bob rejected my initial offer, and now he's making a counter-offer. I need to consider the inflation and how it affects the value of the money for both of us.
+
+*   **Value for me:** $4500 in this round is worth 5% less than it would have been in the first round. So, it's equivalent to $4500 * 0.95 = $4275 (in round 1 dollars).
+*   **Value for Bob:** $5500 in this round is worth 10% less to Bob than it would have been in the first round. So it's worth $5500 * 0.90 = $4950 (in round 1 dollars) for Bob.
+
+Essentially, Bob's offer translated to round 1 dollars is me getting 4275 and Bob getting 4950.
+
+Given the inflation, and considering we only have 12 rounds, I think it is in my best interest to accept this offer.
+
+```json
+{
+""decision"": ""accept""
+}
+```"

@@ -1,0 +1,39 @@
+prompt,response
+"Round 1
+Alice's offer:
+# Alice's message: Hi Bob, let's settle this quickly. I propose I take $83.33 and you get $16.67. Since with each round the pot’s value drops (5% for me and 20% for you), accepting now avoids unnecessary losses. I believe this division is fair given our future discount factors—please accept this offer. 
+# Bob gain: 16.67 
+# Alice gain: 83.33 
+Do you accept this offer?","I need to consider Alice's offer carefully. She's proposing I get $16.67 while she gets $83.33.
+
+My discount factor is 20% per round, which means waiting is quite costly for me. However, Alice's initial offer gives her over 83% of the total amount, which seems quite unfair to me.
+
+If I reject and make a counter-offer, I could propose a more equitable split, though the total value will decrease by 20% for me and 5% for Alice.
+
+I believe I can achieve a better outcome by negotiating, despite the time pressure.
+
+{""decision"": ""reject""}"
+"You have chosen to reject Alice's offer from round 1.
+Round 2
+Send your offer to divide $100 and a message to Alice.","I'll propose a more balanced split while acknowledging our different discount rates.
+
+{""bob_gain"": 45, 
+""alice_gain"": 55, 
+""message"": ""Hi Alice, I understand we have different discount rates, but your initial offer was too unbalanced. I'm proposing I get $45 and you get $55, which respects your advantage from the lower discount rate while still being fair to both of us. This way we can settle quickly and both walk away with a good outcome before further devaluation affects us.""}"
+"Alice rejected your offer from round 2.
+
+Round 3
+Due to inflation, the money you gain is worth 36% less than in the first round. The money alice gains is worth 9.75% less than in the first round.
+Alice's offer:
+# Alice's message: Hi Bob, here's my offer for Round 3. Considering that by waiting your money loses more value (20% per round for you) while mine only depreciates 5% per round, I propose the following split: you receive $67 and I receive $33. In effective terms this means you get about 67 × 0.60 ≈ $40 of present value (if you were to propose in Round 4 you could at best secure roughly $40 for yourself), while I get 33 × 0.90 ≈ $30. I believe this offer reflects our respective discount factors and leaves you just as well off as waiting. Let’s settle now and avoid further devaluation. 
+# Bob gain: 67 
+# Alice gain: 33 
+Do you accept this offer?","I need to evaluate Alice's new offer of $67 for me and $33 for her.
+
+With my 20% discount per round, this Round 3 offer gives me approximately $67 × 0.64 = $42.88 in effective value (accounting for the 36% cumulative discount).
+
+If I reject and make an offer in Round 4, the money would be worth 20% less again for me. Alice seems to have recognized that her initial offer was too unbalanced and has now offered me the majority share.
+
+This is a significant improvement from her first offer and actually gives me more than I proposed in Round 2 when accounting for the discount factors. This is a fair offer considering our respective discount rates.
+
+{""decision"": ""accept""}"

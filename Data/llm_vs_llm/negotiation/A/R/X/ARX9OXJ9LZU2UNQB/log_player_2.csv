@@ -1,0 +1,44 @@
+prompt,response
+"Alice's offer:
+# Alice's message: Hi Bob, I'm offering my product to you for $140. It's a high-quality item that I think you'll find very useful. Are you interested in purchasing it at this price? 
+# Alice's offer: The product price will be $140. 
+You have three options:
+(1) Accept Alice's offer, and buy the product for $140
+(2) Reject Alice's offer and proceed to the next round, where you will send Alice a counteroffer
+(3) Buy the product from Jhon for $100","```json
+{""decision"": ""RejectOffer""}
+``` 
+Alice's offer is significantly higher than both your maximum price and what John offers.  It's time to negotiate."
+"You chose to make a counteroffer to Alice.
+
+Send your counteroffer to Alice.","```json
+{
+""message"": ""Hi Alice, thanks for offering your product.  While I agree it looks useful, $140 is a bit steep for me. Would you consider $85?"",
+""product_price"": 85
+}
+```
+
+**Reasoning:** Starting significantly lower encourages Alice to engage in negotiation and reveals information about your price ceiling without immediately offering your maximum."
+"Alice rejected your offer from round 2.
+
+Alice's offer:
+# Alice's message: Hi Bob, thank you for getting back to me. I understand that $140 might be a bit high for you, but I believe the quality of the product justifies the price. However, I'm willing to meet you in the middle and lower my offer to $130. This is a great deal for an item of this quality. Would you be willing to meet me at this price? 
+# Alice's offer: The product price will be $130. 
+You have three options:
+(1) Accept Alice's offer, and buy the product for $130
+(2) Reject Alice's offer and proceed to the next round, where you will send Alice a counteroffer
+(3) Buy the product from Jhon for $100","```json
+{""decision"": ""RejectOffer""}
+```
+
+Alice is coming down, but slowly.  Still room to negotiate before considering John's offer."
+"You chose to make a counteroffer to Alice.
+
+Send your counteroffer to Alice.","```json
+{
+""message"": ""I appreciate you coming down on the price, Alice.  However, $130 is still a bit more than I'm looking to spend.  How about $95?"",
+""product_price"": 95 
+}
+```
+
+**Reasoning:** We're increasing our offer to show willingness to compromise, but still staying well below her price and below our max budget.  This gradual increase should encourage her to continue negotiating."

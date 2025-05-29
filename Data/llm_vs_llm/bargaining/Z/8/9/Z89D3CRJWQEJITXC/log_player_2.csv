@@ -1,0 +1,56 @@
+prompt,response
+"Round 1
+Alice's offer:
+# Alice's message: Hi Bob, I propose that I receive $714285 and you receive $285715. Given our respective discount factors (10% per round for me and 20% per round for you), delaying will hurt you relatively more. I believe this division reflects a fair and rational split in today’s round. What do you think? 
+# Bob gain: 285715 
+# Alice gain: 714285 
+Do you accept this offer?","To determine whether I should accept this offer, let's analyze the situation.
+
+In the current round, I am offered $285,715. If I reject this offer, the total amount of money will decrease by 20% for me and 10% for Alice in the next round.
+
+The total amount of money is $1,000,000. If I reject the offer, in the next round, the amount of money will be worth:
+- For me: $1,000,000 * 0.8 = $800,000
+- For Alice: $1,000,000 * 0.9 = $900,000
+
+However, since it's my turn to propose in the next round, I can offer Alice a smaller amount, taking into account the decreased value of the money for both of us.
+
+Considering the significant difference in the discount rates (20% for me vs 10% for Alice), it's likely that Alice's offer is trying to take advantage of my higher discount rate.
+
+Given that I have the opportunity to make a counteroffer in the next round, which could potentially give me a better outcome, I will reject this offer.
+
+{""decision"": ""reject""}"
+"You have chosen to reject Alice's offer from round 1.
+Round 2
+Send your offer to divide $1,000,000 and a message to Alice.","Now it's my turn to make an offer. Considering the discount rates, I want to make an offer that is reasonable but also takes into account the fact that the money will be worth less to both of us in the next round.
+
+Since the money is worth 20% less to me and 10% less to Alice in each round, I'll try to find a balance. 
+
+Let's calculate the amount of money that would be equivalent to Alice's initial offer, considering the discount rates. However, I'll make a more favorable offer to myself, given that I have the opportunity to propose.
+
+I propose that I receive $425,000 and Alice receives $575,000.
+
+Here's my offer in JSON format:
+{""bob_gain"": 425000,
+""alice_gain"": 575000,
+""message"": ""Considering our respective discount rates, I believe this offer is more reasonable and reflects the current value of the money for both of us. If you reject this offer, the money will be worth even less to both of us in the next round.""}"
+"Alice rejected your offer from round 2.
+
+Round 3
+Due to inflation, the money you gain is worth 36% less than in the first round. The money alice gains is worth 19% less than in the first round.
+Alice's offer:
+# Alice's message: Hi Bob, in round 3 the stakes are higher due to our discount factors (my share is multiplied by 0.81 and yours by 0.64). If you reject today, you'll propose in round 4 with an even steeper discount (only 0.512 for you), leaving you with roughly the same effective amount. To avoid further devaluation, I propose a split where I get $200000 and you get $800000 nominally—this gives you an effective 800000 × 0.64 = $512000, which is as good as waiting. I believe this is the rational choice, and it saves both of us from additional discount losses. What do you think? 
+# Bob gain: 800000 
+# Alice gain: 200000 
+Do you accept this offer?","Let's analyze the situation.
+
+In the current round, Alice is offering me $800,000, which is worth $800,000 * 0.64 = $512,000 to me, considering the 36% decrease in value due to inflation.
+
+If I reject this offer, the total amount of money will decrease by another 20% for me and 10% for Alice in the next round.
+
+In the next round, the amount of money will be worth:
+- For me: $1,000,000 * 0.64 * 0.8 = $512,000 (as Alice mentioned)
+- For Alice: $1,000,000 * 0.9 * 0.9 = $810,000
+
+Given that the effective amount I would get in the next round is roughly the same as what Alice is offering now, and considering that Alice's offer saves both of us from additional discount losses, I will accept this offer.
+
+{""decision"": ""accept""}"

@@ -1,0 +1,125 @@
+prompt,response
+"Round 1
+Send your offer to divide $1,000,000.","Okay, I understand the rules. Here's my offer for Round 1:
+
+```json
+{
+  ""alice_gain"": 600000,
+  ""bob_gain"": 400000
+}
+```"
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 5% less than in the first round. The money Bob gains is worth the same as in the first round.
+Bob's offer:
+# Alice gain: 450000 
+# Bob gain: 550000 
+Do you accept this offer?","Okay, I need to calculate the value of the money *to me* considering the 5% inflation.
+
+*   **My Offer (Round 1):** $600,000 (worth full value then)
+*   **My Inflation Adjustment:** $600,000 * 0.95 = $570,000 (equivalent value now)
+
+I will compare this to Bob's offer considering I will lose 5% each round.
+
+Considering my inflation for the current round, I'm starting with $1,000,000.
+My gain is worth 5% less in this round compared to the initial round.
+
+*   **Bob's Offer (Round 2):**
+    *   Alice Gain: $450,000
+    *   Bob Gain: $550,000
+
+Since I started with the same value ($1,000,000), my gain is worth $450,000 \* 0.95 = $427,500 compared to round 1.
+
+Therefore, I'll **reject** this offer because the value of money to me has decreased substantially.
+
+```json
+{
+  ""decision"": ""reject""
+}
+```"
+"You have chosen to reject Bob's offer from round 2.
+Round 3
+Send your offer to divide $1,000,000.","Okay, here is my offer for Round 3. Remember, my money is worth 10% less now than in Round 1 (5% for each round of inflation).
+
+```json
+{
+  ""alice_gain"": 520000,
+  ""bob_gain"": 480000
+}
+```"
+"Bob rejected your offer from round 3.
+
+Round 4
+Due to inflation, the money you gain is worth 14.26% less than in the first round. The money Bob gains is worth the same as in the first round.
+Bob's offer:
+# Alice gain: 430000 
+# Bob gain: 570000 
+Do you accept this offer?","Okay, let's calculate. I'm factoring in the cumulative inflation:
+
+*   **My Starting Value (Round 1):** $1,000,000
+*   **My Inflation Adjustment (Round 4):** $1,000,000 * (1 - 0.05)^3 = $857,375
+
+Now, let's look at Bob's offer:
+
+*   **Bob's Offer (Round 4):**
+    *   Alice Gain: $430,000
+
+To assess the value to me:
+$430,000 \* (1 - 0.05)^3 = $368,670
+
+Given that my money is worth approximately $857,375 right now, I will **reject** this offer.
+
+```json
+{
+  ""decision"": ""reject""
+}
+```"
+"You have chosen to reject Bob's offer from round 4.
+Round 5
+Send your offer to divide $1,000,000.","Okay, time to make a new offer. I'll factor in the fact that I'm losing value with each passing round.
+
+```json
+{
+  ""alice_gain"": 505000,
+  ""bob_gain"": 495000
+}
+```"
+"Bob rejected your offer from round 5.
+
+Round 6
+Due to inflation, the money you gain is worth 22.62% less than in the first round. The money Bob gains is worth the same as in the first round.
+Bob's offer:
+# Alice gain: 420000 
+# Bob gain: 580000 
+Do you accept this offer?","Okay, let's evaluate Bob's offer in Round 6:
+
+*   **My Starting Value (Round 1):** $1,000,000
+*   **My Inflation Adjustment (Round 6):** $1,000,000 \* (1 - 0.05)^5 = $773,780
+
+Now, let's look at Bob's offer:
+
+*   **Bob's Offer (Round 6):**
+    *   Alice Gain: $420,000
+    *   Bob Gain: $580,000
+
+To assess the value to me:
+$420,000 \* (1 - 0.05)^5 = $325,007.40
+
+I would rather **reject** the offer and keep going.
+
+```json
+{
+  ""decision"": ""reject""
+}
+```"
+"You have chosen to reject Bob's offer from round 6.
+Round 7
+Send your offer to divide $1,000,000.","Okay, let's make a new offer for Round 7. The value of my money continues to decrease.
+
+```json
+{
+  ""alice_gain"": 490000,
+  ""bob_gain"": 510000
+}
+```"

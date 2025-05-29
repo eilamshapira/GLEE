@@ -1,0 +1,25 @@
+prompt,response
+"Round 1
+Send your offer to divide $10,000 and a message to Bob.","I'll start by reminding you that we’re playing a “rational‐agent” alternating–offers bargaining game in which, in every new round, the “pie” is discounted for each player (for me 20% per round, for Bob 5% per round). In our 12–round game the idea is that if we wait too long we both lose a lot of value. (Remember: if we get to round 13, we both end up with nothing!) 
+
+I’ve “analyzed” the game by backward–induction. (The algebra is a bit involved, but here is the idea in brief.)
+
+• In the very last round (round 12, where Bob is the proposer) Bob would “offer” me essentially nothing (an arbitrarily small positive amount) and keep almost the entire $10,000. In that round my “discounted value” would be nearly 0 while Bob would get roughly 
+  10000×0.95^(11) 
+in utility.
+
+• In round 11 (my turn as proposer) I could “force” Bob to receive his round–12 continuation value. In particular, to induce Bob to accept my round–11 offer his share (when multiplied by Bob’s round–11 discount factor, which is 1 since no round–delay discount applies at the moment of agreement) must equal what he would get in round 12. A short calculation yields that in round 11 I would offer Bob about $9,500 nominally (so that his discounted value in round 11 equals 9,500×0.95^(10) ≈ what he’d get in round 12) and keep the remaining $500 nominally (which for me becomes 500×0.8^(10)). 
+
+• Stepping back further one round (to round 10 with Bob as proposer) a similar calculation shows that Bob can improve his position by offering me only about $400 nominally (so that my round–10 utility, 400×0.8^(9), exactly matches my continuation in round 11).
+
+Continuing this reasoning backward through rounds 9, 8, 7, …, 2 gives each side their “reservation” amounts. Finally, when we get to round 1 (and I am the proposer) Bob’s acceptance condition is that he must get at least as much in round 1 as he would by waiting and proposing in round 2. (In round 2 Bob’s equilibrium “package” is computed so that his eventual discounted utility is about 10000–package multiplied by 0.95; working through the backward calculations yields that Bob’s continuation value – expressed in round–1 dollars – is roughly $8,296.61.)
+
+Thus, as the first mover I can propose a division in which I keep about 
+  10000 − 8296.61 ≈ $1,703.39 
+and offer Bob $8,296.61. (In equilibrium Bob is indifferent between accepting this offer now and waiting until round 2 – in which case he’d get essentially the same discounted outcome – so he should accept.)
+
+I now send you my first–round offer in JSON format:
+
+{""alice_gain"": 1703.39, ""bob_gain"": 8296.61, ""message"": ""Hi Bob, I’m proposing that I receive $1,703.39 and you receive $8,296.61. Given that waiting further will only diminish the value of the money (especially for me), this offer secures your best guaranteed payoff. I hope you’ll agree to this fair division so we can both avoid the costly effects of inflation.""}
+
+Your move!"

@@ -1,0 +1,569 @@
+prompt,response
+"Round 1
+Alice does not recommend you to buy the product.
+
+Would you like to buy the current product?","Given the information, I will calculate the expected value of buying the product and make my decision based on that.
+
+*   **Price:** $10,000
+*   **Probability of High Quality:** 33.33% (1/3)
+*   **Value of High Quality:** $30,000
+*   **Probability of Low Quality:** 66.67% (2/3)
+*   **Value of Low Quality:** $0
+*   **Alice's recommendation:** Alice does not recommend me to buy the product.
+
+If Alice does not recommend it, it subtly implies that the product might be of low quality. Let's assume that Alice's recommendation is honest but noisy. The question is how much does Alice's ""no"" recommendation lower the probability of the product being high quality? Since we don't have precise information about Alice's strategy, it's difficult to quantify the impact. However, a ""no"" recommendation does lower the chance of buying a high-quality product. Let's take a more conservative approach:
+
+Let's assume Alice's ""no"" recommendation decreases the probability of the product being high quality from 33.33% to, say, 20%. This is just an initial assumption. I'll adjust this assumption if a pattern emerges over several rounds.
+
+*   **Revised Probability of High Quality (given ""no"" recommendation):** 20%
+*   **Revised Probability of Low Quality (given ""no"" recommendation):** 80%
+
+Expected Value = (Probability of High Quality * Value of High Quality) + (Probability of Low Quality * Value of Low Quality) - Price
+
+Expected Value = (0.20 * $30,000) + (0.80 * $0) - $10,000
+
+Expected Value = $6,000 - $10,000 = -$4,000
+
+Based on this calculation, the expected value of buying the product after Alice's ""no"" recommendation is negative. Therefore, I should not buy the product.
+
+```json
+{""decision"": ""no""}
+```"
+"You didn't buy the product from Alice.
+The product was low-quality. It could have been worth $0 for you.
+
+Round 2
+Alice does not recommend you to buy the product.
+
+Would you like to buy the current product?","Okay, based on the result of Round 1 and the new information for Round 2:
+
+*   **Price:** $10,000
+*   **Prior Probability of High Quality:** 33.33% (1/3)
+*   **Value of High Quality:** $30,000
+*   **Prior Probability of Low Quality:** 66.67% (2/3)
+*   **Value of Low Quality:** $0
+*   **Alice's recommendation:** Alice does not recommend me to buy the product.
+
+Since my initial assumption about Alice's 'no' recommendation resulted in a loss on a low-quality item in the previous round, I will slightly revise my estimation of the probability of a high-quality product *given* that Alice recommended against the purchase. Previously, I used 20%. I will now use 15% to be even more conservative.
+
+*   **Revised Probability of High Quality (given ""no"" recommendation):** 15%
+*   **Revised Probability of Low Quality (given ""no"" recommendation):** 85%
+
+Expected Value = (Probability of High Quality * Value of High Quality) + (Probability of Low Quality * Value of Low Quality) - Price
+
+Expected Value = (0.15 * $30,000) + (0.85 * $0) - $10,000
+
+Expected Value = $4,500 - $10,000 = -$5,500
+
+The expected value of buying the product after Alice's ""no"" recommendation is still negative, even with a more conservative estimate.
+
+```json
+{""decision"": ""no""}
+```"
+"You didn't buy the product from Alice.
+The product was low-quality. It could have been worth $0 for you.
+
+Round 3
+Alice does not recommend you to buy the product.
+
+Would you like to buy the current product?","Alright, another round, another ""no"" recommendation. Let's adjust our strategy based on the consistent low-quality results following Alice's negative recommendations.
+
+*   **Price:** $10,000
+*   **Prior Probability of High Quality:** 33.33% (1/3)
+*   **Value of High Quality:** $30,000
+*   **Prior Probability of Low Quality:** 66.67% (2/3)
+*   **Value of Low Quality:** $0
+*   **Alice's recommendation:** Alice does not recommend me to buy the product.
+
+Given the two consecutive low-quality results after Alice's ""no"" recommendations, I am further decreasing the probability of the item being high quality given Alice's negative feedback. Previously, I used 15%. Now, I will assume only a 10% chance.
+
+*   **Revised Probability of High Quality (given ""no"" recommendation):** 10%
+*   **Revised Probability of Low Quality (given ""no"" recommendation):** 90%
+
+Expected Value = (Probability of High Quality * Value of High Quality) + (Probability of Low Quality * Value of Low Quality) - Price
+
+Expected Value = (0.10 * $30,000) + (0.90 * $0) - $10,000
+
+Expected Value = $3,000 - $10,000 = -$7,000
+
+The expected value of buying the product after Alice's ""no"" recommendation is still negative and significantly so.
+
+```json
+{""decision"": ""no""}
+```"
+"You didn't buy the product from Alice.
+The product was low-quality. It could have been worth $0 for you.
+
+Round 4
+Alice does not recommend you to buy the product.
+
+Would you like to buy the current product?","Okay, this is now four consecutive rounds of low-quality products after Alice's ""no"" recommendation. This reinforces the idea that Alice's negative recommendations are highly indicative of low quality. I will further decrease the probability of a high-quality item given the ""no"" recommendation.
+
+*   **Price:** $10,000
+*   **Prior Probability of High Quality:** 33.33% (1/3)
+*   **Value of High Quality:** $30,000
+*   **Prior Probability of Low Quality:** 66.67% (2/3)
+*   **Value of Low Quality:** $0
+*   **Alice's recommendation:** Alice does not recommend me to buy the product.
+
+Given the consistent low-quality results, I will assume an even lower probability of the product being high quality: only 5%.
+
+*   **Revised Probability of High Quality (given ""no"" recommendation):** 5%
+*   **Revised Probability of Low Quality (given ""no"" recommendation):** 95%
+
+Expected Value = (Probability of High Quality * Value of High Quality) + (Probability of Low Quality * Value of Low Quality) - Price
+
+Expected Value = (0.05 * $30,000) + (0.95 * $0) - $10,000
+
+Expected Value = $1,500 - $10,000 = -$8,500
+
+The expected value continues to be strongly negative.
+
+```json
+{""decision"": ""no""}
+```"
+"You didn't buy the product from Alice.
+The product was low-quality. It could have been worth $0 for you.
+
+Round 5
+Alice does not recommend you to buy the product.
+
+Would you like to buy the current product?","Five rounds in a row, Alice recommends against it, and five rounds in a row, the product is low quality. This is extremely strong evidence that Alice's negative recommendation is very reliable.
+
+*   **Price:** $10,000
+*   **Prior Probability of High Quality:** 33.33% (1/3)
+*   **Value of High Quality:** $30,000
+*   **Prior Probability of Low Quality:** 66.67% (2/3)
+*   **Value of Low Quality:** $0
+*   **Alice's recommendation:** Alice does not recommend me to buy the product.
+
+I will now assume an extremely low probability of the product being high quality, essentially treating Alice's ""no"" as a near-certain indicator of low quality. I will set the probability to 1%.
+
+*   **Revised Probability of High Quality (given ""no"" recommendation):** 1%
+*   **Revised Probability of Low Quality (given ""no"" recommendation):** 99%
+
+Expected Value = (Probability of High Quality * Value of High Quality) + (Probability of Low Quality * Value of Low Quality) - Price
+
+Expected Value = (0.01 * $30,000) + (0.99 * $0) - $10,000
+
+Expected Value = $300 - $10,000 = -$9,700
+
+```json
+{""decision"": ""no""}
+```"
+"You didn't buy the product from Alice.
+The product was low-quality. It could have been worth $0 for you.
+
+Round 6
+Alice does not recommend you to buy the product.
+
+Would you like to buy the current product?","Six rounds, six low-quality products following Alice's negative recommendation. At this point, it's practically certain that Alice's ""no"" recommendation is a strong indicator of a low-quality item.
+
+*   **Price:** $10,000
+*   **Prior Probability of High Quality:** 33.33% (1/3)
+*   **Value of High Quality:** $30,000
+*   **Prior Probability of Low Quality:** 66.67% (2/3)
+*   **Value of Low Quality:** $0
+*   **Alice's recommendation:** Alice does not recommend me to buy the product.
+
+Continuing the trend, I will set the probability of a high-quality item to a very small amount, 0.1%
+
+*   **Revised Probability of High Quality (given ""no"" recommendation):** 0.1%
+*   **Revised Probability of Low Quality (given ""no"" recommendation):** 99.9%
+
+Expected Value = (Probability of High Quality * Value of High Quality) + (Probability of Low Quality * Value of Low Quality) - Price
+
+Expected Value = (0.001 * $30,000) + (0.999 * $0) - $10,000
+
+Expected Value = $30 - $10,000 = -$9,970
+
+```json
+{""decision"": ""no""}
+```"
+"You didn't buy the product from Alice.
+The product was low-quality. It could have been worth $0 for you.
+
+Round 7
+Alice does not recommend you to buy the product.
+
+Would you like to buy the current product?","Seven rounds, seven low-quality products after Alice's ""no"" recommendation. The signal from Alice is overwhelming. I'm essentially treating her negative recommendation as definitive.
+
+*   **Price:** $10,000
+*   **Prior Probability of High Quality:** 33.33% (1/3)
+*   **Value of High Quality:** $30,000
+*   **Prior Probability of Low Quality:** 66.67% (2/3)
+*   **Value of Low Quality:** $0
+*   **Alice's recommendation:** Alice does not recommend me to buy the product.
+
+The chance of high quality is now negligible. Let's try setting it to 0.01%.
+
+*   **Revised Probability of High Quality (given ""no"" recommendation):** 0.01%
+*   **Revised Probability of Low Quality (given ""no"" recommendation):** 99.99%
+
+Expected Value = (Probability of High Quality * Value of High Quality) + (Probability of Low Quality * Value of Low Quality) - Price
+
+Expected Value = (0.0001 * $30,000) + (0.9999 * $0) - $10,000
+
+Expected Value = $3 - $10,000 = -$9,997
+
+```json
+{""decision"": ""no""}
+```"
+"You didn't buy the product from Alice.
+The product was low-quality. It could have been worth $0 for you.
+
+Round 8
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","Okay, this is a significant change! After seven consecutive ""no"" recommendations resulting in low-quality products, Alice *recommends* the product. This reverses the previous trend.
+
+*   **Price:** $10,000
+*   **Prior Probability of High Quality:** 33.33% (1/3)
+*   **Value of High Quality:** $30,000
+*   **Prior Probability of Low Quality:** 66.67% (2/3)
+*   **Value of Low Quality:** $0
+*   **Alice's recommendation:** Alice recommends me to buy the product.
+
+Now the question is: what does Alice's *positive* recommendation tell us? Given her track record, it's likely a strong indicator of high quality. We need to estimate the probability of high quality, given the recommendation. I'm going to start with a reasonably high estimate, but less than certain. I will assume that a ""yes"" recommendation increases the chance of a high-quality product from 33.33% to 75%.
+
+*   **Revised Probability of High Quality (given ""yes"" recommendation):** 75%
+*   **Revised Probability of Low Quality (given ""yes"" recommendation):** 25%
+
+Expected Value = (Probability of High Quality * Value of High Quality) + (Probability of Low Quality * Value of Low Quality) - Price
+
+Expected Value = (0.75 * $30,000) + (0.25 * $0) - $10,000
+
+Expected Value = $22,500 - $10,000 = $12,500
+
+Based on this calculation, the expected value of buying the product after Alice's ""yes"" recommendation is positive.
+
+```json
+{""decision"": ""yes""}
+```"
+"You bought the product from Alice for $10,000!
+The product was high-quality. It's worth $30,000 for you.
+
+Round 9
+Alice does not recommend you to buy the product.
+
+Would you like to buy the current product?","Okay, back to a ""no"" recommendation after the successful purchase in Round 8. This gives us more information about Alice's strategy.
+
+*   **Price:** $10,000
+*   **Prior Probability of High Quality:** 33.33% (1/3)
+*   **Value of High Quality:** $30,000
+*   **Prior Probability of Low Quality:** 66.67% (2/3)
+*   **Value of Low Quality:** $0
+*   **Alice's recommendation:** Alice does not recommend me to buy the product.
+
+The key here is that after seven rounds of negative recommendations followed by low quality, and then a positive recommendation leading to high quality, I now have confidence that Alice's recommendation is quite predictive.
+Last time Alice did not recommend, I'm going to update the probability to a previous value, 1% chance of high quality.
+
+*   **Revised Probability of High Quality (given ""no"" recommendation):** 1%
+*   **Revised Probability of Low Quality (given ""no"" recommendation):** 99%
+
+Expected Value = (Probability of High Quality * Value of High Quality) + (Probability of Low Quality * Value of Low Quality) - Price
+
+Expected Value = (0.01 * $30,000) + (0.99 * $0) - $10,000
+
+Expected Value = $300 - $10,000 = -$9,700
+
+```json
+{""decision"": ""no""}
+```"
+"You didn't buy the product from Alice.
+The product was low-quality. It could have been worth $0 for you.
+
+Round 10
+Alice does not recommend you to buy the product.
+
+Would you like to buy the current product?","*   **Price:** $10,000
+*   **Prior Probability of High Quality:** 33.33% (1/3)
+*   **Value of High Quality:** $30,000
+*   **Prior Probability of Low Quality:** 66.67% (2/3)
+*   **Value of Low Quality:** $0
+*   **Alice's recommendation:** Alice does not recommend me to buy the product.
+
+Following the successful round with Alice recommending the product and the subsequent round with her recommending against and it being a low quality item, the weight given to Alice's recommendation should be increased. I will adjust the probability to 0.01%.
+
+*   **Revised Probability of High Quality (given ""no"" recommendation):** 0.01%
+*   **Revised Probability of Low Quality (given ""no"" recommendation):** 99.99%
+
+Expected Value = (Probability of High Quality * Value of High Quality) + (Probability of Low Quality * Value of Low Quality) - Price
+
+Expected Value = (0.0001 * $30,000) + (0.9999 * $0) - $10,000
+
+Expected Value = $3 - $10,000 = -$9,997
+
+```json
+{""decision"": ""no""}
+```"
+"You didn't buy the product from Alice.
+The product was low-quality. It could have been worth $0 for you.
+
+Round 11
+Alice does not recommend you to buy the product.
+
+Would you like to buy the current product?","*   **Price:** $10,000
+*   **Prior Probability of High Quality:** 33.33% (1/3)
+*   **Value of High Quality:** $30,000
+*   **Prior Probability of Low Quality:** 66.67% (2/3)
+*   **Value of Low Quality:** $0
+*   **Alice's recommendation:** Alice does not recommend me to buy the product.
+
+Alice's ""no"" continues to be a strong indicator. Probability will not decrease.
+
+*   **Revised Probability of High Quality (given ""no"" recommendation):** 0.01%
+*   **Revised Probability of Low Quality (given ""no"" recommendation):** 99.99%
+
+Expected Value = (Probability of High Quality * Value of High Quality) + (Probability of Low Quality * Value of Low Quality) - Price
+
+Expected Value = (0.0001 * $30,000) + (0.9999 * $0) - $10,000
+
+Expected Value = $3 - $10,000 = -$9,997
+
+```json
+{""decision"": ""no""}
+```"
+"You didn't buy the product from Alice.
+The product was low-quality. It could have been worth $0 for you.
+
+Round 12
+Alice does not recommend you to buy the product.
+
+Would you like to buy the current product?","*   **Price:** $10,000
+*   **Prior Probability of High Quality:** 33.33% (1/3)
+*   **Value of High Quality:** $30,000
+*   **Prior Probability of Low Quality:** 66.67% (2/3)
+*   **Value of Low Quality:** $0
+*   **Alice's recommendation:** Alice does not recommend me to buy the product.
+
+Again, Alice says no. Again, I will stay with the extremely low probability.
+
+*   **Revised Probability of High Quality (given ""no"" recommendation):** 0.01%
+*   **Revised Probability of Low Quality (given ""no"" recommendation):** 99.99%
+
+Expected Value = (Probability of High Quality * Value of High Quality) + (Probability of Low Quality * Value of Low Quality) - Price
+
+Expected Value = (0.0001 * $30,000) + (0.9999 * $0) - $10,000
+
+Expected Value = $3 - $10,000 = -$9,997
+
+```json
+{""decision"": ""no""}
+```"
+"You didn't buy the product from Alice.
+The product was low-quality. It could have been worth $0 for you.
+
+Round 13
+Alice does not recommend you to buy the product.
+
+Would you like to buy the current product?","*   **Price:** $10,000
+*   **Prior Probability of High Quality:** 33.33% (1/3)
+*   **Value of High Quality:** $30,000
+*   **Prior Probability of Low Quality:** 66.67% (2/3)
+*   **Value of Low Quality:** $0
+*   **Alice's recommendation:** Alice does not recommend me to buy the product.
+
+Same as before. Alice's no is too strong to ignore.
+
+*   **Revised Probability of High Quality (given ""no"" recommendation):** 0.01%
+*   **Revised Probability of Low Quality (given ""no"" recommendation):** 99.99%
+
+Expected Value = (Probability of High Quality * Value of High Quality) + (Probability of Low Quality * Value of Low Quality) - Price
+
+Expected Value = (0.0001 * $30,000) + (0.9999 * $0) - $10,000
+
+Expected Value = $3 - $10,000 = -$9,997
+
+```json
+{""decision"": ""no""}
+```"
+"You didn't buy the product from Alice.
+The product was low-quality. It could have been worth $0 for you.
+
+Round 14
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","*   **Price:** $10,000
+*   **Prior Probability of High Quality:** 33.33% (1/3)
+*   **Value of High Quality:** $30,000
+*   **Prior Probability of Low Quality:** 66.67% (2/3)
+*   **Value of Low Quality:** $0
+*   **Alice's recommendation:** Alice recommends me to buy the product.
+
+Here we go again! Alice recommends that I buy. Last time this happened (round 8), I made a profit. I'm sticking with the same probability adjustment I used last time she recommended buying.
+
+*   **Revised Probability of High Quality (given ""yes"" recommendation):** 75%
+*   **Revised Probability of Low Quality (given ""yes"" recommendation):** 25%
+
+Expected Value = (Probability of High Quality * Value of High Quality) + (Probability of Low Quality * Value of Low Quality) - Price
+
+Expected Value = (0.75 * $30,000) + (0.25 * $0) - $10,000
+
+Expected Value = $22,500 - $10,000 = $12,500
+
+```json
+{""decision"": ""yes""}
+```"
+"You bought the product from Alice for $10,000!
+The product was high-quality. It's worth $30,000 for you.
+
+Round 15
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","*   **Price:** $10,000
+*   **Prior Probability of High Quality:** 33.33% (1/3)
+*   **Value of High Quality:** $30,000
+*   **Prior Probability of Low Quality:** 66.67% (2/3)
+*   **Value of Low Quality:** $0
+*   **Alice's recommendation:** Alice recommends me to buy the product.
+
+Another positive recommendation! Let's stick with the same logic and probability.
+
+*   **Revised Probability of High Quality (given ""yes"" recommendation):** 75%
+*   **Revised Probability of Low Quality (given ""yes"" recommendation):** 25%
+
+Expected Value = (Probability of High Quality * Value of High Quality) + (Probability of Low Quality * Value of Low Quality) - Price
+
+Expected Value = (0.75 * $30,000) + (0.25 * $0) - $10,000
+
+Expected Value = $22,500 - $10,000 = $12,500
+
+```json
+{""decision"": ""yes""}
+```"
+"You bought the product from Alice for $10,000!
+The product was high-quality. It's worth $30,000 for you.
+
+Round 16
+Alice does not recommend you to buy the product.
+
+Would you like to buy the current product?","*   **Price:** $10,000
+*   **Prior Probability of High Quality:** 33.33% (1/3)
+*   **Value of High Quality:** $30,000
+*   **Prior Probability of Low Quality:** 66.67% (2/3)
+*   **Value of Low Quality:** $0
+*   **Alice's recommendation:** Alice does not recommend me to buy the product.
+
+Okay, back to a negative recommendation. Time to revert to the previous strategy. The last two times Alice recommended buying, the item was high quality, and many rounds prior to those two rounds were low quality when Alice did not recommend. This confirms that I should trust her recommendations.
+
+*   **Revised Probability of High Quality (given ""no"" recommendation):** 0.01%
+*   **Revised Probability of Low Quality (given ""no"" recommendation):** 99.99%
+
+Expected Value = (Probability of High Quality * Value of High Quality) + (Probability of Low Quality * Value of Low Quality) - Price
+
+Expected Value = (0.0001 * $30,000) + (0.9999 * $0) - $10,000
+
+Expected Value = $3 - $10,000 = -$9,997
+
+```json
+{""decision"": ""no""}
+```"
+"You didn't buy the product from Alice.
+The product was low-quality. It could have been worth $0 for you.
+
+Round 17
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","*   **Price:** $10,000
+*   **Prior Probability of High Quality:** 33.33% (1/3)
+*   **Value of High Quality:** $30,000
+*   **Prior Probability of Low Quality:** 66.67% (2/3)
+*   **Value of Low Quality:** $0
+*   **Alice's recommendation:** Alice recommends me to buy the product.
+
+Another positive recommendation. I'm sticking with my established strategy:
+
+*   **Revised Probability of High Quality (given ""yes"" recommendation):** 75%
+*   **Revised Probability of Low Quality (given ""yes"" recommendation):** 25%
+
+Expected Value = (Probability of High Quality * Value of High Quality) + (Probability of Low Quality * Value of Low Quality) - Price
+
+Expected Value = (0.75 * $30,000) + (0.25 * $0) - $10,000
+
+Expected Value = $22,500 - $10,000 = $12,500
+
+```json
+{""decision"": ""yes""}
+```"
+"You bought the product from Alice for $10,000!
+The product was high-quality. It's worth $30,000 for you.
+
+Round 18
+Alice does not recommend you to buy the product.
+
+Would you like to buy the current product?","*   **Price:** $10,000
+*   **Prior Probability of High Quality:** 33.33% (1/3)
+*   **Value of High Quality:** $30,000
+*   **Prior Probability of Low Quality:** 66.67% (2/3)
+*   **Value of Low Quality:** $0
+*   **Alice's recommendation:** Alice does not recommend me to buy the product.
+
+Okay, so after a good win, but now back to a negative recommendation. Let's stick to my updated strategy:
+
+*   **Revised Probability of High Quality (given ""no"" recommendation):** 0.01%
+*   **Revised Probability of Low Quality (given ""no"" recommendation):** 99.99%
+
+Expected Value = (Probability of High Quality * Value of High Quality) + (Probability of Low Quality * Value of Low Quality) - Price
+
+Expected Value = (0.0001 * $30,000) + (0.9999 * $0) - $10,000
+
+Expected Value = $3 - $10,000 = -$9,997
+
+```json
+{""decision"": ""no""}
+```"
+"You didn't buy the product from Alice.
+The product was low-quality. It could have been worth $0 for you.
+
+Round 19
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","*   **Price:** $10,000
+*   **Prior Probability of High Quality:** 33.33% (1/3)
+*   **Value of High Quality:** $30,000
+*   **Prior Probability of Low Quality:** 66.67% (2/3)
+*   **Value of Low Quality:** $0
+*   **Alice's recommendation:** Alice recommends me to buy the product.
+
+Positive recommendation - time to buy!
+
+*   **Revised Probability of High Quality (given ""yes"" recommendation):** 75%
+*   **Revised Probability of Low Quality (given ""yes"" recommendation):** 25%
+
+Expected Value = (Probability of High Quality * Value of High Quality) + (Probability of Low Quality * Value of Low Quality) - Price
+
+Expected Value = (0.75 * $30,000) + (0.25 * $0) - $10,000
+
+Expected Value = $22,500 - $10,000 = $12,500
+
+```json
+{""decision"": ""yes""}
+```"
+"You bought the product from Alice for $10,000!
+The product was high-quality. It's worth $30,000 for you.
+
+Round 20
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","*   **Price:** $10,000
+*   **Prior Probability of High Quality:** 33.33% (1/3)
+*   **Value of High Quality:** $30,000
+*   **Prior Probability of Low Quality:** 66.67% (2/3)
+*   **Value of Low Quality:** $0
+*   **Alice's recommendation:** Alice recommends me to buy the product.
+
+Final round, and another positive recommendation! Sticking to my strategy:
+
+*   **Revised Probability of High Quality (given ""yes"" recommendation):** 75%
+*   **Revised Probability of Low Quality (given ""yes"" recommendation):** 25%
+
+Expected Value = (Probability of High Quality * Value of High Quality) + (Probability of Low Quality * Value of Low Quality) - Price
+
+Expected Value = (0.75 * $30,000) + (0.25 * $0) - $10,000
+
+Expected Value = $22,500 - $10,000 = $12,500
+
+```json
+{""decision"": ""yes""}
+```"

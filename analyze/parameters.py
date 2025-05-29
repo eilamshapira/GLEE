@@ -94,9 +94,26 @@ def plot_feature_effects(feature_name, coefficients, family, metric):
     plt.savefig(f"plots/FI/{family}/{metric}/{feature_name}.png")
 
 
+def plot_feature_importance(family, metric, feature_importance):
+    # Create output directory if it doesn't exist
+    os.makedirs(f"output/plots/FI/{family}/{metric}", exist_ok=True)
+    
+    # Plot and save the feature importance
+    plt.figure(figsize=(10, 6))
+    plt.bar(range(len(feature_importance)), feature_importance)
+    plt.xticks(range(len(feature_importance)), feature_importance.index, rotation=45)
+    plt.title(f"Feature Importance for {family} - {metric}")
+    plt.tight_layout()
+    plt.savefig(f"output/plots/FI/{family}/{metric}/feature_importance.png")
+    plt.close()
+
+
 # Traverse through directories to find model files
 
 def create_single_plots_and_make_general_df():
+    # Create output directory if it doesn't exist
+    os.makedirs("output", exist_ok=True)
+    
     data_list = []
     for root, dirs, files in os.walk("model"):
         for file in files:
@@ -311,13 +328,13 @@ def create_single_plots_and_make_general_df():
                                 print(f"the plot saved to plots/IE_v2/{family}/{metric}/{hue_feature}_{x_feature}.png")
 
     all_data = pd.concat(data_list, ignore_index=True)
-    all_data.to_csv("IE_v2_all_data.csv", index=False)
+    all_data.to_csv("output/IE_v2_all_data.csv", index=False)
     return all_data
 
 
 def make_grid_plots(all_data=None):
     if all_data is None:
-        all_data = pd.read_csv("IE_v2_all_data.csv")
+        all_data = pd.read_csv("output/IE_v2_all_data.csv")
 
     for (family, x_feature), group_df in all_data.groupby(['Family', 'x_feature']):
 
@@ -404,7 +421,7 @@ def make_grid_plots(all_data=None):
 
 def create_row_of_plots(config_list, all_data=None):
     if all_data is None:
-        all_data = pd.read_csv("IE_v2_all_data.csv")
+        all_data = pd.read_csv("output/IE_v2_all_data.csv")
 
     n = len(config_list)
     fig, axes = plt.subplots(nrows=1, ncols=n, figsize=(n * 6, 4), dpi=300)

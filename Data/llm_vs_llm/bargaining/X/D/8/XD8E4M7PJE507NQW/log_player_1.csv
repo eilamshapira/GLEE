@@ -1,0 +1,46 @@
+prompt,response
+"Round 1
+Send your offer to divide $1,000,000.","Based on a (brief) backward‐induction analysis of this 12‐round bargaining game with discounting (where your money “depreciates” by 5% each round but Bob’s by 20%), the subgame–perfect equilibrium offer in Round 1 turns out to give you – as Alice – about 672,000 dollars (nominal) and Bob about 328,000 dollars. (There’s a little rounding; the exact numbers come out approximately as shown below.)
+
+Here is one equilibrium offer in JSON format:
+
+{""alice_gain"": 672421, ""bob_gain"": 327579}
+
+Explanation (rough sketch):
+
+1. In the final round (Round 12, with Bob proposing) Bob could claim nearly the entire million because if Alice rejects she gets nothing. In that round Bob’s “realized” payoff is about 1,000,000·0.8^11 ≈ 85,900.
+
+2. Moving one step earlier (Round 11, with you proposing), you must give Bob at least what he would get if he waited for Round 12. That forces you to keep only 200,000 (nominal) for yourself in Round 11.
+
+3. Stepping back further (Rounds 10, 9, …, 2) and using each player’s discount factor (yours 0.95 per round, Bob’s 0.8 per round) one can compute the “reservation” values recursively. In effect, Bob’s waiting is relatively “costly” (20% drop per round),
+while you lose only 5% each round. This asymmetry gives you huge bargaining power when you get to propose in Round 1.
+
+4. The backward calculations lead – approximately – to the equilibrium in which in Round 1 you propose that you get about 672,421 dollars and Bob gets about 327,579 dollars. If Bob were offered less he’d prefer to wait (even discounting for the loss he suffers each round).
+
+Thus, in Round 1 you can send the following offer:
+
+{""alice_gain"": 672421, ""bob_gain"": 327579}
+
+(Keep in mind that these numbers are “equilibrium‐approximate” values and small rounding differences are possible.)"
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 5% less than in the first round. The money bob gains is worth 20% less than in the first round.
+Bob's offer:
+# Alice gain: 520000 
+# Bob gain: 480000 
+Do you accept this offer?","{""decision"": ""reject""}"
+"You have chosen to reject Bob's offer from round 2.
+Round 3
+Send your offer to divide $1,000,000.","{""alice_gain"": 622040, ""bob_gain"": 377960}"
+"Bob rejected your offer from round 3.
+
+Round 4
+Due to inflation, the money you gain is worth 14.26% less than in the first round. The money bob gains is worth 48.8% less than in the first round.
+Bob's offer:
+# Alice gain: 550000 
+# Bob gain: 450000 
+Do you accept this offer?","{""decision"": ""reject""}"
+"You have chosen to reject Bob's offer from round 4.
+Round 5
+Send your offer to divide $1,000,000.","{""alice_gain"": 555315, ""bob_gain"": 444685}"

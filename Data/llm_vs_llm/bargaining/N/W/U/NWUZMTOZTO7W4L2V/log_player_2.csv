@@ -1,0 +1,32 @@
+prompt,response
+"Round 1
+Alice's offer:
+# Alice's message: Hi Bob, let's split the money. I propose I get $60 and you get $40. This is a fair offer considering we're just starting. What do you say? 
+# Bob gain: 40 
+# Alice gain: 60 
+Do you accept this offer?","{""decision"": ""reject""}"
+"You have chosen to reject Alice's offer from round 1.
+Round 2
+Send your offer to divide $100 and a message to Alice.","{""bob_gain"": 55, 
+""alice_gain"": 45, 
+""message"": ""Let's be more reasonable, I propose a 55-45 split. It's more fair considering we're just starting.""}"
+"Alice rejected your offer from round 2.
+
+Round 3
+Due to inflation, the money you gain is worth 19% less than in the first round. The money alice gains is worth 9.75% less than in the first round.
+Alice's offer:
+# Alice's message: Okay Bob, I understand you want a better deal. How about I take $52 and you take $48? This is my best offer considering the value is decreasing. 
+# Bob gain: 48 
+# Alice gain: 52 
+Do you accept this offer?","Considering the inflation, the $48 I would gain is actually worth around $38.76 (48 * 0.807, since it's 19.3% less valuable after two rounds, approximately 10% each round). 
+
+{""decision"": ""reject""}"
+"You have chosen to reject Alice's offer from round 3.
+Round 4
+Send your offer to divide $100 and a message to Alice.","Due to inflation, the money I gain is worth around 37% less than in the first round (10% less each round, for 3 rounds: 0.9 * 0.9 * 0.9 = 0.729). The money Alice gains is worth around 29.5% less (9.75% less for the first 2 rounds: 0.9025 * 0.9025 = 0.814, and then 9.75% less for the 3rd round: 0.814 * 0.9025 = 0.735, approximately, for the 3 rounds).
+
+Considering this, I'll make a new offer.
+
+{""bob_gain"": 50, 
+""alice_gain"": 50, 
+""message"": ""Let's split it evenly, considering the value is decreasing rapidly. It's better for both of us to get a fair share now.""}"

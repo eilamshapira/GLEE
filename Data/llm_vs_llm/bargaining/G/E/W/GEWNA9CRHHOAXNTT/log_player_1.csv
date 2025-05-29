@@ -1,0 +1,48 @@
+prompt,response
+"Round 1
+Send your offer to divide $100 and a message to Bob.","I'll analyze the game and make a strategic first offer to Bob.
+
+Given the inflation rates:
+- My money loses 20% value per round
+- Bob's money loses 10% value per round
+
+This means I'm penalized more for delay, so there's pressure on me to reach a deal sooner. However, since I go first, I have some advantage.
+
+Here's my offer:
+
+```json
+{
+  ""alice_gain"": 55,
+  ""bob_gain"": 45,
+  ""message"": ""Hi Bob, I'm proposing a fair split considering our different inflation rates. You get 45% which is better than what you'd get after multiple rounds of negotiation due to the inflation effects. Let's settle this now and both walk away happy.""
+}
+```"
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 20% less than in the first round. The money bob gains is worth 10% less than in the first round.
+Bob's offer:
+# Bob's message: Alice, I know how the inflation affects us both—your dollars shrink 20% per round while mine only shrink 10%. If we delay further, you'll lose even more value. In round 3 you’d be in control, but the discount would leave you with less in effective terms. To avoid more erosion, I'm offering a 68/32 split in nominal dollars, which gives you 32 (worth 0.8×32 = 25.6 effective) right now. I believe this proposal is fair considering our respective discount factors. Let's settle and both preserve as much value as possible. 
+# Alice gain: 32 
+# Bob gain: 68 
+Do you accept this offer?","{""decision"": ""reject""}"
+"You have chosen to reject Bob's offer from round 2.
+Round 3
+Send your offer to divide $100 and a message to Bob.","I need to think carefully about my next offer. Bob is clearly trying to use our different inflation rates to his advantage. Let me analyze the situation further:
+
+With each round:
+- My money loses 20% value (I keep 80% of previous value)
+- Bob's money loses 10% value (he keeps 90% of previous value)
+
+In round 3 (now), my purchasing power is (0.8)² = 0.64 of round 1
+In round 4, Bob's turn, my purchasing power would be (0.8)³ = 0.512 of round 1
+
+Let me make a more strategic offer:
+
+```json
+{
+  ""alice_gain"": 50,
+  ""bob_gain"": 50,
+  ""message"": ""Bob, I appreciate your understanding of our inflation rates, but your previous offer was too skewed. Since we're now in round 3, delaying further hurts both of us. I'm proposing a fair 50-50 split. For me, this 50 is worth only 32 in round 1 dollars (50×0.64). If you reject and we go to round 4, any deal becomes less valuable for both of us. Let's agree on this balanced split and end the game efficiently.""
+}
+```"

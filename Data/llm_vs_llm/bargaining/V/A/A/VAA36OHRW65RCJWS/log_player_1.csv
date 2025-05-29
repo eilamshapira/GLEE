@@ -1,0 +1,64 @@
+prompt,response
+"Round 1
+Send your offer to divide $1,000,000.","Okay, I understand the game. I'm Alice, and I need to propose a division of $1,000,000 to Bob, keeping in mind the decreasing value of the money with each round.
+
+Here's my proposal for Round 1:
+
+```json
+{
+""alice_gain"": 600000,
+""bob_gain"": 400000
+}
+```
+
+My reasoning: I'm starting with a slight advantage for myself (60/40 split). I hope this is appealing enough for Bob to accept, considering the value of the money will decrease in subsequent rounds."
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 10% less than in the first round. The money bob gains is worth 20% less than in the first round.
+Bob's offer:
+# Alice gain: 400000 
+# Bob gain: 600000 
+Do you accept this offer?","Okay, I understand. Bob rejected my offer and now it's his turn. He's offering me $400,000 and keeping $600,000 for himself.
+
+Let's analyze this. The money I receive is now worth 10% less. So, receiving $400,000 now is equivalent to receiving $400,000 / 0.9 = $444,444.44 (approximately) in round 1 dollars.
+
+Since I proposed $600,000 for myself in Round 1, and this is significantly less in relative value, I will reject this offer.
+
+```json
+{
+""decision"": ""reject""
+}
+```"
+"You have chosen to reject Bob's offer from round 2.
+Round 3
+Send your offer to divide $1,000,000.","Okay, it's my turn again. I need to make a new offer, keeping in mind the inflation. For me, the money is now worth 20% less than in round 1 (10% less each round), and for Bob it's worth 40% less.
+
+I'll try to be more appealing this time, but also need to make sure I get a reasonable amount.
+
+```json
+{
+""alice_gain"": 650000,
+""bob_gain"": 350000
+}
+```
+
+Reasoning: I'm increasing my share slightly, but still offering Bob a significant portion. Hopefully, the decreasing value of the money for him will encourage him to accept. If he rejects this, the money will be worth even less next round."
+"Bob rejected your offer from round 3.
+
+Round 4
+Due to inflation, the money you gain is worth 27.1% less than in the first round. The money bob gains is worth 48.8% less than in the first round.
+Bob's offer:
+# Alice gain: 450000 
+# Bob gain: 550000 
+Do you accept this offer?","Okay, Bob rejected my previous offer. Now it's his turn, and he's offering me $450,000, while keeping $550,000 for himself.
+
+The money I receive is now worth 27.1% less than in the first round. So, receiving $450,000 now is equivalent to receiving $450,000 / (1 - 0.271) = $450,000 / 0.729 = $617,283.95 (approximately) in round 1 dollars.
+
+Given that the money I was asking for in the first round was $600,000, and this is a bit more than that, I will accept the offer.
+
+```json
+{
+""decision"": ""accept""
+}
+```"

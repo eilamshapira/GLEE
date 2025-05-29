@@ -1,0 +1,31 @@
+prompt,response
+"Round 1
+Send your offer to divide $1,000,000.","Based on a backward‐induction analysis of the 12‑round bargaining game with depreciation (for Alice, a 20% per round drop; for Bob, 10%), here is one equilibrium analysis:
+
+Let the “nominal” division be in dollars out of $1,000,000. (When a division is accepted in round r, its “real” value for Alice is her dollar amount multiplied by 0.8^(r–1) and for Bob it is his dollar amount multiplied by 0.9^(r–1).) Working from the final round (round 12) backward, we find that in each round the proposer will “buy” the responder’s agreement by offering just enough nominal dollars so that the responder’s immediate (discounted) share is as good as what he or she would get if the game continued.
+
+For example:
+
+• In round 12 (Bob’s turn) there is no waiting benefit for Alice. Bob can offer her virtually nothing (say, $0) so that Bob’s proposal is accepted.
+
+• In round 11 (Alice’s turn) Bob’s continuation would be his round‑12 payoff. (In round 12 Bob would get $1,000,000 nominal which is worth 1,000,000×0.9^(11) in “real” terms. In round 11 Bob’s nominal dollars are discounted only by 0.9^(10).) To make Bob indifferent, Alice must offer him at least 900,000 nominal dollars in round 11; leaving Alice 100,000 nominal.
+
+• In round 10 (Bob’s turn) Alice’s continuation value from round 11 is 100,000 nominal (worth with a round‑11 discount for her, 100,000×0.8^(10)); compared at round 10 (discount factor 0.8^(9)), Bob must offer her at least 80,000 nominal, keeping 920,000 nominal for himself.
+
+Continuing this reasoning backward (and always “discounting back” the responder’s continuation payoff by the appropriate factor), one finds equilibrium proposals in each round. In particular, at the very first round (round 1, when Bob’s discount factor is 1 because no waiting has occurred), Bob’s “continuation value” if he rejects (obtained as the discounted outcome from round 2) would be approximately 769,569 nominal dollars in round 2 (where Bob’s own discount factor is 0.9) yielding a “real” value of 769,569×0.9 ≈ 692,612. (That is, if Bob rejects round‑1’s proposal he can eventually get a proposal that gives him nominal dollars whose discounted value would be about 692,612.) 
+
+Therefore, to make Bob just as well off accepting the offer in round 1, the proposer (Alice) must offer Bob at least about 692,612 nominal dollars. Since the pie is 1,000,000 nominal dollars, Alice’s share is 1,000,000 – 692,612 ≈ 307,388.
+
+Thus, as Alice in round 1 the equilibrium (subgame perfect) offer is:
+
+{""alice_gain"": 307388, ""bob_gain"": 692612}
+
+You can now send this JSON offer in round 1."
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 20% less than in the first round. The money bob gains is worth 10% less than in the first round.
+Bob's offer:
+# Alice gain: 300000 
+# Bob gain: 700000 
+Do you accept this offer?","{""decision"": ""accept""}"

@@ -1,0 +1,16 @@
+prompt,response
+"Round 1
+Send your offer to divide $1,000,000.","I'll start by making an “equilibrium‐thinking” offer. (Note: There’s a long procedure behind it based on backward induction over 12 rounds with discount factors—each round the dollar value for you declines 10% and for Bob 5%. Roughly speaking, if no agreement is reached early, then by round 12 the proposer can claim almost everything; “waiting” then has a cost. Working backward, when it’s your (Alice’s) turn in Round 1 you must give Bob just enough (in nominal dollars) so that he’s indifferent between accepting now (getting full value of his share immediately) and waiting for Round 2 to propose his own division.)
+
+A (rough) backward‐induction analysis gives a “fair” equilibrium offer at Round 1 of about:
+ Alice: $210,113
+ Bob: $789,887
+
+That is, if you (Alice) propose:
+ {""alice_gain"": 210113, ""bob_gain"": 789887}
+
+Bob’s “outside option” (if he rejects and becomes the proposer in Round 2) is worth roughly $789,887 in today’s dollars. Hence this offer makes him indifferent to waiting, and you get as much as you can while still keeping him on board.
+
+I now send my offer as JSON:
+
+{""alice_gain"": 210113, ""bob_gain"": 789887}"

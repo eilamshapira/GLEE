@@ -1,0 +1,20 @@
+prompt,response
+"Round 1
+Send your offer to divide $1,000,000.","Based on a backward‐induction analysis that takes into account that every round causes a “depreciation” in the players’ effective money (20% per round for you, 10% per round for Bob), here is one equilibrium calculation. (All amounts are in nominal dollars, but each round’s payoff is discounted for each player; for example, you value a dollar in round k at 0.8^(k–1) and Bob values it at 0.9^(k–1).)
+
+A brief outline of the reasoning:
+1. In round 12 (if reached, with Bob the proposer) Bob can propose to keep nearly all of the money, offering you essentially $0 because you’d get nothing if you reject. (In equilibrium, you accept even an offer of $0 because your alternative gets nothing.)
+2. Stepping back one round (round 11, with you as proposer), you must offer Bob just enough so that his “discounted‐future” prospect (as he would propose in round 12) is matched. A short calculation shows you must offer him $900,000 in nominal dollars then (so that after one round of discounting his utility, it is as good as his future prospect).
+3. Continuing this reasoning backward one round at a time (taking into account that in every round the “present‐value” discounts are 0.8 for you and 0.9 for Bob), the equilibrium divisions for later rounds would be:
+  • Round 11 (Alice proposes): you get ≈$100,000; Bob gets ≈$900,000.
+  • Round 10 (Bob proposes): you’d get ≈$80,000; Bob ≈$920,000.
+  • Round 9 (Alice proposes): you get ≈$172,000; Bob ≈$828,000.
+  • ⋯ (and so on).
+4. When we roll the calculation all the way back to round 1 (with you making the proposal), the “continuation value” for Bob (if he waits to be the proposer in round 2) turns out to be roughly worth $692,612 in round‑1 dollars. (In round 2, Bob’s equilibrium proposal would yield him a nominal share of about $769,569—but with one round of discounting (10%), its value is about $692,612 in round‑1 “value”.)
+5. Thus, to make Bob just indifferent to accepting now rather than waiting, your offer in round 1 should grant him about $692,612, leaving you with about $307,388.
+
+That leads to the following proposal in JSON format:
+
+{""alice_gain"": 307387.83, ""bob_gain"": 692612.17}
+
+This is our round‐1 offer."

@@ -1,0 +1,575 @@
+prompt,response
+"Round 1
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","I'll analyze this situation:
+
+- Price of product: $10,000
+- Value of high-quality product: $12,500 (profit: $2,500)
+- Value of low-quality product: $0 (loss: $10,000)
+- Base probability: 80% high quality, 20% low quality
+- Alice's recommendation: Buy
+
+At this stage, I don't have reason to believe Alice's recommendation carries special information about the product quality - this is our first interaction and we haven't established any pattern.
+
+Using the base probabilities:
+- Expected value = (0.8 × $12,500) + (0.2 × $0) = $10,000
+- Since the expected value equals the price, this is a break-even proposition
+
+However, since we're playing multiple rounds, I'll buy this first product to observe Alice's recommendation pattern.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $10,000!
+The product was high-quality. It's worth $12,500 for you.
+
+Round 2
+Alice does not recommend you to buy the product.
+
+Would you like to buy the current product?","I'll analyze this situation:
+
+- Price of product: $10,000
+- Value of high-quality product: $12,500 (profit: $2,500)
+- Value of low-quality product: $0 (loss: $10,000)
+- Base probability: 80% high quality, 20% low quality
+- Alice's recommendation: Don't buy
+- Previous round: Alice recommended buying and it was high quality
+
+Interesting - Alice is now not recommending the product. This could be meaningful information.
+
+If Alice is being truthful with her recommendations, she may be signaling that this product is low quality. While the base probability is 80% high quality, her recommendation might indicate this particular product is more likely to be low quality.
+
+Without more information on Alice's recommendation patterns, I'll trust her signal and pass on this product.
+
+{""decision"": ""no""}"
+"You didn't buy the product from Alice.
+The product was low-quality. It could have been worth $0 for you.
+
+Round 3
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","I'll analyze this situation:
+
+- Price of product: $10,000
+- Value of high-quality product: $12,500 (profit: $2,500)
+- Value of low-quality product: $0 (loss: $10,000)
+- Base probability: 80% high quality, 20% low quality
+- Alice's recommendation: Buy
+- Pattern so far:
+  * Round 1: Alice recommended to buy → high quality (accurate)
+  * Round 2: Alice recommended not to buy → low quality (accurate)
+
+So far, Alice's recommendations have been honest and accurate. She has correctly recommended buying the high-quality product and advised against buying the low-quality one.
+
+Based on this emerging pattern, it appears Alice may be truthfully revealing product quality through her recommendations. Since she's recommending to buy this product, and her previous recommendations have matched product quality, I'll trust her recommendation.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $10,000!
+The product was high-quality. It's worth $12,500 for you.
+
+Round 4
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","I'll analyze this situation:
+
+- Price of product: $10,000
+- Value of high-quality product: $12,500 (profit: $2,500)
+- Value of low-quality product: $0 (loss: $10,000)
+- Alice's recommendation: Buy
+- Pattern so far:
+  * Round 1: Alice recommended to buy → high quality (accurate)
+  * Round 2: Alice recommended not to buy → low quality (accurate)
+  * Round 3: Alice recommended to buy → high quality (accurate)
+
+Alice's pattern of recommendations has been completely consistent with product quality. She has recommended buying only high-quality products and advised against buying low-quality ones.
+
+Since Alice is recommending I buy this product, and her recommendations have been reliable indicators of quality so far, I'll trust her recommendation again.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $10,000!
+The product was high-quality. It's worth $12,500 for you.
+
+Round 5
+Alice does not recommend you to buy the product.
+
+Would you like to buy the current product?","I'll analyze this situation:
+
+- Price of product: $10,000
+- Value of high-quality product: $12,500 (profit: $2,500)
+- Value of low-quality product: $0 (loss: $10,000)
+- Alice's recommendation: Don't buy
+- Pattern so far:
+  * Round 1: Alice recommended to buy → high quality (accurate)
+  * Round 2: Alice recommended not to buy → low quality (accurate)
+  * Round 3: Alice recommended to buy → high quality (accurate)
+  * Round 4: Alice recommended to buy → high quality (accurate)
+
+Alice has established a consistent pattern of honest recommendations. When she recommends buying, the product has been high quality (worth $12,500). When she advised against buying (Round 2), the product was low quality (worth $0).
+
+Since Alice is not recommending this product, and her recommendations have perfectly predicted quality so far, I'll trust her judgment and not buy this product.
+
+{""decision"": ""no""}"
+"You didn't buy the product from Alice.
+The product was low-quality. It could have been worth $0 for you.
+
+Round 6
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","I'll analyze this situation:
+
+- Price of product: $10,000
+- Value of high-quality product: $12,500 (profit: $2,500)
+- Value of low-quality product: $0 (loss: $10,000)
+- Alice's recommendation: Buy
+- Pattern so far:
+  * Round 1: Alice recommended to buy → high quality (accurate)
+  * Round 2: Alice recommended not to buy → low quality (accurate)
+  * Round 3: Alice recommended to buy → high quality (accurate)
+  * Round 4: Alice recommended to buy → high quality (accurate)
+  * Round 5: Alice recommended not to buy → low quality (accurate)
+
+Alice has maintained a perfect record of honest recommendations. In all previous rounds, her recommendations have accurately matched the actual quality of the products.
+
+Since Alice is recommending I buy this product, and her recommendations have been completely reliable indicators of quality, I'll trust her recommendation again.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $10,000!
+The product was high-quality. It's worth $12,500 for you.
+
+Round 7
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","I'll analyze this situation:
+
+- Price of product: $10,000
+- Value of high-quality product: $12,500 (profit: $2,500)
+- Value of low-quality product: $0 (loss: $10,000)
+- Alice's recommendation: Buy
+- Pattern so far:
+  * Round 1: Alice recommended to buy → high quality (accurate)
+  * Round 2: Alice recommended not to buy → low quality (accurate)
+  * Round 3: Alice recommended to buy → high quality (accurate)
+  * Round 4: Alice recommended to buy → high quality (accurate)
+  * Round 5: Alice recommended not to buy → low quality (accurate)
+  * Round 6: Alice recommended to buy → high quality (accurate)
+
+Alice has maintained a perfect correlation between her recommendations and product quality through six rounds. She has consistently recommended buying only high-quality products and advised against buying low-quality ones.
+
+With this strong pattern of honest recommendations, I'll continue to trust Alice's judgment when she recommends buying a product.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $10,000!
+The product was high-quality. It's worth $12,500 for you.
+
+Round 8
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","I'll analyze this situation:
+
+- Price of product: $10,000
+- Value of high-quality product: $12,500 (profit: $2,500)
+- Value of low-quality product: $0 (loss: $10,000)
+- Alice's recommendation: Buy
+- Pattern so far:
+  * Round 1: Alice recommended to buy → high quality (accurate)
+  * Round 2: Alice recommended not to buy → low quality (accurate)
+  * Round 3: Alice recommended to buy → high quality (accurate)
+  * Round 4: Alice recommended to buy → high quality (accurate)
+  * Round 5: Alice recommended not to buy → low quality (accurate)
+  * Round 6: Alice recommended to buy → high quality (accurate)
+  * Round 7: Alice recommended to buy → high quality (accurate)
+
+Alice has maintained a perfect correlation between her recommendations and product quality through seven consecutive rounds. Every time she has recommended buying, the product has been high quality, and when she advised against buying, the product was low quality.
+
+Given this consistent pattern of honest recommendations, I have strong confidence in Alice's judgment and will continue to follow her recommendation to buy.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $10,000!
+The product was high-quality. It's worth $12,500 for you.
+
+Round 9
+Alice does not recommend you to buy the product.
+
+Would you like to buy the current product?","I'll analyze this situation:
+
+- Price of product: $10,000
+- Value of high-quality product: $12,500 (profit: $2,500)
+- Value of low-quality product: $0 (loss: $10,000)
+- Alice's recommendation: Don't buy
+- Pattern so far:
+  * Round 1: Alice recommended to buy → high quality (accurate)
+  * Round 2: Alice recommended not to buy → low quality (accurate)
+  * Round 3: Alice recommended to buy → high quality (accurate)
+  * Round 4: Alice recommended to buy → high quality (accurate)
+  * Round 5: Alice recommended not to buy → low quality (accurate)
+  * Round 6: Alice recommended to buy → high quality (accurate)
+  * Round 7: Alice recommended to buy → high quality (accurate)
+  * Round 8: Alice recommended to buy → high quality (accurate)
+
+Alice has established a perfect 8/8 record of honest recommendations. When she recommends buying, the product has always been high quality. When she advises against buying (as in Round 2 and 5), the product has always been low quality.
+
+Since Alice is now recommending against buying this product, and her recommendations have been completely reliable indicators of quality, I'll follow her advice and not purchase this product.
+
+{""decision"": ""no""}"
+"You didn't buy the product from Alice.
+The product was low-quality. It could have been worth $0 for you.
+
+Round 10
+Alice does not recommend you to buy the product.
+
+Would you like to buy the current product?","I'll analyze this situation:
+
+- Price of product: $10,000
+- Value of high-quality product: $12,500 (profit: $2,500)
+- Value of low-quality product: $0 (loss: $10,000)
+- Alice's recommendation: Don't buy
+- Pattern so far:
+  * Round 1: Alice recommended to buy → high quality (accurate)
+  * Round 2: Alice recommended not to buy → low quality (accurate)
+  * Round 3: Alice recommended to buy → high quality (accurate)
+  * Round 4: Alice recommended to buy → high quality (accurate)
+  * Round 5: Alice recommended not to buy → low quality (accurate)
+  * Round 6: Alice recommended to buy → high quality (accurate)
+  * Round 7: Alice recommended to buy → high quality (accurate)
+  * Round 8: Alice recommended to buy → high quality (accurate)
+  * Round 9: Alice recommended not to buy → low quality (accurate)
+
+Alice has maintained a perfect 9/9 record of honest recommendations. Her advice has consistently matched the true quality of the products in all previous rounds.
+
+Since Alice is again recommending against buying this product, and she has proven to be completely reliable in her recommendations, I'll follow her advice and not purchase this product.
+
+{""decision"": ""no""}"
+"You didn't buy the product from Alice.
+The product was low-quality. It could have been worth $0 for you.
+
+Round 11
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","I'll analyze this situation:
+
+- Price of product: $10,000
+- Value of high-quality product: $12,500 (profit: $2,500)
+- Value of low-quality product: $0 (loss: $10,000)
+- Alice's recommendation: Buy
+- Pattern so far:
+  * Round 1: Alice recommended to buy → high quality (accurate)
+  * Round 2: Alice recommended not to buy → low quality (accurate)
+  * Round 3: Alice recommended to buy → high quality (accurate)
+  * Round 4: Alice recommended to buy → high quality (accurate)
+  * Round 5: Alice recommended not to buy → low quality (accurate)
+  * Round 6: Alice recommended to buy → high quality (accurate)
+  * Round 7: Alice recommended to buy → high quality (accurate)
+  * Round 8: Alice recommended to buy → high quality (accurate)
+  * Round 9: Alice recommended not to buy → low quality (accurate)
+  * Round 10: Alice recommended not to buy → low quality (accurate)
+
+Alice has maintained a perfect 10/10 record of honest recommendations. Every single recommendation she has made has accurately reflected the true quality of the product.
+
+Since Alice is now recommending buying this product, and her recommendations have been completely reliable indicators of product quality, I will follow her recommendation and purchase this product.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $10,000!
+The product was high-quality. It's worth $12,500 for you.
+
+Round 12
+Alice does not recommend you to buy the product.
+
+Would you like to buy the current product?","I'll analyze this situation:
+
+- Price of product: $10,000
+- Value of high-quality product: $12,500 (profit: $2,500)
+- Value of low-quality product: $0 (loss: $10,000)
+- Alice's recommendation: Don't buy
+- Pattern so far:
+  * Round 1: Alice recommended to buy → high quality (accurate)
+  * Round 2: Alice recommended not to buy → low quality (accurate)
+  * Round 3: Alice recommended to buy → high quality (accurate)
+  * Round 4: Alice recommended to buy → high quality (accurate)
+  * Round 5: Alice recommended not to buy → low quality (accurate)
+  * Round 6: Alice recommended to buy → high quality (accurate)
+  * Round 7: Alice recommended to buy → high quality (accurate)
+  * Round 8: Alice recommended to buy → high quality (accurate)
+  * Round 9: Alice recommended not to buy → low quality (accurate)
+  * Round 10: Alice recommended not to buy → low quality (accurate)
+  * Round 11: Alice recommended to buy → high quality (accurate)
+
+Alice has maintained a perfect 11/11 record of honest recommendations. Her advice has consistently matched the true quality of the products in all previous rounds without exception.
+
+Since Alice is now recommending against buying this product, and she has proven to be completely reliable in her recommendations, I will follow her advice and not purchase this product.
+
+{""decision"": ""no""}"
+"You didn't buy the product from Alice.
+The product was low-quality. It could have been worth $0 for you.
+
+Round 13
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","I'll analyze this situation:
+
+- Price of product: $10,000
+- Value of high-quality product: $12,500 (profit: $2,500)
+- Value of low-quality product: $0 (loss: $10,000)
+- Alice's recommendation: Buy
+- Pattern so far:
+  * Round 1: Alice recommended to buy → high quality (accurate)
+  * Round 2: Alice recommended not to buy → low quality (accurate)
+  * Round 3: Alice recommended to buy → high quality (accurate)
+  * Round 4: Alice recommended to buy → high quality (accurate)
+  * Round 5: Alice recommended not to buy → low quality (accurate)
+  * Round 6: Alice recommended to buy → high quality (accurate)
+  * Round 7: Alice recommended to buy → high quality (accurate)
+  * Round 8: Alice recommended to buy → high quality (accurate)
+  * Round 9: Alice recommended not to buy → low quality (accurate)
+  * Round 10: Alice recommended not to buy → low quality (accurate)
+  * Round 11: Alice recommended to buy → high quality (accurate)
+  * Round 12: Alice recommended not to buy → low quality (accurate)
+
+Alice has maintained a perfect 12/12 record of honest recommendations. Every recommendation she has made has accurately reflected the true quality of the product.
+
+Since Alice is now recommending buying this product, and her recommendations have been completely reliable indicators of product quality through all previous rounds, I will follow her recommendation and purchase this product.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $10,000!
+The product was high-quality. It's worth $12,500 for you.
+
+Round 14
+Alice does not recommend you to buy the product.
+
+Would you like to buy the current product?","I'll analyze this situation:
+
+- Price of product: $10,000
+- Value of high-quality product: $12,500 (profit: $2,500)
+- Value of low-quality product: $0 (loss: $10,000)
+- Alice's recommendation: Don't buy
+- Pattern so far:
+  * Round 1: Alice recommended to buy → high quality (accurate)
+  * Round 2: Alice recommended not to buy → low quality (accurate)
+  * Round 3: Alice recommended to buy → high quality (accurate)
+  * Round 4: Alice recommended to buy → high quality (accurate)
+  * Round 5: Alice recommended not to buy → low quality (accurate)
+  * Round 6: Alice recommended to buy → high quality (accurate)
+  * Round 7: Alice recommended to buy → high quality (accurate)
+  * Round 8: Alice recommended to buy → high quality (accurate)
+  * Round 9: Alice recommended not to buy → low quality (accurate)
+  * Round 10: Alice recommended not to buy → low quality (accurate)
+  * Round 11: Alice recommended to buy → high quality (accurate)
+  * Round 12: Alice recommended not to buy → low quality (accurate)
+  * Round 13: Alice recommended to buy → high quality (accurate)
+
+Alice has maintained a perfect 13/13 record of honest recommendations. Her advice has consistently matched the true quality of the products in all previous rounds without a single exception.
+
+Since Alice is now recommending against buying this product, and she has proven to be completely reliable in her recommendations throughout the game, I will follow her advice and not purchase this product.
+
+{""decision"": ""no""}"
+"You didn't buy the product from Alice.
+The product was low-quality. It could have been worth $0 for you.
+
+Round 15
+Alice does not recommend you to buy the product.
+
+Would you like to buy the current product?","I'll analyze this situation:
+
+- Price of product: $10,000
+- Value of high-quality product: $12,500 (profit: $2,500)
+- Value of low-quality product: $0 (loss: $10,000)
+- Alice's recommendation: Don't buy
+- Pattern so far:
+  * Round 1: Alice recommended to buy → high quality (accurate)
+  * Round 2: Alice recommended not to buy → low quality (accurate)
+  * Round 3: Alice recommended to buy → high quality (accurate)
+  * Round 4: Alice recommended to buy → high quality (accurate)
+  * Round 5: Alice recommended not to buy → low quality (accurate)
+  * Round 6: Alice recommended to buy → high quality (accurate)
+  * Round 7: Alice recommended to buy → high quality (accurate)
+  * Round 8: Alice recommended to buy → high quality (accurate)
+  * Round 9: Alice recommended not to buy → low quality (accurate)
+  * Round 10: Alice recommended not to buy → low quality (accurate)
+  * Round 11: Alice recommended to buy → high quality (accurate)
+  * Round 12: Alice recommended not to buy → low quality (accurate)
+  * Round 13: Alice recommended to buy → high quality (accurate)
+  * Round 14: Alice recommended not to buy → low quality (accurate)
+
+Alice has maintained a perfect 14/14 record of honest recommendations. Every recommendation she has made has accurately reflected the true quality of the product without exception.
+
+Since Alice is now recommending against buying this product, and her recommendations have been completely reliable indicators of product quality in all previous rounds, I will follow her advice and not purchase this product.
+
+{""decision"": ""no""}"
+"You didn't buy the product from Alice.
+The product was low-quality. It could have been worth $0 for you.
+
+Round 16
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","I'll analyze this situation:
+
+- Price of product: $10,000
+- Value of high-quality product: $12,500 (profit: $2,500)
+- Value of low-quality product: $0 (loss: $10,000)
+- Alice's recommendation: Buy
+- Pattern so far:
+  * Round 1: Alice recommended to buy → high quality (accurate)
+  * Round 2: Alice recommended not to buy → low quality (accurate)
+  * Round 3: Alice recommended to buy → high quality (accurate)
+  * Round 4: Alice recommended to buy → high quality (accurate)
+  * Round 5: Alice recommended not to buy → low quality (accurate)
+  * Round 6: Alice recommended to buy → high quality (accurate)
+  * Round 7: Alice recommended to buy → high quality (accurate)
+  * Round 8: Alice recommended to buy → high quality (accurate)
+  * Round 9: Alice recommended not to buy → low quality (accurate)
+  * Round 10: Alice recommended not to buy → low quality (accurate)
+  * Round 11: Alice recommended to buy → high quality (accurate)
+  * Round 12: Alice recommended not to buy → low quality (accurate)
+  * Round 13: Alice recommended to buy → high quality (accurate)
+  * Round 14: Alice recommended not to buy → low quality (accurate)
+  * Round 15: Alice recommended not to buy → low quality (accurate)
+
+Alice has maintained a perfect 15/15 record of honest recommendations. Her advice has consistently matched the true quality of the products in all previous rounds without a single exception.
+
+Since Alice is now recommending buying this product, and she has proven to be completely reliable in her recommendations throughout the game, I will follow her advice and purchase this product.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $10,000!
+The product was high-quality. It's worth $12,500 for you.
+
+Round 17
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","I'll analyze this situation:
+
+- Price of product: $10,000
+- Value of high-quality product: $12,500 (profit: $2,500)
+- Value of low-quality product: $0 (loss: $10,000)
+- Alice's recommendation: Buy
+- Pattern so far:
+  * Round 1: Alice recommended to buy → high quality (accurate)
+  * Round 2: Alice recommended not to buy → low quality (accurate)
+  * Round 3: Alice recommended to buy → high quality (accurate)
+  * Round 4: Alice recommended to buy → high quality (accurate)
+  * Round 5: Alice recommended not to buy → low quality (accurate)
+  * Round 6: Alice recommended to buy → high quality (accurate)
+  * Round 7: Alice recommended to buy → high quality (accurate)
+  * Round 8: Alice recommended to buy → high quality (accurate)
+  * Round 9: Alice recommended not to buy → low quality (accurate)
+  * Round 10: Alice recommended not to buy → low quality (accurate)
+  * Round 11: Alice recommended to buy → high quality (accurate)
+  * Round 12: Alice recommended not to buy → low quality (accurate)
+  * Round 13: Alice recommended to buy → high quality (accurate)
+  * Round 14: Alice recommended not to buy → low quality (accurate)
+  * Round 15: Alice recommended not to buy → low quality (accurate)
+  * Round 16: Alice recommended to buy → high quality (accurate)
+
+Alice has maintained a perfect 16/16 record of honest recommendations. Every recommendation she has made has accurately reflected the true quality of the product without exception.
+
+Since Alice is now recommending buying this product, and her recommendations have been completely reliable indicators of product quality in all previous rounds, I will follow her advice and purchase this product.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $10,000!
+The product was high-quality. It's worth $12,500 for you.
+
+Round 18
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","I'll analyze this situation:
+
+- Price of product: $10,000
+- Value of high-quality product: $12,500 (profit: $2,500)
+- Value of low-quality product: $0 (loss: $10,000)
+- Alice's recommendation: Buy
+- Pattern so far:
+  * Round 1: Alice recommended to buy → high quality (accurate)
+  * Round 2: Alice recommended not to buy → low quality (accurate)
+  * Round 3: Alice recommended to buy → high quality (accurate)
+  * Round 4: Alice recommended to buy → high quality (accurate)
+  * Round 5: Alice recommended not to buy → low quality (accurate)
+  * Round 6: Alice recommended to buy → high quality (accurate)
+  * Round 7: Alice recommended to buy → high quality (accurate)
+  * Round 8: Alice recommended to buy → high quality (accurate)
+  * Round 9: Alice recommended not to buy → low quality (accurate)
+  * Round 10: Alice recommended not to buy → low quality (accurate)
+  * Round 11: Alice recommended to buy → high quality (accurate)
+  * Round 12: Alice recommended not to buy → low quality (accurate)
+  * Round 13: Alice recommended to buy → high quality (accurate)
+  * Round 14: Alice recommended not to buy → low quality (accurate)
+  * Round 15: Alice recommended not to buy → low quality (accurate)
+  * Round 16: Alice recommended to buy → high quality (accurate)
+  * Round 17: Alice recommended to buy → high quality (accurate)
+
+Alice has maintained a perfect 17/17 record of honest recommendations. Her advice has consistently matched the true quality of the products in all previous rounds without a single exception.
+
+Since Alice is now recommending buying this product, and she has proven to be completely reliable in her recommendations throughout the game, I will follow her advice and purchase this product.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $10,000!
+The product was high-quality. It's worth $12,500 for you.
+
+Round 19
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","I'll analyze this situation:
+
+- Price of product: $10,000
+- Value of high-quality product: $12,500 (profit: $2,500)
+- Value of low-quality product: $0 (loss: $10,000)
+- Alice's recommendation: Buy
+- Pattern so far:
+  * Round 1: Alice recommended to buy → high quality (accurate)
+  * Round 2: Alice recommended not to buy → low quality (accurate)
+  * Round 3: Alice recommended to buy → high quality (accurate)
+  * Round 4: Alice recommended to buy → high quality (accurate)
+  * Round 5: Alice recommended not to buy → low quality (accurate)
+  * Round 6: Alice recommended to buy → high quality (accurate)
+  * Round 7: Alice recommended to buy → high quality (accurate)
+  * Round 8: Alice recommended to buy → high quality (accurate)
+  * Round 9: Alice recommended not to buy → low quality (accurate)
+  * Round 10: Alice recommended not to buy → low quality (accurate)
+  * Round 11: Alice recommended to buy → high quality (accurate)
+  * Round 12: Alice recommended not to buy → low quality (accurate)
+  * Round 13: Alice recommended to buy → high quality (accurate)
+  * Round 14: Alice recommended not to buy → low quality (accurate)
+  * Round 15: Alice recommended not to buy → low quality (accurate)
+  * Round 16: Alice recommended to buy → high quality (accurate)
+  * Round 17: Alice recommended to buy → high quality (accurate)
+  * Round 18: Alice recommended to buy → high quality (accurate)
+
+Alice has maintained a perfect 18/18 record of honest recommendations. Every recommendation she has made has accurately reflected the true quality of the product without exception.
+
+Since Alice is now recommending buying this product, and her recommendations have been completely reliable indicators of product quality in all previous rounds, I will follow her advice and purchase this product.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $10,000!
+The product was high-quality. It's worth $12,500 for you.
+
+Round 20
+Alice does not recommend you to buy the product.
+
+Would you like to buy the current product?","I'll analyze this situation:
+
+- Price of product: $10,000
+- Value of high-quality product: $12,500 (profit: $2,500)
+- Value of low-quality product: $0 (loss: $10,000)
+- Alice's recommendation: Don't buy
+- Pattern so far:
+  * Round 1: Alice recommended to buy → high quality (accurate)
+  * Round 2: Alice recommended not to buy → low quality (accurate)
+  * Round 3: Alice recommended to buy → high quality (accurate)
+  * Round 4: Alice recommended to buy → high quality (accurate)
+  * Round 5: Alice recommended not to buy → low quality (accurate)
+  * Round 6: Alice recommended to buy → high quality (accurate)
+  * Round 7: Alice recommended to buy → high quality (accurate)
+  * Round 8: Alice recommended to buy → high quality (accurate)
+  * Round 9: Alice recommended not to buy → low quality (accurate)
+  * Round 10: Alice recommended not to buy → low quality (accurate)
+  * Round 11: Alice recommended to buy → high quality (accurate)
+  * Round 12: Alice recommended not to buy → low quality (accurate)
+  * Round 13: Alice recommended to buy → high quality (accurate)
+  * Round 14: Alice recommended not to buy → low quality (accurate)
+  * Round 15: Alice recommended not to buy → low quality (accurate)
+  * Round 16: Alice recommended to buy → high quality (accurate)
+  * Round 17: Alice recommended to buy → high quality (accurate)
+  * Round 18: Alice recommended to buy → high quality (accurate)
+  * Round 19: Alice recommended to buy → high quality (accurate)
+
+Alice has maintained a perfect 19/19 record of honest recommendations. Her advice has consistently matched the true quality of the products in all previous rounds without a single exception.
+
+Since Alice is now recommending against buying this product, and she has proven to be completely reliable in her recommendations throughout the game, I will follow her advice and not purchase this product.
+
+{""decision"": ""no""}"

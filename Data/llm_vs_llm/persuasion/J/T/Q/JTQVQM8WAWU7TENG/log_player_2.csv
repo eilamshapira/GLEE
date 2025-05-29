@@ -1,0 +1,537 @@
+prompt,response
+"Round 1
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","Let me think about this rationally:
+
+1. Price: $10,000
+2. If high quality: Worth $12,000 (profit of $2,000)
+3. If low quality: Worth $0 (loss of $10,000)
+4. Base probability: 50% for each quality level
+5. Expected value without considering Alice's recommendation:
+   (50% × $12,000) + (50% × $0) - $10,000 = $6,000 - $10,000 = -$4,000
+
+Even with Alice's recommendation, since this is the first round, I don't know if her recommendations are reliable. Given that the base expected value is negative, I should be cautious.
+
+{""decision"": ""no""}"
+"You didn't buy the product from Alice.
+The product was high-quality. It could have been worth $12,000 for you.
+
+Round 2
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","Interesting - in Round 1, Alice recommended a genuinely high-quality product. This provides one data point suggesting her recommendations might be honest.
+
+However, let's still think carefully:
+1. We've seen 1 honest recommendation out of 1 total recommendation
+2. The risk/reward ratio is still significant:
+   - Potential gain: $2,000 (if high quality)
+   - Potential loss: $10,000 (if low quality)
+3. One truthful recommendation isn't enough to fully trust the system
+4. However, if Alice is being consistently honest, missing these opportunities is costly
+
+Given that Alice's first recommendation was honest and she's recommending again, I'll take a calculated risk this time.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $10,000!
+The product was high-quality. It's worth $12,000 for you.
+
+Round 3
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","This is getting interesting:
+1. Alice has now given 2 honest recommendations out of 2
+2. Both recommended products were high quality
+3. Pattern so far suggests Alice might be truthfully recommending only high-quality products
+4. If this pattern holds true, following her recommendations would be profitable:
+   - Cost: $10,000
+   - Value: $12,000
+   - Profit per transaction: $2,000
+
+Given that Alice has built up some credibility with two honest recommendations in a row, and seems to be selectively recommending high-quality products, I'll continue to trust her recommendation.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $10,000!
+The product was low-quality. It's worth $0 for you.
+
+Round 4
+Alice does not recommend you to buy the product.
+
+Would you like to buy the current product?","This is a crucial development:
+1. Alice's previous recommendations:
+   - Round 1: Recommended, was high quality (I declined)
+   - Round 2: Recommended, was high quality (I profited)
+   - Round 3: Recommended, was low quality (I lost)
+2. Now she's NOT recommending the product
+3. This is our first time seeing a non-recommendation
+4. The pattern suggests she might be trying to regain trust by being honest about a low-quality product
+
+Given that:
+- She's explicitly NOT recommending this one
+- We just got burned on a recommended product
+- The base expected value is negative
+- She might be trying to rebuild credibility
+
+I'll trust her non-recommendation.
+
+{""decision"": ""no""}"
+"You didn't buy the product from Alice.
+The product was low-quality. It could have been worth $0 for you.
+
+Round 5
+Alice does not recommend you to buy the product.
+
+Would you like to buy the current product?","Let's analyze the pattern so far:
+1. When Alice recommends:
+   - 2 were high quality (profitable)
+   - 1 was low quality (loss)
+2. When Alice doesn't recommend:
+   - 1 was low quality (good call not to buy)
+3. Her one non-recommendation so far was honest
+4. The base expected value without recommendation is still negative (-$4,000)
+5. She seems to be somewhat truthful with non-recommendations
+
+Since:
+- She's again explicitly NOT recommending
+- Her previous non-recommendation was honest about a low-quality product
+- There's no upside to ignoring a negative recommendation given the baseline negative expected value
+
+{""decision"": ""no""}"
+"You didn't buy the product from Alice.
+The product was low-quality. It could have been worth $0 for you.
+
+Round 6
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","Let's analyze the updated pattern:
+1. When Alice recommends:
+   - 2 were high quality (profitable)
+   - 1 was low quality (loss)
+   - Success rate: 67%
+2. When Alice doesn't recommend:
+   - 2 were low quality (both good calls)
+   - Success rate: 100%
+
+Her non-recommendations have been reliable (correctly identifying low-quality products). Her recommendations have been mostly but not completely reliable.
+
+However:
+- She seems to be building a pattern of honest non-recommendations
+- This positive recommendation comes after two honest non-recommendations
+- This might be an attempt to rebuild trust after the previous bad recommendation
+
+Given that her non-recommendations have been consistently honest, and she's choosing to recommend this one, I'll take the risk.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $10,000!
+The product was high-quality. It's worth $12,000 for you.
+
+Round 7
+Alice does not recommend you to buy the product.
+
+Would you like to buy the current product?","Let's update our analysis:
+1. When Alice recommends:
+   - 3 were high quality (profitable)
+   - 1 was low quality (loss)
+   - Success rate: 75%
+2. When Alice doesn't recommend:
+   - 2 were low quality (good calls)
+   - Success rate: 100%
+
+Her pattern is becoming clearer:
+- Her non-recommendations have been consistently honest (2/2 correct)
+- She seems to be genuinely warning us about low-quality products
+- The last recommendation was honest (high quality)
+- She's maintaining credibility with her non-recommendations
+
+Given that:
+- All her non-recommendations so far have correctly identified low-quality products
+- The base expected value is negative without reliable information
+- She's building a consistent pattern of honest non-recommendations
+
+{""decision"": ""no""}"
+"You didn't buy the product from Alice.
+The product was low-quality. It could have been worth $0 for you.
+
+Round 8
+Alice does not recommend you to buy the product.
+
+Would you like to buy the current product?","Let's update our analysis:
+1. When Alice recommends:
+   - 3 were high quality (profitable)
+   - 1 was low quality (loss)
+   - Success rate: 75%
+2. When Alice doesn't recommend:
+   - 3 were low quality (all good calls)
+   - Success rate: 100%
+
+The pattern continues to be very clear:
+- Her non-recommendations have been perfectly reliable (3/3 correct)
+- She seems to be genuinely warning us about low-quality products
+- There's no instance yet where she didn't recommend a high-quality product
+- Her non-recommendations are proving to be a very reliable signal
+
+Given:
+- Perfect track record on non-recommendations (3/3)
+- The base expected value is negative without reliable information
+- She's maintaining a consistent pattern of honest non-recommendations
+- No reason to deviate from a working strategy
+
+{""decision"": ""no""}"
+"You didn't buy the product from Alice.
+The product was low-quality. It could have been worth $0 for you.
+
+Round 9
+Alice does not recommend you to buy the product.
+
+Would you like to buy the current product?","Let's update our analysis:
+1. When Alice recommends:
+   - 3 were high quality (profitable)
+   - 1 was low quality (loss)
+   - Success rate: 75%
+2. When Alice doesn't recommend:
+   - 4 were low quality (all good calls)
+   - Success rate: 100%
+
+The pattern remains extremely consistent:
+- Her non-recommendations continue to be perfectly reliable (4/4 correct)
+- She has correctly identified every low-quality product so far
+- This consistent pattern suggests a reliable strategy from Alice
+- There's still no case where she failed to warn about a low-quality product
+
+Given:
+- Perfect track record on non-recommendations (4/4)
+- The base expected value remains negative without reliable information
+- She's maintaining her perfect streak of honest non-recommendations
+- Following her non-recommendations has avoided all losses so far
+
+{""decision"": ""no""}"
+"You didn't buy the product from Alice.
+The product was low-quality. It could have been worth $0 for you.
+
+Round 10
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","Let's update our analysis:
+1. When Alice recommends:
+   - 3 were high quality (profitable)
+   - 1 was low quality (loss)
+   - Success rate: 75%
+2. When Alice doesn't recommend:
+   - 5 were low quality (all good calls)
+   - Success rate: 100%
+
+Current situation:
+- We just saw 5 consecutive non-recommendations, all correctly identifying low-quality products
+- Now she's switching to a recommendation
+- Her recommendations have been mostly reliable (75% success)
+- She's proven extremely trustworthy with non-recommendations
+- This suggests she's being selective and honest about when to recommend
+
+Given:
+- Her perfect track record on non-recommendations builds overall credibility
+- When she does recommend, it's been profitable 75% of the time
+- She's breaking a streak of non-recommendations to make this recommendation
+- This suggests she's seeing genuine value here
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $10,000!
+The product was high-quality. It's worth $12,000 for you.
+
+Round 11
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","Let's update our analysis:
+1. When Alice recommends:
+   - 4 were high quality (profitable)
+   - 1 was low quality (loss)
+   - Success rate: 80%
+2. When Alice doesn't recommend:
+   - 5 were low quality (all good calls)
+   - Success rate: 100%
+
+The pattern is getting even stronger:
+- Her last recommendation was honest (high quality)
+- Her recommendation success rate has improved to 80%
+- She maintains perfect accuracy on non-recommendations
+- She seems to be very selective about when she recommends
+
+Given:
+- Her recommendations are proving increasingly reliable
+- She's following up a successful recommendation with another one
+- Her overall pattern suggests she's being honest and strategic
+- The expected value of following her recommendations is positive:
+  (80% × $12,000) + (20% × $0) - $10,000 = $9,600 - $10,000 = -$400
+
+While the pure mathematical expected value is slightly negative, the recent pattern and improving success rate suggest this is worth the risk.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $10,000!
+The product was high-quality. It's worth $12,000 for you.
+
+Round 12
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","Let's update our analysis:
+1. When Alice recommends:
+   - 5 were high quality (profitable)
+   - 1 was low quality (loss)
+   - Success rate: 83.3%
+2. When Alice doesn't recommend:
+   - 5 were low quality (all good calls)
+   - Success rate: 100%
+
+The pattern continues to strengthen:
+- Her last two recommendations were both honest (high quality)
+- Her recommendation success rate has improved further to 83.3%
+- She maintains perfect accuracy on non-recommendations
+- Expected value is now positive:
+  (83.3% × $12,000) + (16.7% × $0) - $10,000 = $10,000 - $10,000 = $0
+
+Given:
+- She's on a streak of two accurate recommendations
+- Her success rate continues to improve
+- Her overall pattern shows consistent honesty
+- The expected value is now at breakeven point
+- The recent trend suggests this is more likely to be a good recommendation
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $10,000!
+The product was high-quality. It's worth $12,000 for you.
+
+Round 13
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","Let's update our analysis:
+1. When Alice recommends:
+   - 6 were high quality (profitable)
+   - 1 was low quality (loss)
+   - Success rate: 85.7%
+2. When Alice doesn't recommend:
+   - 5 were low quality (all good calls)
+   - Success rate: 100%
+
+The pattern is very strong:
+- She's now on a streak of three accurate recommendations
+- Her recommendation success rate has improved to 85.7%
+- Expected value is now clearly positive:
+  (85.7% × $12,000) + (14.3% × $0) - $10,000 = $10,284 - $10,000 = +$284
+
+Given:
+- Three successful recommendations in a row
+- Continuing improvement in success rate
+- Consistently honest pattern overall
+- Positive expected value
+- Strong recent momentum in accuracy
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $10,000!
+The product was high-quality. It's worth $12,000 for you.
+
+Round 14
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","Let's update our analysis:
+1. When Alice recommends:
+   - 7 were high quality (profitable)
+   - 1 was low quality (loss)
+   - Success rate: 87.5%
+2. When Alice doesn't recommend:
+   - 5 were low quality (all good calls)
+   - Success rate: 100%
+
+The pattern is now very compelling:
+- She's on a streak of four accurate recommendations
+- Her recommendation success rate has improved to 87.5%
+- Expected value continues to improve:
+  (87.5% × $12,000) + (12.5% × $0) - $10,000 = $10,500 - $10,000 = +$500
+
+Given:
+- Four successful recommendations in a row
+- Best success rate yet at 87.5%
+- Consistently honest pattern throughout the game
+- Increasingly positive expected value
+- Strong momentum in recommendation accuracy
+- No signs of pattern breakdown
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $10,000!
+The product was high-quality. It's worth $12,000 for you.
+
+Round 15
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","Let's update our analysis:
+1. When Alice recommends:
+   - 8 were high quality (profitable)
+   - 1 was low quality (loss)
+   - Success rate: 88.9%
+2. When Alice doesn't recommend:
+   - 5 were low quality (all good calls)
+   - Success rate: 100%
+
+The pattern is extremely strong:
+- Now on a streak of five accurate recommendations
+- Success rate improved further to 88.9%
+- Expected value continues climbing:
+  (88.9% × $12,000) + (11.1% × $0) - $10,000 = $10,668 - $10,000 = +$668
+
+Given:
+- Five successful recommendations in a row
+- Highest success rate yet
+- Very consistent and honest behavior throughout
+- Strongest expected value so far
+- Clear momentum in recommendation accuracy
+- Alice appears to have established a very reliable pattern
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $10,000!
+The product was high-quality. It's worth $12,000 for you.
+
+Round 16
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","Let's update our analysis:
+1. When Alice recommends:
+   - 9 were high quality (profitable)
+   - 1 was low quality (loss)
+   - Success rate: 90%
+2. When Alice doesn't recommend:
+   - 5 were low quality (all good calls)
+   - Success rate: 100%
+
+The pattern is now extremely reliable:
+- Six accurate recommendations in a row
+- Success rate has reached 90%
+- Expected value is at its highest:
+  (90% × $12,000) + (10% × $0) - $10,000 = $10,800 - $10,000 = +$800
+
+Given:
+- Longest streak yet of successful recommendations
+- Best success rate yet at 90%
+- Consistently honest behavior throughout game
+- Highest expected value so far
+- Strong and improving accuracy
+- Only 4 rounds remaining in game
+- No indication of pattern breakdown
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $10,000!
+The product was high-quality. It's worth $12,000 for you.
+
+Round 17
+Alice does not recommend you to buy the product.
+
+Would you like to buy the current product?","Let's update our analysis:
+1. When Alice recommends:
+   - 10 were high quality (profitable)
+   - 1 was low quality (loss)
+   - Success rate: 90.9%
+2. When Alice doesn't recommend:
+   - 5 were low quality (all good calls)
+   - Success rate: 100%
+
+Current situation:
+- She's breaking a streak of 7 successful recommendations
+- She's returning to a non-recommendation
+- Her non-recommendations have been perfectly reliable (5/5)
+- She's proven extremely trustworthy overall
+
+Given:
+- Perfect track record on non-recommendations (100% accurate)
+- She's choosing to break a successful recommendation streak
+- Only 3 rounds remaining in the game
+- No reason for her to damage her credibility now
+- The base expected value is negative without recommendation
+- She's maintained honesty throughout the game
+
+{""decision"": ""no""}"
+"You didn't buy the product from Alice.
+The product was low-quality. It could have been worth $0 for you.
+
+Round 18
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","Let's update our analysis:
+1. When Alice recommends:
+   - 10 were high quality (profitable)
+   - 1 was low quality (loss)
+   - Success rate: 90.9%
+2. When Alice doesn't recommend:
+   - 6 were low quality (all good calls)
+   - Success rate: 100%
+
+Current situation:
+- Her last non-recommendation was honest (maintaining perfect record)
+- She's returning to a recommendation after a correct non-recommendation
+- Overall pattern of honesty remains extremely strong
+- Only 2 rounds remaining after this
+- Expected value of following recommendations remains highly positive:
+  (90.9% × $12,000) + (9.1% × $0) - $10,000 = $10,908 - $10,000 = +$908
+
+Given:
+- Continued perfect accuracy on non-recommendations
+- Very high success rate on recommendations
+- Consistent pattern of honesty throughout game
+- Strong positive expected value
+- No indication of pattern breakdown near game end
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $10,000!
+The product was high-quality. It's worth $12,000 for you.
+
+Round 19
+Alice does not recommend you to buy the product.
+
+Would you like to buy the current product?","Let's update our analysis:
+1. When Alice recommends:
+   - 11 were high quality (profitable)
+   - 1 was low quality (loss)
+   - Success rate: 91.7%
+2. When Alice doesn't recommend:
+   - 6 were low quality (all good calls)
+   - Success rate: 100%
+
+Current situation:
+- Her last recommendation was honest (high quality)
+- She's returning to a non-recommendation
+- Her non-recommendations remain perfect (6/6)
+- Only 1 round remaining after this
+- She has maintained consistent honesty throughout
+
+Given:
+- Perfect track record on non-recommendations (100% accurate)
+- No reason to start being dishonest in penultimate round
+- Strong pattern of honesty throughout entire game
+- Base expected value remains negative without recommendation
+- Her non-recommendations have never been wrong
+
+{""decision"": ""no""}"
+"You didn't buy the product from Alice.
+The product was low-quality. It could have been worth $0 for you.
+
+Round 20
+Alice does not recommend you to buy the product.
+
+Would you like to buy the current product?","Let's analyze the final round:
+1. When Alice recommends:
+   - 11 were high quality (profitable)
+   - 1 was low quality (loss)
+   - Success rate: 91.7%
+2. When Alice doesn't recommend:
+   - 7 were low quality (all good calls)
+   - Success rate: 100%
+
+Final round situation:
+- Her last non-recommendation was honest
+- Her non-recommendations remain perfect (7/7)
+- This is the last round of the game
+- She has no incentive to damage her perfect non-recommendation record
+- She's maintained remarkable consistency throughout
+
+Given:
+- Perfect track record on non-recommendations (100% accurate)
+- This being the final round, honesty remains her best strategy
+- Her non-recommendations have never been wrong
+- No reason to distrust her now after such consistent behavior
+
+{""decision"": ""no""}"

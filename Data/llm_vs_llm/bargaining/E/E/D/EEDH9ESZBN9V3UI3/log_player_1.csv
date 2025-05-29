@@ -1,0 +1,100 @@
+prompt,response
+"Round 1
+Send your offer to divide $10,000.","Based on the backward‐induction equilibrium for an alternating–offer split with waiting costs (5% per round for Alice and 10% for Bob), one can show that if we assume in every future round each player “gets what they deserve” relative to the other’s discounting, then in round 1 when Alice is proposer the equilibrium proposal gives her about 68.97% of the pie and Bob about 31.03%. (In standard Rubinstein–style bargaining the proposer’s share is (1–δ_responder)/(1–δ_A·δ_responder); here with δ_A = 0.95 and δ_B = 0.90, that gives (1–0.90)/(1–0.95×0.90) ≈ 0.6897.)
+
+Thus, for a $10,000 pie the equilibrium proposal in round 1 is approximately:
+
+ Alice: $6,896.55  
+ Bob:   $3,103.45
+
+Here is the JSON offer:
+
+{""alice_gain"": 6896.55, ""bob_gain"": 3103.45}
+
+Note that even though there are many subtleties that one can discuss about every round’s discounting, this offer reflects the “fair” outcome in a game where both parties are forward‐looking and know there are only 12 rounds available."
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 5% less than in the first round. The money bob gains is worth 10% less than in the first round.
+Bob's offer:
+# Alice gain: 4500 
+# Bob gain: 5500 
+Do you accept this offer?","{""decision"": ""reject""}"
+"You have chosen to reject Bob's offer from round 2.
+Round 3
+Send your offer to divide $10,000.","Using backward‐induction we can “solve” for the offer that leaves Bob just indifferent between accepting now and waiting one round. (Note that in this game the “value” of a given physical dollar depends on whose round it is; money in round 3 is worth 90% of its face value for you – Alice – and 80% for Bob, while if Bob waits until round 4 his money will be worth only 70% of its face value and yours 85%.) 
+
+Let x be the number of dollars, out of $10,000, that you (Alice) claim in round 3. If Bob accepts your offer then his physical share is (10,000 – x) and his round‐3 “value” is 0.80 · (10,000 – x).
+
+If Bob instead rejects, he becomes the proposer in round 4. In round 4 the “conversion” factors have dropped further: you’ll view dollars at 0.85 and Bob at 0.70. (In effect, Bob “waits” and the dollar “inflates” against him by an extra 10% and for you by 5%.) In round 4 Bob will propose an offer that is optimal for him in equilibrium. Standard alternating–offers analysis (using, for a one–round delay, effective discount factors for the responder computed as 
+  δ₍ᴬ₎ = (Alice’s round 4 multiplier)/(Alice’s round 3 multiplier) = 0.85/0.90 ≈ 0.9444 
+  δ₍ᴮ₎ = (Bob’s round 4 multiplier)/(Bob’s round 3 multiplier) = 0.70/0.80 = 0.875)
+leads to the following result for the proposer’s “physical” share (see, e.g., the Rubinstein bargaining model): when you are proposing the division the equilibrium share is 
+  Alice’s share = 1 – [δ₍ᴮ₎(1 – δ₍ᴬ₎)]⁄[1 – δ₍ᴬ₎δ₍ᴮ₎].
+
+(In games like this one the proposer “pushes” as much as possible onto the responder – here, Bob – leaving him just enough to be willing to accept rather than wait one more round.) 
+
+But an even simpler (and equivalent) way to think about it is to “pin down” Bob’s continuation value. In round 4 (as proposer) Bob would secure himself some share of the $10,000. Working out the full equilibrium in round 4 (with the new multipliers for a further delay from round 4 to round 5) gives Bob an approximate continuation value of about 0.70 · 3047 ≈ 2133 “value–points” (that is, in round 4, Bob would get roughly $3047 physically which, multiplied by 0.70, is about 2133 points of value). 
+
+Thus, when you propose in round 3 your offer must give Bob a round–3 value at least equal to 2133. At round 3 his value from an offer is 0.80 times whatever physical dollars he receives. Setting
+  0.80 · (10,000 – x) = 2133
+implies
+  10,000 – x = 2133/0.80 = 2666.25  →  x = 10,000 – 2666.25 = 7333.75.
+
+That is, you should propose that you get $7,333.75 (whose round–3 “worth” to you is 0.90·7333.75) and Bob gets $2,666.25 (worth him 0.80·2666.25 ≈ 2133). Bob is then just indifferent between accepting now or waiting one more round. As the proposer you can “lean” in your favor by making this exact offer. 
+
+Here is your round 3 JSON offer:
+
+{""alice_gain"": 7333.75, ""bob_gain"": 2666.25}"
+"Bob rejected your offer from round 3.
+
+Round 4
+Due to inflation, the money you gain is worth 14.26% less than in the first round. The money bob gains is worth 27.1% less than in the first round.
+Bob's offer:
+# Alice gain: 4200 
+# Bob gain: 5800 
+Do you accept this offer?","{""decision"": ""reject""}"
+"You have chosen to reject Bob's offer from round 4.
+Round 5
+Send your offer to divide $10,000.","{""alice_gain"": 7619, ""bob_gain"": 2381}"
+"Bob rejected your offer from round 5.
+
+Round 6
+Due to inflation, the money you gain is worth 22.62% less than in the first round. The money bob gains is worth 40.95% less than in the first round.
+Bob's offer:
+# Alice gain: 4100 
+# Bob gain: 5900 
+Do you accept this offer?","{""decision"": ""reject""}"
+"You have chosen to reject Bob's offer from round 6.
+Round 7
+Send your offer to divide $10,000.","{""alice_gain"": 4820, ""bob_gain"": 5180}"
+"Bob rejected your offer from round 7.
+
+Round 8
+Due to inflation, the money you gain is worth 30.17% less than in the first round. The money bob gains is worth 52.17% less than in the first round.
+Bob's offer:
+# Alice gain: 3800 
+# Bob gain: 6200 
+Do you accept this offer?","{""decision"": ""reject""}"
+"You have chosen to reject Bob's offer from round 8.
+Round 9
+Send your offer to divide $10,000.","{""alice_gain"": 5000, ""bob_gain"": 5000}"
+"Bob rejected your offer from round 9.
+
+Round 10
+Due to inflation, the money you gain is worth 36.98% less than in the first round. The money bob gains is worth 61.26% less than in the first round.
+Bob's offer:
+# Alice gain: 3500 
+# Bob gain: 6500 
+Do you accept this offer?","{""decision"": ""reject""}"
+"You have chosen to reject Bob's offer from round 10.
+Round 11
+Send your offer to divide $10,000.","{""alice_gain"": 4023.80, ""bob_gain"": 5976.20}"
+"Bob rejected your offer from round 11.
+
+Round 12
+Due to inflation, the money you gain is worth 43.12% less than in the first round. The money bob gains is worth 68.62% less than in the first round.
+Bob's offer:
+# Alice gain: 3200 
+# Bob gain: 6800 
+Do you accept this offer?","{""decision"": ""accept""}"

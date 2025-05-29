@@ -1,0 +1,33 @@
+prompt,response
+"Round 1
+Send your offer to divide $100.","Based on a backward‐induction analysis (using continuous discounting factors where, in round i, any dollars are worth 0.9^(i–1) for you and 0.8^(i–1) for Bob), the subgame‐perfect equilibrium outcome (assuming nearly “knife‐edge” proposals where the responder is just indifferent between accepting and waiting) can be derived round‐by‐round. For example, in the final round (round 12) Bob proposes, and he can offer Alice an arbitrarily small amount while keeping (almost) 100 for himself. Then, stepping back one round (round 11, when you are the proposer), you must offer Bob an amount that—when multiplied by his round‑11 “multiplier” (which is 0.8^(10))—matches what he would get in round 12 (100·0.8^(11)). That calculation leads to an offer of 80 for Bob and 20 for you in round 11. Continuing this reasoning backward until round 1 yields an equilibrium offer in round 1 of approximately
+
+  Alice: 61.48  
+  Bob: 38.52
+
+In round 1 Bob would compare a sure 38.52 (with no discount in round 1) to his later “continuation value” (which, because of his steeper discounting, comes out lower when delayed). Thus Bob accepts an offer giving him 38.52 and you keep 61.48.
+
+Here is my offer in the required JSON format:
+
+{""alice_gain"": 61.48, ""bob_gain"": 38.52}
+
+Let’s see how Bob responds!"
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 10% less than in the first round. The money bob gains is worth 20% less than in the first round.
+Bob's offer:
+# Alice gain: 50 
+# Bob gain: 50 
+Do you accept this offer?","{""decision"": ""reject""}"
+"You have chosen to reject Bob's offer from round 2.
+Round 3
+Send your offer to divide $100.","{""alice_gain"": 33.77, ""bob_gain"": 66.23}"
+"Bob rejected your offer from round 3.
+
+Round 4
+Due to inflation, the money you gain is worth 27.1% less than in the first round. The money bob gains is worth 48.8% less than in the first round.
+Bob's offer:
+# Alice gain: 46 
+# Bob gain: 54 
+Do you accept this offer?","{""decision"": ""accept""}"

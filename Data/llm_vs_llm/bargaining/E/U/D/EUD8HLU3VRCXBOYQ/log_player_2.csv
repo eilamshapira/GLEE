@@ -1,0 +1,43 @@
+prompt,response
+"Round 1
+Alice's offer:
+# Alice's message: Hi Bob, I propose we settle now: I receive $100000 and you receive $900000. Accepting this offer right away gives you the full $900000 value, whereas waiting to make your own proposal next round means your share will be discounted by 10% and mine by 20%. Let’s avoid the loss from delay and agree immediately. 
+# Bob gain: 900000 
+# Alice gain: 100000 
+Do you accept this offer?","{""decision"": ""reject""}"
+"You have chosen to reject Alice's offer from round 1.
+Round 2
+Send your offer to divide $1,000,000 and a message to Alice.","```json
+{
+  ""bob_gain"": 950000,
+  ""alice_gain"": 50000,
+  ""message"": ""Alice, I understand your previous offer, but I believe a more balanced division is fair. I propose I receive $950,000 and you receive $50,000. Considering the devaluation, this offer still provides you with a reasonable amount. Let's settle this round to maximize our gains.""
+}
+```"
+"Alice rejected your offer from round 2.
+
+Round 3
+Due to inflation, the money you gain is worth 19% less than in the first round. The money alice gains is worth 36% less than in the first round.
+Alice's offer:
+# Alice's message: Hi Bob, in Round 3 I propose we settle now: I take $100000 and you get $900000. With the inflation this round, my share is worth 0.64 × $100000 ≈ $64000 and yours 0.81 × $900000 ≈ $729000. If you were to wait until Round 4 to propose, you'd essentially be able to secure roughly the same effective value, but with even more delay. To avoid further devaluation and secure our outcomes, I believe it’s best to agree on this split now. Let’s end the game on a rational note—please accept. 
+# Bob gain: 900000 
+# Alice gain: 100000 
+Do you accept this offer?","{""decision"": ""reject""}"
+"You have chosen to reject Alice's offer from round 3.
+Round 4
+Send your offer to divide $1,000,000 and a message to Alice.","```json
+{
+  ""bob_gain"": 910000,
+  ""alice_gain"": 90000,
+  ""message"": ""Alice, considering the devaluation, I propose I receive $910,000 and you receive $90,000. This round, your share is worth approximately 0.64 × $90,000 ≈ $57,600, and mine is worth approximately 0.729 × $910,000 ≈ $663,590. Let's settle this round to avoid further losses.""
+}
+```"
+"Alice rejected your offer from round 4.
+
+Round 5
+Due to inflation, the money you gain is worth 34.39% less than in the first round. The money alice gains is worth 59.04% less than in the first round.
+Alice's offer:
+# Alice's message: Bob, here's my proposal for Round 5: I take $97000 and you receive $903000. At this stage, my nominal share is discounted by a factor of 0.4096 (i.e. 0.8^4) and yours by 0.6561 (0.9^4). That gives you an effective value of roughly 903000 × 0.6561 ≈ $592000. Considering that if you reject and wait until Round 6—when you'll propose—the additional round’s devaluation would likely leave you with an effective value in the same ballpark, this offer should be at least as good as your continuation value. I believe this split helps us both avoid further losses from inflation. I look forward to settling this matter now. 
+# Bob gain: 903000 
+# Alice gain: 97000 
+Do you accept this offer?","{""decision"": ""accept""}"

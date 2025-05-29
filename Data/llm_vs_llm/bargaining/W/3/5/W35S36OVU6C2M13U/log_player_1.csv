@@ -1,0 +1,38 @@
+prompt,response
+"Round 1
+Send your offer to divide $100.","Okay, I understand the rules. It's round 1, I'm Alice, and I need to make an offer to Bob. I need to consider the inflation effect on my gains in later rounds. Since the money is worth less to me each round, I should try to get a larger portion now.
+
+Here's my offer:
+
+```json
+{
+  ""alice_gain"": 60,
+  ""bob_gain"": 40
+}
+```
+
+**Explanation:**
+
+I'm proposing to take $60 and give Bob $40. I'm hoping Bob will accept this offer because he receives a guaranteed $40, and it avoids any potential delays where he might receive less, especially if he has risk aversion. Since I have to bear the cost of inflation, I prefer to have a larger amount now."
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 20% less than in the first round. The money Bob gains is worth the same as in the first round.
+Bob's offer:
+# Alice gain: 30 
+# Bob gain: 70 
+Do you accept this offer?","Okay, it's round 2. Bob rejected my offer of 60/40. Now he's offering me 30 and keeping 70 for himself. I need to decide if that's better than risking another round with even greater inflation.
+
+Let's analyze:
+
+*   **If I accept:** I get $30. Since this is round 2, this $30 is worth 80% of what it was in round 1. So, it's worth $30 * 0.8 = $24 in round 1 dollars.
+
+*   **If I reject:** I go to round 3. The money will be worth 20% less again, meaning the money will only be worth 64% of what it was in round 1. I'd have to propose something to Bob that he'd accept, and I'd need to factor in that significant devaluation.
+
+$24 in round 1 money is not a great deal. However, considering how much less money would be worth for me in the next round, and that I have to make Bob an offer he can't refuse, it is still beneficial for me to take this deal.
+
+```json
+{
+  ""decision"": ""accept""
+}
+```"

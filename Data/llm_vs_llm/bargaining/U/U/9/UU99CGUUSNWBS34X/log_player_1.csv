@@ -1,0 +1,28 @@
+prompt,response
+"Round 1
+Send your offer to divide $1,000,000.","Based on a backward‐induction analysis of the 12–round game (taking into account that with each round delay your money is worth 10% less per round while Bob’s is only 5% less), a subgame–perfect equilibrium can be derived. (All amounts below are in “nominal dollars” on the pie in the round the agreement is reached; each player’s final utility is that nominal share multiplied by their round–dependent discount factor.) 
+
+Briefly, the reasoning is as follows. In the final round (round 12) Bob is the proposer and can offer Alice (almost) nothing—so Bob would keep 1,000,000 (nominal). Then, rolling back one round (round 11, with Alice proposing) Bob’s “continuation” if he rejects is to get 1,000,000 nominal in round 12 (but worth 0.95^(11) in utility), so Alice must offer Bob an amount x satisfying
+
+  x · 0.95^(10) = 1,000,000 · 0.95^(11).
+
+That gives x = 1,000,000 · 0.95 = 950,000, leaving Alice 50,000 nominal in round 11. (In what follows similar “indifference–point” calculations determine the minimum share that must be given to the responder so that they prefer to agree rather than wait.) 
+
+Continuing in this way (with Bob proposing in round 10, Alice in round 9, Bob in round 8, …, etc.) one eventually arrives at round 1 when you (Alice) are the proposer. In equilibrium the offer you must make is such that Bob’s immediate gain (with no discount, since r = 1) is exactly as valuable to him as what he would expect to achieve if he waited until round 2. In our calculations the equilibrium in round 2 (with Bob proposing) would eventually give him a nominal share of about 831,454.64; however, because in round 2 Bob’s money is automatically discounted by a factor of 0.95 once (i.e. multiplied by 0.95^1), his continuation‐value in “round–1 dollars” is approximately
+
+  831,454.64 × 0.95 ≈ 789,881.91.
+
+Thus, to induce Bob to accept in round 1 your offer must give him at least approximately 789,881.91 dollars. Since the full pie is 1,000,000 nominal dollars, your equilibrium offer in round 1 is to keep about
+
+  1,000,000 − 789,881.91 ≈ 210,118.09
+
+for yourself.
+
+Accordingly, in round 1 you can send the following JSON offer:
+
+{
+  ""alice_gain"": 210118.09,
+  ""bob_gain"": 789881.91
+}
+
+This is the offer that, if both players follow the logic of backward–induction, Bob should accept rather than waiting to propose in round 2."

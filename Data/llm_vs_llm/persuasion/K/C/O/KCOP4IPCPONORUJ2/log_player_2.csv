@@ -1,0 +1,336 @@
+prompt,response
+"Round 1
+Alice's message: I understand this is a significant investment, and you want to ensure you're getting a high-quality product.  I'm confident in the value of this particular item. While I can't reveal the exact quality due to our business practices, I'm willing to stake my reputation on this one.  Let's make a deal.
+
+Would you like to buy the current product?","I need to analyze the situation.
+
+Alice has an incentive to sell me products regardless of quality since she gets $1,000,000 either way. I only profit from high-quality products (worth $1,250,000) and lose money on low-quality ones (worth $0).
+
+Alice's message doesn't contain any clear information about the quality. She uses vague positive language but doesn't explicitly state it's high quality. Without specific information indicating this is a high-quality product, I should rely on the base probability (50% high quality).
+
+Expected value: 0.5 × $1,250,000 + 0.5 × $0 = $625,000
+
+Since the expected value ($625,000) is less than the price ($1,000,000), I shouldn't buy.
+
+{""decision"": ""no""}"
+"You didn't buy the product from Alice.
+The product was high-quality. It could have been worth $1,250,000 for you.
+
+Round 2
+Alice's message: I know you're hesitant after last time, but this product is different. I have a strong feeling about this one.  I'm willing to bet you will too, if you purchase it.  Think of the potential upside!
+
+Would you like to buy the current product?","I need to analyze this situation carefully.
+
+Alice has an incentive to sell me products regardless of quality since she gets $1,000,000 either way. In the previous round, I missed out on a high-quality product, but that doesn't change the underlying probabilities for this new product.
+
+Alice's message again uses positive but vague language like ""strong feeling"" and mentions ""potential upside"" without providing specific information about quality. She might be trying to leverage my regret from the previous round, but I shouldn't let that influence my decision.
+
+Without clear information indicating the quality, I should stick with the base probability (50% high quality).
+
+Expected value: 0.5 × $1,250,000 + 0.5 × $0 = $625,000
+
+Since the expected value ($625,000) is less than the price ($1,000,000), I shouldn't buy.
+
+{""decision"": ""no""}"
+"You didn't buy the product from Alice.
+The product was high-quality. It could have been worth $1,250,000 for you.
+
+Round 3
+Alice's message: Third time's the charm!  I'm serious, this one is a winner. While I can't outright say it's high-quality, I'm extremely optimistic about this product. I wouldn't suggest buying it if I didn't think it was worth the investment.
+
+Would you like to buy the current product?","I need to analyze this situation carefully again.
+
+Alice has a financial incentive to sell me products regardless of quality since she gets $1,000,000 either way. I've now missed two high-quality products, but that doesn't change the underlying 50% probability for this new, independent product.
+
+Alice's message is interesting - she says ""I wouldn't suggest buying it if I didn't think it was worth the investment."" However, she has incentive to suggest buying all products. Her statement ""While I can't outright say it's high-quality"" might be attempting to build trust, but doesn't provide definitive information.
+
+Without clear, reliable information indicating the quality, I should stick with the base probability.
+
+Expected value: 0.5 × $1,250,000 + 0.5 × $0 = $625,000
+
+Since the expected value ($625,000) is less than the price ($1,000,000), I shouldn't buy.
+
+{""decision"": ""no""}"
+"You didn't buy the product from Alice.
+The product was high-quality. It could have been worth $1,250,000 for you.
+
+Round 4
+Alice's message: Okay, Bob, let's be frank. I know you're looking for high quality.  I can't explicitly reveal it, but let's just say I'm highly confident this one fits the bill.  This is a gamble worth taking.
+
+Would you like to buy the current product?","I need to carefully analyze Alice's message and the pattern so far.
+
+I notice that Alice has shown me three high-quality products in a row, which is statistically unlikely (0.5³ = 0.125 probability) if she were truly selecting products randomly. This suggests Alice might be selectively showing me high-quality products.
+
+However, her message still contains hedging language like ""I can't explicitly reveal it"" and ""I'm highly confident,"" which doesn't provide definitive information about quality. She could be using this language regardless of quality.
+
+I need to consider the possibility that Alice might be establishing a pattern of trustworthiness by initially showing me only high-quality products before potentially mixing in low-quality ones later.
+
+Without a clear signal that would allow me to differentiate between her recommendations for high-quality versus low-quality products, I should still rely on the base probability.
+
+Expected value: 0.5 × $1,250,000 + 0.5 × $0 = $625,000
+
+Since the expected value ($625,000) is less than the price ($1,000,000), I shouldn't buy.
+
+{""decision"": ""no""}"
+"You didn't buy the product from Alice.
+The product was high-quality. It could have been worth $1,250,000 for you.
+
+Round 5
+Alice's message: This one is part of our standard stock.  It's a solid product, but I understand if you're looking for something truly exceptional, this might not be the one.  It's your call, Bob.
+
+Would you like to buy the current product?","This message is noticeably different from Alice's previous ones. Instead of using enthusiastic language and trying to persuade me to buy, she's describing this as a ""standard stock"" and ""solid product"" while explicitly saying ""if you're looking for something truly exceptional, this might not be the one.""
+
+This represents a significant shift in tone and content compared to her previous messages where she expressed high confidence and encouraged purchase. This suggests she may be communicating information about quality through her level of enthusiasm and specific language choices.
+
+Given that the previous four products were all high-quality and Alice used persuasive language for those, her sudden hesitation and tempering of expectations for this product suggests it might be low-quality.
+
+Based on this apparent signaling pattern, I'll interpret this as indicating a low-quality product.
+
+{""decision"": ""no""}"
+"You didn't buy the product from Alice.
+The product was low-quality. It could have been worth $0 for you.
+
+Round 6
+Alice's message: Today's product is a reliable option.  It's not necessarily the flashiest, but it's a good workhorse.  Think of it as a dependable investment, even if it's not the highest-return potential.
+
+Would you like to buy the current product?","Alice's message about this product is again using restrained language similar to the previous round. She's describing it as ""reliable"" and ""dependable"" but explicitly states ""it's not necessarily the flashiest"" and ""not the highest-return potential.""
+
+This appears to continue the pattern where Alice uses enthusiastic, confident language for high-quality products (as she did in rounds 1-4) and more measured, qualified language for low-quality products (as in round 5).
+
+Based on this pattern, Alice seems to be signaling that this is another low-quality product by tempering expectations and using language that suggests adequate but not exceptional quality.
+
+Given this apparent signaling, I'll interpret this as indicating a low-quality product.
+
+{""decision"": ""no""}"
+"You didn't buy the product from Alice.
+The product was low-quality. It could have been worth $0 for you.
+
+Round 7
+Alice's message: I've got a great feeling about this one, Bob.  Really great. This one reminds me of the first few I showed you.  I'm confident you'll be pleased if you decide to purchase.
+
+Would you like to buy the current product?","Alice's message has returned to the enthusiastic, confident language she used in the first four rounds. She explicitly references ""the first few I showed you"" (which were all high-quality) and expresses strong confidence with phrases like ""great feeling"" and ""really great.""
+
+There seems to be a consistent pattern emerging:
+- For high-quality products (rounds 1-4): Alice uses enthusiastic, confident language and strongly encourages purchase
+- For low-quality products (rounds 5-6): Alice uses restrained language, mentions limitations, and doesn't strongly push for purchase
+
+Given that Alice appears to be honestly signaling product quality through her language and enthusiasm level, and this message matches her pattern for high-quality products, I'll interpret this as indicating a high-quality product.
+
+Expected value with this information would be much closer to $1,250,000 than the base rate of $625,000.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $1,000,000!
+The product was high-quality. It's worth $1,250,000 for you.
+
+Round 8
+Alice's message: This one has that same spark as the last one you bought!  I think you'll be very satisfied with this purchase. Highly recommended.
+
+Would you like to buy the current product?","Alice is continuing with the enthusiastic, confident language pattern that she's used for high-quality products. She specifically references ""that same spark as the last one you bought"" - which was confirmed to be high-quality - and provides a strong recommendation with phrases like ""very satisfied"" and ""highly recommended.""
+
+Her consistent pattern of signaling seems to be:
+- Enthusiastic, confident language with strong recommendations → high-quality product
+- Restrained language with qualifications and limitations → low-quality product
+
+Since this message clearly fits her pattern for signaling high-quality products, I'll interpret this as indicating another high-quality product.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $1,000,000!
+The product was high-quality. It's worth $1,250,000 for you.
+
+Round 9
+Alice's message: Today's product is a decent offering.  It's functional and practical, a good standard choice.
+
+Would you like to buy the current product?","Alice has returned to using the restrained language pattern that she used for the low-quality products in rounds 5-6. She describes this product with lukewarm terms like ""decent"" and ""standard choice"" rather than the enthusiastic language she uses for high-quality products.
+
+Her consistent signaling pattern seems to be:
+- Enthusiastic, confident language with strong recommendations → high-quality products (rounds 1-4, 7-8)
+- Restrained, qualified language without strong encouragement → low-quality products (rounds 5-6)
+
+This message clearly matches her pattern for signaling low-quality products. She's not expressing excitement or strong confidence, and the description is notably brief compared to her messages for high-quality products.
+
+Based on this pattern, I'll interpret this as indicating a low-quality product.
+
+{""decision"": ""no""}"
+"You didn't buy the product from Alice.
+The product was low-quality. It could have been worth $0 for you.
+
+Round 10
+Alice's message: Bob, this one is another winner.  Similar to the ones you've already purchased and been happy with. Don't miss out!
+
+Would you like to buy the current product?","Alice is using her enthusiastic, confident language pattern again. She explicitly references ""Similar to the ones you've already purchased and been happy with"" (which were high-quality products) and uses encouraging phrases like ""winner"" and ""Don't miss out!""
+
+Her consistent signaling pattern has been:
+- Enthusiastic, confident language with comparisons to other good products → high-quality (rounds 1-4, 7-8)
+- Restrained, qualified language describing standard or basic quality → low-quality (rounds 5-6, 9)
+
+Since this message clearly fits her pattern for signaling high-quality products, I'll interpret this as indicating another high-quality product.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $1,000,000!
+The product was high-quality. It's worth $1,250,000 for you.
+
+Round 11
+Alice's message: This product is a solid, standard item from our inventory.  A practical choice, like some of the earlier ones I've shown you.
+
+Would you like to buy the current product?","Alice is using the restrained, qualified language pattern that she's consistently used for low-quality products. She describes this as ""solid, standard"" and ""practical"" - similar to her descriptions in rounds 5, 6, and 9, which were all confirmed to be low-quality products.
+
+Her reference to ""like some of the earlier ones I've shown you"" is vague and could refer to any previous products, but the overall tone and word choice match her pattern for signaling low-quality products:
+- Enthusiastic, confident language → high-quality (rounds 1-4, 7-8, 10)
+- Restrained, qualified language → low-quality (rounds 5-6, 9)
+
+Given this consistent pattern and the lack of enthusiasm in her description, I'll interpret this as indicating a low-quality product.
+
+{""decision"": ""no""}"
+"You didn't buy the product from Alice.
+The product was low-quality. It could have been worth $0 for you.
+
+Round 12
+Alice's message: I'm excited about this one, Bob. It's top-notch.  It has the same qualities as the others you decided to invest in.  I highly recommend it.
+
+Would you like to buy the current product?","Alice is using her enthusiastic, confident language pattern that she's consistently used for high-quality products. She explicitly states she's ""excited"" and describes the product as ""top-notch"" - much stronger language than she uses for low-quality products.
+
+She directly references ""the same qualities as the others you decided to invest in"" - which were all high-quality products. She also adds a clear ""I highly recommend it"" statement, which she typically includes for high-quality products but omits for low-quality ones.
+
+Her consistent signaling pattern has been:
+- Enthusiastic, confident language with explicit recommendations → high-quality (rounds 1-4, 7-8, 10)
+- Restrained, qualified language with neutral descriptions → low-quality (rounds 5-6, 9, 11)
+
+This message clearly fits her pattern for signaling high-quality products.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $1,000,000!
+The product was high-quality. It's worth $1,250,000 for you.
+
+Round 13
+Alice's message: Another excellent product, Bob!  This one is in the same league as the others you've been pleased with.  Highly recommended.
+
+Would you like to buy the current product?","Alice is continuing with her enthusiastic, confident language pattern that she consistently uses for high-quality products. She describes this as ""excellent"" and explicitly compares it to ""others you've been pleased with"" - referring to the high-quality products I've previously purchased.
+
+Her ""Highly recommended"" statement is also a clear signal she typically includes only for high-quality products.
+
+The pattern remains consistent:
+- Enthusiastic language with strong recommendations → high-quality (rounds 1-4, 7-8, 10, 12)
+- Restrained language with neutral descriptions → low-quality (rounds 5-6, 9, 11)
+
+This message clearly fits her pattern for signaling high-quality products.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $1,000,000!
+The product was high-quality. It's worth $1,250,000 for you.
+
+Round 14
+Alice's message: This is a decent item from our regular inventory. It's a practical and functional option.
+
+Would you like to buy the current product?","Alice has returned to using her restrained, qualified language pattern that she consistently uses for low-quality products. She describes this as a ""decent item"" and ""practical and functional"" - similar to her descriptions in rounds 5, 6, 9, and 11, which were all confirmed to be low-quality products.
+
+The message is also notably brief compared to her more enthusiastic and detailed descriptions of high-quality products.
+
+Her consistent signaling pattern has been:
+- Enthusiastic language with strong recommendations → high-quality (rounds 1-4, 7-8, 10, 12-13)
+- Restrained language with neutral descriptions → low-quality (rounds 5-6, 9, 11)
+
+This message clearly matches her pattern for signaling low-quality products.
+
+{""decision"": ""no""}"
+"You didn't buy the product from Alice.
+The product was low-quality. It could have been worth $0 for you.
+
+Round 15
+Alice's message: This product is a standard offering, a reliable and practical choice.
+
+Would you like to buy the current product?","Alice is again using her restrained, qualified language pattern that she consistently uses for low-quality products. She describes this as a ""standard offering"" and ""reliable and practical"" - very similar to her descriptions in rounds 5, 6, 9, 11, and 14, all of which were confirmed to be low-quality products.
+
+The message is brief and lacks the enthusiasm, strong recommendations, and references to previous successful purchases that characterize her descriptions of high-quality products.
+
+Her consistent signaling pattern has been:
+- Enthusiastic language with strong recommendations → high-quality (rounds 1-4, 7-8, 10, 12-13)
+- Restrained language with neutral descriptions → low-quality (rounds 5-6, 9, 11, 14)
+
+This message clearly matches her pattern for signaling low-quality products.
+
+{""decision"": ""no""}"
+"You didn't buy the product from Alice.
+The product was low-quality. It could have been worth $0 for you.
+
+Round 16
+Alice's message: Bob, you'll want to take a close look at this one.  It's high-caliber, just like the ones you've already invested in and profited from.  Don't miss this opportunity.
+
+Would you like to buy the current product?","Alice is using her enthusiastic, confident language pattern that she consistently uses for high-quality products. She describes this as ""high-caliber"" and explicitly compares it to ""the ones you've already invested in and profited from"" - a clear reference to the high-quality products I've previously purchased.
+
+Her encouragement ""Don't miss this opportunity"" is also characteristic of how she presents high-quality products, creating a sense of urgency and high value.
+
+Her consistent signaling pattern has been:
+- Enthusiastic language with comparisons to successful previous purchases → high-quality (rounds 1-4, 7-8, 10, 12-13)
+- Restrained language with neutral descriptions → low-quality (rounds 5-6, 9, 11, 14-15)
+
+This message clearly fits her pattern for signaling high-quality products.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $1,000,000!
+The product was high-quality. It's worth $1,250,000 for you.
+
+Round 17
+Alice's message: This is a standard product from our usual stock. A decent, practical option.
+
+Would you like to buy the current product?","Alice is using her restrained, qualified language pattern that she consistently uses for low-quality products. She describes this as a ""standard product"" and ""decent, practical option"" - very similar to her descriptions in rounds 5, 6, 9, 11, 14, and 15, all of which were confirmed to be low-quality products.
+
+The message is brief and lacks the enthusiasm, strong recommendations, and references to previous successful purchases that characterize her descriptions of high-quality products.
+
+Her consistent signaling pattern has been:
+- Enthusiastic language with strong recommendations → high-quality (rounds 1-4, 7-8, 10, 12-13, 16)
+- Restrained language with neutral descriptions → low-quality (rounds 5-6, 9, 11, 14-15)
+
+This message clearly matches her pattern for signaling low-quality products.
+
+{""decision"": ""no""}"
+"You didn't buy the product from Alice.
+The product was low-quality. It could have been worth $0 for you.
+
+Round 18
+Alice's message: This one is a gem, Bob. It has all the hallmarks of the high-quality products you've purchased before.  Highly recommend adding this to your collection.
+
+Would you like to buy the current product?","Alice is using her enthusiastic, confident language pattern that she consistently uses for high-quality products. She describes this as ""a gem"" and explicitly states it has ""all the hallmarks of the high-quality products you've purchased before"" - a direct reference to the high-quality products I've previously bought.
+
+Her ""Highly recommend"" statement is also a clear signal she typically includes only for high-quality products.
+
+Her consistent signaling pattern has remained:
+- Enthusiastic language with direct references to quality and previous successful purchases → high-quality (rounds 1-4, 7-8, 10, 12-13, 16)
+- Restrained language with neutral descriptions → low-quality (rounds 5-6, 9, 11, 14-15, 17)
+
+This message clearly fits her pattern for signaling high-quality products.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $1,000,000!
+The product was high-quality. It's worth $1,250,000 for you.
+
+Round 19
+Alice's message: This product is another top-tier offering, Bob. It's comparable to the others you've been happy with.  Don't let this one slip away.
+
+Would you like to buy the current product?","Alice is continuing with her enthusiastic, confident language pattern that she consistently uses for high-quality products. She explicitly describes this as ""top-tier"" and ""comparable to the others you've been happy with"" - a clear reference to the high-quality products I've previously purchased.
+
+Her encouragement ""Don't let this one slip away"" conveys urgency and high value, which is characteristic of how she presents high-quality products.
+
+Her consistent signaling pattern has remained:
+- Enthusiastic language with references to quality and previous successful purchases → high-quality (rounds 1-4, 7-8, 10, 12-13, 16, 18)
+- Restrained language with neutral descriptions → low-quality (rounds 5-6, 9, 11, 14-15, 17)
+
+This message clearly fits her pattern for signaling high-quality products.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $1,000,000!
+The product was high-quality. It's worth $1,250,000 for you.
+
+Round 20
+Alice's message: Last chance, Bob!  This one is a fantastic product, just like the several others you wisely invested in.  Finish strong and grab this one.
+
+Would you like to buy the current product?","Alice is using her enthusiastic, confident language pattern that she consistently uses for high-quality products. She describes this as ""fantastic"" and explicitly compares it to ""the several others you wisely invested in"" - a clear reference to the high-quality products I've previously purchased.
+
+Her encouragement ""Finish strong and grab this one"" conveys urgency and high value, which is characteristic of how she presents high-quality products.
+
+Her consistent signaling pattern throughout the game has been:
+- Enthusiastic language with references to quality and previous successful purchases → high-quality (rounds 1-4, 7-8, 10, 12-13, 16, 18-19)
+- Restrained language with neutral descriptions → low-quality (rounds 5-6, 9, 11, 14-15, 17)
+
+This message clearly fits her pattern for signaling high-quality products.
+
+{""decision"": ""yes""}"

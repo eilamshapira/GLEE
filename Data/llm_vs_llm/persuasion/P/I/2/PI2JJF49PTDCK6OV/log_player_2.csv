@@ -1,0 +1,554 @@
+prompt,response
+"Round 1
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","Let me analyze this:
+
+1. Product price: $1,000,000
+2. If high quality (80% chance): Worth $2,000,000 (profit: +$1,000,000)
+3. If low quality (20% chance): Worth $0 (loss: -$1,000,000)
+
+Expected value calculation:
+* 80% × (+$1,000,000) + 20% × (-$1,000,000)
+* = $800,000 - $200,000
+* = $600,000 positive expected value
+
+Since the expected value is positive, it's rational to buy.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $1,000,000!
+The product was high-quality. It's worth $2,000,000 for you.
+
+Round 2
+Alice does not recommend you to buy the product.
+
+Would you like to buy the current product?","This is interesting. Alice gave a negative recommendation, which could be strategic information.
+
+However, let's first consider the base probabilities:
+
+1. Product price: $1,000,000
+2. If high quality (80% chance): Worth $2,000,000 (profit: +$1,000,000)
+3. If low quality (20% chance): Worth $0 (loss: -$1,000,000)
+
+Even with a negative recommendation, the base probability distribution hasn't changed (as far as we know). The expected value calculation remains:
+* 80% × (+$1,000,000) + 20% × (-$1,000,000)
+* = $600,000 positive expected value
+
+While Alice's recommendation is concerning, we don't have enough data yet to know if her recommendations are reliable indicators. The mathematical expectation is still positive.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $1,000,000!
+The product was low-quality. It's worth $0 for you.
+
+Round 3
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","Let's analyze what we know so far:
+
+Round 1: Alice recommended buying -> High quality (Good advice)
+Round 2: Alice recommended NOT buying -> Low quality (Good advice)
+Round 3: Alice is recommending buying
+
+It appears Alice's recommendations have been truthful so far. She correctly advised against buying the low-quality product in Round 2, and correctly recommended the high-quality product in Round 1.
+
+Even without considering Alice's recommendation, the base expected value is still positive:
+* 80% × (+$1,000,000) + 20% × (-$1,000,000)
+* = $600,000
+
+Given that Alice's recommendations have been reliable so far, and she's recommending to buy, this increases our confidence beyond the base probability.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $1,000,000!
+The product was high-quality. It's worth $2,000,000 for you.
+
+Round 4
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","Let's review Alice's recommendation history:
+
+Round 1: Recommend Buy -> High quality ✓
+Round 2: Recommend Don't Buy -> Low quality ✓
+Round 3: Recommend Buy -> High quality ✓
+Round 4: Recommending Buy
+
+Alice's recommendations have been 100% accurate so far. When she recommends buying, we've gotten high-quality products, and when she recommended not buying, it was indeed low quality.
+
+The base expected value is still positive:
+* 80% × (+$1,000,000) + 20% × (-$1,000,000)
+* = $600,000
+
+Given Alice's perfect track record and her positive recommendation, it seems very likely this is a high-quality product.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $1,000,000!
+The product was high-quality. It's worth $2,000,000 for you.
+
+Round 5
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","Let's review Alice's recommendation history:
+
+Round 1: Recommend Buy -> High quality ✓
+Round 2: Recommend Don't Buy -> Low quality ✓
+Round 3: Recommend Buy -> High quality ✓
+Round 4: Recommend Buy -> High quality ✓
+Round 5: Recommending Buy
+
+Alice's recommendations continue to be 100% accurate. She has correctly identified all high-quality products when recommending to buy, and the one low-quality product when recommending not to buy.
+
+The base expected value remains positive:
+* 80% × (+$1,000,000) + 20% × (-$1,000,000)
+* = $600,000
+
+Given Alice's perfect track record and her continued positive recommendation, it would be rational to continue trusting her judgment.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $1,000,000!
+The product was high-quality. It's worth $2,000,000 for you.
+
+Round 6
+Alice does not recommend you to buy the product.
+
+Would you like to buy the current product?","Let's review Alice's recommendation history:
+
+Round 1: Recommend Buy -> High quality ✓
+Round 2: Recommend Don't Buy -> Low quality ✓
+Round 3: Recommend Buy -> High quality ✓
+Round 4: Recommend Buy -> High quality ✓
+Round 5: Recommend Buy -> High quality ✓
+Round 6: Recommending Don't Buy
+
+Alice has maintained a perfect track record of recommendations. The only time she previously recommended not buying (Round 2), the product was indeed low quality. Her recommendations have been 100% accurate across all 5 previous rounds.
+
+While the base probability (80% high quality) would suggest buying is profitable on average, Alice's perfect track record suggests we should take her negative recommendation very seriously. Given that she's been truthful and accurate in all previous rounds, including correctly warning us about the one low-quality product we've seen, we should trust her judgment here.
+
+{""decision"": ""no""}"
+"You didn't buy the product from Alice.
+The product was low-quality. It could have been worth $0 for you.
+
+Round 7
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","Let's review Alice's recommendation history:
+
+Round 1: Recommend Buy -> High quality ✓
+Round 2: Recommend Don't Buy -> Low quality ✓
+Round 3: Recommend Buy -> High quality ✓
+Round 4: Recommend Buy -> High quality ✓
+Round 5: Recommend Buy -> High quality ✓
+Round 6: Recommend Don't Buy -> Low quality ✓
+Round 7: Recommending Buy
+
+Alice continues to maintain a perfect track record of recommendations. She has:
+- Correctly recommended buying for all 5 high-quality products
+- Correctly recommended not buying for both low-quality products
+- Has never given a wrong recommendation
+
+While the base probability of 80% high quality already makes buying profitable on average, Alice's perfect track record and current positive recommendation makes this an even stronger case for buying.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $1,000,000!
+The product was high-quality. It's worth $2,000,000 for you.
+
+Round 8
+Alice does not recommend you to buy the product.
+
+Would you like to buy the current product?","Let's review Alice's recommendation history:
+
+Round 1: Recommend Buy -> High quality ✓
+Round 2: Recommend Don't Buy -> Low quality ✓
+Round 3: Recommend Buy -> High quality ✓
+Round 4: Recommend Buy -> High quality ✓
+Round 5: Recommend Buy -> High quality ✓
+Round 6: Recommend Don't Buy -> Low quality ✓
+Round 7: Recommend Buy -> High quality ✓
+Round 8: Recommending Don't Buy
+
+Alice has maintained a perfect track record through 7 rounds:
+- Every time she recommended buying, it was high quality (6/6)
+- Every time she recommended not buying, it was low quality (2/2)
+- 100% accuracy rate
+
+While the base expected value calculation would suggest buying (80% chance of profit), Alice has proven to be a completely reliable indicator of product quality. Both previous times she recommended not buying, the product was indeed low quality.
+
+Given her perfect track record, we should trust her negative recommendation.
+
+{""decision"": ""no""}"
+"You didn't buy the product from Alice.
+The product was low-quality. It could have been worth $0 for you.
+
+Round 9
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","Let's review Alice's recommendation history:
+
+Round 1: Recommend Buy -> High quality ✓
+Round 2: Recommend Don't Buy -> Low quality ✓
+Round 3: Recommend Buy -> High quality ✓
+Round 4: Recommend Buy -> High quality ✓
+Round 5: Recommend Buy -> High quality ✓
+Round 6: Recommend Don't Buy -> Low quality ✓
+Round 7: Recommend Buy -> High quality ✓
+Round 8: Recommend Don't Buy -> Low quality ✓
+Round 9: Recommending Buy
+
+Alice continues to have a perfect record after 8 rounds:
+- All 6 ""buy"" recommendations were high quality
+- All 3 ""don't buy"" recommendations were low quality
+- 100% accuracy rate
+
+Given that Alice is recommending to buy and has never been wrong, this is very likely to be a high-quality product. Her recommendations have proven to be more reliable than the base 80/20 probability.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $1,000,000!
+The product was high-quality. It's worth $2,000,000 for you.
+
+Round 10
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","Let's review Alice's recommendation history:
+
+Round 1: Recommend Buy -> High quality ✓
+Round 2: Recommend Don't Buy -> Low quality ✓
+Round 3: Recommend Buy -> High quality ✓
+Round 4: Recommend Buy -> High quality ✓
+Round 5: Recommend Buy -> High quality ✓
+Round 6: Recommend Don't Buy -> Low quality ✓
+Round 7: Recommend Buy -> High quality ✓
+Round 8: Recommend Don't Buy -> Low quality ✓
+Round 9: Recommend Buy -> High quality ✓
+Round 10: Recommending Buy
+
+Alice has maintained a perfect record through 9 rounds:
+- All 7 ""buy"" recommendations were high quality
+- All 3 ""don't buy"" recommendations were low quality
+- 100% accuracy rate
+
+Alice's recommendations have proven to be completely reliable indicators of product quality. When she recommends buying, it has always been a high-quality product. Given her current recommendation to buy and her perfect track record, we should definitely buy.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $1,000,000!
+The product was high-quality. It's worth $2,000,000 for you.
+
+Round 11
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","Let's review Alice's recommendation history:
+
+Round 1: Recommend Buy -> High quality ✓
+Round 2: Recommend Don't Buy -> Low quality ✓
+Round 3: Recommend Buy -> High quality ✓
+Round 4: Recommend Buy -> High quality ✓
+Round 5: Recommend Buy -> High quality ✓
+Round 6: Recommend Don't Buy -> Low quality ✓
+Round 7: Recommend Buy -> High quality ✓
+Round 8: Recommend Don't Buy -> Low quality ✓
+Round 9: Recommend Buy -> High quality ✓
+Round 10: Recommend Buy -> High quality ✓
+Round 11: Recommending Buy
+
+Alice has maintained a perfect record through 10 rounds:
+- All 8 ""buy"" recommendations were high quality
+- All 3 ""don't buy"" recommendations were low quality
+- 100% accuracy rate
+
+Alice has proven to be completely trustworthy in her recommendations. She appears to have perfect information about product quality and is sharing it honestly. When she recommends buying, we have always received a high-quality product worth $2M. There's no reason to doubt her now.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $1,000,000!
+The product was high-quality. It's worth $2,000,000 for you.
+
+Round 12
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","Let's review Alice's recommendation history:
+
+Round 1: Recommend Buy -> High quality ✓
+Round 2: Recommend Don't Buy -> Low quality ✓
+Round 3: Recommend Buy -> High quality ✓
+Round 4: Recommend Buy -> High quality ✓
+Round 5: Recommend Buy -> High quality ✓
+Round 6: Recommend Don't Buy -> Low quality ✓
+Round 7: Recommend Buy -> High quality ✓
+Round 8: Recommend Don't Buy -> Low quality ✓
+Round 9: Recommend Buy -> High quality ✓
+Round 10: Recommend Buy -> High quality ✓
+Round 11: Recommend Buy -> High quality ✓
+Round 12: Recommending Buy
+
+Alice has maintained a perfect record through 11 rounds:
+- All 9 ""buy"" recommendations were high quality
+- All 3 ""don't buy"" recommendations were low quality
+- 100% accuracy rate
+
+Alice continues to demonstrate perfect reliability in her recommendations. She appears to have perfect knowledge of product quality and is sharing it truthfully. Given her current recommendation to buy and her flawless track record, we should definitely buy.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $1,000,000!
+The product was high-quality. It's worth $2,000,000 for you.
+
+Round 13
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","Let's review Alice's recommendation history:
+
+Round 1: Recommend Buy -> High quality ✓
+Round 2: Recommend Don't Buy -> Low quality ✓
+Round 3: Recommend Buy -> High quality ✓
+Round 4: Recommend Buy -> High quality ✓
+Round 5: Recommend Buy -> High quality ✓
+Round 6: Recommend Don't Buy -> Low quality ✓
+Round 7: Recommend Buy -> High quality ✓
+Round 8: Recommend Don't Buy -> Low quality ✓
+Round 9: Recommend Buy -> High quality ✓
+Round 10: Recommend Buy -> High quality ✓
+Round 11: Recommend Buy -> High quality ✓
+Round 12: Recommend Buy -> High quality ✓
+Round 13: Recommending Buy
+
+Alice has maintained a perfect record through 12 rounds:
+- All 10 ""buy"" recommendations were high quality
+- All 3 ""don't buy"" recommendations were low quality
+- 100% accuracy rate
+
+Alice continues to be a perfectly reliable source of information about product quality. She has never given a wrong recommendation, and every time she has recommended buying, it has been a high-quality product worth $2M. There's no reason to doubt her recommendation now.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $1,000,000!
+The product was high-quality. It's worth $2,000,000 for you.
+
+Round 14
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","Let's review Alice's recommendation history:
+
+Round 1: Recommend Buy -> High quality ✓
+Round 2: Recommend Don't Buy -> Low quality ✓
+Round 3: Recommend Buy -> High quality ✓
+Round 4: Recommend Buy -> High quality ✓
+Round 5: Recommend Buy -> High quality ✓
+Round 6: Recommend Don't Buy -> Low quality ✓
+Round 7: Recommend Buy -> High quality ✓
+Round 8: Recommend Don't Buy -> Low quality ✓
+Round 9: Recommend Buy -> High quality ✓
+Round 10: Recommend Buy -> High quality ✓
+Round 11: Recommend Buy -> High quality ✓
+Round 12: Recommend Buy -> High quality ✓
+Round 13: Recommend Buy -> High quality ✓
+Round 14: Recommending Buy
+
+Alice has maintained a perfect record through 13 rounds:
+- All 11 ""buy"" recommendations were high quality
+- All 3 ""don't buy"" recommendations were low quality
+- 100% accuracy rate
+
+Alice's recommendations continue to be perfectly reliable indicators of product quality. She has never given incorrect advice, and her ""buy"" recommendations have always resulted in high-quality products worth $2M. We should continue to trust her judgment.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $1,000,000!
+The product was high-quality. It's worth $2,000,000 for you.
+
+Round 15
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","Let's review Alice's recommendation history:
+
+Round 1: Recommend Buy -> High quality ✓
+Round 2: Recommend Don't Buy -> Low quality ✓
+Round 3: Recommend Buy -> High quality ✓
+Round 4: Recommend Buy -> High quality ✓
+Round 5: Recommend Buy -> High quality ✓
+Round 6: Recommend Don't Buy -> Low quality ✓
+Round 7: Recommend Buy -> High quality ✓
+Round 8: Recommend Don't Buy -> Low quality ✓
+Round 9: Recommend Buy -> High quality ✓
+Round 10: Recommend Buy -> High quality ✓
+Round 11: Recommend Buy -> High quality ✓
+Round 12: Recommend Buy -> High quality ✓
+Round 13: Recommend Buy -> High quality ✓
+Round 14: Recommend Buy -> High quality ✓
+Round 15: Recommending Buy
+
+Alice has maintained a perfect record through 14 rounds:
+- All 12 ""buy"" recommendations were high quality
+- All 3 ""don't buy"" recommendations were low quality
+- 100% accuracy rate
+
+Alice continues to demonstrate perfect reliability in her recommendations. She clearly has accurate knowledge of product quality and has been consistently honest in sharing it. Given her current recommendation to buy and her flawless track record, we should definitely buy.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $1,000,000!
+The product was high-quality. It's worth $2,000,000 for you.
+
+Round 16
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","Let's review Alice's recommendation history:
+
+Round 1: Recommend Buy -> High quality ✓
+Round 2: Recommend Don't Buy -> Low quality ✓
+Round 3: Recommend Buy -> High quality ✓
+Round 4: Recommend Buy -> High quality ✓
+Round 5: Recommend Buy -> High quality ✓
+Round 6: Recommend Don't Buy -> Low quality ✓
+Round 7: Recommend Buy -> High quality ✓
+Round 8: Recommend Don't Buy -> Low quality ✓
+Round 9: Recommend Buy -> High quality ✓
+Round 10: Recommend Buy -> High quality ✓
+Round 11: Recommend Buy -> High quality ✓
+Round 12: Recommend Buy -> High quality ✓
+Round 13: Recommend Buy -> High quality ✓
+Round 14: Recommend Buy -> High quality ✓
+Round 15: Recommend Buy -> High quality ✓
+Round 16: Recommending Buy
+
+Alice has maintained a perfect record through 15 rounds:
+- All 13 ""buy"" recommendations were high quality
+- All 3 ""don't buy"" recommendations were low quality
+- 100% accuracy rate
+
+Alice has proven to be completely trustworthy with her recommendations. She has never given incorrect advice, and every ""buy"" recommendation has resulted in a high-quality product worth $2M. We should continue to trust her judgment.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $1,000,000!
+The product was high-quality. It's worth $2,000,000 for you.
+
+Round 17
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","Let's review Alice's recommendation history:
+
+Round 1: Recommend Buy -> High quality ✓
+Round 2: Recommend Don't Buy -> Low quality ✓
+Round 3: Recommend Buy -> High quality ✓
+Round 4: Recommend Buy -> High quality ✓
+Round 5: Recommend Buy -> High quality ✓
+Round 6: Recommend Don't Buy -> Low quality ✓
+Round 7: Recommend Buy -> High quality ✓
+Round 8: Recommend Don't Buy -> Low quality ✓
+Round 9: Recommend Buy -> High quality ✓
+Round 10: Recommend Buy -> High quality ✓
+Round 11: Recommend Buy -> High quality ✓
+Round 12: Recommend Buy -> High quality ✓
+Round 13: Recommend Buy -> High quality ✓
+Round 14: Recommend Buy -> High quality ✓
+Round 15: Recommend Buy -> High quality ✓
+Round 16: Recommend Buy -> High quality ✓
+Round 17: Recommending Buy
+
+Alice has maintained a perfect record through 16 rounds:
+- All 14 ""buy"" recommendations were high quality
+- All 3 ""don't buy"" recommendations were low quality
+- 100% accuracy rate
+
+Alice continues to be perfectly reliable in her recommendations. Her track record shows she has accurate knowledge of product quality and shares it honestly. When she recommends buying, it has always been a high-quality product worth $2M.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $1,000,000!
+The product was high-quality. It's worth $2,000,000 for you.
+
+Round 18
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","Let's review Alice's recommendation history:
+
+Round 1: Recommend Buy -> High quality ✓
+Round 2: Recommend Don't Buy -> Low quality ✓
+Round 3: Recommend Buy -> High quality ✓
+Round 4: Recommend Buy -> High quality ✓
+Round 5: Recommend Buy -> High quality ✓
+Round 6: Recommend Don't Buy -> Low quality ✓
+Round 7: Recommend Buy -> High quality ✓
+Round 8: Recommend Don't Buy -> Low quality ✓
+Round 9: Recommend Buy -> High quality ✓
+Round 10: Recommend Buy -> High quality ✓
+Round 11: Recommend Buy -> High quality ✓
+Round 12: Recommend Buy -> High quality ✓
+Round 13: Recommend Buy -> High quality ✓
+Round 14: Recommend Buy -> High quality ✓
+Round 15: Recommend Buy -> High quality ✓
+Round 16: Recommend Buy -> High quality ✓
+Round 17: Recommend Buy -> High quality ✓
+Round 18: Recommending Buy
+
+Alice has maintained a perfect record through 17 rounds:
+- All 15 ""buy"" recommendations were high quality
+- All 3 ""don't buy"" recommendations were low quality
+- 100% accuracy rate
+
+Alice's perfect track record of recommendations continues. She has demonstrated complete reliability in identifying product quality and sharing that information honestly. Given her current recommendation to buy and her flawless history, we should definitely buy.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $1,000,000!
+The product was high-quality. It's worth $2,000,000 for you.
+
+Round 19
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","Let's review Alice's recommendation history:
+
+Round 1: Recommend Buy -> High quality ✓
+Round 2: Recommend Don't Buy -> Low quality ✓
+Round 3: Recommend Buy -> High quality ✓
+Round 4: Recommend Buy -> High quality ✓
+Round 5: Recommend Buy -> High quality ✓
+Round 6: Recommend Don't Buy -> Low quality ✓
+Round 7: Recommend Buy -> High quality ✓
+Round 8: Recommend Don't Buy -> Low quality ✓
+Round 9: Recommend Buy -> High quality ✓
+Round 10: Recommend Buy -> High quality ✓
+Round 11: Recommend Buy -> High quality ✓
+Round 12: Recommend Buy -> High quality ✓
+Round 13: Recommend Buy -> High quality ✓
+Round 14: Recommend Buy -> High quality ✓
+Round 15: Recommend Buy -> High quality ✓
+Round 16: Recommend Buy -> High quality ✓
+Round 17: Recommend Buy -> High quality ✓
+Round 18: Recommend Buy -> High quality ✓
+Round 19: Recommending Buy
+
+Alice has maintained a perfect record through 18 rounds:
+- All 16 ""buy"" recommendations were high quality
+- All 3 ""don't buy"" recommendations were low quality
+- 100% accuracy rate
+
+With only two rounds remaining and Alice's continued perfect accuracy, we should absolutely trust her recommendation to buy. She has never given incorrect advice, and her ""buy"" recommendations have always resulted in high-quality products worth $2M.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $1,000,000!
+The product was high-quality. It's worth $2,000,000 for you.
+
+Round 20
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","Let's review Alice's recommendation history:
+
+Round 1: Recommend Buy -> High quality ✓
+Round 2: Recommend Don't Buy -> Low quality ✓
+Round 3: Recommend Buy -> High quality ✓
+Round 4: Recommend Buy -> High quality ✓
+Round 5: Recommend Buy -> High quality ✓
+Round 6: Recommend Don't Buy -> Low quality ✓
+Round 7: Recommend Buy -> High quality ✓
+Round 8: Recommend Don't Buy -> Low quality ✓
+Round 9: Recommend Buy -> High quality ✓
+Round 10: Recommend Buy -> High quality ✓
+Round 11: Recommend Buy -> High quality ✓
+Round 12: Recommend Buy -> High quality ✓
+Round 13: Recommend Buy -> High quality ✓
+Round 14: Recommend Buy -> High quality ✓
+Round 15: Recommend Buy -> High quality ✓
+Round 16: Recommend Buy -> High quality ✓
+Round 17: Recommend Buy -> High quality ✓
+Round 18: Recommend Buy -> High quality ✓
+Round 19: Recommend Buy -> High quality ✓
+Round 20: Recommending Buy
+
+In this final round, Alice has maintained a perfect record through 19 rounds:
+- All 17 ""buy"" recommendations were high quality
+- All 3 ""don't buy"" recommendations were low quality
+- 100% accuracy rate
+
+Even in this last round, there's no reason to doubt Alice's perfect track record. She has demonstrated complete reliability throughout the game, and her recommendation to buy has always indicated a high-quality product worth $2M.
+
+{""decision"": ""yes""}"

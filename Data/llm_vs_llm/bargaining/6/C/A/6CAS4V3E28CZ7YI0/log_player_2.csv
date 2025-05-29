@@ -1,0 +1,32 @@
+prompt,response
+"Round 1
+Alice's offer:
+# Alice's message: Let's be fair, I'll take the lion's share this time, but you'll get a chance to negotiate later. 
+# Bob gain: 100000 
+# Alice gain: 900000 
+Do you accept this offer?","Okay, I understand the game rules. I need to consider the diminishing value of the money each round.
+
+**Analysis:**
+
+*   **Current Offer:** I get $100,000. Alice gets $900,000.
+*   **Inflation:** If I reject, the money's value to me decreases by 10% next round.
+*   **Alternatives:** If I reject, I get to make an offer next round, but the total value to me will be less. I also don't know how many offers Alice is prepared to reject.
+
+**Decision:**
+
+Given the large disparity and the effect of inflation, it's likely that I will not be offered a better deal. Also, Alice's message suggests that I will have a chance to propose a split later if the money has already decreased in value. The value of the deal for me needs to be greater than 10% of the money, since that is the current inflation rate.
+
+```json
+{""decision"": ""reject""}
+```"
+"You have chosen to reject Alice's offer from round 1.
+Round 2
+Send your offer to divide $1,000,000 and a message to Alice.","Okay, it's my turn to make an offer. Considering the inflation and Alice's previous offer, I need to make an offer that is somewhat generous to Alice but still secures a reasonable amount for myself, keeping in mind that the value of the money will continue to decrease. I will offer a 60/40 split in Alice's favor.
+
+```json
+{
+    ""bob_gain"": 400000,
+    ""alice_gain"": 600000,
+    ""message"": ""Let's split this fairly. I propose a 60/40 split in your favor. We both get a good deal.""
+}
+```"

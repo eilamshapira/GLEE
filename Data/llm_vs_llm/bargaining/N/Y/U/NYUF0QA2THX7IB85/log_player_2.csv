@@ -1,0 +1,42 @@
+prompt,response
+"Round 1
+Alice's offer:
+# Bob gain: 30 
+# Alice gain: 70 
+Do you accept this offer?","{""decision"": ""reject""}"
+"You have chosen to reject Alice's offer from round 1.
+Round 2
+Send your offer to divide $100.","Since the money is worth 10% less for me in this round, the effective amount is $100 * 0.9 = $90. For Alice, it's $100 * 0.95 = $95. 
+
+To make a fair offer, I'll consider the original $100 and split it in a way that seems reasonable, given the decreasing value.
+
+{""bob_gain"": 50, 
+""alice_gain"": 50}"
+"Alice rejected your offer from round 2.
+
+Round 3
+Due to inflation, the money you gain is worth 19% less than in the first round. The money alice gains is worth 9.75% less than in the first round.
+Alice's offer:
+# Bob gain: 40 
+# Alice gain: 60 
+Do you accept this offer?","Considering the inflation, if I accept Alice's offer, I'll get $40, but its value is reduced by 19% due to inflation, so the effective value for me is $40 * 0.81 = $32.4.
+
+Given this, I think I can try to get a better deal.
+
+{""decision"": ""reject""}"
+"You have chosen to reject Alice's offer from round 3.
+Round 4
+Send your offer to divide $100.","Since I rejected Alice's offer, the money is now worth even less for both of us. For me, it's $100 * 0.9 * 0.9 * 0.81 = $65.61 (10% less in round 2, and then 19% less in round 3, which is cumulative), but to simplify, let's calculate it step by step: 
+- Round 1 to 2: $100 * 0.9 = $90
+- Round 2 to 3: $90 * 0.9 = $81
+- Round 3 to 4: $81 * 0.9 = $72.9
+
+For Alice, the value decreases by 5% in round 2 and then 4.75% in round 3 (cumulative 9.75% decrease), so let's calculate it step by step:
+- Round 1 to 2: $100 * 0.95 = $95
+- Round 2 to 3: $95 * 0.9525 = $90.4375
+- Round 3 to 4: $90.4375 * 0.9525 = $86.15625
+
+However, the task is to divide the original $100, considering these values. I'll aim for a split that reflects our relative losses.
+
+{""bob_gain"": 45, 
+""alice_gain"": 55}"

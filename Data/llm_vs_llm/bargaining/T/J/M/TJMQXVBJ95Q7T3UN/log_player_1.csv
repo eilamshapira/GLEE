@@ -1,0 +1,56 @@
+prompt,response
+"Round 1
+Send your offer to divide $100.","Okay, I understand the game. I need to factor in the inflation for myself.
+
+```json
+{
+""alice_gain"": 60,
+""bob_gain"": 40
+}
+```"
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 10% less than in the first round. The money bob gains is worth 20% less than in the first round.
+Bob's offer:
+# Alice gain: 45 
+# Bob gain: 55 
+Do you accept this offer?","Okay, I need to consider the inflation impact. My gain from round 1 is now effectively worth 90% of its original value. Bob's gain is worth 80% of its original value.
+
+Bob is offering me $45. I need to compare this to what I offered him, adjusted for inflation. My original offer to myself was $60, which is now worth $60 * 0.9 = $54.
+
+$45 is less than $54. I will reject the offer.
+
+```json
+{
+""decision"": ""reject""
+}
+```"
+"You have chosen to reject Bob's offer from round 2.
+Round 3
+Send your offer to divide $100.","Okay, I need to consider the cumulative inflation for myself. It's round 3, so my money is now worth 81% (0.9 * 0.9) of its original value. I also need to consider that we are getting closer to the deadline. I will adjust my offer to be more appealing to Bob, but still prioritize my gains accounting for inflation.
+
+```json
+{
+""alice_gain"": 55,
+""bob_gain"": 45
+}
+```"
+"Bob rejected your offer from round 3.
+
+Round 4
+Due to inflation, the money you gain is worth 27.1% less than in the first round. The money bob gains is worth 48.8% less than in the first round.
+Bob's offer:
+# Alice gain: 49 
+# Bob gain: 51 
+Do you accept this offer?","Okay, let's analyze. My money is now worth 72.9% of its original value (100% - 27.1%). Bob's money is worth 51.2% of its original value (100% - 48.8%).
+
+Bob is offering me $49. My initial offer was $60, which would now be worth $60 * 0.729 = $43.74. My offer in round 3 was $55, worth $55 * 0.729 = $40.095.
+
+$49 is greater than either of those adjusted values. Since the rounds are ticking down, and this is a better offer than I would have received from my previous offers, I will accept.
+
+```json
+{
+""decision"": ""accept""
+}
+```"

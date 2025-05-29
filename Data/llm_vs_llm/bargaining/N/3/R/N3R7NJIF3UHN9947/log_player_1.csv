@@ -1,0 +1,11 @@
+prompt,response
+"Round 1
+Send your offer to divide $100.","Based on a backward‐induction analysis, here’s what happens:
+ • In the final (12th) round Bob gets to propose. There he can claim essentially 100 dollars for himself (offering Alice an arbitrarily small amount) because if she rejects, both end up with nothing.
+ • Stepping back one round, in round 11 you (Alice) would be the proposer. But if Bob rejects your offer then in round 12 he’ll claim all 100. Thus, Bob’s “continuation‐value” is 100, so in round 11 you’d have to offer him 100 in order for him to be indifferent (and thus accept).
+ • This logic propagates back to the very first round. In round 1 your offer must give Bob at least what he would get by waiting—that is, $100—because Bob does not suffer any inflation while you do.
+ • Consequently, the unique subgame‐perfect equilibrium is for you to propose giving Bob all of the money (and yourself nothing).
+
+Thus, in round 1 your JSON offer is:
+
+{""alice_gain"": 0, ""bob_gain"": 100}"

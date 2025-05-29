@@ -1,0 +1,19 @@
+prompt,response
+"Round 1
+Send your offer to divide $100.","Based on some rough backward‐induction (and accounting for how waiting “discounts” each player’s cash value differently), a (subgame‐perfect) equilibrium offer for round 1 is to give Bob about 83 dollars and keep about 17 dollars for yourself. In other words, as Alice you would offer:
+
+{""alice_gain"": 17, ""bob_gain"": 83}
+
+That offer is designed so that Bob’s immediate 83 dollars (at full value for him) are just as good as what he would expect to get by waiting (since money loses only 5% per round for him), while your continuation value if Bob were to reject relies on you getting to propose later but at a heavier 20% discount per round.
+
+Let’s briefly explain the idea (without going into all the messy details):
+
+1. In the final round (round 12) Bob can propose almost the entire 100 for himself—since if the proposal is rejected both get nothing, he can get nearly all the money. But by that time his money is worth only about 57% of its face value.
+2. In round 11 (when you – Alice – propose) you must “buy off” Bob by offering him the equivalent (in his own 5%-discounted terms) of what he’d later secure.
+3. Stepping back through rounds 10, 9, …, 2, one finds that when you get the chance to propose in round 1 the amounts that leave Bob exactly indifferent to waiting come out to roughly 83 dollars for him (and 17 for you).
+
+Thus, if both players play rationally the “fair” equilibrium outcome is that you propose to keep 17 dollars (nominal) for yourself and give Bob 83 dollars. (Note that a great many refinements and approximations go into this answer—with discrete rounds and discount factors, one may compute even more precise numbers, but 17/83 is a good‐enough equilibrium proposal.) 
+
+So here is my JSON offer for round 1:
+
+{""alice_gain"": 17, ""bob_gain"": 83}"

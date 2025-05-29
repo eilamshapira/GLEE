@@ -1,0 +1,43 @@
+prompt,response
+"Round 1
+Send your offer to divide $10,000.","Using a common “alternating‐offer” analysis (adjusted for the different “inflation” or discounting rates) it’s possible to “back‐solve” for the subgame‐perfect equilibrium outcome. (I stress that there is some leeway here in how one models Bob’s 10% “loss in value” each round. For our purposes, we assume that if Bob receives X dollars in round r his utility is X·(0.9)^(r–1) while Alice values every dollar fully, regardless of the round.)
+
+Let the money available be US$10,000 in every round (its “face value”) but note that Bob’s “utility‐value” declines by a factor of 0.9 per round (that is, his round‑r discount factor is 0.9^(r–1)), while Alice’s value is undiscounted. (Also, note that if no agreement is reached after 12 rounds, both get nothing.) In each round the proposer will “keep” as much as possible and offer the other just enough so that that player is indifferent to waiting for the next round.
+
+A brief sketch (“backward induction”) from the final round is as follows:
+
+• In round 12 Bob is the proposer. Since if Alice rejects she gets nothing, Bob can offer her (essentially) 0 and keep all 10,000. (For technical equilibrium reasons one often assumes he offers her an “infinitesimal” amount, but we report face‐values.)
+
+• In round 11, with Alice proposing, she must offer Bob just enough that his utility now equals what he would get as proposer in round 12. In round 12 Bob’s “face‐value” award is essentially 10,000, but since he obtains that in round 12 his utility is 10,000·(0.9)^(11). To make Bob indifferent in round 11 (where there is no extra discount for Bob if he accepts immediately) Alice must offer him an amount Y satisfying:
+  Y · (0.9)^(10) = 10,000 · (0.9)^(11).
+A short calculation shows Y = 10,000·0.9 = 9,000.
+Thus in round 11 Alice would propose: Alice: 1,000; Bob: 9,000.
+
+• In round 10 Bob is the proposer. Alice (who does not have any discount) would get 1,000 if she waited until round 11. So Bob can offer her 1,000 and keep 9,000.
+
+• In round 9 (Alice’s turn) Bob’s continuation – if he waits – is to become proposer in round 10 and secure 9,000 (but note his utility in round 10 is then 9,000·(0.9)^(9) while if he accepts in round 9 he gets his awarded “face‐value” immediately; recall that in round 9 Bob’s dollars count fully, i.e. multiplied by (0.9)^(8)). A similar argument shows that Alice must offer him 9,000·0.9 = 8,100 in round 9 so that Bob is indifferent. Consequently, in round 9 Alice would keep 10,000 – 8,100 = 1,900.
+
+One may continue this “backward‐induction” process step–by–step. (It is not hard to see the pattern: in rounds where Bob is the proposer he awards the other player her “continuation” amount coming from the next period; when Alice is proposing she must offer Bob an amount equal to 0.9 times what he would get as proposer one round later.)
+
+Carrying the induction all the way back to round 1 (where Alice is the proposer) one obtains that Bob’s “reservation” face–value for accepting in round 1 turns out to be 10,000·0.9 (raised by the appropriate product of the discount factors) – namely, after the back–induction calculation, Bob must get about 5,314.41 for him to be just indifferent between accepting now or waiting until round 2. (His future “gain” would then be 5,904.90 in face–value in round 2 later discounted by 10%, giving him roughly the same value as 5,314.41 received immediately.) Hence, in round 1 Alice can propose to give Bob roughly 5,314.41 (face–value) and “keep” the remainder for herself:
+  Alice’s share: 10,000 – 5,314.41 ≈ 4,685.59  
+  Bob’s share: ≈ 5,314.41
+
+Thus, in the equilibrium outcome of the subgame–perfect strategy, Alice will propose the following division in round 1:
+
+{""alice_gain"": 4685.59, ""bob_gain"": 5314.41}
+
+Bob, realizing that waiting only erodes the value of his eventual dollars, should accept this proposal. (Of course, the numbers here are approximate; minor variations could be justified by assuming “infinitesimals” to tip strict indifference.) 
+
+I now send the above JSON offer for round 1."
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation,  the money Bob gains is worth 10% less than in the first round. The money you gains is worth the same as in the first round.
+Bob's offer:
+# Alice gain: 4000 
+# Bob gain: 6000 
+Do you accept this offer?","{""decision"": ""reject""}"
+"You have chosen to reject Bob's offer from round 2.
+Round 3
+Send your offer to divide $10,000.","{""alice_gain"": 4095.10, ""bob_gain"": 5904.90}"

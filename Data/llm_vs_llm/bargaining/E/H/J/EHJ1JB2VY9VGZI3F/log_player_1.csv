@@ -1,0 +1,66 @@
+prompt,response
+"Round 1
+Send your offer to divide $1,000,000.","Based on a backward‐induction analysis of the alternating offers game—with 12 rounds, where your (Alice’s) money does not lose any value over time and Bob’s money loses 5% of its nominal value every round—we can “solve” for the subgame‐perfect equilibrium.
+
+At the very last (12th) round, Bob (as proposer) can offer Alice almost nothing (since if she rejects she gets zero) and keep nearly all $1,000,000 for himself. Then, working backward one round at a time, the idea is that in any round the proposer must offer the responder exactly what the responder would get by waiting one more round. (Remember that if Bob is the responder, his waiting value is reduced by 5% for that extra round—while for you, Alice, waiting costs nothing.)
+
+Here’s a brief outline of the backward‐induction reasoning (round numbers refer to the round in which the proposal is made):
+
+• In Round 12 (Bob’s turn):  
+ – If Bob’s proposal is rejected, both get nothing.  
+ – So Bob can allocate:  
+  Alice:  $0  
+  Bob:  $1,000,000
+
+• In Round 11 (Alice’s turn, Bob is responder):  
+ – If Bob rejects, then in Round 12 he’ll get nearly $1,000,000 but worth only 95% in today’s terms (because of his 5% discount for waiting one round). That is, his continuation value = 0.95 × $1,000,000 = $950,000.  
+ – So Alice can offer Bob exactly $950,000 and keep $50,000.
+
+• In Round 10 (Bob’s turn, Alice is responder):  
+ – If Alice rejects, she’ll be proposer in Round 11 and, as shown, get $50,000 (she does not discount).  
+ – So Bob can offer her $50,000 and keep $950,000.
+
+• In Round 9 (Alice’s turn, Bob is responder):  
+ – If Bob rejects, his payoff in Round 10 would be $950,000 nominal but discounted by 5% (since one extra round passes), i.e. 0.95 × $950,000 = $902,500.  
+ – Therefore, Alice must offer Bob at least $902,500 and can keep $1,000,000 − $902,500 = $97,500.
+
+• In Round 8 (Bob’s turn, Alice is responder):  
+ – If Alice rejects, she’ll get $97,500 in Round 9.  
+ – So Bob must offer her $97,500 and keep $902,500.
+
+• In Round 7 (Alice’s turn, Bob is responder):  
+ – Bob’s rejection leads him to be proposer in Round 8 giving him $902,500 nominal; with one round delay at his 5% discount this is 0.95 × $902,500 = $857,375.  
+ – So in Round 7 Alice must offer Bob $857,375—and so she keeps $1,000,000 − $857,375 = $142,625.
+
+• In Round 6 (Bob’s turn, Alice is responder):  
+ – If Alice waits, she’d get $142,625 in Round 7.  
+ – Bob then offers her exactly $142,625 and keeps $857,375.
+
+• In Round 5 (Alice’s turn, Bob is responder):  
+ – Bob’s rejection means that in Round 6 he gets $857,375 nominal, but with a one‐round delay his value is 0.95 × $857,375 = $814,506.25.  
+ – So Alice must offer Bob $814,506.25 and can keep $1,000,000 − $814,506.25 = $185,493.75.
+
+• In Round 4 (Bob’s turn, Alice is responder):  
+ – If Alice rejects, she would get $185,493.75 as proposer in Round 5.  
+ – So Bob offers her $185,493.75 and keeps $814,506.25.
+
+• In Round 3 (Alice’s turn, Bob is responder):  
+ – Bob’s waiting value is what he would get in Round 4 as proposer, namely $814,506.25, discounted one round: 0.95 × $814,506.25 = $773,780.9375.  
+ – Therefore, Alice must offer Bob $773,780.94 (approximately) and keeps $1,000,000 − $773,780.94 = $226,219.06.
+
+• In Round 2 (Bob’s turn, Alice is responder):  
+ – If Alice waits, as proposer in Round 3, she’d secure $226,219.06.  
+ – Thus, Bob offers her $226,219.06 and keeps $773,780.94.
+
+• Finally, in Round 1 (your turn as Alice, with Bob as responder):  
+ – Bob’s continuation value if he waits is the amount he would get in Round 2 as proposer—i.e. $773,780.94—discounted one round: 0.95 × $773,780.94 = approximately $735,091.89.  
+ – So to induce Bob to accept in Round 1 you must offer him at least about $735,091.89 nominal dollars.  
+ – That means you can keep about $1,000,000 − $735,091.89 = $264,908.11.
+
+Thus, the equilibrium proposal in Round 1—if you want Bob (who faces a 5% discount per round) to accept immediately—is to offer him approximately $735,092 and to keep about $264,908 for yourself.
+
+Here is the offer in JSON:
+
+{""alice_gain"": 264908, ""bob_gain"": 735092}
+
+This is our Round 1 offer."

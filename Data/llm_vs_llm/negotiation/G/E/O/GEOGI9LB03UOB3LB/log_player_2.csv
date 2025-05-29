@@ -1,0 +1,35 @@
+prompt,response
+"Alice's offer: The product price will be $130. 
+You have three options:
+(1) Accept Alice's offer, and buy the product for $130
+(2) Reject Alice's offer and proceed to the next round, where you will send Alice a counteroffer
+(3) Buy the product from Jhon for $120","I need to decide whether to accept Alice's offer of $130, make a counteroffer, or buy from John for $120.
+
+Given that:
+- The product is worth no more than $120 to me
+- Alice's product costs her $120 (her reservation value)
+- John is offering the same product for $120
+
+Since Alice's offer of $130 is higher than both my maximum value and John's price, it doesn't make sense to accept it. John's offer of $120 matches my maximum value, so I wouldn't save any money by accepting Alice's current offer.
+
+The logical choice is to either make a counteroffer to Alice (which she might accept if it's above her $120 cost) or buy from John immediately.
+
+Since I can always fall back on John's offer, and there's a possibility Alice might accept a lower price to make some sale, I'll reject Alice's offer.
+
+{""decision"": ""RejectOffer""}"
+"You chose to make a counteroffer to Alice.
+
+Send your counteroffer to Alice.","I'll make a counteroffer that's below John's price but still potentially acceptable to Alice, as she might be willing to make some profit rather than no sale.
+
+{""product_price"": $115}"
+"Alice rejected your offer from round 2.
+
+Alice's offer: The product price will be $125. 
+You have three options:
+(1) Accept Alice's offer, and buy the product for $125
+(2) Reject Alice's offer and proceed to the next round, where you will send Alice a counteroffer
+(3) Buy the product from Jhon for $120","Alice has lowered her price to $125, but it's still higher than John's price of $120. Since my goal is to save as much money as possible, and John's offer is $5 cheaper than Alice's current offer, I should either try another counteroffer or go with John's option.
+
+Since John's price is guaranteed at $120, and there's no indication Alice would go below that (as the product costs her $120), the rational choice is to buy from John.
+
+{""decision"": ""BuyFromJhon""}"

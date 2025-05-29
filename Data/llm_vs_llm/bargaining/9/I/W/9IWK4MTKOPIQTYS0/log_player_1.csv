@@ -1,0 +1,36 @@
+prompt,response
+"Round 1
+Send your offer to divide $1,000,000.","Based on a backward‐induction analysis of the alternating‐offers game with a 5% per–round decline in the available amount and a time horizon of 12 rounds, the equilibrium “fair” division (in which both players would be indifferent to waiting one more round) comes out quite unevenly when expressed in raw dollars in round 1. In brief, if we denote by M(i) the total amount available in round i (with M(1) = 1,000,000, M(2) = 1,000,000·0.95, etc.) then one can show that in each round the proposer must offer the responder at least what the responder would obtain—as proposer—in the next round. Working backward from round 12 (where the proposer could claim nearly 100% of the available amount) yields a recurrence:
+
+  xᵢ = 1 – 0.95·(xᵢ₊₁),
+
+with x₁ representing the share (as a fraction of the current total M(1)) that the proposer (Alice in round 1) can secure and x₂ the share that Bob would secure as proposer in round 2 if given the chance. With the terminal condition x₁₂ = 1 (since in round 12 the proposer takes the whole available M(12)), one finds (approximately):
+
+  x₁₂ = 1  
+  x₁₁ = 1 – 0.95·1 ≈ 0.05  
+  x₁₀ = 1 – 0.95·0.05 ≈ 0.9525  
+  x₉ ≈ 0.095125  
+  x₈ ≈ 0.90963  
+  x₇ ≈ 0.13585  
+  x₆ ≈ 0.87094  
+  x₅ ≈ 0.17260  
+  x₄ ≈ 0.83603  
+  x₃ ≈ 0.20578  
+  x₂ ≈ 0.80451  
+  x₁ ≈ 1 – 0.95·0.80451 ≈ 0.23571
+
+In round 1 the total available is M(1) = 1,000,000, and as proposer Alice can secure x₁ ≈ 23.57% while Bob must be offered at least 76.43% (since if Bob rejects he will become proposer in round 2 and by similar logic secure about 0.80451 of M(2) = 950,000, which comes out to about 950,000×0.80451 ≈ 764,286).
+
+Thus, the subgame‐perfect equilibrium offer (from a fully rational perspective) in round 1 is:
+
+  Alice: ≈ $235,714  
+  Bob: ≈ $764,286
+
+Here’s the JSON answer:
+
+{
+  ""alice_gain"": 235714,
+  ""bob_gain"": 764286
+}
+
+This is the offer I (Alice) propose in Round 1."

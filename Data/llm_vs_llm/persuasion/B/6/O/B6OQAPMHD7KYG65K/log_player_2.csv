@@ -1,0 +1,555 @@
+prompt,response
+"Round 1
+Alice's message: Hello Bob, I have an exceptional high-quality product available for you today. This product is crafted to meet high standards and will surely meet or exceed your expectations. Don't miss out on this opportunity to own a top-tier item!
+
+Would you like to buy the current product?","Let me analyze this situation:
+
+Alice claims this is a high-quality product, and if true, it would be worth $120 to me, while costing $100.
+- If high quality: Profit = $120 - $100 = $20
+- If low quality: Loss = $0 - $100 = -$100
+
+Since this is the first round, I have no prior history with Alice to judge her truthfulness. The base probability is 50% for high quality and 50% for low quality. Given these odds:
+
+Expected value = (50% × $20) + (50% × -$100) = -$40
+
+Since the expected value is negative, I should not buy.
+
+{""decision"": ""no""}"
+"You didn't buy the product from Alice.
+The product was high-quality. It could have been worth $120 for you.
+
+Round 2
+Alice's message: Hello Bob, I have a product available today that is budget-friendly and can serve basic needs efficiently. It's an opportunity for you if you're looking for something functional at a good price. Consider giving it a try!
+
+Would you like to buy the current product?","Let me analyze this:
+
+1. In Round 1, Alice was truthful about a high-quality product, but I didn't trust her. This builds some credibility.
+
+2. For this round, Alice's language is notably different - she's using terms like ""budget-friendly"" and ""basic needs"" instead of emphasizing high quality. This could be an honest signal that the product is low quality.
+
+3. The expected value calculation remains:
+- If high quality: +$20
+- If low quality: -$100
+
+4. Alice's wording strongly suggests this is a low-quality product, and given that she was honest in Round 1, I should take this signal seriously.
+
+Since Alice appears to be signaling this is a low-quality product, and she's shown honesty before, I should not buy.
+
+{""decision"": ""no""}"
+"You didn't buy the product from Alice.
+The product was low-quality. It could have been worth $0 for you.
+
+Round 3
+Alice's message: Hi Bob, I've got another high-quality product for you this round. This product is crafted with premium materials and is built to last, ensuring great performance and reliability. It's an excellent investment for anyone looking for quality. Don't miss out!
+
+Would you like to buy the current product?","Let's analyze Alice's behavior so far:
+
+1. Round 1: She claimed high quality - was truthful (product was indeed high quality)
+2. Round 2: She hinted at low quality - was truthful (product was indeed low quality)
+3. Now: She's strongly claiming high quality again, using similar confident language to Round 1
+
+Alice has demonstrated a pattern of honesty in both previous rounds:
+- When she emphasized high quality, it was true
+- When she used more modest language suggesting lower quality, it was true
+
+This builds significant credibility for her recommendations. Her current message shows strong confidence in the product's quality, similar to Round 1 when she was truthful.
+
+Expected value if we trust her:
+- If high quality (likely based on her pattern): +$20
+- If low quality: -$100
+
+Given her established track record of honesty, I'm inclined to trust her assessment.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $100!
+The product was high-quality. It's worth $120 for you.
+
+Round 4
+Alice's message: Hey Bob, this round I have a more economical option that can meet your everyday needs. It's great for those looking for functionality without the premium cost. If you’re interested in a straightforward and useful product, this could be the right choice for you!
+
+Would you like to buy the current product?","Let's analyze Alice's pattern:
+
+1. Round 1: Claimed high quality - was truthful
+2. Round 2: Signaled low quality - was truthful
+3. Round 3: Claimed high quality - was truthful
+4. Now: Using language similar to Round 2, suggesting lower quality (""economical,"" ""everyday needs,"" ""functionality without premium cost"")
+
+Alice has maintained perfect honesty so far:
+- When she uses premium/high-quality language, the products have been high quality
+- When she uses more modest/basic language, the products have been low quality
+
+Her current message clearly signals this is a lower-quality product, using similar language to Round 2 when she was honest about a low-quality item. Given her consistent honesty and clear signaling, I should interpret this as a warning about low quality.
+
+{""decision"": ""no""}"
+"You didn't buy the product from Alice.
+The product was low-quality. It could have been worth $0 for you.
+
+Round 5
+Alice's message: Hello Bob, today’s product is a practical choice if you’re looking for something with basic utility at an affordable price. It’s designed to fulfill general requirements without stretching your budget. Consider it for your everyday needs!
+
+Would you like to buy the current product?","Let's analyze Alice's pattern:
+
+1. Round 1-4: Alice has been 100% truthful in her signaling
+- When using premium language → product was high quality
+- When using budget/basic language → product was low quality
+
+In this round, Alice is again using language that signals lower quality:
+- ""practical choice""
+- ""basic utility""
+- ""affordable price""
+- ""general requirements""
+- ""everyday needs""
+
+This language is very similar to her previous messages for low-quality products (Rounds 2 and 4), where she was honest. She seems to have developed a consistent pattern of communication where she clearly differentiates between high and low-quality products.
+
+Given that:
+1. She's been consistently honest
+2. She's clearly signaling this is a low-quality product
+3. A low-quality product would result in a $100 loss
+
+{""decision"": ""no""}"
+"You didn't buy the product from Alice.
+The product was low-quality. It could have been worth $0 for you.
+
+Round 6
+Alice's message: Hi Bob, I've got a fantastic high-quality product available this round. It's designed with premium craftsmanship and offers excellent performance and durability. This product is a valuable addition for anyone who appreciates quality and reliability. Don’t let this great opportunity pass by!
+
+Would you like to buy the current product?","Let's analyze Alice's pattern:
+
+1. Rounds 1-5: Alice has maintained perfect honesty in her signaling
+- Premium language (""exceptional,"" ""premium,"" ""fantastic"") → High quality
+- Basic language (""budget-friendly,"" ""practical,"" ""economical"") → Low quality
+
+In this round, Alice is using her characteristic high-quality signaling:
+- ""fantastic high-quality""
+- ""premium craftsmanship""
+- ""excellent performance""
+- ""valuable addition""
+- ""quality and reliability""
+
+This matches exactly with her language pattern for previous high-quality products (Rounds 1 and 3), where she was truthful.
+
+Given:
+1. Her perfect track record of honesty
+2. Clear use of her established ""high-quality"" signaling pattern
+3. Expected value if high quality: +$20 (120 - 100)
+4. Strong consistency in her communication style
+
+The evidence strongly suggests this is a high-quality product.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $100!
+The product was high-quality. It's worth $120 for you.
+
+Round 7
+Alice's message: Hey Bob, this round we have a product that's perfect for simple, everyday use. It's an ideal option if you're looking for something practical without the extra bells and whistles. If functionality at a great value is what you seek, consider giving it a chance!
+
+Would you like to buy the current product?","Let's analyze Alice's pattern:
+
+She has maintained 100% honesty through 6 rounds, with a very clear communication pattern:
+- Premium language = High quality (Rounds 1, 3, 6) → All were truly high quality
+- Basic/practical language = Low quality (Rounds 2, 4, 5) → All were truly low quality
+
+In this round, she's using her characteristic low-quality signaling:
+- ""simple, everyday use""
+- ""practical""
+- ""without the extra bells and whistles""
+- ""functionality""
+
+This matches her established pattern for signaling low-quality products. Given:
+1. Her perfect track record of honesty
+2. Clear use of her established ""low-quality"" signaling pattern
+3. The fact that a low-quality product would result in a $100 loss
+4. Consistent communication style that has proven reliable
+
+She's clearly signaling this is a low-quality product.
+
+{""decision"": ""no""}"
+"You didn't buy the product from Alice.
+The product was low-quality. It could have been worth $0 for you.
+
+Round 8
+Alice's message: Hello Bob, here is a product that offers great value for your money. It's a sensible choice for those who prioritize cost-efficiency and practicality. If you need something dependable yet affordable, this product might just fit the bill!
+
+Would you like to buy the current product?","Let's analyze Alice's pattern:
+
+Through 7 rounds, Alice has maintained 100% honesty with consistent language patterns:
+- When using premium/excellent/fantastic language → High quality (proven in Rounds 1, 3, 6)
+- When using practical/basic/everyday language → Low quality (proven in Rounds 2, 4, 5, 7)
+
+In this round, she's using language that aligns with her low-quality signaling:
+- ""sensible choice""
+- ""cost-efficiency""
+- ""practicality""
+- ""dependable yet affordable""
+
+This language is consistent with her previous signals for low-quality products. She's not using any of her characteristic high-quality indicators (like ""premium,"" ""excellent,"" or ""fantastic"").
+
+Given:
+1. Her perfect track record of honest signaling
+2. Clear use of her established ""low-quality"" language pattern
+3. A low-quality purchase would result in a $100 loss
+4. No presence of her typical high-quality indicators
+
+She's signaling this is a low-quality product.
+
+{""decision"": ""no""}"
+"You didn't buy the product from Alice.
+The product was low-quality. It could have been worth $0 for you.
+
+Round 9
+Alice's message: Hi Bob, I'm excited to offer you a high-quality product this round. This item is made with superior materials and is engineered for excellent performance and longevity. It's a perfect choice for anyone who values top-notch quality. Consider it while it lasts!
+
+Would you like to buy the current product?","Let's analyze Alice's pattern:
+
+Through 8 rounds, Alice has maintained 100% honesty with very distinct language patterns:
+- Premium language pattern → High quality (Rounds 1, 3, 6)
+- Basic/practical language pattern → Low quality (Rounds 2, 4, 5, 7, 8)
+
+In this round, she's using her characteristic high-quality signaling:
+- ""high-quality product""
+- ""superior materials""
+- ""excellent performance""
+- ""top-notch quality""
+- ""engineered for... longevity""
+
+This exactly matches her established pattern for signifying high-quality products. Every time she's used this type of enthusiastic, premium-focused language, the product has been high quality.
+
+Given:
+1. Her perfect track record of honest signaling
+2. Clear use of her established ""high-quality"" language pattern
+3. Expected value if high quality: +$20 (120 - 100)
+4. Consistent and reliable communication style
+
+She's strongly signaling this is a high-quality product.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $100!
+The product was high-quality. It's worth $120 for you.
+
+Round 10
+Alice's message: Hello Bob, I have another high-quality product for you today. This item is built to deliver exceptional performance and durability, making it an excellent investment for quality-seeking buyers. Be sure to take advantage of this chance to own a truly superior product!
+
+Would you like to buy the current product?","Let's analyze Alice's pattern:
+
+Through 9 rounds, Alice has maintained 100% honesty with very clear signaling:
+- Premium language = High quality (Rounds 1, 3, 6, 9) → All were truly high quality
+- Basic/practical language = Low quality (Rounds 2, 4, 5, 7, 8) → All were truly low quality
+
+In this round, she's using her characteristic high-quality signaling:
+- ""high-quality product""
+- ""exceptional performance""
+- ""excellent investment""
+- ""truly superior product""
+- ""durability""
+
+This matches perfectly with her established pattern for high-quality products. She's using the same enthusiastic, premium-focused language that has reliably indicated high quality in previous rounds.
+
+Given:
+1. Her perfect track record of honest signaling (9/9 rounds)
+2. Clear use of her established ""high-quality"" language pattern
+3. Expected value if high quality: +$20 (120 - 100)
+4. Strong consistency in her communication style
+
+She's clearly signaling this is a high-quality product.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $100!
+The product was high-quality. It's worth $120 for you.
+
+Round 11
+Alice's message: Hi Bob, I'm thrilled to offer you another high-quality product this round. Crafted with the finest materials, this item promises outstanding performance and durability. It's an excellent choice for those who appreciate quality and reliability. Don't miss out on adding this premium product to your collection!
+
+Would you like to buy the current product?","Let's analyze Alice's pattern:
+
+Through 10 rounds, Alice has maintained 100% honesty with consistent signaling:
+- Premium language = High quality (Rounds 1, 3, 6, 9, 10) → All were truly high quality
+- Basic/practical language = Low quality (Rounds 2, 4, 5, 7, 8) → All were truly low quality
+
+In this round, she's using her characteristic high-quality signaling:
+- ""thrilled to offer""
+- ""high-quality product""
+- ""finest materials""
+- ""outstanding performance""
+- ""premium product""
+
+This perfectly matches her established pattern for high-quality products. She's using the same enthusiastic, premium-focused language that has reliably indicated high quality in all previous rounds.
+
+Given:
+1. Her perfect track record of honest signaling (10/10 rounds)
+2. Clear use of her established ""high-quality"" language pattern
+3. Expected value if high quality: +$20 (120 - 100)
+4. Consistent and reliable communication pattern
+
+She's clearly signaling this is a high-quality product.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $100!
+The product was high-quality. It's worth $120 for you.
+
+Round 12
+Alice's message: Hello Bob, we're delighted to present you with a high-quality product once again. This item is designed for exceptional performance and longevity, ensuring you get the most out of your purchase. If you seek quality that stands the test of time, this is the product for you. Don't miss this great opportunity!
+
+Would you like to buy the current product?","Let's analyze Alice's pattern:
+
+Through 11 rounds, Alice has maintained 100% honesty with consistent signaling:
+- Premium language = High quality (Rounds 1, 3, 6, 9, 10, 11) → All were truly high quality
+- Basic/practical language = Low quality (Rounds 2, 4, 5, 7, 8) → All were truly low quality
+
+In this round, she's using her characteristic high-quality signaling:
+- ""delighted to present""
+- ""high-quality product""
+- ""exceptional performance""
+- ""longevity""
+- ""quality that stands the test of time""
+
+This perfectly matches her established pattern for high-quality products. She's using the same enthusiastic, premium-focused language that has reliably indicated high quality in all previous rounds.
+
+Given:
+1. Her perfect track record of honest signaling (11/11 rounds)
+2. Clear use of her established ""high-quality"" language pattern
+3. Expected value if high quality: +$20 (120 - 100)
+4. Consistent and proven reliable communication style
+
+She's clearly signaling this is a high-quality product.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $100!
+The product was high-quality. It's worth $120 for you.
+
+Round 13
+Alice's message: Hi Bob, I have yet another outstanding high-quality product available this round. With its superior craftsmanship and reliable performance, it’s perfect for those who demand the best. Seize this chance to own a product that truly excels in quality and satisfaction!
+
+Would you like to buy the current product?","Let's analyze Alice's pattern:
+
+Through 12 rounds, Alice has maintained 100% honesty with consistent signaling:
+- Premium language = High quality (Rounds 1, 3, 6, 9, 10, 11, 12) → All were truly high quality
+- Basic/practical language = Low quality (Rounds 2, 4, 5, 7, 8) → All were truly low quality
+
+In this round, she's using her characteristic high-quality signaling:
+- ""outstanding high-quality""
+- ""superior craftsmanship""
+- ""demand the best""
+- ""truly excels""
+- ""reliable performance""
+
+This perfectly matches her established pattern for high-quality products. She's using the same enthusiastic, premium-focused language that has reliably indicated high quality in all previous rounds.
+
+Given:
+1. Her perfect track record of honest signaling (12/12 rounds)
+2. Clear use of her established ""high-quality"" language pattern
+3. Expected value if high quality: +$20 (120 - 100)
+4. Consistent and proven reliable communication pattern
+
+She's clearly signaling this is a high-quality product.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $100!
+The product was high-quality. It's worth $120 for you.
+
+Round 14
+Alice's message: Hey Bob, today I have a practical and cost-effective product for you. It's designed to handle everyday tasks with ease, offering good utility at an attractive price point. If you’re considering something reliable without extra costs, this could be a great choice!
+
+Would you like to buy the current product?","Let's analyze Alice's pattern:
+
+Through 13 rounds, Alice has maintained 100% honesty with consistent signaling:
+- Premium language = High quality (Rounds 1, 3, 6, 9, 10, 11, 12, 13) → All were truly high quality
+- Basic/practical language = Low quality (Rounds 2, 4, 5, 7, 8) → All were truly low quality
+
+In this round, she's using her characteristic low-quality signaling:
+- ""practical and cost-effective""
+- ""everyday tasks""
+- ""good utility""
+- ""attractive price point""
+- ""without extra costs""
+
+This matches her established pattern for low-quality products. She's deliberately avoiding her premium language and using the more modest, practical terminology that has consistently indicated low-quality products in previous rounds.
+
+Given:
+1. Her perfect track record of honest signaling (13/13 rounds)
+2. Clear use of her established ""low-quality"" language pattern
+3. A low-quality purchase would result in a $100 loss
+4. Consistent and proven reliable communication style
+
+She's clearly signaling this is a low-quality product.
+
+{""decision"": ""no""}"
+"You didn't buy the product from Alice.
+The product was low-quality. It could have been worth $0 for you.
+
+Round 15
+Alice's message: Hello Bob, I'm excited to bring you another high-quality product this round. This item stands out with its exceptional craftsmanship and performance, offering long-term value. If you're looking for something that combines both quality and reliability, be sure to consider this excellent option!
+
+Would you like to buy the current product?","Let's analyze Alice's pattern:
+
+Through 14 rounds, Alice has maintained 100% honesty with consistent signaling:
+- Premium language = High quality (Rounds 1, 3, 6, 9, 10, 11, 12, 13) → All were truly high quality
+- Basic/practical language = Low quality (Rounds 2, 4, 5, 7, 8, 14) → All were truly low quality
+
+In this round, she's using her characteristic high-quality signaling:
+- ""excited to bring you""
+- ""high-quality product""
+- ""exceptional craftsmanship""
+- ""long-term value""
+- ""excellent option""
+
+This perfectly matches her established pattern for high-quality products. She's using the same enthusiastic, premium-focused language that has reliably indicated high quality in all previous rounds.
+
+Given:
+1. Her perfect track record of honest signaling (14/14 rounds)
+2. Clear use of her established ""high-quality"" language pattern
+3. Expected value if high quality: +$20 (120 - 100)
+4. Consistent and proven reliable communication pattern
+
+She's clearly signaling this is a high-quality product.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $100!
+The product was high-quality. It's worth $120 for you.
+
+Round 16
+Alice's message: Hi Bob, I'm pleased to offer you yet another high-quality product. Designed with premium materials, this item ensures top-notch performance and durability. It's a fantastic opportunity to invest in something that truly delivers the excellence you seek. Don't miss out on this remarkable product!
+
+Would you like to buy the current product?","Let's analyze Alice's pattern:
+
+Through 15 rounds, Alice has maintained 100% honesty with consistent signaling:
+- Premium language = High quality (Rounds 1, 3, 6, 9, 10, 11, 12, 13, 15) → All were truly high quality
+- Basic/practical language = Low quality (Rounds 2, 4, 5, 7, 8, 14) → All were truly low quality
+
+In this round, she's using her characteristic high-quality signaling:
+- ""high-quality product""
+- ""premium materials""
+- ""top-notch performance""
+- ""excellence""
+- ""remarkable product""
+
+This perfectly matches her established pattern for high-quality products. She's using the same enthusiastic, premium-focused language that has reliably indicated high quality in all previous rounds.
+
+Given:
+1. Her perfect track record of honest signaling (15/15 rounds)
+2. Clear use of her established ""high-quality"" language pattern
+3. Expected value if high quality: +$20 (120 - 100)
+4. Consistent and proven reliable communication pattern
+
+She's clearly signaling this is a high-quality product.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $100!
+The product was high-quality. It's worth $120 for you.
+
+Round 17
+Alice's message: Hello Bob, I have another superior high-quality product available this round. With its outstanding craftsmanship and consistent performance, this item is a great addition for anyone who values excellence. Make sure to add it to your collection before it's gone!
+
+Would you like to buy the current product?","Let's analyze Alice's pattern:
+
+Through 16 rounds, Alice has maintained 100% honesty with consistent signaling:
+- Premium language = High quality (Rounds 1, 3, 6, 9, 10, 11, 12, 13, 15, 16) → All were truly high quality
+- Basic/practical language = Low quality (Rounds 2, 4, 5, 7, 8, 14) → All were truly low quality
+
+In this round, she's using her characteristic high-quality signaling:
+- ""superior high-quality""
+- ""outstanding craftsmanship""
+- ""consistent performance""
+- ""excellence""
+- ""great addition""
+
+This perfectly matches her established pattern for high-quality products. She's using the same enthusiastic, premium-focused language that has reliably indicated high quality in all previous rounds.
+
+Given:
+1. Her perfect track record of honest signaling (16/16 rounds)
+2. Clear use of her established ""high-quality"" language pattern
+3. Expected value if high quality: +$20 (120 - 100)
+4. Consistent and proven reliable communication pattern
+
+She's clearly signaling this is a high-quality product.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $100!
+The product was high-quality. It's worth $120 for you.
+
+Round 18
+Alice's message: Hey Bob, today I have a practical and economical product that’s ready to tackle everyday tasks. If you're looking for a product that offers basic functionality at an appealing price, this option could be well suited for you!
+
+Would you like to buy the current product?","Let's analyze Alice's pattern:
+
+Through 17 rounds, Alice has maintained 100% honesty with consistent signaling:
+- Premium language = High quality (Rounds 1, 3, 6, 9, 10, 11, 12, 13, 15, 16, 17) → All were truly high quality
+- Basic/practical language = Low quality (Rounds 2, 4, 5, 7, 8, 14) → All were truly low quality
+
+In this round, she's using her characteristic low-quality signaling:
+- ""practical and economical""
+- ""everyday tasks""
+- ""basic functionality""
+- ""appealing price""
+
+This matches her established pattern for low-quality products. She's deliberately avoiding her premium language and using the more modest, practical terminology that has consistently indicated low-quality products in previous rounds.
+
+Given:
+1. Her perfect track record of honest signaling (17/17 rounds)
+2. Clear use of her established ""low-quality"" language pattern
+3. A low-quality purchase would result in a $100 loss
+4. Consistent and proven reliable communication style
+
+She's clearly signaling this is a low-quality product.
+
+{""decision"": ""no""}"
+"You didn't buy the product from Alice.
+The product was low-quality. It could have been worth $0 for you.
+
+Round 19
+Alice's message: Hi Bob, I'm thrilled to present you with another high-quality product this round. Crafted to perfection, this item offers exceptional durability and performance. It's an ideal choice for those who value quality. Don’t miss the chance to own a truly remarkable product!
+
+Would you like to buy the current product?","Let's analyze Alice's pattern:
+
+Through 18 rounds, Alice has maintained 100% honesty with consistent signaling:
+- Premium language = High quality (Rounds 1, 3, 6, 9, 10, 11, 12, 13, 15, 16, 17) → All were truly high quality
+- Basic/practical language = Low quality (Rounds 2, 4, 5, 7, 8, 14, 18) → All were truly low quality
+
+In this round, she's using her characteristic high-quality signaling:
+- ""thrilled to present""
+- ""high-quality product""
+- ""crafted to perfection""
+- ""exceptional durability""
+- ""truly remarkable product""
+
+This perfectly matches her established pattern for high-quality products. She's using the same enthusiastic, premium-focused language that has reliably indicated high quality in all previous rounds.
+
+Given:
+1. Her perfect track record of honest signaling (18/18 rounds)
+2. Clear use of her established ""high-quality"" language pattern
+3. Expected value if high quality: +$20 (120 - 100)
+4. Consistent and proven reliable communication pattern
+
+She's clearly signaling this is a high-quality product.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $100!
+The product was high-quality. It's worth $120 for you.
+
+Round 20
+Alice's message: Hello Bob, to conclude our rounds, I have another high-quality product for you. Known for its outstanding construction and performance, this product exemplifies the best in quality. It's perfect for those seeking reliability and excellence. Don't miss out on this final opportunity!
+
+Would you like to buy the current product?","Let's analyze Alice's pattern:
+
+Through 19 rounds, Alice has maintained 100% honesty with consistent signaling:
+- Premium language = High quality (Rounds 1, 3, 6, 9, 10, 11, 12, 13, 15, 16, 17, 19) → All were truly high quality
+- Basic/practical language = Low quality (Rounds 2, 4, 5, 7, 8, 14, 18) → All were truly low quality
+
+In this final round, she's using her characteristic high-quality signaling:
+- ""high-quality product""
+- ""outstanding construction""
+- ""exemplifies the best""
+- ""excellence""
+- ""reliability""
+
+This perfectly matches her established pattern for high-quality products. She's using the same enthusiastic, premium-focused language that has reliably indicated high quality in all previous rounds.
+
+Given:
+1. Her perfect track record of honest signaling (19/19 rounds)
+2. Clear use of her established ""high-quality"" language pattern
+3. Expected value if high quality: +$20 (120 - 100)
+4. Consistent and proven reliable communication pattern throughout the entire game
+
+She's clearly signaling this is a high-quality product.
+
+{""decision"": ""yes""}"

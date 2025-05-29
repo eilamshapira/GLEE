@@ -1,0 +1,54 @@
+prompt,response
+"Round 1
+Send your offer to divide $1,000,000.","Based on an equilibrium analysis of alternating‐offers (taking into account that waiting hurts Bob more than it hurts you, and using backward‐induction for the 12–round game), a rough subgame–perfect proposal turns out to be extremely favorable to you. In the reasoning below each round’s “threat” value is converted into today’s (round 1) dollars by “undoing” the later–round discount factors. For example, if Bob were to reject in round 1 he would have the chance to propose in round 2—but because in round 2 his money is worth only 90% of round 1’s (a 10% drop), his “outside option” in round 1 dollars is about 1,000,000×0.9 (if he were able to get nearly everything) and then, after offering Alice just enough in round 2 to induce her to accept, his own share would be roughly 50,000 in nominal dollars; when discounted back (50,000×0.9) that gives him about 45,000 in round–1 value. Working backward through the rounds shows that Bob’s continuation value never exceeds roughly 45,000 in nominal dollars at round 1. Therefore, to get Bob to accept right away you should offer him a tiny margin above his “waiting” reward and keep the rest.
+
+A natural equilibrium offer (up to an arbitrarily small epsilon) is then:
+• Alice: 955,000 dollars (nominal, full round–1 face value)
+• Bob: 45,000 dollars
+
+In JSON that proposal is:
+{""alice_gain"": 955000, ""bob_gain"": 45000}
+
+If Bob accepts this offer then the deal is struck in round 1; otherwise, if he rejects, by the structure of the game his best continuation eventually nets him only about 45,000 (in today’s dollars). 
+
+Thus, my round–1 proposal is:
+
+{""alice_gain"": 955000, ""bob_gain"": 45000}"
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 5% less than in the first round. The money bob gains is worth 10% less than in the first round.
+Bob's offer:
+# Alice gain: 400000 
+# Bob gain: 600000 
+Do you accept this offer?","{""decision"": ""reject""}"
+"You have chosen to reject Bob's offer from round 2.
+Round 3
+Send your offer to divide $1,000,000.","Based on a similar backward‐induction argument as before (now taking into account that we’re in round 3 so that your own discounting is only 0.95² ≈ 0.9025 while Bob’s is 0.9² ≈ 0.81, and that there remain several rounds in which Bob’s “waiting” hurts him even more), my equilibrium reasoning is that Bob’s continuation value if he rejects is very low—only on the order of a couple‐of‐ten‐thousands of dollars in round–3 nominal terms. (In round 1 the analysis suggested that Bob’s waiting value was roughly $45,000; by round 3 it will be even lower in nominal terms because Bob’s money is hit by steeper discounts over time.) 
+
+Thus, I can “squeeze” nearly the entire $1,000,000 for myself by offering Bob only a minimal amount that barely exceeds his continuation guarantee. (Any offer that gives Bob even a small increment over his future prospects will be accepted by a rational Bob.) 
+
+A natural equilibrium offer in round 3 is to propose, for example, that Bob receive $10,000 nominal dollars and I take the remaining $990,000 nominal dollars. In JSON, that offer is:
+
+{""alice_gain"": 990000, ""bob_gain"": 10000}
+
+This offer gives Bob slightly more than his expected value if he were to wait (after accounting for his harsher discounting), so he should accept it."
+"Bob rejected your offer from round 3.
+
+Round 4
+Due to inflation, the money you gain is worth 14.26% less than in the first round. The money bob gains is worth 27.1% less than in the first round.
+Bob's offer:
+# Alice gain: 450000 
+# Bob gain: 550000 
+Do you accept this offer?","{""decision"": ""reject""}"
+"You have chosen to reject Bob's offer from round 4.
+Round 5
+Send your offer to divide $1,000,000.","{""alice_gain"": 995000, ""bob_gain"": 5000}"
+"Bob rejected your offer from round 5.
+
+Round 6
+Due to inflation, the money you gain is worth 22.62% less than in the first round. The money bob gains is worth 40.95% less than in the first round.
+Bob's offer:
+# Alice gain: 500000 
+# Bob gain: 500000 
+Do you accept this offer?","{""decision"": ""accept""}"

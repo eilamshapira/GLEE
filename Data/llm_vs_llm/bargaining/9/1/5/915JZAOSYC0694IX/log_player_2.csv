@@ -1,0 +1,32 @@
+prompt,response
+"Round 1
+Alice's offer:
+# Alice's message: Let's split it fairly, 60/40 seems reasonable 
+# Bob gain: 4000 
+# Alice gain: 6000 
+Do you accept this offer?","{""decision"": ""reject""}"
+"You have chosen to reject Alice's offer from round 1.
+Round 2
+Send your offer to divide $10,000 and a message to Alice.","{""bob_gain"": 5500, 
+""alice_gain"": 4500, 
+""message"": ""My turn, 55/45 seems more reasonable to me""}"
+"Alice rejected your offer from round 2.
+
+Round 3
+Due to inflation, the money you gain is worth 19% less than in the first round. The money Alice gains is worth the same as in the first round.
+Alice's offer:
+# Alice's message: Let's meet in the middle, 57.5/42.5 is a fair compromise 
+# Bob gain: 4250 
+# Alice gain: 5750 
+Do you accept this offer?","Considering the inflation, the $4250 I would gain is actually worth $3425 (4250 * 0.805, since it's 19% less than the original value). 
+
+{""decision"": ""reject""}"
+"You have chosen to reject Alice's offer from round 3.
+Round 4
+Send your offer to divide $10,000 and a message to Alice.","Due to inflation, the money I gain is worth 29% less than in the first round (10% less in round 2 and another 10% less in round 3, combined = 19% + 10% = 29% less, but since the reduction is multiplicative, it's 1 - (0.9 * 0.9) = 1 - 0.81 = 0.19 or 19% reduction in round 2 and round 3, so the total reduction is 1 - (0.9 * 0.9) = 1 - 0.81 = 0.19, which is the reduction after two rounds, to calculate the reduction after 3 rounds we should do 1 - (0.9 * 0.9 * 0.9) = 1 - 0.729 = 0.271 or 27.1% reduction, but since the reduction is not exactly 10% + 10% + 10%, we should use the formula 1 - (0.9 ^ 3) = 1 - 0.729 = 0.271, so the total reduction after 3 rounds is 27.1%, so I will use this number), the money Alice gains is still worth the same. 
+
+To maximize my gain, I should offer Alice the minimum amount possible while still considering the possibility that she might accept.
+
+{""bob_gain"": 5000, 
+""alice_gain"": 5000, 
+""message"": ""Let's split it 50/50 before it's too late""}"

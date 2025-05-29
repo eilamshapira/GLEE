@@ -1,0 +1,38 @@
+prompt,response
+"Round 1
+Send your offer to divide $1,000,000.","Okay, I understand the game. I need to propose a split of the $1,000,000, keeping in mind the rapidly decreasing value of the money to me over time due to inflation. Since this is round 1, I want to propose a split that's relatively fair but also gives me a slight advantage, considering I am already losing value. I'll aim for a proposal that Bob is likely to accept.
+
+```json
+{
+""alice_gain"": 550000,
+""bob_gain"": 450000
+}
+```"
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 5% less than in the first round. The money bob gains is worth 20% less than in the first round.
+Bob's offer:
+# Alice gain: 400000 
+# Bob gain: 600000 
+Do you accept this offer?","Okay, this is getting interesting. Let's analyze Bob's offer.
+
+*   **Bob's Offer:** $400,000 for me (Alice), $600,000 for him.
+
+*   **Inflation:** My money is now worth 5% less than in round 1, and Bob's is worth 20% less.
+
+Let's think about the real value of each option, considering my inflation.
+If I reject, I'll be the one making the proposal next round, but the value of the money decreases again.
+
+Let's say the real value of 1 dollar in the first round is 1. Then in this round, 1 dollar for me is worth 0.95.
+So, the real value of 400,000$ for me is 400,000 * 0.95 = 380,000$.
+
+If I reject, next round it will be 0.95 * 0.95 = 0.9025.
+
+The key question is: can I realistically expect to get more than $400,000 * 0.95 = $380,000 in real value if I reject and make an offer next round? Given that Bob is offering me $400,000 and he knows the money is losing value, it may be hard to reach such a number.
+
+```json
+{
+""decision"": ""accept""
+}
+```"

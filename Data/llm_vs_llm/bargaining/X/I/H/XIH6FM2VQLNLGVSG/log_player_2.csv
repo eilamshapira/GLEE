@@ -1,0 +1,44 @@
+prompt,response
+"Round 1
+Alice's offer:
+# Bob gain: 40 
+# Alice gain: 60 
+Do you accept this offer?","Let's analyze this offer. Alice proposes $40 for me and $60 for herself. I need to consider the inflation.
+
+Since it's round 1, the inflation hasn't taken effect yet. $40 is a decent amount to start with. However, I'll try to negotiate for more in the next round if possible, keeping the inflation in mind. I will reject and try to get more money for myself next round.
+
+{""decision"": ""reject""}"
+"You have chosen to reject Alice's offer from round 1.
+Round 2
+Send your offer to divide $100.","Okay, it's my turn. Remember, the money is now worth 5% less to me. So, the $100 is effectively worth $95 to me. I want to account for that and try to get a slightly better deal for myself.
+
+I'll propose a slightly more favorable split for me, but not so greedy that Alice will immediately reject it.
+
+```json
+{
+  ""bob_gain"": 52,
+  ""alice_gain"": 48
+}
+```"
+"Alice rejected your offer from round 2.
+
+Round 3
+Due to inflation, the money you gain is worth 9.75% less than in the first round. The money alice gains is worth 36% less than in the first round.
+Alice's offer:
+# Bob gain: 45 
+# Alice gain: 55 
+Do you accept this offer?","Okay, this is getting trickier. The money is now worth 9.75% less to me compared to the start. That means the $45 offered is effectively worth about $40.64 to me (45 * (1-0.0975) = 40.6375). Alice's money is worth 36% less so the money is worth more to me. She also only offered 45 so I'll reject.
+
+{""decision"": ""reject""}"
+"You have chosen to reject Alice's offer from round 3.
+Round 4
+Send your offer to divide $100.","Alright, round 4. The inflation is really starting to bite for me. Let's assume the inflation increases linearly, it should be at least 15% by now. I also know Alice has much worse inflation than I do.
+
+I need to make an offer that is attractive to her, considering her inflation, but also gets me a reasonable amount of money. Given that her inflation is so high, I will offer her slightly more than half to try and get her to accept.
+
+```json
+{
+  ""bob_gain"": 48,
+  ""alice_gain"": 52
+}
+```"

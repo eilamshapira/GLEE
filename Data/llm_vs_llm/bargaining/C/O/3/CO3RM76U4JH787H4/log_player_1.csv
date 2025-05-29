@@ -1,0 +1,27 @@
+prompt,response
+"Round 1
+Send your offer to divide $10,000.","Based on a backwards‐induction analysis (assuming that both players are perfectly rational and aware of the “inflation” discounts), the “subgame–perfect equilibrium” suggests that in the first round Alice’s optimal proposal is to give Bob approximately $5,314.41 and keep about $4,685.59 for herself.
+
+Here’s an outline of the reasoning (with numbers rounded to two decimals):
+
+1. In round 12 (the final round) Bob (the proposer that round) could offer Alice almost nothing (since her alternative is 0) and keep $10,000. However, by round 12 the entire sum for Bob is discounted by 10%^11 (i.e. 0.9^(11)) from Bob’s perspective.
+
+2. In round 11 (Alice’s turn) she needs to make Bob indifferent relative to wait for round 12. That analysis yields her offering Bob $9,000 (so that his effective payoff in round 11 equals what he would get in round 12 when discounted by 0.9) and keeping $1,000.
+
+3. Stepping back a round at a time (with the twist that Bob’s money loses 10% each round while Alice’s value remains undiminished) leads to alternating shares. The equilibrium proposals turn out to be:
+  • Round 10 (Bob’s turn): Offer Alice $1,000 and keep $9,000.
+  • Round 9 (Alice’s turn): Offer Bob $8,100 and keep $1,900.
+  • Round 8 (Bob’s turn): Offer Alice $1,900 and keep $8,100.
+  • Round 7 (Alice’s turn): Offer Bob $7,290 and keep $2,710.
+  • Round 6 (Bob’s turn): Offer Alice $2,710 and keep $7,290.
+  • Round 5 (Alice’s turn): Offer Bob $6,561 and keep $3,439.
+  • Round 4 (Bob’s turn): Offer Alice $3,439 and keep $6,561.
+  • Round 3 (Alice’s turn): Offer Bob $5,904.90 and keep $4,095.10.
+  • Round 2 (Bob’s turn): Offer Alice $4,095.10 and keep $5,904.90.
+  • Finally, in Round 1 (Alice’s turn) Bob’s continuation value (if he were to reject) turns out to be his round–2 share discounted one round further (i.e. 0.9 × $5,904.90 = approximately $5,314.41). 
+
+Thus, to make Bob indifferent—and expecting him to accept—Alice’s optimal round–1 proposal is to offer Bob about $5,314.41 and keep roughly $4,685.59 for herself.
+
+Below is the JSON format answer for Round 1:
+
+{""alice_gain"": 4685.59, ""bob_gain"": 5314.41}"

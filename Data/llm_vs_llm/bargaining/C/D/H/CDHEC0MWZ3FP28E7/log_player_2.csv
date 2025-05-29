@@ -1,0 +1,44 @@
+prompt,response
+"Round 1
+Alice's offer:
+# Alice's message: I propose taking $600000 for myself and giving you $400000. This seems fair considering the impact of inflation on our gains. 
+# Bob gain: 400000 
+# Alice gain: 600000 
+Do you accept this offer?","{""decision"": ""reject""}"
+"You have chosen to reject Alice's offer from round 1.
+Round 2
+Send your offer to divide $1,000,000 and a message to Alice.","Since I rejected Alice's offer, the money is now worth 10% less to me and 5% less to Alice. 
+The total amount of money that I can divide is still $1,000,000, but its value has decreased.
+To calculate my offer, I will consider the decreased value of the money.
+For me, the money is worth 90% of its original value, and for Alice, it's worth 95% of its original value.
+I'll make an offer that takes into account the decreased value of the money.
+
+{""bob_gain"": 550000, 
+""alice_gain"": 450000, 
+""message"": ""Considering the impact of inflation, I propose a more balanced division. Let's settle this before the value drops further.""}"
+"Alice rejected your offer from round 2.
+
+Round 3
+Due to inflation, the money you gain is worth 19% less than in the first round. The money alice gains is worth 9.75% less than in the first round.
+Alice's offer:
+# Alice's message: Given the inflation, I'm willing to adjust my offer. I propose taking $550000 for myself and giving you $450000. This should be more acceptable considering the current circumstances. 
+# Bob gain: 450000 
+# Alice gain: 550000 
+Do you accept this offer?","{""decision"": ""reject""}"
+"You have chosen to reject Alice's offer from round 3.
+Round 4
+Send your offer to divide $1,000,000 and a message to Alice.","Since I rejected Alice's offer, the money is now worth even less to both of us. 
+For me, the money is worth 81% of its original value (10% decrease in round 1, 10% decrease in round 2, and another 10% decrease in round 3, which is 0.9 * 0.9 * 0.9 = 0.729, but considering the correct calculation of the decrease: 0.9 * 0.9 = 0.81 for two rounds, and for the third round 0.81 * 0.9 = 0.729), and for Alice, it's worth 85.7375% of its original value (5% decrease in round 1, 5% decrease in round 2, and another 5% decrease in round 3, which is 0.95 * 0.95 * 0.95 = 0.857375).
+However, the correct calculation of the value for me after 3 rounds should be: 
+1st round: 100% * 0.9 = 90%
+2nd round: 90% * 0.9 = 81%
+3rd round: 81% * 0.9 = 72.9%
+And for Alice:
+1st round: 100% * 0.95 = 95%
+2nd round: 95% * 0.95 = 90.25%
+3rd round: 90.25% * 0.95 = 85.7375%
+I'll make an offer that takes into account the decreased value of the money.
+
+{""bob_gain"": 500000, 
+""alice_gain"": 500000, 
+""message"": ""Given the significant decrease in value due to inflation, I propose an equal split to ensure we both get a fair share before it's too late.""}"

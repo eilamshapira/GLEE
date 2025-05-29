@@ -63,7 +63,8 @@ class DataLogger:
 
     def save(self):
         sub_folders = "/".join(self.game_id[:3])
-        output_path = f"{OUTPUT_DIR}/{self.args['game_type']}/{sub_folders}/{self.game_id}"
+        exp_name_path = self.args['experiment_name'] if "experiment_name" in self.args else "default"
+        output_path = f"{OUTPUT_DIR}/{exp_name_path}/{self.args['game_type']}/{sub_folders}/{self.game_id}"
         os.umask(0o002)
         os.makedirs(output_path, exist_ok=True)
         with open(f"{output_path}/config.json", 'w') as f:

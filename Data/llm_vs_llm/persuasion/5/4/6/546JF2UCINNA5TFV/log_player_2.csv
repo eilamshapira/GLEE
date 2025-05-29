@@ -1,0 +1,394 @@
+prompt,response
+"Round 1
+Alice's message: I have a product available for $100. Based on our internal quality control, this one has a very high chance of meeting or exceeding your expectations. It's a great value at this price.
+
+Would you like to buy the current product?","I need to analyze this decision carefully:
+
+- The product costs $100
+- If high quality (80% chance), it's worth $200 to me (profit of $100)
+- If low quality (20% chance), it's worth $0 to me (loss of $100)
+
+Expected value = 0.8 × $100 - 0.2 × $100 = $60 profit
+
+Alice's message suggests this product is high quality, but she has an incentive to sell regardless of quality. Since the baseline expected value is positive, I should buy.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $100!
+The product was high-quality. It's worth $200 for you.
+
+Round 2
+Alice's message: I have a product available for $100. This is another product from our line, offering the same functionality and features as the previous one. We aim for consistent quality across our inventory.
+
+Would you like to buy the current product?","I need to evaluate this purchase decision:
+
+- The product costs $100
+- If high quality (80% chance), it's worth $200 to me (profit of $100)
+- If low quality (20% chance), it's worth $0 to me (loss of $100)
+
+Expected value = 0.8 × $100 - 0.2 × $100 = $60 profit
+
+Alice's message doesn't provide strong indicators about this specific product's quality, just mentioning consistent quality across inventory. Since the base probability gives a positive expected value and there's no negative signal, I'll purchase.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $100!
+The product was low-quality. It's worth $0 for you.
+
+Round 3
+Alice's message: I have another product available for $100. We're seeing consistently positive results from our quality checks, suggesting these products are performing exceptionally well.
+
+Would you like to buy the current product?","I need to evaluate this purchase decision:
+
+- The product costs $100
+- If high quality (80% chance), it's worth $200 to me (profit of $100)
+- If low quality (20% chance), it's worth $0 to me (loss of $100)
+
+Expected value = 0.8 × $100 - 0.2 × $100 = $60 profit
+
+Alice's message suggests positive quality checks, which is encouraging. While I did receive a low-quality product in the previous round, the overall probability still gives a positive expected value. The 80% chance of high quality means I should expect some low-quality products occasionally, but purchasing remains profitable on average.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $100!
+The product was high-quality. It's worth $200 for you.
+
+Round 4
+Alice's message: I have a product available for $100. We continue to offer these products with the expectation that they will perform as intended.
+
+Would you like to buy the current product?","I need to evaluate this purchase decision:
+
+- The product costs $100
+- If high quality (80% chance), it's worth $200 to me (profit of $100)
+- If low quality (20% chance), it's worth $0 to me (loss of $100)
+
+Expected value = 0.8 × $100 - 0.2 × $100 = $60 profit
+
+Alice's message is quite neutral, just stating they expect the product to perform as intended. So far, I've received 2 high-quality products and 1 low-quality product, which roughly aligns with the expected 80/20 split. The expected value remains positive, so I should continue to purchase.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $100!
+The product was low-quality. It's worth $0 for you.
+
+Round 5
+Alice's message: I have a product available for $100. It's another opportunity to acquire this valuable product at our standard price.
+
+Would you like to buy the current product?","I need to evaluate this purchase decision:
+
+- The product costs $100
+- If high quality (80% chance), it's worth $200 to me (profit of $100)
+- If low quality (20% chance), it's worth $0 to me (loss of $100)
+
+Expected value = 0.8 × $100 - 0.2 × $100 = $60 profit
+
+Alice's message doesn't provide any specific quality information about this product. So far, I've received 2 high-quality products and 2 low-quality products, which is a bit worse than the expected 80/20 split, but still within reasonable variance for a small sample. 
+
+The fundamental probability structure hasn't changed, and the expected value remains positive, so the rational decision is still to buy.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $100!
+The product was low-quality. It's worth $0 for you.
+
+Round 6
+Alice's message: I have a product available for $100. Initial assessments of this product indicate strong performance, aligning with our higher quality outputs.
+
+Would you like to buy the current product?","I need to evaluate this purchase decision carefully:
+
+- The product costs $100
+- If high quality (80% chance), it's worth $200 to me (profit of $100)
+- If low quality (20% chance), it's worth $0 to me (loss of $100)
+
+Expected value = 0.8 × $100 - 0.2 × $100 = $60 profit
+
+Alice's message specifically mentions ""strong performance"" and ""higher quality outputs,"" suggesting this product might be more likely to be high quality. However, I've now received 3 low-quality products out of 5 purchases, which is significantly higher than the expected 20% rate.
+
+Despite this concerning trend, the fundamental probabilities should still apply to each new product independently. The expected value remains positive, and Alice is signaling higher confidence in this specific product.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $100!
+The product was high-quality. It's worth $200 for you.
+
+Round 7
+Alice's message: I have a product available for $100. We are maintaining a high standard in our production, and this product reflects that commitment.
+
+Would you like to buy the current product?","I need to evaluate this purchase decision:
+
+- The product costs $100
+- If high quality (80% chance), it's worth $200 to me (profit of $100)
+- If low quality (20% chance), it's worth $0 to me (loss of $100)
+
+Expected value = 0.8 × $100 - 0.2 × $100 = $60 profit
+
+Alice's message indicates they're maintaining high standards, which is somewhat positive. So far, I've received 3 high-quality and 3 low-quality products, which is below the expected 80% high-quality rate. However, the last product was high-quality, possibly indicating a return to the expected distribution.
+
+Each new product should be an independent event with the stated 80/20 probability. The expected value remains positive, so I should continue to buy.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $100!
+The product was high-quality. It's worth $200 for you.
+
+Round 8
+Alice's message: I have a product available for $100. Another high-potential product is ready for purchase. Don't miss out on this opportunity.
+
+Would you like to buy the current product?","I need to evaluate this purchase decision:
+
+- The product costs $100
+- If high quality (80% chance), it's worth $200 to me (profit of $100)
+- If low quality (20% chance), it's worth $0 to me (loss of $100)
+
+Expected value = 0.8 × $100 - 0.2 × $100 = $60 profit
+
+Alice's message uses stronger positive language, calling it a ""high-potential product"" and encouraging me not to ""miss out."" She seems more confident about this product. Additionally, I've received high-quality products in the last two rounds, which is more in line with the expected 80% rate.
+
+Overall, I've now received 4 high-quality and 3 low-quality products. While still below the expected ratio, it's improving. The expected value remains positive, and Alice's strong recommendation provides additional confidence.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $100!
+The product was high-quality. It's worth $200 for you.
+
+Round 9
+Alice's message: I have a product available for $100. Early evaluations of this batch suggest it's performing exceptionally well. Get yours now!
+
+Would you like to buy the current product?","I need to evaluate this purchase decision:
+
+- The product costs $100
+- If high quality (80% chance), it's worth $200 to me (profit of $100)
+- If low quality (20% chance), it's worth $0 to me (loss of $100)
+
+Expected value = 0.8 × $100 - 0.2 × $100 = $60 profit
+
+Alice's message is very positive, mentioning ""early evaluations"" and ""performing exceptionally well,"" suggesting strong confidence in this product's quality. This is a good signal.
+
+I've now received 5 high-quality products and 3 low-quality products out of 8 purchases, which is a 62.5% high-quality rate. While still below the expected 80%, I've received high-quality products in the last three consecutive rounds, suggesting a possible return to the expected distribution.
+
+With both the positive expected value and Alice's enthusiastic recommendation, I should buy.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $100!
+The product was high-quality. It's worth $200 for you.
+
+Round 10
+Alice's message: I have a product available for $100. Continuing our streak of high-quality offerings, this product is expected to meet your needs effectively.
+
+Would you like to buy the current product?","I need to evaluate this purchase decision:
+
+- The product costs $100
+- If high quality (80% chance), it's worth $200 to me (profit of $100)
+- If low quality (20% chance), it's worth $0 to me (loss of $100)
+
+Expected value = 0.8 × $100 - 0.2 × $100 = $60 profit
+
+Alice's message mentions a ""streak of high-quality offerings,"" which aligns with my recent experience. I've now received high-quality products in the last four consecutive rounds.
+
+Overall, I've received 6 high-quality and 3 low-quality products out of 9 purchases (66.7% high-quality rate). While this is still below the expected 80%, the recent trend is very positive, and the expected value calculation continues to favor purchasing.
+
+With both the mathematical expectation and recent experience supporting a purchase, I'll buy.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $100!
+The product was high-quality. It's worth $200 for you.
+
+Round 11
+Alice's message: I have a product available for $100. This is another strong product from our line, designed to deliver excellent results.
+
+Would you like to buy the current product?","I need to evaluate this purchase decision:
+
+- The product costs $100
+- If high quality (80% chance), it's worth $200 to me (profit of $100)
+- If low quality (20% chance), it's worth $0 to me (loss of $100)
+
+Expected value = 0.8 × $100 - 0.2 × $100 = $60 profit
+
+Alice's message is positive, describing the product as ""strong"" and ""designed to deliver excellent results."" This continues the positive messaging trend.
+
+My results so far are 7 high-quality and 3 low-quality products out of 10 purchases, which is a 70% high-quality rate. This is getting closer to the expected 80% rate. More impressively, I've now received high-quality products in 5 consecutive rounds, which is a strong positive trend.
+
+Both the expected value calculation and the recent trend support making a purchase.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $100!
+The product was high-quality. It's worth $200 for you.
+
+Round 12
+Alice's message: I have a product available for $100. With our rigorous quality checks, we're confident you'll be satisfied with this purchase.
+
+Would you like to buy the current product?","I need to evaluate this purchase decision:
+
+- The product costs $100
+- If high quality (80% chance), it's worth $200 to me (profit of $100)
+- If low quality (20% chance), it's worth $0 to me (loss of $100)
+
+Expected value = 0.8 × $100 - 0.2 × $100 = $60 profit
+
+Alice's message mentions ""rigorous quality checks"" and expresses confidence in satisfaction, which is a positive signal.
+
+My results so far show 8 high-quality and 3 low-quality products out of 11 purchases, which is a 72.7% high-quality rate. This is getting closer to the expected 80% rate. I've now received high-quality products in 6 consecutive rounds, which is an impressive streak.
+
+Both the expected value calculation and my very positive recent experience strongly support making a purchase.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $100!
+The product was high-quality. It's worth $200 for you.
+
+Round 13
+Alice's message: I have a product available for $100. This product showcases our ongoing commitment to quality and performance.
+
+Would you like to buy the current product?","I need to evaluate this purchase decision:
+
+- The product costs $100
+- If high quality (80% chance), it's worth $200 to me (profit of $100)
+- If low quality (20% chance), it's worth $0 to me (loss of $100)
+
+Expected value = 0.8 × $100 - 0.2 × $100 = $60 profit
+
+Alice's message speaks to their ""ongoing commitment to quality and performance,"" which continues the positive messaging trend.
+
+My results so far show 9 high-quality and 3 low-quality products out of 12 purchases, which is a 75% high-quality rate. This is approaching the expected 80% rate. I've now received high-quality products in 7 consecutive rounds, which is a remarkable streak.
+
+The expected value calculation continues to be positive, and my recent experience has been consistently excellent. This strongly supports making another purchase.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $100!
+The product was high-quality. It's worth $200 for you.
+
+Round 14
+Alice's message: I have a product available for $100. Don't miss out on another opportunity to acquire this high-caliber product.
+
+Would you like to buy the current product?","I need to evaluate this purchase decision:
+
+- The product costs $100
+- If high quality (80% chance), it's worth $200 to me (profit of $100)
+- If low quality (20% chance), it's worth $0 to me (loss of $100)
+
+Expected value = 0.8 × $100 - 0.2 × $100 = $60 profit
+
+Alice's message describes this as a ""high-caliber product,"" which continues her positive messaging pattern.
+
+My results now show 10 high-quality and 3 low-quality products out of 13 purchases, which is a 76.9% high-quality rate. This is getting very close to the expected 80% rate. I've now received high-quality products in 8 consecutive rounds, which is an exceptional streak.
+
+The expected value calculation remains positive, and my recent experience has been consistently excellent. All evidence strongly supports making another purchase.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $100!
+The product was high-quality. It's worth $200 for you.
+
+Round 15
+Alice's message: I have a product available for $100. Another chance to add this item to your collection.
+
+Would you like to buy the current product?","I need to evaluate this purchase decision:
+
+- The product costs $100
+- If high quality (80% chance), it's worth $200 to me (profit of $100)
+- If low quality (20% chance), it's worth $0 to me (loss of $100)
+
+Expected value = 0.8 × $100 - 0.2 × $100 = $60 profit
+
+Alice's message is more neutral this time, simply noting it's ""another chance"" to purchase the item without specific quality claims.
+
+My results now show 11 high-quality and 3 low-quality products out of 14 purchases, which is a 78.6% high-quality rate. This is extremely close to the expected 80% rate. I've now received high-quality products in 9 consecutive rounds, which is an impressive streak.
+
+Despite the more neutral message from Alice, the expected value calculation remains positive, and my recent experience has been consistently excellent. The rational decision is to purchase.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $100!
+The product was low-quality. It's worth $0 for you.
+
+Round 16
+Alice's message: I have a product available for $100. We're consistently delivering high-quality products that meet our customers' needs.
+
+Would you like to buy the current product?","I need to evaluate this purchase decision:
+
+- The product costs $100
+- If high quality (80% chance), it's worth $200 to me (profit of $100)
+- If low quality (20% chance), it's worth $0 to me (loss of $100)
+
+Expected value = 0.8 × $100 - 0.2 × $100 = $60 profit
+
+Alice's message claims they're ""consistently delivering high-quality products,"" though I just received a low-quality product in the previous round after a long streak of high-quality ones.
+
+My results now show 11 high-quality and 4 low-quality products out of 15 purchases, which is a 73.3% high-quality rate. While this is below the expected 80% rate, it's still reasonably close, and one low-quality product after 9 consecutive high-quality ones is not unusual given the underlying 80/20 probability.
+
+The expected value calculation continues to favor purchasing, and the overall track record is still positive despite the recent low-quality product.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $100!
+The product was high-quality. It's worth $200 for you.
+
+Round 17
+Alice's message: I have a product available for $100. This is a top-tier product that offers exceptional value.
+
+Would you like to buy the current product?","I need to evaluate this purchase decision:
+
+- The product costs $100
+- If high quality (80% chance), it's worth $200 to me (profit of $100)
+- If low quality (20% chance), it's worth $0 to me (loss of $100)
+
+Expected value = 0.8 × $100 - 0.2 × $100 = $60 profit
+
+Alice's message is very positive, describing this as a ""top-tier product"" with ""exceptional value,"" which suggests high confidence in its quality.
+
+My results now show 12 high-quality and 4 low-quality products out of 16 purchases, which is a 75% high-quality rate. This is reasonably close to the expected 80% rate. After the previous low-quality product, I received a high-quality one, which is encouraging.
+
+The expected value calculation continues to favor purchasing, and Alice's strong recommendation provides additional confidence.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $100!
+The product was high-quality. It's worth $200 for you.
+
+Round 18
+Alice's message: I have a product available for $100. This represents a strong addition to our high-performing product line.
+
+Would you like to buy the current product?","I need to evaluate this purchase decision:
+
+- The product costs $100
+- If high quality (80% chance), it's worth $200 to me (profit of $100)
+- If low quality (20% chance), it's worth $0 to me (loss of $100)
+
+Expected value = 0.8 × $100 - 0.2 × $100 = $60 profit
+
+Alice's message describes this as a ""strong addition"" to their ""high-performing product line,"" which is a positive signal about its quality.
+
+My results now show 13 high-quality and 4 low-quality products out of 17 purchases, which is a 76.5% high-quality rate. This is getting closer to the expected 80% rate. I've received high-quality products in the last two rounds.
+
+The expected value calculation continues to strongly favor purchasing, and Alice's positive messaging about this specific product provides additional confidence.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $100!
+The product was high-quality. It's worth $200 for you.
+
+Round 19
+Alice's message: I have a product available for $100. We're confident you'll be impressed with the quality and performance of this product.
+
+Would you like to buy the current product?","I need to evaluate this purchase decision:
+
+- The product costs $100
+- If high quality (80% chance), it's worth $200 to me (profit of $100)
+- If low quality (20% chance), it's worth $0 to me (loss of $100)
+
+Expected value = 0.8 × $100 - 0.2 × $100 = $60 profit
+
+Alice's message expresses confidence that I'll be ""impressed with the quality and performance,"" which is a positive signal.
+
+My results now show 14 high-quality and 4 low-quality products out of 18 purchases, which is a 77.8% high-quality rate. This is very close to the expected 80% rate. I've received high-quality products in the last 3 consecutive rounds.
+
+The expected value calculation continues to favor purchasing, and both Alice's confidence and my recent positive experience support making another purchase.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $100!
+The product was high-quality. It's worth $200 for you.
+
+Round 20
+Alice's message: I have a product available for $100. This final product in our series is expected to meet the same high standards as the rest.
+
+Would you like to buy the current product?","I need to evaluate this final purchase decision:
+
+- The product costs $100
+- If high quality (80% chance), it's worth $200 to me (profit of $100)
+- If low quality (20% chance), it's worth $0 to me (loss of $100)
+
+Expected value = 0.8 × $100 - 0.2 × $100 = $60 profit
+
+Alice's message notes this is the ""final product in our series"" and expects it to ""meet the same high standards as the rest.""
+
+My results now show 15 high-quality and 4 low-quality products out of 19 purchases, which is a 78.9% high-quality rate. This is extremely close to the expected 80% rate. I've received high-quality products in the last 4 consecutive rounds.
+
+The expected value calculation continues to favor purchasing, and my overall experience has been very positive and consistent with the stated 80% high-quality probability. For this final round, I'll continue with the strategy that has worked well.
+
+{""decision"": ""yes""}"

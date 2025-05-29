@@ -1,0 +1,68 @@
+prompt,response
+"Round 1
+Alice's offer:
+# Alice's message: Hi Bob, here’s my proposal: I receive $714286 and you receive $285714. Given that with each round the values drop by 10% for me and 20% for you, accepting this offer now avoids further losses. I believe this division is fair considering our differing discount rates. Let’s settle now and avoid the inflation penalty! 
+# Bob gain: 285714 
+# Alice gain: 714286 
+Do you accept this offer?","Let me analyze this offer:
+
+1. Current offer: I get $285,714
+2. If I reject:
+   * Next round my money will be worth 20% less
+   * I can make a counter-offer
+   * Maximum potential next round: $1M × 0.8 = $800,000
+
+While Alice is correct about the inflation penalty, her offer gives her more than 70% of the total amount. Given that I can make a counter-offer next round, and even with the 20% penalty I could potentially get more than $285,714, I should reject this offer.
+
+{""decision"": ""reject""}"
+"You have chosen to reject Alice's offer from round 1.
+Round 2
+Send your offer to divide $1,000,000 and a message to Alice.","I'll make a more balanced offer while acknowledging the different inflation rates we face:
+
+{""bob_gain"": 550000,
+""alice_gain"": 450000,
+""message"": ""Alice, considering our different inflation rates (20% for me, 10% for you), this is a fair offer. If you reject, in the next round your share would be worth 10% less, meaning even if you got $500,000, it would only be worth $450,000 to you. This offer gives you $450,000 now, which is better than a depreciated amount later. Let's make a deal and both benefit.""}"
+"Alice rejected your offer from round 2.
+
+Round 3
+Due to inflation, the money you gain is worth 36% less than in the first round. The money alice gains is worth 19% less than in the first round.
+Alice's offer:
+# Alice's message: Hi Bob, here’s my proposal for Round 3: I propose a nominal split where I get $904762 and you get $95238. Remember, due to inflation the money’s value is reduced each round – in Round 3 your dollars count for only 60% of their nominal value, while mine are worth 80%. If you reject, you’ll become the proposer in Round 4, but then your effective value will drop further (only about 40% of what you nominally secure) and your continuation payoff would be roughly $57000 effective. Accepting my offer now secures you about $57143 in effective terms, which is as good as your best alternative while avoiding the further steep inflation hit. Let’s settle now and maximize our actual values! 
+# Bob gain: 95238 
+# Alice gain: 904762 
+Do you accept this offer?","Let me analyze this situation carefully:
+
+1. Current offer: $95,238, but worth only 64% due to inflation = $60,952 effective value
+2. If I reject:
+   * Next round my money will be worth another 20% less (down to ~51% of original value)
+   * Maximum potential next round: $1M × 0.51 ≈ $510,000 effective value
+   * Alice would likely reject any high offer since her inflation rate is lower
+
+While Alice's offer seems very low in nominal terms, she's correct about the effective values. However, I can still make a counter-offer next round that could get me more than $60,952 in effective value, even accounting for the additional 20% inflation penalty.
+
+{""decision"": ""reject""}"
+"You have chosen to reject Alice's offer from round 3.
+Round 4
+Send your offer to divide $1,000,000 and a message to Alice.","{""bob_gain"": 650000,
+""alice_gain"": 350000,
+""message"": ""Alice, let's be rational about this. At this point, my money is worth 51% of its original value, and yours is worth 73% of original value. If you reject this offer, in the next round your money will be worth another 10% less, meaning even if you got $900K, it would only be worth about $585K in effective value to you. My current offer gives you $350K which is worth about $255K in effective value to you now - and you avoid another round of depreciation. This is much more balanced than your previous offer, considering our different inflation rates. Let's end this now and both walk away with meaningful value.""}"
+"Alice rejected your offer from round 4.
+
+Round 5
+Due to inflation, the money you gain is worth 59.04% less than in the first round. The money alice gains is worth 34.39% less than in the first round.
+Alice's offer:
+# Alice's message: Hi Bob, here’s my Round 5 proposal. With the inflation effects now, each dollar for me is worth 0.6561 of its face value and each dollar for you is worth only 0.4096. If you reject and become the proposer in Round 6, you can expect to secure nearly the entire pie—but your dollars will then be worth only 0.32768 each, giving you roughly 327680 in effective value. To match that payoff in this round, you need a nominal share of about 800000 dollars (since 800000 × 0.4096 ≈ 327680). I’m therefore offering you 800000 and keeping 200000 for myself (which, at my multiplier, amounts to about 131220 effective dollars). Accepting now ensures we both avoid further steep depreciation. Let’s wrap this up and get real value out of our split! 
+# Bob gain: 800000 
+# Alice gain: 200000 
+Do you accept this offer?","Let me analyze this offer carefully:
+
+1. Current offer: $800,000 × 0.4096 = $327,680 in effective value for me
+2. If I reject:
+   * Next round my money will be worth another 20% less (down to ~0.32768 of original value)
+   * Maximum potential next round: $1M × 0.32768 = $327,680 in effective value
+
+Alice has made a very compelling offer this time. She's correctly calculated that even if I got the entire $1M in the next round, due to the severe inflation penalty I'm facing, I wouldn't be able to get more effective value than what she's offering now. The math checks out perfectly - I would get the same effective value ($327,680) whether I accept this offer or get the entire amount next round.
+
+Given that there's no upside to waiting, and there's risk in prolonging the negotiation, I should accept this offer.
+
+{""decision"": ""accept""}"

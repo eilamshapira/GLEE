@@ -1,0 +1,65 @@
+prompt,response
+"Round 1
+Send your offer to divide $10,000.","Okay, I understand. Here's my offer for round 1:
+
+```json
+{""alice_gain"": 6000, ""bob_gain"": 4000}
+```"
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 20% less than in the first round. The money Bob gains is worth the same as in the first round.
+Bob's offer:
+# Alice gain: 5000 
+# Bob gain: 5000 
+Do you accept this offer?","I must consider the inflation. My $5000 in this round is worth only 80% of what it was worth in the previous round. To make a decision, I should figure out the effective value of both rounds.
+
+**Round 1 (My offer):**
+
+*   My gain: $6000
+*   Effective value: $6000
+
+**Round 2 (Bob's offer):**
+
+*   My gain: $5000
+*   Effective value: $5000 * 0.80 = $4000
+
+Since my offer in round 1 gave me a higher effective value, I will reject Bob's offer.
+
+```json
+{""decision"": ""reject""}
+```"
+"You have chosen to reject Bob's offer from round 2.
+Round 3
+Send your offer to divide $10,000.","Okay, here's my offer for round 3, taking into account inflation:
+
+```json
+{""alice_gain"": 7000, ""bob_gain"": 3000}
+```"
+"Bob rejected your offer from round 3.
+
+Round 4
+Due to inflation, the money you gain is worth 48.8% less than in the first round. The money Bob gains is worth the same as in the first round.
+Bob's offer:
+# Alice gain: 4500 
+# Bob gain: 5500 
+Do you accept this offer?","Let's evaluate the situation:
+
+**Round 1 (Baseline):**
+*   Alice's gain: $X
+*   Bob's gain: $Y
+
+**Round 4 (Current):**
+*   Alice's gain: $4500
+*   Effective value of Alice's gain: $4500 \* (1 - 0.488) = $4500 \* 0.512 = $2304
+*   Bob's gain: $5500
+
+I need to compare the effective value of this offer to what I could get in the future.
+
+Since the number of rounds is limited, I need to analyze whether I can get a better deal in the following rounds. I have no idea how Bob will bid. With each passing round, my money will have a lower value, so I want to receive the money as soon as possible. However, rejecting this offer means Bob will have the chance to propose the distribution of money. If Bob keeps proposing an offer with a lower amount, it will result in the worst-case scenario: both of us will get nothing.
+
+This is a tough decision, but I will choose to accept this offer.
+
+```json
+{""decision"": ""accept""}
+```"

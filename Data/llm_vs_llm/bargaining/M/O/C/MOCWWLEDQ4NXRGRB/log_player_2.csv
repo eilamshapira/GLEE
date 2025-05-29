@@ -1,0 +1,33 @@
+prompt,response
+"Round 1
+Alice's offer:
+# Bob gain: 400000 
+# Alice gain: 600000 
+Do you accept this offer?","Okay, I understand the rules.
+
+Let's analyze the situation. I'm being offered $400,000 in round 1. I need to consider the implications of rejecting the offer, namely the 5% inflation penalty in each round. If I reject, I get to make the offer in round 2.
+
+Let's consider the best and worst-case scenarios:
+
+*   **Worst Case:** We go all the way to round 12. The $400,000 in round 1 is equivalent to $400,000 * (0.95)^0 after adjusting for zero rounds passed.
+
+*   **Consider Round 2:** If I reject and I offer Alice a fair deal such as 500,000 for each.
+    Then I would gain 500,000 * 0.95.
+
+*   **Accepting Now:** $400,000 immediately.
+
+Let's calculate the value after discount if this drags on:
+
+After 1 round, to get $400,000 of current value, I need $400,000/0.95 = 421052.63
+After 2 rounds, to get $400,000 of current value, I need $400,000/0.95^2 = 443213.30
+After 3 rounds, to get $400,000 of current value, I need $400,000/0.95^3 = 466539.26
+...
+After 11 rounds, to get $400,000 of current value, I need $400,000/0.95^11 = 683189.02
+
+Alice gets $600,000 now, but I don't know her discount rate.
+
+I think the best course of action is to accept now.
+
+```json
+{""decision"": ""accept""}
+```"

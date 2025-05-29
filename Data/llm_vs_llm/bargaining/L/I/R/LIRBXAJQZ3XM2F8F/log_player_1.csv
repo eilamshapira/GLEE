@@ -1,0 +1,40 @@
+prompt,response
+"Round 1
+Send your offer to divide $100 and a message to Bob.","I'll make an offer that considers both my potential inflation losses and fairness.
+
+```json
+{
+  ""alice_gain"": 55,
+  ""bob_gain"": 45,
+  ""message"": ""Hi Bob, I'm suggesting a fair split where I get slightly more since I face a 10% inflation penalty per round. If we continue to the next round, the total value decreases for me, so this is mutually beneficial to agree now.""
+}
+```"
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 10% less than in the first round. The money bob gains is worth 20% less than in the first round.
+Bob's offer:
+# Bob's message: Hi Alice, thanks for your offer.  I understand you're facing inflation, but so am I. Let's turn things around.  How about this split? 
+# Alice gain: 45 
+# Bob gain: 55 
+Do you accept this offer?","I need to decide whether to accept Bob's offer or continue to the next round.
+
+Given the information:
+- Bob offered me $45 and wants $55 for himself
+- My inflation rate is 10% per round, so the $45 now is worth more than a potentially larger amount next round
+- Bob mentioned he also faces inflation (20% per round according to the message)
+- If I reject, we go to round 3 where I can make an offer, but my money will be worth another 10% less
+
+If I reject and we go to round 3, I'll face 20% total inflation, and Bob will face 40% inflation. This gives me some advantage in the next round, but I need to consider the total value.
+
+Let me calculate:
+- $45 now at 10% inflation = $45 * 0.9 = $40.5 effective value for me
+- If I propose something like $60/$40 in round 3, my share would be $60 * 0.8 = $48 effective value
+
+While I could potentially get more by continuing, there's risk that Bob rejects again, leading to further inflation for both of us.
+
+```json
+{
+  ""decision"": ""accept""
+}
+```"

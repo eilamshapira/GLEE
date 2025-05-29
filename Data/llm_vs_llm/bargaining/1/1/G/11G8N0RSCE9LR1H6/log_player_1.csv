@@ -1,0 +1,34 @@
+prompt,response
+"Round 1
+Send your offer to divide $1,000,000.","Okay, I understand the game. I need to make an offer that Bob is likely to accept, considering the declining value of the money each round. Since this is the first round, I'll offer a relatively fair split, but with a slight advantage for myself to account for potential future rounds.
+
+```json
+{
+""alice_gain"": 550000,
+""bob_gain"": 450000
+}
+```"
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 5% less than in the first round. The money bob gains is worth 10% less than in the first round.
+Bob's offer:
+# Alice gain: 480000 
+# Bob gain: 520000 
+Do you accept this offer?","Okay, I need to consider the inflation. My initial offer was rejected, and now Bob is offering me $480,000. Let's calculate the value of that offer considering the 5% inflation for me:
+
+$480,000 * (1 - 0.05) = $480,000 * 0.95 = $456,000
+
+Since the original amount was $1,000,000, I had proposed $550,000. Bob's offer is now worth $456,000 to me. While it's less than I initially wanted, rejecting it means further inflation. Let's see what that means for Bob's offer, if I reject it. He is getting:
+
+$520,000 * (1 - 0.10) = $520,000 * 0.9 = $468,000
+
+So, if I reject this offer. This will be the base value for round 3.
+
+Given the risk of further losses, and the fact that Bob is only gaining $468,000 to my $456,000, I'll accept the offer.
+
+```json
+{
+""decision"": ""accept""
+}
+```"

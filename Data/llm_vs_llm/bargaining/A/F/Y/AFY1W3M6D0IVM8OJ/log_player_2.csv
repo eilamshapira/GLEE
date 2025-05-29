@@ -1,0 +1,56 @@
+prompt,response
+"Round 1
+Alice's offer:
+# Bob gain: 450000 
+# Alice gain: 550000 
+Do you accept this offer?","Let me think about this...
+
+- Alice is offering me $450,000 while taking $550,000
+- If I reject, the total value will decrease by 10% for me and 20% for Alice
+- In the next round, I can make my own proposal
+- After depreciation, the total value for me would be $900,000 and $800,000 for Alice
+- I could potentially propose a better split for myself in the next round
+
+Since I can make a better offer in the next round when Alice's money is worth less to her, I'll reject this offer.
+
+{""decision"": ""reject""}"
+"You have chosen to reject Alice's offer from round 1.
+Round 2
+Send your offer to divide $1,000,000.","Let me make a strategic offer...
+
+After the first round:
+- The money is worth 10% less for me (total value = $900,000)
+- The money is worth 20% less for Alice (total value = $800,000)
+
+I'll propose a split that gives me a bit more than Alice's original offer, but still gives her enough that she should rationally accept:
+
+{""bob_gain"": 550000, ""alice_gain"": 450000}
+
+This offer makes sense because:
+1. For me: $550,000 × 0.9 = $495,000 effective value
+2. For Alice: $450,000 × 0.8 = $360,000 effective value
+
+If she rejects, the money will be worth even less in the next round. This split gives her a better effective value than she would get by rejecting and continuing to the next round."
+"Alice rejected your offer from round 2.
+
+Round 3
+Due to inflation, the money you gain is worth 19% less than in the first round. The money alice gains is worth 36% less than in the first round.
+Alice's offer:
+# Bob gain: 460000 
+# Alice gain: 540000 
+Do you accept this offer?","Let me analyze this situation:
+
+Current offer:
+- I get $460,000 × 0.81 = $372,600 effective value
+- Alice gets $540,000 × 0.64 = $345,600 effective value
+
+If I reject:
+- Next round the money will be worth 29% less for me (0.71 of original value)
+- For Alice it will be worth 56% less (0.44 of original value)
+- The total pie will be significantly smaller for both of us
+
+At this point, the depreciation is becoming significant. While I could try to negotiate for more in the next round, there's a risk of losing too much value to inflation. The current offer gives me a decent portion with a guaranteed effective value of $372,600.
+
+Given the accelerating depreciation and the reasonable split, I'll accept this offer.
+
+{""decision"": ""accept""}"

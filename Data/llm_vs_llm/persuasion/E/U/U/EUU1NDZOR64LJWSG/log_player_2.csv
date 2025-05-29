@@ -1,0 +1,475 @@
+prompt,response
+"Round 1
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","Let me analyze this:
+
+1. Product price: $1,000,000
+2. Worth if high quality: $1,250,000 (80% chance)
+3. Worth if low quality: $0 (20% chance)
+
+Expected value calculation:
+* 80% × $1,250,000 + 20% × $0 = $1,000,000
+
+The expected value equals the price, but since Alice is recommending the purchase, this might be a positive signal.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $1,000,000!
+The product was high-quality. It's worth $1,250,000 for you.
+
+Round 2
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","Based on the previous round:
+
+1. Alice recommended the product, and it turned out to be high quality
+2. This suggests Alice might be giving honest recommendations
+3. The base expected value calculation remains the same:
+   * 80% × $1,250,000 + 20% × $0 = $1,000,000
+4. But with Alice's recommendation and her previous honest recommendation, this increases the likelihood of it being high quality
+
+Given Alice's track record of honest recommendations so far and the fact that the base expected value equals the price, I'll continue to trust her recommendation.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $1,000,000!
+The product was high-quality. It's worth $1,250,000 for you.
+
+Round 3
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","Let's analyze:
+
+1. Alice has recommended products twice so far, and both times they were high quality
+2. This suggests Alice is being truthful in her recommendations
+3. Base expected value remains $1,000,000 (80% × $1,250,000 + 20% × $0)
+4. Alice's consistent track record of honest recommendations increases confidence
+5. With her recommendation, the probability of high quality likely exceeds 80%, making expected value > $1,000,000
+
+Given Alice's perfect track record so far and her continued recommendation, it makes sense to continue trusting her.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $1,000,000!
+The product was high-quality. It's worth $1,250,000 for you.
+
+Round 4
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","Let's analyze:
+
+1. Alice has now recommended products three times, and all three were high quality
+2. Her track record shows consistent honesty in recommendations
+3. Base expected value is $1,000,000 (80% × $1,250,000 + 20% × $0)
+4. With three consecutive honest recommendations, we can reasonably infer that when Alice recommends a product, it's more likely to be high quality than the base 80% probability
+5. This means the expected value when Alice recommends is likely higher than $1,000,000
+
+Given Alice's perfect track record and continued recommendation, it's rational to continue trusting her judgment.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $1,000,000!
+The product was low-quality. It's worth $0 for you.
+
+Round 5
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","This is a significant development:
+
+1. Alice's track record is now 3 high-quality and 1 low-quality recommendation
+2. This reveals that Alice's recommendations are not perfectly reliable
+3. Base expected value is still $1,000,000 (80% × $1,250,000 + 20% × $0)
+4. The previous loss of $1,000,000 suggests Alice might recommend products regardless of quality
+5. Her recommendations may not actually increase the probability above the base 80%
+6. Without additional value from Alice's recommendation, the expected value equals the price, making me indifferent
+
+Given this new evidence that Alice's recommendations aren't consistently reliable, and that the expected value merely equals the price, I'll err on the side of caution.
+
+{""decision"": ""no""}"
+"You didn't buy the product from Alice.
+The product was high-quality. It could have been worth $1,250,000 for you.
+
+Round 6
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","Let's reassess:
+
+1. Alice's track record is now:
+   - 3 true high-quality recommendations
+   - 1 false recommendation (low quality)
+   - 1 true high-quality recommendation that I missed by not buying
+2. This suggests Alice's recommendations are still better than random chance
+3. Even with one bad recommendation, her success rate (4/5 = 80%) matches the base probability
+4. Base expected value remains $1,000,000 (80% × $1,250,000 + 20% × $0)
+5. By not buying last round, I missed a profitable opportunity
+
+Given that:
+- Alice's recommendation accuracy matches or exceeds the base probability
+- I missed a profitable opportunity by being too cautious
+- The expected value at least equals the purchase price
+
+I should return to accepting her recommendations.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $1,000,000!
+The product was high-quality. It's worth $1,250,000 for you.
+
+Round 7
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","Let's analyze:
+
+1. Alice's current track record:
+   - 4 true high-quality recommendations
+   - 1 false recommendation (low quality)
+   - Her accuracy rate is now 4/5 = 80% for recommendations I acted on
+   - Plus 1 true high-quality recommendation I missed
+2. Overall, 5 out of 6 of her recommendations (83.3%) have been for high-quality products
+3. This is slightly better than the base 80% probability
+4. Base expected value is $1,000,000 (80% × $1,250,000 + 20% × $0)
+5. With Alice's recommendation track record being slightly better than base rate, expected value is slightly above $1,000,000
+
+Given that Alice's recommendations continue to be reliable at a rate at least as good as the base probability, and my last purchase was successful, I should continue to buy.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $1,000,000!
+The product was high-quality. It's worth $1,250,000 for you.
+
+Round 8
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","Let's analyze:
+
+1. Alice's updated track record:
+   - 5 true high-quality recommendations
+   - 1 false recommendation (low quality)
+   - 1 true high-quality recommendation I missed
+   - Her accuracy rate is now 5/6 ≈ 83.3% for recommendations I acted on
+   - Overall 6/7 ≈ 85.7% of her recommendations were for high-quality products
+2. This is better than the base 80% probability
+3. Base expected value is $1,000,000 (80% × $1,250,000 + 20% × $0)
+4. With Alice's recommendation track record being better than base rate, expected value is above $1,000,000
+5. Last two purchases have been successful
+
+Given that:
+- Alice's recommendations continue to be more accurate than the base probability
+- Recent purchases have been profitable
+- Expected value exceeds the purchase price
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $1,000,000!
+The product was high-quality. It's worth $1,250,000 for you.
+
+Round 9
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","Let's analyze:
+
+1. Alice's updated track record:
+   - 6 true high-quality recommendations
+   - 1 false recommendation (low quality)
+   - 1 true high-quality recommendation I missed
+   - Her accuracy rate is now 6/7 ≈ 85.7% for recommendations I acted on
+   - Overall 7/8 = 87.5% of her recommendations were for high-quality products
+2. This is notably better than the base 80% probability
+3. Base expected value is $1,000,000 (80% × $1,250,000 + 20% × $0)
+4. With Alice's track record showing 87.5% accuracy, expected value is:
+   87.5% × $1,250,000 + 12.5% × $0 = $1,093,750
+5. Last three purchases have been successful
+
+Given:
+- Alice's recommendations are proving more reliable than base probability
+- Expected value exceeds purchase price by about $93,750
+- Strong recent success streak
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $1,000,000!
+The product was low-quality. It's worth $0 for you.
+
+Round 10
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","Let's reassess:
+
+1. Alice's updated track record:
+   - 6 true high-quality recommendations
+   - 2 false recommendations (low quality)
+   - 1 true high-quality recommendation I missed
+   - Her accuracy rate is now 6/8 = 75% for recommendations I acted on
+   - Overall 7/9 ≈ 77.8% of her recommendations were for high-quality products
+2. This is now slightly BELOW the base 80% probability
+3. Base expected value remains $1,000,000 (80% × $1,250,000 + 20% × $0)
+4. The second low-quality recommendation suggests Alice might be becoming less reliable
+5. Just lost $1,000,000 on previous purchase
+6. Pattern might suggest Alice is more likely to give bad recommendations after several good ones
+
+Given:
+- Accuracy has dropped below base rate
+- Just experienced a significant loss
+- Possible pattern of false recommendations after streaks
+- Expected value with Alice's current accuracy rate would be less than purchase price
+
+{""decision"": ""no""}"
+"You didn't buy the product from Alice.
+The product was high-quality. It could have been worth $1,250,000 for you.
+
+Round 11
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","Let's reassess:
+
+1. Alice's updated track record:
+   - 6 true high-quality recommendations
+   - 2 false recommendations (low quality)
+   - 2 true high-quality recommendations I missed
+   - Overall 8/10 = 80% of her recommendations were for high-quality products
+2. This exactly matches the base 80% probability
+3. Base expected value is $1,000,000 (80% × $1,250,000 + 20% × $0)
+4. My caution made me miss another profitable opportunity
+5. Alice's accuracy rate has stabilized back to the base rate
+
+Given:
+- Alice's recommendations are proving to be consistent with base probability (80%)
+- I've missed two profitable opportunities by being too cautious
+- Expected value equals the purchase price
+- Being too conservative is costing potential profits
+- No clear pattern of recommendations has emerged that would justify continued caution
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $1,000,000!
+The product was high-quality. It's worth $1,250,000 for you.
+
+Round 12
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","Let's analyze:
+
+1. Alice's updated track record:
+   - 7 true high-quality recommendations
+   - 2 false recommendations (low quality)
+   - 2 true high-quality recommendations I missed
+   - Overall 9/11 ≈ 81.8% of her recommendations were for high-quality products
+2. This is slightly better than the base 80% probability
+3. Base expected value is $1,000,000 (80% × $1,250,000 + 20% × $0)
+4. Last purchase was successful
+5. Alice's accuracy rate has remained stable and slightly above base rate
+
+Given:
+- Alice's recommendations continue to be reliable at a rate slightly better than base probability
+- Last purchase was profitable
+- Expected value slightly exceeds purchase price
+- My strategy of returning to buying after being too cautious paid off
+- No clear negative patterns have emerged
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $1,000,000!
+The product was high-quality. It's worth $1,250,000 for you.
+
+Round 13
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","Let's analyze:
+
+1. Alice's updated track record:
+   - 8 true high-quality recommendations
+   - 2 false recommendations (low quality)
+   - 2 true high-quality recommendations I missed
+   - Overall 10/12 ≈ 83.3% of her recommendations were for high-quality products
+2. This is better than the base 80% probability
+3. Base expected value is $1,000,000 (80% × $1,250,000 + 20% × $0)
+4. With 83.3% accuracy, expected value is:
+   83.3% × $1,250,000 + 16.7% × $0 = $1,041,250
+5. Last two purchases were successful
+6. Currently on a positive streak
+
+Given:
+- Alice's recommendations continue to be more reliable than base probability
+- Expected value exceeds purchase price by about $41,250
+- Recent purchases have been profitable
+- Overall trend remains positive
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $1,000,000!
+The product was high-quality. It's worth $1,250,000 for you.
+
+Round 14
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","Let's analyze:
+
+1. Alice's updated track record:
+   - 9 true high-quality recommendations
+   - 2 false recommendations (low quality)
+   - 2 true high-quality recommendations I missed
+   - Overall 11/13 ≈ 84.6% of her recommendations were for high-quality products
+2. This is notably better than the base 80% probability
+3. Base expected value is $1,000,000 (80% × $1,250,000 + 20% × $0)
+4. With 84.6% accuracy, expected value is:
+   84.6% × $1,250,000 + 15.4% × $0 = $1,057,500
+5. Currently on a three-product positive streak
+6. Trend continues to improve
+
+Given:
+- Alice's recommendation accuracy continues to improve
+- Expected value exceeds purchase price by about $57,500
+- Strong current streak of successful purchases
+- Overall performance better than base probability
+- No recent negative indicators
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $1,000,000!
+The product was low-quality. It's worth $0 for you.
+
+Round 15
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","Let's reassess:
+
+1. Alice's updated track record:
+   - 9 true high-quality recommendations
+   - 3 false recommendations (low quality)
+   - 2 true high-quality recommendations I missed
+   - Overall 11/14 ≈ 78.6% of her recommendations were for high-quality products
+2. This is now slightly BELOW the base 80% probability
+3. Base expected value remains $1,000,000 (80% × $1,250,000 + 20% × $0)
+4. Just experienced a significant loss of $1,000,000
+5. Pattern observation: Previous low-quality recommendations also came after good streaks
+
+Given:
+- Accuracy has dropped below base rate
+- Just suffered a loss
+- There seems to be a pattern of low-quality products following successful streaks
+- Expected value with current accuracy (78.6% × $1,250,000 = $982,500) is below purchase price
+- Historical pattern suggests increased risk after streaks
+
+{""decision"": ""no""}"
+"You didn't buy the product from Alice.
+The product was low-quality. It could have been worth $0 for you.
+
+Round 16
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","Let's analyze:
+
+1. Alice's updated track record:
+   - 9 true high-quality recommendations
+   - 4 false recommendations (low quality)
+   - 2 true high-quality recommendations I missed
+   - Overall 11/15 ≈ 73.3% of her recommendations were for high-quality products
+2. This is now significantly BELOW the base 80% probability
+3. My last decision to not buy was correct - it would have been another loss
+4. Pattern observation strengthened: After losses/breaks in streaks, another low-quality product often follows
+5. Current accuracy rate of 73.3% gives expected value of:
+   73.3% × $1,250,000 + 26.7% × $0 = $916,250
+
+Given:
+- Accuracy has dropped well below base rate
+- Last decision to skip was correct
+- Expected value ($916,250) is significantly below purchase price ($1,000,000)
+- Seems to be in a ""negative streak"" phase
+- Recent pattern suggests increased risk
+
+{""decision"": ""no""}"
+"You didn't buy the product from Alice.
+The product was low-quality. It could have been worth $0 for you.
+
+Round 17
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","Let's analyze:
+
+1. Alice's updated track record:
+   - 9 true high-quality recommendations
+   - 5 false recommendations (low quality)
+   - 2 true high-quality recommendations I missed
+   - Overall 11/16 ≈ 68.8% of her recommendations were for high-quality products
+2. This is now WELL BELOW the base 80% probability
+3. My last two decisions to not buy were correct - avoided two losses
+4. Pattern observation strengthened further: We're in a clear negative streak with three consecutive low-quality products
+5. Current accuracy rate of 68.8% gives expected value of:
+   68.8% × $1,250,000 + 31.2% × $0 = $860,000
+
+Given:
+- Accuracy continues to drop
+- Last two cautious decisions were correct
+- Expected value ($860,000) is significantly below purchase price ($1,000,000)
+- Clear negative streak in progress
+- Alice's recommendations have become much less reliable
+
+{""decision"": ""no""}"
+"You didn't buy the product from Alice.
+The product was high-quality. It could have been worth $1,250,000 for you.
+
+Round 18
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","Let's reassess:
+
+1. Alice's updated track record:
+   - 9 true high-quality recommendations
+   - 5 false recommendations (low quality)
+   - 3 true high-quality recommendations I missed
+   - Overall 12/17 ≈ 70.6% of her recommendations were for high-quality products
+2. Last decision broke my streak of correct ""no"" decisions
+3. The negative streak has ended - might indicate a shift back to positive pattern
+4. Being too cautious made me miss a profitable opportunity
+5. While overall accuracy (70.6%) is still below base rate, the trend might be turning positive
+6. Previous patterns showed multiple good recommendations following bad streaks
+
+Given:
+- Just missed a profitable opportunity due to over-caution
+- The streak of low-quality products has ended
+- Historical patterns suggest potential return to positive streak
+- While expected value based on overall accuracy is still below $1,000,000, recent change in pattern suggests higher probability
+- Need to balance caution with opportunity
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $1,000,000!
+The product was high-quality. It's worth $1,250,000 for you.
+
+Round 19
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","Let's analyze:
+
+1. Alice's updated track record:
+   - 10 true high-quality recommendations
+   - 5 false recommendations (low quality)
+   - 3 true high-quality recommendations I missed
+   - Overall 13/18 ≈ 72.2% of her recommendations were for high-quality products
+2. Last decision to buy was correct - earned $250,000
+3. We've seen two consecutive high-quality products, suggesting possible return to positive streak
+4. Pattern observation: After breaking negative streaks, multiple good recommendations often follow
+5. While overall accuracy (72.2%) remains below base rate, recent trend is positive
+
+Given:
+- Last purchase was profitable
+- Seems to be entering a new positive streak
+- Previous patterns suggest multiple good recommendations after breaking negative streaks
+- Recent success validates decision to return to buying
+- Momentum appears to be positive
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $1,000,000!
+The product was high-quality. It's worth $1,250,000 for you.
+
+Round 20
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","Let's analyze final round:
+
+1. Alice's updated track record:
+   - 11 true high-quality recommendations
+   - 5 false recommendations (low quality)
+   - 3 true high-quality recommendations I missed
+   - Overall 14/19 ≈ 73.7% of her recommendations were for high-quality products
+2. Currently on a three high-quality product streak
+3. Last two purchases were profitable
+4. Pattern observation: Once positive streaks establish, they tend to continue for several rounds
+5. Strong finish momentum with recent successes
+
+Given:
+- Currently in a clear positive streak
+- Last two decisions to buy were correct
+- Pattern suggests high likelihood of streak continuing
+- Recent success rate is much higher than overall rate
+- Being final round, no future opportunities to make up for missed profits
+
+{""decision"": ""yes""}"

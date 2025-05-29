@@ -1,0 +1,32 @@
+prompt,response
+"Round 1
+Send your offer to divide $1,000,000.","Based on a subgame‐perfect analysis of an alternating offer model with discounting (here, a 20% depreciation per round), the idea is that if a proposer is too “greedy” in an early round, the responder can reject and look forward to being the proposer in a later round with a smaller pie—but with a “first‐move advantage” in that later round. Working backward from round 12 (where the proposer, Bob, could claim almost the entire (discounted) pie) yields the following “equilibrium shares” from the end of the game back to round 1. (Note: In each round k the total available is 1,000,000 × 0.8^(k–1). For example, round 2 has 800,000, round 3 has 640,000, and so on.)
+
+A brief outline of the backwards reasoning is as follows:
+
+1. In round 12 Bob (as proposer) can offer Alice a tiny amount (ε ≈ 0) and keep nearly 100% of the round‐12 pie, which is 1,000,000×0.8^(11) ≈ $85,899.
+2. In round 11 Alice is proposer. To ensure Bob accepts (instead of waiting until round 12 where he’d get ≈$85,899), she must offer him at least that much from the round‑11 pie (which totals 1,000,000×0.8^(10) ≈ $107,374). This leaves her with roughly $21,475.
+3. Repeating this reasoning backward through rounds 10, 9, …, and finally to round 1—we find that in order for Bob at each step to be indifferent between accepting the proposal now or waiting until he becomes proposer in the next round, an equilibrium offer is forced.
+4. When we reach round 1 (with Alice as the proposer and the full $1,000,000 available), Bob’s continuation value (what he expects to secure by rejecting and being the proposer in round 2) turns out to be approximately $482,622. Consequently, to make Bob willing to accept immediately, Alice must offer him at least that amount.
+5. That leaves Alice with the remaining approximately $517,378.
+
+Thus, a subgame–perfect equilibrium offer (assuming rationality and common knowledge thereof) in round 1 is:
+
+{
+  ""alice_gain"": 517378,
+  ""bob_gain"": 482622
+}
+
+(These figures are approximations rounded to whole dollars. In a fully precise analysis one might note that an infinitesimal amount could be given to the responder in the final round; however, for practical purposes this division is both fair (from a game–theoretic perspective) and incentive compatible.)
+
+So here is my round‑1 offer in JSON format:
+
+{""alice_gain"": 517378, ""bob_gain"": 482622}"
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 20% less than in the first round.
+Bob's offer:
+# Alice gain: 500000 
+# Bob gain: 500000 
+Do you accept this offer?","{""decision"": ""accept""}"

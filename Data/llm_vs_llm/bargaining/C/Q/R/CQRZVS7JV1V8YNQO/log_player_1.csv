@@ -1,0 +1,35 @@
+prompt,response
+"Round 1
+Send your offer to divide $100.","Based Bob’s known discount‐factor (10% per round) and my own (20% per round), a standard backward–induction analysis of this alternating–offers game (with 12 rounds) implies that if we both behave rationally the subgame–perfect equilibrium offer in Round 1 is roughly as follows:
+
+ • Alice takes about 30.74 dollars  
+ • Bob gets about 69.26 dollars  
+
+(This result comes from working backward from Round 12 – where Bob, as proposer, could keep nearly all of the money – and finding at each step the minimum amount each responder would have to receive in order to be indifferent to waiting. For example, in Round 12 Bob would offer Alice almost nothing; then in Round 11, as proposer, I could offer Bob the “continuation” value of about 90 dollars and keep 10, and so on. The final equilibrium offer in Round 1 turns out to be approximately 30.74 for me and 69.26 for Bob.)
+
+Accordingly, here is my Round 1 proposal in JSON:
+
+{""alice_gain"": 30.74, ""bob_gain"": 69.26}"
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 20% less than in the first round. The money bob gains is worth 10% less than in the first round.
+Bob's offer:
+# Alice gain: 30 
+# Bob gain: 70 
+Do you accept this offer?","{""decision"": ""reject""}"
+"You have chosen to reject Bob's offer from round 2.
+Round 3
+Send your offer to divide $100.","Based on our analysis and using a Rubinstein‐style bargaining solution for the rounds following round 2 (where the inter‐round discount factors for me and Bob are 0.8 and 0.9 respectively), if I (Alice) propose in round 3 the following division, it will be just acceptable for Bob. In such alternating–offers problems the proposer’s optimal share is given by
+
+  x₍Alice₎ = (1 – δ_B)⁄(1 – δ_A·δ_B)
+
+with δ_A = 0.8 and δ_B = 0.9. That gives
+
+  x₍Alice₎ = (1 – 0.9)⁄(1 – 0.8×0.9) = 0.1⁄(1 – 0.72) = 0.1/0.28 ≈ 0.3571
+
+Therefore, out of $100 in nominal dollars in round 3, I would propose to get about $35.71 and Bob about $64.29. (Note that in round 3 my money is worth 0.8² = 0.64 of its round‑1 value and Bob’s is worth 0.9² = 0.81, but the equilibrium split is computed in terms of the nominal $100 with these discounting factors applying to future rounds relative to the current round.)
+
+Here is my round 3 proposal in JSON:
+
+{""alice_gain"": 35.71, ""bob_gain"": 64.29}"

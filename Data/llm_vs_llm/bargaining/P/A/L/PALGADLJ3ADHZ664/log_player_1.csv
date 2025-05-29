@@ -1,0 +1,17 @@
+prompt,response
+"Round 1
+Send your offer to divide $10,000.","Based on a backward‐induction analysis, the situation comes out rather lopsided. Let me briefly explain the reasoning:
+
+• In the final (12th) round Bob is the proposer. Because if his proposal is rejected both get nothing, he can “buy” Alice’s acceptance by offering her almost nothing (since her alternative is 0). Thus in round 12 Bob can secure virtually all $10,000 for himself.
+
+• Stepping back to round 11 when Alice is the proposer, Bob’s guaranteed payoff if he waits is the full $10,000 (from round 12). That forces Alice, if she tries any split that gives Bob less than $10,000, to be rejected. Thus if the game were to reach round 11, her best “offer” would leave her nothing.
+
+• A similar logic applies in every earlier round. In every round when Bob is not the proposer the responder (Bob in round 1 as well as in rounds 3, 5, etc.) has an outside option equal to getting $10,000 as a proposer in one of the future rounds. (A key twist is that while both players share the money in every round, only Alice suffers a 10% per round discount in her valuation. Bob’s value stays at $10,000 if he has to wait.)
+
+• In round 1, you (Alice) propose. But if Bob waits, he is sure to eventually be the proposer and secure all $10,000. So rationally, Bob will only be willing to accept an offer in round 1 if he is offered his full $10,000.
+
+Thus, in equilibrium the only proposal that Bob would like to accept in round 1 is the one that gives him $10,000 and Alice $0. (Any diversion giving Bob slightly less would simply be rejected, and then – because of the discounting—Alice would be worse off in later rounds.)
+
+Following this reasoning, here is my offer for round 1 in the requested JSON format:
+
+{""alice_gain"": 0, ""bob_gain"": 10000}"

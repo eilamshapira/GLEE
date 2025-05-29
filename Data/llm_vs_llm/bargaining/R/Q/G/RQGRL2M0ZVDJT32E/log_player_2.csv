@@ -1,0 +1,39 @@
+prompt,response
+"Round 1
+Alice's offer:
+# Alice's message: Hi Bob, let's split it reasonably. I'll take $55, you get $45. A fair deal to start with. 
+# Bob gain: 45 
+# Alice gain: 55 
+Do you accept this offer?","I need to consider this offer carefully. Alice is offering me $45 while taking $55. If I reject, we'll go to the next round where I can make a counter-offer, but my money will be worth 5% less, and Alice's will be worth 20% less.
+
+Since inflation affects Alice more than me, I have some leverage in later rounds. If I reject now, I can propose a better split for myself in round 2, where Alice would need to weigh my offer against further depreciation of her value in round 3.
+
+{""decision"": ""reject""}"
+"You have chosen to reject Alice's offer from round 1.
+Round 2
+Send your offer to divide $100 and a message to Alice.","I'll make a counter-offer that accounts for the inflation differential between us while still being reasonable enough for Alice to accept.
+
+{""bob_gain"": 52, 
+""alice_gain"": 48,
+""message"": ""Hi Alice, since the money loses value faster for you (20% per round vs my 5%), waiting is costlier for you. This split is fair considering our different inflation rates. If we continue to round 3, your $48 would only be worth about $38 to you, while my loss would be much smaller.""}"
+"Alice rejected your offer from round 2.
+
+Round 3
+Due to inflation, the money you gain is worth 9.75% less than in the first round. The money alice gains is worth 36% less than in the first round.
+Alice's offer:
+# Alice's message: Bob, I understand your point about the inflation rates. However, I'm still losing more value. Let's meet in the middle a bit. I propose $52 for me and $48 for you. 
+# Bob gain: 48 
+# Alice gain: 52 
+Do you accept this offer?","I need to evaluate this new offer. Alice is now offering me $48 while taking $52. 
+
+Due to inflation, in this round:
+- My $48 is worth about 9.75% less than it would have been in round 1
+- Alice's $52 is worth 36% less than it would have been in round 1
+
+If I reject and we go to round 4:
+- My inflation will increase to approximately 14.26% (5% more)
+- Alice's inflation will increase to approximately 48.8% (20% more)
+
+The gap in inflation rates still works in my favor, but Alice has moved toward a more balanced split. If I reject, I can make a better offer in round 4, but Alice may also reject again, further decreasing the value for both of us.
+
+{""decision"": ""accept""}"

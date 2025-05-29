@@ -1,0 +1,36 @@
+prompt,response
+"Round 1
+Send your offer to divide $100.","Okay, I understand the rules. It's Round 1, I'm Alice, and I need to make an offer to Bob, keeping in mind the time limit and the decreasing value of the money for both of us.
+
+Here's my offer:
+
+```json
+{
+""alice_gain"": 55,
+""bob_gain"": 45
+}
+```
+
+My reasoning: I'm starting with a slightly more favorable offer for myself, but it's not greedy. I want to ensure Bob has an incentive to accept in the early rounds when the money's value is higher for both of us."
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 5% less than in the first round. The money bob gains is worth 10% less than in the first round.
+Bob's offer:
+# Alice gain: 45 
+# Bob gain: 55 
+Do you accept this offer?","Okay, I see Bob has countered with an offer that favors him more. I need to consider the inflation and the remaining rounds.
+
+Let's analyze:
+
+*   **My Valuation:** $45 in this round is worth 5% less than in round 1. So, it's like receiving $45 * 0.95 = $42.75 from the original $100.
+*   **Remaining Rounds:** We have 11 rounds left.
+*   **Alternative:** If I reject, I get to make an offer in the next round, but the money will be worth even less.
+
+Given the circumstances, even though Bob's offer isn't ideal, receiving $42.75 equivalent is better than risking further devaluation.
+
+```json
+{
+""decision"": ""accept""
+}
+```"

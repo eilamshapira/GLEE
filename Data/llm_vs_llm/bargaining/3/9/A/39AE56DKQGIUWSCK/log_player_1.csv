@@ -1,0 +1,80 @@
+prompt,response
+"Round 1
+Send your offer to divide $10,000.","Okay, here's my offer for Round 1. I'll propose a slightly more generous split to hopefully secure an agreement and avoid the inflation penalty.
+
+```json
+{
+""alice_gain"": 5500,
+""bob_gain"": 4500
+}
+```
+
+My proposal is: I get $5500 and Bob gets $4500."
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 20% less than in the first round. The money Bob gains is worth the same as in the first round.
+Bob's offer:
+# Alice gain: 4500 
+# Bob gain: 5500 
+Do you accept this offer?","Okay, let's analyze this. Bob is offering me $4500, but due to inflation, it's only worth $4500 * 0.8 = $3600 to me in terms of the original value. He would get $5500.
+
+Since his offer is quite a bit worse for me than my initial offer was for him, I will reject this and make a counter offer next round.
+
+```json
+{
+""decision"": ""reject""
+}
+```"
+"You have chosen to reject Bob's offer from round 2.
+Round 3
+Send your offer to divide $10,000.","Okay, now my money is worth 40% less than in the first round (0.8 * 0.8 = 0.64). To make this worthwhile, I need to account for that substantial loss in value. I also need to consider what Bob might find acceptable.
+
+```json
+{
+""alice_gain"": 6500,
+""bob_gain"": 3500
+}
+```
+
+My proposal is: I get $6500 and Bob gets $3500. This reflects the decreased value of the money for me. If I get $6500, it's only effectively worth $6500 * 0.64 = $4160 in the original round's value. I'm aiming to get a decent portion to offset the diminishing returns."
+"Bob rejected your offer from round 3.
+
+Round 4
+Due to inflation, the money you gain is worth 48.8% less than in the first round. The money Bob gains is worth the same as in the first round.
+Bob's offer:
+# Alice gain: 3500 
+# Bob gain: 6500 
+Do you accept this offer?","Okay, Bob's offer is $3500 for me, but it's now worth $3500 * (1 - 0.488) = $3500 * 0.512 = $1792 in original value. That's a terrible deal. I need to reject this and try to salvage something.
+
+```json
+{
+""decision"": ""reject""
+}
+```"
+"You have chosen to reject Bob's offer from round 4.
+Round 5
+Send your offer to divide $10,000.","Alright, this is getting painful with the inflation. My money is now worth only 51.2% of its original value. I need to propose something that acknowledges the dramatic loss in value for me but is still palatable to Bob. Let's try this:
+
+```json
+{
+""alice_gain"": 7500,
+""bob_gain"": 2500
+}
+```
+
+My proposal is: I get $7500, and Bob gets $2500. Even though I'm asking for a large chunk, the real value for me is only $7500 * 0.512 = $3840 in original money value. I am getting desperate, so I am trying to balance my need to get some money with Bob's."
+"Bob rejected your offer from round 5.
+
+Round 6
+Due to inflation, the money you gain is worth 67.23% less than in the first round. The money Bob gains is worth the same as in the first round.
+Bob's offer:
+# Alice gain: 2500 
+# Bob gain: 7500 
+Do you accept this offer?","Bob's offer of $2500 is now worth a pittance to me: $2500 * (1 - 0.6723) = $2500 * 0.3277 = $819.25 in original value. This is absurd. I'm getting almost nothing at this point. However, is there any world in which it makes sense for me to continue? Probably not. It is likely that the money will soon be worthless. I'll take whatever little I can.
+
+```json
+{
+""decision"": ""accept""
+}
+```"

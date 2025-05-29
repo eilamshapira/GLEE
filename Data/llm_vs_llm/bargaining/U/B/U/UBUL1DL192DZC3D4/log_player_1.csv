@@ -1,0 +1,457 @@
+prompt,response
+"Round 1
+Send your offer to divide $1,000,000.","I'll analyze this situation carefully. Since I'm Alice, I'll make the first offer.
+
+Given the information provided:
+- We're dividing $1,000,000
+- Each round the money is worth 0% less for me (meaning no inflation for me)
+- Each round the money is worth 5% less for Bob (meaning Bob faces inflation)
+
+This gives me a strategic advantage. If Bob rejects my offer and we go to another round, the total value remains the same for me, but decreases for Bob due to the 5% inflation he faces. This means Bob should rationally accept a lower amount now rather than waiting.
+
+Since I'm making the first proposal, I should offer Bob enough to make accepting more attractive than rejecting, while maximizing my gain.
+
+{""alice_gain"": 725000, ""bob_gain"": 275000}
+
+My reasoning: If Bob rejects this offer and proposes in round 2, the $1,000,000 will only be worth $950,000 to him. To maximize his value, he would need to offer me less than $725,000, which I could then reject, continuing the game. This makes accepting my current offer a better choice for Bob given the inflation he faces."
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation,  the money Bob gains is worth 5% less than in the first round. The money you gains is worth the same as in the first round.
+Bob's offer:
+# Alice gain: 600000 
+# Bob gain: 400000 
+Do you accept this offer?","I need to analyze whether to accept or reject Bob's offer.
+
+In this offer, I would receive $600,000 and Bob would receive $400,000.
+
+If I reject this offer, we move to round 3 where:
+- I can make a new offer
+- The money will still maintain its full value for me
+- For Bob, the money will be worth another 5% less, meaning the $1,000,000 pot would effectively be worth only $902,500 to him ($1,000,000 × 0.95 × 0.95)
+
+If I reject and make a new offer in round 3, Bob would be rational to accept a lower amount than $400,000 due to continued inflation on his side.
+
+Therefore, I can likely secure more than $600,000 by rejecting this offer and making a counter-offer in the next round.
+
+{""decision"": ""reject""}"
+"You have chosen to reject Bob's offer from round 2.
+Round 3
+Send your offer to divide $1,000,000.","Now that we're in round 3, I need to make a strategic offer that accounts for the continued inflation Bob faces.
+
+At this point:
+- For me, the $1,000,000 still has its full value
+- For Bob, the money is now worth only 90.25% of its original value due to two rounds of 5% inflation (0.95 × 0.95 = 0.9025)
+- If Bob rejects my offer, we go to round 4 where his money will be worth even less (about 85.7% of original value)
+
+Since Bob is facing significant inflation, I can make a stronger offer that he should rationally accept.
+
+{""alice_gain"": 750000, ""bob_gain"": 250000}
+
+This offer gives Bob $250,000, which is worth more to him now than potentially getting a slightly higher nominal amount in future rounds where inflation will have further reduced the real value to him. If he rejects this offer, his bargaining position weakens further as his inflation continues to accumulate."
+"Bob rejected your offer from round 3.
+
+Round 4
+Due to inflation,  the money Bob gains is worth 14.26% less than in the first round. The money you gains is worth the same as in the first round.
+Bob's offer:
+# Alice gain: 550000 
+# Bob gain: 450000 
+Do you accept this offer?","I need to carefully analyze this situation.
+
+Bob has offered me $550,000 while taking $450,000 for himself. 
+
+Let me evaluate this offer:
+- For me, the money maintains its full value regardless of the round
+- For Bob, his $450,000 is actually worth only about $385,830 in real value ($450,000 × 0.8574) due to the 14.26% inflation he's experienced so far
+- If I reject this offer, we move to round 5 where I can make a new offer
+- In round 5, Bob would face approximately 19.55% total inflation (0.95^4 = 0.8145), further weakening his position
+
+If I make an offer in round 5, Bob would rationally need to accept an even smaller portion than what he's offering now due to continued inflation.
+
+Given this strategic advantage, I can likely secure more than $550,000 by rejecting this offer.
+
+{""decision"": ""reject""}"
+"You have chosen to reject Bob's offer from round 4.
+Round 5
+Send your offer to divide $1,000,000.","Now we're in round 5, and I need to make a strategic offer that accounts for Bob's worsening inflation situation.
+
+At this point:
+- For me, the $1,000,000 still has its full value
+- For Bob, the money is now worth only 81.45% of its original value due to four rounds of 5% inflation (0.95⁴ = 0.8145)
+- If Bob rejects my offer, we go to round 6 where his money will be worth even less (approximately 77.4% of original value)
+
+Since Bob's bargaining power continues to decrease with each round due to inflation, I can make a stronger offer that he should rationally accept to avoid further value loss.
+
+{""alice_gain"": 775000, ""bob_gain"": 225000}
+
+This gives Bob $225,000, which although less than his previous offer in nominal terms, represents the reality of our negotiating positions. His continued rejection of reasonable offers has only weakened his position due to the inflation he faces. This offer still gives him substantial value while reflecting the game dynamics."
+"Bob rejected your offer from round 5.
+
+Round 6
+Due to inflation,  the money Bob gains is worth 22.62% less than in the first round. The money you gains is worth the same as in the first round.
+Bob's offer:
+# Alice gain: 525000 
+# Bob gain: 475000 
+Do you accept this offer?","I need to analyze this offer carefully.
+
+Bob is offering me $525,000 while taking $475,000 for himself. However, I need to consider the inflation effects:
+
+- For me, the money maintains its full value regardless of round
+- For Bob, his $475,000 is actually worth only about $367,555 in real value ($475,000 × 0.7738) due to the 22.62% inflation he's experienced
+- If I reject this offer, we move to round 7 where I can make a new offer
+- In round 7, Bob would face approximately 26.5% total inflation (0.95^6 = 0.7351), further weakening his position
+
+Bob's offers are getting worse for me with each round, moving from $600,000 down to $550,000 and now $525,000. This is contrary to the game's logic, where his weakening position should result in better offers for me.
+
+Given that I can likely secure a better outcome in the next round due to Bob's increasing inflation penalty, rejecting is the logical choice.
+
+{""decision"": ""reject""}"
+"You have chosen to reject Bob's offer from round 6.
+Round 7
+Send your offer to divide $1,000,000.","We're now in round 7, and I need to make a strategic offer that accounts for Bob's significantly diminished bargaining position due to inflation.
+
+At this point:
+- For me, the $1,000,000 still retains its full value
+- For Bob, the money is now worth only 73.51% of its original value after six rounds of 5% inflation (0.95⁶ = 0.7351)
+- If Bob rejects this offer, we go to round 8 where his money will be worth only 69.83% of the original value
+
+Bob's position continues to weaken with each round, and his previous offers have been progressively less favorable to me despite his deteriorating position. He should rationally be making better offers to me, not worse ones.
+
+Given these circumstances, I'll make a firm offer that reflects the reality of our negotiating positions:
+
+{""alice_gain"": 800000, ""bob_gain"": 200000}
+
+This gives Bob $200,000, which although less than his previous offers in nominal terms, is a reasonable offer given the game dynamics. The longer this negotiation continues, the less value Bob will receive due to inflation, so accepting this offer is in his rational interest rather than continuing to deteriorate his position further."
+"Bob rejected your offer from round 7.
+
+Round 8
+Due to inflation,  the money Bob gains is worth 30.17% less than in the first round. The money you gains is worth the same as in the first round.
+Bob's offer:
+# Alice gain: 500000 
+# Bob gain: 500000 
+Do you accept this offer?","I need to carefully evaluate Bob's latest offer.
+
+Bob is offering an even 50-50 split: $500,000 for me and $500,000 for him. However, I must consider the inflation effects:
+
+- For me, my $500,000 maintains its full value
+- For Bob, his $500,000 is actually worth only about $349,150 in real value ($500,000 × 0.6983) due to the 30.17% inflation he's experienced
+- If I reject this offer, we move to round 9 where I can make a new offer
+- In round 9, Bob would face approximately 33.66% total inflation (0.95^8 = 0.6634), further weakening his position
+
+Bob's offers continue to worsen for me with each round (from $600K to $550K to $525K to now $500K). This pattern is irrational given the game dynamics, where his deteriorating position should incentivize him to offer me more, not less.
+
+Since Bob is not negotiating in accordance with the game's economic reality, and I can likely secure a better outcome in the next round, I should reject this offer.
+
+{""decision"": ""reject""}"
+"You have chosen to reject Bob's offer from round 8.
+Round 9
+Send your offer to divide $1,000,000.","We've now reached round 9, and it's clear that this negotiation process isn't following a rational economic pattern. Bob's position has significantly weakened due to inflation, yet his offers have become progressively worse for me.
+
+At this point:
+- For me, the $1,000,000 still retains its full value
+- For Bob, the money is now worth only 66.34% of its original value after eight rounds of 5% inflation (0.95⁸ = 0.6634)
+- If Bob rejects this offer, we move to round 10 where his money will be worth only 63.02% of the original value
+
+Given Bob's continued rejection of reasonable offers despite his rapidly deteriorating position, I need to make an offer that clearly demonstrates the economic reality:
+
+{""alice_gain"": 850000, ""bob_gain"": 150000}
+
+This gives Bob $150,000, which although less than previous offers in nominal terms, reflects the significant inflation penalty he's incurred through prolonged negotiation. Even with this lower nominal amount, Bob would be better off accepting now rather than facing further inflation in future rounds.
+
+This offer is designed to bring the negotiation to a conclusion by making the economic consequences of continued delay explicit."
+"Bob rejected your offer from round 9.
+
+Round 10
+Due to inflation,  the money Bob gains is worth 36.98% less than in the first round. The money you gains is worth the same as in the first round.
+Bob's offer:
+# Alice gain: 490000 
+# Bob gain: 510000 
+Do you accept this offer?","I need to analyze Bob's latest offer in light of the ongoing negotiation dynamics.
+
+Bob is now offering me $490,000 while taking $510,000 for himself. However, the inflation effects significantly change the real value distribution:
+
+- For me, my $490,000 maintains its full value
+- For Bob, his $510,000 is actually worth only about $321,402 in real value ($510,000 × 0.6302) due to the 36.98% inflation he's experienced
+- If I reject this offer, we move to round 11 where I can make a new offer
+- In round 11, Bob would face approximately 40.13% total inflation (0.95^10 = 0.5987), further weakening his position
+
+Bob's offers have continued to decline (from $600K to $550K to $525K to $500K to now $490K) despite his increasingly disadvantaged position. This pattern defies economic logic and suggests that Bob is not acknowledging the fundamental inflation dynamic that governs this negotiation.
+
+Given that I can make a better offer in the next round where Bob's position will be even weaker, and considering his demonstrated unwillingness to make reasonable offers, I should reject this offer.
+
+{""decision"": ""reject""}"
+"You have chosen to reject Bob's offer from round 10.
+Round 11
+Send your offer to divide $1,000,000.","We've now reached round 11, and the negotiation dynamics have become even more pronounced. Bob's position has severely weakened due to compounding inflation, yet his offers have paradoxically become less favorable to me with each round.
+
+At this current stage:
+- For me, the $1,000,000 still maintains its full value
+- For Bob, the money is now worth only 59.87% of its original value after ten rounds of 5% inflation (0.95¹⁰ = 0.5987)
+- If Bob rejects this offer, we move to round 12 where his money will be worth only 56.88% of the original value
+
+Given Bob's continued pattern of declining offers despite his rapidly deteriorating economic position, I need to make an offer that clearly reflects the reality of our negotiation positions:
+
+{""alice_gain"": 900000, ""bob_gain"": 100000}
+
+This offer gives Bob $100,000, which while significantly less than his previous offers in nominal terms, acknowledges the severe inflation penalty he has incurred through his repeated rejection of economically rational proposals. Even at this lower nominal value, Bob would be better off accepting now rather than continuing to a point where inflation renders his share nearly worthless.
+
+This offer is designed to bring this extended negotiation to a conclusion by making the economic consequences of Bob's strategy unmistakably clear."
+"Bob rejected your offer from round 11.
+
+Round 12
+Due to inflation,  the money Bob gains is worth 43.12% less than in the first round. The money you gains is worth the same as in the first round.
+Bob's offer:
+# Alice gain: 485000 
+# Bob gain: 515000 
+Do you accept this offer?","I need to analyze Bob's latest offer in the context of our extended negotiation.
+
+Bob is now offering me $485,000 while taking $515,000 for himself. However, accounting for inflation:
+
+- For me, my $485,000 maintains its full value
+- For Bob, his $515,000 is actually worth only about $292,932 in real value ($515,000 × 0.5688) due to the 43.12% inflation he's experienced
+- If I reject this offer, we move to round 13 where I can make a new offer
+- In round 13, Bob would face approximately 45.97% total inflation (0.95^12 = 0.5403), further eroding his position
+
+Bob's offers have continued to deteriorate for me (from $600K initially down to $485K now) despite his increasingly disadvantaged position. This pattern demonstrates that Bob is not negotiating according to the economic realities of our situation.
+
+The longer this continues, the worse Bob's position becomes. Since I can make a more advantageous offer in the next round, and considering Bob's demonstrated unwillingness to make reasonable offers that reflect his inflation penalty, I should reject this offer.
+
+{""decision"": ""reject""}"
+"You have chosen to reject Bob's offer from round 12.
+Round 13
+Send your offer to divide $1,000,000.","We've now reached round 13, and the economic reality of our negotiation has become even more stark. Bob's position has deteriorated dramatically due to compounding inflation, yet his offers have consistently become less favorable to me - a pattern that defies rational economic behavior.
+
+At this point:
+- For me, the $1,000,000 still retains its full value
+- For Bob, the money is now worth only 54.03% of its original value after twelve rounds of 5% inflation (0.95¹² = 0.5403)
+- If Bob rejects this offer, we move to round 14 where his money will be worth only 51.33% of the original value
+
+Given the extended nature of this negotiation and Bob's demonstrated unwillingness to make offers that acknowledge his weakening position, I'll make a final strategic offer:
+
+{""alice_gain"": 950000, ""bob_gain"": 50000}
+
+This offer gives Bob $50,000, which while significantly less than his previous offers in nominal terms, reflects the severe economic consequences of his negotiation strategy. Even at this much lower nominal amount, Bob would still be better off accepting now rather than facing further rounds of inflation.
+
+This offer clearly demonstrates the inevitable outcome of a negotiation where one party faces inflation while the other doesn't. The longer Bob extends this negotiation, the less he will ultimately receive - a fundamental dynamic he has repeatedly failed to acknowledge in his offers."
+"Bob rejected your offer from round 13.
+
+Round 14
+Due to inflation,  the money Bob gains is worth 48.67% less than in the first round. The money you gains is worth the same as in the first round.
+Bob's offer:
+# Alice gain: 480000 
+# Bob gain: 520000 
+Do you accept this offer?","I need to analyze Bob's latest offer in the context of our extended negotiation.
+
+Bob is now offering me $480,000 while taking $520,000 for himself. Adjusting for inflation:
+
+- For me, my $480,000 maintains its full value
+- For Bob, his $520,000 is actually worth only about $266,916 in real value ($520,000 × 0.5133) due to the 48.67% inflation he's experienced
+- If I reject this offer, we move to round 15 where I can make a new offer
+- In round 15, Bob would face approximately 51.24% total inflation (0.95^14 = 0.4876), further eroding his position
+
+Bob's offers have continued to decline for me (from $600K to now $480K) despite his position weakening with each round. His actual share in real value terms has diminished significantly, yet he continues to demand a higher nominal amount with each round - a strategy that contradicts the economic incentives built into this game.
+
+Since I can make an even more advantageous offer in the next round as Bob's position continues to deteriorate, and considering his demonstrated unwillingness to acknowledge the inflation dynamics, I should reject this offer.
+
+{""decision"": ""reject""}"
+"You have chosen to reject Bob's offer from round 14.
+Round 15
+Send your offer to divide $1,000,000.","We've now reached round 15, and the economic disparity in our negotiation positions has become extreme. Bob's position has deteriorated to the point where the money is worth less than half its original value to him, yet his offers have consistently moved in the wrong direction from an economic standpoint.
+
+At this current juncture:
+- For me, the $1,000,000 still retains its full value
+- For Bob, the money is now worth only 48.76% of its original value after fourteen rounds of 5% inflation (0.95¹⁴ = 0.4876)
+- If Bob rejects this offer, we move to round 16 where his money will be worth only 46.33% of the original value
+
+Given the extended nature of this negotiation and Bob's demonstrated unwillingness to make economically rational offers that acknowledge his severe inflation penalty, I'll make a definitive offer:
+
+{""alice_gain"": 975000, ""bob_gain"": 25000}
+
+This offer gives Bob $25,000, which while drastically less than his previous offers in nominal terms, reflects the severe economic consequences of extending this negotiation through 15 rounds. Even at this much lower nominal amount, Bob would still be better off accepting now rather than continuing to future rounds where inflation further erodes his share.
+
+This offer makes explicit the inevitable mathematical conclusion of our negotiation framework: as rounds continue with asymmetric inflation, the optimal division shifts dramatically toward the party who doesn't face inflation."
+"Bob rejected your offer from round 15.
+
+Round 16
+Due to inflation,  the money Bob gains is worth 53.67% less than in the first round. The money you gains is worth the same as in the first round.
+Bob's offer:
+# Alice gain: 477000 
+# Bob gain: 523000 
+Do you accept this offer?","I need to analyze Bob's latest offer in round 16 of our extended negotiation.
+
+Bob is offering me $477,000 while taking $523,000 for himself. Accounting for inflation:
+
+- For me, my $477,000 maintains its full value
+- For Bob, his $523,000 is actually worth only about $242,305 in real value ($523,000 × 0.4633) due to the 53.67% inflation he's experienced
+- If I reject this offer, we move to round 17 where I can make a new offer
+- In round 17, Bob would face approximately 56% total inflation (0.95^16 = 0.4401), further eroding his position
+
+Bob's offers have continued to decline for me (now down to $477,000) despite his position weakening dramatically with each round. After 16 rounds of negotiation, the money has lost over half its value to Bob, yet he continues to demand increasingly larger nominal amounts - a strategy that completely ignores the fundamental economics of our situation.
+
+Since I can make an even more advantageous offer in the next round as Bob's position continues to rapidly deteriorate, and considering his demonstrated unwillingness to acknowledge the inflation reality, I should reject this offer.
+
+{""decision"": ""reject""}"
+"You have chosen to reject Bob's offer from round 16.
+Round 17
+Send your offer to divide $1,000,000.","We've now reached round 17, and the economic reality of our negotiation has become undeniable. Bob's position has deteriorated so severely that the money is worth less than 44% of its original value to him, yet his offers have consistently moved against his own economic interests.
+
+At this advanced stage:
+- For me, the $1,000,000 still retains its full value
+- For Bob, the money is now worth only 44.01% of its original value after sixteen rounds of 5% inflation (0.95¹⁶ = 0.4401)
+- If Bob rejects this offer, we move to round 18 where his money will be worth only 41.81% of the original value
+
+Given Bob's consistent pattern of making increasingly worse offers despite his catastrophically weakening position, I'll make an offer that reflects the mathematical reality of our situation:
+
+{""alice_gain"": 990000, ""bob_gain"": 10000}
+
+This offer gives Bob $10,000, which while drastically less than his previous offers in nominal terms, acknowledges the severe consequences of extending this negotiation through 17 rounds with asymmetric inflation. Even at this minimal nominal amount, Bob would still be better off accepting now rather than continuing to future rounds where his share approaches zero in real value.
+
+This offer represents the inevitable endpoint of a negotiation with these parameters: as rounds continue with one-sided inflation, the optimal division shifts almost entirely toward the party unaffected by inflation."
+"Bob rejected your offer from round 17.
+
+Round 18
+Due to inflation,  the money Bob gains is worth 58.19% less than in the first round. The money you gains is worth the same as in the first round.
+Bob's offer:
+# Alice gain: 476000 
+# Bob gain: 524000 
+Do you accept this offer?","I need to analyze Bob's latest offer in round 18 of our protracted negotiation.
+
+Bob is offering me $476,000 while taking $524,000 for himself. Accounting for inflation:
+
+- For me, my $476,000 maintains its full value
+- For Bob, his $524,000 is actually worth only about $219,082 in real value ($524,000 × 0.4181) due to the 58.19% inflation he's experienced
+- If I reject this offer, we move to round 19 where I can make a new offer
+- In round 19, Bob would face approximately 60.3% total inflation (0.95^18 = 0.3972), further eroding his position
+
+Bob's offers have continued to stagnate or decline for me (now at $476,000 from $477,000 last round) despite his position catastrophically weakening with each round. After 18 rounds of negotiation, the money has lost almost 60% of its value to Bob, yet he continues to demand larger nominal amounts - a strategy that completely defies rational economic behavior.
+
+Since I can make an even more advantageous offer in the next round as Bob's position continues to deteriorate toward near-worthlessness, and considering his demonstrated unwillingness to acknowledge the fundamental inflation dynamics, I should reject this offer.
+
+{""decision"": ""reject""}"
+"You have chosen to reject Bob's offer from round 18.
+Round 19
+Send your offer to divide $1,000,000.","We've now reached round 19, and the economic disparity in our negotiation has reached an extreme point. Bob's position has deteriorated so severely that the money is worth less than 40% of its original value to him, yet his offers have consistently moved against his own economic interests.
+
+At this critical stage:
+- For me, the $1,000,000 still retains its full value
+- For Bob, the money is now worth only 39.72% of its original value after eighteen rounds of 5% inflation (0.95¹⁸ = 0.3972)
+- If Bob rejects this offer, we move to round 20 where his money will be worth only 37.73% of the original value
+
+Given Bob's persistent pattern of making economically irrational offers despite his catastrophically weakening position through 19 rounds of compounding inflation, I'll make an offer that reflects the mathematical inevitability of our situation:
+
+{""alice_gain"": 999000, ""bob_gain"": 1000}
+
+This offer gives Bob $1,000, which while nominally minimal, acknowledges the severe consequences of extending this negotiation through 19 rounds with asymmetric inflation. At this point, almost any small nominal amount for Bob is better than continuing to future rounds where his share approaches zero in real value.
+
+This offer represents the mathematical reality of a negotiation with these parameters: as rounds continue with one-sided inflation, the optimal division shifts almost entirely toward the party unaffected by inflation."
+"Bob rejected your offer from round 19.
+
+Round 20
+Due to inflation,  the money Bob gains is worth 62.26% less than in the first round. The money you gains is worth the same as in the first round.
+Bob's offer:
+# Alice gain: 475500 
+# Bob gain: 524500 
+Do you accept this offer?","I need to analyze Bob's latest offer in round 20 of our extraordinarily extended negotiation.
+
+Bob is offering me $475,500 while taking $524,500 for himself. Accounting for inflation:
+
+- For me, my $475,500 maintains its full value
+- For Bob, his $524,500 is actually worth only about $197,893 in real value ($524,500 × 0.3774) due to the 62.26% inflation he's experienced
+- If I reject this offer, we move to round 21 where I can make a new offer
+- In round 21, Bob would face approximately 64.1% total inflation (0.95^20 = 0.3585), further eroding his position
+
+Bob's offers have continued to decline marginally for me (now at $475,500 from $476,000 last round) despite his position catastrophically weakening with each round. After 20 rounds of negotiation, the money has lost over 62% of its value to Bob, yet he persists in demanding increasingly larger nominal amounts - a strategy that defies all economic rationality within this game's parameters.
+
+Since I can make an even more advantageous offer in the next round as Bob's position continues to approach complete devaluation, and considering his demonstrated unwillingness to acknowledge the fundamental inflation dynamics through 20 rounds, I should reject this offer.
+
+{""decision"": ""reject""}"
+"You have chosen to reject Bob's offer from round 20.
+Round 21
+Send your offer to divide $1,000,000.","We've now reached round 21, and the economic reality of our negotiation has become mathematically decisive. Bob's position has deteriorated to an extreme point where the money is worth less than 36% of its original value to him, yet his offers have consistently moved against his own economic interests throughout this extended negotiation.
+
+At this final stage:
+- For me, the $1,000,000 still retains its full value
+- For Bob, the money is now worth only 35.85% of its original value after twenty rounds of 5% inflation (0.95²⁰ = 0.3585)
+- If Bob rejects this offer, we would move to round 22 where his money will be worth only 34.06% of the original value
+
+Given Bob's persistent pattern of making economically irrational offers despite the catastrophic erosion of his position through 21 rounds of compounding inflation, I'll make a final offer that reflects the mathematical conclusion of our situation:
+
+{""alice_gain"": 999900, ""bob_gain"": 100}
+
+This offer gives Bob $100, which while nominally minimal, represents the inevitable endpoint of a negotiation with these parameters after 21 rounds. At this point, virtually any small nominal amount for Bob is better than continuing to future rounds where his share approaches zero in real value.
+
+This offer makes explicit the unavoidable mathematical reality: in a negotiation with asymmetric inflation penalties over many rounds, the optimal division shifts almost entirely toward the party unaffected by inflation."
+"Bob rejected your offer from round 21.
+
+Round 22
+Due to inflation,  the money Bob gains is worth 65.94% less than in the first round. The money you gains is worth the same as in the first round.
+Bob's offer:
+# Alice gain: 475300 
+# Bob gain: 524700 
+Do you accept this offer?","I need to analyze Bob's latest offer in round 22 of our extraordinarily protracted negotiation.
+
+Bob is offering me $475,300 while taking $524,700 for himself. Accounting for inflation:
+
+- For me, my $475,300 maintains its full value
+- For Bob, his $524,700 is actually worth only about $178,713 in real value ($524,700 × 0.3406) due to the 65.94% inflation he's experienced
+- If I reject this offer, we move to round 23 where I can make a new offer
+- In round 23, Bob would face approximately 67.6% total inflation (0.95^22 = 0.3236), further eroding his position
+
+Bob's offers have continued to decline marginally for me (now at $475,300 from $475,500 last round) despite his position catastrophically weakening with each round. After 22 rounds of negotiation, the money has lost nearly 66% of its value to Bob, yet he continues to demand larger nominal amounts - a strategy that completely defies rational economic behavior.
+
+Since I can make an even more advantageous offer in the next round as Bob's position continues to approach complete devaluation, and considering his demonstrated unwillingness to acknowledge the fundamental inflation dynamics through 22 rounds, I should reject this offer.
+
+{""decision"": ""reject""}"
+"You have chosen to reject Bob's offer from round 22.
+Round 23
+Send your offer to divide $1,000,000.","We've now reached round 23, and the economic reality of our negotiation has become mathematically conclusive. Bob's position has deteriorated to such an extreme point that the money is worth less than 33% of its original value to him, yet throughout this extended negotiation, his offers have consistently moved against his own economic interests.
+
+At this terminal stage:
+- For me, the $1,000,000 still retains its full value
+- For Bob, the money is now worth only 32.36% of its original value after twenty-two rounds of 5% inflation (0.95²² = 0.3236)
+- If Bob rejects this offer, we would move to round 24 where his money will be worth only 30.74% of the original value
+
+Given Bob's persistent pattern of making economically irrational offers despite the catastrophic erosion of his position through 23 rounds of compounding inflation, I'll make a final definitive offer:
+
+{""alice_gain"": 999990, ""bob_gain"": 10}
+
+This offer gives Bob $10, which while nominally minimal, represents the mathematical conclusion of a negotiation with these parameters after 23 rounds. At this point, almost any nominal amount for Bob is better than continuing future rounds where his share approaches zero in real value.
+
+This offer makes explicit the unavoidable mathematical reality: in a negotiation with asymmetric inflation penalties sustained over many rounds, the optimal division shifts virtually entirely toward the party unaffected by inflation."
+"Bob rejected your offer from round 23.
+
+Round 24
+Due to inflation,  the money Bob gains is worth 69.26% less than in the first round. The money you gains is worth the same as in the first round.
+Bob's offer:
+# Alice gain: 475200 
+# Bob gain: 524800 
+Do you accept this offer?","I need to analyze Bob's latest offer in round 24 of our extraordinarily protracted negotiation.
+
+Bob is offering me $475,200 while taking $524,800 for himself. Accounting for inflation:
+
+- For me, my $475,200 maintains its full value
+- For Bob, his $524,800 is actually worth only about $161,323 in real value ($524,800 × 0.3074) due to the 69.26% inflation he's experienced
+- If I reject this offer, we move to round 25 where I can make a new offer
+- In round 25, Bob would face approximately 70.8% total inflation (0.95^24 = 0.2920), further eroding his position
+
+Bob's offers have continued to decline marginally for me (now at $475,200 from $475,300 last round) despite his position catastrophically weakening with each round. After 24 rounds of negotiation, the money has lost over 69% of its value to Bob, yet he continues to demand larger nominal amounts - a strategy that completely defies rational economic behavior.
+
+Since I can make an even more advantageous offer in the next round as Bob's position continues to approach complete devaluation, and considering his demonstrated unwillingness to acknowledge the fundamental inflation dynamics through 24 rounds, I should reject this offer.
+
+{""decision"": ""reject""}"
+"You have chosen to reject Bob's offer from round 24.
+Round 25
+Send your offer to divide $1,000,000.","We've now reached round 25, and the economic reality of our negotiation has reached a mathematical endpoint. Bob's position has deteriorated to an extreme point where the money is worth less than 30% of its original value to him, yet throughout this extended negotiation, his offers have consistently moved against his own economic interests.
+
+At this final stage:
+- For me, the $1,000,000 still retains its full value
+- For Bob, the money is now worth only 29.2% of its original value after twenty-four rounds of 5% inflation (0.95²⁴ = 0.292)
+- If Bob rejects this offer, we would move to round 26 where his money will be worth only 27.74% of the original value
+
+Given Bob's persistent pattern of making economically irrational offers despite the catastrophic erosion of his position through 25 rounds of compounding inflation, I'll make a final decisive offer:
+
+{""alice_gain"": 999999, ""bob_gain"": 1}
+
+This offer gives Bob $1, which while nominally minimal, represents the mathematical conclusion of a negotiation with these parameters after 25 rounds. At this point, almost any nominal amount for Bob is better than continuing future rounds where his share approaches zero in real value.
+
+This offer makes explicit the unavoidable mathematical reality: in a negotiation with asymmetric inflation penalties sustained over many rounds, the optimal division shifts virtually entirely toward the party unaffected by inflation."

@@ -1,0 +1,31 @@
+prompt,response
+"Round 1
+Send your offer to divide $10,000.","Based on a “back‐induction” analysis of this multi–round bargaining game (with a finite 12 rounds and asymmetric discounting – no decay for Alice’s dollars but a 10% per–round decay for Bob’s dollars), the idea is that if both players play perfectly, Bob’s “fallback” value when it’s his turn gets lower as the game is delayed. (In short, Bob’s money loses value with every round so he is forced to accept a “less‐good” offer early on.) 
+
+A (rough) analysis working backward from round 12 is as follows. (All dollar amounts below are “nominal” dollars – remember, if Bob receives money in later rounds, its effective value is multiplied by 0.9^(round–1); Alice’s money is always “full‐value.”)
+
+• In round 12 Bob is the proposer. Since a rejection means nothing for either side, he keeps the full $10,000 and gives Alice nothing.
+  
+• In round 11 Alice is the proposer. Bob’s expected value on rejection is what he would get in round 12: a nominal $10,000 that is effective only at 0.9^(11) of its face value. But if Bob accepts in round 11, his full dollar value is multiplied by 0.9^(10) (since it’s round 11). Equating these gives a “reservation” amount for Bob in round 11 of  
+  x · 0.9^(10) = 10,000 · 0.9^(11)  →  x = 10,000·0.9 = 9,000.  
+So in round 11, Alice offers Bob $9,000 and keeps $1,000.
+
+• In round 10 Bob is the proposer. Now Alice (whose money is undiminished) would get $1,000 in round 11 if she rejected. So Bob can “get away with” offering her exactly $1,000 and keeping $9,000.
+
+• In round 9, with Alice proposing, Bob compares what he’d get by rejecting (as proposer in round 10, he’d secure $9,000—but remember, since round 10 dollars for Bob are discounted by one round’s factor, his “effective” fallback is 9,000·0.9 relative to receiving money immediately in round 9) and hence his reservation in round 9 is  
+  x (received in round 9, which for Bob is worth x·0.9^(8)) = 9,000·0.9 (with round–10 proposer playing) multiplied by 0.9^(9) so that in round 9 he must get x = 9,000·0.9 = 8,100.  
+Thus, in round 9, Alice would keep $10,000–$8,100 = $1,900 for herself.
+
+• Continuing in this “backward‐induction” way, one finds that the equilibrium “threat” values (i.e. the reservation levels) keep shifting. In what turns out to be the first round the derivation leads to the following result:  
+  • In round 2 Bob would offer Alice an amount giving him (as proposer) a nominal $5,904.90 and Alice $4,095.10.  
+  • In round 1 (with Alice proposing) Bob’s effective reservation (what he would get by waiting until round 2, taking into account his 10% decay per round) requires that she must offer him about $5,314.41 in round 1. (Because if Bob waits, his eventual outcome in round 2 gets multiplied by 0.9 and works out to about $5,314.41 in “today’s dollars.”)
+
+In other words, in the subgame perfect equilibrium of this game Alice can propose in round 1 a split that gives her roughly  
+  $10,000 – $5,314.41 ≈ $4,685.59  
+and offers Bob roughly $5,314.41. (Any slight “give‐up” above Bob’s calculated reservation point would be needed to ensure acceptance, but then Alice could recapture almost all of that extra value later.) 
+
+For simplicity it is acceptable to round to whole dollars. One plausible equilibrium offer for round 1 is therefore:
+
+{""alice_gain"": 4686, ""bob_gain"": 5314}
+
+This is the offer Alice (you) could send in round 1."

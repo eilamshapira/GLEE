@@ -1,0 +1,34 @@
+prompt,response
+"Round 1
+Alice's offer:
+# Alice's message: Hi Bob, here’s my proposal for an immediate agreement: I receive $34.48 and you receive $65.52. Accepting now avoids any further discounting of the money in later rounds. Looking forward to your agreement. 
+# Bob gain: 65.52 
+# Alice gain: 34.48 
+Do you accept this offer?","{""decision"": ""reject""}"
+"You have chosen to reject Alice's offer from round 1.
+Round 2
+Send your offer to divide $100 and a message to Alice.","```json
+{""bob_gain"": 70, ""alice_gain"": 30, ""message"": ""Alice, let's be reasonable. I'm offering you $30.  Take it now, or the deal will get worse for both of us.""}
+```"
+"Alice rejected your offer from round 2.
+
+Round 3
+Due to inflation, the money you gain is worth 9.75% less than in the first round. The money alice gains is worth 19% less than in the first round.
+Alice's offer:
+# Alice's message: Hi Bob, here’s my proposal in Round 3. I know waiting costs us—my money is worth only 80% of its original value now, and yours 90%. If you reject, you’ll get to propose in Round 4; however, given the unfolding discounts, as proposer you’d be forced to offer me nearly all of the $100 to meet my future expectations. In fact, working backwards, your best continuation value would be about 12.14 (in round‑1 dollars) effective. That means in Round 3 you’d need at least about $13.49 nominal (since 0.90 × 13.49 ≈ 12.14) for the deal to be worthwhile. Therefore, I propose that you receive $13.49 and I receive $86.51. This deal is better for you than waiting for Round 4, so I hope you accept. 
+# Bob gain: 13.49 
+# Alice gain: 86.51 
+Do you accept this offer?","{""decision"": ""reject""} 
+
+Alice's logic sounds compelling, but it's based on the assumption that she'll reject any offer in Round 4 where she gets less than $88 (because 88 is approximately 80% of 110, her perceived value of the $100 in Round 1).  This is a dangerous assumption. 
+
+While she's right about the devaluation, her strategy relies on me believing she's willing to walk away with nothing to get those last few dollars. I'm willing to gamble that she values some money over none."
+"You have chosen to reject Alice's offer from round 3.
+Round 4
+Send your offer to divide $100 and a message to Alice.","```json
+{""bob_gain"": 15, ""alice_gain"": 85, ""message"": ""Alice, this is my final offer. Take it, or we both lose out.""} 
+```
+
+Explanation:
+
+I'm pushing the limit here, knowing the value is dropping rapidly. My bet is Alice won't risk getting zero in the next round where the value will be even lower. This offer is slightly better than what she was going to get in Round 3 according to her own calculations, so it might be tempting enough to accept."

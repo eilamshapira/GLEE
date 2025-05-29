@@ -1,0 +1,14 @@
+prompt,response
+"Round 1
+Send your offer to divide $10,000.","Based on a backward‐induction analysis of this alternating‐offers game—and taking into account that the money’s value declines for you by 10% with each extra round while Bob’s value remains fixed—the unique subgame–perfect equilibrium outcome is that Bob ends up capturing the entire $10,000. 
+
+Here’s the intuition in brief:
+1. In the final round (round 12), Bob is the proposer. He can offer Alice an infinitesimal amount (essentially nothing) because if she rejects she gets nothing anyway. Thus Bob secures almost the whole $10,000.
+2. Stepping backward, whenever it’s your (Alice’s) turn to propose (rounds 11, 9, …, 1), Bob’s “threat” (i.e. what he would later get if he becomes proposer) remains $10,000 since his value is not discounted. In order for Bob to be willing to accept any proposal in these rounds, you would have to offer him at least $10,000.
+3. Since the pie is fixed at $10,000, you would be left with nothing. 
+
+Thus, in round 1 (your turn) you must propose an offer that gives Bob $10,000 and yourself $0. In equilibrium, Bob is indifferent between accepting and waiting—but since waiting only further reduces your share’s real value (due to inflation), it is best for you to propose this division immediately.
+
+Here is the JSON for your offer in round 1:
+
+{""alice_gain"": 0, ""bob_gain"": 10000}"

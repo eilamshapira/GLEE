@@ -1,0 +1,35 @@
+prompt,response
+"Alice's offer: The product price will be $1,100,000. 
+You have three options:
+(1) Accept Alice's offer, and buy the product for $1,100,000
+(2) Reject Alice's offer and proceed to the next round, where you will send Alice a counteroffer
+(3) Buy the product from Jhon for $1,200,000","```json
+{""decision"": ""RejectOffer""}
+``` 
+
+**Reasoning:**  While $1,100,000 is lower than John's price, there's room for negotiation. Alice is likely willing to go lower to make a profit."
+"You chose to make a counteroffer to Alice.
+
+Send your counteroffer to Alice.","```json
+{""product_price"": 900000}
+```
+
+**Reasoning:** This is a significant jump down from Alice's offer, but still leaves room for negotiation while staying above Alice's value of the product. This tests Alice's willingness to move from her initial offer."
+"Alice rejected your offer from round 2.
+
+Alice's offer: The product price will be $1,050,000. 
+You have three options:
+(1) Accept Alice's offer, and buy the product for $1,050,000
+(2) Reject Alice's offer and proceed to the next round, where you will send Alice a counteroffer
+(3) Buy the product from Jhon for $1,200,000","```json
+{""decision"": ""RejectOffer""}
+``` 
+
+**Reasoning:** Alice is coming down, but slowly.  There's still a good chance to negotiate a better price before approaching John's offer."
+"You chose to make a counteroffer to Alice.
+
+Send your counteroffer to Alice.","```json
+{""product_price"": 950000}
+```
+
+**Reasoning:** This counteroffer splits the difference between our last offer and Alice's current offer. It shows a willingness to negotiate but also holds firm on getting a significant discount."

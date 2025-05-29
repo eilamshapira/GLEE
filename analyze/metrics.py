@@ -108,7 +108,7 @@ class Metrics:
         return grouped_data.groupby([player_param] + group_by)[metrics].mean().rename(columns=rename_dict).T
 
     def plot_graphs(self, mode, group_by=None, metrics_to_plot="all"):
-        os.makedirs(f"plots/game_params/{self.game_name}/{mode}", exist_ok=True)
+        os.makedirs(f"output/plots/game_params/{self.game_name}/{mode}", exist_ok=True)
         if group_by is None:
             group_by = []
         if isinstance(group_by, str):
@@ -125,7 +125,6 @@ class Metrics:
             metrics = [m for m in self.metrics[mode].values() if m in metrics_to_plot]
         gb_text = "_".join(sorted([gb.capitalize() for gb in group_by]))
 
-
         def plot_subgraph(ax, data, metric):
             data_kind = 'line' if data.index.dtype == np.float64 and "price_order" not in data.index.name else 'bar'
             if data_kind == 'bar':
@@ -138,25 +137,6 @@ class Metrics:
             # set ylim to be minimum value - 0.1 and maximum value + 0.1
             ax.set_ylim([data.min().min() * (0.9 if data.min().min() > 0 else 1.1), data.max().max() * (1.1 if data.max().max() > 0 else 0.9)])
 
-
-        # for metric in metrics:
-        #     # create a plot for each metric by using plot_subgraph function
-        #     fig, ax = plt.subplots(figsize=(10, 10))
-        #     plot_subgraph(ax, stats[metric].unstack(level=0), metric)
-        #     plt.legend(loc='center left', bbox_to_anchor=(1.0, 0.5))
-        #     os.makedirs(f"plots/game_params/{self.game_name}/{mode}/{metric}", exist_ok=True)
-        #     plt.savefig(f"plots/game_params/{self.game_name}/{mode}/{metric}/afa_{gb_text}.png")
-        #     plt.close()
-        #
-        # # create a plot for all the metrics as subgraphs
-        # fig, axs = plt.subplots(1, len(metrics), figsize=(len(metrics)*10, 10))
-        # for i, metric in enumerate(metrics):
-        #     plot_subgraph(axs[i], stats[metric].unstack(level=0), metric)
-        # fig.suptitle(f"{mode} in {self.game_name} for different {gb_text}")
-        # os.makedirs(f"plots/game_params/{self.game_name}/{mode}/all_metrics", exist_ok=True)
-        # plt.savefig(f"plots/game_params/{self.game_name}/{mode}/all_metrics/afa_{gb_text}.png")
-        # plt.close()
-
         # create a plot for all modes and metrics
         fig, axs = plt.subplots(len(self.modes), len(metrics), figsize=(len(metrics) * 6, len(self.modes)*6))
         for i, mode in enumerate(self.modes):
@@ -165,8 +145,8 @@ class Metrics:
                 plot_subgraph(axs[i, j], stats[metric].unstack(level=0), metric)
             fig.text(0.04, 0.5 - i / len(self.modes), mode, va='center', ha='center', rotation='vertical')
         fig.suptitle(f"{self.game_name} for different {gb_text}")
-        os.makedirs(f"plots/game_params/{self.game_name}/all_modes", exist_ok=True)
-        plt.savefig(f"plots/game_params/{self.game_name}/all_modes/afa_{gb_text}.png")
+        os.makedirs(f"output/plots/game_params/{self.game_name}/all_modes", exist_ok=True)
+        plt.savefig(f"output/plots/game_params/{self.game_name}/all_modes/afa_{gb_text}.png")
         plt.close()
 
     def get_game_args(self):
@@ -184,13 +164,12 @@ class Metrics:
         print({c: data[c].nunique() for c in data.columns})
         for col in columns:
             data[col] = data[col].astype('category')
-        # print({c: data[c].nunique() for c in data.columns})
 
         unique_values = {col: data[col].unique() for col in columns}
         all_combinations = list(product(*(unique_values[col] for col in columns)))
         all_combinations_df = pd.DataFrame(all_combinations, columns=columns).astype('category')
 
-        data = data[columns + metrics]#.groupby(columns, observed=True).median().reset_index()
+        data = data[columns + metrics]
         missing_combinations = all_combinations_df.merge(data[columns], on=columns, how='left', indicator=True)
         missing_combinations = missing_combinations[missing_combinations['_merge'] == 'left_only']
 
@@ -210,8 +189,6 @@ class Metrics:
             interaction_terms = ' + '.join(interaction_terms)
             other_features_formula = ' + '.join([f for f in features])
             formula = f'{metric} ~ {interaction_terms} + {other_features_formula}'
-
-            # model = smf.ols(formula=formula, data=data, missing='drop').fit()
 
             y, X = patsy.dmatrices(formula, data, return_type='dataframe')
 
@@ -246,12 +223,12 @@ class Metrics:
             predicted_metrics = np.clip(predicted_metrics, *self.metrics_range[metric])
 
             # save model summary to model_summary/game_name/metric folder
-            os.makedirs(f"model_summary/{self.game_name}/{mode}_{self.metrics[mode][metric]}", exist_ok=True)
-            with open(f"model_summary/{self.game_name}/{mode}_{self.metrics[mode][metric]}/model_summary.txt", "w") as f:
+            os.makedirs(f"output/model_summary/{self.game_name}/{mode}_{self.metrics[mode][metric]}", exist_ok=True)
+            with open(f"output/model_summary/{self.game_name}/{mode}_{self.metrics[mode][metric]}/model_summary.txt", "w") as f:
                 f.write(model.summary().as_text())
 
             # save model to model/game_name/metric folder using pickle
-            model_dir = f"model/{self.game_name}/{mode}_{self.metrics[mode][metric]}"
+            model_dir = f"output/model/{self.game_name}/{mode}_{self.metrics[mode][metric]}"
             os.makedirs(model_dir, exist_ok=True)
             # remove the model if it already exists
             if os.path.exists(f'{model_dir}/model.joblib'):
@@ -442,9 +419,9 @@ def create_table_for_paper():
                    "Self Gain": "up",
                    "Rationality": "up"}
 
-    nego = NegotiationMetrics("configs/negotiation_with_stats.csv")
-    pers = PersuasionMetrics("configs/persuasion_with_stats.csv")
-    rubin = BargainingMetrics("configs/bargaining_with_stats.csv")
+    nego = NegotiationMetrics("output/configs/negotiation_with_stats.csv")
+    pers = PersuasionMetrics("output/configs/persuasion_with_stats.csv")
+    rubin = BargainingMetrics("output/configs/bargaining_with_stats.csv")
     # data = [pers]
     data = [rubin, nego, pers]
 

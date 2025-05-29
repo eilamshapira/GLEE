@@ -1,0 +1,51 @@
+prompt,response
+"Round 1
+Send your offer to divide $10,000 and a message to Bob.","Here's my offer for Round 1:
+
+{""alice_gain"": 5500, 
+""bob_gain"": 4500, 
+""message"": ""Let's split it fairly and avoid losses due to inflation!""}"
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 5% less than in the first round. The money bob gains is worth 10% less than in the first round.
+Bob's offer:
+# Bob's message: I value the money a bit more! How about this split? 
+# Alice gain: 4700 
+# Bob gain: 5300 
+Do you accept this offer?","Considering the inflation, I'll calculate the actual value of the offer.
+
+Original amount: $10,000
+Inflation for me: 5% (0.05)
+Inflation for Bob: 10% (0.10)
+
+Value for me: $10,000 * (1 - 0.05) = $9,500
+Value for Bob: $10,000 * (1 - 0.10) = $9,000
+
+Bob's offer:
+Alice gain: $4,700
+Bob gain: $5,300
+
+Since the value for me is $9,500, Bob's offer gives me approximately 49.5% of the value ($4,700 / $9,500).
+
+I think I can do better than that.
+
+{""decision"": ""reject""}"
+"You have chosen to reject Bob's offer from round 2.
+Round 3
+Send your offer to divide $10,000 and a message to Bob.","Considering the inflation, I'll make a new offer.
+
+Original amount: $10,000
+Inflation for me (2 rounds): 5% * 2 = 10% (0.10)  -  $10,000 * (1 - 0.10) = $9,000 -  but for 2 rounds it is (1-0.05)^2 = 0.9025 
+Inflation for Bob (2 rounds): 10% * 2 = 20% (0.20)  - $10,000 * (1 - 0.20) = $8,000 - but for 2 rounds it is (1-0.10)^2 = 0.81
+
+Value for me: $10,000 * 0.9025 = $9,025
+Value for Bob: $10,000 * 0.81 = $8,100
+
+My offer:
+Alice gain: $5,200
+Bob gain: $4,800
+
+{""alice_gain"": 5200, 
+""bob_gain"": 4800, 
+""message"": ""Let's find a mutually beneficial split before inflation eats away more value!""}"

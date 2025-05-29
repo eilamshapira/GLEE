@@ -1,0 +1,35 @@
+prompt,response
+"Alice's offer:
+# Alice's message: Hi Bob! I have a product I think you might be interested in. I'm offering it to you for $200. 
+# Alice's offer: The product price will be $200. 
+You have three options:
+(1) Accept Alice's offer, and buy the product for $200
+(2) Reject Alice's offer and proceed to the next round, where you will send Alice a counteroffer
+(3) Buy the product from Jhon for $80","Given that:
+1. The product is worth no more than $80 to me
+2. John is offering the same product for $80
+3. Alice's offer of $200 is significantly higher than both my maximum value and John's price
+
+The logical decision is to reject Alice's offer. Even if I make a counteroffer and continue negotiating, I know I can always get the product from John for $80, so there's no reason to accept a price of $200.
+
+{""decision"": ""RejectOffer""}"
+"You chose to make a counteroffer to Alice.
+
+Send your counteroffer to Alice.","I'll make a counteroffer that's significantly lower than Alice's $200 but still leaves some room for negotiation, while keeping in mind that I have the $80 alternative from John.
+
+{""message"": ""Hi Alice, thanks for your offer. However, $200 is much higher than what I'm willing to pay for this product. Based on my market research and the product's value to me, I can offer $60 for it. Let me know if this works for you."", ""product_price"": 60}"
+"Alice rejected your offer from round 2.
+
+Alice's offer:
+# Alice's message: Thanks for your interest, Bob. I appreciate the offer, but I can't go that low. Considering the quality of the product and its value, the lowest I can go is $180. 
+# Alice's offer: The product price will be $180. 
+You have three options:
+(1) Accept Alice's offer, and buy the product for $180
+(2) Reject Alice's offer and proceed to the next round, where you will send Alice a counteroffer
+(3) Buy the product from Jhon for $80","Alice's new offer of $180 is still significantly higher than:
+1. The product's worth to me (max $80)
+2. John's selling price ($80)
+
+There's no reason to accept this offer when I can get the same product from John for $80. Since Alice's reduction from $200 to $180 is still far from an acceptable price, and knowing I have a guaranteed option at $80, the most logical decision is to buy from John.
+
+{""decision"": ""BuyFromJhon""}"

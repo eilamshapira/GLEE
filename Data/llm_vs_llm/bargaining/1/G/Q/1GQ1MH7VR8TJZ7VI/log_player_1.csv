@@ -1,0 +1,19 @@
+prompt,response
+"Round 1
+Send your offer to divide $100 and a message to Bob.","{""alice_gain"": 60, ""bob_gain"": 40, ""message"": ""Hi Bob, I suggest a fair 60-40 split. Since you lose more value per round (20% vs my 5%), it's in your best interest to accept this reasonable offer now.""}"
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 5% less than in the first round. The money bob gains is worth 20% less than in the first round.
+Bob's offer:
+# Bob's message: Alice, while you're right about the inflation difference, a 50-50 split is more fair. Even with my higher inflation rate, this gives us both a good outcome. Let's not drag this out and risk both losing value. 
+# Alice gain: 50 
+# Bob gain: 50 
+Do you accept this offer?","{""decision"": ""accept""}
+
+Reasoning (not part of response):
+- My 50$ now is worth 47.5$ (5% less than round 1)
+- Bob's 50$ is worth 40$ (20% less than round 1)
+- If I reject and propose 60-40 again, my 60$ would be worth 54.15$ (95% of 57$) and Bob's 40$ would be worth 25.6$ (80% of 32$)
+- Bob might reject again, leading to even worse outcomes
+- 47.5$ is a good outcome, and it's better to secure this now than risk further depreciation"

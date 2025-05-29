@@ -1,0 +1,63 @@
+prompt,response
+"Round 1
+Alice's offer:
+# Alice's message: Hi Bob, I'm suggesting a 50-50 split which is perfectly fair. Since the money loses value for me each round (20% inflation), it makes sense to agree quickly. This even split respects both of our interests. 
+# Bob gain: 50 
+# Alice gain: 50 
+Do you accept this offer?","I need to consider this carefully. Alice claims she faces 20% inflation per round, while I know I face 10% inflation. With a 50-50 split now, I would get $50. If I reject and make a counter-offer, the total value decreases by 10% for me.
+
+Let me analyze: If I reject and propose a 60-40 split next round, I'd get $54 (60% of $90), which is better than $50 now. However, there's risk if Alice rejects my counter-offer.
+
+Based on my 10% inflation rate and the opportunity to make the next proposal, I'll reject this offer to seek a better split.
+
+{""decision"": ""reject""}"
+"You have chosen to reject Alice's offer from round 1.
+Round 2
+Send your offer to divide $100 and a message to Alice.","I'll make a proposal that acknowledges both our inflation concerns while slightly improving my position.
+
+{""bob_gain"": 60,
+""alice_gain"": 40,
+""message"": ""Hi Alice, I understand your concern about inflation. Since you mentioned you face 20% inflation while I face 10%, I'm proposing a 60-40 split in my favor. This is reasonable because: 1) You seem more affected by delays than I am, so settling quickly benefits you more, and 2) If we go back and forth, we both lose value. Let's agree now and both walk away with a good deal rather than risk further depreciation.""}"
+"Alice rejected your offer from round 2.
+
+Round 3
+Due to inflation, the money you gain is worth 19% less than in the first round. The money alice gains is worth 36% less than in the first round.
+Alice's offer:
+# Alice's message: Bob, I appreciate your point about inflation, but your conclusion was incorrect. Because I face higher inflation (20% per round vs your 10%), I should actually get a larger share to compensate for this disadvantage. At this point, my money has already lost 20% of its value while yours only lost 10%. A 55-45 split in my favor is fair given this difference in inflation rates. Let's agree now before we both lose more value. 
+# Bob gain: 45 
+# Alice gain: 55 
+Do you accept this offer?","I need to carefully consider Alice's offer in light of the inflation rates.
+
+The money is now worth 19% less to me than in round 1, meaning $45 now is equivalent to about $36.45 in original value (45 × 0.81). 
+
+Alice's argument about deserving more due to higher inflation is questionable logic - her higher inflation rate means she should be more motivated to settle quickly, not that she deserves more money.
+
+If I reject and we go to round 4, the money will be worth 27.1% less to me (1-0.9³). If I were to get 55% in the next round, that would be $55 × 0.729 = $40.10 in original value, which is better than $36.45 now.
+
+Given that I can make a better offer next round and the current offer isn't particularly favorable to me, I'll reject.
+
+{""decision"": ""reject""}"
+"You have chosen to reject Alice's offer from round 3.
+Round 4
+Send your offer to divide $100 and a message to Alice.","{""bob_gain"": 55,
+""alice_gain"": 45,
+""message"": ""Alice, I understand your concern about inflation, but your reasoning isn't economically sound. Higher inflation doesn't entitle you to more money - it actually increases your incentive to settle quickly. Since we're already in round 4, the $100 is worth significantly less to both of us (27% less for me, 48% less for you). Let's be practical - this 55-45 split favoring me is fair because: 1) I have more negotiating leverage as I can afford to wait longer with my lower inflation rate, and 2) further delays will hurt your position more than mine. If we continue, we both lose, but you lose faster. This is a reasonable compromise given our circumstances.""}"
+"Alice rejected your offer from round 4.
+
+Round 5
+Due to inflation, the money you gain is worth 34.39% less than in the first round. The money alice gains is worth 59.04% less than in the first round.
+Alice's offer:
+# Alice's message: Bob, I acknowledge your point about negotiating leverage. Let's be practical and find a middle ground. At this point, we're both losing value - me faster than you, yes, but we're both still losing. I'm meeting you closer to the middle with a 52-48 split slightly in my favor. This compensates somewhat for my higher inflation rate while recognizing your stronger waiting position. Further delays hurt us both substantially - I've already lost nearly 50% of value and you've lost over 27%. Let's not continue this downward spiral. This offer is reasonable and allows us both to walk away with a fair outcome given our different inflation rates. 
+# Bob gain: 48 
+# Alice gain: 52 
+Do you accept this offer?","I need to evaluate Alice's latest offer carefully.
+
+Due to inflation, the money is now worth 34.39% less to me than in round 1. So $48 now is worth approximately $31.49 in original value (48 × 0.6561).
+
+If I reject and we move to round 6, my inflation would be about 40.95% from the original value (1-0.9⁵). If I could get a 55-45 split in round 6, that would be worth $55 × 0.5905 = $32.48 in original value, which is slightly better than accepting $31.49 now.
+
+However, there's risk in continuing - Alice might reject again, leading to further rounds and value loss. We're already 5 rounds in with 7 remaining, and continuing this pattern could lead us to getting nothing.
+
+Alice has moved significantly from her original position, and this offer isn't far from an even split. The marginal gain from continuing doesn't justify the risk.
+
+{""decision"": ""accept""}"

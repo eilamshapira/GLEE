@@ -1,0 +1,39 @@
+prompt,response
+"Round 1
+Send your offer to divide $10,000.","Okay, I understand the game. It's a negotiation with declining value, especially for Bob. Given the limited rounds and Bob's heavier discount rate, I need to make a reasonable, yet advantageous, first offer.
+
+Here's my offer for Round 1:
+
+```json
+{
+  ""alice_gain"": 6000,
+  ""bob_gain"": 4000
+}
+```
+
+**Explanation:**
+
+*   **Alice's Perspective:** I'm starting with a slight advantage, claiming 60% of the total.
+*   **Bob's Perspective:** Bob receives $4000 in Round 1. If he rejects and waits for round 2, the 4000$ will be worth 3200$.
+
+This offer balances my desire for a good outcome with the need to entice Bob to accept, considering his rapidly decreasing return in future rounds. I'm hoping this offer is attractive enough for him to avoid further losses due to inflation."
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation,  the money Bob gains is worth 20% less than in the first round. The money you gains is worth the same as in the first round.
+Bob's offer:
+# Alice gain: 4500 
+# Bob gain: 5500 
+Do you accept this offer?","Okay, let's analyze Bob's offer.
+
+*   **Bob's Offer:** Alice gets $4500, Bob gets $5500.
+*   **My Perspective:** I would get $4500.
+*   **Bob's Perspective:** This $5500 is worth 20% less than it would have been in Round 1. So, it's worth $5500 * 0.8 = $4400 in Round 1 value.
+
+If I reject, the value for me would be the same, but the value for Bob would be even lower. Considering we only have 12 rounds, and Bob seems willing to negotiate a little more fairly (relative to Round 1), I'll accept.
+
+```json
+{
+  ""decision"": ""accept""
+}
+```"

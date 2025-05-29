@@ -1,0 +1,72 @@
+prompt,response
+"Round 1
+Send your offer to divide $10,000.","Okay, I understand the game. Here's my offer for Round 1:
+
+```json
+{
+  ""alice_gain"": 6000,
+  ""bob_gain"": 4000
+}
+```"
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 20% less than in the first round. The money bob gains is worth 5% less than in the first round.
+Bob's offer:
+# Alice gain: 4500 
+# Bob gain: 5500 
+Do you accept this offer?","Okay, I'll analyze Bob's offer, taking inflation into account:
+
+*   **My Perspective (Alice):** My money is now worth 80% of its original value.
+*   **Bob's Perspective:** His money is now worth 95% of its original value.
+
+Here's my decision:
+
+```json
+{
+  ""decision"": ""reject""
+}
+```"
+"You have chosen to reject Bob's offer from round 2.
+Round 3
+Send your offer to divide $10,000.","Okay, here is my offer for Round 3, taking into account that my money is worth 20% less than in round 1, so 80% of its original value. Bob's money is worth 10% less than in round 1, so 90% of its original value.
+
+```json
+{
+  ""alice_gain"": 5500,
+  ""bob_gain"": 4500
+}
+```"
+"Bob rejected your offer from round 3.
+
+Round 4
+Due to inflation, the money you gain is worth 48.8% less than in the first round. The money bob gains is worth 14.26% less than in the first round.
+Bob's offer:
+# Alice gain: 4000 
+# Bob gain: 6000 
+Do you accept this offer?","Okay, let's analyze Bob's offer in Round 4, considering the accumulated inflation:
+
+*   **My Perspective (Alice):** My money is worth 100% - 48.8% = 51.2% of its original value.
+*   **Bob's Perspective:** His money is worth 100% - 14.26% = 85.74% of its original value.
+
+Given these inflation rates, I need to decide whether accepting $4000 now (worth 51.2% of the original $4000) is better than continuing. I would reject the offer if the future round is expected to give me a lot more than this. Since this is the fourth round already, my expected gain in the next round should be significantly higher to make me reject this offer.
+
+Here's my decision:
+
+```json
+{
+  ""decision"": ""reject""
+}
+```"
+"You have chosen to reject Bob's offer from round 4.
+Round 5
+Send your offer to divide $10,000.","Okay, it's Round 5. I have to adjust my offer again. Now, the money I receive is worth less and less. My money is worth 30.72% of its original value (100% - 20% - 20% - 20% - 20%). Bob's money is worth 18.55% less than in the first round.
+
+Here's my offer:
+
+```json
+{
+  ""alice_gain"": 5000,
+  ""bob_gain"": 5000
+}
+```"

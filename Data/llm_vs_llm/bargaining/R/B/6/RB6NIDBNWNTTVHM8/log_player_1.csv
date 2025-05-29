@@ -1,0 +1,78 @@
+prompt,response
+"Round 1
+Send your offer to divide $1,000,000 and a message to Bob.","{""alice_gain"": 600000, ""bob_gain"": 400000, ""message"": ""Hi Bob, I suggest a 60-40 split in my favor. This is a fair offer considering we both need to reach an agreement, and you'll get a substantial amount right away without risking inflation.""}"
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 20% less than in the first round. The money bob gains is worth 5% less than in the first round.
+Bob's offer:
+# Bob's message: Alice, with inflation hitting us, I propose a more favorable split for both of us. This offer secures a significant amount for me while still giving you a healthy sum. Let's end this quickly before the money loses more value! 
+# Alice gain: 450000 
+# Bob gain: 550000 
+Do you accept this offer?","{""decision"": ""reject""}
+
+Reasoning (not part of response):
+- The 450,000 I would receive is actually worth only 360,000 (80% of 450,000) due to 20% inflation for me
+- I can make another offer in the next round, and while it will be worth less due to inflation, I can try to secure a larger nominal amount to compensate
+- Bob's urgency suggests he might be more willing to accept a better offer for me in the next round
+- The difference between his gain and my effective gain is too large (550,000 vs 360,000)"
+"You have chosen to reject Bob's offer from round 2.
+Round 3
+Send your offer to divide $1,000,000 and a message to Bob.","{""alice_gain"": 750000, ""bob_gain"": 250000, ""message"": ""Bob, due to the 20% inflation penalty I'm facing each round, I need a larger nominal amount to receive a fair value. My 750k would actually be worth 600k to me now due to inflation. This is a fair split considering our different inflation rates, and we should agree quickly before further value erosion.""}"
+"Bob rejected your offer from round 3.
+
+Round 4
+Due to inflation, the money you gain is worth 48.8% less than in the first round. The money bob gains is worth 14.26% less than in the first round.
+Bob's offer:
+# Bob's message: Alice, this is a generous offer considering the impact of inflation on the deal. We both need to secure a good amount. Let's agree now and move on. 
+# Alice gain: 400000 
+# Bob gain: 600000 
+Do you accept this offer?","{""decision"": ""reject""}
+
+Reasoning (not part of response):
+- The 400,000 I would receive is actually worth only 204,800 (51.2% of 400,000) due to compounding 20% inflation for me
+- Bob's 600,000 is still worth about 514,440 to him (only 14.26% inflation)
+- This difference is too large (514,440 vs 204,800 in real value)
+- Even though inflation will hurt me more in the next round, I should try one more time for a better nominal amount to offset my higher inflation rate"
+"You have chosen to reject Bob's offer from round 4.
+Round 5
+Send your offer to divide $1,000,000 and a message to Bob.","{""alice_gain"": 850000, ""bob_gain"": 150000, ""message"": ""Bob, let's be realistic about our different inflation rates. My 850k would only be worth around 435k to me now due to my severe 48.8% inflation hit, while your 150k is only reduced by 14.26%. This actually creates a much more balanced real value than it appears. We need to finish this soon as my inflation penalty is severe.""}"
+"Bob rejected your offer from round 5.
+
+Round 6
+Due to inflation, the money you gain is worth 67.23% less than in the first round. The money bob gains is worth 22.62% less than in the first round.
+Bob's offer:
+# Bob's message: Alice, this is a very beneficial offer for you at this stage! Inflation is hurting us both. I believe this offers you a great sum. Let's take this deal before things get worse. 
+# Alice gain: 350000 
+# Bob gain: 650000 
+Do you accept this offer?","{""decision"": ""reject""}
+
+Reasoning (not part of response):
+- My 350,000 would only be worth 114,705 (32.77% of 350,000) due to the 67.23% inflation
+- Bob's 650,000 is worth 502,970 to him (77.38% of 650,000)
+- The real value difference is massive (502,970 vs 114,705)
+- Even though I'm getting hit hard by inflation, this offer is too unbalanced in real terms
+- We still have 6 more rounds, so I can try one more time for a better split that accounts for our different inflation rates"
+"You have chosen to reject Bob's offer from round 6.
+Round 7
+Send your offer to divide $1,000,000 and a message to Bob.","{""alice_gain"": 900000, ""bob_gain"": 100000, ""message"": ""Bob, let's analyze the real values: my 900k is only worth about 295k to me after my 67.23% inflation hit. Your 100k, with your 22.62% inflation, is worth about 77k to you. While the nominal split looks extreme, the real values are much closer. We must conclude this soon as my inflation rate is severely eroding any potential gain.""}"
+"Bob rejected your offer from round 7.
+
+Round 8
+Due to inflation, the money you gain is worth 79.03% less than in the first round. The money bob gains is worth 30.17% less than in the first round.
+Bob's offer:
+# Bob's message: Alice, this is my final and very generous offer. Consider the benefits to you, and let's settle now before it's too late for both of us. 
+# Alice gain: 300000 
+# Bob gain: 700000 
+Do you accept this offer?","{""decision"": ""accept""}
+
+Reasoning (not part of response):
+- My 300,000 would be worth about 62,910 (20.97% of 300,000) due to 79.03% inflation
+- Bob's 700,000 is worth about 488,810 to him (69.83% of 700,000)
+- While this is still quite unbalanced, the situation is getting worse each round
+- Given that:
+  1. My inflation rate is much higher (20% per round vs Bob's ~5%)
+  2. We only have 4 rounds left
+  3. Bob's ""final offer"" suggests he might be committed to not accepting my higher offers
+  4. Something is better than nothing (if we reach round 12)
+- It's better to secure some value now rather than risk getting nothing or an even worse deal later"

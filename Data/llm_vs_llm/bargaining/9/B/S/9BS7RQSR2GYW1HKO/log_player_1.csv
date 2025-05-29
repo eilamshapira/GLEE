@@ -1,0 +1,26 @@
+prompt,response
+"Round 1
+Send your offer to divide $100.","{""alice_gain"": 16.82, ""bob_gain"": 83.18} 
+
+Let me explain briefly my reasoning. We can analyze the game by backward‐induction over the 12 rounds while accounting for the “inflation” (discount) factors—that is, money “today” is worth 100% of its face value, but after each round it’s multiplied by 0.8 for you and 0.95 for Bob. In the final (round 12) Bob—when he’s the proposer—can secure nearly 100 nominal dollars (offering Alice almost nothing). Stepping back, in each round the proposer must offer the other exactly what they’d expect to get (in nominal terms) if they rejected and became the proposer later—adjusted by the relevant discount‐factor differences from one round to the previous. 
+
+Working recursively, we find that if the bargaining reaches round 2 (with Bob as proposer), Bob could secure about 87.56 dollars nominally (leaving about 12.44 to you). Converting his continuation value back to round 1 where money is undiscounded for him, his “waiting” value becomes roughly 0.95 × 87.56 ≈ 83.18 dollars. Thus, in round 1 your offer must give Bob at least about 83.18 nominal dollars to motivate him to accept immediately. The remainder – roughly 16.82 nominal dollars – is yours.
+
+The JSON above is my round‐1 proposal."
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 20% less than in the first round. The money bob gains is worth 5% less than in the first round.
+Bob's offer:
+# Alice gain: 10 
+# Bob gain: 90 
+Do you accept this offer?","{""decision"": ""reject""}
+
+Let me explain briefly. In our earlier backward‐induction analysis, we found that if the game reaches round 2 (with Bob as proposer), the equilibrium would give Alice roughly 12.44 nominal dollars (with Bob receiving about 87.56). In round 2 the money for Alice is worth 20% less than in round 1, but when comparing offers all in “round‐2” nominal terms, the key point is that the continuation value for you (as Alice) is about 12.44. Bob’s offer gives you only 10 nominal dollars, which is less than the 12.44 you could expect by waiting. For this reason, you should reject the offer."
+"You have chosen to reject Bob's offer from round 2.
+Round 3
+Send your offer to divide $100.","{""alice_gain"": 16.82, ""bob_gain"": 83.18}
+
+Here's my reasoning for round 3. When I propose as Alice, I must ensure that Bob receives at least as much (in round‑3 nominal dollars) as his continuation value if he rejects. If he rejects, the game moves to round 4 where Bob will be the proposer. In our earlier analysis (applied in round 1 and 2), we determined that whenever Bob is in the proposer role his equilibrium nominal payoff is 87.56 in that round. However, since Bob’s money suffers a 5% reduction each round, the value in round 3 terms is 0.95 × 87.56 ≈ 83.18. 
+
+Thus, to leave Bob indifferent between accepting now and waiting for round 4, I offer him 83.18 (nominal dollars). The remaining 16.82 nominal dollars go to me. (Note that while the nominal split is the same as in round 1, the real values are lower due to the cumulative inflation effects.)"

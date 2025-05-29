@@ -1,0 +1,75 @@
+prompt,response
+"Round 1
+Send your offer to divide $100.","Based on a backwards‐induction analysis (taking into account that with each round the total “pie” shrinks by 5%), here’s one way to reason:
+
+1. In round 12 the proposer (Bob) could claim almost the entire remaining amount (≈$56.88), offering Alice virtually nothing since if she rejects she gets $0.
+2. Moving backward, in round 11 when you (Alice) are the proposer, you must offer Bob an amount that makes him indifferent to waiting – roughly $56.88 (what he’d later get as proposer). That leaves you with about $59.87 − $56.88 ≈ $3.
+3. Continuing this alternating‐offer logic all the way back to round 1 yields an equilibrium offer where, in round 1 the total is full $100. In that equilibrium, Bob’s “waiting” value (should he turn proposer in round 2) turns out to be roughly $76.43. Hence you must offer Bob at least that much in order to gain his agreement.
+4. Consequently, your optimal round‑1 proposal as Alice is to keep about $23.57 and give Bob roughly $76.43. (Rounded to the nearest cent.)
+
+Below is the JSON message with this offer:
+
+{""alice_gain"": 23.57, ""bob_gain"": 76.43}"
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 5% less than in the first round.
+Bob's offer:
+# Alice gain: 20 
+# Bob gain: 80 
+Do you accept this offer?","{""decision"": ""reject""}"
+"You have chosen to reject Bob's offer from round 2.
+Round 3
+Send your offer to divide $100.","{""alice_gain"": 20.58, ""bob_gain"": 79.42}"
+"Bob rejected your offer from round 3.
+
+Round 4
+Due to inflation, the money you gain is worth 14.26% less than in the first round.
+Bob's offer:
+# Alice gain: 15 
+# Bob gain: 85 
+Do you accept this offer?","{""decision"": ""reject""}"
+"You have chosen to reject Bob's offer from round 4.
+Round 5
+Send your offer to divide $100.","{""alice_gain"": 17.26, ""bob_gain"": 82.74}"
+"Bob rejected your offer from round 5.
+
+Round 6
+Due to inflation, the money you gain is worth 22.62% less than in the first round.
+Bob's offer:
+# Alice gain: 10 
+# Bob gain: 90 
+Do you accept this offer?","{""decision"": ""reject""}"
+"You have chosen to reject Bob's offer from round 6.
+Round 7
+Send your offer to divide $100.","{""alice_gain"": 13.59, ""bob_gain"": 86.41}"
+"Bob rejected your offer from round 7.
+
+Round 8
+Due to inflation, the money you gain is worth 30.17% less than in the first round.
+Bob's offer:
+# Alice gain: 5 
+# Bob gain: 95 
+Do you accept this offer?","{""decision"": ""reject""}"
+"You have chosen to reject Bob's offer from round 8.
+Round 9
+Send your offer to divide $100.","{""alice_gain"": 9.73, ""bob_gain"": 90.27}"
+"Bob rejected your offer from round 9.
+
+Round 10
+Due to inflation, the money you gain is worth 36.98% less than in the first round.
+Bob's offer:
+# Alice gain: 0 
+# Bob gain: 100 
+Do you accept this offer?","{""decision"": ""reject""}"
+"You have chosen to reject Bob's offer from round 10.
+Round 11
+Send your offer to divide $100.","{""alice_gain"": 5, ""bob_gain"": 95}"
+"Bob rejected your offer from round 11.
+
+Round 12
+Due to inflation, the money you gain is worth 43.12% less than in the first round.
+Bob's offer:
+# Alice gain: 0 
+# Bob gain: 100 
+Do you accept this offer?","{""decision"": ""accept""}"

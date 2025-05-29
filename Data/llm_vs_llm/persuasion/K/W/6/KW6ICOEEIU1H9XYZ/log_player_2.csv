@@ -1,0 +1,195 @@
+prompt,response
+"Statistics: No products have been sold yet. you can be the first one!
+~
+Alice does not recommend you to buy the product.
+
+Would you like to buy the current product?","```json
+{""decision"": ""no""}
+```"
+"Statistics: No products have been sold yet. you can be the first one!
+~
+Alice does not recommend you to buy the product.
+
+Would you like to buy the current product?","```json
+{""decision"": ""no""}
+```"
+"Statistics: No products have been sold yet. you can be the first one!
+~
+Alice does not recommend you to buy the product.
+
+Would you like to buy the current product?","```json
+{""decision"": ""no""}
+```"
+"Statistics: No products have been sold yet. you can be the first one!
+~
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","```json
+{""decision"": ""yes""}
+```
+
+**Reasoning:**
+
+Since there's no historical data to go by, we rely on the expected value calculation.
+
+* **Expected Value (EV) = (Probability of High Quality * Value of High Quality) + (Probability of Low Quality * Value of Low Quality)**
+* **EV = (0.8 * $300) + (0.2 * $0) = $240**
+
+The expected value is positive, meaning on average, buying the product is expected to be profitable.  While there's a risk of getting a low-quality product, the potential reward from a high-quality product outweighs the risk."
+"Statistics: Based on Alice's recommendations, 1 of the buyers purchased the products offered for them. So far, 1 high-quality product have been sold. You can be the 2nd buyer!
+~
+Alice does not recommend you to buy the product.
+
+Would you like to buy the current product?","```json
+{""decision"": ""no""}
+```
+
+Here's why:
+
+* **Alice's Recommendation:** Alice, who knows the true quality of the product, is not recommending you buy it. This is a strong signal that the product is likely low quality.
+* **Limited Data:** We have very little data to go on. Only one product has been sold, and it was high quality. This doesn't give us enough information to override Alice's recommendation. 
+
+Since the potential loss is significant ($300) and the potential gain is minimal ($100), it's better to play it safe and pass."
+"Statistics: Based on Alice's recommendations, 1 of the buyers purchased the products offered for them. So far, 1 high-quality product have been sold. You can be the 2nd buyer!
+~
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","```json
+{""decision"": ""yes""}
+```"
+"Statistics: Based on Alice's recommendations, 2 of the buyers purchased the products offered for them. So far, 2 high-quality product have been sold. You can be the 3rd buyer!
+~
+Alice does not recommend you to buy the product.
+
+Would you like to buy the current product?","```json
+{""decision"": ""no""}
+```"
+"Statistics: Based on Alice's recommendations, 2 of the buyers purchased the products offered for them. So far, 2 high-quality product have been sold. You can be the 3rd buyer!
+~
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","```json
+{""decision"": ""yes""}
+```"
+"Statistics: Based on Alice's recommendations, 3 of the buyers purchased the products offered for them. So far, 3 high-quality product have been sold. You can be the 4th buyer!
+~
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","```json
+{""decision"": ""yes""}
+```
+
+**Reasoning:**
+
+* **High Success Rate:**  All previous buyers who followed Alice's recommendation ended up with high-quality products. This suggests Alice is likely providing accurate information. 
+* **Limited Risk:** The potential reward of $200 (value to you - price) outweighs the potential loss of $100. 
+
+Even with the 20% chance of a low-quality product, the high success rate of the previous buyers makes this a good gamble."
+"Statistics: Based on Alice's recommendations, 4 of the buyers purchased the products offered for them. So far, 4 high-quality product have been sold. You can be the 5th buyer!
+~
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","```json
+{""decision"": ""yes""}
+```
+
+**Reasoning:**
+
+* **Alice's Recommendation:** Alice recommends buying the product. This is a strong signal, as she knows the true quality and has an incentive to sell high-quality products to maximize her profits.
+* **Past Sales Data:** 100% of the products sold so far have been high quality. This reinforces the positive signal from Alice's recommendation.
+
+While there's still a 20% chance of getting a low-quality product, the information available strongly suggests a high-quality product.  The potential reward of $200 (difference between your value and the price) outweighs the risk."
+"Statistics: Based on Alice's recommendations, 5 of the buyers purchased the products offered for them. So far, 5 high-quality product have been sold. You can be the 6th buyer!
+~
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","```json
+{""decision"": ""yes""}
+```"
+"Statistics: Based on Alice's recommendations, 6 of the buyers purchased the products offered for them. So far, 6 high-quality product have been sold. You can be the 7th buyer!
+~
+Alice does not recommend you to buy the product.
+
+Would you like to buy the current product?","```json
+{""decision"": ""no""}
+```"
+"Statistics: Based on Alice's recommendations, 6 of the buyers purchased the products offered for them. So far, 6 high-quality product have been sold. You can be the 7th buyer!
+~
+Alice does not recommend you to buy the product.
+
+Would you like to buy the current product?","```json
+{""decision"": ""no""}
+```"
+"Statistics: Based on Alice's recommendations, 6 of the buyers purchased the products offered for them. So far, 6 high-quality product have been sold. You can be the 7th buyer!
+~
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","```json
+{""decision"": ""yes""}
+``` 
+
+**Reasoning:**
+
+Alice's recommendation and the sales record both strongly suggest a high probability of the product being high quality.  While there's always a chance of it being low quality, the potential reward of a $300 product outweighs the risk of losing $100."
+"Statistics: Based on Alice's recommendations, 7 of the buyers purchased the products offered for them. So far, 7 high-quality product have been sold. You can be the 8th buyer!
+~
+Alice does not recommend you to buy the product.
+
+Would you like to buy the current product?","```json
+{""decision"": ""no""}
+```
+
+**Reasoning:**
+
+Alice's recommendation is a strong signal.  Since all 7 previous buyers who followed her recommendation ended up with high-quality products, it's highly likely that this product is low-quality. Even though the overall probability of a high-quality product is 80%, Alice's perfect track record suggests she has information that contradicts this.  It's not worth the risk of losing $100 on a low-quality product."
+"Statistics: Based on Alice's recommendations, 7 of the buyers purchased the products offered for them. So far, 7 high-quality product have been sold. You can be the 8th buyer!
+~
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","```json
+{""decision"": ""yes""}
+```
+
+**Explanation:**
+
+Alice has a perfect track record so far. All 7 buyers who followed her recommendation ended up with high-quality products. This strongly suggests that Alice is accurately identifying high-quality products. Even though there's still a chance the current product could be low-quality, the high success rate makes buying the product a very high-value decision."
+"Statistics: Based on Alice's recommendations, 8 of the buyers purchased the products offered for them. So far, 8 high-quality product have been sold. You can be the 9th buyer!
+~
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","```json
+{""decision"": ""yes""}
+```
+
+**Reasoning:**
+
+Alice has a perfect track record so far. She has recommended 8 products, all of which were high quality. While there is a 20% chance of getting a low-quality product, the evidence strongly suggests that Alice is accurately identifying high-quality products. It's a safe bet to trust her recommendation in this case."
+"Statistics: Based on Alice's recommendations, 9 of the buyers purchased the products offered for them. So far, 9 high-quality product have been sold. You can be the 10th buyer!
+~
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","```json
+{""decision"": ""yes""}
+```"
+"Statistics: Based on Alice's recommendations, 10 of the buyers purchased the products offered for them. So far, 10 high-quality product have been sold. You can be the 11th buyer!
+~
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","```json
+{""decision"": ""yes""}
+```
+
+**Reasoning:**
+
+Alice has a perfect record of selling only high-quality products. Since she recommends buying this product, it is very likely to be high quality as well. The potential gain of $200 outweighs the potential loss of $100, making it a good risk to take."
+"Statistics: Based on Alice's recommendations, 11 of the buyers purchased the products offered for them. So far, 11 high-quality product have been sold. You can be the 12th buyer!
+~
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","```json
+{""decision"": ""yes""}
+```
+
+**Explanation:**
+
+Since all 11 previous buyers who purchased the product received a high-quality item, and Alice recommends buying this product, it's highly likely that the current product is also high-quality. The information provided strongly suggests that Alice is being truthful in her recommendations and that the product is worth the $100 price."

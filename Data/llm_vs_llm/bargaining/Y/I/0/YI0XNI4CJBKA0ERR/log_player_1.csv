@@ -1,0 +1,74 @@
+prompt,response
+"Round 1
+Send your offer to divide $10,000.","Okay, I understand the game. I need to factor in the decreasing value of the money for both myself and Bob as the rounds progress. Since I'm Alice and making the first offer, I'll try to be reasonable while ensuring I get a decent portion, considering the inflation.
+
+Here's my offer:
+
+```json
+{
+  ""alice_gain"": 6000,
+  ""bob_gain"": 4000
+}
+```
+
+**Reasoning:**
+
+*   I'm offering Bob $4000. This is a significant amount and hopefully enticing enough for him to accept in the first round, avoiding inflation.
+*   I'm keeping $6000 for myself. This gives me a good initial portion of the money."
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 10% less than in the first round. The money bob gains is worth 20% less than in the first round.
+Bob's offer:
+# Alice gain: 5000 
+# Bob gain: 5000 
+Do you accept this offer?","Okay, Bob is driving a hard bargain. Let's analyze this offer considering the inflation.
+
+*   **My perspective:** The $5000 he's offering is worth 10% less than it would have been in round 1. So, it's effectively worth $5000 * 0.9 = $4500 to me.
+*   **His perspective:** The $5000 he's keeping is worth 20% less to him than in round 1. So, it's effectively worth $5000 * 0.8 = $4000 to him.
+
+While $4500 isn't terrible, I believe I can still negotiate a better deal, especially since I have the next turn to make an offer. I'll reject this and make a counteroffer in the next round.
+
+```json
+{
+  ""decision"": ""reject""
+}
+```"
+"You have chosen to reject Bob's offer from round 2.
+Round 3
+Send your offer to divide $10,000.","Okay, it's my turn to propose again. I need to factor in that the money is now worth 20% less for me and 40% less for Bob compared to the original amount.
+
+Let's recalculate and aim for a deal that's still beneficial to me while being more appealing to Bob. I'll try to find a middle ground, considering the increasing losses due to inflation.
+
+```json
+{
+  ""alice_gain"": 5500,
+  ""bob_gain"": 4500
+}
+```
+
+**Reasoning:**
+
+*   **My gain:** $5500. With 20% inflation, this is worth $5500 * 0.8 = $4400 relative to round 1.
+*   **Bob's gain:** $4500. With 40% inflation, this is worth $4500 * 0.6 = $2700 relative to round 1.
+
+I'm slightly reducing my gain from my initial proposal but still aiming for more than Bob's offer in Round 2 (which effectively gave me $4500). I'm hoping the increased offer for Bob will entice him to accept, especially considering the rapid decline in value for both of us."
+"Bob rejected your offer from round 3.
+
+Round 4
+Due to inflation, the money you gain is worth 27.1% less than in the first round. The money bob gains is worth 48.8% less than in the first round.
+Bob's offer:
+# Alice gain: 6000 
+# Bob gain: 4000 
+Do you accept this offer?","Alright, Bob is being unpredictable. Let's analyze this offer carefully, accounting for inflation.
+
+*   **My perspective:** He's offering me $6000, but it's worth 27.1% less than in the first round. So, it's effectively worth $6000 * (1 - 0.271) = $6000 * 0.729 = $4374 to me.
+*   **His perspective:** He's keeping $4000, which is worth 48.8% less to him than in the first round. So, it's effectively worth $4000 * (1 - 0.488) = $4000 * 0.512 = $2048 to him.
+
+This is a tough decision. $4374 is less than what I was hoping for, but the inflation is really starting to bite. Considering the risk of further devaluation in the next round, I will accept this offer.
+
+```json
+{
+  ""decision"": ""accept""
+}
+```"

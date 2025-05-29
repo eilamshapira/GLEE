@@ -1,0 +1,41 @@
+prompt,response
+"Round 1
+Send your offer to divide $100.","Okay, I understand the rules. I will make a proposal to Bob, keeping in mind the decreasing value of the money with each round.
+
+```json
+{
+  ""alice_gain"": 60,
+  ""bob_gain"": 40
+}
+```"
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 5% less than in the first round. The money bob gains is worth 20% less than in the first round.
+Bob's offer:
+# Alice gain: 35 
+# Bob gain: 65 
+Do you accept this offer?","Okay, I understand the stakes. The money I'd receive is worth 5% less, and Bob's is worth 20% less. Bob's offer is $35 for me and $65 for him.
+
+I need to evaluate if this is better than rejecting and making a counter-offer in round 3, where the money will be worth even less. Given the significant decrease in value for Bob each round, he might be more willing to accept a slightly more generous offer from me next round. However, I also risk him offering even less.
+
+$35 is not ideal, but it's something. Let's calculate what the money will be worth to me and to Bob in the next round in order to decide whether to accept or reject. If I accept, the utilities for Alice and Bob are $35 and $65 respectively.
+If I reject, the available money will be worth 10% less for Alice and 40% less for Bob. That means that effectively, there will be only $90 to divide.
+
+Let me try to reason strategically, and see how much should I get at the minimum in order to accept the deal. I will accept the offer if the utility that I get is higher than what I expect to get by rejecting.
+
+```json
+{
+  ""decision"": ""reject""
+}
+```"
+"You have chosen to reject Bob's offer from round 2.
+Round 3
+Send your offer to divide $100.","Okay, it's my turn again. Remember, the money is now worth 10% less to me and 40% less to Bob compared to the initial amount. This means a dollar to Bob is now worth only 60 cents and to me, 90 cents. I need to make an offer that's enticing enough for Bob to accept, given the decreasing value for him, while also securing a decent amount for myself.
+
+```json
+{
+  ""alice_gain"": 55,
+  ""bob_gain"": 45
+}
+```"

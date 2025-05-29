@@ -1,0 +1,68 @@
+prompt,response
+"Round 1
+Send your offer to divide $100.","Okay, here's my offer for Round 1:
+
+```json
+{
+  ""alice_gain"": 60,
+  ""bob_gain"": 40
+}
+```"
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 10% less than in the first round.
+Bob's offer:
+# Alice gain: 50 
+# Bob gain: 50 
+Do you accept this offer?","Since the money is worth 10% less to me, the value of the money decreases with each round.
+
+My available money is $100 * (1 - 0.10) = $90.
+
+So if I receive 50$ in this round, that is worth 50 * 0.9 = 45$ of the original value.
+
+I'll respond with:
+```json
+{
+  ""decision"": ""reject""
+}
+```"
+"You have chosen to reject Bob's offer from round 2.
+Round 3
+Send your offer to divide $100.","Okay, here's my offer for Round 3. Remember, the value of the money is decreasing for me. My money now is worth $100 * (1 - 0.10) * (1 - 0.10) = $81 of original value
+
+```json
+{
+  ""alice_gain"": 55,
+  ""bob_gain"": 45
+}
+```"
+"Bob rejected your offer from round 3.
+
+Round 4
+Due to inflation, the money you gain is worth 27.1% less than in the first round.
+Bob's offer:
+# Alice gain: 45 
+# Bob gain: 55 
+Do you accept this offer?","Okay, let's calculate the current value of the money for me. The money is worth 27.1% less than in the first round, which means it's worth 72.9% of its original value.
+
+Therefore, my $45 is worth $45 * 0.729 = $32.805 of the original value.
+
+I'll respond with:
+```json
+{
+  ""decision"": ""reject""
+}
+```"
+"You have chosen to reject Bob's offer from round 4.
+Round 5
+Send your offer to divide $100.","Okay, it's Round 5. Let's calculate the reduced value of the money. Each round the value is 10% less than before. The current value of my money now is $100 * (1 - 0.10)^4 = $65.61 of the original value.
+
+Here is my offer:
+
+```json
+{
+  ""alice_gain"": 60,
+  ""bob_gain"": 40
+}
+```"

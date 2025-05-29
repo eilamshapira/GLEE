@@ -1,0 +1,37 @@
+prompt,response
+"Round 1
+Alice's offer:
+# Alice's message: I propose a 60/40 split. It's a fair starting point considering inflation will hit us hard if we delay. Let's settle this now! 
+# Bob gain: 400000 
+# Alice gain: 600000 
+Do you accept this offer?","I need to think about this offer carefully given the asymmetric inflation rates. If I reject, the money will be worth 20% less to me in the next round, while only 5% less to Alice.
+
+If I counter-offer next round, the total $1,000,000 will effectively be worth $800,000 to me and $950,000 to Alice. This gives Alice a strong negotiating advantage as rounds progress.
+
+The current offer gives me $400,000 now, which is less than half but avoids the inflation penalty. If I reject and we go multiple rounds, my negotiating position will weaken significantly due to the higher inflation rate affecting me.
+
+{""decision"": ""reject""}"
+"You have chosen to reject Alice's offer from round 1.
+Round 2
+Send your offer to divide $1,000,000 and a message to Alice.","I'll make a counter-offer that acknowledges our different inflation pressures while seeking a more balanced split.
+
+{""bob_gain"": 500000, 
+""alice_gain"": 500000, 
+""message"": ""Alice, I understand we're both facing inflation, though at different rates. A 50/50 split is the fairest division and allows us both to avoid further devaluation. Given that my inflation rate is higher (20% vs your 5%), it's in both our interests to settle now without further delays.""}"
+"Alice rejected your offer from round 2.
+
+Round 3
+Due to inflation, the money you gain is worth 36% less than in the first round. The money alice gains is worth 9.75% less than in the first round.
+Alice's offer:
+# Alice's message: Bob, I rejected your 50/50 offer. My inflation rate is lower, and I need to account for the losses from the previous rounds. I propose a 65/35 split. This is my best and final offer. 
+# Bob gain: 350000 
+# Alice gain: 650000 
+Do you accept this offer?","I need to carefully consider this offer given the worsening inflation situation.
+
+At this point, the money is worth 36% less to me than in round 1. If I reject, it will be worth 48.8% less in the next round (1-0.8^3). Meanwhile, Alice's inflation is much slower at 9.75% now.
+
+The $350,000 offered to me now is actually worth only $224,000 compared to the original value in round 1 (350,000 × 0.64). If I reject and counter-offer, any gains would be substantially devalued for me in the next round.
+
+Given the asymmetric inflation rates strongly favoring Alice, and that further delays will weaken my position even more substantially, I should accept this offer.
+
+{""decision"": ""accept""}"

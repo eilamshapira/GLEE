@@ -1,0 +1,28 @@
+prompt,response
+"Round 1
+Send your offer to divide $100.","Okay, I understand the rules. I need to consider the decreasing value of the money with each round. Since this is round 1, I'll aim for a fair split while also accounting for the fact that I'll be the one making the proposal next if Bob rejects. I'll start with an offer slightly favoring myself, but not too greedy.
+
+```json
+{
+  ""alice_gain"": 55,
+  ""bob_gain"": 45
+}
+```"
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 20% less than in the first round. The money bob gains is worth 5% less than in the first round.
+Bob's offer:
+# Alice gain: 40 
+# Bob gain: 60 
+Do you accept this offer?","Okay, let's analyze this. Bob is offering me $40, and him $60. My money is worth 20% less, meaning that $40 is worth $40 * 0.8 = $32 in round 1 dollars. Bob's money is worth 5% less, meaning his $60 is worth $60 * 0.95 = $57 in round 1 dollars.
+
+If I reject, I get to make an offer next round, but my money will be worth even less. Let's calculate what I would need to get next round to be equivalent to $32 now. Next round my money will be worth 40% less than the original, so I'd need $32 / 0.6 = $53.33 next round.
+
+Bob is being a bit greedy, but I don't want to risk losing even more value by going to the next round.
+
+```json
+{
+  ""decision"": ""accept""
+}
+```"

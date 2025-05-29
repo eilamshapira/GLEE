@@ -1,0 +1,55 @@
+prompt,response
+"Round 1
+Alice's offer:
+# Alice's message: Let's be fair - I'll take the lion's share, but I'm giving you a decent chunk.  Accept and we can both walk away happy. 
+# Bob gain: 100000 
+# Alice gain: 900000 
+Do you accept this offer?","Let me think about this. Alice is offering me $100,000 out of the $1,000,000, which means she would get $900,000. That's a 90-10 split in her favor.
+
+I need to consider the inflation factors:
+- For me (Bob), money loses 5% value each round
+- For Alice, money loses 20% value each round
+
+If I reject and make a counter-offer next round, my $100,000 would only be worth $95,000 to me due to 5% inflation. But for Alice, her $900,000 would only be worth $720,000 due to 20% inflation.
+
+This gives me significant leverage in the next round. Alice has much more to lose from delays than I do. I should reject this offer and propose a more favorable split in the next round.
+
+{""decision"": ""reject""}"
+"You have chosen to reject Alice's offer from round 1.
+Round 2
+Send your offer to divide $1,000,000 and a message to Alice.","Given the inflation factors, I have strong leverage in this negotiation. Alice faces 20% depreciation per round while I only face 5%. This means delay is much more costly to her than to me. I'll propose a more balanced split that recognizes this difference in time pressure.
+
+```json
+{
+""bob_gain"": 600000,
+""alice_gain"": 400000,
+""message"": ""Alice, I've rejected your initial offer because the 90-10 split heavily favors you. Consider our inflation rates: you lose 20% per round while I only lose 5%. If we keep negotiating, you stand to lose much more. This 60-40 split is fair considering our different positions. If you reject, your potential gain will decrease significantly in the next round due to your higher inflation rate.""
+}
+```"
+"Alice rejected your offer from round 2.
+
+Round 3
+Due to inflation, the money you gain is worth 9.75% less than in the first round. The money alice gains is worth 36% less than in the first round.
+Alice's offer:
+# Alice's message: I understand your position about inflation, Bob. But 60-40 still feels too lopsided in your favor. Let's meet in the middle.  I'm willing to take a 60-40 split, with you getting the bigger share this time. This way, we both get a decent amount and we can move on from this.  
+# Bob gain: 400000 
+# Alice gain: 600000 
+Do you accept this offer?","Let me carefully evaluate Alice's new offer.
+
+Alice is now offering me $400,000 out of the $1,000,000, which is a 40-60 split in her favor. This is a significant improvement from her initial 10-90 offer.
+
+Considering the current inflation:
+- For me (Bob), money is worth 9.75% less than round 1
+- For Alice, money is worth 36% less than round 1
+
+If I accept this offer now, my $400,000 would be worth about $361,000 in round 1 terms.
+
+If I reject and we go to round 4:
+- My inflation would increase to about 14.3% (another 5%)
+- Alice's inflation would increase to about 48.8% (another 20%)
+
+Alice has clearly moved significantly from her first position, recognizing the inflation pressure. While I could push for more, there's a risk of prolonging negotiations where we both lose value. This offer gives me 40% of the total, which is substantial.
+
+Given the asymmetric inflation rates and the fair movement from Alice, I'll accept this offer.
+
+{""decision"": ""accept""}"

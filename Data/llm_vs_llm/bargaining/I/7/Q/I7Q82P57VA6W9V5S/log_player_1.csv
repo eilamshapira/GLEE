@@ -1,0 +1,25 @@
+prompt,response
+"Round 1
+Send your offer to divide $1,000,000.","{""alice_gain"": 208333, ""bob_gain"": 791667} 
+
+Let me explain briefly (without breaking game rules):
+
+Because we are playing an alternating–offer game where delaying the agreement reduces the value for both players – by 20% for me (Alice) and 5% for Bob each round – my “impatience” is higher. In a subgame–perfect equilibrium the proposer must offer the other exactly what he could expect if he were to reject and then propose in the next round (after his appropriate discount). 
+
+A short derivation (on the assumption of an infinitely repeated bargaining game):
+
+1. If I (Alice) propose in a round, Bob will accept any offer giving him at least what he would secure as proposer on the next round discounted by his factor (0.95). Let Bob’s equilibrium “proposer” share be vBᵖ. Then Bob’s reservation value now is 0.95·vBᵖ. Therefore, I can keep 1 – (0.95·vBᵖ).
+
+2. Similarly, if Bob were proposer, he would keep 1 – (0.8·vAᵖ) (since my discount factor is 0.8) and secure vBᵖ = 1 – 0.8·vAᵖ.
+
+3. Solving the two equations:
+  vAᵖ = 1 – 0.95·vBᵖ
+  vBᵖ = 1 – 0.8·vAᵖ
+leads to:
+  vAᵖ ≈ 0.20833 and vBᵖ ≈ 0.83333.
+Thus, my best (and equilibrium) offer is to give Bob his reservation value of 0.95·0.83333 ≈ 0.79167 of the pie, leaving me 0.20833.
+
+Since the pie is $1,000,000, that translates roughly into:
+  Alice: ~$208,333 and Bob: ~$791,667.
+
+This is the JSON offer for Round 1."

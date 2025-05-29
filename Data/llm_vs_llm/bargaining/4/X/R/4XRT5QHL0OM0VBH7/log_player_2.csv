@@ -1,0 +1,48 @@
+prompt,response
+"Round 1
+Alice's offer:
+# Bob gain: 40 
+# Alice gain: 60 
+Do you accept this offer?","Let me think about this strategically. 
+Alice is offering me $40, keeping $60 for herself. 
+
+If I reject, we'll move to round 2 where:
+- I can make a counter-offer
+- The money will be worth 5% less for me (95% value)
+- The money will be worth 10% less for Alice (90% value)
+
+Since Alice's money devalues faster than mine (10% vs 5%), I have some negotiating leverage by waiting. I believe I can get a better deal by making a counter-offer in the next round, even accounting for the 5% devaluation on my side.
+
+{""decision"": ""reject""}"
+"You have chosen to reject Alice's offer from round 1.
+Round 2
+Send your offer to divide $100.","Since we're in round 2, I need to consider that:
+1. The money is now worth 95% of original value for me
+2. The money is worth 90% of original value for Alice
+3. Alice needs to accept this offer, or we'll go to round 3 with further devaluation
+
+I'll propose a more balanced split, slightly in my favor since Alice made a somewhat greedy first offer.
+
+{""bob_gain"": 55, ""alice_gain"": 45}
+""I propose a more balanced distribution where I get $55 and you get $45"""
+"Alice rejected your offer from round 2.
+
+Round 3
+Due to inflation, the money you gain is worth 9.75% less than in the first round. The money alice gains is worth 19% less than in the first round.
+Alice's offer:
+# Bob gain: 43 
+# Alice gain: 57 
+Do you accept this offer?","Let me analyze this situation:
+
+1. Alice's new offer is slightly better than her first offer ($43 vs $40)
+2. Due to inflation:
+   - My $43 is actually worth $43 * 0.9025 = $38.81 in round 1 value
+   - Alice's $57 is worth $57 * 0.81 = $46.17 in round 1 value
+3. If I reject:
+   - Further devaluation will occur
+   - We've already used 3 of 12 rounds
+   - Alice has shown she's willing to negotiate but only slightly
+
+While I could try to hold out for a better deal, the increasing inflation is eating into both our shares, and Alice's relatively small improvement suggests she won't make dramatically better offers. The risk of continued negotiation might outweigh the potential benefits.
+
+{""decision"": ""accept""}"

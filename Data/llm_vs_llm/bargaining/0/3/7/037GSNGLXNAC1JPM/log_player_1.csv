@@ -1,0 +1,84 @@
+prompt,response
+"Round 1
+Send your offer to divide $10,000 and a message to Bob.","Here's my offer for Round 1:
+
+```
+{
+  ""alice_gain"": 6000,
+  ""bob_gain"": 4000,
+  ""message"": ""Let's split it 60/40, a fair start!""
+}
+```"
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 20% less than in the first round. The money Bob gains is worth the same as in the first round.
+Bob's offer:
+# Bob's message: My turn, a bit more balanced! 
+# Alice gain: 4000 
+# Bob gain: 6000 
+Do you accept this offer?","Since the money I gain is worth 20% less, I need to consider that when making my decision.
+
+To calculate the value of the offer, I'll multiply my gain by 0.8 (1 - 0.20 inflation):
+
+4000 * 0.8 = 3200
+
+So, the offer is equivalent to me getting $3200 and Bob getting $6000.
+
+Considering this, my response is:
+
+{""decision"": ""reject""}"
+"You have chosen to reject Bob's offer from round 2.
+Round 3
+Send your offer to divide $10,000 and a message to Bob.","Since I rejected Bob's offer, it's my turn again. Due to inflation, the money I gain is now worth 20% * 2 = 40% less than in the first round (20% less in Round 2 and another 20% less in Round 3, but the initial reduction was from the original value, so it's cumulative: 1 - 0.2 = 0.8, then 0.8 - 0.2*0.8 = 0.8 - 0.16 = 0.64).
+
+To calculate the value of my offer, I'll consider this reduction.
+
+Here's my offer for Round 3:
+
+```
+{
+  ""alice_gain"": 5500,
+  ""bob_gain"": 4500,
+  ""message"": ""My turn again, a bit more generous!""
+}
+```
+
+Note that, due to inflation, the $5500 I'm offering myself is actually worth $5500 * 0.64 = $3520 to me."
+"Bob rejected your offer from round 3.
+
+Round 4
+Due to inflation, the money you gain is worth 48.8% less than in the first round. The money Bob gains is worth the same as in the first round.
+Bob's offer:
+# Bob's message: Getting closer to the end, time to get serious! 
+# Alice gain: 3500 
+# Bob gain: 6500 
+Do you accept this offer?","To calculate the value of the offer, I'll multiply my gain by the inflation factor (1 - 0.488 = 0.512).
+
+3500 * 0.512 = 1792
+
+So, the offer is equivalent to me getting $1792 and Bob getting $6500.
+
+Considering this, my response is:
+
+{""decision"": ""reject""}"
+"You have chosen to reject Bob's offer from round 4.
+Round 5
+Send your offer to divide $10,000 and a message to Bob.","Since I rejected Bob's offer, it's my turn again. Due to inflation, the money I gain is now worth 59.04% less than in the first round (calculated as 1 - 0.488 - 0.2 = 0.312 for the previous round, but since the initial reduction was from the original value, and then another 20% reduction: 0.512 * 0.8 = 0.4096, then 1 - 0.4096 = 0.5904).
+
+However, the correct way to calculate this is to multiply the previous inflation factor by 0.8 (1 - 0.2): 
+0.512 * 0.8 = 0.4096
+
+To calculate the value of my offer, I'll consider this reduction.
+
+Here's my offer for Round 5:
+
+```
+{
+  ""alice_gain"": 5000,
+  ""bob_gain"": 5000,
+  ""message"": ""Time to be fair, 50/50!""
+}
+```
+
+Note that, due to inflation, the $5000 I'm offering myself is actually worth $5000 * 0.4096 = $2048 to me."

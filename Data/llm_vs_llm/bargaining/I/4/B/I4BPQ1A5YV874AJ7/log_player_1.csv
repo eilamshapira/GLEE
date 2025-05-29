@@ -1,0 +1,74 @@
+prompt,response
+"Round 1
+Send your offer to divide $1,000,000.","Okay, here's my offer for Round 1:
+
+```json
+{
+  ""alice_gain"": 600000,
+  ""bob_gain"": 400000
+}
+```
+
+My reasoning: I'm starting with a proposal that favors me slightly, but still gives Bob a significant amount. This increases the chances of him accepting the offer early, preventing losses due to inflation."
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 10% less than in the first round. The money bob gains is worth 5% less than in the first round.
+Bob's offer:
+# Alice gain: 550000 
+# Bob gain: 450000 
+Do you accept this offer?","Okay, let's analyze this.
+
+*   **Bob's offer:** Alice gets $550,000, Bob gets $450,000.
+*   **My inflation:** My money is worth 10% less. So, $550,000 is actually worth $550,000 * 0.9 = $495,000 to me.
+*   **Bob's inflation:** Bob's money is worth 5% less. So, $450,000 is actually worth $450,000 * 0.95 = $427,500 to him.
+
+I will reject this offer because in the previous round I offered Bob $400,000, and if I reject this offer, the next round I can propose something better.
+
+```json
+{
+  ""decision"": ""reject""
+}
+```"
+"You have chosen to reject Bob's offer from round 2.
+Round 3
+Send your offer to divide $1,000,000.","Okay, time to make another offer, considering the inflation.
+
+```json
+{
+  ""alice_gain"": 570000,
+  ""bob_gain"": 430000
+}
+```
+
+Reasoning:
+
+*   I'm decreasing my demand from round 1 a bit more, hoping Bob sees this as a more reasonable offer.
+*   I need to factor in that my money is now worth 20% less than in round 1 and Bob's is worth 10% less.
+*   If Bob rejects this, the inflation will hurt us both more. I'm trying to find a balance to get this done."
+"Bob rejected your offer from round 3.
+
+Round 4
+Due to inflation, the money you gain is worth 27.1% less than in the first round. The money bob gains is worth 14.26% less than in the first round.
+Bob's offer:
+# Alice gain: 540000 
+# Bob gain: 460000 
+Do you accept this offer?","Okay, let's analyze this offer carefully.
+
+*   **Bob's offer:** Alice gets $540,000, Bob gets $460,000.
+*   **My inflation:** My money is worth 27.1% less. So, $540,000 is actually worth $540,000 * (1 - 0.271) = $540,000 * 0.729 = $393,660 to me.
+*   **Bob's inflation:** Bob's money is worth 14.26% less. So, $460,000 is actually worth $460,000 * (1 - 0.1426) = $460,000 * 0.8574 = $394,404 to him.
+
+While the offer *seems* decent, the inflation is really hurting me. Let me evaluate if there is a risk of me getting a worse offer next round if I reject:
+
+If I reject this offer, the next round my money will be worth 34.39% less, and Bob's money will be worth 19.95%. 
+
+The minimum amount I would accept is $350,000 after inflation.
+
+Therefore, I should accept this offer.
+
+```json
+{
+  ""decision"": ""accept""
+}
+```"

@@ -1,0 +1,40 @@
+prompt,response
+"Alice's offer: The product price will be $1,200,000. 
+You have three options:
+(1) Accept Alice's offer, and buy the product for $1,200,000
+(2) Reject Alice's offer and proceed to the next round, where you will send Alice a counteroffer
+(3) Buy the product from Jhon for $1,200,000","```json
+{""decision"": ""RejectOffer""} 
+```
+
+**Reasoning:**
+
+* Alice's offer is at your maximum price.  
+* You have no incentive to accept this offer, as you can get the product for the same price from John. 
+* Rejecting the offer allows you to try and negotiate a lower price with Alice. If that fails, you can always buy from John."
+"You chose to make a counteroffer to Alice.
+
+Send your counteroffer to Alice.","```json
+{""product_price"": 900000} 
+```
+
+**Reasoning:**
+
+* I'm starting with a counteroffer that's significantly lower than Alice's offer, but still higher than her likely minimum. 
+* This gives us room to negotiate and find a price that is mutually beneficial. 
+*  I'm hoping to save at least $300,000 from the original price."
+"Alice rejected your offer from round 2.
+
+Alice's offer: The product price will be $1,100,000. 
+You have three options:
+(1) Accept Alice's offer, and buy the product for $1,100,000
+(2) Reject Alice's offer and proceed to the next round, where you will send Alice a counteroffer
+(3) Buy the product from Jhon for $1,200,000","```json
+{""decision"": ""AcceptOffer""} 
+```
+
+**Reasoning:**
+
+* Alice's offer is lower than John's price, and still within my budget. 
+* Accepting the offer saves me $100,000 compared to buying from John. 
+* While I could potentially try to negotiate further, the risk of Alice rejecting my counteroffer and me ending up paying John's full price outweighs the potential savings."

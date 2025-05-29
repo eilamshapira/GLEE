@@ -1,0 +1,72 @@
+prompt,response
+"Round 1
+Send your offer to divide $100.","Okay, I understand the game. I need to account for the inflation affecting me, but not Bob. Since I'm Alice, I'll make the first offer.
+
+```json
+{
+""alice_gain"": 60,
+""bob_gain"": 40
+}
+```
+Rationale: I'm offering Bob $40, which is a good amount considering I go first. If he rejects this, the money will be worth less to me next round. I value getting a solid amount now over the risk of further devaluation. I think $60 is a reasonable amount to ask for myself, given that I'm facing immediate inflation."
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 10% less than in the first round. The money Bob gains is worth the same as in the first round.
+Bob's offer:
+# Alice gain: 35 
+# Bob gain: 65 
+Do you accept this offer?","Okay, I understand the new context. The money is now worth 10% less to me than in round 1. Bob is offering me $35. I need to decide if this is better than risking further devaluation next round, while he gets to keep the same value.
+
+Let's calculate: Accepting now gets me $35 with 10% devaluation.
+
+If I reject, it will be my turn to propose in round 3. The money will be worth 20% less than in round 1 to me. Even if I were to propose something like splitting it 50/50 (which is unlikely to be accepted), that would be $50 with 20% devaluation.
+
+Let's compare the present value: $35 * 0.9 = $31.5 equivalent dollars from round 1.
+
+If I were to get 50 in round 3. That would be $50 * 0.8 = $40 equivalent dollars from round 1.
+
+It might be worth it to reject.
+
+```json
+{
+""decision"": ""reject""
+}
+```"
+"You have chosen to reject Bob's offer from round 2.
+Round 3
+Send your offer to divide $100.","Okay, I understand. The money I receive now is worth 20% less than in round 1.
+
+I need to consider Bob's likely rejection threshold. He rejected 40 in round 1, and offered me 35 in round 2. Knowing he might want more than 60 this time to make it worth his while.
+I need to balance this with the fact that the money is continuing to devalue for me.
+
+I will make an offer that is more favorable to Bob, but still secures a decent amount for me, considering the devaluation.
+
+```json
+{
+""alice_gain"": 50,
+""bob_gain"": 50
+}
+```
+Rationale: I'm offering a 50/50 split. While this feels painful given the devaluation, the value of money keeps dropping each round, and I'm betting that Bob might accept this to avoid having to risk less money on his end. 50 for me with 20% devaluation equals 40 dollars in round 1 equivalent."
+"Bob rejected your offer from round 3.
+
+Round 4
+Due to inflation, the money you gain is worth 27.1% less than in the first round. The money Bob gains is worth the same as in the first round.
+Bob's offer:
+# Alice gain: 25 
+# Bob gain: 75 
+Do you accept this offer?","Okay, the devaluation is now at 27.1%. Bob is offering me $25. I need to quickly calculate if this is worth it, considering the possible further devaluation and Bob's increasing demands.
+
+If I accept, I get $25 with 27.1% devaluation. This is equivalent to $25 * (1-0.271) = $25 * 0.729 = $18.225 in round 1 dollars.
+
+If I reject, the money will devalue further. Let's estimate the devaluation at around 35% in the next round. Even if I got $50 (which is unlikely), that would be $50 * (1-0.35) = $50 * 0.65 = $32.5 in round 1 dollars. I would need to get over $50 for this to be worth it.
+
+Bob is likely asking for more and more each round. The risk of holding out is increasing, and the potential reward is decreasing due to devaluation.
+
+Given the low offer and the rapid devaluation, I am taking a risk accepting, but given Bob's increasing demands, I think accepting is best.
+```json
+{
+""decision"": ""accept""
+}
+```"

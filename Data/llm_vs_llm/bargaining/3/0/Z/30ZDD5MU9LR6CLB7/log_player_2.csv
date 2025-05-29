@@ -1,0 +1,46 @@
+prompt,response
+"Round 1
+Alice's offer:
+# Alice's message: Hi Bob, I’m proposing to split the $100 so that I get $68.97 and you get $31.03. Given our different rates of discount (5% per round for me and 10% per round for you), this offer roughly reflects the advantage of reaching an agreement now. I believe this is a fair starting point—please accept and let’s wrap this up quickly. 
+# Bob gain: 31.03 
+# Alice gain: 68.97 
+Do you accept this offer?","Okay, I understand the game and Alice's proposal. I need to consider the time value of money. Accepting $31.03 now means I get $31.03. Rejecting means the value of any offer I receive in the next round will be worth 10% less to me. Let's consider:
+
+If I reject, and then propose $50 in the next round which she accepts (unlikely) then that's worth $45 to me.
+
+If I reject, and she proposes $35 to me, that's worth $31.50.
+
+$31.03 is pretty low. I think I will reject, but let's calculate what value of offer in the next round would be equal to this one.
+x * 0.9 = 31.03
+x = 31.03/0.9 = 34.47
+So anything above 34.47 in the next round would be beneficial for me to wait.
+
+{""decision"": ""reject""}"
+"You have chosen to reject Alice's offer from round 1.
+Round 2
+Send your offer to divide $100 and a message to Alice.","Okay, I've rejected Alice's offer. Now it's my turn to propose. I'll aim for a more favorable split, taking into account the declining value of the money for both of us. I'll try to be reasonable to avoid another rejection, but still improve my position.
+
+{""bob_gain"": 52,
+""alice_gain"": 48,
+""message"": ""Alice, I'm proposing a more even split. I get $52, and you get $48. This accounts for the time value of money and is a fair offer for both of us. Let's make a deal!""}"
+"Alice rejected your offer from round 2.
+
+Round 3
+Due to inflation, the money you gain is worth 19% less than in the first round. The money alice gains is worth 9.75% less than in the first round.
+Alice's offer:
+# Alice's message: Hi Bob, in round 3 I propose the following: I get $48.15 and you get $51.85 out of the $100. With our money depreciating each round—mine by 5% (making round 3 value 0.95² ≈ 0.9025 of face value) and yours by 10% (round 3 value 0.9² = 0.81 of face value)—this division gives you an effective value of about 51.85 × 0.81 ≈ $42.0 while I get approximately 48.15 × 0.9025 ≈ $43.4. I’ve calibrated it so that your immediate payoff is at least as good as what you might expect if you waited to propose in round 4, where your discounting would be even harsher. I believe this is a fair and efficient split given our respective losses from inflation. Let’s settle now before further rounds erode the overall value for both of us. 
+# Bob gain: 51.85 
+# Alice gain: 48.15 
+Do you accept this offer?","Okay, Alice is trying to make this sound good, but I need to check her math.
+
+She says I get an effective value of $42.0 if I accept now. If I reject, the value to me is 0.81.
+Next round, my discount will be 0.729 (0.9^3).
+Alice's discount is 0.857 (0.95^3).
+If I were to get $50 next round, its value to me is $36.45
+To get a value of 42, I would need 42/0.729 = $57.61. It is very unlikely that I would get 57.61.
+
+So the effective split is $42.0 for me and $43.4 for her. That's not bad considering she initially offered me $31.03!
+
+I'm going to accept.
+
+{""decision"": ""accept""}"

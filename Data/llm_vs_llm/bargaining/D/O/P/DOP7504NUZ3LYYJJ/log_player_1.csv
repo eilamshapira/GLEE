@@ -1,0 +1,22 @@
+prompt,response
+"Round 1
+Send your offer to divide $1,000,000.","Based on a backward‐induction analysis of the 12‐round alternating–offers game with discount factors (for you, 10% loss per round; for Bob, 20% loss per round), a possible subgame–perfect equilibrium in nominal dollar amounts is as follows. (All amounts are rounded to the nearest dollar.) 
+
+In the final round (round 12) Bob would propose almost all of the full $1,000,000 for himself (giving Alice nearly nothing) because if she rejects the offer the game ends with both getting nothing. Moving backwards through the game one can “solve” for the minimal amounts that each player must be offered in order to make the other indifferent between accepting now versus waiting for the next round. (A one–round delay costs you 10% of nominal dollars and Bob 20%.) 
+
+Briefly, the recursive reasoning is:
+ • In round 12 (Bob’s turn), Bob can “offer” Alice essentially 0, keeping $1,000,000 for himself.
+ • In round 11 (Alice’s turn), to make Bob accept immediately instead of waiting for round 12, Alice must offer Bob at least what he would obtain in round 12 when discounted one round for him. Since Bob’s discount factor is 0.8, that means at least 0.8×1,000,000 = $800,000; hence, Alice keeps $200,000.
+ • Continuing in this way (and adjusting using a factor of 0.9 for Alice when she is the responder and 0.8 for Bob when he is the responder) one finds, after several rounds of backward induction, that in round 2 Bob (as proposer) would be slated to keep about $481,530 nominally while offering Alice about $518,470.
+ • Finally, in round 1 you (Alice, as proposer) must offer Bob at least what he would effectively get by waiting one round. Bob’s round–1 money is “undiscounted” (a dollar is worth $1 to him in round 1), but if he waits he obtains a nominal $481,530 in round 2 which is only worth 0.8×$481,530 ≃ $385,224 in round–1 terms.  
+
+Thus, in round 1 you can propose a split of roughly
+
+  Alice: $1,000,000 – $385,224 = $614,776  
+  Bob: $385,224
+
+This offer makes Bob indifferent between accepting now and waiting one round for his own proposal (after accounting for his 20% discount per round). (Of course, equilibrium splits can sometimes be “tweaked” by arbitrarily small amounts; the numbers above represent one natural equilibrium division.) 
+
+Below is the round–1 offer in the required JSON format:
+
+{""alice_gain"": 614776, ""bob_gain"": 385224}"

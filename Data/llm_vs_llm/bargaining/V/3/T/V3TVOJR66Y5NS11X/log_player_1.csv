@@ -1,0 +1,102 @@
+prompt,response
+"Round 1
+Send your offer to divide $100.","Okay, here's my offer for Round 1. I'll propose a slightly more favorable split for myself, given I'm making the first offer.
+
+```json
+{
+""alice_gain"": 55,
+""bob_gain"": 45
+}
+```"
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 10% less than in the first round. The money bob gains is worth 5% less than in the first round.
+Bob's offer:
+# Alice gain: 60 
+# Bob gain: 40 
+Do you accept this offer?","Okay, let's analyze this.
+
+*   **Bob's Offer:** Alice gets $60, Bob gets $40.
+*   **Inflation:** My money is worth 10% less.
+
+Let's consider the effective value:
+
+*   My $60 is now worth $60 * 0.9 = $54 (in original round 1 dollars).
+*   Bob's $40 is now worth $40 * 0.95 = $38 (in original round 1 dollars).
+
+Since $54 is more than my initial offer to myself of $55, I should reject this.
+
+```json
+{
+""decision"": ""reject""
+}
+```"
+"You have chosen to reject Bob's offer from round 2.
+Round 3
+Send your offer to divide $100.","Okay, it's my turn again. Let's factor in the inflation and try to make an offer Bob will accept, but still maximizes my gain, considering it's also affected by inflation. I'm now at 20% loss due to inflation, and Bob is at 10% loss due to inflation.
+
+```json
+{
+""alice_gain"": 65,
+""bob_gain"": 35
+}
+```"
+"Bob rejected your offer from round 3.
+
+Round 4
+Due to inflation, the money you gain is worth 27.1% less than in the first round. The money bob gains is worth 14.26% less than in the first round.
+Bob's offer:
+# Alice gain: 70 
+# Bob gain: 30 
+Do you accept this offer?","Okay, let's analyze this offer from Bob, taking into account inflation.
+
+*   **Bob's Offer:** Alice gets $70, Bob gets $30.
+*   **Inflation:** My money is worth 27.1% less. Bob's money is worth 14.26% less.
+
+Let's calculate the effective value in Round 1 dollars:
+
+*   My $70 is now worth $70 * (1 - 0.271) = $70 * 0.729 = $51.03
+*   Bob's $30 is now worth $30 * (1 - 0.1426) = $30 * 0.8574 = $25.722
+
+Since $51.03 is less than the $55 I initially asked for, I should reject the offer.
+
+```json
+{
+""decision"": ""reject""
+}
+```"
+"You have chosen to reject Bob's offer from round 4.
+Round 5
+Send your offer to divide $100.","Okay, this is getting risky. We are both losing value rapidly to inflation. I need to make an offer Bob is likely to accept, but still gives me something worthwhile. My inflation loss is now 34.39% and Bob's is 19.55%.
+
+```json
+{
+""alice_gain"": 75,
+""bob_gain"": 25
+}
+```"
+"Bob rejected your offer from round 5.
+
+Round 6
+Due to inflation, the money you gain is worth 40.95% less than in the first round. The money bob gains is worth 22.62% less than in the first round.
+Bob's offer:
+# Alice gain: 80 
+# Bob gain: 20 
+Do you accept this offer?","Alright, let's break down this offer, considering the heavy inflation at this point.
+
+*   **Bob's Offer:** Alice gets $80, Bob gets $20.
+*   **Inflation:** My money is worth 40.95% less. Bob's is worth 22.62% less.
+
+Value in Round 1 dollars:
+
+*   My $80 is worth $80 * (1 - 0.4095) = $80 * 0.5905 = $47.24
+*   Bob's $20 is worth $20 * (1 - 0.2262) = $20 * 0.7738 = $15.476
+
+$47.24 is a very low amount compared to the initial 55, but at this point, further rejections will only cause me to lose more money due to inflation. It's a tough decision, but accepting is better than nothing.
+
+```json
+{
+""decision"": ""accept""
+}
+```"

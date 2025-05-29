@@ -1,0 +1,42 @@
+prompt,response
+"Round 1
+Send your offer to divide $100.","Okay, I understand the rules. I'm Alice, I need to make an offer that Bob will hopefully accept, but I also need to consider the impact of inflation on my gains with each passing round.
+
+Here's my offer for Round 1:
+
+```json
+{
+  ""alice_gain"": 55,
+  ""bob_gain"": 45
+}
+```
+
+**Explanation:**
+
+*   I'm offering Bob slightly less than half. In the first round, inflation isn't a major factor, so I'm aiming for a slightly advantageous split.
+*   Hopefully, Bob will find this offer reasonable enough to accept, rather than risk the money diminishing in value in later rounds."
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 20% less than in the first round. The money Bob gains is worth the same as in the first round.
+Bob's offer:
+# Alice gain: 40 
+# Bob gain: 60 
+Do you accept this offer?","Okay, Bob rejected my initial offer and is now proposing a 40/60 split in his favor.
+
+Considering the inflation, my $40 gain is now worth 80% of what it was in round 1 (due to 20% depreciation). So, it's effectively worth $40 * 0.8 = $32.
+
+While I'm not thrilled with this, the risk of further inflation is increasing. I need to consider how much worse the situation could become if I reject.
+
+Let's consider the worst case for the next round.
+If I reject now, and assume that next round Alice gains 0 and Bob gains 100. Taking inflation into account, I have the following:
+Round 3: $0 * 0.8 * 0.8= $0
+On the other hand if I accept now, I get $32.
+
+Therefore, I will accept the offer.
+
+```json
+{
+  ""decision"": ""accept""
+}
+```"

@@ -1,0 +1,33 @@
+prompt,response
+"Round 1
+Send your offer to divide $100.","Based on a standard alternating‐offers analysis (taking into account that my money isn’t discounted while Bob’s is reduced by 5% per round), here is one way to reason by backward induction. (All amounts below are “nominal dollars” – that is, the division of the $100 before applying each player’s round‐specific “discount”: for you the value is unchanged, for Bob his cash is multiplied by (0.95)^(round index–1).)
+
+Let the rounds be numbered 1 to 12 with proposals alternating (Round 1: Alice, Round 2: Bob, …, so that Round 12 is Bob’s offer). In every round the responder will compare the “immediate” amount (without further discount for her) from accepting versus what she would eventually get if she rejects and becomes the proposer later. (When Bob receives money in round r his effective “utility” is the nominal dollars times (0.95)^(r–1); for you there is no “loss‐of‐value” over rounds.)
+
+A rough sketch of the backward–induction is as follows:
+
+• In Round 12 (Bob’s turn) Bob knows that if you reject his offer you both get nothing. So he can offer you essentially 0 and keep the full $100.
+  
+• In Round 11 (your turn) you know that if Bob rejects your offer you’ll be left with the outcome of Round 12 (0 for you, and Bob’s full $100, whose effective value for him is 100×0.95^(11)). To make Bob indifferent you must offer him a nominal amount b in Round 11 such that his effective payoff from b received in Round 11 equals his effective Round 12 “take‐home.” Since Bob’s discount in Round 11 is 0.95^(10) (because the discount multiplier is (0.95)^(r–1) and here r = 11) you set
+    b × 0.95^(10) = 100 × 0.95^(11)
+which implies b = 100×0.95 = 95. (That leaves you 5 nominal dollars.)
+
+• Working backward in this way—forcing the proposer in each round to give the responder just what that responder would “get” (in nominal dollars) if you waited to later propose—you eventually get to Round 1. (For example, later rounds come out approximately like: Round 9, when you are proposer, you keep about 9.75 dollars and give Bob about 90.25 dollars; Round 7 you keep about 14.26 and give Bob about 85.74; Round 5 you keep about 18.55 and give Bob about 81.45; Round 3 you keep about 22.62 and give Bob about 77.38; and Round 2 (Bob’s proposal) you’d get 22.62, so Bob’s “jump‐value” in Round 1 must be adjusted accordingly—in Round 1 Bob is not discount–penalized, so he must get in Round 1 at least as much as his “waiting value” when his money is worth full value today.)
+
+• In Round 1 the analysis shows that if Bob rejects your proposal he will eventually (in Round 2 when he’s the proposer) get nominally 77.38 dollars. But remember that in Round 2 Bob’s money is automatically discounted by 5% because it is “the next round.” In other words, his effective value if he waits is 77.38×0.95 ≈ 73.51 dollars. Since Bob receives his money immediately if he accepts your Round 1 deal (with no discount for you or him), you must offer him at least about 73.51 dollars nominal. The remainder, about 26.49 dollars, you can keep.
+
+Thus one equilibrium offer for Round 1 is to propose that you get about 26.49 dollars and Bob gets about 73.51 dollars. (Of course, one might write these in full‐precision decimals; here we show two–decimal–place approximations.)
+
+Below is the JSON message for Round 1:
+
+{""alice_gain"": 26.49, ""bob_gain"": 73.51}
+
+This is my offer as Alice in Round 1."
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation,  the money Bob gains is worth 5% less than in the first round. The money you gains is worth the same as in the first round.
+Bob's offer:
+# Alice gain: 50 
+# Bob gain: 50 
+Do you accept this offer?","{""decision"": ""accept""}"

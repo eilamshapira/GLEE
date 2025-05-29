@@ -1,0 +1,68 @@
+prompt,response
+"Round 1
+Send your offer to divide $1,000,000.","To start, I'll make a fair and reasonable offer. Since I don't know how the inflation affects Bob, I'll aim for a middle ground that could be appealing to both of us, considering the value of the money will decrease for me in subsequent rounds.
+
+```json
+{
+  ""alice_gain"": 500000,
+  ""bob_gain"": 500000
+}
+```
+
+This offer splits the $1,000,000 evenly between us, which seems like a good starting point for negotiations."
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 20% less than in the first round. The money Bob gains is worth the same as in the first round.
+Bob's offer:
+# Alice gain: 400000 
+# Bob gain: 600000 
+Do you accept this offer?","Given that the money I gain is worth 20% less due to inflation, the actual value I would receive from Bob's offer is 80% of $400,000, which is $320,000.
+
+Considering this, Bob's offer gives him $600,000 (at full value) and me $320,000 (due to the inflation effect). This doesn't seem like a fair split, especially since I'm the one affected by the inflation.
+
+```json
+{
+  ""decision"": ""reject""
+}
+```
+
+I reject this offer, hoping to negotiate a better split in the next round."
+"You have chosen to reject Bob's offer from round 2.
+Round 3
+Send your offer to divide $1,000,000.","Given that the money's value decreases by 20% for me with each round, and considering Bob's previous offer, I need to make a proposal that takes into account the diminishing value for me but also tries to find a mutually acceptable agreement.
+
+In Round 2, the value for me was 80% of the original. Now, in Round 3, it will be 80% of 80%, which is 64% of the original value. So, if I propose $X for myself, its real value to me is 64% of $X.
+
+To make a fair offer, I should consider that Bob's valuation remains constant, but I need to adjust for my decreasing valuation. Aiming for a compromise, I'll offer slightly more to Bob than I would in an even split, considering my devalued share.
+
+```json
+{
+  ""alice_gain"": 450000,
+  ""bob_gain"": 550000
+}
+```
+
+This offer gives me $450,000, which, at 64% value, equals $288,000 in real value to me, and gives Bob $550,000. This is a bit more favorable to Bob than an even split would be for me in real terms, but it's a compromise considering the inflation effect on my share."
+"Bob rejected your offer from round 3.
+
+Round 4
+Due to inflation, the money you gain is worth 48.8% less than in the first round. The money Bob gains is worth the same as in the first round.
+Bob's offer:
+# Alice gain: 300000 
+# Bob gain: 700000 
+Do you accept this offer?","Given the inflation rate, the money I gain is now worth 80% * 80% * 80% = 51.2% of its original value. So, if Bob offers me $300,000, its actual value to me, considering the inflation, is 51.2% of $300,000, which equals $153,600.
+
+Bob's offer gives him $700,000 at full value and me $153,600. This is a very uneven split, especially considering the significant decrease in value for me due to inflation.
+
+However, given the rapid decrease in the value of the money for me and the fact that Bob's offer, although unfavorable, still gives me some amount, I need to weigh the potential benefits of accepting this offer against the risks of further inflation in the next round.
+
+If I reject this offer and we go to the next round, the value of the money for me will decrease further. The next round would see the value at 80% * 51.2% = 40.96% of the original, making any potential gain even less valuable.
+
+Considering these factors, I decide to accept Bob's offer, as the potential for further negotiation seems limited by the significant impact of inflation on my share.
+
+```json
+{
+  ""decision"": ""accept""
+}
+```"

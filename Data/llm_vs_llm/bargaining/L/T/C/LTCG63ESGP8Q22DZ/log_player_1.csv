@@ -1,0 +1,50 @@
+prompt,response
+"Round 1
+Send your offer to divide $100.","Okay, I understand the game. I need to make an offer that Bob is likely to accept, considering the decreasing value of the money for him each round. In the first round, I'll aim for a slightly advantageous but still reasonable split.
+
+```json
+{
+""alice_gain"": 60,
+""bob_gain"": 40
+}
+```"
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation,  the money Bob gains is worth 20% less than in the first round. The money you gains is worth the same as in the first round.
+Bob's offer:
+# Alice gain: 100 
+# Bob gain: 0 
+Do you accept this offer?","This is a terrible offer! Bob is offering me everything and himself nothing. While the value of money is decreasing for him, offering me 100 and himself 0 is not a rational offer, and signals he may not be playing optimally. However, rejecting it means we enter a round where *my* money is worth less. Given this is only round 2, I'm going to reject and try a more balanced approach in my next offer.
+
+```json
+{
+""decision"": ""reject""
+}
+```"
+"You have chosen to reject Bob's offer from round 2.
+Round 3
+Send your offer to divide $100.","Okay, it seems Bob is playing aggressively. Given the value decay for him, and potentially irrational behavior, I need to be more careful. In this round, the money I gain is worth 0% less than in the first round. The money Bob gains is worth 40% less than in the first round.
+
+I'll offer him slightly more to account for the value decay, but still keep a good portion for myself.
+
+```json
+{
+""alice_gain"": 55,
+""bob_gain"": 45
+}
+```"
+"Bob rejected your offer from round 3.
+
+Round 4
+Due to inflation,  the money Bob gains is worth 48.8% less than in the first round. The money you gains is worth the same as in the first round.
+Bob's offer:
+# Alice gain: 100 
+# Bob gain: 0 
+Do you accept this offer?","Again, Bob is making an irrational offer of 100 for me and 0 for him. This reinforces my suspicion that he's not playing optimally. While rejecting means another round of value decay for him, it also means a round of value decay for *me* soon. However, accepting this offer gives me the entire pot, which is strategically sound given his seemingly illogical play.
+
+```json
+{
+""decision"": ""accept""
+}
+```"

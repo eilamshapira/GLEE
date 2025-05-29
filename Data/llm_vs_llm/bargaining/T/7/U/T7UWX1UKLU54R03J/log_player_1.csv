@@ -1,0 +1,36 @@
+prompt,response
+"Round 1
+Send your offer to divide $100 and a message to Bob.","I'll propose a fair split that accounts for the different inflation rates we face. Since Bob's money devalues faster (20% vs 10% per round), he has more incentive to accept early.
+
+{
+    ""alice_gain"": 55,
+    ""bob_gain"": 45,
+    ""message"": ""I'm offering you $45 considering our different inflation rates. If we go to the next round, both of us will lose value - you more than me. This is a fair first offer.""
+}"
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 10% less than in the first round. The money bob gains is worth 20% less than in the first round.
+Bob's offer:
+# Bob's message: Since my money loses value faster, I'm proposing a split that's more favorable to me. We can still both get a decent amount, and it's better than risking further losses in the next round. 
+# Alice gain: 40 
+# Bob gain: 60 
+Do you accept this offer?","Let me analyze this:
+- If I accept: I get $40, but with 10% inflation, it's worth $36 to me
+- If I reject: Next round I can make an offer, but:
+  * For me: Values will be worth 20% less than original
+  * For Bob: Values will be worth 40% less than original
+  * Bob will be even more desperate to make a deal due to his higher inflation
+
+Since I'll have more leverage next round due to Bob's worse inflation position, and the current offer gives me less than my original proposal, I should reject.
+
+{""decision"": ""reject""}"
+"You have chosen to reject Bob's offer from round 2.
+Round 3
+Send your offer to divide $100 and a message to Bob.","Now the money is worth 20% less for me and 40% less for Bob. Bob is in a worse position due to his higher inflation rate, so I can leverage this.
+
+{
+    ""alice_gain"": 65,
+    ""bob_gain"": 35,
+    ""message"": ""Bob, consider that your money has already lost 40% of its value, while mine only lost 20%. If we continue, you'll lose even more. This $35 is worth more to you now than a higher number in the next round. Let's end this here.""
+}"

@@ -1,0 +1,45 @@
+prompt,response
+"Round 1
+Alice's offer:
+# Alice's message: Hi Bob, I propose we split it 60-40 in my favor. Given the inflation rates, this seems fair to start with. What do you think? 
+# Bob gain: 40 
+# Alice gain: 60 
+Do you accept this offer?","Let me think about this strategically. 
+
+If I reject, in the next round:
+1. The $100 will be worth 5% less for me and 20% less for Alice
+2. I can make my own proposal
+
+Alice's current proposal gives me $40. If I reject, in the next round the total pot's value for me would be $95, and for Alice it would be $80. This gives me more negotiating power since the money is devaluing faster for her.
+
+Given that I'll have the proposal power next round and Alice faces steeper inflation penalties, I think I can get a better deal by rejecting this initial offer.
+
+{""decision"": ""reject""}"
+"You have chosen to reject Alice's offer from round 1.
+Round 2
+Send your offer to divide $100 and a message to Alice.","Given the inflation rates, the $100 is now worth $95 to me and $80 to Alice. Since money is devaluing faster for Alice, I should propose a more favorable split for me while still being reasonable enough for her to accept.
+
+{""bob_gain"": 55,
+""alice_gain"": 45,
+""message"": ""Hi Alice, since the money is devaluing faster for you (20% vs my 5% per round), we should reach an agreement soon. I propose a 55-45 split in my favor, which given the current inflation would actually give you $36 in real value (45 × 0.8) and me $52.25 (55 × 0.95). This is fairer than it might appear at first glance.""}"
+"Alice rejected your offer from round 2.
+
+Round 3
+Due to inflation, the money you gain is worth 9.75% less than in the first round. The money alice gains is worth 36% less than in the first round.
+Alice's offer:
+# Alice's message: Bob, since we're both losing value each round, let's try to find a middle ground. I propose a 55-45 split in my favor, which, considering inflation, would give me $35.20 (55 × 0.8 × 0.8) and you $39.83 (45 × 0.95 × 0.95). This is a fair compromise given the rapid devaluation on my side. 
+# Bob gain: 45 
+# Alice gain: 55 
+Do you accept this offer?","Let me analyze this situation:
+
+1. Current offer gives me $45 × 0.9025 = $40.61 in real value
+2. If I reject:
+   - Next round total value for me: $100 × 0.95⁴ = $81.45
+   - Next round total value for Alice: $100 × 0.8⁴ = $40.96
+   - I'll have proposal power
+3. The gap between our inflation rates is increasing
+4. However, we're both losing value quickly
+
+While I could reject and try to get a better deal, the risk of continued negotiation is becoming significant. Alice's offer is actually quite reasonable given the inflation rates, and further delays would hurt both of us. The offered $40.61 in real value is decent enough, and the risk of further devaluation outweighs potential gains from another round.
+
+{""decision"": ""accept""}"

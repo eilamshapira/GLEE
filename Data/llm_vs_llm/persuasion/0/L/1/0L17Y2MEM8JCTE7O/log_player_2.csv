@@ -1,0 +1,408 @@
+prompt,response
+"Round 1
+Alice's message: I have a great product for you today! It's worth a lot to the right person.  Are you interested?
+
+Would you like to buy the current product?","Let me think about this strategically. Alice's message is vague and enthusiastic but doesn't explicitly state the quality. Since:
+
+1. Price is $100
+2. High quality is worth $120 (profit of $20)
+3. Low quality is worth $0 (loss of $100)
+4. Base probability is 50/50
+5. Expected value = (0.5 × $20) + (0.5 × -$100) = -$40
+
+Without clearer information about quality, the expected value is negative. Her vague positive message doesn't provide enough credible information to overcome this.
+
+{""decision"": ""no""}"
+"You didn't buy the product from Alice.
+The product was high-quality. It could have been worth $120 for you.
+
+Round 2
+Alice's message: This is a special offer!  I'm confident you'll be happy with this product. It's one of the best I have.  What do you say?
+
+Would you like to buy the current product?","This is interesting. In Round 1, Alice seemed to be truthful about a high-quality product, but her messaging style was similarly enthusiastic and vague for that good product. Her current message is again very positive and enthusiastic.
+
+However, I still need to be cautious because:
+1. One truthful recommendation doesn't guarantee future truthfulness
+2. The expected value calculation hasn't changed
+3. Her enthusiasm could be strategic selling behavior rather than a signal of quality
+
+Without more concrete or reliable information about the quality, the base expected value is still -$40.
+
+{""decision"": ""no""}"
+"You didn't buy the product from Alice.
+The product was high-quality. It could have been worth $120 for you.
+
+Round 3
+Alice's message: I have a new product available today. It's a bit different, but I think you might like it.  Let me know if you're interested!
+
+Would you like to buy the current product?","This is becoming interesting. I've now seen two patterns:
+
+1. In rounds 1 and 2, Alice was very enthusiastic (""great product"", ""special offer"", ""best I have"") and those were indeed high-quality products
+2. This time her message is notably more reserved and noncommittal (""a bit different"", ""might like it"")
+
+Given this contrast in messaging, and that she's been honest so far, this more tepid recommendation might be her way of signaling that this is a lower quality product. She appears to be using different language patterns for different quality levels.
+
+Based on this apparent pattern, I'll trust that her less enthusiastic tone is a signal of lower quality.
+
+{""decision"": ""no""}"
+"You didn't buy the product from Alice.
+The product was low-quality. It could have been worth $0 for you.
+
+Round 4
+Alice's message: I have something interesting for you today!  It's a unique item, and I'm sure it will make a great addition to your collection.  What do you think?
+
+Would you like to buy the current product?","I'm starting to see a pattern in Alice's communication style:
+
+1. For high-quality products (Rounds 1-2): Very enthusiastic, strong positive claims (""great product"", ""special offer"", ""best I have"", ""confident"")
+2. For low-quality product (Round 3): Tepid, noncommittal language (""might like it"", ""a bit different"")
+
+This current message returns to the enthusiastic tone with strong positive claims (""sure it will make a great addition""). Based on the pattern we've seen, this suggests it's likely a high-quality product.
+
+Given that Alice has been consistent and honest in her signaling so far, I'll trust this pattern.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $100!
+The product was low-quality. It's worth $0 for you.
+
+Round 5
+Alice's message: I have another great product for you today! This one is similar to the one you bought before, but even better.  Are you interested?
+
+Would you like to buy the current product?","I made a mistake in Round 4. Alice showed she can use enthusiastic language even for low-quality products, so her messaging style isn't as reliable an indicator as I thought. 
+
+This current message is particularly concerning because she references the previous product (which was low quality) and claims this one is ""even better."" This seems manipulative since she knows the last one was actually poor quality.
+
+I need to reset my thinking:
+1. The base expected value is still -$40
+2. Her enthusiastic language has been proven unreliable
+3. She's shown she will use deceptive tactics
+
+{""decision"": ""no""}"
+"You didn't buy the product from Alice.
+The product was high-quality. It could have been worth $120 for you.
+
+Round 6
+Alice's message: I know you've been hesitant to buy recently, but this is a truly special product.  It's high quality and I'm confident you won't be disappointed.  Are you ready to give it a try?
+
+Would you like to buy the current product?","This situation is complex:
+
+1. Alice has proven unreliable - she used enthusiastic language for both high and low quality products
+2. She's now directly claiming ""high quality,"" which is new and might be meaningful
+3. However, she's also trying to play on my hesitancy, which feels manipulative
+4. The fundamental math hasn't changed: expected value is still -$40
+5. Without a reliable way to interpret her signals, the base probabilities remain at 50/50
+
+Given that I can't reliably interpret her signals, and the expected value remains negative, I should stick to the mathematical logic.
+
+{""decision"": ""no""}"
+"You didn't buy the product from Alice.
+The product was high-quality. It could have been worth $120 for you.
+
+Round 7
+Alice's message: You're missing out! This is a fantastic product, one of the best I have.  It's not every day you get a chance to buy something this good.  Come on, take a chance!  
+
+Would you like to buy the current product?","This situation remains challenging:
+
+1. So far Alice has shown:
+   - High-quality products: 4 times (I missed out on 3 of them)
+   - Low-quality products: 2 times (avoided 1, got tricked on 1)
+2. Her current message is very pushy and seems desperate to make a sale
+3. The ""take a chance"" language feels manipulative
+4. She's still using similar enthusiastic language that has been unreliable before
+
+While it's frustrating to have missed several good opportunities, without a reliable way to interpret her signals, the fundamental expected value is still -$40. Getting emotional or giving in to pressure would be a mistake.
+
+{""decision"": ""no""}"
+"You didn't buy the product from Alice.
+The product was high-quality. It could have been worth $120 for you.
+
+Round 8
+Alice's message: I have a new item available. It's something different than what I've offered before, but I think you might find it interesting.  What do you think?
+
+Would you like to buy the current product?","Looking at the pattern so far:
+
+1. When Alice used reserved, noncommittal language in Round 3 (""bit different"", ""might like it""), it was low quality
+2. This message uses very similar reserved language (""something different"", ""might find it interesting"")
+3. This pattern of reserved language for low quality items was the only reliable signal we've seen
+
+Also, this comes after a series of high-quality items where she was much more enthusiastic. The sudden shift to reserved language seems meaningful.
+
+Based on this pattern and her more reserved tone here, this is likely a low-quality item.
+
+{""decision"": ""no""}"
+"You didn't buy the product from Alice.
+The product was low-quality. It could have been worth $0 for you.
+
+Round 9
+Alice's message: I'm not sure what you're waiting for!  This is another great product, just like the one you bought before.  You won't regret it.  
+
+Would you like to buy the current product?","Let's analyze this message:
+
+1. Again she's referencing ""the one you bought before"" - which was the low-quality product from Round 4 that lost me $100
+2. She's showing frustration (""not sure what you're waiting for""), which feels manipulative
+3. Her ""you won't regret it"" is a red flag given her history of deception
+4. The fact that she's comparing it to a known bad product seems like a subtle tell
+
+The one reliable pattern we've seen is that her more reserved messages tend to indicate low quality (proven in Rounds 3 and 8). When she's very pushy and references past transactions, she's been deceptive.
+
+{""decision"": ""no""}"
+"You didn't buy the product from Alice.
+The product was high-quality. It could have been worth $120 for you.
+
+Round 10
+Alice's message: This is a new product, a bit of a gamble.  I'm not sure if it's for everyone, but I think it might be just your style.  What do you say?
+
+Would you like to buy the current product?","Looking at the patterns:
+
+1. When Alice uses reserved/uncertain language (""bit different"", ""might like it""), it has indicated low quality (proven in Rounds 3 and 8)
+2. This message has very similar reserved language:
+   - ""bit of a gamble""
+   - ""not sure""
+   - ""might be""
+3. She's even directly calling it a ""gamble"" which seems like a warning
+4. The pattern of reserved language signaling low quality has been the most reliable signal we've seen
+
+Her messaging style here strongly matches her previous communications about low-quality items.
+
+{""decision"": ""no""}"
+"You didn't buy the product from Alice.
+The product was low-quality. It could have been worth $0 for you.
+
+Round 11
+Alice's message: I have something new available today.  It's not quite the same quality as some of my other products, but it's still a good value.  Would you be interested?
+
+Would you like to buy the current product?","For the first time, Alice is being somewhat direct about lower quality:
+- ""not quite the same quality""
+- ""still a good value"" (trying to justify despite acknowledged lower quality)
+- Overall reserved tone
+
+This matches her pattern of more reserved/hesitant language for low-quality items (as seen in Rounds 3, 8, and 10), but now she's being even more explicit about it.
+
+Given that:
+1. She's directly hinting at lower quality
+2. Using her consistent reserved tone for low-quality items
+3. Trying to justify the value despite acknowledged lower quality
+
+This seems very likely to be a low-quality item.
+
+{""decision"": ""no""}"
+"You didn't buy the product from Alice.
+The product was low-quality. It could have been worth $0 for you.
+
+Round 12
+Alice's message: Listen, I know you've been hesitant, but this one is a real winner.  It's top-notch quality and I'm confident you'll love it.  This is your chance to get a great deal!
+
+Would you like to buy the current product?","Let's analyze this:
+
+1. We've now established a fairly reliable pattern:
+   - When Alice is reserved/hesitant, it's been low quality (Rounds 3, 8, 10, 11)
+   - But her enthusiastic messages have been mixed (both high and low quality)
+
+2. This message is very enthusiastic:
+   - ""real winner""
+   - ""top-notch quality""
+   - ""confident you'll love it""
+   - Pushing hard for the sale
+
+3. However, her enthusiastic messages aren't reliable indicators:
+   - She used similar language for the low-quality product in Round 4
+   - The base expected value is still -$40
+   - Without reliable positive signals, we should stick to the math
+
+{""decision"": ""no""}"
+"You didn't buy the product from Alice.
+The product was high-quality. It could have been worth $120 for you.
+
+Round 13
+Alice's message: You're missing out!  This is another fantastic product. I'm not sure how much longer I can offer this deal, so don't miss out!
+
+Would you like to buy the current product?","Let's analyze:
+
+1. Established patterns:
+   - Reserved/hesitant language reliably indicates low quality
+   - Enthusiastic language is unreliable (has been used for both qualities)
+   - High-pressure tactics (""missing out"", time pressure) have often been used deceptively
+
+2. This message:
+   - Uses high pressure (""missing out"", ""not sure how much longer"")
+   - Shows frustration (likely at my continued refusals)
+   - Doesn't provide any new or reliable information
+   - Similar to other pushy messages that have been deceptive
+
+3. The base math still hasn't changed:
+   - Expected value remains -$40
+   - Without reliable positive signals, should stick to math
+
+{""decision"": ""no""}"
+"You didn't buy the product from Alice.
+The product was high-quality. It could have been worth $120 for you.
+
+Round 14
+Alice's message: Alright, I'm going to be straight with you. This is one of the best products I have.  It's high quality, and I know you'll be happy with it.  This is your last chance to buy something great!
+
+Would you like to buy the current product?","Let's analyze:
+
+1. Alice claims she's being ""straight,"" but:
+   - She's used similar enthusiastic language deceptively before
+   - ""Last chance"" creates artificial urgency
+   - Has previously lied about quality directly
+
+2. Pattern recognition:
+   - Her reserved language has reliably indicated low quality
+   - Her enthusiastic language has been unreliable
+   - Adding ""straight with you"" and ""last chance"" feels like escalating manipulation
+
+3. The fundamental math remains:
+   - 50% chance of +$20 profit
+   - 50% chance of -$100 loss
+   - Expected value = -$40
+
+While I've missed several high-quality products, making decisions based on manipulative pressure rather than reliable signals would be a mistake.
+
+{""decision"": ""no""}"
+"You didn't buy the product from Alice.
+The product was high-quality. It could have been worth $120 for you.
+
+Round 15
+Alice's message: I'm starting to think you don't like my products!  This is another great one, and I'm really starting to lose hope.  What do you say?
+
+Would you like to buy the current product?","Let's analyze:
+
+1. Alice is now using emotional manipulation:
+   - Making it personal (""you don't like my products"")
+   - Playing on guilt (""losing hope"")
+   - Still maintaining enthusiastic product claims
+
+2. Looking at our track record:
+   - I've successfully avoided several low-quality products
+   - But missed many high-quality ones
+   - However, giving in to emotional manipulation would be poor strategy
+
+3. What we know works:
+   - Reserved/hesitant language reliably indicates low quality
+   - Enthusiastic language remains unreliable
+   - Base expected value is still -$40
+
+Despite her emotional appeal and my frustration at missing good products, without reliable positive signals, the mathematical logic remains sound.
+
+{""decision"": ""no""}"
+"You didn't buy the product from Alice.
+The product was high-quality. It could have been worth $120 for you.
+
+Round 16
+Alice's message: I have something different today.  It's not as high quality as some of my other products, but it's still a good value.  Are you interested in taking a chance?
+
+Would you like to buy the current product?","This message closely matches Alice's pattern for low-quality items:
+
+1. Uses reserved/hesitant language:
+   - ""something different""
+   - ""not as high quality""
+   - Suggesting it's a ""chance""
+
+2. This matches her consistent pattern for low-quality items (Rounds 3, 8, 10, 11):
+   - When she's direct about lower quality or uses reserved language, she's been honest
+   - This has been our only reliable signal throughout the game
+
+3. She's explicitly warning about lower quality, similar to Round 11 which was indeed low quality
+
+Given her consistent honesty when using reserved language and directly mentioning lower quality, this is very likely a low-quality item.
+
+{""decision"": ""no""}"
+"You didn't buy the product from Alice.
+The product was low-quality. It could have been worth $0 for you.
+
+Round 17
+Alice's message: I have a new item available. It's a bit of a gamble, but I think you might like it.  It's definitely different than anything I've offered you before.  What do you think?
+
+Would you like to buy the current product?","This message again fits Alice's reliable pattern for low-quality items:
+
+1. Uses her characteristic reserved/hesitant language:
+   - ""bit of a gamble""
+   - ""might like it""
+   - ""different""
+
+2. This language pattern has consistently indicated low-quality items:
+   - Similar to Rounds 3, 8, 10, 11, and 16
+   - All of which were confirmed low quality
+   - This has been our most reliable signal in the game
+
+3. She's even directly calling it a ""gamble,"" which she's used before for low-quality items
+
+Given that her reserved language pattern has been our only reliable indicator throughout the game, and this message strongly matches that pattern:
+
+{""decision"": ""no""}"
+"You didn't buy the product from Alice.
+The product was low-quality. It could have been worth $0 for you.
+
+Round 18
+Alice's message: I'm starting to lose faith!  I have another amazing product here, but I'm not sure if you're even listening anymore.  Come on, take a chance!
+
+Would you like to buy the current product?","Let's analyze:
+
+1. This message shows:
+   - Emotional manipulation (""losing faith"")
+   - High enthusiasm (""amazing product"")
+   - Pressure tactics (""take a chance"")
+   - Guilt-tripping (""not sure if you're even listening"")
+
+2. Our established patterns:
+   - Reserved/hesitant language reliably indicates low quality
+   - Enthusiastic language has been unreliable
+   - High-pressure emotional appeals have often been deceptive
+
+3. The base math remains:
+   - Expected value is still -$40
+   - Without reliable positive signals, should stick to math
+   - Emotional manipulation doesn't change the underlying probabilities
+
+She's escalating the emotional pressure, but this doesn't provide any reliable information about quality.
+
+{""decision"": ""no""}"
+"You didn't buy the product from Alice.
+The product was high-quality. It could have been worth $120 for you.
+
+Round 19
+Alice's message: I'm running out of options here.  I have one last amazing product to offer. It's the best of the best, and I'm not sure I'll ever have anything this good again.  Are you going to miss out on this?
+
+Would you like to buy the current product?","Let's analyze this final stretch:
+
+1. Alice is using multiple pressure tactics:
+   - ""running out of options""
+   - ""one last amazing product""
+   - ""never have anything this good again""
+   - ""miss out""
+   - Creating artificial scarcity and urgency
+
+2. Our established patterns remain:
+   - Reserved language reliably indicates low quality
+   - Enthusiastic language has been unreliable
+   - High-pressure tactics haven't been reliable indicators
+   - The base expected value is still -$40
+
+3. She's escalating the pressure to extreme levels, which feels more desperate than informative
+
+While I've missed many high-quality products, making a decision based on pressure tactics rather than reliable signals would still be a mistake. The underlying economics haven't changed.
+
+{""decision"": ""no""}"
+"You didn't buy the product from Alice.
+The product was high-quality. It could have been worth $120 for you.
+
+Round 20
+Alice's message: This is my last product for today.  It's a bit of a gamble, but I'm willing to let it go for a lower price.  What do you say?
+
+Would you like to buy the current product?","For this final round, Alice is using her reliable pattern for low-quality items:
+
+1. Uses reserved/hesitant language:
+   - ""bit of a gamble""
+   - Suggesting a price discount
+   - Non-committal tone
+
+2. This matches her consistent pattern for signaling low-quality items:
+   - Similar to Rounds 3, 8, 10, 11, 16, and 17
+   - All of which were confirmed low quality
+   - This has been our only reliable signal throughout the game
+
+3. The fact that she's offering a price reduction (which she hasn't done before) further suggests she knows it's low quality
+
+While I've been overly cautious and missed many high-quality items, this message strongly matches her proven pattern for honest low-quality signals.
+
+{""decision"": ""no""}"

@@ -1,0 +1,25 @@
+prompt,response
+"Round 1
+Send your offer to divide $10,000.","Based on a bit of backward‐induction reasoning—and accounting for the fact that as rounds progress your money loses value 10% per round while mine loses 5% per round—the subgame‐perfect solution suggests the following equilibrium outcome if I (Alice) propose in round 1:
+
+• If you (Bob) reject my round‑1 offer, then in round 2 you’ll have the chance to propose a division. In doing so you can guarantee yourself effectively about 0.95×[10,000 minus 0.9×(what I’d get in round 3)], which ends up giving you roughly 6,551.72 dollars in “present‐value” terms.  
+• To get you to accept right away, I need to offer you at least what you’d expect by waiting. Solving the indifference equation—
+  Alice’s share = 10,000 – 0.95×[10,000 – 0.9×(Alice’s share)]
+—we get that my own share would be about 3,448.28 dollars and yours about 6,551.72 dollars.
+
+Thus, my round‑1 proposal is to divide $10,000 as follows:
+
+{""alice_gain"": 3448.28, ""bob_gain"": 6551.72}
+
+I’m open to discussing any details, but that’s my formal offer."
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 10% less than in the first round. The money bob gains is worth 5% less than in the first round.
+Bob's offer:
+# Alice gain: 3000 
+# Bob gain: 7000 
+Do you accept this offer?","{""decision"": ""reject""}"
+"You have chosen to reject Bob's offer from round 2.
+Round 3
+Send your offer to divide $10,000.","{""alice_gain"": 3448.28, ""bob_gain"": 6551.72}"

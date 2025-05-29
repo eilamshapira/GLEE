@@ -1,0 +1,78 @@
+prompt,response
+"Round 1
+Send your offer to divide $1,000,000.","Based on a backward‐induction analysis of the game (taking into account that a delay hurts Bob much more than it does Alice), a subgame‐perfect equilibrium outcome is as follows. Working from the final round backward:
+
+• In round 12 Bob (as proposer) would offer Alice nothing (since her alternative is 0) and claim the entire $1,000,000 (whose worth for Bob would be discounted by 20% each round if we “roll back” to round 1).
+
+• In round 11 Alice (as proposer) would need to make Bob just as well‐off as his expected outcome in round 12. In round 11 Bob’s “threat” is to get the full $1,000,000 next round—which, coming one round later, is worth 80% of $1,000,000, i.e. $800,000 in round‑11 “nominal” dollars. So Alice would offer Bob about $800,000 and keep $200,000 in round 11.
+
+• In round 10 Bob is proposer. Were the offer rejected he would face round 11 where he’d receive $800,000 nominally as a responder (after Alice proposes) but, coming from round 10 to 11, his bargain is discounted by 20%. That means his “reservation payoff” in round 10 is 0.8×$800,000 = $640,000. In crafting his proposal in round 10 he would give Alice just enough so that, if she waited until round 11 (when her own discount is 5%), she would obtain 0.95×$200,000 = $190,000 in round‑10 terms. Thus Bob’s round‑10 proposal would be: Alice gets $190,000 and Bob gets $810,000.
+
+• Stepping backward similarly over rounds 9, 8, 7, 6, 5, 4, and 3 (always converting the “future offer” into current‐round dollars using the appropriate discount factors: 95% for Alice and 80% for Bob per round), one eventually finds that at round 2 (when Bob is the proposer) Alice’s reservation value (what she would get in round 3 as proposer, after a 5% discount) comes out to about $590,938 nominal dollars and Bob’s share would then be about $409,062.
+
+• Finally, in round 1 (with Alice as proposer), Bob’s “threat value” (what he would guarantee himself in round 2 as proposer, once discounted 20% from round 2 to round 1) is about 0.8×$409,062 ≈ $327,250. 
+
+Thus, in round 1 Alice can propose a division that leaves Bob with about $327,250 (which is just his reservation level) and keeps the remaining $672,750 for herself.
+
+So my round‑1 offer in JSON is:
+
+{""alice_gain"": 672750, ""bob_gain"": 327250}.
+
+This offer is designed to persuade Bob to accept immediately instead of rejecting and moving to round 2 (where the heavy 20% per round discount would reduce his value significantly)."
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 5% less than in the first round. The money bob gains is worth 20% less than in the first round.
+Bob's offer:
+# Alice gain: 350000 
+# Bob gain: 650000 
+Do you accept this offer?","{""decision"": ""reject""}
+
+Analysis:
+As Alice, I compare the current offer’s value—which is $350,000 received in round 2 (worth 95% of its nominal value, i.e. $332,500 in round‑1 terms)—to the expected outcome if I reject and wait for my proposal in round 3. Based on backward‐induction, my equilibrium “reservation value” (what I can secure as a proposer in round 3, adjusted for the extra 5% discount) is substantially higher (roughly equivalent to a nominal value near $590,938, which when discounted gives an effective value well above the current offer). Therefore, it is best for me to reject Bob’s round‑2 offer."
+"You have chosen to reject Bob's offer from round 2.
+Round 3
+Send your offer to divide $1,000,000.","{""alice_gain"": 622039, ""bob_gain"": 377961}
+
+Explanation:
+Working backwards from later rounds, if Bob rejects my Round‐3 proposal then in Round 4 he will be able to secure, as proposer, a nominal share of approximately 472,451 dollars. However, because of Bob’s 20% per‐round discount, in Round 3 that prospect is worth about 0.80 × 472,451 ≈ 377,961 dollars in nominal terms. Thus, to induce Bob to accept immediately in Round 3, I must offer him at least about 377,961 dollars. That leaves me with 1,000,000 − 377,961 = 622,039 nominal dollars.
+
+So my Round‑3 proposal is as given above."
+"Bob rejected your offer from round 3.
+
+Round 4
+Due to inflation, the money you gain is worth 14.26% less than in the first round. The money bob gains is worth 48.8% less than in the first round.
+Bob's offer:
+# Alice gain: 400000 
+# Bob gain: 600000 
+Do you accept this offer?","{""decision"": ""reject""}
+
+Explanation:
+At this stage each party’s pie is shrinking. In round 4, Bob’s offer gives me a nominal 400,000, which in round‑1 terms is only about 400,000 × 0.8574 ≈ 342,960. By rejecting, I will have the privilege of proposing in round 5. Even though further rounds reduce my share (via a 5% per‐round discount), the equilibrium analysis shows that—when I become proposer—the division will be structured so that my eventual share (converted to round‑1 value) exceeds roughly 340,000. In other words, my continuation (reservation) value is higher than the effective value of Bob’s current proposal. 
+
+Thus, it is optimal for me to reject Bob’s round‑4 offer."
+"You have chosen to reject Bob's offer from round 4.
+Round 5
+Send your offer to divide $1,000,000.","{""alice_gain"": 555315, ""bob_gain"": 444685}
+
+Explanation:
+We solve the subgame by backward induction. In each non‐final round the proposer can secure almost all of the pie by giving the responder just what she would get by rejecting—the responder’s “continuation” payoff in her next turn as proposer, discounted from that round’s perspective. (Alice’s money loses 5% per round and Bob’s loses 20% per round.) Working backwards from the final round (Round 12, where Bob as proposer would take the entire 1,000,000), we find:
+
+• Round 12 (Bob proposer): A12 = 1,000,000 for Bob; Alice gets 0.
+• Round 11 (Alice proposer): To induce Bob (whose payoff next round would be 1,000,000) to accept, Alice must offer him at least δ_B·A12 = 0.8×1,000,000 = 800,000. Thus, A11 = 1,000,000 − 800,000 = 200,000 for Alice.
+• Round 10 (Bob proposer): Responder (Alice) would get as proposer in Round 11 A11 = 200,000, but discounted by δ_A = 0.95: 0.95×200,000 = 190,000. So Bob’s equilibrium share is A10 = 1,000,000 − 190,000 = 810,000.
+• Round 9 (Alice proposer): Bob’s continuation value as proposer in Round 10 is A10 = 810,000, so discounting by Bob’s factor δ_B = 0.8 gives 0.8×810,000 = 648,000. Hence, A9 = 1,000,000 − 648,000 = 352,000 for Alice.
+• Round 8 (Bob proposer): Alice’s continuation if she rejects is A9 = 352,000 (as proposer in Round 9), discounted by δ_A = 0.95, so 0.95×352,000 = 334,400. Thus, A8 = 1,000,000 − 334,400 = 665,600.
+• Round 7 (Alice proposer): Bob’s continuation from Round 8 is A8 = 665,600, so with his discount factor δ_B = 0.8: 0.8×665,600 = 532,480. Then A7 = 1,000,000 − 532,480 = 467,520 for Alice.
+• Round 6 (Bob proposer): Alice’s continuation from Round 7 is A7 = 467,520, discounted by δ_A = 0.95: 0.95×467,520 = 444,144. Thus, A6 = 1,000,000 − 444,144 = 555,856.
+• Round 5 (Alice proposer, our current round): Bob’s continuation value if he rejects and becomes proposer in Round 6 is A6 = 555,856, but now discounted by his factor δ_B = 0.8: 0.8×555,856 = 444,684.8, approximately 444,685. Therefore, to secure Bob’s acceptance, I must offer him about 444,685, leaving me 1,000,000 − 444,685 = 555,315.
+
+Thus my round‐5 offer is as given in the JSON."
+"Bob rejected your offer from round 5.
+
+Round 6
+Due to inflation, the money you gain is worth 22.62% less than in the first round. The money bob gains is worth 67.23% less than in the first round.
+Bob's offer:
+# Alice gain: 530000 
+# Bob gain: 470000 
+Do you accept this offer?","{""decision"": ""accept""}"

@@ -1,0 +1,68 @@
+prompt,response
+"Round 1
+Send your offer to divide $10,000.","We can “solve” this kind of bargaining game by backward‐induction. (Of course, there are many subtleties when you work with continuous money splits and “just‐enough” offers, but we will follow a simplified reasoning.) Here is one way to think about it.
+
+Assume that if you get to propose in a given round you can “grab” almost the entire pot by offering your opponent only barely what they’d expect from waiting. (In fact, in the final round the proposer can offer the responder almost nothing—knowing that getting zero is as bad as waiting one more round where nothing is ever–better than nothing at all.)
+
+In our game the total “pie” is 10,000 dollars. However, each round “delays” Bob’s eventual good outcome: his money is “worth” 5% less each round, while your money is not devalued. (Thus, if nobody agrees until round 12, Bob’s money would be worth only about 45% of its nominal amount.)
+
+A backward‐induction analysis (starting from round 12 and “rolling back” to round 1) shows roughly the following equilibrium recommendation. For example, one may show that if the game reaches round 2 (with Bob to propose) Bob can secure an outcome where his “face‐value” share is about 6,774 dollars—but because round 2 already “penalizes” him 5% the value he’d feel is 6,774×0.95 ≈ 6,435. In an earlier round the proposer has to “save” the responder an amount equal to the responder’s discounted continuation value. (I won’t repeat every algebra step here, but you can check the rough numbers by thinking “if I reject, then in the next round I’d get at least X, so offer me X right now,” with Bob’s money losing 5% each extra round.)
+
+Because you (Alice) make the very first offer in round 1 (when Bob’s money is not devalued at all) you can “lock in” the split by offering Bob just what he’d get by waiting one round. In our approximate equilibrium this works out as follows:
+
+• If Bob rejects your round‑1 offer, then next round (round 2, with Bob as proposer) he would be able to guarantee himself (in face‐value dollars) roughly 6,774 dollars. But in round 2 his money is worth only 95% of its face value, so his continuation “value” would be 6,774×0.95 ≈ 6,435 dollars.
+ 
+• Thus, if you offer Bob about 6,435 dollars now (with no devaluation in round 1), he is exactly as well off accepting as he would be by waiting. To give him even the tiniest extra incentive to agree now, you might offer him a hair’s–breadth more than 6,435 dollars. (And remember: every extra dollar you give him is one fewer dollar you get.)
+
+Therefore, your optimal round‑1 proposal is to offer Bob nearly 6,435 dollars (rounding as needed) and keep the rest for yourself. One very natural (and nearly “perfect‐equilibrium”) proposal is
+
+  {""alice_gain"": 3564, ""bob_gain"": 6436}
+
+(this splits 10,000 as 3,564 for you and 6,436 for Bob). Under this equilibrium reasoning, Bob should accept rather than wait another round with his money “losing” 5% per round.
+
+I now submit the above JSON offer as your round‑1 proposal."
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation,  the money Bob gains is worth 5% less than in the first round. The money you gains is worth the same as in the first round.
+Bob's offer:
+# Alice gain: 5000 
+# Bob gain: 5000 
+Do you accept this offer?","Based on backward‐induction reasoning it turns out that, as the responder in round 2, I (Alice) have an option value that exceeds the 5,000 dollars offered. (Remember: In any round the responder can reject the current proposal and become the proposer on the next round, and for me that means my money’s full value isn’t being eroded by inflation. In contrast, Bob’s continuation value drops by 5% in every later round.) 
+
+Our earlier (approximate) analysis of the equilibrium in round 1 showed that the proposer (Alice) could have secured about 3,564 dollars and leave Bob just his “continuation value” amount of roughly 6,436 dollars (in nominal terms) – and the numbers work out so that the responder is exactly indifferent if offered that amount. Now, in round 2 Bob is the proposer but his share is discounted by 5% (so he “cares” less about face‐value dollars). This generally lets the future proposer (me in round 3 if I reject now) extract a significantly better deal than 5,000 dollars. 
+
+In other words, by rejecting Bob’s round‑2 offer, on round 3 I can propose a split that protects Bob’s already-discounted future gain (which will be even lower in nominal terms) while allowing me to increase my share above the offered 5,000 dollars. 
+
+Thus, I would prefer to reject this offer.
+
+{""decision"": ""reject""}"
+"You have chosen to reject Bob's offer from round 2.
+Round 3
+Send your offer to divide $10,000.","Based on the backwards‐induction reasoning—and now that Bob’s “clock” has ticked further so his money is worth only 90% (instead of 100% in round 1) if he accepts an offer now—I can improve my share relative to what I was forced to concede in round 1. In round 3 if Bob rejects, he’ll get to be the proposer in round 4 but his winnings would then be devalued by 15% (since in round 4 his dollars count for only 85% of “first‑round dollars”). Working “backwards” one may show that Bob’s reservation value (that is, the effective value he can guarantee for himself by waiting) in round 3 is roughly 5,758 (in first‑round dollars). But if Bob accepts an offer in round 3, his nominal dollars count only 90% of their face value; hence, to give him an effective value equal to his continuation value, I must offer him a nominal amount Y satisfying
+
+  0.90×Y ≈ 5,758  ⇒  Y ≈ 5,758/0.90 ≈ 6,398.
+
+Since the pie is still 10,000 nominal dollars, I then keep
+
+  10,000 – 6,398 ≈ 3,602.
+
+Thus, my round‑3 proposal is to offer Bob 6,398 and to keep 3,602 for myself. (Any offer even “microscopically” favoring Bob over his reservation value would be acceptable—but this is the “knife‐edge” proposal that leaves him just indifferent.)
+
+I now submit the following JSON offer for round 3:
+
+{""alice_gain"": 3602, ""bob_gain"": 6398}"
+"Bob rejected your offer from round 3.
+
+Round 4
+Due to inflation,  the money Bob gains is worth 14.26% less than in the first round. The money you gains is worth the same as in the first round.
+Bob's offer:
+# Alice gain: 4500 
+# Bob gain: 5500 
+Do you accept this offer?","Given the deterioration for Bob with each additional round, you as Alice stand to improve your position as the proposer if you wait. However, note that in round 4 Bob’s offer gives you 4,500 dollars immediately without any discount on your side, whereas if you reject you would merely become the proposer in round 5. In round 5 Bob’s money would be discounted even further (roughly 18.55% less than its first‑round value), which means that while you could push Bob’s reservation value even lower as the proposer and claim a larger nominal share for yourself, the improvement in your payoff comes only gradually. Our earlier equilibrium computations in earlier rounds (e.g. round 3) show that as the proposer you were able to secure around 3,600 dollars when Bob’s discount was less severe. With Bob’s discount set to about 81.45% (i.e. 18.55% loss) in round 5, the “pie‑splitting” equilibrium shifts further in your favor, but not dramatically enough to push your expected nominal gain well above 4,500 dollars. 
+
+In other words, by accepting 4,500 dollars now you secure a solid outcome. Waiting to propose in round 5 might allow you to obtain somewhat more, but the improvement is marginal and comes with additional delay (even though your money is not discounted, additional rounds risk miscoordination or further strategic concessions by Bob). 
+
+Thus, it is optimal for you to accept Bob’s round‑4 offer:
+
+{""decision"": ""accept""}"

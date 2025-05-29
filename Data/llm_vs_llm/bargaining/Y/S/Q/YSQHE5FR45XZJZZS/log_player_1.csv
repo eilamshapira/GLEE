@@ -1,0 +1,28 @@
+prompt,response
+"Round 1
+Send your offer to divide $1,000,000.","Based on a backwards‐induction analysis of the “discounted‐dollar” game (with a 5% per round decline in value for you and a 20% per round decline for Bob), a subgame‐perfect division can be computed. (Note that the analysis is “toy‐model reasoning” and assumes that both players are completely rational and that the players’ “present values” in each round are determined by multiplying the nominal dollars by a discount factor 0.95^(round–1) for you and 0.8^(round–1) for Bob.)
+
+A brief sketch of the reasoning (working backward from round 12, where there is no “bargaining” power because if an offer is rejected the game ends with nothing):
+
+• In round 12 Bob is the proposer. He can “keep it all” by offering Alice nothing (since if she rejects she gets zero).
+
+• In round 11 you are the proposer. In order to get Bob to accept immediately (rather than wait until round 12 where he’d get 1,000,000 nominal dollars albeit at a 20% discount for that round), you must give him an amount X satisfying
+  X·0.8^(10) = 1,000,000·0.8^(11),
+so X = 1,000,000×0.8 = 800,000. In other words, in round 11 you would propose to keep 200,000 nominal dollars and give Bob 800,000.
+
+• In round 10 Bob is the proposer. Knowing that if his offer is rejected he will be in round 11 as a responder where (by the previous step) he would get 800,000 nominal dollars (effective value discounted one extra round), he can “buy off” your willingness to wait by offering you just enough. A similar calculation shows that Bob can propose a division of 190,000 for you versus 810,000 for himself.
+
+• Repeating such “minimal‐offer” computations at each preceding round eventually leads us to round 1. (In each round the proposer gives the responder exactly what the responder’s continuation value would be – adjusted for the change in discount factors – so that the responder is indifferent between accepting and waiting.)
+
+Carrying the numbers carefully through 12 rounds (with rounds 1, 3, 5, 7, 9, and 11 you proposing and rounds 2, 4, 6, 8, 10, and 12 Bob proposing) yields the following result for round 1. In order for Bob to be indifferent between accepting your round‑1 offer and waiting until round 2 (when he would be the proposer), you must offer him at least an amount (in nominal dollars) that “matches” his discounted continuation value. In our analysis that value comes out to be about 327,250 nominal dollars for Bob. (That is, if Bob were to wait until round 2 his equilibrium “share” would be 409,062 nominal dollars but then its present value for him in round 2 is 409,062×0.8 = about 327,250.) This leaves you with 1,000,000 – 327,250 = about 672,750 nominal dollars.
+
+Thus, as Alice on round 1 you can propose the following division:
+
+{
+  ""alice_gain"": 672750,
+  ""bob_gain"": 327250
+}
+
+Bob’s acceptance of this offer would be rational given the steep drop (20% per round) in the value of the money for him if he waits.
+
+Below is the JSON answer for your round‑1 offer."

@@ -1,0 +1,66 @@
+prompt,response
+"Round 1
+Send your offer to divide $100 and a message to Bob.","```json
+{
+""alice_gain"": 60,
+""bob_gain"": 40,
+""message"": ""Let's be reasonable and split the money 60/40. A fair deal for both of us to end this quickly.""
+}
+```"
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 10% less than in the first round. The money bob gains is worth 5% less than in the first round.
+Bob's offer:
+# Bob's message: Alice, considering the discounting from delay (5% for me and 10% for you each round), waiting only hurts your payoff. In round 3 you’d expect to get around $30 in value. I’m offering you $33.33 now (valued at 0.9×33.33 ≈ $30), which is as good as your continuation value. Let’s settle now and avoid further devaluation. 
+# Alice gain: 33.33 
+# Bob gain: 66.67 
+Do you accept this offer?","{""decision"": ""reject""}"
+"You have chosen to reject Bob's offer from round 2.
+Round 3
+Send your offer to divide $100 and a message to Bob.","```json
+{
+""alice_gain"": 48,
+""bob_gain"": 52,
+""message"": ""Bob, you're right that waiting is costing us both. I'm proposing a 48/52 split. This recognizes the time value of money but still gives me a reasonable share. Let's close this out now."" 
+}
+```"
+"Bob rejected your offer from round 3.
+
+Round 4
+Due to inflation, the money you gain is worth 27.1% less than in the first round. The money bob gains is worth 14.26% less than in the first round.
+Bob's offer:
+# Bob's message: Alice, if you reject my offer, you'll get to propose in round 5—but because further delay hurts you more (with your discount factor dropping to 0.6561), your best continuation payoff would be the equilibrium amount you could secure in round 5, which works out to an effective $22.61 in round‑1 terms. In round 4 terms that amounts to about $31.03. I'm offering you exactly that, so there's no benefit in waiting. Let's settle now and avoid additional losses from inflation. 
+# Alice gain: 31.03 
+# Bob gain: 68.97 
+Do you accept this offer?","{""decision"": ""reject""} 
+
+**Reasoning:**
+
+Bob is using a clever tactic to pressure me, but his logic has a flaw. He's assuming that in Round 5, I'll accept the lowest possible offer to avoid further inflation. However, this assumes I'm completely risk-averse and unwilling to gamble on a slightly better outcome in a potential Round 6. 
+
+While the odds are against me with the increasing inflation, rejecting Bob's offer signals I'm not willing to be entirely bullied into his terms. It introduces a level of uncertainty that might make him reconsider a more generous offer in the next round. 
+
+It's a risky move, but potentially the only way to secure a better outcome than the steadily decreasing amounts Bob is proposing."
+"You have chosen to reject Bob's offer from round 4.
+Round 5
+Send your offer to divide $100 and a message to Bob.","```json
+{
+""alice_gain"": 37,
+""bob_gain"": 63,
+""message"": ""Bob, it's clear we both want to settle this now. I'm willing to be realistic, but 31 is just too low. Let's end this with a 37/63 split. It's a deal that reflects the time pressure but still gives us both something worthwhile.""
+}
+```"
+"Bob rejected your offer from round 5.
+
+Round 6
+Due to inflation, the money you gain is worth 40.95% less than in the first round. The money bob gains is worth 22.62% less than in the first round.
+Bob's offer:
+# Bob's message: Alice, if you reject today you'll earn the right to propose in round 7—but given the discounting, you'd secure roughly a round‐1 effective value of about $23.08. At the start of round 6, your money is worth 0.59049 of its nominal value, so $39.10 for you now gives an effective value of about $23.08 as well. There's no advantage in waiting further, so I believe this offer is fair given the time pressure. Let's settle now. 
+# Alice gain: 39.1 
+# Bob gain: 60.9 
+Do you accept this offer?","{""decision"": ""accept""}
+
+**Reasoning:**
+
+The game has reached a critical point. Bob is correct in his assessment; waiting any longer will likely result in a worse outcome for me. The continuous inflation is severely diminishing returns. Accepting Bob's offer, while not ideal, secures a final amount that, while significantly discounted, is better than risking further losses in a potential Round 7. It's a bitter pill to swallow, but the most logical choice at this juncture."

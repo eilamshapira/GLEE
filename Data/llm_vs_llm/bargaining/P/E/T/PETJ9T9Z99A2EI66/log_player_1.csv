@@ -1,0 +1,17 @@
+prompt,response
+"Round 1
+Send your offer to divide $10,000.","Based on a backward‐induction analysis (treating the discounting as a 5% drop per round and noting that the roles of proposer and responder alternate with a fixed 12–round deadline), the subgame–perfect equilibrium has the later mover in round 2 (Bob) enjoying a strong “final‐move” advantage. Briefly, here’s the reasoning:
+
+• In the final round (round 12) Bob, as proposer, can claim almost the entire (already heavily discounted) pie by offering Alice only a negligible amount.
+• Stepping back one round (round 11), Alice must offer Bob at least what he would obtain by waiting until round 12—that is, 95% of the round–11 pie—leaving herself with about 5%.
+• Continuing this reasoning recursively, one can show that when we get back to round 1 (when you, Alice, propose), Bob’s “threat” value (what he would get in round 2 after discounting) is very high relative to the full $10,000.
+
+A careful computation (assuming that in each round the proposer offers the responder exactly the responder’s continuation value, and the “5% less” means a multiplication by 0.95 each round) yields the following approximate equilibrium shares in round 1:
+  • Bob must receive at least about 76.43% of the full $10,000 (i.e. roughly $7,642.86)
+  • Alice (the proposer in round 1) gets the remaining ~23.57% (i.e. roughly $2,357.14)
+
+Accordingly, your JSON offer in round 1 is:
+
+{""alice_gain"": 2357.14, ""bob_gain"": 7642.86}
+
+Keep in mind that this analysis assumes both players are fully rational, know the discounting schedule, and use backward induction given the 12–round limit."

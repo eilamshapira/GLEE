@@ -1,0 +1,15 @@
+prompt,response
+"Round 1
+Send your offer to divide $100.","Based on backward‐induction reasoning under discounting—where your money (Alice’s) does not lose value over rounds while Bob’s does at 20% per round—we can determine the equilibrium outcome. In summary:
+
+• In round 12 (if reached), Bob (as proposer) would offer {""alice_gain"": 0, ""bob_gain"": 100} (since rejection by Alice means nothing).
+
+• Backing up one round: In round 11, you (Alice, as proposer) must offer Bob at least what he’d get in round 12 if he were to reject. Since Bob’s future $100 is worth only 0.8×100 = 80 in round‑11 terms, your offer in round 11 would be {""alice_gain"": 20, ""bob_gain"": 80}.
+
+• Continuing this logic round‐by‐round, we eventually reach round 1 where you propose first. At round 1 Bob’s rejection “threat” is his continuation value from round 2. Calculating through the sequence (and noting that each delay reduces Bob’s value by a factor of 0.8 per round while your value remains undiminished) we find that in round 1 Bob would expect to get about 26.2144 dollars if he rejects.
+
+Thus, in equilibrium in round 1 your proposal only needs to offer Bob at least approximately 26.21 dollars so that he is indifferent (and will accept). Consequently, you can keep about 73.79 dollars.
+
+Here is the JSON offer for round 1:
+
+{""alice_gain"": 73.79, ""bob_gain"": 26.21}"

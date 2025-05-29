@@ -1,0 +1,14 @@
+prompt,response
+"Round 1
+Send your offer to divide $100.","Based on backward‐induction reasoning—with the players’ value “discounts” per round taken into account (for me, a 20% reduction each round; for Bob, a 5% reduction)—a subgame‐perfect equilibrium proposal in round 1 is to offer Bob just enough so that he is indifferent between accepting my proposal now or waiting for the next round. Here’s a brief sketch of the reasoning (working “backward” from the final round):
+
+1. In round 12 the proposer (whoever it is) can offer the other almost nothing (since if the other rejects, both get $0). In equilibrium the proposer claims almost all the $100 in that round.
+2. In round 11 the proposer must offer the responder an amount equal to what the responder could guarantee as proposer in round 12. Since if Bob is the responder in round 11 he would become proposer in round 12, and his discount factor from round 11 to round 12 is 0.95, his “continuation value” is approximately 100 × 0.95 = 95 (in nominal dollars from the perspective of round 11).
+3. Working backward with alternating roles—and taking into account that my discount factor is 0.80 per round while Bob’s is 0.95—we eventually determine that if I am the proposer in round 1, Bob’s continuation value (if he rejects and becomes proposer in round 2) translates into about 83.18 (in round-1 dollars). (The full chain of calculations runs roughly as follows:  
+ – Round 2 (Bob proposer): Bob would secure ~87.56 by offering Alice just enough so that after a 20% discount her future payoff is comparable to what she’d get if she waited (≈12.44),  
+ – Round 1 (Alice proposer): Bob’s “threat” value is then 87.56 × 0.95 ≈ 83.18.)
+4. Therefore, in round 1 I have an incentive to “keep” 100 − 83.18 ≈ 16.82 for myself and offer Bob 83.18.
+
+Thus, in JSON my round 1 proposal is:
+
+{""alice_gain"": 16.82, ""bob_gain"": 83.18}"

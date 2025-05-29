@@ -1,0 +1,89 @@
+prompt,response
+"Round 1
+Send your offer to divide $1,000,000.","Okay, I understand the game. I need to make a proposal that Bob is likely to accept, considering the declining value of the money for both of us. Here's my proposal:
+
+```json
+{
+  ""alice_gain"": 550000,
+  ""bob_gain"": 450000
+}
+```
+
+**Explanation:**
+
+*   **Why this split?** I'm proposing a split where I get slightly more than half, but I need to consider Bob's perspective. If he rejects, the value of his share decreases by 5%, whereas my share decreases by 10%.
+*   **Bob's Incentive:** I want to offer Bob enough that he feels it's worthwhile to accept the offer *now* rather than risk a lower payout in the next round due to inflation. Even with the inflation difference, I believe he'll consider the offer.
+
+I'm ready to send this."
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 10% less than in the first round. The money bob gains is worth 5% less than in the first round.
+Bob's offer:
+# Alice gain: 475000 
+# Bob gain: 525000 
+Do you accept this offer?","Okay, let's analyze Bob's offer. Here's my thought process:
+
+*   **My Current Value:** My share would be 475,000, but this is only worth 90% of the original value due to inflation. So, the effective value to me is 475,000 * 0.9 = $427,500.
+
+*   **Bob's Current Value:** Bob's share would be 525,000, but this is only worth 95% of the original value due to inflation. So, the effective value to him is 525,000 * 0.95 = $498,750.
+
+*   **Decision:** Is $427,500 a good enough outcome for me? It's less than my initial proposal, but rejecting means further losses next round. Also, the difference between our losses increased; it's still not high enough for the difference in inflation rates.
+
+```json
+{
+""decision"": ""reject""
+}
+```"
+"You have chosen to reject Bob's offer from round 2.
+Round 3
+Send your offer to divide $1,000,000.","Alright, time to adjust my strategy. I need to be more aggressive, considering the continued inflation.
+
+*   **My Previous Rejection:** I rejected Bob's $475,000 offer (worth $427,500 to me). He knows I value the money, and I need to make him think I'm willing to walk away.
+
+*   **Inflation Impact:** My money is now worth only 81% (90% of 90%) of the original value, and Bob's is worth 90.25% (95% of 95%). This gap is growing.
+
+*   **My Strategy:** I'm going to offer Bob *just* enough to make him think it's better than the alternative, given the inflation he's facing.
+
+Here's my offer:
+
+```json
+{
+  ""alice_gain"": 600000,
+  ""bob_gain"": 400000
+}
+```
+
+**Explanation:**
+
+*   **Why 60/40?** This is a significant shift. I'm taking a bigger chunk to compensate for the faster depreciation of my money.
+*   **Bob's Perspective:** $400,000 is only worth $361,000 to him now. This is a considerable drop from the initial value. However, if he rejects, his share will be worth even less in the next round. He faces another 5% inflation hit. He is now far from even getting half of the original amount, and might think that continuing to play might give me the upper hand.
+*   **Risk:** This is a risky offer. Bob might be stubborn and reject it. However, I believe the increasing impact of inflation on his share makes this a more compelling offer than it appears at first glance.
+
+I'm ready to send this."
+"Bob rejected your offer from round 3.
+
+Round 4
+Due to inflation, the money you gain is worth 27.1% less than in the first round. The money bob gains is worth 14.26% less than in the first round.
+Bob's offer:
+# Alice gain: 420000 
+# Bob gain: 580000 
+Do you accept this offer?","Okay, this is getting tense. Let's break down the current situation:
+
+*   **My Current Value:** Alice's gain: 420,000 * (1 - 0.271) = 420,000 * 0.729 = $306,180
+*   **Bob's Current Value:** Bob's gain: 580,000 * (1 - 0.1426) = 580,000 * 0.8574 = $497,292
+
+*   **Analysis:** Bob is still trying to hold on to a larger share, but the real value is getting lower with each round. My initial instinct is to reject it and force him to offer more. However, the percentage difference in losses is now significantly in my favor.
+
+*   **The Key Consideration:** Another rejection means the value of money for both of us will continue to decline, but I lose 10% of 72.9% and Bob loses 5% of 85.74%
+
+Let's Calculate the next stage:
+* Alice will lose 7.29%, while Bob will lose 4.287%
+
+This has given me the edge in losses.
+
+```json
+{
+""decision"": ""accept""
+}
+```"

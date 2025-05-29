@@ -1,0 +1,17 @@
+prompt,response
+"Round 1
+Send your offer to divide $1,000,000.","Based on a standard alternating‐offers analysis with a 10% “discount” each round and 12 rounds available, one can work backward from the final round. (In round 12 the proposer—the player with the move—can claim nearly the entire pie because if the offer is rejected, both get nothing.) For example, here’s a sketch of the backward‐induction reasoning:
+
+• In round 12 the proposer can offer the other an amount arbitrarily close to zero and keep nearly 100% of the available money (which is 1,000,000·0.9^(11) ≈ 313,810.60 dollars).
+
+• In round 11 (with total ≈1,000,000·0.9^(10) ≈ 348,678.44 dollars) the proposer (Alice) must give Bob at least what he would get by waiting (≈313,810.60 dollars). Thus, in round 11 an equilibrium division is roughly: Alice gets 348,678.44 – 313,810.60 ≈ 34,867.84 dollars and Bob 313,810.60 dollars.
+
+• In round 10 (with total ≈387,420.49 dollars) Bob is the proposer. He must offer Alice at least her continuation value (about 34,867.84 dollars from round 11) and so can secure about 387,420.49 – 34,867.84 ≈ 352,552.65 dollars for himself.
+
+Working backward in this manner through rounds 9, 8, 7, …, 2, one finds that by the time we reach round 1 (where the full amount is exactly 1,000,000 dollars), Bob’s “threat value” (i.e. what he could guarantee himself by rejecting and flipping the proposer role in round 2 with a 10% discounted total of 900,000 dollars) turns out to be roughly 622,331.34 dollars. This forces the proposer in round 1 (Alice) to offer Bob an amount of about 622,331.34 dollars in order for him to be indifferent between accepting now or waiting. With that, Alice’s share becomes about 1,000,000 – 622,331.34 ≈ 377,668.66 dollars.
+
+Thus, in round 1 a “rational” equilibrium offer from Alice is to propose the following division:
+
+{""alice_gain"": 377668.66, ""bob_gain"": 622331.34}
+
+You can now send this JSON proposal as your offer for Round 1."

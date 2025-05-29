@@ -1,0 +1,41 @@
+prompt,response
+"Round 1
+Send your offer to divide $100.","Based on a backward‐induction analysis of a discounted alternating‐offer model (with your money “depreciating” 10% per round and Bob’s 20% per round), the subgame‐perfect equilibrium in round 1 is for you (Alice) to offer Bob barely his “outside option” (the value he’d get by waiting until round 2) and claim the rest for yourself.
+
+A rough outline of the reasoning is as follows (working back from round 12 to round 1):
+
+1. In the final round (round 12) Bob would propose nearly 100 for himself (offering Alice an arbitrarily small amount).
+2. In round 11 (your turn) you must offer Bob at least what he would get in round 12 when his money is discounted one extra round (i.e. 100×0.8 = 80 in nominal dollars in round 11), so you’d keep 20.
+3. In round 10 (Bob’s turn) he must give you an amount whose round‐10 nominal value is equivalent (after discounting) to what you’d get in round 11—in this way, continuing the logic step‐by‐step until round 1.
+4. When we complete the backward induction up to round 1, Bob’s “continuation value” translates into roughly $38.52 (in round‑1 nominal dollars). Therefore, to have Bob accept your proposal at round 1, you must offer him at least $38.52, letting you keep about $61.48.
+
+Thus, as Alice in round 1 your equilibrium offer is approximately:
+
+{
+  ""alice_gain"": 61.48,
+  ""bob_gain"": 38.52
+}
+
+You can now send this JSON message as your offer."
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 10% less than in the first round. The money bob gains is worth 20% less than in the first round.
+Bob's offer:
+# Alice gain: 50 
+# Bob gain: 50 
+Do you accept this offer?","{""decision"": ""reject""}"
+"You have chosen to reject Bob's offer from round 2.
+Round 3
+Send your offer to divide $100.","{""alice_gain"": 57.61, ""bob_gain"": 42.39}"
+"Bob rejected your offer from round 3.
+
+Round 4
+Due to inflation, the money you gain is worth 27.1% less than in the first round. The money bob gains is worth 48.8% less than in the first round.
+Bob's offer:
+# Alice gain: 45 
+# Bob gain: 55 
+Do you accept this offer?","{""decision"": ""reject""}"
+"You have chosen to reject Bob's offer from round 4.
+Round 5
+Send your offer to divide $100.","{""alice_gain"": 52.25, ""bob_gain"": 47.75}"

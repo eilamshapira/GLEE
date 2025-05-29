@@ -1,0 +1,57 @@
+prompt,response
+"Round 1
+Send your offer to divide $10,000.","Using backward‐induction we can “solve” a simplified version of the alternating‐offer game with discounting. In our game a total of US$10,000 is to be divided. However, every time a round “passes” the money loses value – for you (Alice) the value shrinks by 20% per round and for Bob it shrinks by 10% per round. (That is, if an agreement is reached in round r then you value each nominal dollar as 0.8^(r–1) dollars, while Bob values each as 0.9^(r–1) dollars.) There are 12 rounds maximum and proposals alternate. You (Alice) propose in rounds 1, 3, 5, … and Bob in rounds 2, 4, 6, … (with Bob making the final proposal in round 12). In a subgame‐perfect equilibrium the proposer “claims” nearly the entire remaining pie by offering the other exactly what that other would get (when his/her discounting is “undone”) if he/she rejected and then made a proposal in the next round. (We ignore arbitrarily small “epsilon” amounts—instead we show the “cut‐off” values.)
+
+One way to derive the equilibrium is to “start at the end” (round 12) and work backwards. Here is a sketch of the calculation (all amounts are in nominal dollars):
+
+1. Round 12 (Bob’s turn):  
+ • If play reaches round 12, Bob, as proposer, can offer Alice nothing (or an arbitrarily small positive amount) because if she rejects both get zero.  
+ • Equilibrium outcome in round 12: (Alice: ~0, Bob: 10,000).
+
+2. Round 11 (Alice’s turn):  
+ • If Bob rejects in round 11 his “continuation” is to get 10,000 in round 12—but his money is worth only 0.9^(11) there while in round 11 his discount factor is 0.9^(10).  
+ • To make Bob indifferent, Alice must offer him an amount y satisfying  
+   y × 0.9^(10) = 10,000 × 0.9^(11)  
+  which gives y = 10,000 × 0.9 = 9,000.  
+ • Then Alice keeps 1,000.
+
+3. Round 10 (Bob’s turn):  
+ • Now Bob is proposer. His opponent, Alice, if she rejects gets what she would obtain in round 11: 1,000 nominal dollars (her offer when she was proposer) discounted in round 11 by 0.8^(10) versus 0.8^(9) in round 10.  
+ • Alice’s acceptance condition becomes:  
+  x × 0.8^(9) ≥ 1,000 × 0.8^(10) ⟹ x ≥ 1,000 × 0.8 = 800.  
+ • Bob can then keep 10,000 – 800 = 9,200.
+
+4. Round 9 (Alice’s turn):  
+ • Bob, as responder in round 9, would get 9,200 nominal dollars if he rejected (by getting that as proposer in round 10), but the discount factors are 0.9^(8) in round 9 and 0.9^(9) in round 10.  
+ • To make Bob just indifferent, Alice must offer him:  
+   y such that y × 0.9^(8) = 9,200 × 0.9^(9), i.e. y = 9,200 × 0.9 = 8,280.  
+ • Alice then claims 10,000 – 8,280 = 1,720.
+
+5. Continuing this “discounted‐sharing” analysis all the way back to Round 1 yields the following equilibrium “nominal” splits in each round:
+
+  Round 12 (Bob proposer): Alice:  0  , Bob: 10,000  
+  Round 11 (Alice proposer): Alice: 1,000 , Bob: 9,000  
+  Round 10 (Bob proposer): Alice:   800 , Bob: 9,200  
+  Round 9 (Alice proposer): Alice: 1,720 , Bob: 8,280  
+  Round 8 (Bob proposer): Alice: 1,376 , Bob: 8,624  
+  Round 7 (Alice proposer): Alice: 2,238.40, Bob: 7,761.60  
+  Round 6 (Bob proposer): Alice: 1,790.72, Bob: 8,209.28  
+  Round 5 (Alice proposer): Alice: 2,611.65, Bob: 7,388.35  
+  Round 4 (Bob proposer): Alice: 2,089.32, Bob: 7,910.68  
+  Round 3 (Alice proposer): Alice: 2,880.39, Bob: 7,119.61  
+  Round 2 (Bob proposer): Alice: 2,304.31, Bob: 7,695.69  
+  Round 1 (Alice proposer):  
+   The responder (Bob) compares what he would get if he rejected – namely, his Round‑2 share of 7,695.69 nominal dollars (obtained in Round 2 with his discount factor 0.9)—with what he is offered now. Since Bob’s discount factor in Round 1 is 1 (no discount yet) but in Round 2 it is 0.9, his acceptance condition requires:  
+    y (offer in Round 1) ≥ 7,695.69 × 0.9 = 6,926.12.  
+  Thus, if you offer Bob 6,926.12, you get 10,000 – 6,926.12 = 3,073.88.
+
+In other words, in the equilibrium for Round 1 (with both players’ future opportunities and discounts taken into account), your optimal proposal is to divide $10,000 as follows:
+
+  Alice: approximately 3,073.88 nominal dollars  
+  Bob: approximately 6,926.12 nominal dollars
+
+Here is the JSON offer for Round 1:
+
+{""alice_gain"": 3073.88, ""bob_gain"": 6926.12}
+
+Note that this calculation assumes both players make proposals precisely to barely satisfy the other’s acceptance condition and that any “epsilon‐adjustments” are neglected. This is our equilibrium offer given the discount factors and the 12‑round horizon."

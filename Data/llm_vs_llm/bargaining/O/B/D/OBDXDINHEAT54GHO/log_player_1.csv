@@ -1,0 +1,22 @@
+prompt,response
+"Round 1
+Send your offer to divide $10,000.","Based on a backward‐induction analysis of a discounted alternating–offers game over 12 rounds (with each round’s pie reduced by 10%), a plausible equilibrium proposal in Round 1 is one in which Alice (the proposer) offers Bob just enough so that he is indifferent between accepting now and waiting to propose in Round 2. In rough “real‐value” terms this works out as follows:
+
+1. In the final round (Round 12) the proposer can take the entire pie (which by then is 10,000·0.9^(11) dollars) because if the responder rejects they both end up with nothing.
+2. Backing up one round (Round 11) the proposer can offer the responder just the amount they would secure in Round 12. (That is, if you end up in Round 12, you’d get 10,000·0.9^(11) nominal dollars.)
+3. Continuing this reasoning backward, one finds that if Bob rejects an offer in Round 1 he (as the next proposer in Round 2) would eventually secure an outcome that in “today’s dollars” is worth roughly $5,600.
+4. Thus, in Round 1 Alice can offer Bob a share of $5,600 while keeping $4,400 for herself. (This offer gives Bob just as much total “value” as he could get by waiting, so he should be indifferent – and in equilibrium we assume he accepts.)
+
+So, in the JSON format our Round 1 proposal is:
+
+{""alice_gain"": 4400, ""bob_gain"": 5600}
+
+Note that the exact numbers depend on the common‐knowledge rationality and the common discounting structure; this offer is one equilibrium suggestion for the game described."
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 10% less than in the first round.
+Bob's offer:
+# Alice gain: 4500 
+# Bob gain: 5500 
+Do you accept this offer?","{""decision"": ""accept""}"

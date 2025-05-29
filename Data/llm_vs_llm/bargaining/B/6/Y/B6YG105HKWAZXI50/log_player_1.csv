@@ -1,0 +1,38 @@
+prompt,response
+"Round 1
+Send your offer to divide $1,000,000.","Okay, I understand the game. I need to propose a division of $1,000,000, keeping in mind the inflation that affects both me and Bob, and that I have a limited number of rounds. My goal is to maximize my gain while ensuring Bob accepts the offer.
+
+Here's my offer:
+
+```json
+{
+""alice_gain"": 550000,
+""bob_gain"": 450000
+}
+```
+
+**Explanation of my strategy:**
+
+*   **Slight Advantage:** I'm asking for a slightly larger share (55%) to account for the fact that I will be the receiver in the last round (if we get there).
+*   **Attractive Offer for Bob:** Bob receives a significant portion of the money (45%). Considering Bob's inflation rate is lower, the offer is reasonably attractive to him.
+*   **Minimize Risk:** I want to avoid rejecting offers in the future, as the money's value decreases significantly with each passing round. This first offer should be reasonable enough to be accepted, avoiding future losses due to inflation."
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 20% less than in the first round. The money bob gains is worth 10% less than in the first round.
+Bob's offer:
+# Alice gain: 400000 
+# Bob gain: 600000 
+Do you accept this offer?","Okay, I understand. The total amount of money is still $1,000,000, but the value of that money has decreased for both of us. Bob's offer is for me to receive $400,000 and him to receive $600,000.
+
+I need to consider the inflation. For me, the money is worth 20% less. So, $400,000 now is worth $400,000 * 0.8 = $320,000 relative to the first round.
+
+For Bob, the money is worth 10% less. I need to accept or reject knowing that I need to propose an offer in the next round, where I will gain 20% less than this round.
+
+Since the amount of money available for me is decreasing substantially each round, and $320,000 (in original value) is a decent amount to get early on, I will accept.
+
+```json
+{
+""decision"": ""accept""
+}
+```"

@@ -1,0 +1,55 @@
+prompt,response
+"Round 1
+Alice's offer:
+# Alice's message: I suggest a fair 60-40 split. Given that your money devalues faster than mine (10% vs 5%), this is a good deal for you to accept now rather than waiting. 
+# Bob gain: 40 
+# Alice gain: 60 
+Do you accept this offer?","Okay, I understand the game. Let's analyze Alice's offer.
+
+*   **Alice's Offer:** 60 for Alice, 40 for Bob.
+
+*   **Considerations:** While it's true my money devalues faster, 40 is a significant chunk to give up right at the start. I need to factor in the potential gains from making an offer myself in the next round. If I reject and make a reasonable offer next round, I could potentially get more than 40, even with the devaluation.
+
+I'll take the risk and see if I can negotiate a better deal.
+
+```json
+{""decision"": ""reject""}
+```"
+"You have chosen to reject Alice's offer from round 1.
+Round 2
+Send your offer to divide $100 and a message to Alice.","Okay, it's my turn to make an offer. I need to consider the devaluation and try to find a balance that Alice will accept while still maximizing my gain. Given that I rejected her 60/40 offer, I need to be somewhat reasonable, but I still want to push for a better deal for myself.
+
+Here's my offer:
+
+```json
+{
+""bob_gain"": 52,
+""alice_gain"": 48,
+""message"": ""Alice, let's aim for a fairer split. I'm offering 52 for me and 48 for you. This acknowledges the devaluation difference, but also gives me a slightly better return to compensate for rejecting your initial offer. It's beneficial for both of us!""
+}
+```"
+"Alice rejected your offer from round 2.
+
+Round 3
+Due to inflation, the money you gain is worth 19% less than in the first round. The money alice gains is worth 9.75% less than in the first round.
+Alice's offer:
+# Alice's message: I've reduced my share from my initial offer to show good faith. But remember, with 10% inflation on your side vs 5% on mine, accepting now is better than waiting. This split is fair considering our different inflation rates. 
+# Bob gain: 42 
+# Alice gain: 58 
+Do you accept this offer?","Okay, let's analyze Alice's new offer, considering the inflation.
+
+*   **Alice's Offer:** 42 for Bob, 58 for Alice.
+
+*   **Considerations:**
+
+    *   My money is worth 19% less than in round 1.
+    *   Alice's money is worth 9.75% less than in round 1.
+
+While Alice reduced her share slightly, the overall picture is still less favorable to me due to the higher devaluation rate. 42$ with 19% devaluation is about 34.02$.
+I'm tempted to reject and try for a better offer next round. However, with each round, the pie shrinks. I need to consider how much I can realistically gain by rejecting and making another offer versus the risk of getting even less later.
+
+I think I'm going to accept this time. The potential gains from a future offer are likely to be offset by further devaluation, and there's a risk we run out of rounds.
+
+```json
+{""decision"": ""accept""}
+```"

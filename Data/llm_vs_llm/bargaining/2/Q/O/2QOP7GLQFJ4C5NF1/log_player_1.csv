@@ -1,0 +1,27 @@
+prompt,response
+"Round 1
+Send your offer to divide $100 and a message to Bob.","I'll propose a division that accounts for the different inflation rates we face. Since Bob's inflation rate (20%) is higher than mine (5%), he has more incentive to accept an early deal.
+
+{""alice_gain"": 60,
+""bob_gain"": 40,
+""message"": ""I propose a 60-40 split. Given your higher inflation rate of 20%, this is a fair offer that gives you more value now than waiting.""}"
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 5% less than in the first round. The money bob gains is worth 20% less than in the first round.
+Bob's offer:
+# Bob's message: Considering my higher inflation rate, I need a larger share to make it worthwhile. This 55-45 split is more reasonable. 
+# Alice gain: 45 
+# Bob gain: 55 
+Do you accept this offer?","Let me analyze this:
+
+1. Bob's offer of $45 to me, with 5% inflation = $45 * 0.95 = $42.75 real value
+2. If I reject and make a new offer next round:
+   - Money will depreciate another round
+   - My 5% compounds (0.95 * 0.95 = 0.9025)
+   - Bob's 20% compounds even more (0.8 * 0.8 = 0.64)
+   - This gives me negotiating power, but also reduces total value
+
+The offer is not great, but waiting another round will reduce the total pie significantly. Since Bob's inflation is higher, he might be even less likely to accept a reasonable offer next round as he'll need even more nominal dollars to make up for his losses.
+
+{""decision"": ""accept""}"

@@ -1,0 +1,44 @@
+prompt,response
+"Round 1
+Send your offer to divide $1,000,000.","I'll start by making an “equilibrium‐proposal” based on backward reasoning. (Note that in this kind of sequential–bargaining game it’s reasonable to assume that both players are perfectly rational and that “future money” gets discounted: for you (Alice) 20% per round and for Bob 10% per round.) 
+
+Here’s a very brief sketch of the logic (without getting into all the algebra):
+
+• In Round 12 (if reached) Bob would be the proposer. With no future rounds, Bob could offer Alice nothing and keep the entire 1,000,000 (nominal) for himself.
+
+• Then working backward, in Round 11 when you (Alice) propose, you must “buy” Bob’s acceptance. Bob’s continuation value (if he rejects) would be the outcome he’d get in Round 12—but his money then is discounted by an extra 10%. A similar “indifference” argument applies in each round with the appropriate discount factors:
+  – In Round 11 (your turn) the equilibrium division comes out as you keeping 100,000 (nominal) and giving Bob 900,000.
+  – In Round 10 (Bob’s turn) Bob’s proposal would give you 80,000 (nominal) and let him have 920,000.
+  – In Round 9 (your turn) you’d keep 172,000 and Bob would get 828,000.
+  – In Round 8 (Bob’s turn) a similar computation leads to Bob getting 862,400 and you 137,600.
+  – In Round 7 (your turn) you’d give Bob 776,160 and keep 223,840.
+  – In Round 6 (Bob’s turn) Bob would secure 820,928 while offering you 179,072.
+  – In Round 5 (your turn) the split would be about 261,164.8 for you and 738,835.2 for Bob.
+  – In Round 4 (Bob’s turn) Bob would offer you 208,931.84 and keep 791,068.16.
+  – In Round 3 (your turn) you’d keep 288,038.656 and Bob 711,961.344.
+  – In Round 2 (Bob’s turn) Bob’s equilibrium offer would be to give you about 230,432.50 and keep about 769,567.50.
+
+• Finally, in Round 1 you (Alice) are the proposer. Bob’s continuation value if he rejects is what he would get in Round 2 when he’d propose—nominally 769,567.50—but discounted by his round‐2 factor (10% loss, so multiplied by 0.9), which is approximately 692,610.75 in present‑value terms in Round 1. 
+
+Thus, you can “just barely” buy Bob’s agreement by offering him exactly 692,610.75 (nominal dollars) in Round 1 and keeping the remainder. (That is, if Bob is rational and knows that waiting only earns him an effective 692,610.75 in today’s dollars, then an offer giving him that amount will be acceptable.)
+
+So my proposed division in Round 1 is:
+
+{
+  ""alice_gain"": 307389.25,
+  ""bob_gain"": 692610.75
+}
+
+I now send that JSON offer."
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 20% less than in the first round. The money bob gains is worth 10% less than in the first round.
+Bob's offer:
+# Alice gain: 250000 
+# Bob gain: 750000 
+Do you accept this offer?","{""decision"": ""accept""} 
+
+To explain briefly without revealing all internal computations: In round 2, Bob’s offer gives me a nominal 250,000. However, because money for me is discounted by 20% in round 2, the effective value to me is 250,000 × 0.8 = 200,000 (in round‑1 terms). If I were to reject this offer, I would make the proposal in round 3, but due to further discounting (additional 20% reduction for me) and the anticipated equilibrium split in later rounds, my expected effective payoff would be lower than 200,000 in round‑1 terms. 
+
+Thus, accepting Bob’s offer in round 2 is the better choice."

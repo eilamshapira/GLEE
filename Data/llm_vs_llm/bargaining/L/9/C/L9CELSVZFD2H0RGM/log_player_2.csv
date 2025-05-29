@@ -1,0 +1,40 @@
+prompt,response
+"Round 1
+Alice's offer:
+# Bob gain: 40 
+# Alice gain: 60 
+Do you accept this offer?","{""decision"": ""reject""}"
+"You have chosen to reject Alice's offer from round 1.
+Round 2
+Send your offer to divide $100.","Since the money is worth 10% less for me in this round, the effective amount is $100 * 0.9 = $90. For Alice, it's $100 * 0.95 = $95. 
+
+To make a fair offer, I'll consider the original $100 and split it in a way that seems reasonable, given that I've already rejected Alice's offer.
+
+{""bob_gain"": 55, 
+""alice_gain"": 45}"
+"Alice rejected your offer from round 2.
+
+Round 3
+Due to inflation, the money you gain is worth 19% less than in the first round. The money alice gains is worth 9.75% less than in the first round.
+Alice's offer:
+# Bob gain: 43 
+# Alice gain: 57 
+Do you accept this offer?","Considering the inflation, if I accept Alice's offer, I'll get $43, but its value is reduced by 19% due to inflation, so the effective amount I get is $43 * 0.81 = $34.83.
+
+I'll think about whether this is a good deal for me.
+
+{""decision"": ""reject""}"
+"You have chosen to reject Alice's offer from round 3.
+Round 4
+Send your offer to divide $100.","Since I rejected Alice's offer again, the money is worth even less to me due to inflation. The total reduction in value for me is 10% + 10% = 20% (compounding doesn't apply here as it's a fixed percentage reduction each round, but the total reduction is cumulative), and for this round, it's 10% less again, so 30% less than the original. For Alice, the reduction is 5% + 5% = 10% (cumulative).
+
+However, considering the correct cumulative reduction: 
+For me, it's 10% in round 2, then another 10% of the 90% remaining, which is 9%, making it 19% total reduction by round 2, and now another 10% of the 81% remaining, which is 8.1%, making the total reduction 27.1%. 
+For Alice, it's 5% in round 2, then another 5% of the 95% remaining, which is 4.75%, making it 9.75% total reduction by round 2, and now another 5% of the 90.25% remaining, which is 4.5125%, making the total reduction 14.2625%.
+
+Given these reductions, if I were to offer $100, its value to me would be $100 * (1 - 0.271) = $72.90, and to Alice, $100 * (1 - 0.142625) = $85.7375.
+
+Considering this, I'll make an offer that seems reasonable, taking into account the reduced value of the money.
+
+{""bob_gain"": 50, 
+""alice_gain"": 50}"

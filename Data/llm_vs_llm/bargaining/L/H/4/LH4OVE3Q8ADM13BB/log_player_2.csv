@@ -1,0 +1,45 @@
+prompt,response
+"Round 1
+Alice's offer:
+# Bob gain: 10000 
+# Alice gain: 990000 
+Do you accept this offer?","{""decision"": ""reject""}"
+"You have chosen to reject Alice's offer from round 1.
+Round 2
+Send your offer to divide $1,000,000.","Since the money is worth 5% less for me and 20% less for Alice in each round, I'll take that into account for my offer.
+
+For me (Bob), the money is now worth $1,000,000 * 0.95 = $950,000.
+For Alice, the money is now worth $1,000,000 * 0.80 = $800,000.
+
+Considering this, my offer is:
+{""bob_gain"": 570000, ""alice_gain"": 430000}"
+"Alice rejected your offer from round 2.
+
+Round 3
+Due to inflation, the money you gain is worth 9.75% less than in the first round. The money alice gains is worth 36% less than in the first round.
+Alice's offer:
+# Bob gain: 200000 
+# Alice gain: 800000 
+Do you accept this offer?","Considering the inflation, the actual value of the money I would gain is:
+$1,000,000 * (1 - 0.0975) = $902,500 (total possible value)
+$200,000 (offer) / $902,500 (total possible value) = approximately 0.222 or 22.2% of the total possible value.
+
+The actual value of the money Alice would gain is:
+$1,000,000 * (1 - 0.36) = $640,000 (total possible value)
+$800,000 (offer) / $640,000 (total possible value) = approximately 1.25 or 125% of the total possible value, but since she can't get more than the total value, this is not possible. The offer is $800,000, but the total possible value is $640,000.
+
+Since the offer seems to be more in Alice's favor and I can try to get a better deal, I will reject this offer.
+
+{""decision"": ""reject""}"
+"You have chosen to reject Alice's offer from round 3.
+Round 4
+Send your offer to divide $1,000,000.","Since the money is worth 5% less for me in each round, and we are in round 4, the total decrease in value for me is:
+0.95 (round 1) * 0.95 (round 2) * 0.95 (round 3) = 0.857375
+The money is now worth $1,000,000 * 0.857375 = $857,375 for me.
+
+For Alice, the money is worth 20% less in each round, so the total decrease in value for her is:
+0.80 (round 1) * 0.80 (round 2) * 0.80 (round 3) = 0.512
+The money is now worth $1,000,000 * 0.512 = $512,000 for Alice.
+
+Considering this, my offer is:
+{""bob_gain"": 600000, ""alice_gain"": 400000}"

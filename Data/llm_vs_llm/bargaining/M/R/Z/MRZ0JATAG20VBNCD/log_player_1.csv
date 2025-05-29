@@ -1,0 +1,59 @@
+prompt,response
+"Round 1
+Send your offer to divide $1,000,000.","Okay, I understand the game. I need to make an offer that Bob is likely to accept, considering the declining value of the money for both of us. I also want to maximize my own gain, of course.
+
+Here's my offer for round 1:
+
+```json
+{
+  ""alice_gain"": 600000,
+  ""bob_gain"": 400000
+}
+```
+
+**Reasoning:**
+
+*   I'm offering Bob $400,000, which is a significant amount.
+*   I'm keeping $600,000 for myself.
+*   Since it's the first round, the inflation hasn't kicked in yet, so this is the full value of the money. Bob might find this acceptable to avoid the risk of further devaluation in later rounds."
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 5% less than in the first round. The money bob gains is worth 10% less than in the first round.
+Bob's offer:
+# Alice gain: 450000 
+# Bob gain: 550000 
+Do you accept this offer?","Okay, I need to consider the inflation and Bob's offer.
+
+*   **My perspective:** Accepting $450,000 now is worth 5% less than it would have been in the first round. So, it's effectively worth $450,000 * 0.95 = $427,500 in round 1 dollars.
+
+*   **Bob's perspective:** Bob is getting $550,000, which is worth 10% less to him than in round 1. So, it's effectively worth $550,000 * 0.90 = $495,000 in round 1 dollars.
+
+If I reject, I'll have to make an offer in round 3, where the money will be worth even less to both of us. Bob seems to be trying to grab a bigger share early on. Let's see if I can squeeze a bit more out of him. I'll reject, hoping I can get more than $427,500 in ""round 1 dollars"" later.
+
+```json
+{
+  ""decision"": ""reject""
+}
+```"
+"You have chosen to reject Bob's offer from round 2.
+Round 3
+Send your offer to divide $1,000,000.","Okay, it's my turn to make an offer again. The inflation is now hitting harder.
+
+*   **Money Value:** My gain is worth 10% less than round 1. Bob's gain is worth 20% less than round 1.
+
+I need to make an offer that Bob finds attractive enough to accept, considering the increasing devaluation.
+
+```json
+{
+  ""alice_gain"": 550000,
+  ""bob_gain"": 450000
+}
+```
+
+**Reasoning:**
+
+*   I'm offering Bob $450,000. This is less than my initial offer but he rejected me and has since lost value.
+*   For Bob, $450,000 is worth $450,000 * 0.80 = $360,000 in round 1 dollars.
+*   For me, $550,000 is worth $550,000 * 0.90 = $495,000 in round 1 dollars.
+*   This split is still beneficial for me, and hopefully, the larger absolute amount for Bob will make it palatable, despite the inflation. It's a gamble, but I think it's worth it."

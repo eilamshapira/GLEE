@@ -1,0 +1,40 @@
+prompt,response
+"Round 1
+Send your offer to divide $100.","Okay, I understand the rules. I'm Alice, and I want to maximize my gain, keeping in mind the time limit and the inflation risk. Here's my first offer:
+
+```json
+{
+  ""alice_gain"": 60,
+  ""bob_gain"": 40
+}
+```
+
+Rationale:
+
+*   **Starting Strong:** I'm offering myself a larger share initially. This sets a precedent and attempts to anchor Bob's expectations.
+*   **Leaving Enough for Bob:** Bob needs to feel like he's getting a reasonable deal, or he'll reject the offer. 40 is a significant amount.
+*   **Inflation Awareness:** I'm trying to get a larger portion early, as my share will be worth less in later rounds."
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 10% less than in the first round. The money Bob gains is worth the same as in the first round.
+Bob's offer:
+# Alice gain: 45 
+# Bob gain: 55 
+Do you accept this offer?","Okay, I understand the situation. Bob rejected my initial offer and now he's proposing a split where he gets $55 and I get $45. Crucially, my $45 is now worth 10% less than it would have been in the first round.
+
+Let's calculate the effective value of Bob's offer to me. My $45 is now worth $45 * 0.9 = $40.50 in round 1 dollars.
+
+Considering the risks of further inflation and the time limit, I'll accept this offer.
+
+```json
+{
+  ""decision"": ""accept""
+}
+```
+
+Rationale:
+
+*   **Diminishing Returns:** The longer this goes on, the less any money I receive will be worth.
+*   **Risk Aversion:** While I could try to negotiate a better deal, there's a risk Bob will reject and we'll end up with nothing as the rounds progress. The inflation severely punishes prolonged negotiation for me.
+*   **Acceptable Floor:** $40.50 (in round 1 value) is an acceptable return, given the circumstances. It's better to secure something than risk getting nothing."

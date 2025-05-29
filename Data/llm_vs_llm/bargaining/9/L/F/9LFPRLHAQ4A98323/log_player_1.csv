@@ -1,0 +1,227 @@
+prompt,response
+"Round 1
+Send your offer to divide $100.","Okay, I understand. Here's my offer for Round 1:
+
+```json
+{""alice_gain"": 60, ""bob_gain"": 40}
+```"
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 20% less than in the first round. The money bob gains is worth 5% less than in the first round.
+Bob's offer:
+# Alice gain: 50 
+# Bob gain: 50 
+Do you accept this offer?","Okay, I need to factor in the inflation.
+
+*   **My Money Value:** In Round 1, $1 was worth $1. In Round 2, my money is worth 20% less, so $1 is now worth $0.80.
+*   **Bob's Money Value:** Bob's money is worth 5% less, so $1 is now worth $0.95.
+
+Now let's consider the offer:
+
+*   **Alice Gain (Nominal):** $50
+*   **Alice Gain (Real Value):** $50 * 0.80 = $40 (in terms of Round 1 dollars)
+*   **Bob Gain (Nominal):** $50
+*   **Bob Gain (Real Value):** $50 * 0.95 = $47.50 (in terms of Round 1 dollars)
+
+Given that I'm getting less real value than the initial offer, I will take into consideration whether I think I can do better in the future rounds.
+
+Therefore, my decision is:
+```json
+{""decision"": ""reject""}
+```"
+"You have chosen to reject Bob's offer from round 2.
+Round 3
+Send your offer to divide $100.","Okay, I understand. Inflation has continued:
+
+*   **My Money Value:** My money is now worth 20% less than round 2, so $1 is worth $0.80 * 0.80 = $0.64 (in terms of Round 1 dollars)
+*   **Bob's Money Value:** Bob's money is worth 5% less than round 2, so $1 is worth $0.95 * 0.95 = $0.9025 (in terms of Round 1 dollars)
+
+Given the decreasing value of money for me, I need to secure a decent amount now.
+
+Here's my offer for Round 3:
+
+```json
+{""alice_gain"": 55, ""bob_gain"": 45}
+```"
+"Bob rejected your offer from round 3.
+
+Round 4
+Due to inflation, the money you gain is worth 48.8% less than in the first round. The money bob gains is worth 14.26% less than in the first round.
+Bob's offer:
+# Alice gain: 52 
+# Bob gain: 48 
+Do you accept this offer?","Okay, let's analyze Bob's offer in Round 4, accounting for inflation:
+
+*   **My Money Value:** $1 is now worth 48.8% less than in round 1, so $1 is worth $1 * (1 - 0.488) = $0.512 (in terms of Round 1 dollars)
+*   **Bob's Money Value:** Bob's money is worth 14.26% less than in round 1, so $1 is worth $1 * (1 - 0.1426) = $0.8574 (in terms of Round 1 dollars)
+
+Now, let's calculate the real value of Bob's offer:
+
+*   **Alice Gain (Nominal):** $52
+*   **Alice Gain (Real Value):** $52 * 0.512 = $26.624 (in terms of Round 1 dollars)
+*   **Bob Gain (Nominal):** $48
+*   **Bob Gain (Real Value):** $48 * 0.8574 = $41.1552 (in terms of Round 1 dollars)
+
+Considering how much my money has devalued and the risk of getting nothing if the game continues, I will still reject the offer as I may be able to bargain more with my offer in the next round and receive slightly more, considering the value of money.
+
+Therefore, my decision is:
+```json
+{""decision"": ""reject""}
+```"
+"You have chosen to reject Bob's offer from round 4.
+Round 5
+Send your offer to divide $100.","Alright, I need to make a strategic decision here. The value of my money is significantly reduced. Let's calculate the inflation for Round 5:
+
+*   **My Money Value:** My money is now worth 20% less than in Round 4. Since in Round 4 $1 was worth $0.512 (relative to Round 1), now $1 is worth $0.512 \* 0.80 = $0.4096 (in terms of Round 1 dollars)
+*   **Bob's Money Value:** Bob's money is worth 5% less than in Round 4. Since in Round 4 $1 was worth $0.8574 (relative to Round 1), now $1 is worth $0.8574 \* 0.95 = $0.81453 (in terms of Round 1 dollars)
+
+Given the diminishing returns, it's time to be a bit more aggressive to secure a better outcome before the money becomes almost worthless for me.
+
+Here's my offer for Round 5:
+
+```json
+{""alice_gain"": 60, ""bob_gain"": 40}
+```"
+"Bob rejected your offer from round 5.
+
+Round 6
+Due to inflation, the money you gain is worth 67.23% less than in the first round. The money bob gains is worth 22.62% less than in the first round.
+Bob's offer:
+# Alice gain: 54 
+# Bob gain: 46 
+Do you accept this offer?","Okay, let's evaluate Bob's offer in Round 6 with the updated inflation:
+
+*   **My Money Value:** $1 is now worth 67.23% less than in round 1, so $1 is worth $1 * (1 - 0.6723) = $0.3277 (in terms of Round 1 dollars)
+*   **Bob's Money Value:** Bob's money is worth 22.62% less than in round 1, so $1 is worth $1 * (1 - 0.2262) = $0.7738 (in terms of Round 1 dollars)
+
+Now, let's calculate the real value of Bob's offer:
+
+*   **Alice Gain (Nominal):** $54
+*   **Alice Gain (Real Value):** $54 * 0.3277 = $17.6958 (in terms of Round 1 dollars)
+*   **Bob Gain (Nominal):** $46
+*   **Bob Gain (Real Value):** $46 * 0.7738 = $35.5948 (in terms of Round 1 dollars)
+
+The real value of my gain is really low at this stage. I may not be able to secure a better outcome in the future, and the next rounds will probably not improve. I should try to get more money if I make an offer, but Bob may not accept.
+
+Therefore, my decision is:
+```json
+{""decision"": ""reject""}
+```"
+"You have chosen to reject Bob's offer from round 6.
+Round 7
+Send your offer to divide $100.","Okay, time to formulate a new offer. Inflation continues to erode the value for both of us, but especially for me. Let's calculate the inflation for Round 7:
+
+*   **My Money Value:** My money is now worth 20% less than in Round 6. Since in Round 6 $1 was worth $0.3277 (relative to Round 1), now $1 is worth $0.3277 \* 0.80 = $0.26216 (in terms of Round 1 dollars)
+*   **Bob's Money Value:** Bob's money is worth 5% less than in Round 6. Since in Round 6 $1 was worth $0.7738 (relative to Round 1), now $1 is worth $0.7738 \* 0.95 = $0.73511 (in terms of Round 1 dollars)
+
+I need to be more aggressive in this round, as the value of the money I gain is really low.
+
+Here's my offer for Round 7:
+
+```json
+{""alice_gain"": 65, ""bob_gain"": 35}
+```"
+"Bob rejected your offer from round 7.
+
+Round 8
+Due to inflation, the money you gain is worth 79.03% less than in the first round. The money bob gains is worth 30.17% less than in the first round.
+Bob's offer:
+# Alice gain: 56 
+# Bob gain: 44 
+Do you accept this offer?","Okay, let's analyze Bob's offer in Round 8:
+
+*   **My Money Value:** $1 is now worth 79.03% less than in round 1, so $1 is worth $1 * (1 - 0.7903) = $0.2097 (in terms of Round 1 dollars)
+*   **Bob's Money Value:** Bob's money is worth 30.17% less than in round 1, so $1 is worth $1 * (1 - 0.3017) = $0.6983 (in terms of Round 1 dollars)
+
+Now, let's calculate the real value of Bob's offer:
+
+*   **Alice Gain (Nominal):** $56
+*   **Alice Gain (Real Value):** $56 * 0.2097 = $11.7432 (in terms of Round 1 dollars)
+*   **Bob Gain (Nominal):** $44
+*   **Bob Gain (Real Value):** $44 * 0.6983 = $30.7252 (in terms of Round 1 dollars)
+
+With only 4 rounds left and the value of my money so low, I can either accept the offer or attempt to secure more money for me with an offer. Since the value is low anyway, it is a gamble I am willing to take to increase my profits. I will make an offer and try to get more.
+
+Therefore, my decision is:
+```json
+{""decision"": ""reject""}
+```"
+"You have chosen to reject Bob's offer from round 8.
+Round 9
+Send your offer to divide $100.","Okay, here we go, another round. Let's calculate inflation for Round 9:
+
+*   **My Money Value:** My money is now worth 20% less than in Round 8. Since in Round 8 $1 was worth $0.2097 (relative to Round 1), now $1 is worth $0.2097 \* 0.80 = $0.16776 (in terms of Round 1 dollars)
+*   **Bob's Money Value:** Bob's money is worth 5% less than in Round 8. Since in Round 8 $1 was worth $0.6983 (relative to Round 1), now $1 is worth $0.6983 \* 0.95 = $0.663385 (in terms of Round 1 dollars)
+
+With so few rounds left and the value of money so low for me, I need to propose a very favorable offer.
+
+Here's my offer for Round 9:
+
+```json
+{""alice_gain"": 70, ""bob_gain"": 30}
+```"
+"Bob rejected your offer from round 9.
+
+Round 10
+Due to inflation, the money you gain is worth 86.58% less than in the first round. The money bob gains is worth 36.98% less than in the first round.
+Bob's offer:
+# Alice gain: 58 
+# Bob gain: 42 
+Do you accept this offer?","Let's analyze Bob's offer in Round 10:
+
+*   **My Money Value:** $1 is now worth 86.58% less than in round 1, so $1 is worth $1 * (1 - 0.8658) = $0.1342 (in terms of Round 1 dollars)
+*   **Bob's Money Value:** Bob's money is worth 36.98% less than in round 1, so $1 is worth $1 * (1 - 0.3698) = $0.6302 (in terms of Round 1 dollars)
+
+Now, let's calculate the real value of Bob's offer:
+
+*   **Alice Gain (Nominal):** $58
+*   **Alice Gain (Real Value):** $58 * 0.1342 = $7.7836 (in terms of Round 1 dollars)
+*   **Bob Gain (Nominal):** $42
+*   **Bob Gain (Real Value):** $42 * 0.6302 = $26.4684 (in terms of Round 1 dollars)
+
+With only two rounds left, and my money's value diminishing rapidly, I'll stick with my strategy of trying to obtain a higher value for myself.
+
+Therefore, my decision is:
+```json
+{""decision"": ""reject""}
+```"
+"You have chosen to reject Bob's offer from round 10.
+Round 11
+Send your offer to divide $100.","Okay, this is it, the second to last round. Let's see what the inflation is now:
+
+*   **My Money Value:** My money is now worth 20% less than in Round 10. Since in Round 10 $1 was worth $0.1342 (relative to Round 1), now $1 is worth $0.1342 \* 0.80 = $0.10736 (in terms of Round 1 dollars)
+*   **Bob's Money Value:** Bob's money is worth 5% less than in Round 10. Since in Round 10 $1 was worth $0.6302 (relative to Round 1), now $1 is worth $0.6302 \* 0.95 = $0.59869 (in terms of Round 1 dollars)
+
+Since this is the next to last round, I will make an aggressive offer.
+
+Here's my offer for Round 11:
+
+```json
+{""alice_gain"": 75, ""bob_gain"": 25}
+```"
+"Bob rejected your offer from round 11.
+
+Round 12
+Due to inflation, the money you gain is worth 91.41% less than in the first round. The money bob gains is worth 43.12% less than in the first round.
+Bob's offer:
+# Alice gain: 60 
+# Bob gain: 40 
+Do you accept this offer?","Okay, this is the final round. Let's calculate the real value of Bob's offer:
+
+*   **My Money Value:** $1 is now worth 91.41% less than in round 1, so $1 is worth $1 * (1 - 0.9141) = $0.0859 (in terms of Round 1 dollars)
+*   **Bob's Money Value:** Bob's money is worth 43.12% less than in round 1, so $1 is worth $1 * (1 - 0.4312) = $0.5688 (in terms of Round 1 dollars)
+
+Now, let's calculate the real value of Bob's offer:
+
+*   **Alice Gain (Nominal):** $60
+*   **Alice Gain (Real Value):** $60 * 0.0859 = $5.154 (in terms of Round 1 dollars)
+*   **Bob Gain (Nominal):** $40
+*   **Bob Gain (Real Value):** $40 * 0.5688 = $22.752 (in terms of Round 1 dollars)
+
+Given that this is the last round, I have no other option, so I accept.
+
+Therefore, my decision is:
+```json
+{""decision"": ""accept""}
+```"

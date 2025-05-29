@@ -1,0 +1,92 @@
+prompt,response
+"Round 1
+Alice's offer:
+# Bob gain: 400000 
+# Alice gain: 600000 
+Do you accept this offer?","Okay, I understand the rules. Let's analyze the offer.
+
+*   **Current Offer:** I get $400,000, Alice gets $600,000.
+
+*   **Inflation:** If I reject, my potential earnings decrease by 5% per round.
+
+*   **Remaining Rounds:** I have 11 rounds left after this one.
+
+Let's consider what happens if I reject and I get to make an offer next round. I could propose something very favorable to myself, but Alice might reject it, and we're back in the same situation.
+
+Since I start with $400,000 now, let's consider the impact of inflation. I have 11 rounds remaining if I reject. Let's say that I reject and get 500,000 in the next round. This will effectively be 500,000 * 0.95, or 475,000$. So it is worth more rejecting.
+
+Let me proceed with negotiation to get more profit.
+
+```json
+{""decision"": ""reject""}
+```"
+"You have chosen to reject Alice's offer from round 1.
+Round 2
+Send your offer to divide $1,000,000.","Okay, it's my turn to make an offer. Considering the inflation and wanting to secure a good deal, I will offer Alice slightly more than what she offered me in the first round. This should increase my chances of acceptance.
+
+```json
+{""bob_gain"": 580000, ""alice_gain"": 420000}
+```"
+"Alice rejected your offer from round 2.
+
+Round 3
+Due to inflation, the money you gain is worth 9.75% less than in the first round.
+Alice's offer:
+# Bob gain: 450000 
+# Alice gain: 550000 
+Do you accept this offer?","Okay, let's analyze the situation.
+
+*   **Current Offer:** I get $450,000, Alice gets $550,000.
+*   **Inflation:** My potential earnings are worth 9.75% less than in round 1.
+*   **Remaining Rounds:** I have 9 rounds left after this one.
+
+Let's calculate the value of $450,000 with 9.75% off:
+450000 - (450000 * 0.0975) = $406,875
+
+Now, I have to consider the inflation for the remaining rounds. If I reject, the money will be worth even less.
+
+If I were to get $500,000 in the next round, it would be worth 500000 - (500000 * (0.0975 + 0.05)), or 426,250$.
+
+Since 406875 < 426250$, it may be worth to continue.
+
+```json
+{""decision"": ""reject""}
+```"
+"You have chosen to reject Alice's offer from round 3.
+Round 4
+Send your offer to divide $1,000,000.","Alright, it's my turn again. Given that Alice rejected my previous offer, I need to make it more attractive to her while still securing a decent amount for myself, considering the inflation. Let's try to meet her halfway between our last offers.
+
+```json
+{""bob_gain"": 520000, ""alice_gain"": 480000}
+```"
+"Alice rejected your offer from round 4.
+
+Round 5
+Due to inflation, the money you gain is worth 18.55% less than in the first round.
+Alice's offer:
+# Bob gain: 480000 
+# Alice gain: 520000 
+Do you accept this offer?","Okay, let's analyze this offer carefully.
+
+*   **Current Offer:** I get $480,000, Alice gets $520,000.
+*   **Inflation:** My earnings are worth 18.55% less than in round 1.
+*   **Remaining Rounds:** I have 7 rounds remaining if I reject.
+
+Let's calculate the real value of $480,000:
+480000 - (480000 * 0.1855) = $391,040
+
+Let's also consider if I offer 550000 next turn:
+550000 - (550000 * (0.1855 + 0.05)) = $415,025
+
+Rejecting one more time seem like it could be profitable.
+
+```json
+{""decision"": ""reject""}
+```"
+"You have chosen to reject Alice's offer from round 5.
+Round 6
+Send your offer to divide $1,000,000.","Alright, my turn again. The inflation is really starting to bite. Let me try a slightly more generous offer to Alice.
+
+```json
+{""bob_gain"": 500000, ""alice_gain"": 500000}
+```"

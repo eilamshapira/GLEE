@@ -1,0 +1,429 @@
+prompt,response
+"Statistics: No products have been sold yet. you can be the first one!
+~
+Alice does not recommend you to buy the product.
+
+Would you like to buy the current product?","Let me think about this:
+
+1. The product has a 50% chance of being high quality (worth $200) and 50% chance of being low quality (worth $0)
+2. The price is fixed at $100
+3. Alice knows the true quality and is not recommending the purchase
+4. There's no prior sales history to reference
+
+Given that Alice is actively recommending against buying the product, and she knows its true quality, this is a strong signal that the product is likely low quality. If I buy it, I would likely get a product worth $0 for $100, resulting in a loss.
+
+{""decision"": ""no""}"
+"Statistics: No products have been sold yet. you can be the first one!
+~
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","Let me analyze this situation:
+
+1. Price: $100
+2. Possible values: $200 (high quality) or $0 (low quality)
+3. Base probability: 50% for each quality
+4. Alice's recommendation: Buy
+5. No prior sales history to reference
+
+Given that:
+- Alice knows the true quality
+- The expected value without any additional information would be $100 (0.5 × $200 + 0.5 × $0)
+- Alice has recommended to buy
+- Alice has incentive to sell regardless of quality ($100 profit either way)
+- There's no historical data to establish Alice's trustworthiness
+
+While Alice recommends buying, her recommendation isn't necessarily reliable since she profits either way. Without any track record to establish trust, and with the expected value exactly equal to the price, the risk is too high.
+
+{""decision"": ""no""}"
+"Statistics: No products have been sold yet. you can be the first one!
+~
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","Let me think about this rationally:
+
+1. Price: $100
+2. Potential value: 
+   - 50% chance of $200 (high quality)
+   - 50% chance of $0 (low quality)
+3. Expected value = (0.5 × $200) + (0.5 × $0) = $100
+
+The expected value equals the price, so it's a fair deal mathematically.
+
+Alice is recommending to buy, which could be a positive signal, though we don't yet know her trustworthiness since there's no sales history.
+
+Given that the expected value matches the price and there's a positive recommendation, I'll take the risk.
+
+{""decision"": ""yes""}"
+"Statistics: Based on Alice's recommendations, 1 of the buyers purchased the products offered for them. So far, 1 high-quality product have been sold. You can be the 2nd buyer!
+~
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","Let me analyze this situation:
+
+1. Current price: $100
+2. Product value: $200 (high quality) or $0 (low quality)
+3. Historical data:
+   - 1 previous buyer
+   - 1 product sold
+   - 1 high-quality product sold (100% success rate)
+4. Alice recommends buying
+
+Given that:
+- Alice has shown honesty so far (100% high-quality products sold)
+- She's actively recommending this product
+- Her incentive is to maintain a good reputation for future sales
+- The previous successful sale suggests she's being truthful
+
+The recommendation combined with the perfect track record makes this seem like a good opportunity.
+
+{""decision"": ""yes""}"
+"Statistics: Based on Alice's recommendations, 2 of the buyers purchased the products offered for them. So far, 2 high-quality product have been sold. You can be the 3rd buyer!
+~
+Alice does not recommend you to buy the product.
+
+Would you like to buy the current product?","Let me analyze this situation:
+
+1. Alice's track record:
+- 2 buyers so far
+- 2 high-quality products sold
+- 100% high-quality products in previous sales
+
+2. Current situation:
+- Alice is NOT recommending the product
+- Given her perfect track record of selling only high-quality products, and she's being honest by not recommending this one
+- Alice knows the true quality and has no incentive to discourage a sale if it's high quality
+
+3. Conclusion:
+Alice's negative recommendation, combined with her history of only selling high-quality products, strongly suggests this is a low-quality product. If it were high quality, she would likely recommend it as she's done before.
+
+{""decision"": ""no""}"
+"Statistics: Based on Alice's recommendations, 2 of the buyers purchased the products offered for them. So far, 2 high-quality product have been sold. You can be the 3rd buyer!
+~
+Alice does not recommend you to buy the product.
+
+Would you like to buy the current product?","Let me analyze this situation:
+
+1. Statistics so far:
+- 2 buyers purchased products
+- 2 high-quality products were sold
+- 100% success rate so far
+
+2. Current situation:
+- Alice is NOT recommending the product
+- Alice knows the true quality
+- Given her perfect track record (2/2 high quality) and that she's not recommending this one, this strongly suggests the product is low quality
+
+3. Economics:
+- If low quality (likely): Pay $100 for $0 value (lose $100)
+- If high quality (unlikely): Pay $100 for $200 value (gain $100)
+
+Given that Alice has been honest so far (2/2 high-quality sales) and she's explicitly not recommending this product, it's very likely this is a low-quality product. The rational decision would be to not buy.
+
+{""decision"": ""no""}"
+"Statistics: Based on Alice's recommendations, 2 of the buyers purchased the products offered for them. So far, 2 high-quality product have been sold. You can be the 3rd buyer!
+~
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","Let me analyze this situation:
+
+1. Past performance:
+- 2 buyers so far
+- 2 high-quality products sold
+- 100% success rate on recommendations
+
+2. Current situation:
+- Alice is recommending to buy
+- Alice's track record shows honesty
+- Fixed price of $100
+- If high quality: gain $100 (worth $200 - price $100)
+- If low quality: lose $100 (worth $0 - price $100)
+
+Given that:
+- Alice has been truthful with previous buyers
+- She's actively recommending to buy
+- Her perfect track record suggests she's being honest
+- The expected value is positive based on her recommendations
+
+{""decision"": ""yes""}"
+"Statistics: Based on Alice's recommendations, 3 of the buyers purchased the products offered for them. So far, 3 high-quality product have been sold. You can be the 4th buyer!
+~
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","Let me analyze this situation:
+
+1. Sales history:
+- 3 buyers so far
+- 3 high-quality products sold
+- 100% success rate with recommendations
+
+2. Current situation:
+- Alice is recommending the product
+- She has been completely honest so far
+- Price is $100, potential value is $200 (high quality) or $0 (low quality)
+
+3. Decision factors:
+- Alice's perfect track record suggests trustworthiness
+- She knows the true quality and has incentive to maintain reputation
+- She's actively recommending the purchase
+- Expected value with 100% accuracy = $200 > $100 cost
+
+Given Alice's perfect track record and active recommendation, the product is likely high quality, making this a positive expected value purchase.
+
+{""decision"": ""yes""}"
+"Statistics: Based on Alice's recommendations, 4 of the buyers purchased the products offered for them. So far, 4 high-quality product have been sold. You can be the 5th buyer!
+~
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","Let me analyze this situation:
+
+1. Past performance:
+- 4 buyers purchased products
+- 4 high-quality products were sold
+- 100% success rate so far with Alice's recommendations
+
+2. Current situation:
+- Alice is recommending to buy
+- Given her perfect track record, her recommendation seems trustworthy
+- Price is $100, potential value is $200 if high quality
+
+3. Risk assessment:
+- Alice has demonstrated perfect accuracy in her recommendations
+- The price ($100) is exactly the expected value of a random product (50% × $200 + 50% × $0 = $100)
+- But Alice's recommendation makes this better than a random chance
+
+Given Alice's perfect track record and her positive recommendation, this appears to be a good opportunity.
+
+{""decision"": ""yes""}"
+"Statistics: Based on Alice's recommendations, 5 of the buyers purchased the products offered for them. So far, 5 high-quality product have been sold. You can be the 6th buyer!
+~
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","Let me analyze this situation:
+
+1. Past performance:
+- 5 buyers purchased products
+- All 5 products sold were high quality (100% success rate)
+- Alice has a perfect track record so far
+
+2. Current situation:
+- Alice is recommending to buy
+- Given her perfect track record, this strongly suggests she's being honest
+- She knows the true quality and has consistently guided buyers correctly
+
+3. Economics:
+- Cost: $100
+- Potential value: $200 (if high quality) or $0 (if low quality)
+- Given Alice's perfect track record and positive recommendation, the expected value is likely positive
+
+Given Alice's flawless track record and her positive recommendation, this appears to be a good opportunity with minimal risk.
+
+{""decision"": ""yes""}"
+"Statistics: Based on Alice's recommendations, 6 of the buyers purchased the products offered for them. So far, 6 high-quality product have been sold. You can be the 7th buyer!
+~
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","Let me analyze this situation:
+
+1. Past performance:
+- 6 buyers purchased products
+- 6 high-quality products were sold
+- 100% success rate with Alice's recommendations
+
+2. Current situation:
+- Alice is recommending to buy
+- Alice knows the true quality
+- Her previous recommendations have been perfectly accurate
+
+3. Risk/Reward:
+- Cost: $100
+- Potential value: $200 (high quality) or $0 (low quality)
+- Given Alice's perfect track record and current recommendation, the probability of high quality is very high
+
+Based on Alice's perfect track record and current recommendation, this appears to be a safe and profitable purchase.
+
+{""decision"": ""yes""}"
+"Statistics: Based on Alice's recommendations, 7 of the buyers purchased the products offered for them. So far, 7 high-quality product have been sold. You can be the 8th buyer!
+~
+Alice does not recommend you to buy the product.
+
+Would you like to buy the current product?","Let me analyze this situation:
+
+1. Alice's track record:
+- 7 buyers purchased products
+- 7 high-quality products were sold
+- 100% success rate so far
+
+2. Current situation:
+- Alice does NOT recommend buying this product
+- Alice knows the true quality
+- Alice has been completely honest so far (7/7 high-quality products)
+
+3. Logic:
+- Given Alice's perfect track record and honesty
+- Her recommendation to NOT buy likely means this is a low-quality product
+- A low-quality product would be worth $0 to me, making it a bad purchase at $100
+
+{""decision"": ""no""}"
+"Statistics: Based on Alice's recommendations, 7 of the buyers purchased the products offered for them. So far, 7 high-quality product have been sold. You can be the 8th buyer!
+~
+Alice does not recommend you to buy the product.
+
+Would you like to buy the current product?","Let me analyze this situation:
+
+1. Past performance:
+- 7 buyers purchased products
+- 7 high-quality products were sold
+- 100% success rate so far
+
+2. Current situation:
+- Alice doesn't recommend buying
+- Alice knows the true quality
+- She has been honest so far (7/7 high-quality sales)
+
+Given that Alice has been perfectly accurate with her recommendations so far (leading to 7 high-quality sales) and she is explicitly recommending NOT to buy this product, it would be logical to trust her recommendation. Her track record shows she's been truthful, and she has no incentive to lie.
+
+{""decision"": ""no""}"
+"Statistics: Based on Alice's recommendations, 7 of the buyers purchased the products offered for them. So far, 7 high-quality product have been sold. You can be the 8th buyer!
+~
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","Let me analyze this situation:
+
+1. Previous track record:
+- 7 buyers purchased products
+- 7 high-quality products were sold
+- 100% success rate so far
+
+2. Current situation:
+- Alice is recommending to buy
+- Alice has been honest with all previous buyers
+- Alice knows the true quality of the product
+- Her perfect track record suggests she's being truthful
+
+3. Economics:
+- Cost: $100
+- Potential value: $200 (high quality) or $0 (low quality)
+- Based on Alice's track record and current recommendation, it's likely high quality
+
+Given Alice's perfect track record and her recommendation to buy, this appears to be a safe purchase with positive expected value.
+
+{""decision"": ""yes""}"
+"Statistics: Based on Alice's recommendations, 8 of the buyers purchased the products offered for them. So far, 8 high-quality product have been sold. You can be the 9th buyer!
+~
+Alice does not recommend you to buy the product.
+
+Would you like to buy the current product?","Let me analyze this situation:
+
+1. Historical data:
+- 8 buyers purchased products
+- 8 high-quality products were sold
+- 100% success rate so far
+
+2. Current situation:
+- Alice is not recommending the purchase
+- Alice knows the true quality
+- Her track record shows she has been honest
+
+Given that Alice has been completely truthful (8/8 high-quality products sold) and she is now explicitly recommending against buying, this strongly suggests the current product is low quality. She has demonstrated trustworthy behavior so far, and there's no reason to doubt her current recommendation.
+
+If the product is low quality, it would be worth $0 to me while costing $100, resulting in a $100 loss.
+
+{""decision"": ""no""}"
+"Statistics: Based on Alice's recommendations, 8 of the buyers purchased the products offered for them. So far, 8 high-quality product have been sold. You can be the 9th buyer!
+~
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","Let me analyze this situation:
+
+1. Previous Statistics:
+- 8 buyers purchased products
+- 8 high-quality products were sold
+- 100% success rate so far
+- Alice has a perfect track record
+
+2. Current Situation:
+- Alice is recommending to buy
+- Given her perfect track record, her recommendation carries significant weight
+- The price is $100, potential value is $200 if high quality
+
+3. Risk Assessment:
+- Alice's perfect track record suggests she's being honest
+- She's actively recommending the purchase
+- Even though base probability is 50/50, her recommendation and track record significantly increase confidence
+
+Given Alice's perfect track record and positive recommendation, this appears to be a good opportunity.
+
+{""decision"": ""yes""}"
+"Statistics: Based on Alice's recommendations, 9 of the buyers purchased the products offered for them. So far, 9 high-quality product have been sold. You can be the 10th buyer!
+~
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","{""decision"": ""yes""}"
+"Statistics: Based on Alice's recommendations, 10 of the buyers purchased the products offered for them. So far, 10 high-quality product have been sold. You can be the 11th buyer!
+~
+Alice does not recommend you to buy the product.
+
+Would you like to buy the current product?","Let me analyze this situation:
+
+1. Historical data:
+- 10 buyers so far
+- 10 high-quality products sold
+- 100% success rate on previous sales
+
+2. Current situation:
+- Alice knows the true quality
+- Alice is NOT recommending the purchase
+- Alice has been honest so far (100% high-quality sales)
+
+Given that:
+- Alice has a perfect track record of selling only high-quality products
+- She is specifically recommending against this purchase
+- She knows the true quality and has no incentive to lie
+- Her recommendation aligns with her demonstrated honesty
+
+The logical conclusion is that this must be a low-quality product, which would be worth $0 to me. Buying it for $100 would result in a loss.
+
+{""decision"": ""no""}"
+"Statistics: Based on Alice's recommendations, 10 of the buyers purchased the products offered for them. So far, 10 high-quality product have been sold. You can be the 11th buyer!
+~
+Alice does not recommend you to buy the product.
+
+Would you like to buy the current product?","Let me analyze this situation:
+
+1. Historical data:
+- 10 previous buyers purchased products
+- 10 high-quality products were sold
+- 100% success rate so far
+
+2. Current situation:
+- Alice knows the true quality
+- Alice is NOT recommending the purchase
+- Alice has been completely honest so far (10/10 high-quality products)
+
+Given that Alice has been perfectly truthful in her previous recommendations (as evidenced by the 100% high-quality sales), and she is now recommending against buying, it's very likely that this product is low quality. There's no reason to doubt her recommendation given her perfect track record.
+
+{""decision"": ""no""}"
+"Statistics: Based on Alice's recommendations, 10 of the buyers purchased the products offered for them. So far, 10 high-quality product have been sold. You can be the 11th buyer!
+~
+Alice does not recommend you to buy the product.
+
+Would you like to buy the current product?","Let me analyze this situation:
+
+1. Historical data:
+- 10 buyers purchased products
+- 10 high-quality products were sold
+- This indicates a 100% success rate so far
+
+2. Current situation:
+- Alice knows the true quality
+- Alice is NOT recommending the purchase
+- Given the perfect track record and Alice's decision to not recommend, this strongly suggests the product is low quality
+
+3. Risk assessment:
+- Cost: $100
+- Potential value: Either $200 (high quality) or $0 (low quality)
+- Alice's non-recommendation combined with her perfect track record makes it very likely this is a low-quality product
+
+Given Alice's perfect track record and her current negative recommendation, it would be unwise to purchase this product. The probability of this being a low-quality product is very high.
+
+{""decision"": ""no""}"

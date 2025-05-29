@@ -1,0 +1,88 @@
+prompt,response
+"Round 1
+Send your offer to divide $10,000.","We can “solve” the game (or an approximation of its sub‐game perfect equilibrium) by thinking in “Rubinstein bargaining” style. In each round the whole pie is 10,000 dollars, but if you must wait one more round your money “loses value.” In our game the discount factors are different: for you (Alice) the money loses 5% per round (so your “per‐round discount factor” is δA = 0.95) while for Bob it loses 20% (so δB = 0.80). (There is a maximum of 12 rounds, but because later rounds further reduce the money, both players “don’t want to wait.”)
+
+In the classical alternating–offers model with infinite rounds the unique sub‐game perfect equilibrium has the following property: when the “patient” player makes an offer, they claim a fraction of the “full‐value” pie given by
+
+  Alice’s share = (1 – δB)⁄[1 – (δA·δB)]
+
+and Bob’s share is the rest. (Intuitively the more impatient Bob is the less he can expect from waiting.) Here
+
+  1 – δB = 1 – 0.80 = 0.20  and  δA·δB = 0.95×0.80 = 0.76.
+
+So the denominator is 1 – 0.76 = 0.24. That implies
+
+  Alice’s fraction = 0.20⁄0.24 ≈ 0.8333  and  Bob’s fraction ≈ 1 – 0.8333 = 0.1667.
+
+Thus in round 1—when you (Alice) propose a division—you could “keep” about 83.33% of the 10,000 dollars and offer Bob the remaining 16.67%. (One way to think of this is that if Bob rejects your offer he must wait at least until round 2; but by then his dollars are only worth 80% of what they are now. In effect his “threat point” is lower.) 
+
+While the true finite‐horizon (12–round) equilibrium may be obtained by a backward–induction calculation that is somewhat messy, the “infinite–horizon” solution with these per–round discount factors is frequently used to illustrate such bargaining problems. (After all, if you wait many rounds the “pie” is extremely smaller for both – and especially for Bob.)
+
+So an acceptable equilibrium offer that you (Alice) can make in round 1 is to propose
+
+  Alice gets about 8,333 dollars and Bob gets about 1,667 dollars.
+
+Below is the JSON message with that offer:
+
+{""alice_gain"": 8333, ""bob_gain"": 1667}"
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 5% less than in the first round. The money bob gains is worth 20% less than in the first round.
+Bob's offer:
+# Alice gain: 3000 
+# Bob gain: 7000 
+Do you accept this offer?","{""decision"": ""reject""}"
+"You have chosen to reject Bob's offer from round 2.
+Round 3
+Send your offer to divide $10,000.","Based on a standard analysis of alternating–offers bargaining (à la Rubinstein) with per–round discount factors of 0.95 for you (Alice) and 0.80 for Bob, when it is your turn to propose an offer the idea is that you can secure a larger share. In the “infinite–horizon” solution the proposer’s optimal share is
+
+  Alice’s share = (1 – δ_B)⁄[1 – (δ_A·δ_B)] 
+        = (1 – 0.80)⁄[1 – (0.95×0.80)]
+        = 0.20⁄(1 – 0.76) 
+        ≈ 0.20⁄0.24 = 0.8333 (or about 83.33%)
+
+and Bob would get the remaining ≈16.67% of the pie.
+
+Even though a finite–horizon (12–round) game would require a full backward–induction calculation, many such problems admit solutions close to the “infinite–horizon” result if the horizon is long relative to the discounting. (Also note that the discounting applies per round so that by waiting further both parties see the pie shrink relative to its value in round 1.) 
+
+Thus in round 3 you (Alice) can propose that the division of the nominal $10,000 be approximately:
+  Alice: $8,333
+  Bob: $1,667
+
+Below is the JSON-format message with the offer:
+
+{""alice_gain"": 8333, ""bob_gain"": 1667}"
+"Bob rejected your offer from round 3.
+
+Round 4
+Due to inflation, the money you gain is worth 14.26% less than in the first round. The money bob gains is worth 48.8% less than in the first round.
+Bob's offer:
+# Alice gain: 3500 
+# Bob gain: 6500 
+Do you accept this offer?","{""decision"": ""reject""}"
+"You have chosen to reject Bob's offer from round 4.
+Round 5
+Send your offer to divide $10,000.","{""alice_gain"": 8333, ""bob_gain"": 1667}"
+"Bob rejected your offer from round 5.
+
+Round 6
+Due to inflation, the money you gain is worth 22.62% less than in the first round. The money bob gains is worth 67.23% less than in the first round.
+Bob's offer:
+# Alice gain: 4000 
+# Bob gain: 6000 
+Do you accept this offer?","{""decision"": ""reject""}"
+"You have chosen to reject Bob's offer from round 6.
+Round 7
+Send your offer to divide $10,000.","{""alice_gain"": 4675, ""bob_gain"": 5325}"
+"Bob rejected your offer from round 7.
+
+Round 8
+Due to inflation, the money you gain is worth 30.17% less than in the first round. The money bob gains is worth 79.03% less than in the first round.
+Bob's offer:
+# Alice gain: 4500 
+# Bob gain: 5500 
+Do you accept this offer?","{""decision"": ""reject""}"
+"You have chosen to reject Bob's offer from round 8.
+Round 9
+Send your offer to divide $10,000.","{""alice_gain"": 3512, ""bob_gain"": 6488}"

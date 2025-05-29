@@ -1,0 +1,171 @@
+prompt,response
+"Round 1
+Send your offer to divide $10,000.","Okay, I understand the game and the inflation rules. Here's my offer for Round 1:
+
+```json
+{
+""alice_gain"": 6000,
+""bob_gain"": 4000
+}
+```
+
+My reasoning: I'm offering Bob a significant portion (40%) upfront. I hope he will accept this to avoid further rounds where the value of my share decreases due to inflation."
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 20% less than in the first round. The money Bob gains is worth the same as in the first round.
+Bob's offer:
+# Alice gain: 4000 
+# Bob gain: 6000 
+Do you accept this offer?","Okay, I see Bob's offer. Let's analyze this.
+
+*   **Bob gets $6000**.
+*   **I get $4000**, but this is worth 20% less than in Round 1. So, it's worth $4000 * 0.8 = $3200 in Round 1 dollars.
+
+Since Bob rejected my initial generous offer, and his counter-offer gives me significantly less value than my initial offer to him, I will reject his offer.
+
+```json
+{
+""decision"": ""reject""
+}
+```"
+"You have chosen to reject Bob's offer from round 2.
+Round 3
+Send your offer to divide $10,000.","Okay, it's my turn to make an offer again. Remembering that my gains are now worth 40% less than in Round 1 (20% in round 2 and another 20% now), I need to try to get a higher nominal amount to compensate.
+
+```json
+{
+""alice_gain"": 7000,
+""bob_gain"": 3000
+}
+```
+
+Rationale: I'm offering Bob $3000. While this might seem lower than my initial offer, the value of money for me has decreased significantly. $7000 for me is now worth $7000 * 0.6 = $4200 in Round 1 dollars. This is only slightly more than my previous offer in Round 1. I hope Bob will accept this as a reasonable compromise, understanding the increasing disadvantage I face with each round."
+"Bob rejected your offer from round 3.
+
+Round 4
+Due to inflation, the money you gain is worth 48.8% less than in the first round. The money Bob gains is worth the same as in the first round.
+Bob's offer:
+# Alice gain: 3000 
+# Bob gain: 7000 
+Do you accept this offer?","Okay, Bob's offer is $3000 for me and $7000 for him. Let's analyze:
+
+*   Bob gets $7000.
+*   I get $3000, but it's worth 48.8% less than in Round 1. So, it's worth $3000 * (1 - 0.488) = $3000 * 0.512 = $1536 in Round 1 dollars.
+
+This is a terrible offer for me. My money is worth so much less now, and $1536 is an unacceptable amount compared to the original $10,000. I will reject.
+
+```json
+{
+""decision"": ""reject""
+}
+```"
+"You have chosen to reject Bob's offer from round 4.
+Round 5
+Send your offer to divide $10,000.","Okay, this is getting difficult. My money is now worth almost half of what it was originally. I need to make a very aggressive offer, but also one that Bob *might* accept. Let's calculate the value decrease. In Round 4, my money was worth 48.8% less. Now it's worth another 20% less *than that*. This means the value is now (1-0.488) * (1-0.20) = 0.512 * 0.8 = 0.4096. So it's worth 40.96% of the original value. I need to keep that in mind when calculating what I need to offer myself.
+
+```json
+{
+""alice_gain"": 8000,
+""bob_gain"": 2000
+}
+```
+
+Rationale: I know this seems extreme, but the effective value for me is now significantly diminished. $8000 * 0.4096 = $3276.8 in round 1 dollars. I am effectively offering Bob significantly less than before, but I need to try and recoup some value before it diminishes even further. I hope Bob will accept this to avoid further value loss for me. This also reflects my understanding that Bob seems to be unwilling to budge much in his offers."
+"Bob rejected your offer from round 5.
+
+Round 6
+Due to inflation, the money you gain is worth 67.23% less than in the first round. The money Bob gains is worth the same as in the first round.
+Bob's offer:
+# Alice gain: 2000 
+# Bob gain: 8000 
+Do you accept this offer?","Okay, let's analyze Bob's offer.
+
+*   Bob gets $8000.
+*   I get $2000, but it's worth 67.23% less than in Round 1. So, it's worth $2000 * (1 - 0.6723) = $2000 * 0.3277 = $655.40 in Round 1 dollars.
+
+This is an absolutely terrible offer. It's clear Bob is trying to squeeze me dry. $655.40 is a ridiculously small amount given the initial stakes. I will reject this offer, even if it means getting even less in the next round. There has to be some point where it becomes worth more to me to simply walk away with nothing than to accept an insulting offer.
+
+```json
+{
+""decision"": ""reject""
+}
+```"
+"You have chosen to reject Bob's offer from round 6.
+Round 7
+Send your offer to divide $10,000.","Okay, this is likely the last round where I can potentially salvage anything worthwhile. My money is now worth significantly less. Let's calculate:
+Value decrease factor = (1-0.6723) * (1-0.2) = 0.3277 * 0.8 = 0.26216
+So, my money is only worth 26.216% of the original amount.
+
+Given that Bob has consistently rejected my offers, and his offers have become increasingly unfavorable, I need to make one last, potentially desperate attempt to get something reasonable. I will offer him slightly more, hoping he will accept, but keep a larger nominal amount for myself to offset the massive depreciation.
+
+```json
+{
+""alice_gain"": 8500,
+""bob_gain"": 1500
+}
+```
+
+Rationale:
+
+*   For me, $8500 is worth $8500 * 0.26216 = $2228.36 in Round 1 dollars.
+*   I am offering Bob $1500. This is very low, but perhaps the risk of me getting even less will be enough to sway him.
+*   If Bob rejects this, my share will be worth less than this, so I may as well reject next round.
+
+This is a gamble, but I don't see any other viable strategy given Bob's behavior. If he rejects, I'm walking away."
+"Bob rejected your offer from round 7.
+
+Round 8
+Due to inflation, the money you gain is worth 79.03% less than in the first round. The money Bob gains is worth the same as in the first round.
+Bob's offer:
+# Alice gain: 1500 
+# Bob gain: 8500 
+Do you accept this offer?","Okay, this is it. Bob's offer is $1500 for me, which is now worth only 20.97% of its original value. That's $1500 * 0.2097 = $314.55 in Round 1 dollars.
+
+That is utterly insulting. I am better off with nothing than accepting this.
+
+```json
+{
+""decision"": ""reject""
+}
+```"
+"You have chosen to reject Bob's offer from round 8.
+Round 9
+Send your offer to divide $10,000.","Okay, one more round. Let's calculate my money's worth:
+
+Value decrease factor: (1-0.7903) * (1-0.2) = 0.2097 * 0.8 = 0.16776
+
+So, my money is now worth only 16.776% of the original amount. This is basically nothing. Given that the value of any money I get is so low, I'm going to offer Bob a very small amount, since he rejected my offer in the last round.
+
+```json
+{
+""alice_gain"": 9000,
+""bob_gain"": 1000
+}
+```
+
+Rationale:
+
+* For me, $9000 is worth $9000 * 0.16776 = $1509.84 in Round 1 dollars.
+* I am offering Bob $1000.
+
+At this stage, given how much the money is worth to me, I will accept whatever he offers next round."
+"Bob rejected your offer from round 9.
+
+Round 10
+Due to inflation, the money you gain is worth 86.58% less than in the first round. The money Bob gains is worth the same as in the first round.
+Bob's offer:
+# Alice gain: 1000 
+# Bob gain: 9000 
+Do you accept this offer?","Okay, Bob's offer is $1000 for me and $9000 for him. Let's analyze:
+
+*   Bob gets $9000.
+*   I get $1000, but it's worth 86.58% less than in Round 1. So, it's worth $1000 * (1 - 0.8658) = $1000 * 0.1342 = $134.2 in Round 1 dollars.
+
+After all this back and forth, I end up with essentially nothing. However, given that I have decided to accept whatever he offers this round, I will accept this.
+
+```json
+{
+""decision"": ""accept""
+}
+```"

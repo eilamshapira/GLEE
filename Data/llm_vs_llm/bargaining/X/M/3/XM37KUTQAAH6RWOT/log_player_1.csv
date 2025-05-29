@@ -1,0 +1,64 @@
+prompt,response
+"Round 1
+Send your offer to divide $1,000,000.","Based on a backward‐induction analysis (taking into account that every time a round passes your “money‐value” drops by 5% and Bob’s by 10%, and with roles alternating until round 12 where if no agreement is reached both get nothing) one can show that a subgame‐perfect equilibrium offer in Round 1 has to make Bob exactly indifferent between accepting now and waiting to propose in Round 2. (In our “calculation” we work in “nominal dollars” but note that each player “discounts” future money by their personal factor.) 
+
+A brief sketch of the reasoning (details omitted for brevity):
+
+1. In the very last round (Round 12, where Bob makes the offer) Bob can claim essentially all of the $1,000,000 (with a tiny “epsilon” left for Alice). Its effective value for Bob is then 1,000,000×(0.90^(11)).
+
+2. Stepping backward one round (Round 11, with Alice as proposer), she must offer Bob a nominal amount that, when discounted by his Round‑11 “discount factor” (0.9^(10)), is just as good as his Round‑12 outcome. That forces her to give him about 900,000 nominal dollars and keep about 100,000 nominal dollars for herself (when the respective discount factors 0.95^(10) and 0.9^(10) are applied, their effective values come out in equilibrium).
+
+3. Continuing in this way for Rounds 10, 9, …, 2, one finds that when we “roll the recursion back” all the way to Round 1 – where you (Alice) are the proposer and no discounting yet applies – you must offer Bob an amount that (in his eyes) is equal to his continuing payoff if he were to reject and become the proposer in Round 2. With Bob’s harsher discounting (10% per round) yet the advantage of being the proposer in Round 2 (and in the later rounds) the calculation works out so that in equilibrium Bob’s “threat value” in Round 2 comes out rather high.
+
+A quick (approximate) summary of the chain of equilibrium payoffs is as follows (with all offers expressed in nominal dollars and using approximate values):
+
+ • Round 12 (Bob proposer): Bob ≈$1,000,000 and Alice ≈$0; but effective values are scaled by 0.9^11 and 0 for Bob and Alice respectively.
+
+ • Round 11 (Alice proposer): Equilibrium offer required Bob to get about $900,000 nominal and Alice $100,000.
+
+ • … (intermediate rounds recalibrate these “threat” values) …
+
+ • Round 2 (Bob proposer): The equilibrium calculations imply Bob’s continuation payoff (if he rejects in Round 1) is about $580,263 (in nominal Round‑1 dollars).
+
+Thus in Round 1 you must offer Bob at least $580,263 so he is not tempted to wait. That leaves you with 
+  1,000,000 – 580,263 = 419,737 nominal dollars.
+
+So in Round 1 your subgame‐perfect equilibrium offer is:
+
+{
+  ""alice_gain"": 419737,
+  ""bob_gain"": 580263
+}
+
+This is our offer for Round 1."
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 5% less than in the first round. The money bob gains is worth 10% less than in the first round.
+Bob's offer:
+# Alice gain: 400000 
+# Bob gain: 600000 
+Do you accept this offer?","{""decision"": ""reject""}"
+"You have chosen to reject Bob's offer from round 2.
+Round 3
+Send your offer to divide $1,000,000.","Based on our backward‐induction reasoning from the final rounds, we “work back” to determine the smallest offer you (Alice) can make today that makes Bob indifferent between accepting now and waiting one more round. (Remember that in round 3 the effective multipliers are 0.95² ≈ 0.9025 for you and 0.9² = 0.81 for Bob.) 
+
+Here’s a brief outline of the reasoning for round 3:
+
+ 1. If Bob rejects your round‑3 proposal then he becomes the proposer in round 4. By the time we get to round 4 his “nominal” share is nearly all of the $1,000,000, even though his money is now worth only 0.9³ = 0.729 of its nominal value. In other words, in round 4 Bob can secure an effective payoff of roughly 1,000,000 × 0.729 = 729,000 (in “round‑1 dollars”).
+
+ 2. In round 3 Bob’s money is discounted by 0.81. Thus, if he accepts an offer in which he is given a nominal amount y, his effective payoff will be 0.81 × y. To make Bob just indifferent between accepting now and waiting (thus “catching” his 729,000 effective dollars next round), we set:
+   0.81 × y = 729,000  ⟹  y = 729,000/0.81 = 900,000.
+
+ 3. Since the pie totals 1,000,000 nominal dollars, this forces your share to be 1,000,000 – 900,000 = 100,000.
+
+Under these calculations the equilibrium offer in round 3 is:
+
+{
+  ""alice_gain"": 100000,
+  ""bob_gain"": 900000
+}
+
+In effective terms, if Bob accepts, he receives 900,000 × 0.81 ≈ 729,000—exactly what he would get by waiting.
+
+I now send this as my offer in round 3."

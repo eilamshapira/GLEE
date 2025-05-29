@@ -1,0 +1,39 @@
+prompt,response
+"Round 1
+Alice's offer:
+# Alice's message: Hello Bob, I am offering the product to you at a price of $1200000. Let me know if you're interested. 
+# Alice's offer: The product price will be $1,200,000. 
+You have three options:
+(1) Accept Alice's offer, and buy the product for $1,200,000
+(2) Reject Alice's offer and proceed to the next round, where you will send Alice a counteroffer
+(3) Buy the product from Jhon for $1,000,000","Given that:
+1. The product is worth no more than $1,000,000 to me
+2. Alice's offer ($1,200,000) is higher than both my maximum value and John's price
+3. John is offering the product at $1,000,000
+
+The rational decision is to reject Alice's offer since it's significantly above both my maximum value and John's alternative price. I'll reject and make a counteroffer in the next round.
+
+{""decision"": ""RejectOffer""}"
+"You chose to make a counteroffer to Alice.
+
+Round 2
+Send your counteroffer to Alice.","I'll make a counteroffer that's significantly lower than both Alice's initial offer and John's price, leaving room for negotiation while still being reasonable.
+
+{""message"": ""Hi Alice, thank you for your offer. However, $1,200,000 is considerably above my budget. Given market conditions and my valuation of the product, I can offer $800,000. This is a fair price that would work well for both of us."", ""product_price"": 800000}"
+"Alice rejected your offer from round 2.
+
+Round 3
+Alice's offer:
+# Alice's message: Hi Bob, thank you for your offer. I understand your valuation, but I believe this product holds considerable additional value. I can lower my offer to $1100000. Let me know if this works for you. 
+# Alice's offer: The product price will be $1,100,000. 
+You have three options:
+(1) Accept Alice's offer, and buy the product for $1,100,000
+(2) Reject Alice's offer and proceed to the next round, where you will send Alice a counteroffer
+(3) Buy the product from Jhon for $1,000,000","Given that:
+1. Alice's new offer ($1,100,000) is still higher than both my maximum value ($1,000,000) and John's price ($1,000,000)
+2. We've already gone through two rounds, and Alice's reduction was relatively small ($100,000)
+3. John's offer ($1,000,000) is guaranteed and matches my maximum value
+
+At this point, since Alice's price is still above both my maximum value and John's price, and she seems unlikely to drop the price significantly below $1,000,000 based on her negotiation pattern, the most rational decision is to buy from John.
+
+{""decision"": ""BuyFromJhon""}"

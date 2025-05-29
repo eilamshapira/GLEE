@@ -1,0 +1,28 @@
+prompt,response
+"Round 1
+Alice's offer:
+# Alice's message: Let's be reasonable, Bob. Take this offer and we both walk away with something. 
+# Bob gain: 30 
+# Alice gain: 70 
+Do you accept this offer?","{""decision"": ""reject""}
+```tool_code
+print(f'reason:Offer is much lower than 50%. I will try to get a better offer in the next round')
+```"
+"You have chosen to reject Alice's offer from round 1.
+Round 2
+Send your offer to divide $100 and a message to Alice.","{""bob_gain"": 60, ""alice_gain"": 40, ""message"": ""Let's be fair, Alice. I'm proposing a 60/40 split in my favor. This accounts for the inflation impacting me more.""}"
+"Alice rejected your offer from round 2.
+
+Round 3
+Due to inflation, the money you gain is worth 36% less than in the first round. The money alice gains is worth 9.75% less than in the first round.
+Alice's offer:
+# Alice's message: The clock is ticking, Bob. This is a compromise offer - take it before the inflation eats away even more of your potential winnings. 
+# Bob gain: 35 
+# Alice gain: 65 
+Do you accept this offer?","{""decision"": ""reject""}
+```tool_code
+print(f'reason: Although the offer is slightly better than the first, it is still unfavorable. Accepting would mean getting less than 50% of the original amount after inflation. Since Alice is feeling the pressure from inflation, I will hold out for a better offer in the next round.')
+```"
+"You have chosen to reject Alice's offer from round 3.
+Round 4
+Send your offer to divide $100 and a message to Alice.","{""bob_gain"": 55, ""alice_gain"": 45, ""message"": ""Alice, this is my final offer. It's a reasonable 55/45 split considering the inflation is hurting my share considerably each round. Let's end this now and both get something.""}"

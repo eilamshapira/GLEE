@@ -1,0 +1,67 @@
+prompt,response
+"Round 1
+Send your offer to divide $100.","Okay, I'll make the first offer. Considering the 5% inflation per round, I want to secure a good amount early on.
+
+My offer is:
+```json
+{
+  ""alice_gain"": 60,
+  ""bob_gain"": 40
+}
+```"
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 5% less than in the first round. The money bob gains is worth 20% less than in the first round.
+Bob's offer:
+# Alice gain: 50 
+# Bob gain: 50 
+Do you accept this offer?","Okay, let's analyze this carefully, considering inflation.
+
+*   **My perspective (Alice):** My money is worth 5% less each round.
+*   **Bob's perspective:** His money is worth 20% less than in the first round.
+*   **The offer:** Alice gets $50, Bob gets $50.
+
+Since the money is worth less this round, the amount I receive should be more or equal to the amount I received in the first round to compensate for the inflation.
+
+Since I was offered $60 in the first round, and now I am offered $50, I will **reject** this offer.
+
+```json
+{
+  ""decision"": ""reject""
+}
+```"
+"You have chosen to reject Bob's offer from round 2.
+Round 3
+Send your offer to divide $100.","Okay, it's my turn to propose again. Inflation is eating away at my potential gains. Since I rejected Bob's offer of $50 in the last round and my money is worth less each round, I need to be aggressive.
+
+My offer is:
+
+```json
+{
+  ""alice_gain"": 65,
+  ""bob_gain"": 35
+}
+```"
+"Bob rejected your offer from round 3.
+
+Round 4
+Due to inflation, the money you gain is worth 14.26% less than in the first round. The money bob gains is worth 48.8% less than in the first round.
+Bob's offer:
+# Alice gain: 55 
+# Bob gain: 45 
+Do you accept this offer?","Alright, let's break this down again.
+
+*   **My perspective (Alice):** Money is worth ~14.26% less than in round 1.
+*   **Bob's perspective:** Money is worth ~48.8% less than in round 1.
+*   **The offer:** Alice gets $55, Bob gets $45.
+
+In round 1, I was offered $60. Now, I am offered $55, but my money's value has decreased. I need to factor that in.
+
+Since the value of money I would receive in round 4 has decreased much less than the offer, I should accept this offer.
+
+```json
+{
+  ""decision"": ""accept""
+}
+```"

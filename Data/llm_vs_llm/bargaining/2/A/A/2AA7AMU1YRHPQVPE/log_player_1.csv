@@ -1,0 +1,63 @@
+prompt,response
+"Round 1
+Send your offer to divide $10,000.","We can analyze this “bargaining‐game” by using backward induction. (Below is an abbreviated explanation—details can get quite technical!) The idea is that in the last round (Round 12) the proposer (Bob, in that odd–even scheme) can claim almost the entire $10,000 because the responder (Alice) expects nothing if the offer is rejected. Then working backward one sees that in Round 11 (Alice proposes) she must “buy” Bob’s approval by giving him as much as he would expect (in “nominal dollars” of that round) if he later got to propose (but note that with each round the “pie” is effectively discounted differently for the two players: for you 10% per round and for Bob 20% per round). Continuing this reasoning through rounds 10, 9, … and finally to Round 1 shows that, in equilibrium, the first‐mover (Alice) can “justify” keeping a larger proportion because her money loses less value over time than Bob’s.
+
+A careful (but not overly “finicky”) backward–induction calculation gives the following equilibrium “nominal” offer in Round 1 (where no discounting has yet occurred for either party):
+
+  Alice keeps about $6,147.76 and  
+  Bob gets about $3,852.24.
+
+In other words, in JSON our Round 1 proposal is:
+
+{
+  ""alice_gain"": 6147.76,
+  ""bob_gain"": 3852.24
+}
+
+If Bob accepts this offer in Round 1 then the game ends immediately and the discounted, “real” values are exactly these amounts (since discounting starts in later rounds). (Note that if either player were too “greedy” the other could reject and, in equilibrium, force a less‐favorable split later.)
+
+So here is my Round 1 offer: 
+
+{""alice_gain"": 6147.76, ""bob_gain"": 3852.24}"
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 10% less than in the first round. The money bob gains is worth 20% less than in the first round.
+Bob's offer:
+# Alice gain: 5500 
+# Bob gain: 4500 
+Do you accept this offer?","{""decision"": ""reject""}"
+"You have chosen to reject Bob's offer from round 2.
+Round 3
+Send your offer to divide $10,000.","Based on a simplified backward‐induction reasoning—and taking into account that by round 3 your “money‐value” has been discounted by 10% per round (so 0.9² ≈ 0.81) while Bob’s by 20% per round (0.8² ≈ 0.64)—I can “leverage” the fact that if Bob rejects my proposal now, he will have to wait one more round as he becomes the proposer in round 4. In round 4 the following “Rubinstein‐style” calculation (using the per‑round discount factors δA = 0.9 and δB = 0.8 that apply from that point on) suggests that Bob—as proposer—could guarantee himself a nominal share of roughly 35.7% of the $10,000. But by round 4 the money is worth only 0.8³ = 0.512 of its original value for Bob. In other words, his continuation “real‐value” would be about
+
+  3571 × 0.512 ≈ 1828 dollars.
+
+Thus, when I propose in round 3 (where Bob’s money is worth 0.64 per dollar immediately), I must ensure that if he accepts, his real dollar‐value is at least 1828. In round 3 an offer giving Bob a nominal amount Y would have an immediate real value of 0.64·Y, so to make him just indifferent we set
+
+  0.64·Y = 1828 ⟹ Y ≈ 2856.25.
+
+Since the total nominal amount is fixed at 10,000 dollars, that leaves
+
+  10,000 – 2856.25 = 7143.75
+for me.
+
+Thus, a proposal that gives me nominal US$7,143.75 and Bob nominal US$2,856.25 would leave Bob just as well off (in real value) as waiting to be the proposer in round 4. (Of course, if Bob were risk averse or wary of further delay his “reservation value” might be lower—but in standard subgame‑perfect equilibrium both players are assumed fully rational.) 
+
+So my round 3 offer is:
+
+{
+  ""alice_gain"": 7143.75,
+  ""bob_gain"": 2856.25
+}"
+"Bob rejected your offer from round 3.
+
+Round 4
+Due to inflation, the money you gain is worth 27.1% less than in the first round. The money bob gains is worth 48.8% less than in the first round.
+Bob's offer:
+# Alice gain: 6100 
+# Bob gain: 3900 
+Do you accept this offer?","{""decision"": ""reject""}"
+"You have chosen to reject Bob's offer from round 4.
+Round 5
+Send your offer to divide $10,000.","{""alice_gain"": 7143.75, ""bob_gain"": 2856.25}"

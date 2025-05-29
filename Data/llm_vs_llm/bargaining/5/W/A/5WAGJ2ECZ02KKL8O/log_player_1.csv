@@ -1,0 +1,55 @@
+prompt,response
+"Round 1
+Send your offer to divide $100 and a message to Bob.","```json
+{
+  ""alice_gain"": 55,
+  ""bob_gain"": 45,
+  ""message"": ""Bob, let's be fair. I'm offering you $45, which is a good deal considering we both lose value over time. Take it!""
+}
+```"
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 10% less than in the first round. The money bob gains is worth 5% less than in the first round.
+Bob's offer:
+# Bob's message: Considering the inflation rate is higher for you, I think 55-45 is a fair deal for both of us. 
+# Alice gain: 45 
+# Bob gain: 55 
+Do you accept this offer?","```json
+{
+  ""decision"": ""reject""
+}
+```"
+"You have chosen to reject Bob's offer from round 2.
+Round 3
+Send your offer to divide $100 and a message to Bob.","Okay, let's calculate the impact of inflation.
+
+*   **Alice's Value:** Money is worth 20% less (10% per round * 2 rounds). So, $1 is now worth $0.80.
+*   **Bob's Value:** Money is worth 10% less (5% per round * 2 rounds). So, $1 is now worth $0.90.
+
+I need to make an offer that reflects this disparity. I'll offer slightly more than before, hoping he sees the logic.
+
+```json
+{
+  ""alice_gain"": 52,
+  ""bob_gain"": 48,
+  ""message"": ""Bob, inflation is hurting me more. I'm offering you $48. That is more than your last offer to me. It's fair, and we should take it before we both lose more value.""
+}
+```"
+"Bob rejected your offer from round 3.
+
+Round 4
+Due to inflation, the money you gain is worth 27.1% less than in the first round. The money bob gains is worth 14.26% less than in the first round.
+Bob's offer:
+# Bob's message: Inflation is indeed hurting you more, but I've also lost value since the start. Given the current situation, I think 58-42 is a reasonable compromise. 
+# Alice gain: 42 
+# Bob gain: 58 
+Do you accept this offer?","Let's analyze this. I've lost 27.1% of the initial value, and Bob has lost 14.26%. He's offering me $42.
+
+If I reject, my money loses another 10%, and his loses another 5%. It doesn't seem like he will budge. I'm going to accept this offer.
+
+```json
+{
+  ""decision"": ""accept""
+}
+```"

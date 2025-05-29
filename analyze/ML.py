@@ -32,9 +32,15 @@ def load_data(bargaining_files, negotiation_files, persuasion_files, games_per_m
     else:
         print("loading all games")
     
-    # nego = NegotiationMetrics("/data/home/eilamshapira/GLEE/analyze/configs/negotiation_with_stats.csv")
-    # pers = PersuasionMetrics("/data/home/eilamshapira/GLEE//analyze/configs/persuasion_with_stats.csv")
-    # rubin = BargainingMetrics(f"configs/{exp_path}_bargaining_with_stats.csv", drop_unknown_llms=False)
+    # Convert file paths to use output directory if they don't already
+    def convert_to_output_path(file_path):
+        if not file_path.startswith("output/"):
+            return f"output/configs/{os.path.basename(file_path)}"
+        return file_path
+    
+    bargaining_files = [convert_to_output_path(f) for f in bargaining_files] if bargaining_files else []
+    negotiation_files = [convert_to_output_path(f) for f in negotiation_files] if negotiation_files else []
+    persuasion_files = [convert_to_output_path(f) for f in persuasion_files] if persuasion_files else []
     
     rubin = [BargainingMetrics(file, drop_unknown_llms=False) for file in bargaining_files] if bargaining_files else []
     nego = [NegotiationMetrics(file, drop_unknown_llms=False) for file in negotiation_files] if negotiation_files else []
@@ -194,22 +200,22 @@ class StatsModelOfOneHots:
                 baseline_value = forced_baselines[col]
             elif col in forced_baselines:
                 baseline_value = all_vals[0]
-                print(f"[אזהרה] הערך '{forced_baselines[col]}' לא קיים בעמודה '{col}'. משתמשים בשרירותי: {baseline_value}")
-                print('אפשרויות:', all_vals)
+                print(f"[WARNING] The value '{forced_baselines[col]}' does not exist in column '{col}'. Using arbitrary value: {baseline_value}")
+                print('Options:', all_vals)
             else:
                 baseline_value = all_vals[0]
 
-            # הפוך את הערך לעמודת קטגוריה עם סדר מדויק
+            # Convert the value to a categorical column with precise order
             dummies_input[col] = pd.Categorical(
                 X_raw[col].astype(str),
                 categories=[baseline_value] + [v for v in all_vals if v != baseline_value],
                 ordered=True
             )
 
-        # יצירת דאמיסים עם drop_first כדי להוריד את ה־baseline
+        # Create dummies with drop_first to remove the baseline
         dummies = pd.get_dummies(dummies_input, prefix_sep="==", drop_first=True)
 
-        # בדיקת מה באמת הוסר
+        # Check what was actually removed
         baselines = {}
         for col in self.feature_names:
             all_vals = self.all_levels[col]
@@ -218,14 +224,14 @@ class StatsModelOfOneHots:
             if len(missing) == 1:
                 detected_baseline = missing[0]
             elif len(missing) == 0:
-                detected_baseline = None  # יכול לקרות אם יש רק ערך אחד
+                detected_baseline = None  # Can happen if there is only one value
             else:
-                print(f"[שגיאה] בעיה בזיהוי baseline לעמודה {col}, חסרים ערכים: {missing}")
+                print(f"[ERROR] Problem detecting baseline for column {col}, missing values: {missing}")
                 detected_baseline = None
 
             expected_baseline = forced_baselines.get(col, all_vals[0])
             if detected_baseline != expected_baseline:
-                print(f"[אזהרה] בעמודה '{col}', ה־baseline שהוסר בפועל הוא '{detected_baseline}', ולא מה שהתכוונת ('{expected_baseline}')")
+                print(f"[WARNING] In column '{col}', the baseline actually removed is '{detected_baseline}', not what you intended ('{expected_baseline}')")
 
             baselines[col] = detected_baseline
 
@@ -508,6 +514,16 @@ for metric in METRICS:
 
 # save to csv
 df = pd.DataFrame(all_coefs, columns=["family", "metric", "paramter_coef", "value", "effect", "ci_low", "ci_high"])
-os.makedirs("analyze_coefs", exist_ok=True)
-df.to_csv(f"analyze_coefs/{args.exp_name}.csv", index=False)
+os.makedirs("output/analyze_coefs", exist_ok=True)
+df.to_csv(f"output/analyze_coefs/{args.exp_name}.csv", index=False)
+
+def analyze_coefs(args):
+    # Create output directory if it doesn't exist
+    os.makedirs("output/analyze_coefs", exist_ok=True)
+    
+    # Load the data
+    df = pd.read_csv(f"output/analyze_coefs/{args.exp_name}.csv")
+    
+    # Save the analyzed coefficients
+    df.to_csv(f"output/analyze_coefs/{args.exp_name}_analyzed.csv", index=False)
 

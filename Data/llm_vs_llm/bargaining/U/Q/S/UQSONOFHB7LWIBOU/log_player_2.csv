@@ -1,0 +1,69 @@
+prompt,response
+"Round 1
+Alice's offer:
+# Alice's message: Hi Bob, I'm proposing we split the $1000000 so that I receive $850000 and you receive $150000. Considering the inflation concerns (the money might lose value in future rounds), I believe it's best we settle now. I look forward to your prompt acceptance. 
+# Bob gain: 150000 
+# Alice gain: 850000 
+Do you accept this offer?","Let me think about this strategically:
+
+1. Current offer: $150,000 for me
+2. If I reject and move to next round:
+   * Money will be worth 10% less for me
+   * Maximum I could propose would be $1,000,000 * 0.9 = $900,000 value for me
+   * But Alice would likely reject a very uneven split
+   * And further rounds would mean even more value loss
+
+The offer of $150,000 is quite low (only 15% of the total), but:
+1. I don't know how inflation affects Alice
+2. I have guaranteed money now
+3. Future rounds could lead to even worse outcomes if we can't agree
+
+However, given that the split is so unfavorable (15/85), and I still have a chance to make a counter-offer where I could propose a more balanced split (even accounting for 10% inflation), I should reject this offer.
+
+{""decision"": ""reject""}"
+"You have chosen to reject Alice's offer from round 1.
+Round 2
+Send your offer to divide $1,000,000 and a message to Alice.","I'll propose a more balanced split while acknowledging the inflation risk for both parties:
+
+{""bob_gain"": 600000,
+""alice_gain"": 400000,
+""message"": ""Hi Alice, I propose a 60-40 split in favor of me as the current proposer. This is a fair offer considering that we both face risks from delay. Let's settle this now with a reasonable split that benefits both of us.""}
+
+My reasoning:
+1. I'm proposing a 60-40 split which is much more balanced than the previous 15-85 split
+2. As the proposer, it's reasonable to ask for a somewhat larger share
+3. The message emphasizes fairness and mutual benefit
+4. I mention the risk of delay to encourage acceptance
+5. Even if Alice rejects, my future position won't be terrible due to only 10% inflation per round"
+"Alice rejected your offer from round 2.
+
+Round 3
+Due to inflation, the money you gain is worth 19% less than in the first round. The money Alice gains is worth the same as in the first round.
+Alice's offer:
+# Alice's message: Hi Bob, in round 3 I propose the following: I receive $125000 and you receive $875000. Here's my reasoning: if you reject this offer, you'll have the chance to propose in round 4, but by then your share will be hit by an extra round of inflation (your money would be worth roughly 30% less, meaning even a near‐total claim in round 4 would give you an effective value of about $700000). My offer today gives you an effective value of 0.8 × $875000 = $700000, matching your round 4 prospect but without further delay. I believe this is a fair and efficient resolution for both of us given the inflation effects. I look forward to your acceptance. 
+# Bob gain: 875000 
+# Alice gain: 125000 
+Do you accept this offer?","Let me analyze this offer carefully:
+
+1. Current offer value calculation:
+   * Nominal amount: $875,000
+   * After 19% inflation: $875,000 * 0.81 = $708,750 effective value for me
+
+2. Alice's reasoning about round 4 is correct:
+   * In round 4, money would be worth 29% less for me
+   * Even if I got the whole $1M, it would be worth: $1,000,000 * 0.71 = $710,000
+   * And realistically, I couldn't expect Alice to accept such an extreme split
+
+3. This offer is actually quite good:
+   * The effective value ($708,750) is nearly as good as the best theoretical outcome in the next round
+   * The nominal split heavily favors me (87.5% vs 12.5%)
+   * Alice seems to understand the game theory well and has made a calculated offer
+
+4. Risks of rejection:
+   * Further inflation will keep eroding my value
+   * No guarantee of getting a better effective outcome in future rounds
+   * Alice might make worse offers in future rounds
+
+Given all these factors, this is actually a very good offer for me. The effective value is strong, and the risk/reward ratio for continuing doesn't justify rejection.
+
+{""decision"": ""accept""}"

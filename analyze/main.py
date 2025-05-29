@@ -13,8 +13,15 @@ from .calc_adj_r2 import calc_adj_r2
 from .parameters import create_figures
 from consts import *
 
-os.makedirs("plots", exist_ok=True)
-os.makedirs("tables", exist_ok=True)
+# Create output directory and its subdirectories
+os.makedirs("output", exist_ok=True)
+os.makedirs("output/plots", exist_ok=True)
+os.makedirs("output/tables", exist_ok=True)
+os.makedirs("output/configs", exist_ok=True)
+os.makedirs("output/model", exist_ok=True)
+os.makedirs("output/model_summary", exist_ok=True)
+os.makedirs("output/basic_statistics", exist_ok=True)
+os.makedirs("output/analyze_coefs", exist_ok=True)
 
 matplotlib.use('Agg')  # Use the 'Agg' backend
 
@@ -216,9 +223,8 @@ def create_configs_file(game_type, first_eligible_commit=None, data_path=DataSto
     if game_type == "bargaining":
         df["delta_diff"] = (df["player_1_args_delta"] - df["player_2_args_delta"]).apply(lambda x: f"{x:.2f}")
 
-    os.makedirs("configs", exist_ok=True)
     origin_path = full_data_path.replace("/", "_").replace(":", "_")
-    config_path = f"configs/{origin_path}_{game_type}.csv"
+    config_path = f"output/configs/{origin_path}_{game_type}.csv"
     df.to_csv(config_path, index=False)
     print(f"Saved {len(df)} configs to {config_path}" + (
         f" with first commit {first_eligible_commit}" if first_eligible_commit else ""))
@@ -230,7 +236,7 @@ def create_config_with_stats(game_type, data_path=DataStore, exp_name=None):
     MAIN_DATA_FOLDER = f"{data_path}/{exp_name}" if exp_name else data_path
 
     full_exp_path = f"{data_path}_{exp_name}" if exp_name else data_path
-    configs = pd.read_csv(f"configs/{full_exp_path}_{game_type}.csv")
+    configs = pd.read_csv(f"output/configs/{full_exp_path}_{game_type}.csv")
 
     get_stats_func = None
     if game_type == "bargaining":
@@ -266,14 +272,14 @@ def create_config_with_stats(game_type, data_path=DataStore, exp_name=None):
     if game_type != "bargaining":
         configs = configs[[col for col in configs.columns if "delta" not in col]]
     if game_type == "negotiation":
-        configs.to_csv(f"configs/tmp_{full_exp_path}_{game_type}_with_stats.csv")
+        configs.to_csv(f"output/configs/tmp_{full_exp_path}_{game_type}_with_stats.csv")
         bad_games = (configs["n_messages"] > configs["n_decisions"]) & (configs["n_messages"] > 1)
         print(f"Removing {bad_games.sum()} games with more messages than decisions")
         bad_games = bad_games | ((configs["n_decisions"] > configs["rounds_played"]) & ~configs["human_game"])
         print(f"Removing {bad_games.sum()} games with the last condition and more decisions than rounds played")
         configs = configs[~bad_games]
 
-    print(f"Saved {len(configs)} configs to configs/{full_exp_path}_{game_type}_with_stats.csv")
+    print(f"Saved {len(configs)} configs to output/configs/{full_exp_path}_{game_type}_with_stats.csv")
 
     def change_otree_names(x):
         if x == "otree":
@@ -284,9 +290,9 @@ def create_config_with_stats(game_type, data_path=DataStore, exp_name=None):
 
     for player_col in ["player_1_args_model_name", "player_2_args_model_name"]:
         configs[player_col] = configs[player_col].apply(lambda x: change_otree_names(x))
-    print(f"Saved {len(configs)} configs to configs/{full_exp_path}_{game_type}_with_stats.csv")
+    print(f"Saved {len(configs)} configs to output/configs/{full_exp_path}_{game_type}_with_stats.csv")
 
-    file_path = f"configs/{full_exp_path}_{game_type}_with_stats.csv"
+    file_path = f"output/configs/{full_exp_path}_{game_type}_with_stats.csv"
     if os.path.exists(file_path):
         os.remove(file_path)
     configs.to_csv(file_path)

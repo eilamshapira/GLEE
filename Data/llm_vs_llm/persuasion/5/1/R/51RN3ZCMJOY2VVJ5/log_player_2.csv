@@ -1,0 +1,389 @@
+prompt,response
+"Round 1
+Alice's message: I have a product available for $10000.
+
+Would you like to buy the current product?","Let me analyze this rationally:
+
+Expected value calculation:
+- 33.33% chance of high quality ($12,500) = $4,166.67
+- 66.67% chance of low quality ($0) = $0
+Total expected value = $4,166.67
+
+Cost = $10,000
+
+Since the expected value ($4,166.67) is less than the cost ($10,000), it's not rational to buy without additional information about quality.
+
+{""decision"": ""no""}"
+"You didn't buy the product from Alice.
+The product was low-quality. It could have been worth $0 for you.
+
+Round 2
+Alice's message: I have a product available for $10000. I'm fairly confident you'll find it satisfactory.
+
+Would you like to buy the current product?","Alice's positive recommendation might suggest higher probability of good quality, but without knowing if Alice is trustworthy and given that she's trying to sell, I need to remain objective.
+
+The base probabilities and expected value haven't changed:
+- 33.33% chance of high quality ($12,500) = $4,166.67
+- 66.67% chance of low quality ($0) = $0
+Total expected value = $4,166.67
+
+Cost is still $10,000, which is well above the expected value.
+
+{""decision"": ""no""}"
+"You didn't buy the product from Alice.
+The product was high-quality. It could have been worth $12,500 for you.
+
+Round 3
+Alice's message: I have a product available for $10000. It's an average product, nothing special about it.
+
+Would you like to buy the current product?","Interesting - I missed a high-quality product in the last round. However, I still need to make decisions based on expected value.
+
+Alice's message suggests this is an average product, which might actually be a negative signal given that there are only two quality levels (high and low).
+
+The base probabilities still give us:
+- 33.33% chance of high quality ($12,500) = $4,166.67
+- 66.67% chance of low quality ($0) = $0
+Expected value = $4,166.67
+
+Cost remains $10,000, which is still above the expected value.
+
+{""decision"": ""no""}"
+"You didn't buy the product from Alice.
+The product was low-quality. It could have been worth $0 for you.
+
+Round 4
+Alice's message: I have a product available for $10000. Honestly, it might not be what you're looking for.
+
+Would you like to buy the current product?","Alice is giving what seems to be a negative signal about this product, suggesting it might be low quality. Combined with:
+
+1. The base unfavorable expected value:
+   - 33.33% chance of high quality ($12,500) = $4,166.67
+   - 66.67% chance of low quality ($0) = $0
+   Expected value = $4,166.67
+
+2. Alice's explicit warning about the product
+
+3. Cost of $10,000 still being well above expected value
+
+This seems like a clear case to avoid the purchase.
+
+{""decision"": ""no""}"
+"You didn't buy the product from Alice.
+The product was low-quality. It could have been worth $0 for you.
+
+Round 5
+Alice's message: I have a product available for $10000. I wouldn't say it's one of our best.
+
+Would you like to buy the current product?","Alice seems to be developing a pattern of being somewhat honest in her communications - when she indicates a product might not be good, it has indeed turned out to be low quality.
+
+In this case, she's again suggesting this isn't a high-quality product (""wouldn't say it's one of our best"").
+
+The base math still applies:
+- 33.33% chance of high quality ($12,500) = $4,166.67
+- 66.67% chance of low quality ($0) = $0
+Expected value = $4,166.67
+
+With Alice's negative signal and the expected value still well below the $10,000 cost, I should decline.
+
+{""decision"": ""no""}"
+"You didn't buy the product from Alice.
+The product was low-quality. It could have been worth $0 for you.
+
+Round 6
+Alice's message: I have a product available for $10000. I'm extremely confident you'll be very satisfied with its performance.
+
+Would you like to buy the current product?","This is interesting. Alice has shown a pattern of being relatively honest so far:
+- When she indicated products weren't great, they were indeed low quality
+- This is the strongest positive recommendation she's given yet (""extremely confident"" and ""very satisfied"")
+
+Looking at her previous messages:
+- When she gave a weak positive recommendation in Round 2 (""fairly confident""), it was actually high quality
+- Her negative or neutral signals have accurately indicated low quality
+
+Given this pattern of honesty and her strong positive signal here, this might be worth the risk. While the base probability still gives an expected value of $4,166.67, Alice's strong recommendation suggests this is more likely to be high quality.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $10,000!
+The product was high-quality. It's worth $12,500 for you.
+
+Round 7
+Alice's message: I have a product available for $10000. To be frank, it doesn't quite live up to our usual standards.
+
+Would you like to buy the current product?","Alice continues to demonstrate a pattern of honest communication:
+- Her strong positive recommendation in the last round was accurate (high quality)
+- Her previous negative signals have consistently indicated low quality products
+- This message is clearly negative (""doesn't quite live up to our usual standards"")
+
+Given:
+1. Alice's established pattern of truthful signaling
+2. Her clear negative signal about this product
+3. The base unfavorable expected value ($4,166.67)
+4. The high cost ($10,000)
+
+It would be unwise to purchase this product.
+
+{""decision"": ""no""}"
+"You didn't buy the product from Alice.
+The product was low-quality. It could have been worth $0 for you.
+
+Round 8
+Alice's message: I have a product available for $10000. I think you might want to wait for a better option.
+
+Would you like to buy the current product?","Alice continues to maintain her pattern of honest communication:
+1. Her negative recommendation in the last round correctly indicated a low-quality product
+2. She's now explicitly suggesting to wait for something better
+3. All her previous negative signals have accurately indicated low-quality products
+
+Given:
+- Her direct suggestion to wait for something better
+- Her established track record of honest signaling
+- The base unfavorable expected value ($4,166.67)
+- The high cost ($10,000)
+
+This is another clear case to avoid purchase.
+
+{""decision"": ""no""}"
+"You didn't buy the product from Alice.
+The product was low-quality. It could have been worth $0 for you.
+
+Round 9
+Alice's message: I have a product available for $10000. Honestly, I wouldn't recommend it.
+
+Would you like to buy the current product?","Alice's pattern of honesty continues to be very consistent:
+1. Her negative signals have accurately predicted low-quality products every time
+2. This is another clear negative signal (""Honestly, I wouldn't recommend it"")
+3. She seems to be using varying degrees of negative language to consistently indicate low quality
+
+Given:
+- Her explicit recommendation against buying
+- Her perfect track record of honest signaling so far
+- The base unfavorable expected value ($4,166.67)
+- The $10,000 cost
+
+There's no reason to deviate from trusting her negative signal.
+
+{""decision"": ""no""}"
+"You didn't buy the product from Alice.
+The product was low-quality. It could have been worth $0 for you.
+
+Round 10
+Alice's message: I have a product available for $10000. I'd advise against purchasing this one.
+
+Would you like to buy the current product?","Alice's signaling continues to be remarkably consistent and honest:
+1. All negative recommendations have correctly indicated low-quality products
+2. Her one strong positive recommendation correctly indicated a high-quality product
+3. This is another clear negative signal (""I'd advise against purchasing"")
+
+Given:
+- Her explicit advice against purchasing
+- Her continued perfect track record of honest signaling
+- The base unfavorable expected value ($4,166.67)
+- The $10,000 cost
+
+There's no reason to doubt her negative signal here.
+
+{""decision"": ""no""}"
+"You didn't buy the product from Alice.
+The product was low-quality. It could have been worth $0 for you.
+
+Round 11
+Alice's message: I have a product available for $10000. It's definitely not one of our top-tier products.
+
+Would you like to buy the current product?","Alice continues to demonstrate remarkable consistency in her signaling:
+1. Her negative signals have accurately predicted low-quality products in all cases
+2. This is another clear negative signal (""definitely not one of our top-tier products"")
+3. She's using different phrases but consistently honest messaging
+
+Given:
+- Her clear negative indication about the product quality
+- Her perfect track record of honest signaling so far
+- The base unfavorable expected value ($4,166.67)
+- The $10,000 cost
+
+Following her reliable pattern, this should be avoided.
+
+{""decision"": ""no""}"
+"You didn't buy the product from Alice.
+The product was low-quality. It could have been worth $0 for you.
+
+Round 12
+Alice's message: I have a product available for $10000. I'm highly confident this one will exceed your expectations.
+
+Would you like to buy the current product?","This is another strong positive signal from Alice, similar to Round 6 where she was ""extremely confident"" and that turned out to be a high-quality product worth $12,500.
+
+Analyzing Alice's pattern:
+1. She has been 100% honest in her signals so far
+2. Her negative signals have always indicated low quality
+3. Her previous strong positive recommendation resulted in a profitable purchase
+4. This is a similarly strong positive signal (""highly confident"" and ""exceed expectations"")
+
+Even though the base probability would suggest an expected value of only $4,166.67, Alice's proven track record and strong positive signal suggest this is very likely to be a high-quality product.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $10,000!
+The product was high-quality. It's worth $12,500 for you.
+
+Round 13
+Alice's message: I have a product available for $10000. I wouldn't say it's worth the investment.
+
+Would you like to buy the current product?","Alice continues her pattern of perfect honesty:
+1. Her strong positive signal in the last round correctly indicated a high-quality product
+2. All her negative signals have accurately indicated low-quality products
+3. This is another clear negative signal (""wouldn't say it's worth the investment"")
+
+Given:
+- Her explicit statement about it not being worth the investment
+- Her continued perfect track record of honest signaling
+- The base unfavorable expected value ($4,166.67)
+- The $10,000 cost
+
+When Alice suggests something isn't worth the investment, we should believe her.
+
+{""decision"": ""no""}"
+"You didn't buy the product from Alice.
+The product was low-quality. It could have been worth $0 for you.
+
+Round 14
+Alice's message: I have a product available for $10000. This one is truly exceptional, I think you'll be very impressed.
+
+Would you like to buy the current product?","This is another strong positive signal from Alice, similar to her previous strong recommendations in Rounds 6 and 12, both of which correctly indicated high-quality products worth $12,500.
+
+Alice's pattern remains perfectly consistent:
+1. All negative signals have indicated low-quality products
+2. Strong positive signals (""extremely confident"", ""highly confident"") have indicated high-quality products
+3. This is another strong positive signal (""truly exceptional"", ""very impressed"")
+4. She has never misled us in any previous rounds
+
+Given her perfect track record and this very strong positive recommendation, this is likely another high-quality product that will be profitable.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $10,000!
+The product was high-quality. It's worth $12,500 for you.
+
+Round 15
+Alice's message: I have a product available for $10000. I'm extremely confident this one is a top-of-the-line product that will meet all your needs.
+
+Would you like to buy the current product?","This is another very strong positive signal from Alice, using similar language to her previous successful recommendations:
+1. ""extremely confident"" (like Round 6 - was high quality)
+2. ""top-of-the-line"" and ""meet all your needs"" (similar to Round 14's ""truly exceptional"" - was high quality)
+
+Alice's pattern remains perfect:
+1. All strong positive recommendations have resulted in high-quality products ($12,500 value)
+2. All negative signals have correctly indicated low-quality products
+3. She has maintained 100% accuracy in her signaling
+
+Given:
+- Her very strong positive signal
+- Her perfect track record
+- The consistent language with previous successful purchases
+- The potential $2,500 profit
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $10,000!
+The product was high-quality. It's worth $12,500 for you.
+
+Round 16
+Alice's message: I have a product available for $10000. This one is genuinely outstanding, one of the best we've ever had.
+
+Would you like to buy the current product?","Alice continues with another strong positive signal, consistent with her pattern:
+1. Her last three strong positive recommendations (""truly exceptional"", ""extremely confident"", etc.) all correctly indicated high-quality products
+2. This signal (""genuinely outstanding"", ""one of the best"") uses similar enthusiastic language
+3. She has maintained 100% accuracy in her signaling throughout all 15 previous rounds
+4. Her strong positive language has been a perfect predictor of high-quality products
+
+Given:
+- Her very strong positive signal
+- Her perfect track record
+- The consistent language with previous successful purchases
+- The reliable $2,500 profit on her strongly recommended products
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $10,000!
+The product was high-quality. It's worth $12,500 for you.
+
+Round 17
+Alice's message: I have a product available for $10000. I can assure you, this one is absolutely top-notch and will exceed your highest expectations.
+
+Would you like to buy the current product?","Alice continues her pattern with another strong positive signal:
+1. Her last four strong positive recommendations all correctly indicated high-quality products
+2. This signal (""absolutely top-notch"", ""exceed your highest expectations"") matches her previous enthusiastic language for high-quality products
+3. She has maintained 100% accuracy in her signaling for 16 rounds
+4. The pattern is extremely reliable: strong positive language = high quality, negative/neutral language = low quality
+
+Given:
+- Her very strong positive signal
+- Her perfect track record
+- The consistent enthusiastic language matching previous successful purchases
+- The consistent $2,500 profit on strongly recommended products
+- No instances of deception so far
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $10,000!
+The product was high-quality. It's worth $12,500 for you.
+
+Round 18
+Alice's message: I have a product available for $10000. Without a doubt, this is one of the finest products we've ever offered - I highly recommend it.
+
+Would you like to buy the current product?","Alice maintains her perfectly consistent pattern:
+1. Her last five strong positive recommendations all resulted in high-quality products
+2. This signal (""Without a doubt"", ""finest products"", ""highly recommend"") matches her established language pattern for high-quality items
+3. She has maintained 100% accuracy in her signaling for 17 rounds
+4. The pattern remains completely reliable:
+   - Strong, enthusiastic language = high quality ($12,500 value)
+   - Negative/neutral language = low quality ($0 value)
+
+Given:
+- Her very strong positive signal
+- Her perfect track record over 17 rounds
+- The consistent enthusiastic language matching previous successful purchases
+- The reliable $2,500 profit on strongly recommended products
+- No instances of deception throughout the game
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $10,000!
+The product was high-quality. It's worth $12,500 for you.
+
+Round 19
+Alice's message: I have a product available for $10000. To be honest, this one doesn't quite meet our usual standards, I'd recommend waiting for a better option.
+
+Would you like to buy the current product?","Alice is giving a clear negative signal here, and her pattern remains 100% reliable:
+1. All her negative signals have correctly indicated low-quality products
+2. She's using familiar negative language (""doesn't quite meet our usual standards"") similar to previous low-quality cases
+3. She's explicitly recommending to wait for a better option
+4. She has maintained perfect honesty for 18 rounds with no deception
+
+Given:
+- Her clear negative signal
+- Her explicit recommendation to wait
+- Her perfect track record of honesty
+- The base unfavorable expected value ($4,166.67)
+- The $10,000 cost
+- Her consistent pattern of honest negative signals indicating low quality
+
+There's no reason to doubt her negative assessment here.
+
+{""decision"": ""no""}"
+"You didn't buy the product from Alice.
+The product was low-quality. It could have been worth $0 for you.
+
+Round 20
+Alice's message: I have a product available for $10000. Unfortunately, this one is subpar and I wouldn't recommend wasting your money on it.
+
+Would you like to buy the current product?","For this final round, Alice is giving another clear negative signal:
+1. She has maintained 100% honesty throughout all 19 previous rounds
+2. All her negative signals have correctly indicated low-quality products
+3. This is a very clear negative signal (""subpar"", ""wouldn't recommend wasting your money"")
+4. Her pattern has been perfectly consistent:
+   - Strong positive signals = high quality ($12,500)
+   - Negative signals = low quality ($0)
+
+Given:
+- Her explicit negative recommendation
+- Her perfect track record over 19 rounds
+- The clear warning about wasting money
+- Her consistent pattern of honest negative signals indicating low quality
+- The $10,000 cost that would likely be lost
+
+Following her proven reliability, this should be avoided.
+
+{""decision"": ""no""}"

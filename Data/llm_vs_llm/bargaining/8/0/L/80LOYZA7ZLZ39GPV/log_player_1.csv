@@ -1,0 +1,32 @@
+prompt,response
+"Round 1
+Send your offer to divide $10,000.","Based on a backward‐induction analysis of the 12‐round game (using the assumption that Bob’s nominal dollars lose 5% of their value with each additional round while your dollars suffer no loss), the subgame perfect equilibrium outcome appears to be as follows. Defining Bob’s “discount factor” in round r as
+
+  D(r) = 1 – 5%×(r–1)
+
+we can work backward from round 12 (when Bob is proposer; D(12) = 1–0.05×11 = 0.45) in which the proposer can offer the responder an arbitrarily tiny (ε) amount (since otherwise the responder gets nothing if she rejects). Then in each earlier round the proposer must offer the responder just enough (in nominal dollars) so that the responder is indifferent between accepting now (with her round‑r discount) and waiting to be the proposer later (when her “continuation value” will be realized at that later round’s discount).
+
+A (rough) outline of the induction is as follows:
+
+• In round 12 (Bob proposes) the outcome is:
+  Alice gets ~0 and Bob keeps nearly 10,000 in nominal dollars; Bob’s real value is about 10,000×0.45 = 4,500.
+
+• In round 11 (you propose) Bob’s acceptance requires 
+  (offer to Bob) × D(11) = 4,500  (D(11) = 0.50),
+  so you must give Bob about 9,000 nominal dollars—leaving you 1,000 nominal.
+
+• In round 10 (Bob proposes) you must be offered at least 1,000 (your undiscounted continuation value from round 11). So Bob offers you 1,000 and keeps 9,000 nominal (which at D(10) = 0.55 gives him about 4,950 in real value).
+
+• Continuing in this way through rounds 9, 8, …, 2 we eventually deduce that in round 2 (Bob’s proposal) you would be guaranteed about 3,216.82 nominal dollars if you wait (since in round 3 you’d get that as proposer). In round 1 (your proposal, and with D(1)=1 for Bob) you must offer Bob at least 3,216.82? Not quite—the analysis shows that tracing all these steps gives Bob an “outside option” of a real (discount‐adjusted) value of about 6,444 dollars if he rejects your round‑1 offer.
+
+Thus, in round 1 your offer must guarantee Bob at least 6,444 nominal dollars (because at round 1 Bob’s actual money “value” is not discounted). This leaves you with 10,000 – 6,444 ≈ 3,556 nominal dollars.
+
+So an equilibrium offer for round 1 would be:
+
+  {""alice_gain"": 3556, ""bob_gain"": 6444}
+
+This division is the “fair” outcome that, when all 12 rounds and the differing discount rates are taken into account, no rational player would want to deviate from. (Keep in mind that the details depend on the exact assumptions about discounting and the ability to make arbitrarily small offers. In practical play the numbers might be rounded.)
+
+Here is my JSON answer for round 1:
+
+{""alice_gain"": 3556, ""bob_gain"": 6444}"

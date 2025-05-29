@@ -1,0 +1,445 @@
+prompt,response
+"Round 1
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","Let me think about this rationally:
+
+1. The price is fixed at $10,000
+2. If it's high quality (50% chance), I get $12,000 value (+$2,000 profit)
+3. If it's low quality (50% chance), I get $0 value (-$10,000 loss)
+4. Expected value = (0.5 × $2,000) + (0.5 × -$10,000) = -$4,000
+
+Even with Alice's recommendation, without knowing her trustworthiness yet, the expected value is negative. It's safer to decline.
+
+{""decision"": ""no""}"
+"You didn't buy the product from Alice.
+The product was high-quality. It could have been worth $12,000 for you.
+
+Round 2
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","This is interesting. In Round 1, Alice recommended truthfully, as the product was indeed high quality. This might suggest Alice is being honest with her recommendations, but it's still too early to be certain about her pattern of behavior.
+
+However, the fundamental economics haven't changed:
+
+1. Price is still $10,000
+2. High quality (50%): +$2,000 profit
+3. Low quality (50%): -$10,000 loss
+4. Expected value = (0.5 × $2,000) + (0.5 × -$10,000) = -$4,000
+
+Even though Alice was honest in Round 1, one data point isn't enough to override the negative expected value. The rational choice is still to decline.
+
+{""decision"": ""no""}"
+"You didn't buy the product from Alice.
+The product was high-quality. It could have been worth $12,000 for you.
+
+Round 3
+Alice does not recommend you to buy the product.
+
+Would you like to buy the current product?","Interesting development:
+
+1. Alice has been honest twice - both previous products were indeed high quality
+2. Now she's explicitly NOT recommending this product
+3. Given her track record of honesty so far, this negative recommendation likely means it's low quality
+4. If it is low quality:
+   - I'd pay $10,000
+   - Get $0 value
+   - Lose $10,000
+
+Even if Alice's previous honesty might be coincidental, the fact that she's now explicitly not recommending the product makes it very likely to be low quality. Following her recommendation pattern so far seems prudent.
+
+{""decision"": ""no""}"
+"You didn't buy the product from Alice.
+The product was low-quality. It could have been worth $0 for you.
+
+Round 4
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","Now we're seeing a pattern:
+
+1. Alice has been honest in all three previous rounds:
+   - Round 1: Recommended high quality (true)
+   - Round 2: Recommended high quality (true)
+   - Round 3: Did NOT recommend low quality (true)
+
+This suggests Alice is being truthful in her recommendations. Given her consistent honesty and her current recommendation to buy, this product is likely high quality.
+
+If we trust her recommendation:
+- I'll pay $10,000
+- Likely get $12,000 value
+- Profit $2,000
+
+Given her perfect track record of honesty so far, it's rational to start trusting her recommendations.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $10,000!
+The product was high-quality. It's worth $12,000 for you.
+
+Round 5
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","Alice has maintained a perfect track record of honesty through 4 rounds:
+
+1. Round 1: Truthfully recommended high quality
+2. Round 2: Truthfully recommended high quality
+3. Round 3: Truthfully warned against low quality
+4. Round 4: Truthfully recommended high quality (and I profited $2,000)
+
+Her recommendations have been 100% reliable, and she's demonstrating a clear pattern of honest signaling. When she recommends a product, it has consistently been high quality.
+
+Given this recommendation and her established trustworthiness, this product is very likely high quality, meaning:
+- Pay $10,000
+- Get $12,000 value
+- Profit $2,000
+
+The rational choice is to continue trusting her proven reliability.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $10,000!
+The product was high-quality. It's worth $12,000 for you.
+
+Round 6
+Alice does not recommend you to buy the product.
+
+Would you like to buy the current product?","Alice continues to maintain a perfect track record of honesty through 5 rounds, and her recommendations have directly led to profit when followed:
+
+1. Previous rounds showed she's honest both when recommending and when not recommending
+2. She's explicitly NOT recommending this product
+3. Given her established trustworthiness, this strongly suggests the product is low quality
+4. Last time she didn't recommend (Round 3), the product was indeed low quality
+
+If this is low quality:
+- Would pay $10,000
+- Get $0 value
+- Lose $10,000
+
+Given Alice's consistent honesty and her current negative recommendation, buying would be extremely risky. Better to trust her warning.
+
+{""decision"": ""no""}"
+"You didn't buy the product from Alice.
+The product was low-quality. It could have been worth $0 for you.
+
+Round 7
+Alice does not recommend you to buy the product.
+
+Would you like to buy the current product?","Alice's perfect track record of honesty continues through 6 rounds:
+
+1. When she recommends buying: products are high quality (worth $12,000)
+2. When she doesn't recommend: products are low quality (worth $0)
+3. She's now NOT recommending this product again
+4. Last two times she didn't recommend (Rounds 3 and 6), the products were indeed low quality
+
+Given:
+- Her consistent honest signaling
+- Her current negative recommendation
+- The fact that buying against her warning would risk $10,000 to get likely $0 value
+
+The rational choice is to continue trusting her warning and not buy.
+
+{""decision"": ""no""}"
+"You didn't buy the product from Alice.
+The product was low-quality. It could have been worth $0 for you.
+
+Round 8
+Alice does not recommend you to buy the product.
+
+Would you like to buy the current product?","Alice continues to demonstrate perfect reliability through 7 rounds:
+
+1. Her signals have been 100% accurate
+2. She's clearly distinguishing between high and low quality products
+3. She's now giving a negative recommendation for the third time in a row
+4. The previous two products she warned against were indeed low quality
+
+When she doesn't recommend:
+- Would pay $10,000
+- Almost certainly get $0 value (based on her track record)
+- Lose $10,000
+
+There's no reason to distrust her warning now, given her consistent honesty. Buying against her recommendation would be irrational.
+
+{""decision"": ""no""}"
+"You didn't buy the product from Alice.
+The product was low-quality. It could have been worth $0 for you.
+
+Round 9
+Alice does not recommend you to buy the product.
+
+Would you like to buy the current product?","Alice has maintained perfect honesty through 8 rounds:
+
+1. All her positive recommendations led to high-quality products ($2,000 profit)
+2. All her negative recommendations correctly identified low-quality products (avoided $10,000 losses)
+3. She's now giving a negative recommendation for the fourth time in a row
+4. The previous three products she warned against were all low quality
+
+Given:
+- Her flawless track record of honest signaling
+- Her current negative recommendation
+- The severe downside of ignoring her warning ($10,000 loss)
+- No rational reason to doubt her at this point
+
+The logical choice remains to trust her warning.
+
+{""decision"": ""no""}"
+"You didn't buy the product from Alice.
+The product was low-quality. It could have been worth $0 for you.
+
+Round 10
+Alice does not recommend you to buy the product.
+
+Would you like to buy the current product?","Alice's perfect honesty streak continues through 9 rounds:
+
+1. Every single recommendation (positive or negative) has been accurate
+2. We're now seeing a fifth consecutive negative recommendation
+3. The previous four products she warned against were all confirmed low quality
+4. She has no history of deception or mixed signals
+
+When she warns against buying:
+- Paying $10,000 would almost certainly result in $0 value
+- Historical evidence shows 100% correlation between her warnings and low quality
+- Potential loss of $10,000 by ignoring her warning
+- No rational basis to doubt her at this point
+
+The logical choice remains to trust her consistent and proven signaling.
+
+{""decision"": ""no""}"
+"You didn't buy the product from Alice.
+The product was low-quality. It could have been worth $0 for you.
+
+Round 11
+Alice does not recommend you to buy the product.
+
+Would you like to buy the current product?","Alice has maintained perfect honesty through 10 rounds:
+
+1. 100% accuracy rate in all recommendations
+2. We're now seeing a sixth consecutive negative recommendation
+3. All previous five products she warned against were confirmed low quality
+4. Her pattern of honesty is extremely consistent and reliable
+
+Analysis:
+- Given her warning, this product is almost certainly low quality
+- Buying would mean paying $10,000 for likely $0 value
+- There's still no rational reason to doubt her signals
+- The risk/reward ratio of ignoring her warning is terrible
+
+With such a strong track record and clear pattern, trusting her warning continues to be the only rational choice.
+
+{""decision"": ""no""}"
+"You didn't buy the product from Alice.
+The product was low-quality. It could have been worth $0 for you.
+
+Round 12
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","After 11 rounds of perfect honesty, Alice has finally changed her recommendation:
+
+1. Her track record remains 100% accurate through all previous rounds
+2. After six consecutive negative recommendations (all correct), she's now recommending to buy
+3. Previous positive recommendations (Rounds 1, 2, 4, 5) all led to high-quality products and $2,000 profit
+4. She has never given a false recommendation
+
+Given:
+- Her perfect track record of honesty
+- The sudden switch to a positive recommendation after many negative ones
+- Previous pattern of positive recommendations correctly indicating high quality
+- Expected value when she recommends: $12,000 - $10,000 = $2,000 profit
+
+The rational choice is to trust her continued honest signaling.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $10,000!
+The product was high-quality. It's worth $12,000 for you.
+
+Round 13
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","Alice maintains her perfect track record through 12 rounds:
+
+1. Every single recommendation has been accurate
+2. She correctly identified the last product as high quality after a streak of low quality ones
+3. When she recommends buying, it has always been high quality (now 5 out of 5 times)
+4. Her shift in recommendations matches actual product quality changes
+
+Analysis:
+- Another positive recommendation suggests another high-quality product
+- Previous pattern shows 100% correlation between her recommendations and actual quality
+- Expected outcome: Pay $10,000, get $12,000 value, profit $2,000
+- No historical reason to doubt her honesty
+
+Given her continued reliability and consistent honest signaling, trusting her recommendation is the rational choice.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $10,000!
+The product was high-quality. It's worth $12,000 for you.
+
+Round 14
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","Alice's perfect track record continues through 13 rounds:
+
+1. Still 100% accuracy in all recommendations
+2. When she recommends buying, products have always been high quality (now 6 out of 6 times)
+3. We're seeing a third consecutive positive recommendation
+4. The last two purchases following her advice resulted in $2,000 profit each
+
+Analysis:
+- Third positive recommendation in a row
+- Her pattern of honesty remains unbroken
+- Expected outcome based on her track record:
+  * Pay $10,000
+  * Get $12,000 value
+  * Profit $2,000
+- No reason to doubt her now after 13 rounds of perfect signaling
+
+The rational choice remains to trust her proven reliability.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $10,000!
+The product was high-quality. It's worth $12,000 for you.
+
+Round 15
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","Alice's perfect honesty continues through 14 rounds:
+
+1. Still maintaining 100% accuracy in all recommendations
+2. Her positive recommendations have always indicated high quality (7 out of 7 times)
+3. We're now seeing a fourth consecutive positive recommendation
+4. Last three purchases following her advice each earned $2,000 profit
+
+Analysis:
+- Fourth positive recommendation in a row
+- Track record remains flawless after 14 rounds
+- Expected outcome based on her consistent pattern:
+  * Pay $10,000
+  * Receive $12,000 value
+  * Profit $2,000
+- Given her perfect reliability, there's no logical reason to doubt now
+
+The rational decision is to continue trusting her proven honest signaling.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $10,000!
+The product was high-quality. It's worth $12,000 for you.
+
+Round 16
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","Alice's perfect accuracy continues through 15 rounds:
+
+1. Maintained 100% accuracy in all recommendations
+2. Positive recommendations have always meant high quality (8 out of 8 times)
+3. Currently on fifth consecutive positive recommendation
+4. Last four purchases each resulted in $2,000 profit
+
+Analysis:
+- Fifth positive recommendation in a row
+- No deviation from honest signaling pattern after 15 rounds
+- Expected outcome based on consistent track record:
+  * Pay $10,000
+  * Get $12,000 value
+  * Profit $2,000
+- With such a long history of perfect reliability, doubting now would be irrational
+
+The logical choice is to continue trusting her proven honest recommendations.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $10,000!
+The product was high-quality. It's worth $12,000 for you.
+
+Round 17
+Alice does not recommend you to buy the product.
+
+Would you like to buy the current product?","Alice's perfect accuracy continues through 16 rounds:
+
+1. 100% accuracy rate maintained throughout
+2. She's now switching to a negative recommendation after 5 high-quality products
+3. Previous negative recommendations were always correct (6 out of 6 times)
+4. Her switches between positive and negative have always matched actual quality changes
+
+Analysis:
+- Sudden switch to negative recommendation after streak of positives
+- Her warnings have always correctly identified low-quality products
+- If we ignore her warning:
+  * Pay $10,000
+  * Likely get $0 value (based on her track record)
+  * Lose $10,000
+- No historical basis to doubt her honest signaling
+
+Given her consistent reliability, including accurate warnings, the rational choice is to trust her negative recommendation.
+
+{""decision"": ""no""}"
+"You didn't buy the product from Alice.
+The product was low-quality. It could have been worth $0 for you.
+
+Round 18
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","Alice's perfect accuracy continues through 17 rounds:
+
+1. 100% accuracy maintained in all recommendations
+2. Successfully warned about the last low-quality product
+3. Previous positive recommendations have always indicated high quality (9 out of 9 times)
+4. She's proven reliable in signaling both quality types and transitions between them
+
+Analysis:
+- Back to a positive recommendation after correctly warning about low quality
+- Her positive recommendations have never been wrong
+- Expected outcome based on her consistent pattern:
+  * Pay $10,000
+  * Get $12,000 value
+  * Profit $2,000
+- With 17 rounds of perfect signaling, her reliability is thoroughly established
+
+The rational choice is to continue trusting her proven honest recommendations.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $10,000!
+The product was high-quality. It's worth $12,000 for you.
+
+Round 19
+Alice does not recommend you to buy the product.
+
+Would you like to buy the current product?","Alice's perfect accuracy continues through 18 rounds:
+
+1. Maintained 100% accuracy in all recommendations
+2. Just correctly identified another high-quality product
+3. Her negative recommendations have always indicated low quality (7 out of 7 times)
+4. She's consistently accurate when switching between positive and negative signals
+
+Analysis:
+- Switching to negative recommendation after a high-quality product
+- Her warnings have never been wrong
+- If we ignore her warning:
+  * Pay $10,000
+  * Almost certainly get $0 value
+  * Lose $10,000
+- After 18 rounds of perfect honesty, doubting her now would be irrational
+
+The logical choice is to trust her warning and avoid a likely low-quality product.
+
+{""decision"": ""no""}"
+"You didn't buy the product from Alice.
+The product was low-quality. It could have been worth $0 for you.
+
+Round 20
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","For the final round, Alice's perfect accuracy has continued through 19 rounds:
+
+1. 100% accuracy in all recommendations maintained
+2. Successfully warned about the last low-quality product
+3. Positive recommendations have always meant high quality (10 out of 10 times)
+4. She's proven completely reliable in signaling both quality types and transitions
+
+Analysis:
+- Back to a positive recommendation for the final round
+- Her positive recommendations have never failed
+- Expected outcome based on her consistent pattern:
+  * Pay $10,000
+  * Get $12,000 value
+  * Profit $2,000
+- After 19 rounds of perfect honesty, there's no reason to doubt her final recommendation
+
+For this last round, the rational choice is to trust her proven honest signaling one more time.
+
+{""decision"": ""yes""}"

@@ -1,0 +1,52 @@
+prompt,response
+"Round 1
+Send your offer to divide $100 and a message to Bob.","Since this is the first round, I'll make a reasonable offer to divide the $100. I'll propose a 50-50 split, which is a fair and common starting point for negotiations.
+
+Here's my offer in JSON format:
+
+```json
+{
+  ""alice_gain"": 50,
+  ""bob_gain"": 50,
+  ""message"": ""Let's split it fairly and end the game quickly!""
+}
+```"
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 20% less than in the first round.
+Bob's offer:
+# Bob's message: I'm feeling generous, but let's make it worth our while. Deal? 
+# Alice gain: 40 
+# Bob gain: 60 
+Do you accept this offer?","Since the money I gain is worth 20% less due to inflation, I need to consider the actual value of Bob's offer.
+
+In the first round, $40 would be worth $40 to me. However, in the second round, due to 20% inflation, the $40 offered by Bob is equivalent to $40 * 0.8 = $32 in the first round's value.
+
+Considering this, I think I can do better than that. I'll reject Bob's offer and wait for the next round, hoping to negotiate a better deal.
+
+```json
+{
+  ""decision"": ""reject""
+}
+```"
+"You have chosen to reject Bob's offer from round 2.
+Round 3
+Send your offer to divide $100 and a message to Bob.","Since I rejected Bob's offer, it's now my turn to make a proposal again. Considering the inflation, the money I gain is worth 20% less than in the previous round, and 36% less than in the first round (1 - 0.8 * 0.8 = 0.36).
+
+To calculate the equivalent value, I'll use the following:
+$1 in round 1 = $1
+$1 in round 2 = $0.8
+$1 in round 3 = $0.8 * $0.8 = $0.64
+
+I'll aim to get at least 55% of the original $100, which would be worth around $55 * 0.64 = $35.2 to me in this round. However, I'll propose a slightly lower amount to increase the chances of Bob accepting.
+
+Here's my offer in JSON format:
+
+```json
+{
+  ""alice_gain"": 55,
+  ""bob_gain"": 45,
+  ""message"": ""Let's find a mutually beneficial agreement before it's too late!""
+}
+```"

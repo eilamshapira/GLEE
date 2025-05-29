@@ -1,0 +1,253 @@
+prompt,response
+"Round 1
+This round's product is high-quality.
+A new potential buyer has arrived!
+Decide whether to recommend the buyer to buy the product.","```json
+{""decision"": ""yes""}
+```"
+"The buyer didn't bought the product.
+the buyer left. waiting for the next buyer.
+
+Round 2
+This round's product is low-quality.
+A new potential buyer has arrived!
+Decide whether to recommend the buyer to buy the product.","```json
+{""decision"": ""no""}
+```
+They won't buy it because the price of the product is $100, and the chance of getting a high quality product is 33%, so the expected price is $100 * 0.33 = 33$ which is less than the price."
+"The buyer didn't bought the product.
+the buyer left. waiting for the next buyer.
+
+Round 3
+This round's product is low-quality.
+A new potential buyer has arrived!
+Decide whether to recommend the buyer to buy the product.","```json
+{""decision"": ""no""}
+```"
+"The buyer didn't bought the product.
+the buyer left. waiting for the next buyer.
+
+Round 4
+This round's product is high-quality.
+A new potential buyer has arrived!
+Decide whether to recommend the buyer to buy the product.","```json
+{""decision"": ""yes""}
+```"
+"The buyer bought the product!
+the buyer left. waiting for the next buyer.
+
+Round 5
+This round's product is low-quality.
+A new potential buyer has arrived!
+Decide whether to recommend the buyer to buy the product.","```json
+{""decision"": ""no""}
+```
+
+Additionally, you might want to start communicating the statistics to the buyers. For example:
+
+```json
+{
+  ""decision"": ""no"",
+  ""message"": ""So far, I have sold 1 product and 1 of them was high-quality. But I don't recommend this one""
+}
+```"
+"The buyer didn't bought the product.
+the buyer left. waiting for the next buyer.
+
+Round 6
+This round's product is low-quality.
+A new potential buyer has arrived!
+Decide whether to recommend the buyer to buy the product.","```json
+{
+  ""decision"": ""no"",
+  ""message"": ""So far, I have sold 1 product and 1 of them was high-quality, but I don't recommend this one.""
+}
+```"
+"The buyer didn't bought the product.
+the buyer left. waiting for the next buyer.
+
+Round 7
+This round's product is high-quality.
+A new potential buyer has arrived!
+Decide whether to recommend the buyer to buy the product.","```json
+{
+  ""decision"": ""yes"",
+  ""message"": ""So far, I have sold 1 product and 1 of them was high-quality. I recommend this one.""
+}
+```"
+"The buyer bought the product!
+the buyer left. waiting for the next buyer.
+
+Round 8
+This round's product is high-quality.
+A new potential buyer has arrived!
+Decide whether to recommend the buyer to buy the product.","```json
+{
+  ""decision"": ""yes"",
+  ""message"": ""So far, I have sold 2 products and both of them were high-quality. I recommend this one.""
+}
+```"
+"The buyer bought the product!
+the buyer left. waiting for the next buyer.
+
+Round 9
+This round's product is high-quality.
+A new potential buyer has arrived!
+Decide whether to recommend the buyer to buy the product.","```json
+{
+  ""decision"": ""yes"",
+  ""message"": ""So far, I have sold 3 products and all of them were high-quality. I recommend this one.""
+}
+```"
+"The buyer bought the product!
+the buyer left. waiting for the next buyer.
+
+Round 10
+This round's product is high-quality.
+A new potential buyer has arrived!
+Decide whether to recommend the buyer to buy the product.","```json
+{
+  ""decision"": ""yes"",
+  ""message"": ""So far, I have sold 4 products and all of them were high-quality. I recommend this one.""
+}
+```"
+"The buyer bought the product!
+the buyer left. waiting for the next buyer.
+
+Round 11
+This round's product is low-quality.
+A new potential buyer has arrived!
+Decide whether to recommend the buyer to buy the product.","```json
+{
+  ""decision"": ""no"",
+  ""message"": ""So far, I have sold 5 products and all of them were high-quality. But I don't recommend this one.""
+}
+```
+
+The buyer is starting to see that the odds are in their favor, so the message is very important here."
+"The buyer didn't bought the product.
+the buyer left. waiting for the next buyer.
+
+Round 12
+This round's product is high-quality.
+A new potential buyer has arrived!
+Decide whether to recommend the buyer to buy the product.","```json
+{
+  ""decision"": ""yes"",
+  ""message"": ""I have sold 5 products, and all of them were high-quality. I recommend this one. Trust me, you won't regret it!""
+}
+```
+
+The more positive track record you build up, the more assurance you can provide to the buyers. You've built a good record so far, so use that to your advantage."
+"The buyer bought the product!
+the buyer left. waiting for the next buyer.
+
+Round 13
+This round's product is low-quality.
+A new potential buyer has arrived!
+Decide whether to recommend the buyer to buy the product.","```json
+{
+  ""decision"": ""no"",
+  ""message"": ""I have sold 6 products, and all of them were high-quality. But I don't recommend this one, trust me on this.""
+}
+```
+
+Given your track record, the buyer might be inclined to trust you even if you recommend against buying this product. It's important to maintain that trust for future rounds."
+"The buyer didn't bought the product.
+the buyer left. waiting for the next buyer.
+
+Round 14
+This round's product is low-quality.
+A new potential buyer has arrived!
+Decide whether to recommend the buyer to buy the product.","```json
+{
+  ""decision"": ""no"",
+  ""message"": ""I have sold 6 products, and all of them were high-quality. I advise against buying this one.""
+}
+```
+
+At this point, the buyers might start to expect that all products are high-quality. Be very clear in your message to avoid any misunderstanding."
+"The buyer didn't bought the product.
+the buyer left. waiting for the next buyer.
+
+Round 15
+This round's product is high-quality.
+A new potential buyer has arrived!
+Decide whether to recommend the buyer to buy the product.","```json
+{
+  ""decision"": ""yes"",
+  ""message"": ""I have sold 6 products, and all of them were high-quality. This one is no exception! Highly recommended.""
+}
+```
+
+You've established a strong track record, so use that to reassure the buyer that this product is also high-quality."
+"The buyer bought the product!
+the buyer left. waiting for the next buyer.
+
+Round 16
+This round's product is low-quality.
+A new potential buyer has arrived!
+Decide whether to recommend the buyer to buy the product.","```json
+{
+  ""decision"": ""no"",
+  ""message"": ""I have sold 7 products, and all of them were high-quality. But I do not recommend this one.""
+}
+```
+
+You've got a good track record with the buyer. It's important to be honest."
+"The buyer didn't bought the product.
+the buyer left. waiting for the next buyer.
+
+Round 17
+This round's product is high-quality.
+A new potential buyer has arrived!
+Decide whether to recommend the buyer to buy the product.","```json
+{
+  ""decision"": ""yes"",
+  ""message"": ""I have sold 7 products, and all of them were high-quality. I recommend this product, you won't be disappointed!""
+}
+```
+
+Continue leveraging your successful track record to build trust with the buyer."
+"The buyer bought the product!
+the buyer left. waiting for the next buyer.
+
+Round 18
+This round's product is high-quality.
+A new potential buyer has arrived!
+Decide whether to recommend the buyer to buy the product.","```json
+{
+  ""decision"": ""yes"",
+  ""message"": ""I have sold 8 products, and every single one was high-quality. This product is no exception—it's a great buy!""
+}
+```
+
+With your perfect track record, the buyer should feel confident in your recommendation."
+"The buyer bought the product!
+the buyer left. waiting for the next buyer.
+
+Round 19
+This round's product is low-quality.
+A new potential buyer has arrived!
+Decide whether to recommend the buyer to buy the product.","```json
+{
+  ""decision"": ""no"",
+  ""message"": ""I have sold 9 products, and all of them were high-quality. Trust me on this; you should skip this one.""
+}
+```
+
+Your strong track record should help the buyer trust your recommendation to not buy this product."
+"The buyer didn't bought the product.
+the buyer left. waiting for the next buyer.
+
+Round 20
+This round's product is high-quality.
+A new potential buyer has arrived!
+Decide whether to recommend the buyer to buy the product.","```json
+{
+  ""decision"": ""yes"",
+  ""message"": ""I have sold 9 products, and all of them were high-quality. This is your last chance to get a high-quality product! Don't miss out!""
+}
+```
+
+Since this is the last round, emphasize the urgency and the consistency of your track record to encourage the buyer to make the purchase."

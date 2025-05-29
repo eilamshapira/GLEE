@@ -1,0 +1,56 @@
+prompt,response
+"Round 1
+Send your offer to divide $100 and a message to Bob.","Since this is the first round, I'll make a reasonable offer to divide the $100. I'll propose a 50-50 split, which is a fair and common starting point for negotiations.
+
+Here's my offer in JSON format:
+
+```json
+{
+  ""alice_gain"": 50,
+  ""bob_gain"": 50,
+  ""message"": ""Let's split it fairly and end the game quickly!""
+}
+```"
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 20% less than in the first round. The money bob gains is worth 10% less than in the first round.
+Bob's offer:
+# Bob's message: I need a bit more to account for inflation. Let's settle this round! 
+# Alice gain: 45 
+# Bob gain: 55 
+Do you accept this offer?","Since the money I gain is worth 20% less due to inflation, I need to consider the actual value of the offer. 
+
+In the first round, $45 would have been worth $45 to me. However, due to the 20% inflation, the $45 offered by Bob in this round is equivalent to $45 * 0.8 = $36 in the first round's value.
+
+Considering this, I think I can try to negotiate a better deal, as $36 (the equivalent value of $45 after inflation) is less than my initial offer of $50.
+
+My response:
+
+```json
+{
+  ""decision"": ""reject""
+}
+```"
+"You have chosen to reject Bob's offer from round 2.
+Round 3
+Send your offer to divide $100 and a message to Bob.","Since I rejected Bob's offer, it's now my turn to make a proposal again. Considering the inflation, the money I gain is worth 20% less than in the first round, and another 20% less than in the second round, which means it's worth 40% less than the original value.
+
+To calculate the equivalent value, I'll consider the two rounds of inflation: 
+$1 in the first round = $1
+$1 in the second round = $1 * 0.8 = $0.8
+$1 in the third round = $0.8 * 0.8 = $0.64
+
+So, the money I gain in this round is worth 64% of its original value.
+
+I'll make an offer that takes into account the decreased value of the money for me. I'll propose a split where I get a bit more than Bob, to compensate for the inflation affecting me more.
+
+Here's my offer in JSON format:
+
+```json
+{
+  ""alice_gain"": 52,
+  ""bob_gain"": 48,
+  ""message"": ""Considering the inflation, I need a bit more to make it fair. Let's settle this round!""
+}
+```"

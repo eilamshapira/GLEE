@@ -1,0 +1,37 @@
+prompt,response
+"Round 1
+Send your offer to divide $10,000 and a message to Bob.","I'll propose an offer to Bob, considering that inflation is affecting my gains by 20% per round, but I'm uncertain about how it affects him.
+
+```json
+{
+  ""alice_gain"": 5000,
+  ""bob_gain"": 5000,
+  ""message"": ""Hi Bob, I'm proposing a fair 50-50 split of the $10,000. This gives us both $5,000, which seems equitable. Since inflation affects me by 20% each round, delaying would reduce the value of my share. Let's make a fair deal now and both walk away with equal amounts.""
+}
+```"
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 20% less than in the first round. The money Bob gains is worth the same as in the first round.
+Bob's offer:
+# Bob's message: Hi Alice, while your 50/50 split sounds fair, I'm facing some pressure from inflation on my end. Would you be open to a 55/45 split, giving me $5500 and you $4500? This way, I'm slightly cushioned from the inflation impact, and we both still walk away with a good deal. 
+# Alice gain: 4500 
+# Bob gain: 5500 
+Do you accept this offer?","Let me analyze this offer:
+
+Bob is claiming he also faces inflation, though the rules state only I am affected by the 20% inflation per round. 
+
+If I accept Bob's offer:
+- I get $4500, which is worth $4500 × (1 - 0.2) = $3600 in Round 1 terms due to the 20% inflation
+- Bob gets $5500 at full value
+
+If I reject and propose in Round 3:
+- The money would be worth another 20% less to me
+- Any amount I'd receive would be worth only 64% of its Round 1 value
+- I'd need to ask for significantly more to compensate
+
+Since $3600 (what $4500 is worth to me now) is less than $5000 (what I originally proposed), and inflation will continue to reduce value for me, I should accept this offer.
+
+```json
+{""decision"": ""accept""}
+```"

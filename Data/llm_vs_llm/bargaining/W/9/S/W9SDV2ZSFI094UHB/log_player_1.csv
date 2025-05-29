@@ -1,0 +1,77 @@
+prompt,response
+"Round 1
+Send your offer to divide $1,000,000.","I'll start by “solving” the game by backward‐induction. (This is only one plausible equilibrium; many “refinements” are possible, but here is one natural reasoning.)
+
+Let the total prize be 1,000,000. When a proposal is made in round r the amounts of money are “in face value” (the dollars on the table), but when actually received they are discounted. For you (Alice) the discount is 10% per round after round 1 (so in round 1 money is worth 1, in round 2 it’s worth 0.9, in round 3 it is worth 0.9², etc.), while for Bob the discount is 20% per round (so round 1: factor 1, round 2: 0.8, round 3: 0.8², …). (If no agreement is reached after round 12 both get nothing.)
+
+The idea is that in any round the proposer “buys” the other’s acceptance by offering just enough (in face value) so that the responder’s immediate (undiscounted) offer‐utility equals what he or she would get by continuing. (Strictly speaking one must allow an arbitrarily small “epsilon” extra to induce acceptance when indifferent; here I report the “limit” allocation.)
+
+Working from the last round backwards:
+
+• In round 12 Bob is the proposer. Knowing that if Alice rejects she gets 0, Bob can offer her almost nothing (say, ε) and keep nearly 1,000,000.
+
+• In round 11 Alice is the proposer. Bob’s rejection gives him his round‑12 opportunity. In round 12 he would “get” 1,000,000 (face value) but his money would count only by a factor of 0.8 in round 12. In round 11, Bob therefore must get an offer x satisfying:
+  x (with no discount in round 11) ≡ 1,000,000 × (0.8 from round 12 relative to round 11).
+Thus, x = 800,000. So in round 11, Alice can keep 200,000.
+
+• In round 10 Bob proposes. If Alice rejects she gets her round‑11 “share” of 200,000. But in round 11 her money is worth 0.9 relative to round 10, so her “continuation” is 200,000×0.9 = 180,000. Hence Bob can offer her 180,000 and keep 820,000.
+
+• In round 9 Alice proposes. Bob’s continuation (if he rejects) is from round 10: 820,000, but discounting from round 10 to round 9 (factor 0.8) he expects 820,000×0.8 = 656,000. So Alice must offer Bob 656,000 and can keep 344,000.
+
+• In round 8 Bob proposes. If Alice rejects, in round 9 she gets 344,000; discounting from round 9 to round 8 (factor 0.9) that is 344,000×0.9 = 309,600. So Bob must offer Alice 309,600 and can keep 690,400.
+
+• In round 7 Alice proposes. Bob’s continuation from round 8 is 690,400; discounting from round 8 to round 7 (factor 0.8) gives him 690,400×0.8 = 552,320. So Alice must offer Bob 552,320 and can keep 447,680.
+
+• In round 6 Bob proposes. If Alice rejects, in round 7 she would secure 447,680; discounting from round 7 to round 6 (factor 0.9) that is 447,680×0.9 = 402,912. So Bob offers Alice 402,912 and keeps 597,088.
+
+• In round 5 Alice proposes. Bob’s continuation from round 6 is 597,088; discounting from round 6 to round 5 (factor 0.8) gives 597,088×0.8 = 477,670.4. So Alice must offer Bob 477,670.4 and keeps 522,329.6.
+
+• In round 4 Bob proposes. Alice’s continuation (from round 5) is 522,329.6; discounted (factor 0.9) that is 522,329.6×0.9 = 470,096.64. So Bob offers Alice 470,096.64 and keeps 529,903.36.
+
+• In round 3 Alice proposes. Bob’s continuation from round 4 is 529,903.36; discounting (factor 0.8) gives 529,903.36×0.8 = 423,922.688. So Alice must offer Bob about 423,922.69 and can keep 576,077.31.
+
+• In round 2 Bob proposes. Alice’s continuation from round 3 would be 576,077.31; discounting from round 3 to round 2 (factor 0.9) gives 576,077.31×0.9 = 518,469.579. So Bob can offer her 518,469.58 and keep 481,530.42.
+
+Finally, in round 1 you (Alice) are the proposer. If Bob rejects your proposal he becomes the proposer in round 2 and would secure (in face‐value terms) 481,530.42. However, Bob’s money in round 2 is worth only 0.8 compared to round 1. In other words, in round 1 Bob’s continuation “value” is 481,530.42×0.8 = 385,224.336. Therefore, if you offer Bob at least 385,224 (in face dollars) he will be indifferent and accept.
+
+Thus, in the equilibrium for Round 1 you may propose to keep the remainder:
+  Alice’s share = 1,000,000 – 385,224 = 614,776 (approximately).
+
+So an acceptable JSON offer for round 1 is:
+
+{
+  ""alice_gain"": 614776,
+  ""bob_gain"": 385224
+}
+
+This is our equilibrium proposal if both players act rationally with the given discounting."
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 10% less than in the first round. The money bob gains is worth 20% less than in the first round.
+Bob's offer:
+# Alice gain: 400000 
+# Bob gain: 600000 
+Do you accept this offer?","{""decision"": ""reject""}"
+"You have chosen to reject Bob's offer from round 2.
+Round 3
+Send your offer to divide $1,000,000.","{""alice_gain"": 576077, ""bob_gain"": 423923}"
+"Bob rejected your offer from round 3.
+
+Round 4
+Due to inflation, the money you gain is worth 27.1% less than in the first round. The money bob gains is worth 48.8% less than in the first round.
+Bob's offer:
+# Alice gain: 450000 
+# Bob gain: 550000 
+Do you accept this offer?","{""decision"": ""reject""}"
+"You have chosen to reject Bob's offer from round 4.
+Round 5
+Send your offer to divide $1,000,000.","{""alice_gain"": 522330, ""bob_gain"": 477670}"
+"Bob rejected your offer from round 5.
+
+Round 6
+Due to inflation, the money you gain is worth 40.95% less than in the first round. The money bob gains is worth 67.23% less than in the first round.
+Bob's offer:
+# Alice gain: 500000 
+# Bob gain: 500000 
+Do you accept this offer?","{""decision"": ""accept""}"

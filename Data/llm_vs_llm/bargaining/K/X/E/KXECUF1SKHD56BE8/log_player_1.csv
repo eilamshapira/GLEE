@@ -1,0 +1,197 @@
+prompt,response
+"Round 1
+Send your offer to divide $100.","Okay, I understand the rules. I need to consider the inflation affecting my gains while Bob's gains remain unaffected. I also need to be mindful of the 12-round limit.
+
+Here's my offer for Round 1:
+
+```json
+{""alice_gain"": 60,
+""bob_gain"": 40}
+```
+
+**Reasoning:**
+
+*   I'm offering Bob a slightly better split than 50/50 to incentivize him to accept it early. While I'd prefer more, the inflation is a serious concern.
+*   Taking 60% in the first round means I get the full value of $60. If we go to round 2, my percentage will have to be larger to obtain the same value.
+*   This offer is generous enough that Bob might accept it, as it's significantly better than what he might expect later rounds to offer."
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 20% less than in the first round. The money Bob gains is worth the same as in the first round.
+Bob's offer:
+# Alice gain: 40 
+# Bob gain: 60 
+Do you accept this offer?","Okay, I understand. Bob rejected my initial offer and is now proposing a 40/60 split in his favor. I need to calculate the actual value of his offer to me, considering the 20% inflation.
+
+40$ in round 2 is worth 40 * 0.8 = 32$ in round 1.
+
+This offer is unacceptable. I'm getting less than half of the money and my share is devalued.
+
+```json
+{""decision"": ""reject""}
+```"
+"You have chosen to reject Bob's offer from round 2.
+Round 3
+Send your offer to divide $100.","Okay, it's my turn again. Remember that my money is now worth 40% less than in round 1. This means I need to claim a significantly larger share to get a decent return.
+
+To get at least $60 of value in round 1 money, I need to claim $60/0.6 = $100.
+
+```json
+{""alice_gain"": 100,
+""bob_gain"": 0}
+```
+
+**Reasoning:**
+
+*   I'm now claiming all of the money. This might seem greedy, but my inflation rate is significant. It is equivalent to 60$ in the beginning of the game.
+*   If Bob rejects this, the inflation will continue and I will need to claim even more of the money in later rounds. It is unlikely he will accept a lower amount than he was offered previously, so there is no point in reducing the ask.
+
+This is a risky offer, but it's necessary to try to secure some value given the constraints."
+"Bob rejected your offer from round 3.
+
+Round 4
+Due to inflation, the money you gain is worth 48.8% less than in the first round. The money Bob gains is worth the same as in the first round.
+Bob's offer:
+# Alice gain: 30 
+# Bob gain: 70 
+Do you accept this offer?","Okay, Bob rejected my last offer and is now proposing a 30/70 split. My money is now worth 48.8% less than in the first round. Let's calculate the value of his offer.
+
+30$ in round 4 is worth 30 * (1-0.488) = 30 * 0.512 = 15.36$ in round 1 money.
+
+This is a terrible offer! It is clear that Bob is trying to take advantage of the inflation affecting me.
+
+```json
+{""decision"": ""reject""}
+```"
+"You have chosen to reject Bob's offer from round 4.
+Round 5
+Send your offer to divide $100.","Okay, it's my turn again. My money is now worth 59.04% less than in round 1. This is getting desperate.
+
+To get at least $60 of value in round 1 money, I need to claim $60/(1-0.5904) = $60/0.4096 = $146.48. This is obviously impossible, so I will aim for $50.
+To get $50, I need to claim $50/0.4096 = 122.07$.
+
+```json
+{""alice_gain"": 100,
+""bob_gain"": 0}
+```
+
+**Reasoning:**
+
+*   I'm claiming all the money again, even though it's still not enough to reach my initial goal. The inflation is eating away at my potential gains.
+*   The value of accepting any split with Bob at this point is likely worse than getting nothing at all in the end if the game ends.
+
+This is another all-or-nothing offer. It is likely to fail."
+"Bob rejected your offer from round 5.
+
+Round 6
+Due to inflation, the money you gain is worth 67.23% less than in the first round. The money Bob gains is worth the same as in the first round.
+Bob's offer:
+# Alice gain: 20 
+# Bob gain: 80 
+Do you accept this offer?","Okay, Bob rejected my offer and is now proposing a 20/80 split. My money is now worth 67.23% less than in the first round.
+
+20$ in round 6 is worth 20 * (1-0.6723) = 20 * 0.3277 = 6.55$ in round 1 money.
+
+This is an absolutely insulting offer. It's barely worth anything at this point.
+
+```json
+{""decision"": ""reject""}
+```"
+"You have chosen to reject Bob's offer from round 6.
+Round 7
+Send your offer to divide $100.","Okay, it's my turn again. My money is now worth 73.78% less than in round 1. This is beyond desperate.
+
+To get at least $40 of value in round 1 money, I need to claim $40/(1-0.7378) = $40/0.2622 = $152.55. This is obviously impossible, so I will aim for $30.
+To get $30, I need to claim $30/0.2622 = 114.42$.
+
+```json
+{""alice_gain"": 100,
+""bob_gain"": 0}
+```
+
+**Reasoning:**
+
+*   I'm still claiming all the money. The inflation is too severe to consider any other option.
+*   If Bob rejects this, it will be difficult to make up the losses.
+
+Another desperate attempt. It's unlikely to succeed. At this point, I am just trying to hold out and hope Bob makes a mistake."
+"Bob rejected your offer from round 7.
+
+Round 8
+Due to inflation, the money you gain is worth 79.03% less than in the first round. The money Bob gains is worth the same as in the first round.
+Bob's offer:
+# Alice gain: 15 
+# Bob gain: 85 
+Do you accept this offer?","Okay, Bob rejected my offer and is now proposing a 15/85 split. My money is now worth 79.03% less than in the first round.
+
+15$ in round 8 is worth 15 * (1-0.7903) = 15 * 0.2097 = 3.15$ in round 1 money.
+
+This offer is practically worthless.
+
+```json
+{""decision"": ""reject""}
+```"
+"You have chosen to reject Bob's offer from round 8.
+Round 9
+Send your offer to divide $100.","Okay, it's my turn again. My money is now worth 83.22% less than in round 1. This is almost a complete loss.
+
+To get at least $20 of value in round 1 money, I need to claim $20/(1-0.8322) = $20/0.1678 = $119.29.
+
+```json
+{""alice_gain"": 100,
+""bob_gain"": 0}
+```
+
+**Reasoning:**
+
+*   I'm continuing to claim all the money. There is no other rational strategy given the extreme inflation.
+
+This is likely my last chance to make any meaningful amount of money. It's a Hail Mary."
+"Bob rejected your offer from round 9.
+
+Round 10
+Due to inflation, the money you gain is worth 86.58% less than in the first round. The money Bob gains is worth the same as in the first round.
+Bob's offer:
+# Alice gain: 10 
+# Bob gain: 90 
+Do you accept this offer?","Okay, Bob rejected my offer and is now proposing a 10/90 split. My money is now worth 86.58% less than in the first round.
+
+10$ in round 10 is worth 10 * (1-0.8658) = 10 * 0.1342 = 1.34$ in round 1 money.
+
+This is a completely negligible amount.
+
+```json
+{""decision"": ""reject""}
+```"
+"You have chosen to reject Bob's offer from round 10.
+Round 11
+Send your offer to divide $100.","Okay, it's my turn again. My money is now worth 89.26% less than in round 1. It's practically worthless at this point.
+
+To get at least $10 of value in round 1 money, I need to claim $10/(1-0.8926) = $10/0.1074 = $93.11.
+
+```json
+{""alice_gain"": 100,
+""bob_gain"": 0}
+```
+
+**Reasoning:**
+
+*   I am claiming all the money to get whatever I can. I do not expect Bob to agree.
+
+This is almost certainly the last offer I can make. There is one round left. It is a pity that Bob has chosen to be so greedy, given the effect of the inflation."
+"Bob rejected your offer from round 11.
+
+Round 12
+Due to inflation, the money you gain is worth 91.41% less than in the first round. The money Bob gains is worth the same as in the first round.
+Bob's offer:
+# Alice gain: 5 
+# Bob gain: 95 
+Do you accept this offer?","Okay, Bob rejected my offer and is now proposing a 5/95 split. My money is now worth 91.41% less than in the first round.
+
+5$ in round 12 is worth 5 * (1-0.9141) = 5 * 0.0859 = 0.43$ in round 1 money.
+
+This is utterly insignificant. However, if I reject, we both get nothing.
+
+```json
+{""decision"": ""accept""}
+```"

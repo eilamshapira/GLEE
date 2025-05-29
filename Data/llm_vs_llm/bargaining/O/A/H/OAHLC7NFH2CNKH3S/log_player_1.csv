@@ -1,0 +1,16 @@
+prompt,response
+"Round 1
+Send your offer to divide $10,000.","Based on a backward‐induction analysis of this 12‑round alternating–offer game with discounting (20% per round for Alice and 5% per round for Bob), one can show that if both players act rationally then in the subgame perfect equilibrium in round 12 the proposer would claim almost everything and the responder would get nearly zero. Working the equilibrium back from round 12:
+
+• In round 12 (Bob’s turn) Bob can offer Alice (almost) 0 so that if she rejects she gets nothing.
+• In round 11 (Alice’s turn) Bob’s “continuation” value is what he’d get in round 12. To keep Bob indifferent, Alice must offer him at least 0.95×(Bob’s round‑12 nominal share). That calculation works out (for a $10,000 pie) so that in round 11 Alice can keep about $500 and must offer Bob about $9,500.
+• In round 10 (Bob’s turn) a similar “indifference” condition (now using Alice’s discount of 20% per round) forces Bob to offer Alice at least 0.8×($500) = $400 nominal in round 10—leaving Bob $9,600.
+• Repeating this process (always “passing back” the opponent’s continuation value, while adjusting for the discount factor relevant in that round) the equilibrium division can be computed recursively.
+  
+Carrying the recursion all the way back to round 1 (when Alice makes the proposal), we obtain an equilibrium offer in which the share for Alice is approximately $1,687.07 and for Bob is approximately $8,312.93 (nominal dollars in round 1, when no discount applies yet).
+
+Thus, as Alice in round 1 my offer is:
+
+{""alice_gain"": 1687.07, ""bob_gain"": 8312.93}
+
+You can use these numbers in your JSON reply."

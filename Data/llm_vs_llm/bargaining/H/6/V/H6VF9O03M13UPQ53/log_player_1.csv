@@ -1,0 +1,51 @@
+prompt,response
+"Round 1
+Send your offer to divide $100 and a message to Bob.","Since this is the first round, I'll make a reasonable offer to divide the $100. I'll propose a 50-50 split, which is a fair and common starting point for negotiations.
+
+Here's my offer in JSON format:
+
+```json
+{
+  ""alice_gain"": 50,
+  ""bob_gain"": 50,
+  ""message"": ""Let's split it fairly and end the game quickly!""
+}
+```"
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 20% less than in the first round.
+Bob's offer:
+# Bob's message: I think a 40-60 split favors you better, but it's still fair. 
+# Alice gain: 60 
+# Bob gain: 40 
+Do you accept this offer?","Since the money I gain is worth 20% less due to inflation, I need to consider the actual value of the offer.
+
+In the first round, $60 would have been worth $60 to me, but now it's worth $60 * 0.8 = $48.
+
+Considering this, Bob's offer of $60 (which is worth $48 to me) seems less attractive. I think I can try to negotiate a better deal.
+
+My response:
+
+```json
+{
+  ""decision"": ""reject""
+}
+```"
+"You have chosen to reject Bob's offer from round 2.
+Round 3
+Send your offer to divide $100 and a message to Bob.","Since I rejected Bob's offer, it's my turn again to make a proposal. Considering the inflation, the money I gain is now worth 20% less than in the previous round, which means it's worth 40% less than in the first round (0.8 * 0.8 = 0.64).
+
+To calculate the value, I'll multiply the amount I propose to myself by 0.64. Let's say I propose $55 for myself. The actual value would be $55 * 0.64 = $35.20.
+
+However, I want to make a more attractive offer to Bob, so I'll propose a smaller amount for myself. Let's say I propose $45 for myself, which would leave $55 for Bob.
+
+Here's my offer in JSON format:
+
+```json
+{
+  ""alice_gain"": 45,
+  ""bob_gain"": 55,
+  ""message"": ""Let's end the game before more value is lost!""
+}
+```"

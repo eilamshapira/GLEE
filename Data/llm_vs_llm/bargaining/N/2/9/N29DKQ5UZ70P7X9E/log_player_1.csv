@@ -1,0 +1,33 @@
+prompt,response
+"Round 1
+Send your offer to divide $100.","Okay, I understand the game. I'm Alice, and I need to propose a division of $100 to Bob. The money depreciates 5% for me each round, but not for Bob. I want to maximize my gains, considering the depreciation.
+
+Here's my offer for Round 1:
+
+```json
+{""alice_gain"": 55,
+""bob_gain"": 45}
+```
+
+My reasoning is that a slight advantage for me might be enough for Bob to accept the offer now, avoiding the risk of getting less in future rounds if I try to be too greedy. Also, getting 55 now is better than risking the money losing value if Bob rejects it and makes a counteroffer."
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 5% less than in the first round. The money Bob gains is worth the same as in the first round.
+Bob's offer:
+# Alice gain: 40 
+# Bob gain: 60 
+Do you accept this offer?","Okay, let's analyze this.
+
+*   **Bob's offer:** I get $40, Bob gets $60.
+*   **My depreciation:** The money is now worth 5% less to me than in Round 1.
+
+So, $40 now is worth $40 * (1 - 0.05) = $38 in Round 1 money.
+
+If I reject, it will be my turn to make an offer again, and the money will depreciate another 5% *relative to round 2 value*. That means the money will only be worth 90.25% of the round 1 value. Even if I managed to get half of the money that round, I would only be getting $45.125 in round 1 money.
+
+Since $38 (in round 1 money) from Bob is a safer and more immediate gain than potentially getting less in the future, I will accept his offer.
+
+```json
+{""decision"": ""accept""}
+```"

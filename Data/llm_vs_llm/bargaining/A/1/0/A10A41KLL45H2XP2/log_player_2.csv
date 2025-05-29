@@ -1,0 +1,63 @@
+prompt,response
+"Round 1
+Alice's offer:
+# Bob gain: 100000 
+# Alice gain: 900000 
+Do you accept this offer?","Okay, I understand the rules. Let's analyze the offer.
+
+Alice is offering me $100,000 in the first round. If I accept, I get $100,000. If I reject, the value of that money to me will decrease by 20% each round.
+
+Let's calculate the value of $100,000 in future rounds, discounted by 20% each round:
+
+*   Round 1: $100,000
+*   Round 2: $100,000 * 0.8 = $80,000
+*   Round 3: $80,000 * 0.8 = $64,000
+*   Round 4: $64,000 * 0.8 = $51,200
+*   Round 5: $51,200 * 0.8 = $40,960
+*   Round 6: $40,960 * 0.8 = $32,768
+*   Round 7: $32,768 * 0.8 = $26,214.4
+*   Round 8: $26,214.4 * 0.8 = $20,971.52
+*   Round 9: $20,971.52 * 0.8 = $16,777.216
+*   Round 10: $16,777.216 * 0.8 = $13,421.7728
+*   Round 11: $13,421.7728 * 0.8 = $10,737.41824
+*   Round 12: $10,737.41824 * 0.8 = $8,589.934592
+
+Alice is getting a very large share ($900,000). However, considering the rapidly decreasing value of the money for me, $100,000 in the first round might be the best I can get. I will reject to try and get more.
+
+```json
+{""decision"": ""reject""}
+```"
+"You have chosen to reject Alice's offer from round 1.
+Round 2
+Send your offer to divide $1,000,000.","Okay, it's my turn. Knowing the money loses value quickly for me (20% each round) while Alice's money degrades slower (5%), I need to make an offer that's attractive enough for her to accept, but also gives me a reasonable amount.
+
+Let's aim for a roughly 60/40 split in my favor *before* considering the inflation. I will ask for 600,000$ and offer Alice 400,000$.
+
+```json
+{
+""bob_gain"": 600000,
+""alice_gain"": 400000
+}
+```"
+"Alice rejected your offer from round 2.
+
+Round 3
+Due to inflation, the money you gain is worth 36% less than in the first round. The money alice gains is worth 9.75% less than in the first round.
+Alice's offer:
+# Bob gain: 150000 
+# Alice gain: 850000 
+Do you accept this offer?","Okay, let's analyze this offer.
+
+Alice is offering me $150,000. Since it's round 3, my money is worth 36% less than in round 1, meaning it's worth 64% of its original value. So, the $150,000 is effectively worth $150,000 * 0.64 = $96,000 in round 1 terms.
+
+Let's calculate the value of attempting to make an offer in the next round and what the money would be worth to me then:
+
+*   Round 4: Value is 1 - (20% * 3) = 1- 0.6 = 0.4 the original value. If I proposed to keep $250,000, it would be worth 100,000.
+
+If I go to round 4, it's highly unlikely I will get more than 250,000$.
+
+Given the rapid inflation, $96,000 in round 1 terms is better than the likely outcome in later rounds. I'll accept the offer.
+
+```json
+{""decision"": ""accept""}
+```"

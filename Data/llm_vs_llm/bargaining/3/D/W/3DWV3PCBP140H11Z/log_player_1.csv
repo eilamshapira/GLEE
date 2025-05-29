@@ -1,0 +1,30 @@
+prompt,response
+"Round 1
+Send your offer to divide $1,000,000.","Below is one “solution” based on a backward‐induction analysis of the bargaining game with discounting. (Note that there is some leeway in “equilibrium offers” since one could use arbitrarily small “epsilon‐offers”; the numbers below are one possible equilibrium outcome.) 
+
+Let us briefly explain our reasoning. In this game the “pie” starts at $1,000,000 in round 1, but note that for each subsequent round each player’s “pie” is “discounted” relative to today’s value. In particular, if the deal is struck in round r then you (Alice) get your proposed nominal amount multiplied by 0.8^(r–1) and Bob’s nominal amount is worth 0.95^(r–1) times that amount. (Thus if, for example, the negotiation reaches round 12, Bob – who makes the proposal in even‐numbered rounds – can offer you almost nothing while keeping nearly all of 1,000,000×0.95^11 for himself.) 
+
+One may “solve” the game via backward induction. (For example, working from round 12 we have that in the last round the proposer can allocate almost the entire dollar amount to themselves since the responder would otherwise get zero by rejecting. In round 11 the proposer must give the other at least as much—when “converted” into today’s dollars by the respective discount factor—as that player’s continuation‐payoff if they waited until round 12; and so on.) 
+
+A detailed analysis (with one possible equilibrium path) produces these equilibrium offers (with “nominal dollar” amounts proposed, so that when multiplied by the round’s discount factor they yield each player’s “present value”) in the following rounds:
+
+ Round 12 (Bob proposer): Bob would get almost all of 
+  1,000,000×0.95^11 ≈ 568,000 (Bob’s round‑12 present value)  
+  Alice gets only an arbitrarily small positive amount.
+
+ Round 11 (Alice proposer): To prevent Bob from waiting for round 12, she must offer Bob at least 
+  950,000 nominal dollars (because 950,000×0.95^(10) = 1,000,000×0.95^11),
+  leaving her 50,000 nominal dollars.
+
+ Round 10 (Bob proposer): Similarly, his optimal offer gives Alice 40,000 nominal dollars and keeps 960,000 nominal dollars.
+
+ … continuing this backward‐induction process through rounds 9, 8, …, 2, one deduces that in round 1 your continuation value as responder would be roughly 112,242 nominal dollars (worth 112,242×0.8 = 89,794 in “today’s” dollars) while Bob’s continuation value is about 887,758 nominal (which would give him 887,758×0.95 = 843,370 if he were to wait). 
+
+Thus in round 1 you (Alice) may improve upon what you’d get by waiting by “capturing” more of the pie immediately. To induce Bob – whose round‑1 dollars are not discounted but who would get about 843,370 in present‐value terms if he waited – to accept your offer immediately, you must offer him no less than about 843,370 nominal dollars in round 1. (In equilibrium, exactly his continuation value is given.) That leaves you with  
+ 1,000,000 – 843,370 = 156,630 nominal dollars for yourself. Since no discount applies in round 1 (your discount factor is 0.8^0 = 1), these numbers are exactly the amounts each party “receives” if the deal is struck in round 1.
+
+One acceptable equilibrium proposal (with numbers rounded to the nearest dollar) is therefore:
+
+  {""alice_gain"": 156630, ""bob_gain"": 843370}
+
+Below is the JSON message for your round‑1 offer. Ready to relay this to Bob?"

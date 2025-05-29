@@ -1,0 +1,44 @@
+prompt,response
+"Round 1
+Send your offer to divide $100 and a message to Bob.","```json
+{
+""alice_gain"": 60,
+""bob_gain"": 40,
+""message"": ""Let's start with a reasonable offer, Bob. I take 60 and you take 40.""
+}
+```"
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 5% less than in the first round. The money bob gains is worth 10% less than in the first round.
+Bob's offer:
+# Bob's message: I think a 55/45 split is more fair.  Let's get this done. 
+# Alice gain: 45 
+# Bob gain: 55 
+Do you accept this offer?","```json
+{""decision"": ""reject""}
+```
+
+**Reasoning:**
+
+While Bob's offer seems closer to a ""fair"" split at first glance, the decreasing value of the money makes this a bad deal for me. 
+
+* **My perspective:** Accepting Bob's offer means I get $45 now, which is already less than the $60 I proposed in Round 1. 
+* **Potential next round:** If I reject, I get to propose in Round 3. Even with another 5% inflation hit, I can offer Bob slightly more than he's getting now (due to his 10% inflation) and still come out ahead of his current offer.
+
+This strategy relies on Bob being somewhat motivated by maximizing his own gains, even if it means accepting a slightly less ""fair"" split."
+"You have chosen to reject Bob's offer from round 2.
+Round 3
+Send your offer to divide $100 and a message to Bob.","```json
+{
+""alice_gain"": 56,
+""bob_gain"": 44,
+""message"": ""Okay, Bob, let's settle this. How about 56 for me and 44 for you? This deal benefits us both considering the money is losing value.""
+}
+```
+
+**Reasoning:**
+
+* **Account for inflation:**  The money has devalued again for both of us. My offer is designed to be appealing to Bob while still getting me more than his previous offer.
+* **Appear reasonable:**  I'm slightly increasing Bob's share from his previous offer, making it seem like I'm compromising.
+* **Emphasize the loss:** By highlighting that the money is losing value, I'm hoping to pressure Bob into accepting a deal sooner rather than later."

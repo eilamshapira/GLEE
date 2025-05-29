@@ -1,0 +1,55 @@
+prompt,response
+"Round 1
+Send your offer to divide $1,000,000.","Based proposal:
+
+{""alice_gain"": 377663.35, ""bob_gain"": 622336.65}
+
+Here's the idea behind the numbers. In this 12‐round alternating‐offer game the “pie” (initially $1,000,000) shrinks by 10% each round. By working backward from round 12 (when the proposer can claim nearly the entire discounted cake) one finds that if Bob rejects your first–round offer he can guarantee himself about 62.2% of the full‐dollar amount (in round–1 terms) by becoming the proposer next round. In order for Bob to be indifferent to accepting your offer now rather than waiting, you must offer him roughly $622,336.65 and keep about $377,663.35 for yourself.
+
+If you’re happy with this fair outcome (given the discounting and strategic considerations), then this is the move for round 1."
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 10% less than in the first round.
+Bob's offer:
+# Alice gain: 300000 
+# Bob gain: 700000 
+Do you accept this offer?","{""decision"": ""reject""}"
+"You have chosen to reject Bob's offer from round 2.
+Round 3
+Send your offer to divide $1,000,000.","{""alice_gain"": 342800.82, ""bob_gain"": 657199.18} 
+
+Explanation:
+We work backward using subgame perfection. In the final (12th) round Bob, as proposer, can claim virtually the entire $1,000,000 (in round‐12 nominal terms). Stepping back one round (round 11, with Alice proposing), she must offer Bob an amount that, when he compares it with the discounted value (90% factor per round) of what he could secure as a proposer in round 12, leaves him indifferent. Continuing this backward induction through rounds 10 down to 4, we find that in round 4 (with Bob proposing) the equilibrium requires Bob to secure 73.02% (nominal) of the pie while offering Alice 26.98% (adjusted by the 10% per round discount). 
+
+Now in round 3, with Alice proposing, Bob’s continuation value if he rejects is what he would get in round 4 (73.02% nominal) discounted back one round (multiplied by 0.9), which is approximately 0.9 × 0.73022 ≈ 0.65720 (65.72% of the round‐3 nominal pie). To make Bob indifferent between accepting now and waiting, Alice must offer Bob roughly 65.72% of $1,000,000 in round 3 nominal dollars (i.e. about $657,199.18), allowing her to keep the remainder (about $342,800.82).
+
+Thus, the equilibrium offer in round 3 is as given above."
+"Bob rejected your offer from round 3.
+
+Round 4
+Due to inflation, the money you gain is worth 27.1% less than in the first round.
+Bob's offer:
+# Alice gain: 350000 
+# Bob gain: 650000 
+Do you accept this offer?","{""decision"": ""reject""}"
+"You have chosen to reject Bob's offer from round 4.
+Round 5
+Send your offer to divide $1,000,000.","{""alice_gain"": 299754.10, ""bob_gain"": 700245.90}
+
+Explanation:
+We analyze the remaining rounds (rounds 5–12) with the 10% per round discount. Denote the equilibrium fraction that the proposer can secure at round i as pᵢ. In the final round (round 12) the proposer (Bob) can take everything, so p₁₂ = 1. Moving backward, when a player makes an offer at round i, they need to give the responder at least 0.9 × pᵢ₊₁ of the current 1,000,000 (since a rejection leads to the next round’s outcome, discounted by 10%). Thus, at any round i the proposer’s equilibrium share is:
+
+  pᵢ = 1 – 0.9 × pᵢ₊₁.
+
+Working backward:
+  p₁₂ = 1  
+  p₁₁ = 1 – 0.9×1 = 0.1  
+  p₁₀ = 1 – 0.9×0.1 = 0.91  
+  p₉  = 1 – 0.9×0.91 = 0.181  
+  p₈  = 1 – 0.9×0.181 = 0.8371  
+  p₇  = 1 – 0.9×0.8371 = 0.24661  
+  p₆  = 1 – 0.9×0.24661 = 0.77805  
+  p₅  = 1 – 0.9×0.77805 = 0.29975  
+
+Since round 5 is your turn to propose and you are Alice, you can secure approximately 29.98% of the current nominal pie while offering Bob just enough (about 70.02%) to make him indifferent between accepting now or waiting for his turn in round 6. Thus, the equilibrium offer in round 5 is as stated above."

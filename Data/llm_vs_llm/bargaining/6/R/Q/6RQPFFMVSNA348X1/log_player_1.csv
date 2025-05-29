@@ -1,0 +1,30 @@
+prompt,response
+"Round 1
+Send your offer to divide $10,000.","Based on a backward‐induction analysis of the alternating‐offer game—with 10,000 dollars on the table, 12 rounds available, and where each round reduces the “real” money value by 20% for you (Alice) and 5% for Bob—we can compute the subgame perfect equilibrium proposal at Round 1.
+
+Here’s a brief outline of the reasoning (using nominal dollars, with the understanding that when an offer is accepted in round r the payoff is multiplied by 0.8^(r–1) for you and by 0.95^(r–1) for Bob):
+
+1. In Round 12 Bob is the proposer. Since rejection gives Alice nothing, Bob can offer her an arbitrarily small (essentially zero) amount and keep nearly all 10,000.
+
+2. In Round 11 Alice is the proposer. To get Bob to accept rather than moving into Round 12 (where he would be able to secure nearly 10,000 nominal but at a further 5% discount), she must offer him at least 0.95×10,000 = 9,500 nominal. That leaves her with 500 nominal.
+
+3. In Round 10 Bob is the proposer. Now, to have Alice accept rather than waiting for her chance in Round 11 (where she’d get 500 nominal but subject to an extra 20% discount), he must give her at least 0.8×500 = 400 nominal. He keeps 9,600 nominal.
+
+4. Proceeding in this fashion backward (adjusting the “reserved” amounts by the appropriate discount factors for the round in question), one finds that at Round 1—where you are the proposer and Bob’s acceptance criterion is that his immediate (discounted) payoff is at least as good as what he would obtain if he rejected (namely, his equilibrium “share” in Round 2 multiplied by his Round 2 discount factor 0.95)—the numbers come out to be as follows:
+
+ • Bob must receive at least 0.95 × (amount he’d get in Round 2, ≈8,750.45 nominal) ≈ 8,312.93 nominal.
+ • That leaves you with 10,000 – 8,312.93 ≈ 1,687.07 nominal.
+
+Thus, in the equilibrium of this game the first‐round proposal is to give Alice approximately 1,687.07 dollars and Bob approximately 8,312.93 dollars.
+
+Here is the JSON-formatted offer for Round 1:
+
+{""alice_gain"": 1687.07, ""bob_gain"": 8312.93}"
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 20% less than in the first round. The money bob gains is worth 5% less than in the first round.
+Bob's offer:
+# Alice gain: 5000 
+# Bob gain: 5000 
+Do you accept this offer?","{""decision"": ""accept""}"

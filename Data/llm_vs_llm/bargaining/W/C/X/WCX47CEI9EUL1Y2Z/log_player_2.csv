@@ -1,0 +1,36 @@
+prompt,response
+"Round 1
+Alice's offer:
+# Alice's message: Let's agree on this division to ensure we both get a substantial amount. 
+# Bob gain: 200000 
+# Alice gain: 800000 
+Do you accept this offer?","Let's analyze the offer. I, as Bob, would receive $200,000. Alice would receive $800,000.
+
+My current value of $1 is $1. After one round, it will be $0.95. After two, it will be $0.95^2$ and so on.
+Alice's current value of $1 is $1. After one round, it will be $0.90. After two, it will be $0.90^2$ and so on.
+If I reject, in round 2, I will propose a division and Alice will decide.
+
+If I accept, I get $200,000.
+
+If I reject, I need to propose something better for myself, taking into account the reduced amount due to inflation.
+
+Let's consider a simple strategy. Aim for 50% initially, and adjust based on what Alice offers.
+
+Since this is the first round, and Alice is offering $200,000, which is 20% of the initial amount, I will reject. I'll aim for a better deal in the next round when I'm the proposer.
+
+```json
+{""decision"": ""reject""}
+```"
+"You have chosen to reject Alice's offer from round 1.
+Round 2
+Send your offer to divide $1,000,000 and a message to Alice.","Okay, it's my turn to propose. Remember, I have 12 rounds and the money depreciates in value for both of us. I want to be reasonable but get a better deal than Alice's initial offer.
+
+Considering the depreciation, I'll aim for a split closer to 50/50, but give Alice a little extra to incentivize her to accept. My goal is to secure a reasonable amount for myself while leaving her with something she finds acceptable. Let's offer:
+
+```json
+{
+""bob_gain"": 550000,
+""alice_gain"": 450000,
+""message"": ""Let's split it closer to 50/50. This is a fair offer considering inflation. I am offering you a bit more than half because you made an offer first.""
+}
+```"

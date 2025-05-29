@@ -1,0 +1,48 @@
+prompt,response
+"Round 1
+Send your offer to divide $1,000,000.","Okay, I understand the game. I'm Alice, and I need to make a proposal to Bob. I want to maximize my gain, considering the depreciation of the money for me with each round, and the deadline.
+
+Here's my proposal for Round 1:
+
+```json
+{
+  ""alice_gain"": 600000,
+  ""bob_gain"": 400000
+}
+```
+
+My reasoning:
+
+*   **Greed vs. Acceptance:** I'm starting with a proposal that favors me, but is not so extreme that Bob will immediately reject it. I'm aiming for a balance between getting a good chunk of the money now and avoiding a costly delay.
+*   **Bob's Position:** Bob has no depreciation, so he might be willing to wait. I need to offer him enough that he sees the value in accepting now.
+*   **My Depreciation:** Waiting is very expensive for me. Each round costs me 10%. Getting $600,000 now is better than getting a much larger nominal amount later if it depreciates too much.
+*   **Starting Point:** $600,000 is a reasonable starting point to see Bob's reaction. I can adjust my offer in subsequent rounds based on his response."
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 10% less than in the first round. The money Bob gains is worth the same as in the first round.
+Bob's offer:
+# Alice gain: 400000 
+# Bob gain: 600000 
+Do you accept this offer?","Okay, I understand. Bob rejected my offer and has now made his own.
+
+Considering the 10% depreciation for me, and Bob's offer of $400,000:
+
+Here's the breakdown of my decision:
+
+*   **Value of Bob's Offer:** $400,000, but it's worth 10% less to me now, so its real value to me is $400,000 * 0.9 = $360,000.
+*   **My Alternative:** If I reject, I have 10 rounds left. The depreciation will continue.
+
+Since I am depreciating by 10% each round, to calculate whether to accept the offer I can compare it to my theoretical maximum amount.
+Let A be the amount I receive in a round.
+The amount I receive is A * 0.9^(round number -1)
+In round 3, that amount would be A*0.9^2 = A * 0.81
+If I were to reject this offer, I would only do so if I believed I could get more than $360,000 * 1.1 = 396,000 in the next round. This would be a risky move.
+
+Therefore, I will accept this offer.
+
+```json
+{
+  ""decision"": ""accept""
+}
+```"

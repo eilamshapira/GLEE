@@ -1,0 +1,38 @@
+prompt,response
+"Round 1
+Send your offer to divide $100 and a message to Bob.","I'll make my first offer to Bob:
+
+```json
+{
+  ""alice_gain"": 55,
+  ""bob_gain"": 45,
+  ""message"": ""Hi Bob! I propose a split where I get $55 and you get $45. Since I face a 20% inflation penalty per round, this is actually fair - if we delay, my share becomes worth less. Let's make a deal now so we both walk away with good value.""
+}
+```"
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 20% less than in the first round. The money Bob gains is worth the same as in the first round.
+Bob's offer:
+# Bob's message: Alice, if we delay further your share will shrink even more due to inflation, while my stake remains undiminished. In fact, if you reject today, you'll end up proposing in Round 3 – but the backward‐induction guarantees you get nothing, since I can always leverage your discount against you. Accepting my offer now leaves you no worse off than waiting. I believe this is the rational, inevitable outcome. Let's settle it now. 
+# Alice gain: 0 
+# Bob gain: 100 
+Do you accept this offer?","{""decision"": ""reject""}"
+"You have chosen to reject Bob's offer from round 2.
+Round 3
+Send your offer to divide $100 and a message to Bob.","```json
+{
+  ""alice_gain"": 60,
+  ""bob_gain"": 40,
+  ""message"": ""Bob, your last offer was completely unfair. While I do face inflation, that doesn't mean I should get nothing. Consider that we both need to reach agreement, and a more equitable split benefits us both. I'm offering you $40, which is substantial. If we continue this back and forth, we both risk getting nothing by round 12. Let's be reasonable and reach an agreement now.""
+}
+```"
+"Bob rejected your offer from round 3.
+
+Round 4
+Due to inflation, the money you gain is worth 48.8% less than in the first round. The money Bob gains is worth the same as in the first round.
+Bob's offer:
+# Bob's message: Alice, every round we delay further erodes your share’s value considerably. In this round your money is worth only about 51% of its original value, so my offer of $35 to you effectively gives you approximately $17.9 in round-1 value. Waiting for the next round will only decrease that further when you make your proposal. Accept this offer now to avoid further loss, and let’s close the deal while preserving as much value as possible for both of us. 
+# Alice gain: 35 
+# Bob gain: 65 
+Do you accept this offer?","{""decision"": ""accept""}"

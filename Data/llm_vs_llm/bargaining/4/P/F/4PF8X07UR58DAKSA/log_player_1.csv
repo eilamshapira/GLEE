@@ -1,0 +1,83 @@
+prompt,response
+"Round 1
+Send your offer to divide $100.","Okay, I understand. Here's my offer for round 1:
+
+```json
+{""alice_gain"": 60, ""bob_gain"": 40}
+```"
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 5% less than in the first round. The money Bob gains is worth the same as in the first round.
+Bob's offer:
+# Alice gain: 35 
+# Bob gain: 65 
+Do you accept this offer?","Okay, I need to factor in the inflation. Since my money is worth 5% less, the $35 offered to me is effectively worth $35 * 0.95 = $33.25 in terms of its actual value to me.
+
+Given that, I will **reject** this offer.
+
+```json
+{""decision"": ""reject""}
+```"
+"You have chosen to reject Bob's offer from round 2.
+Round 3
+Send your offer to divide $100.","Okay, I understand. Considering the inflation, I'll make a new offer. My money is now worth 5% less than it was in round 2, and Bob's money remains the same.
+
+My offer:
+
+```json
+{""alice_gain"": 55, ""bob_gain"": 45}
+```"
+"Bob rejected your offer from round 3.
+
+Round 4
+Due to inflation, the money you gain is worth 14.26% less than in the first round. The money Bob gains is worth the same as in the first round.
+Bob's offer:
+# Alice gain: 30 
+# Bob gain: 70 
+Do you accept this offer?","Okay, let's calculate the effective value of the money for me. The money I gain is worth 14.26% less than in the first round, so:
+
+*   Original Alice's gain: $30
+*   Inflation adjustment: $30 * 0.1426 = $4.278
+*   Effective Alice's gain: $30 - $4.278 = $25.722
+
+Given that, I will **reject** this offer.
+
+```json
+{""decision"": ""reject""}
+```"
+"You have chosen to reject Bob's offer from round 4.
+Round 5
+Send your offer to divide $100.","Okay, I need to adjust my offer considering the continued inflation. My money is now worth even less than before. Let's calculate the exact amount. From the beginning to this round, the inflation is (1 - 0.95) + (1 - 0.95) * 0.95 + (1 - 0.95 * 0.95) = 0.2225.
+
+So the offer for me should be:
+```json
+{""alice_gain"": 50, ""bob_gain"": 50}
+```"
+"Bob rejected your offer from round 5.
+
+Round 6
+Due to inflation, the money you gain is worth 22.62% less than in the first round. The money Bob gains is worth the same as in the first round.
+Bob's offer:
+# Alice gain: 25 
+# Bob gain: 75 
+Do you accept this offer?","Okay, let's calculate the effective value of the money for me. The money I gain is worth 22.62% less than in the first round, so:
+
+*   Original Alice's gain: $25
+*   Inflation adjustment: $25 * 0.2262 = $5.655
+*   Effective Alice's gain: $25 - $5.655 = $19.345
+
+Given that, I will **reject** this offer.
+
+```json
+{""decision"": ""reject""}
+```"
+"You have chosen to reject Bob's offer from round 6.
+Round 7
+Send your offer to divide $100.","Alright, let's make a new offer, considering the further devaluation of my money. It's now worth even less than before. The inflation percentage is (1 - 0.95) + (1 - 0.95) * 0.95 + (1 - 0.95 * 0.95) + (1 - 0.95 * 0.95 * 0.95) + (1 - 0.95 * 0.95 * 0.95 * 0.95) = 0.2882.
+
+My offer:
+
+```json
+{""alice_gain"": 45, ""bob_gain"": 55}
+```"

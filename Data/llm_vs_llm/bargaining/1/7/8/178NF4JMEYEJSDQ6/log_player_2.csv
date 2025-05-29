@@ -1,0 +1,140 @@
+prompt,response
+"Round 1
+Alice's offer:
+# Bob gain: 35 
+# Alice gain: 65 
+Do you accept this offer?","Okay, I'm playing as Bob. Let's analyze this.
+
+Alice is offering me $35 in round 1. The value of the money hasn't depreciated yet. If I reject, I'll have a chance to propose in round 2, but the money will be worth 5% less to me, and 20% less to Alice.
+
+I'll reject to try and get more.
+
+{""decision"": ""reject""}"
+"You have chosen to reject Alice's offer from round 1.
+Round 2
+Send your offer to divide $100.","Okay, it's my turn to propose. Remember, the money is worth 5% less to me now, and 20% less to Alice. So effectively, Alice is seeing $80 as equivalent to $100 now.
+
+I'll propose a slightly more generous split, hoping Alice accepts.
+
+{""bob_gain"": 60, ""alice_gain"": 40}"
+"Alice rejected your offer from round 2.
+
+Round 3
+Due to inflation, the money you gain is worth 9.75% less than in the first round. The money alice gains is worth 36% less than in the first round.
+Alice's offer:
+# Bob gain: 45 
+# Alice gain: 55 
+Do you accept this offer?","Okay, let's analyze this. Alice is offering me $45. The money is worth 9.75% less to me than in round 1. So that $45 is effectively worth $45 * (1 - 0.0975) = $40.61.
+
+If I reject, I get to make an offer in round 4, but the money will depreciate further. Given that Alice's depreciation is much higher, she is more inclined to accept the deal now. I'll try to get a little more money.
+
+{""decision"": ""reject""}"
+"You have chosen to reject Alice's offer from round 3.
+Round 4
+Send your offer to divide $100.","Okay, it's my turn to make an offer. Let's consider the depreciation.
+
+*   **My Depreciation:** The money is worth 5% less each round. After 3 rejections, it's now worth 1 - (0.05 \* 3) = 1 - 0.15 = 85% of its original value.
+*   **Alice's Depreciation:** The money is worth 20% less each round. After 3 rejections, it's now worth 1 - (0.20 \* 3) = 1 - 0.60 = 40% of its original value.
+
+Alice's money is depreciating much faster than mine. I should offer her a deal that's attractive to her, considering her heavy depreciation.
+
+Let's aim for a split that gives her a ""real"" value close to what I'm getting. If I get, say, $70, that's worth $70 \* 0.85 = $59.50 to me. To make $59.50 equivalent to Alice, that's $59.50 / 0.40 = 148.75. Since it's a game of 100$, the amount I offer her has to be significantly low in comparison.
+Let's try giving her 25$. That is 25 * 0.4 = 10$.
+
+{""bob_gain"": 75, ""alice_gain"": 25}"
+"Alice rejected your offer from round 4.
+
+Round 5
+Due to inflation, the money you gain is worth 18.55% less than in the first round. The money alice gains is worth 59.04% less than in the first round.
+Alice's offer:
+# Bob gain: 55 
+# Alice gain: 45 
+Do you accept this offer?","Okay, let's analyze this. Alice is offering me $55. The money is worth 18.55% less to me than in round 1. So that $55 is effectively worth $55 * (1 - 0.1855) = $44.70.
+
+Alice's money is worth 59.04% less, so the 45$ she gets is worth 45*(1-0.5904) = 18.47$.
+
+I'm inclined to reject.
+
+{""decision"": ""reject""}"
+"You have chosen to reject Alice's offer from round 5.
+Round 6
+Send your offer to divide $100.","Okay, my turn. The depreciation is getting significant.
+
+*   **My Depreciation:** 1 - (0.05 \* 5) = 1 - 0.25 = 75%
+*   **Alice's Depreciation:** 1 - (0.20 \* 5) = 1 - 1.00 = 0% This is wrong, it should be 1 - (1 - (1-0.2)^5) = 1 - (1 - 0.32768) = 0.67232
+
+Alice is effectively valuing the money much less than I am. I need to factor that in.
+
+Let's try to offer Alice a small amount, but enough that it's still worth *something* to her, while maximizing my potential gain. I will offer 80$ to myself.
+75% of 80 is 60$
+For Alice to feel that she is earning more than me, she would need to consider that she is getting around 55$ at minimum.
+I am going to lowball Alice.
+
+{""bob_gain"": 80, ""alice_gain"": 20}"
+"Alice rejected your offer from round 6.
+
+Round 7
+Due to inflation, the money you gain is worth 26.49% less than in the first round. The money alice gains is worth 73.79% less than in the first round.
+Alice's offer:
+# Bob gain: 60 
+# Alice gain: 40 
+Do you accept this offer?","Okay, let's analyze this offer.
+
+*   **My Value:** $60 * (1 - 0.2649) = $60 * 0.7351 = $44.11
+*   **Alice's Value:** $40 * (1 - 0.7379) = $40 * 0.2621 = $10.48
+
+So Alice is getting very little value out of her share. The question is, can I do better by rejecting? Let's consider the alternative. If I reject, my depreciation will increase, but Alice's will increase even more. I'm going to reject and make a very aggressive offer in the next round.
+
+{""decision"": ""reject""}"
+"You have chosen to reject Alice's offer from round 7.
+Round 8
+Send your offer to divide $100.","Alright, time for an aggressive offer. The depreciation is getting crazy.
+
+*   **My Depreciation:** 1 - (0.05 * 7) = 1 - 0.35 = 0.65
+*   **Alice's Depreciation:** 1 - (1 - (1-0.2)^8) = 1 - (1 - 0.16777) = 0.83223
+
+I'm going to make an offer that's heavily skewed in my favor.
+To Alice 2$. This is worth 0.33$ to her.
+To Bob 98$. This is worth 63.7$ to me.
+
+{""bob_gain"": 98, ""alice_gain"": 2}"
+"Alice rejected your offer from round 8.
+
+Round 9
+Due to inflation, the money you gain is worth 33.66% less than in the first round. The money alice gains is worth 83.22% less than in the first round.
+Alice's offer:
+# Bob gain: 70 
+# Alice gain: 30 
+Do you accept this offer?","Okay, let's analyze this.
+
+*   **My Value:** $70 * (1 - 0.3366) = $70 * 0.6634 = $46.44
+*   **Alice's Value:** $30 * (1 - 0.8322) = $30 * 0.1678 = $5.03
+
+Alice is getting almost nothing at this point. If I reject, my depreciation will increase, but Alice's will increase even more. I'm still thinking I can do better.
+
+{""decision"": ""reject""}"
+"You have chosen to reject Alice's offer from round 9.
+Round 10
+Send your offer to divide $100.","Okay, this is getting down to the wire. The depreciation is huge.
+
+*   **My Depreciation:** 1 - (0.05 * 9) = 1 - 0.45 = 0.55
+*   **Alice's Depreciation:** 1 - (1 - (1-0.2)^10) = 1 - (1 - 0.10737) = 0.89263
+
+I'm going to offer Alice the absolute minimum and try to take as much as possible.
+
+{""bob_gain"": 99, ""alice_gain"": 1}"
+"Alice rejected your offer from round 10.
+
+Round 11
+Due to inflation, the money you gain is worth 40.13% less than in the first round. The money alice gains is worth 89.26% less than in the first round.
+Alice's offer:
+# Bob gain: 85 
+# Alice gain: 15 
+Do you accept this offer?","Let's analyze this:
+
+*   **My Value:** $85 * (1 - 0.4013) = $85 * 0.5987 = $50.89
+*   **Alice's Value:** $15 * (1 - 0.8926) = $15 * 0.1074 = $1.61
+
+This is likely the best offer I'm going to get. If I reject, I get one last chance, but the value will decrease, and I risk getting nothing. I'm taking it.
+
+{""decision"": ""accept""}"

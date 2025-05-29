@@ -1,0 +1,42 @@
+prompt,response
+"Round 1
+Send your offer to divide $10,000.","Based on the rules you set up, note that Bob’s money loses 20% of its value for every round we go past round 1 while my money is unaffected. This means that if Bob rejects my proposal now (round 1), he’d become the proposer in round 2 but then his “real‐value” bonus is reduced by 20%. In contrast, I’m perfectly patient.
+
+A standard alternating‐offers analysis shows that with infinitely many rounds the “impatient” party (here Bob, with a 20% loss per round) ends up with a reservation value of essentially zero. (In the language of bargaining theory, since I have a discount factor of 1 and Bob a discount factor of 0.8, I hold all the bargaining power when making the first offer.) In other words, if Bob rejects, then in the continuation Bob can “force” an outcome that in his own discounted terms is no better than almost nothing. (To be precise, if we solved the Rubinstein model with these discount factors, Bob’s continuation value would be 0; so to ensure his acceptance at round 1 his offer need only beat his threat payoff by a very small penumbra.)
+
+Thus, as Alice I can propose an allocation that gives almost all of the $10,000 to me and practically nothing to Bob. (In a continuous‐value setting, I might offer him an infinitesimal amount—but in a practical game a small positive amount should do the trick.)
+
+For example, I can propose:
+
+{
+  ""alice_gain"": 9999,
+  ""bob_gain"": 1
+}
+
+This proposal ensures that Bob gets $1 immediately (which is strictly better than his continuation value of nearly $0, especially since waiting costs him 20% each round) and leaves the overwhelming majority for me.
+
+Here’s my offer in JSON format:
+
+{""alice_gain"": 9999, ""bob_gain"": 1}"
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation,  the money Bob gains is worth 20% less than in the first round. The money you gains is worth the same as in the first round.
+Bob's offer:
+# Alice gain: 6000 
+# Bob gain: 4000 
+Do you accept this offer?","{""decision"": ""reject""}"
+"You have chosen to reject Bob's offer from round 2.
+Round 3
+Send your offer to divide $10,000.","{""alice_gain"": 9999, ""bob_gain"": 1}"
+"Bob rejected your offer from round 3.
+
+Round 4
+Due to inflation,  the money Bob gains is worth 48.8% less than in the first round. The money you gains is worth the same as in the first round.
+Bob's offer:
+# Alice gain: 6400 
+# Bob gain: 3600 
+Do you accept this offer?","{""decision"": ""reject""}"
+"You have chosen to reject Bob's offer from round 4.
+Round 5
+Send your offer to divide $10,000.","{""alice_gain"": 2000, ""bob_gain"": 8000}"

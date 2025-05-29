@@ -21,14 +21,14 @@ def get_paths(main_dir, game_id, game_type):
 
 def count_games_as_factor_of_llms(configs):
     q = configs.groupby(["player_1_args_model_name", "player_2_args_model_name"]).size().unstack(fill_value=0)
-    q.to_csv("tables/count_games_as_factor_of_llms.csv")
+    q.to_csv("output/tables/count_games_as_factor_of_llms.csv")
 
 
 def correlation_between_first_offer_and_final_gain(configs):
     q = configs.groupby(["player_1_args_model_name", "player_2_args_model_name"]).apply(
         lambda x: x["first_round_offer_alice_gain"].corr(x["alice_final_share"])
     ).unstack(fill_value="-")
-    q.to_csv("tables/correlation_between_first_offer_and_final_gain.csv")
+    q.to_csv("output/tables/correlation_between_first_offer_and_final_gain.csv")
 
 
 def process_game(exp_name, game, family):
@@ -94,12 +94,12 @@ def make_saving_path(family, config_files):
     sorted_files = sorted(config_files)
     file_name = "_".join([os.path.basename(f).split(".")[0] for f in sorted_files]) 
     name = f"{family}_{file_name}"
-    path = os.path.join("basic_statistics", name)
+    path = os.path.join("output/basic_statistics", name)
     os.makedirs(path, exist_ok=True)
     return path
 
 def get_data_path_for_family(config_path):
-    path = config_path.replace("configs/Data_", "Data/")
+    path = config_path.replace("output/configs/Data_", "Data/")
     path = path.split("_")[:-3]
     path = "_".join(path)
     return path
@@ -117,8 +117,11 @@ def create_basic_statistics_tables(family, config_files):
         return
     
     def get_all_games(config_path):
+        # Convert path to use output directory if it doesn't already
+        if not config_path.startswith("output/"):
+            config_path = f"output/configs/{os.path.basename(config_path)}"
         all_configs = pd.read_csv(config_path)
-        games = all_configs["game_id"]#list(set(zip(all_configs["game_id"], all_configs["human_game"])))
+        games = all_configs["game_id"]
         return games
 
     games = []

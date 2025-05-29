@@ -1,0 +1,34 @@
+prompt,response
+"Round 1
+Send your offer to divide $1,000,000.","We can “solve” this game by thinking about what a rational‐agent would do in an alternating‐offers protocol with “inflation” (or discounting) that hits Bob each round but not Alice. (Of course, in a real negotiation things might be messier—but here we assume both players are perfectly rational and have complete knowledge of the game structure.) 
+
+The idea is to work backward (backward induction) from the last possible round. In our game there are 12 rounds. In every round the proposer makes an offer on how to split US$1,000,000; if the offer is rejected the roles swap, and the “value” of the money declines differently for the two players. (For you, Alice, the nominal value never decays; for Bob each round of delay multiplies his eventual dollar‐value by 0.95.) That is, if an agreement is reached in round r then Alice “sees” her dollars at full face value, while Bob’s dollars are effectively worth (0.95)^(r–1) of their nominal value. (At round 1 Bob’s discount factor is 1; at round 2 it is 0.95; at round 3 it is 0.95^2; and so on.)
+
+A sketch of the backward induction works as follows:
+
+• In round 12 Bob is the proposer. (Since it is the last round, if his offer is rejected both get nothing.) Knowing that Alice’s ""outside‐option"" if she rejects is 0, Bob can allocate nearly all the money to himself. (For equilibrium we may imagine he gives her an “infinitesimal” amount.) For our calculations we take her share as 0 and his as US$1,000,000. However, note that in round 12 Bob’s effective utility is 1,000,000×(0.95)^(11) because 11 rounds of devaluation have occurred prior to round 12 for him.
+
+• In round 11 the proposer is Alice. Bob’s continuation value if he rejects is what he would eventually secure in round 12: nominal US$1,000,000, but evaluated in round 12 his effective utility is 1,000,000×(0.95)^(11). In round 11 an accepted offer gives Bob a factor of (0.95)^(10) (since round 11 has 10 full rounds of discount on Bob’s money). Thus, to make Bob just indifferent he must be offered an amount x satisfying  
+  x×(0.95)^(10) = 1,000,000×(0.95)^(11).  
+That is, x = 1,000,000×0.95 = US$950,000.  
+So in round 11, Alice’s “take‐home” would be 1,000,000 – 950,000 = US$50,000.
+
+• In round 10 Bob is the proposer. If Alice rejects his round‐10 offer her alternative is to be proposer in round 11 and get US$50,000 (undiscounted, since Alice suffers no discount). So Bob must offer her at least US$50,000 in round 10. Thus Bob’s equilibrium round‐10 proposal is: give Alice US$50,000 and keep US$950,000 for himself.
+
+• In round 9 (Alice’s turn) Bob’s rejection would let him be the proposer in round 10, where in equilibrium he gets US$950,000 nominal. But in round 9 an accepted offer gives Bob value with discount factor 0.95^(8) (since it is round 9). To leave Bob indifferent, Alice must offer Bob an amount x that satisfies  
+  x×(0.95)^(8) = 950,000×(0.95)^(9)  
+which implies x = 950,000×0.95 = US$902,500.  
+Thus in round 9, Alice would keep 1,000,000 – 902,500 = US$97,500.
+
+• Continuing this reasoning (each time “trading off” the devaluation Bob faces and what the responder would get as a proposer in the next round) one finds a recursive solution for the equilibrium shares. (A similar logic holds when Bob is the proposer and must give Alice at least her continuation payoff—which does not suffer any discount.) 
+
+If you work all the way back to round 1 (where you, Alice, are the proposer), the calculation shows that Bob’s continuation value if he rejects is what he would get in round 2 when he is the proposer. In round 2 Bob would secure nominal US$773,780.94 (approximately) so that his effective value would be 773,780.94×0.95 = about US$735,091.89 in round 1 (since in round 1 Bob has no discount, his “price” for waiting is given by that amount).
+
+Therefore, to induce Bob to accept your round‐1 proposal immediately, you should offer him about US$735,091.89 – just matching his continuation value – and keep the remainder for yourself. In that case your share would be:  
+  1,000,000 – 735,091.89 = US$264,908.11.
+
+Thus a (rounded) equilibrium offer in round 1 by Alice is:
+
+{""alice_gain"": 264908.11, ""bob_gain"": 735091.89}
+
+This is the offer you should send in round 1. (Of course, slight rounding differences are possible, but this is the logic behind the numbers.)"

@@ -1,0 +1,27 @@
+prompt,response
+"Round 1
+Send your offer to divide $10,000.","Using backward‐induction it turns out that an “equilibrium‐offer” in round 1 is one in which Alice ends up with roughly $1,688 and Bob with roughly $8,312. (Here is one way to arrive at that conclusion.)
+
+Assume that if the players keep on rejecting until the final (12th) round then in round 12 Bob—as proposer—can offer Alice almost nothing (she’d accept any nonnegative amount rather than getting nothing). Then, stepping back one round, in round 11 (when Alice proposes) she must give Bob an amount that leaves him just as well‐off (in “discounted dollars”) as he would be in round 12. Because by round 11 Bob’s money has devalued by 5% per round while Alice’s devalues faster (by 20% per round), a series of balance equations shows that in round 11 the “equilibrium” division is about: 
+  Alice: $500 
+  Bob: $9,500.
+Working backward through rounds 10, 9, 8, …, 2 then yields (approximately) the following equilibrium proposals:
+  Round 10 (Bob proposes): Alice: $400, Bob: $9,600.
+  Round 9 (Alice proposes): Alice: $880, Bob: $9,120.
+  Round 8 (Bob proposes): Alice: $704, Bob: $9,296.
+  Round 7 (Alice proposes): Alice: $1,169, Bob: $8,831.
+  Round 6 (Bob proposes): Alice: $935, Bob: $9,065.
+  Round 5 (Alice proposes): Alice: $1,398, Bob: $8,602.
+  Round 4 (Bob proposes): Alice: $1,119, Bob: $8,882.
+  Round 3 (Alice proposes): Alice: $1,563, Bob: $8,437.
+  Round 2 (Bob proposes): Alice: $1,250, Bob: $8,750.
+Finally, in round 1 (Alice is the proposer) she must offer Bob enough so that his immediate payoff equals what he could expect in round 2 (when his money is only discounted once at 5%). That calculation leads to offering Bob roughly 
+  Bob’s share = $8,312 
+and keeping for herself 
+  Alice’s share = $10,000 – $8,312 ≈ $1,688.
+
+Thus, in round 1, a reasonable JSON proposal is: 
+
+{""alice_gain"": 1687.65, ""bob_gain"": 8312.35}
+
+You can now send that offer."

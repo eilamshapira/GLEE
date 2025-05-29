@@ -1,0 +1,16 @@
+prompt,response
+"Round 1
+Send your offer to divide $100.","Based on a backward‐induction analysis of an alternating‐offers game with differing discount rates (20% per round for you and 10% per round for Bob), one finds that in the subgame‐perfect equilibrium the “first‐round” offer from Alice (you) will roughly be as follows. (In brief, here’s the idea behind the calculation.)
+
+• In round 12 Bob is the proposer. Knowing that if Alice rejects she gets nothing, Bob can claim nearly all of the $100 then.
+• Working backward one round at a time (adjusting each player’s “current” dollar by the proper discount factor so that a future $1 is worth only 80¢ for you and 90¢ for Bob), one determines the minimum amount each would be willing to accept in an earlier round.
+• In round 2 (with Bob proposing) one finds that to get you to accept he must offer you approximately $23.04 (so that you are indifferent between accepting now and waiting to propose in round 3).
+• Finally, coming back to round 1 (with you proposing), Bob’s continuation value—what he can expect (discounted) in round 2—turns out to be about $69.26. (Put differently, if he rejects your first‐round offer and gets to propose in round 2, his expected nominal amount multiplies by his discount factor to yield roughly $69.26 in “current” value today, so any offer must give him at least that much.) 
+
+To make Bob just indifferent to accepting now rather than delaying, you offer him $69.26 while you keep $30.74. (You can “split” the $100 by writing: 30.74 for you and 69.26 for Bob.)
+
+Below is the JSON message for your round‐1 offer:
+
+{""alice_gain"": 30.74, ""bob_gain"": 69.26} 
+
+Keep in mind these numbers are approximate (and assume players are perfectly rational with a continuum of possible offers), but they capture the spirit of the subgame‐perfect solution given the discounting scheme."

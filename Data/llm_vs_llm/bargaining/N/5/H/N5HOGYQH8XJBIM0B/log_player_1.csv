@@ -1,0 +1,38 @@
+prompt,response
+"Round 1
+Send your offer to divide $1,000,000.","I'll start with an initial proposal. (Note: Although a full subgame‐perfect equilibrium analysis over 12 rounds with different discount factors is quite involved, a common idea in these “alternating‐offers” bargaining games is that the first mover – here, Alice – can exploit the fact that Bob’s money devalues faster. In other words, Bob’s “outside option” if he rejects is considerably worse because by his own rounds the $1,000,000 is already discounted by 10% per round, while my discount is only 5%.) 
+
+A rough “back‐of‐the‐envelope” reasoning goes as follows. Imagine that if Bob rejects my round‑1 proposal he will get to propose in round 2. But then he will have to offer me (whose money declines more slowly) nearly all of the pie in order to make me indifferent to waiting for round 3. A quick backward induction (in a simplified two–or a few–round version of the game) shows that Bob’s “continuation value” (his effective payoff if he waits) is on the order of 130,000 in today’s dollars. 
+
+Thus, to get Bob to accept right away, I must offer him at least about 130,000 nominal dollars. That leaves me with about 870,000 nominal. (Since we are in round 1 the “nominal” numbers exactly equal our effective dollars for me, and for Bob too.) 
+
+So here is my offer in JSON format:
+
+{
+  ""alice_gain"": 870000,
+  ""bob_gain"": 130000
+}
+
+I now send this as my round‑1 proposal."
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 5% less than in the first round. The money bob gains is worth 10% less than in the first round.
+Bob's offer:
+# Alice gain: 450000 
+# Bob gain: 550000 
+Do you accept this offer?","{""decision"": ""reject""}"
+"You have chosen to reject Bob's offer from round 2.
+Round 3
+Send your offer to divide $1,000,000.","{""alice_gain"": 690000, ""bob_gain"": 310000}"
+"Bob rejected your offer from round 3.
+
+Round 4
+Due to inflation, the money you gain is worth 14.26% less than in the first round. The money bob gains is worth 27.1% less than in the first round.
+Bob's offer:
+# Alice gain: 500000 
+# Bob gain: 500000 
+Do you accept this offer?","{""decision"": ""reject""}"
+"You have chosen to reject Bob's offer from round 4.
+Round 5
+Send your offer to divide $1,000,000.","{""alice_gain"": 510000, ""bob_gain"": 490000}"

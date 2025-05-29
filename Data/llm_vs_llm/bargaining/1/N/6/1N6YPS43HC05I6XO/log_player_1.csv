@@ -1,0 +1,92 @@
+prompt,response
+"Round 1
+Send your offer to divide $10,000.","Okay, I understand the game. I need to propose a split of $10,000 with Bob, keeping in mind that the value of the money decreases for both of us each round. I also need to send my offer in JSON format.
+
+Here's my offer for Round 1:
+
+```json
+{
+  ""alice_gain"": 5500,
+  ""bob_gain"": 4500
+}
+```
+
+**Reasoning:**
+
+*   **Slight Advantage for Alice:** I'm giving myself a slightly larger share because I'm the one making the initial offer and need to incentivize Bob to accept.
+*   **Bob still gets a good amount:** Bob receives $4500.
+*   **Playing it Safe:** I'm trying to avoid being too greedy, as that would likely lead to Bob rejecting the offer. A rejected offer means the money is worth less next round, for both of us.
+
+I will now wait for your message relaying Bob's response."
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 5% less than in the first round. The money bob gains is worth 10% less than in the first round.
+Bob's offer:
+# Alice gain: 4000 
+# Bob gain: 6000 
+Do you accept this offer?","Okay, I understand. Bob rejected my offer and now he's proposed to give me $4000 and keep $6000 for himself. I need to consider the inflation. For me, the $4000 is worth 5% less than it would have been in round 1. For Bob, his proposed $6000 is worth 10% less than it would have been in round 1.
+
+Let's calculate the effective value for me:
+
+*   Original offer (if accepted in Round 1): $5500
+*   Current offer from Bob: $4000
+*   Inflation for me: 5%
+*   Value of Bob's offer to me: $4000 * (1 - 0.05) = $4000 * 0.95 = $3800 (compared to the original value of money)
+
+Bob is offering me $3800 in terms of the initial value of the money. This is significantly less than my initial offer of keeping $5500 for myself. It's also less than half of the total.
+
+I will reject this offer, as the loss next round is preferable to only getting $3800 (in the initial value of money).
+
+```json
+{
+  ""decision"": ""reject""
+}
+```"
+"You have chosen to reject Bob's offer from round 2.
+Round 3
+Send your offer to divide $10,000.","Okay, I've rejected Bob's offer. Now it's my turn to make a proposal again. Inflation is making this tricky! The money is now worth 10% less for me compared to round 1, and 20% less for Bob compared to round 1.
+
+I need to balance offering Bob enough to accept, while still getting a decent amount myself. I'm also trying to think strategically - if Bob rejects again, the value deteriorates even further, which hurts both of us.
+
+Here's my offer for Round 3:
+
+```json
+{
+  ""alice_gain"": 5750,
+  ""bob_gain"": 4250
+}
+```
+
+**Reasoning:**
+
+*   **Increase from my Round 1 offer:** I've increased my offer slightly from round 1 ($5500) to $5750, considering Bob rejected his opportunity to get $6000 in round 2.
+*   **Significant amount for Bob:** $4250 is a substantial amount, especially considering the inflation.
+*   **Still getting the bigger piece** Given inflation, and the way the money is decreasing faster for Bob, I hope to offer a decent proposal that will be appealing to Bob.
+*   **Trying to avoid another rejection:** I really want to avoid a fourth round due to the increased inflation.
+
+I'm hoping Bob sees this as a fair compromise and accepts."
+"Bob rejected your offer from round 3.
+
+Round 4
+Due to inflation, the money you gain is worth 14.26% less than in the first round. The money bob gains is worth 27.1% less than in the first round.
+Bob's offer:
+# Alice gain: 4200 
+# Bob gain: 5800 
+Do you accept this offer?","Okay, Bob has rejected my offer again. The inflation is really starting to bite now.
+
+*   My inflation: 14.26% less than Round 1
+*   Bob's inflation: 27.1% less than Round 1
+*   Bob's Offer: $4200 for me, $5800 for him
+
+Let's calculate the value of Bob's offer to me, in terms of the original money value:
+
+*   $4200 * (1 - 0.1426) = $4200 * 0.8574 = $3601.08
+
+So, Bob is effectively offering me $3601.08 in terms of Round 1 dollars. This is less than in the last round ($3800 in the initial value of money). Given that inflation is getting worse, and Bob is starting to offer me even less, I will accept his offer.
+
+```json
+{
+  ""decision"": ""accept""
+}
+```"

@@ -1,0 +1,19 @@
+prompt,response
+"Round 1
+Send your offer to divide $100.","Based on a backward‐induction analysis of the finite alternating–offers game with discounting (where your money loses 5% per round and Bob’s money loses 10% per round), here is one way to reason:
+
+1. In the final (12th) round Bob would be able to propose a division and (since a rejection means both get nothing) he could give Alice an arbitrarily small amount and keep almost all of $100. For our purposes we may take that outcome as: round 12 (Bob’s turn) → Alice gets ~0, Bob gets 100 (nominally).
+
+2. In round 11 (your turn) you must make Bob at least as well off as he would get if he waited until round 12. In round 12 Bob would get nearly 100 but with a one–round discount (10% off) his value would be roughly 100×0.9 = 90. Thus in round 11 you’d have to offer Bob at least $90. In a splitting game the best you can then do is keep 100 – 90 = $10 for yourself in round 11.
+
+3. In round 10 (Bob’s turn) he must offer you no less than what you’d get if you rejected. If you were to be the proposer in round 11 you’d get $10, but there you face one–round discount (5% off) so that is 10×0.95 = 9.5 in round 10–terms. Thus Bob could offer you $9.50 and keep $90.50.
+
+4. Working this backward further one finds that in each round the proposer’s “advantage” is limited by the responder’s next–round discounted promise. Continuing recursively back to round 1 (your turn) one obtains that if Bob rejects your round–1 proposal, then in round 2 (his turn) he would secure approximately $64.42 (nominal) for himself. But since Bob loses 10% per round delay, the value in round–1 terms is 64.42×0.9 ≈ 57.98.
+
+5. Thus, to make Bob indifferent between accepting now and waiting for round 2, you must offer Bob roughly $57.98 in round 1. That means you would keep 100 – 57.98 ≈ $42.02.
+
+So an equilibrium round–1 offer would be:
+
+{""alice_gain"": 42.02, ""bob_gain"": 57.98}
+
+This is the proposal that maximizes your share while giving Bob at least his discounted future value."

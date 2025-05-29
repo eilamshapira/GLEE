@@ -1,0 +1,44 @@
+prompt,response
+"Round 1
+Send your offer to divide $1,000,000.","Based proposal (using a backward‐induction calculation) could be as follows. Imagine that if you (Alice) offer Bob less than a “critical” amount today, he will reject and—after some rounds of alternating proposals where his future money loses value (10% per round for him)—he can guarantee himself a continuation payoff equivalent to about 531,441 $ (in today’s dollars). (Meanwhile, your own “waiting” cost is zero.) Thus, to make Bob indifferent between accepting now and waiting, your offer should give him at least 531,441 $ nominal value today. Since the pie is 1,000,000 $, that leaves you 468,559 $. (The numbers come out neatly because 0.9⁶ ≈ 0.531441 so that 1 – 0.531441 ≈ 0.468559.)
+
+So a consistent equilibrium offer in round 1 (if both play perfectly) is:
+
+{""alice_gain"": 468559, ""bob_gain"": 531441}
+
+You can now send this JSON offer to Bob."
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation,  the money Bob gains is worth 10% less than in the first round. The money you gains is worth the same as in the first round.
+Bob's offer:
+# Alice gain: 400000 
+# Bob gain: 600000 
+Do you accept this offer?","{""decision"": ""reject""}"
+"You have chosen to reject Bob's offer from round 2.
+Round 3
+Send your offer to divide $1,000,000.","{""alice_gain"": 409510, ""bob_gain"": 590490} 
+
+Here's the reasoning in brief:
+
+We can solve the game by backward‐induction, taking into account that while your dollars are not discounted over rounds, Bob’s dollars lose 10% of their value with each additional round. Working from the final round (round 12) backwards, we determine each party’s “continuation value” and what minimum amount the proposer must offer the responder to make them indifferent between accepting now and waiting.
+
+For example, in round 12 (Bob’s turn) Bob can offer Alice an arbitrarily small amount and keep almost everything. Then in round 11 (with Alice proposing) Bob’s continuation value (if he waits one round) is 1,000,000 nominal dollars in round 12, but discounted one round (multiplied by 0.9) so that his “target” is 1,000,000×0.9 = 900,000 nominal dollars in round 11. Working recursively through rounds 10 down to 3 (adjusting Bob’s “threat” value by a factor 0.9 for each waiting round, while you face no discounting) one finds that by round 3 (with you as proposer) Bob’s continuation value – that is, the minimum nominal amount he must receive to be indifferent with waiting – is 656100 nominal dollars in round 4 but, discounting back one round at 0.9, that is 656100×0.9 = 590490. In order to secure his acceptance in round 3 you must offer him at least 590490, leaving you with 1,000,000 – 590490 = 409510.
+
+Thus, your round‑3 offer is:
+
+{""alice_gain"": 409510, ""bob_gain"": 590490}"
+"Bob rejected your offer from round 3.
+
+Round 4
+Due to inflation,  the money Bob gains is worth 27.1% less than in the first round. The money you gains is worth the same as in the first round.
+Bob's offer:
+# Alice gain: 420000 
+# Bob gain: 580000 
+Do you accept this offer?","{""decision"": ""accept""}
+
+Here's the reasoning:
+
+When Bob makes his offer in round 4, Alice gets 420,000, while Bob gets 580,000 nominal dollars (which, due to inflation at this stage, is worth about 580,000 × 0.729 ≈ 422,820 in “round‑1” value for him). If Alice rejects this offer, play moves to round 5, where she will propose a division. Based on backward‐induction calculations from the later rounds (as seen in round 3 when a similar reasoning was used) her equilibrium proposal would give her roughly 409,510 nominal dollars (with her money not being discounted) while Bob would get the remainder. Thus, by accepting Bob’s round‑4 offer, Alice secures 420,000 nominal dollars—more than the approximately 409,510 she expects by waiting.
+
+Therefore, it is in Alice’s interest to accept Bob’s round 4 offer."

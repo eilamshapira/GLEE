@@ -1,0 +1,48 @@
+prompt,response
+"Round 1
+Send your offer to divide $1,000,000.","Based on a backward‐induction analysis that takes into account the “inflation” (i.e. discounting) rules—
+ • Alice’s money does not lose value over rounds,
+ • whereas Bob’s dollars get multiplied by 0.8 per extra round—
+we can work from the final round (round 12) back to round 1. (For brevity, I outline the key steps.)
+
+Step 1. In round 12 Bob is the proposer. Knowing that if Alice rejects she gets nothing, Bob can offer virtually nothing (an arbitrarily small amount) to Alice and take nearly all the 1,000,000. (For our analysis we take her “threat” utility there as 0).
+
+Step 2. In round 11 Alice is proposer. Bob, if he rejects, will get in round 12 a nominal 1,000,000 but his money is discounted by a factor of 0.8^(11) – about 0.0859. Thus his “continuation utility” is roughly 1,000,000×0.0859 = 85,899 (in Bob’s real terms). However, note that when offers are made, each player “sees” a nominal amount but Bob’s dollars count for less by the discount factor appropriate to the round. Working out the math shows that to make Bob indifferent at round 11 his offer must guarantee him a nominal amount of about 800,000. (Alice then keeps 200,000.)
+
+Step 3. Then in round 10 Bob is proposer. Now Alice’s alternative is to be in round 11 where (as proposer) she would secure 200,000 in full value. So Bob must offer her at least 200,000 (nominal dollars) in round 10. Bob’s balance is thus 800,000.
+
+Step 4. Continuing this line of reasoning (by “rolling back” the game one round at a time and applying Bob’s round‐dependent discount factor while remembering that Alice sees no discount) one finds a “chain of indifferences”: 
+ – In round 9 (Alice proposing) Bob must be given 640,000 nominal, leaving Alice 360,000.
+ – In round 8 (Bob proposing) Alice must get 360,000, leaving Bob 640,000.
+ – In round 7 (Alice proposing) Bob must get about 512,000, so Alice keeps about 488,000.
+ – In round 6 (Bob proposing) Alice must get at least 488,000.
+ – In round 5 (Alice proposing) Bob’s “continuation” forces him to receive about 409,600 (so Alice gets 590,400).
+ – In round 4 (Bob proposing) Alice must be given 590,400.
+ – In round 3 (Alice proposing) Bob must get roughly 327,680, so Alice gets 672,320.
+ – In round 2 (Bob proposing) Alice must be given 672,320, leaving Bob 327,680.
+
+Step 5. Finally, in round 1 Alice is the proposer. Bob’s “threat” (i.e. his continuation value if he rejects) comes from the equilibrium in round 2. In round 2 Bob (as proposer) gets 327,680 nominal; however because Bob’s money in round 2 is worth only 80% of round‑1’s dollars, his real discounted continuation value is 327,680×0.8 = 262,144. 
+
+Thus, to get Bob to accept immediately in round 1, Alice can offer him exactly 262,144 nominal dollars – which in round 1 have full (undiscounted) value for him—while keeping the remainder:
+ 1,000,000 − 262,144 = 737,856.
+
+Therefore, my offer in round 1 is:
+
+{""alice_gain"": 737856, ""bob_gain"": 262144}"
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation,  the money Bob gains is worth 20% less than in the first round. The money you gains is worth the same as in the first round.
+Bob's offer:
+# Alice gain: 500000 
+# Bob gain: 500000 
+Do you accept this offer?","Based on our backward‐induction analysis, if I reject Bob’s round 2 offer, I expect that in the equilibrium outcome of the subsequent rounds (with me as the proposer in round 3) I would secure about 672,320. Since the current offer gives me only 500,000 (full value for me) compared to a higher guaranteed future amount, I prefer to reject Bob’s offer.
+
+{""decision"": ""reject""}"
+"You have chosen to reject Bob's offer from round 2.
+Round 3
+Send your offer to divide $1,000,000.","Based on our backward‐induction reasoning, if I’m the proposer in round 3 I want to offer Bob just enough so that, even when he factors in the 20% loss per round he suffers on his own future prospects, he is indifferent between accepting my deal now or waiting for his turn. Given the continuation values we’ve calculated, that equilibrium allocation puts Bob at a nominal 327,680 and me at 672,320.
+
+My round 3 offer is:
+
+{""alice_gain"": 672320, ""bob_gain"": 327680}"

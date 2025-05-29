@@ -1,0 +1,76 @@
+prompt,response
+"Round 1
+Send your offer to divide $1,000,000.","Based on a backward‐induction analysis of the game with discounting, a subgame‐perfect equilibrium (using “nominal dollars” in each proposal with each player’s discount factor applied at acceptance) comes out roughly as follows. (Details below.)
+
+At the final round (round 12), Bob – if given the chance – would offer Alice almost nothing, keeping nearly all $1,000,000 (although by “splitting a cent” if needed he could give her an arbitrarily small amount) because if she rejects she gets 0. Then, stepping back one round:
+  
+• In round 11 (Alice’s turn), knowing that if Bob gets to propose in round 12 he’ll secure nearly $1,000,000 (but Bob sees that money as 20% less per round – so his “discounted” value is 1,000,000×0.80 in round 12), Alice must offer Bob at least $800,000 (so that Bob’s round‐11 “present value” offer equals 800,000 vs. his round‑12 outcome after discounting).
+  
+Repeating this reasoning for each previous round (taking into account that Alice’s money loses only 5% per round while Bob’s loses 20%), one finds that when it comes to Round 1 – where I (Alice) make an offer – Bob’s reservation (that is, the equivalent value he could secure by rejecting and then making his proposal in Round 2) is about $409,062.43 in nominal terms in round 2. However, because Bob’s money is discounted by 20% in round 2 (i.e. a factor of 0.80 relative to round 1’s full value), his “round‑1 equivalence” is 409,062.43×0.80 ≈ $327,250. (Rounding to whole dollars.)
+
+Thus, in order for Bob to prefer accepting my offer in round 1 over waiting, he must receive at least roughly $327,250 in round 1. To maximize my share, I can offer exactly that amount to Bob and keep the rest.
+
+That makes my proposal: 
+ Alice gets about $672,750 and 
+ Bob gets about $327,250.
+
+I now submit my Round 1 proposal in JSON:
+
+{""alice_gain"": 672750, ""bob_gain"": 327250}"
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 5% less than in the first round. The money bob gains is worth 20% less than in the first round.
+Bob's offer:
+# Alice gain: 550000 
+# Bob gain: 450000 
+Do you accept this offer?","{""decision"": ""reject""}"
+"You have chosen to reject Bob's offer from round 2.
+Round 3
+Send your offer to divide $1,000,000.","Using backward‐induction we can “work back” from the final round. (Recall each round’s money is in nominal dollars, but note that by round t the money is worth less: for you a factor 0.95^(t–1) and for Bob 0.80^(t–1) relative to round 1.) Here’s a brief sketch of the reasoning from the end:
+
+1. In Round 12 (the final round, with Bob proposing), Bob can claim almost all of the $1,000,000 by offering Alice an arbitrarily small amount (since if she rejects she gets nothing). So in Round 12 the outcome is essentially:
+  Bob: 1,000,000  Alice: ~0
+
+2. In Round 11 (Alice proposes), she must make Bob at least as well off as he would be in Round 12. But Bob in Round 12 would get 1,000,000 nominal dollars, though from Round‑11’s perspective Bob’s “waiting” reduces that by his one‐round discount factor of 0.80. Thus, Bob’s “reservation” is about 0.80×1,000,000 = 800,000. So an optimal Round‑11 offer by Alice is:
+  Alice: 1,000,000 – 800,000 = 200,000  Bob: 800,000
+
+3. In Round 10 (Bob proposes), he must give Alice at least what she would get in Round 11. Since Alice’s Round‑11 win (200,000) will be discounted by her factor 0.95 from Round 10 to 11, her reservation is 0.95×200,000 = 190,000. So Bob’s offer in Round 10 would be:
+  Alice: 190,000  Bob: 810,000
+
+4. In Round 9 (Alice proposes), she must offer Bob at least the present “countervalue” of what he would get in Round 10. Bob’s Round‑10 gain is 810,000, but from Round 9 his one‐round discount is 0.80, so his reservation is 0.80×810,000 = 648,000. Thus, in Round 9 Alice’s offer is:
+  Alice: 1,000,000 – 648,000 = 352,000  Bob: 648,000
+
+5. In Round 8 (Bob proposes), he must give Alice at least 0.95×(her Round‑9 gain of 352,000) = 334,400. So his offer is:
+  Alice: 334,400  Bob: 665,600
+
+6. In Round 7 (Alice proposes), she must offer Bob at least 0.80×(his Round‑8 gain of 665,600) = 532,480. Her proposal then is:
+  Alice: 1,000,000 – 532,480 = 467,520  Bob: 532,480
+
+7. In Round 6 (Bob proposes), he must give Alice at least 0.95×467,520 = 444,144. His offer becomes:
+  Alice: 444,144  Bob: 555,856
+
+8. In Round 5 (Alice proposes), she must offer Bob at least 0.80×(Bob’s Round‑6 gain 555,856) = 444,685 (approximately). So she would propose:
+  Alice: 1,000,000 – 444,685 = 555,315  Bob: 444,685
+
+9. In Round 4 (Bob proposes), he must give Alice at least 0.95×555,315 = 527,549 (approximately). His offer then is:
+  Alice: 527,549  Bob: 472,451
+
+10. Now we come to Round 3, where you (Alice) are the proposer. To induce Bob to accept your offer immediately, you must give him at least what he would get if he rejected and became the proposer in Round 4. In Round 4 Bob would get 472,451 nominal dollars, but from Round 3’s perspective he must discount that by his one‐round discount factor 0.80. That is, his reservation value in Round 3 is: 
+  0.80 × 472,451 ≈ 377,961
+
+Thus, to maximize your own share while ensuring Bob is just indifferent to waiting, your optimal Round‑3 proposal is to give Bob about 377,961 and keep the rest for yourself:
+  Alice: 1,000,000 – 377,961 = 622,039
+  Bob: 377,961
+
+I now submit my Round 3 proposal in JSON:
+
+{""alice_gain"": 622039, ""bob_gain"": 377961}"
+"Bob rejected your offer from round 3.
+
+Round 4
+Due to inflation, the money you gain is worth 14.26% less than in the first round. The money bob gains is worth 48.8% less than in the first round.
+Bob's offer:
+# Alice gain: 600000 
+# Bob gain: 400000 
+Do you accept this offer?","{""decision"": ""accept""}"

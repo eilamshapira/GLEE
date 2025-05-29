@@ -1,0 +1,15 @@
+prompt,response
+"Round 1
+Send your offer to divide $100.","Based on a backward‐induction analysis of the alternating‐offer game (with 12 rounds) where in every new round your money is discounted by 20% (factor 0.8) and Bob’s by 5% (factor 0.95), one finds that if we “solve” from the end you end up with an equilibrium offer in Round 1 approximately as follows:
+
+• In Round 12 (the final round) Bob – when proposing – could secure almost all 100$ (offering Alice arbitrarily little) because if she rejects she gets nothing.
+
+• Moving backward one round (Round 11, where you would propose) Bob’s “continuation value” (if he rejects your offer) is 0.95×100 = 95 (in nominal dollars in the Round 11 “currency”). So in Round 11 you would be able to keep 5 and “give” Bob 95.
+
+• Repeating this backward calculation all the way to Round 1 yields (after accounting for the different discount rates) that in Round 1 Bob’s continuation value would be about 83.18. That is, if he rejects your offer now he expects to get roughly 83.18 (in nominal terms).
+
+Thus, to make Bob indifferent (so that he accepts in equilibrium), you as the proposer in Round 1 should offer him roughly 83.18 and keep about 16.82 for yourself.
+
+Here is the JSON answer for Round 1:
+
+{""alice_gain"": 16.82, ""bob_gain"": 83.18}"

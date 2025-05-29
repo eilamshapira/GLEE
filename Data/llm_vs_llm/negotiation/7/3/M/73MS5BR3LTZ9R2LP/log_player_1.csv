@@ -1,0 +1,54 @@
+prompt,response
+"Round 1
+Send your offer to Bob.","Given that I know:
+1. The product is worth $120 minimum to me
+2. The product is worth $100 to Bob
+3. I have John's guaranteed offer of $120
+4. I want to maximize my profit
+
+I'll start with a higher price to leave room for negotiation, but not so high that it immediately ends the conversation.
+
+{""product_price"": 150}"
+"Bob rejected your offer from round 1.
+
+Round 2
+Bob's offer: The product price will be $80. 
+You have three options:
+(1) Accept Bob's offer, and sell the product for $80
+(2) Reject Bob's offer and proceed to the next round, where you will send Bob a counteroffer
+(3) Sell the product to Jhon for $120","Given that:
+1. Bob's offer ($80) is well below my minimum acceptable price ($120)
+2. Bob's offer is even below the product's value to him ($100)
+3. I have a guaranteed offer from John at $120
+
+It would be irrational to accept Bob's low offer of $80 when I can get $120 from John. However, since there are still many rounds left, I'll try one more counteroffer before potentially selling to John.
+
+{""decision"": ""RejectOffer""}"
+"You chose to make a counteroffer to Bob.
+
+Round 3
+Send your counteroffer to Bob.","Since Bob countered with a very low offer of $80, I need to adjust my strategy. Given that:
+1. The product is worth $100 to Bob, so he won't pay more than that
+2. I have a guaranteed $120 from John
+3. Continuing negotiation with Bob when there's such a large gap might be wasteful
+
+I'll make one more reasonable offer, but if Bob doesn't come closer to my minimum acceptable price, I should probably take John's offer.
+
+{""product_price"": 130}"
+"Bob rejected your offer from round 3.
+
+Round 4
+Bob's offer: The product price will be $90. 
+You have three options:
+(1) Accept Bob's offer, and sell the product for $90
+(2) Reject Bob's offer and proceed to the next round, where you will send Bob a counteroffer
+(3) Sell the product to Jhon for $120","Given that:
+1. Bob's new offer ($90) is still well below my minimum acceptable price ($120)
+2. Bob's offer is still below even his own maximum value ($100)
+3. I have a guaranteed offer from John at $120
+4. Bob's small increase from $80 to $90 suggests he's not likely to reach my minimum price
+5. We're already in round 4, and time is being spent without significant progress
+
+It's becoming clear that Bob is unlikely to reach a price that would be acceptable to me (at least $120). Since I can sell to John for $120, which is my minimum acceptable price, it's time to end this negotiation.
+
+{""decision"": ""SellToJhon""}"

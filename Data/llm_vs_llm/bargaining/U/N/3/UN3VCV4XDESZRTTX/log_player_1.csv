@@ -1,0 +1,50 @@
+prompt,response
+"Round 1
+Send your offer to divide $10,000.","Okay, I understand the rules. I need to make an offer to Bob, keeping in mind the rapidly decreasing value of the money for me. I'll start with a fairly generous offer to try and secure a deal early.
+
+```json
+{
+  ""alice_gain"": 6000,
+  ""bob_gain"": 4000
+}
+```"
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 10% less than in the first round.
+Bob's offer:
+# Alice gain: 4000 
+# Bob gain: 6000 
+Do you accept this offer?","Okay, Bob rejected my generous offer and has now proposed an offer that is less favorable to me. However, the inflation is hurting me, so I need to consider the real value. I need to decide if I think I can get a better offer in subsequent rounds, considering the decreasing value to me.
+
+Let's calculate the current value. Since the money is worth 10% less for me than it was in round 1, 1$ now is worth 0.9$ of round 1. So 4000$ is equivalent to 3600$ in round 1's value. I think I should reject and make him a better offer myself.
+
+```json
+{""decision"": ""reject""}
+```"
+"You have chosen to reject Bob's offer from round 2.
+Round 3
+Send your offer to divide $10,000.","Okay, it's my turn to propose again. The inflation continues to hurt me. The money I gain now is worth 20% less than in the first round. (0.9*0.9 = 0.81). I need to balance getting a reasonable amount with the urgency of making a deal.
+
+```json
+{
+  ""alice_gain"": 5500,
+  ""bob_gain"": 4500
+}
+```"
+"Bob rejected your offer from round 3.
+
+Round 4
+Due to inflation, the money you gain is worth 27.1% less than in the first round.
+Bob's offer:
+# Alice gain: 4500 
+# Bob gain: 5500 
+Do you accept this offer?","Okay, Bob rejected my offer and is now offering me $4500. The money I gain is now worth 27.1% less.
+
+Let's calculate the worth of this offer compared to the initial round: $4500 * (1 - 0.271) = $4500 * 0.729 = $3280.5$. This is significantly less than my initial offer of $6000, and still less than the $5500 I asked for last turn.
+
+Given the rate of inflation and Bob's unwillingness to concede much, I think the risk of rejecting and getting a worse offer is too high. I'll accept this offer.
+
+```json
+{""decision"": ""accept""}
+```"

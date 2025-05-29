@@ -1,0 +1,55 @@
+prompt,response
+"Round 1
+Alice's offer:
+# Alice's message: I propose we split the money with me getting 5500 and you getting 4500. This is a fair split considering the impact of inflation on both of us. 
+# Bob gain: 4500 
+# Alice gain: 5500 
+Do you accept this offer?","Let me think about this offer:
+
+1. Current split: $4,500 for me, $5,500 for Alice
+2. If I reject, we go to next round where:
+   * My money will be worth 10% less
+   * Alice's money will be worth 20% less
+   * I get to make the next proposal
+
+If I reject, in the next round:
+* My $4,500 would become worth $4,050
+* Alice's $5,500 would become worth $4,400
+
+Since Alice will lose more value due to her higher inflation rate (20%), I have leverage to make a better offer in the next round. Also, this first offer is giving Alice more than half, which doesn't seem fair given our inflation rates.
+
+{""decision"": ""reject""}"
+"You have chosen to reject Alice's offer from round 1.
+Round 2
+Send your offer to divide $10,000 and a message to Alice.","I'll make a strategic offer considering our different inflation rates:
+
+{""bob_gain"": 5200,
+""alice_gain"": 4800,
+""message"": ""Given that your money loses value faster (20% vs my 10% per round), this split is actually favorable for you. If you reject, your share will be worth much less next round. Let's agree now and both benefit.""}
+
+Reasoning: I'm offering Alice $4,800 which, even with 20% inflation if she rejects, would be worth less ($3,840) in the next round. Meanwhile, my $5,200 would only decrease to $4,680 due to 10% inflation. This makes accepting now the rational choice for both of us."
+"Alice rejected your offer from round 2.
+
+Round 3
+Due to inflation, the money you gain is worth 19% less than in the first round. The money alice gains is worth 36% less than in the first round.
+Alice's offer:
+# Alice's message: Let's split it evenly this time. Given the inflation rates, this is a fair deal for both of us. 
+# Bob gain: 5000 
+# Alice gain: 5000 
+Do you accept this offer?","Let me analyze this offer:
+
+1. Current offer: $5,000 each, but due to inflation:
+   * My $5,000 is actually worth $4,050 (19% less)
+   * Alice's $5,000 is worth $3,200 (36% less)
+
+2. If I reject and we go to next round:
+   * My money will lose another 10% (total 29% from original)
+   * Alice's money will lose another 20% (total 56% from original)
+   * My turn to propose again
+
+This is actually a decent offer because:
+1. I'm getting a fair 50-50 split
+2. The inflation is hurting Alice more than me, but she's still willing to do even split
+3. Further delays will hurt both of us significantly
+
+{""decision"": ""accept""}"

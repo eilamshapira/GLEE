@@ -1,0 +1,72 @@
+prompt,response
+"Round 1
+Send your offer to divide $100.","Okay, I understand the rules. It's Round 1, and I need to make an offer to Bob, keeping in mind the declining value of the money as the rounds progress. I need to balance getting a good deal for myself with making the offer attractive enough for Bob to accept, considering his lower depreciation rate.
+
+Here's my offer:
+
+```json
+{
+  ""alice_gain"": 60,
+  ""bob_gain"": 40
+}
+```
+
+Rationale: I'm starting with a slight advantage for myself, offering myself $60 and Bob $40. This gives me a good initial return, while still offering Bob a decent amount considering his lesser depreciation. Hopefully, this will be enough to entice him to accept in the first round."
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 20% less than in the first round. The money bob gains is worth 10% less than in the first round.
+Bob's offer:
+# Alice gain: 40 
+# Bob gain: 60 
+Do you accept this offer?","Okay, Bob rejected my initial offer and is now proposing a split of $40 for me and $60 for him.
+
+Before making a decision, I need to consider the inflation. The money I receive is now worth 20% less than in round 1. Let's call the base value of $1 in round 1 as 1.0. Then the value of $1 in round 2 is 0.8.
+
+If I accept, I get $40, which is worth $40 * 0.8 = $32 in round 1's value.
+
+If I reject, I'll make a counter offer in round 3. The value of money in round 3 will be worth 0.8 * 0.8 = 0.64 of round 1's value for me, and 0.9 * 0.9 = 0.81 of round 1's value for Bob.
+
+Given that I started by offering myself $60, and Bob is now only offering me $40, I think I can risk one more round.
+
+```json
+{
+  ""decision"": ""reject""
+}
+```"
+"You have chosen to reject Bob's offer from round 2.
+Round 3
+Send your offer to divide $100.","Okay, it's Round 3. The stakes are getting higher, and the money is depreciating. For me, the money is now worth 0.8 * 0.8 = 0.64 of the original value. For Bob, it's worth 0.9 * 0.9 = 0.81 of the original value.
+
+I need to make an offer that's appealing enough for Bob to accept, but also maximizes my return, considering the depreciation. I'll aim for a slightly more balanced approach this time, factoring in Bob's smaller depreciation.
+
+```json
+{
+  ""alice_gain"": 55,
+  ""bob_gain"": 45
+}
+```
+
+Rationale: I'm offering myself $55 and Bob $45. My gain is worth 55 * 0.64 = 35.2. Bob's gain is worth 45 * 0.81 = 36.45. Although he is receiving less, it is worth more to him. This split hopefully gives Bob the incentive to accept the offer now and avoid further depreciation. I am getting more, but I'm hoping the incentive of getting something now will be better than gambling on a higher payoff later that may not happen."
+"Bob rejected your offer from round 3.
+
+Round 4
+Due to inflation, the money you gain is worth 48.8% less than in the first round. The money bob gains is worth 27.1% less than in the first round.
+Bob's offer:
+# Alice gain: 35 
+# Bob gain: 65 
+Do you accept this offer?","Okay, Bob rejected my offer again and is now proposing a split of $35 for me and $65 for him. The depreciation is really starting to bite now.
+
+If I accept, I get $35, which is worth $35 * (1 - 0.488) = $35 * 0.512 = $17.92 in round 1's value.
+
+If I reject, I'll make a counteroffer in round 5. In Round 5, my depreciation would be 1 - (0.8^4) = 1 - 0.4096 = 0.5904, and Bob's depreciation would be 1 - (0.9^4) = 1 - 0.6561 = 0.3439.
+
+$17.92 is not great. But let's consider what could happen in Round 5. It's very likely Bob would demand more, and my depreciation would be even worse.
+
+Given the circumstances, I'm leaning towards accepting this offer, despite it being low.
+
+```json
+{
+  ""decision"": ""accept""
+}
+```"

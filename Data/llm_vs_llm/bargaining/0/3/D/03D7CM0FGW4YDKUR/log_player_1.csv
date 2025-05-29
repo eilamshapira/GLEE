@@ -1,0 +1,39 @@
+prompt,response
+"Round 1
+Send your offer to divide $100 and a message to Bob.","```json
+{
+  ""alice_gain"": 55,
+  ""bob_gain"": 45,
+  ""message"": ""Bob, let's split it fairly. I propose 55 for me and 45 for you. This is a generous offer considering we both lose value with each round.""
+}
+```"
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 20% less than in the first round. The money bob gains is worth 10% less than in the first round.
+Bob's offer:
+# Bob's message: Considering the inflation rate is higher for you, I think this is a reasonable offer. We both want to end this game soon. 
+# Alice gain: 40 
+# Bob gain: 60 
+Do you accept this offer?","```json
+{
+  ""decision"": ""reject""
+}
+```"
+"You have chosen to reject Bob's offer from round 2.
+Round 3
+Send your offer to divide $100 and a message to Bob.","Okay, let's calculate the value of the money after the inflation.
+
+For me (Alice), the value of $100 is now worth 80% of its original value (100% - 20% = 80%). So, effectively, for me, we are dividing $80 ""real"" dollars.
+
+For Bob, the value of $100 is now worth 90% of its original value (100% - 10% = 90%). So, effectively, for him, we are dividing $90 ""real"" dollars.
+
+Given this, I need to offer Bob enough to make him accept, while still maximizing my gain. Bob offered me 40 in round 2, effectively 40 original dollars, which I rejected. Now I'll try to make an offer that I'll be willing to accept if the roles were reversed.
+
+```json
+{
+  ""alice_gain"": 52,
+  ""bob_gain"": 48,
+  ""message"": ""Bob, I understand you want to end this soon. I'll offer you 48, which is a good deal considering the inflation. That's effectively $48 in original value. I'm only taking 52, which is effectively worth only $41.60 to me now. This is my best offer.""
+}
+```"

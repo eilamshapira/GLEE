@@ -1,0 +1,42 @@
+prompt,response
+"Round 1
+Send your offer to divide $100.","Okay, I understand the rules. I'll make my offer, keeping in mind the inflation that affects me.
+
+```json
+{
+""alice_gain"": 60,
+""bob_gain"": 40
+}
+```"
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 5% less than in the first round. The money bob gains is worth 10% less than in the first round.
+Bob's offer:
+# Alice gain: 45 
+# Bob gain: 55 
+Do you accept this offer?","Okay, I need to consider the inflation. My money is worth 5% less than round 1, and Bob's is worth 10% less.
+
+Let's analyze:
+
+*   **My perspective:** Getting $45 now is like getting $45 / 0.95 = $47.37 in round 1 money.
+*   **Bob's perspective (unknown to me, but implicitly considered):** He is getting $55, which is like getting $55 / 0.9 = $61.11 in round 1 money.
+
+Since I would have gotten 60$ in round 1 in my offer, and I will only receive an equivalent to 47.37$, I will reject this offer.
+
+```json
+{
+""decision"": ""reject""
+}
+```"
+"You have chosen to reject Bob's offer from round 2.
+Round 3
+Send your offer to divide $100.","Okay, it's my turn again. Remember, the inflation effect is cumulative. For me, it's now 5% less *again* compared to round 2, meaning my money is worth only 90.25% of its original value. For Bob, it is now 10% less again compared to round 2, meaning his money is worth only 81% of its original value.
+I need to make an offer that is attractive to Bob but also compensates me for the decreasing value of the money.
+
+```json
+{
+""alice_gain"": 57,
+""bob_gain"": 43
+}
+```"

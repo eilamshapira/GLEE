@@ -474,7 +474,7 @@ def main():
                             
                             game_types = [game_type for game_type in ["bargaining", "persuasion", "negotiation"] if os.path.exists(os.path.join(base_path, f"{game_type}"))]
                             for game_type in game_types:
-                                config_path = f"configs/Data_{experiment_name}_{game_type}_with_stats.csv"
+                                config_path = f"output/configs/Data_{experiment_name}_{game_type}_with_stats.csv"
                                 if not os.path.exists(config_path):
                                     analyze_main.create_configs_file(game_type, first_eligible_commit=None, data_path="Data", exp_name=experiment_name, include_human=False)
                                     analyze_main.create_config_with_stats(game_type, data_path="Data", exp_name=experiment_name)
@@ -501,7 +501,7 @@ def main():
                             all_exp_names += "_models_interaction"
                             st.query_params['models_interaction'] = True
                         return_code = 0
-                        if not os.path.exists(f"analyze_coefs/{all_exp_names}.csv"):
+                        if not os.path.exists(f"output/analyze_coefs/{all_exp_names}.csv"):
                             process = Popen(['python', 'analyze/ML.py', '--exp_name', all_exp_names, *configs_files_str])
                             return_code = process.wait()
                         if return_code == 0:
@@ -545,16 +545,20 @@ def main():
                 if st.session_state.step == "ShowStatistics":
                     configs_paths = json.loads(st.query_params['config_files'])
                     def get_statistic_path(family, configs_paths):
-                        stat_path = ""  
+                        # Handle list of config paths
+                        stat_path = ""
                         for path in sorted(configs_paths):
                             if stat_path:
                                 stat_path += "_"
-                            tmp_path = path.replace("configs/", "")
+                            # Convert path to use output directory if it doesn't already
+                            if not path.startswith("output/"):
+                                path = f"output/configs/{os.path.basename(path)}"
+                            tmp_path = path.replace("output/configs/", "")
                             tmp_path = tmp_path.split(".")[:-1]
                             tmp_path = ".".join(tmp_path)
                             stat_path += tmp_path
-                            
-                        stat_path = f"basic_statistics/{family}_" + stat_path
+                        
+                        stat_path = f"output/basic_statistics/{family}_" + stat_path
                         stat_path += "/statistics.csv"
                         return stat_path
                     statistics = []
@@ -600,11 +604,7 @@ def main():
             elif st.session_state.step == "Results":
                 @st.cache_data
                 def load_data(exp_name):
-                    print(st.query_params['final_exp_name'])
-                    df = pd.read_csv(f"analyze_coefs/{exp_name}.csv")
-                    df = df.drop_duplicates()
-                    # remove index
-                    df = df.reset_index(drop=True)
+                    df = pd.read_csv(f"output/analyze_coefs/{exp_name}.csv")
                     return df
 
                 coef_df = load_data(st.query_params['final_exp_name'])

@@ -1,0 +1,532 @@
+prompt,response
+"Round 1
+Alice does not recommend you to buy the product.
+
+Would you like to buy the current product?","Let me think about this...
+
+Alice doesn't recommend buying, which likely means they have knowledge that this might be a low-quality product.
+
+Expected value calculation:
+- 80% chance of high quality ($120 value) = $96
+- 20% chance of low quality ($0 value) = $0
+- Total expected value without additional information = $96
+- Cost = $100
+
+Even in the base case, the expected value ($96) is less than the cost ($100). With Alice's negative recommendation, the probability of it being low quality is likely even higher, making the expected value even lower.
+
+{""decision"": ""no""}"
+"You didn't buy the product from Alice.
+The product was low-quality. It could have been worth $0 for you.
+
+Round 2
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","Let me think about this...
+
+In Round 1, Alice was honest in her recommendation not to buy a low-quality product. This suggests Alice's recommendations may be trustworthy.
+
+Now Alice is recommending to buy the product. Given:
+1. Alice proved honest in Round 1
+2. Base probability is 80% high quality ($120) and 20% low quality ($0)
+3. Alice's positive recommendation likely increases the probability of high quality
+4. Cost is $100
+
+With Alice's positive recommendation, the expected value should be higher than the base expected value of $96 (0.8 × $120 + 0.2 × $0), making it greater than the $100 cost.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $100!
+The product was high-quality. It's worth $120 for you.
+
+Round 3
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","Let me analyze...
+
+So far:
+- Round 1: Alice recommended not to buy → was low quality (honest)
+- Round 2: Alice recommended to buy → was high quality (honest)
+- Alice has been truthful in both recommendations
+
+Alice is again recommending to buy, and she has established a pattern of honest recommendations. Given:
+1. Base probability of 80% high quality ($120)
+2. Alice's proven track record of honest recommendations
+3. Current positive recommendation
+4. Cost remains $100
+
+The expected value with Alice's positive recommendation should be well above the $100 cost, as her recommendations have been reliable indicators so far.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $100!
+The product was high-quality. It's worth $120 for you.
+
+Round 4
+Alice does not recommend you to buy the product.
+
+Would you like to buy the current product?","Let me analyze...
+
+Past rounds:
+- Round 1: Alice said don't buy → was low quality (honest)
+- Round 2: Alice said buy → was high quality (honest)
+- Round 3: Alice said buy → was high quality (honest)
+- Alice has been truthful in all recommendations so far
+
+Current situation:
+1. Alice is recommending NOT to buy
+2. She has established a perfect track record of honest recommendations
+3. When she previously said don't buy, it was indeed low quality
+4. A low-quality product would be worth $0, resulting in a $100 loss
+
+Given Alice's consistent honesty and her current negative recommendation, it's very likely this is a low-quality product. The expected value would be significantly below the $100 cost.
+
+{""decision"": ""no""}"
+"You didn't buy the product from Alice.
+The product was low-quality. It could have been worth $0 for you.
+
+Round 5
+Alice does not recommend you to buy the product.
+
+Would you like to buy the current product?","Let me analyze...
+
+Past rounds:
+- Round 1: Alice said don't buy → was low quality (honest)
+- Round 2: Alice said buy → was high quality (honest)
+- Round 3: Alice said buy → was high quality (honest)
+- Round 4: Alice said don't buy → was low quality (honest)
+- Alice has maintained a perfect track record of honest recommendations
+
+Current situation:
+1. Alice is again recommending NOT to buy
+2. She has proven to be completely truthful in all previous rounds
+3. Both previous times she said don't buy, the products were indeed low quality
+4. A low-quality product would mean a $100 loss
+
+Given Alice's perfect track record and her current negative recommendation, it's very likely this is another low-quality product. There's no reason to doubt her recommendation.
+
+{""decision"": ""no""}"
+"You didn't buy the product from Alice.
+The product was low-quality. It could have been worth $0 for you.
+
+Round 6
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","Let me analyze...
+
+Past rounds:
+- Round 1: Alice said don't buy → was low quality (honest)
+- Round 2: Alice said buy → was high quality (honest)
+- Round 3: Alice said buy → was high quality (honest)
+- Round 4: Alice said don't buy → was low quality (honest)
+- Round 5: Alice said don't buy → was low quality (honest)
+- Alice has maintained a perfect track record of honest recommendations
+
+Current situation:
+1. Alice is recommending to buy
+2. She has been truthful in all 5 previous rounds
+3. When she previously said buy, the products were indeed high quality
+4. A high-quality product is worth $120, giving a $20 profit
+
+Given Alice's perfect track record and her current positive recommendation, it's very likely this is a high-quality product. Her recommendations have been completely reliable so far.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $100!
+The product was high-quality. It's worth $120 for you.
+
+Round 7
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","Let me analyze...
+
+Past rounds:
+- Round 1: Alice said don't buy → was low quality (honest)
+- Round 2: Alice said buy → was high quality (honest)
+- Round 3: Alice said buy → was high quality (honest)
+- Round 4: Alice said don't buy → was low quality (honest)
+- Round 5: Alice said don't buy → was low quality (honest)
+- Round 6: Alice said buy → was high quality (honest)
+- Alice has maintained a perfect track record of honest recommendations
+
+Current situation:
+1. Alice is recommending to buy again
+2. She has been truthful in all 6 previous rounds
+3. Every time she's recommended to buy, it has been high quality
+4. Expected profit from a high-quality product is $20
+
+Given Alice's continued perfect track record and her current positive recommendation, there's no reason to doubt her. Her recommendations have proven to be perfectly reliable indicators of product quality.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $100!
+The product was high-quality. It's worth $120 for you.
+
+Round 8
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","Let me analyze...
+
+Past rounds:
+- Round 1: Alice said don't buy → was low quality (honest)
+- Round 2: Alice said buy → was high quality (honest)
+- Round 3: Alice said buy → was high quality (honest)
+- Round 4: Alice said don't buy → was low quality (honest)
+- Round 5: Alice said don't buy → was low quality (honest)
+- Round 6: Alice said buy → was high quality (honest)
+- Round 7: Alice said buy → was high quality (honest)
+- Alice has maintained a perfect track record for all 7 rounds
+
+Current situation:
+1. Alice is recommending to buy again
+2. She has been truthful in all previous rounds
+3. All her ""buy"" recommendations have led to high-quality products
+4. Each high-quality product gives us a $20 profit
+
+Given Alice's continued perfect reliability and her current positive recommendation, it's rational to trust her recommendation again.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $100!
+The product was high-quality. It's worth $120 for you.
+
+Round 9
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","Let me analyze...
+
+Past rounds:
+- Round 1: Alice said don't buy → was low quality (honest)
+- Round 2: Alice said buy → was high quality (honest)
+- Round 3: Alice said buy → was high quality (honest)
+- Round 4: Alice said don't buy → was low quality (honest)
+- Round 5: Alice said don't buy → was low quality (honest)
+- Round 6: Alice said buy → was high quality (honest)
+- Round 7: Alice said buy → was high quality (honest)
+- Round 8: Alice said buy → was high quality (honest)
+- Alice has maintained a perfect track record for all 8 rounds
+
+Current situation:
+1. Alice is recommending to buy again
+2. She has been truthful in all previous rounds
+3. Her ""buy"" recommendations have been 100% accurate
+4. Each successful purchase yields a $20 profit
+
+Given Alice's continued perfect truthfulness and her current positive recommendation, there's no reason to change our trust in her judgment.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $100!
+The product was high-quality. It's worth $120 for you.
+
+Round 10
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","Let me analyze...
+
+Past rounds:
+- Round 1: Alice said don't buy → was low quality (honest)
+- Round 2: Alice said buy → was high quality (honest)
+- Round 3: Alice said buy → was high quality (honest)
+- Round 4: Alice said don't buy → was low quality (honest)
+- Round 5: Alice said don't buy → was low quality (honest)
+- Round 6: Alice said buy → was high quality (honest)
+- Round 7: Alice said buy → was high quality (honest)
+- Round 8: Alice said buy → was high quality (honest)
+- Round 9: Alice said buy → was high quality (honest)
+- Alice has maintained a perfect track record for all 9 rounds
+
+Current situation:
+1. Alice is recommending to buy again
+2. She has been truthful in every single round
+3. All her ""buy"" recommendations have led to high-quality products
+4. Consistent $20 profit on each purchase she recommends
+
+Given Alice's continued perfect reliability and her current positive recommendation, it remains rational to trust her recommendation.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $100!
+The product was high-quality. It's worth $120 for you.
+
+Round 11
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","Let me analyze...
+
+Past rounds:
+- Round 1: Alice said don't buy → was low quality (honest)
+- Round 2: Alice said buy → was high quality (honest)
+- Round 3: Alice said buy → was high quality (honest)
+- Round 4: Alice said don't buy → was low quality (honest)
+- Round 5: Alice said don't buy → was low quality (honest)
+- Round 6: Alice said buy → was high quality (honest)
+- Round 7: Alice said buy → was high quality (honest)
+- Round 8: Alice said buy → was high quality (honest)
+- Round 9: Alice said buy → was high quality (honest)
+- Round 10: Alice said buy → was high quality (honest)
+- Alice has maintained a perfect track record for all 10 rounds
+
+Current situation:
+1. Alice is recommending to buy again
+2. She has shown perfect honesty throughout the game
+3. Her ""buy"" recommendations have been 100% accurate
+4. Each successful purchase continues to yield $20 profit
+
+With Alice's flawless track record and current positive recommendation, there's no rational reason to deviate from trusting her.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $100!
+The product was high-quality. It's worth $120 for you.
+
+Round 12
+Alice does not recommend you to buy the product.
+
+Would you like to buy the current product?","Let me analyze...
+
+Past rounds:
+- Round 1-11: Alice has been honest in EVERY recommendation
+- When she said ""buy"" → always high quality
+- When she said ""don't buy"" → always low quality
+- Her track record is perfect through 11 rounds
+
+Current situation:
+1. Alice is recommending NOT to buy
+2. She has proven completely trustworthy so far
+3. Her previous ""don't buy"" recommendations have always indicated low-quality products
+4. A low-quality product would result in a $100 loss
+
+Given that:
+- Alice has never steered us wrong
+- She has accurately identified low-quality products before
+- There's no indication her incentives have changed
+- A wrong decision would cost us $100
+
+There's no reason to doubt her negative recommendation now.
+
+{""decision"": ""no""}"
+"You didn't buy the product from Alice.
+The product was low-quality. It could have been worth $0 for you.
+
+Round 13
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","Let me analyze...
+
+Past rounds:
+- Rounds 1-12: Alice has maintained perfect honesty
+- When she said ""buy"" → always high quality (100% accurate)
+- When she said ""don't buy"" → always low quality (100% accurate)
+- Most recent round (12): She said don't buy → was indeed low quality
+
+Current situation:
+1. Alice is recommending to buy
+2. She has proven completely trustworthy through 12 rounds
+3. Her positive recommendations have always led to a $20 profit
+4. She has no history of deception
+5. She continues to demonstrate accurate knowledge of product quality
+
+Given Alice's:
+- Perfect track record over many rounds
+- Consistent honesty in both positive and negative recommendations
+- Current positive recommendation
+- Proven ability to identify high-quality products
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $100!
+The product was high-quality. It's worth $120 for you.
+
+Round 14
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","Let me analyze...
+
+Past rounds:
+- Rounds 1-13: Alice has maintained perfect honesty
+- When she said ""buy"" → always high quality (100% accurate)
+- When she said ""don't buy"" → always low quality (100% accurate)
+- Most recent round (13): She said buy → was indeed high quality
+- Her recommendations have consistently earned us $20 profit when buying
+
+Current situation:
+1. Alice is recommending to buy again
+2. She has proven completely trustworthy through 13 rounds
+3. Every single one of her recommendations has been accurate
+4. There's been no deviation from her pattern of honesty
+5. She continues to show perfect reliability in identifying product quality
+
+Given:
+- Her unblemished track record
+- Consistent accurate recommendations
+- Current positive recommendation
+- No reason to suspect any change in her behavior or incentives
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $100!
+The product was high-quality. It's worth $120 for you.
+
+Round 15
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","Let me analyze...
+
+Past rounds:
+- Rounds 1-14: Alice has maintained perfect honesty
+- When she said ""buy"" → always high quality (100% accurate)
+- When she said ""don't buy"" → always low quality (100% accurate)
+- Most recent rounds (13, 14): She said buy → both were high quality
+- Her recommendations have consistently earned us $20 profit when buying
+
+Current situation:
+1. Alice is recommending to buy again
+2. She has proven completely trustworthy through 14 rounds
+3. Every single recommendation has been accurate
+4. She has shown no deviation from her pattern of honesty
+5. Each previous ""buy"" recommendation has resulted in profit
+
+Given:
+- Her continued perfect track record
+- No instances of deception
+- Current positive recommendation
+- Consistent pattern of accurate product quality identification
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $100!
+The product was high-quality. It's worth $120 for you.
+
+Round 16
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","Let me analyze...
+
+Past rounds:
+- Rounds 1-15: Alice has maintained perfect honesty
+- When she said ""buy"" → always high quality (100% accurate)
+- When she said ""don't buy"" → always low quality (100% accurate)
+- Last several rounds: Multiple ""buy"" recommendations, all high quality
+- Every recommended purchase has earned us $20 profit
+
+Current situation:
+1. Alice is recommending to buy again
+2. She has proven completely trustworthy through 15 rounds
+3. Her perfect track record continues
+4. She has shown no signs of deception
+5. Her judgment of product quality remains impeccable
+
+Given:
+- Her unbroken record of honest recommendations
+- Consistent accuracy in identifying high-quality products
+- Current positive recommendation
+- No reason to suspect any change in her reliability
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $100!
+The product was high-quality. It's worth $120 for you.
+
+Round 17
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","Let me analyze...
+
+Past rounds:
+- Rounds 1-16: Alice has maintained perfect honesty
+- When she said ""buy"" → always high quality (100% accurate)
+- When she said ""don't buy"" → always low quality (100% accurate)
+- Recent streak: Multiple ""buy"" recommendations, all correctly high quality
+- Consistent $20 profit on every recommended purchase
+
+Current situation:
+1. Alice is recommending to buy again
+2. She has proven completely trustworthy through 16 rounds
+3. Her perfect track record remains unblemished
+4. No indication of any change in her honesty
+5. Her ability to identify product quality remains perfect
+
+Given:
+- Her continued flawless accuracy
+- No history of deception through 16 rounds
+- Current positive recommendation
+- Consistent pattern of profitable recommendations
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $100!
+The product was high-quality. It's worth $120 for you.
+
+Round 18
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","Let me analyze...
+
+Past rounds:
+- Rounds 1-17: Alice has maintained perfect honesty
+- When she said ""buy"" → always high quality (100% accurate)
+- When she said ""don't buy"" → always low quality (100% accurate)
+- Current streak: Long run of correct ""buy"" recommendations
+- Every recommended purchase has yielded $20 profit
+
+Current situation:
+1. Alice is recommending to buy again
+2. She has proven completely trustworthy through 17 rounds
+3. Her perfect track record continues
+4. No signs of any change in her honest behavior
+5. Her ability to assess product quality remains reliable
+
+Given:
+- Her sustained perfect accuracy
+- Consistent positive outcomes from following her advice
+- Current positive recommendation
+- No reason to doubt her continued honesty
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $100!
+The product was high-quality. It's worth $120 for you.
+
+Round 19
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","Let me analyze...
+
+Past rounds:
+- Rounds 1-18: Alice has maintained perfect honesty
+- When she said ""buy"" → always high quality (100% accurate)
+- When she said ""don't buy"" → always low quality (100% accurate)
+- Current streak: Extended run of correct ""buy"" recommendations
+- Consistent $20 profit on every recommended purchase
+
+Current situation:
+1. Alice is recommending to buy again
+2. She has proven completely trustworthy through 18 rounds
+3. Her perfect track record remains intact
+4. No deviation from her pattern of honesty
+5. Her judgment of product quality has been impeccable
+
+Given:
+- Her continued perfect accuracy through 18 rounds
+- No instances of misleading recommendations
+- Current positive recommendation
+- Only one round remaining after this one
+
+There's no logical reason to doubt her now, especially with her perfect track record.
+
+{""decision"": ""yes""}"
+"You bought the product from Alice for $100!
+The product was high-quality. It's worth $120 for you.
+
+Round 20
+Alice recommends you to buy the product.
+
+Would you like to buy the current product?","Let me analyze...
+
+Past rounds:
+- Rounds 1-19: Alice has maintained perfect honesty
+- When she said ""buy"" → always high quality (100% accurate)
+- When she said ""don't buy"" → always low quality (100% accurate)
+- Recent history: Long streak of correct ""buy"" recommendations
+- Every recommended purchase has earned $20 profit
+
+Current situation:
+1. Alice is recommending to buy again
+2. She has proven completely trustworthy through 19 rounds
+3. Her perfect track record remains unblemished
+4. This is the final round
+5. No reason her incentives would change for the last round
+
+Given:
+- Her sustained perfect accuracy through 19 rounds
+- No history of deception whatsoever
+- Current positive recommendation
+- Even being the final round, there's no rational reason for her to suddenly become dishonest
+
+{""decision"": ""yes""}"

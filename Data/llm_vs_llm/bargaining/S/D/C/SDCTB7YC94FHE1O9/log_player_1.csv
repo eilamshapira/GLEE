@@ -1,0 +1,54 @@
+prompt,response
+"Round 1
+Send your offer to divide $100.","Based on a backward‐induction analysis, here is one “subgame‐perfect” strategy outcome. (Note that, when players are fully rational and the amounts can be split arbitrarily, the equilibrium divisions are unique only up to an arbitrarily small margin.)
+
+Let the following recursive reasoning be used. Suppose that if the game reaches round r the “pie” is $100 but Bob’s money is discounted by 5% in each round (while Alice’s is not discounted). Working back from the final (12th) round, one can show that in equilibrium the division would be as follows (approximating to two decimals):
+
+• Round 12 (Bob is proposer): Bob could secure almost all the money (e.g. offering almost $0 to Alice) – Bob’s effective value then is about 100×(1–0.55)=45.
+• Round 11 (Alice proposer): To induce Bob to accept rather than waiting for round 12, Alice must offer him enough nominal dollars so that—with his round‐11 discount factor of 50%—his effective payoff is 45. That requires offering him about $90 (so Alice takes $10).
+• Round 10 (Bob proposer): By similar logic, Bob could offer Alice $10 and keep $90.
+• Round 9 (Alice proposer): Bob’s round‐9 discount factor is 60%, so to match his expected value from round 10 (about 90×0.55 = 49.5 in effective terms) Alice must offer him roughly 49.5/0.60 ≈ $82.50, leaving herself $17.50.
+• Round 8 (Bob proposer): Bob’s discount factor is 65%, so he can offer Alice about $17.50 and keep $82.50.
+• Round 7 (Alice proposer): Repeating the argument (with Bob’s factor now 70%), she must offer Bob about 53.63/0.70 ≈ $76.61, keeping $23.39.
+• Round 6 (Bob proposer): With a discount factor of 75%, Bob would offer Alice $23.39 and keep $76.61.
+• Round 5 (Alice proposer): Using Bob’s discount factor of 80%, she must offer him enough so that 0.80×(Bob’s nominal share) equals his continuation value of about 76.61×0.75 ≈ $57.46; that means giving him about $71.82 and keeping $28.18.
+• Round 4 (Bob proposer): With Bob’s discount factor 85%, he would offer Alice $28.18 and keep $71.82.
+• Round 3 (Alice proposer): Here, Bob’s discount factor is 90%; to give him an effective value equal to what he would get as proposer in round 4 (71.82×0.85 ≈ $61.05), she must offer him roughly 61.05/0.90 ≈ $67.83, keeping $32.17.
+• Round 2 (Bob proposer): With a discount factor of 95%, Bob would then offer Alice $32.17 and keep $67.83.
+• Finally, in Round 1 (Alice proposer, with no discount on Bob’s money) Bob’s continuation if he refuses is worth about 67.83×0.95 ≈ $64.44 effective to him. So to make Bob indifferent, Alice must offer him at least about $64.44 while keeping the remaining $35.56.
+
+Thus a reasonable equilibrium offer in round 1 is: 
+
+{""alice_gain"": 35.56, ""bob_gain"": 64.44}
+
+This is our offer for dividing $100 in round 1."
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation,  the money Bob gains is worth 5% less than in the first round. The money you gains is worth the same as in the first round.
+Bob's offer:
+# Alice gain: 30.0 
+# Bob gain: 70.0 
+Do you accept this offer?","{""decision"": ""reject""}"
+"You have chosen to reject Bob's offer from round 2.
+Round 3
+Send your offer to divide $100.","{""alice_gain"": 32.17, ""bob_gain"": 67.83}"
+"Bob rejected your offer from round 3.
+
+Round 4
+Due to inflation,  the money Bob gains is worth 14.26% less than in the first round. The money you gains is worth the same as in the first round.
+Bob's offer:
+# Alice gain: 25.0 
+# Bob gain: 75.0 
+Do you accept this offer?","{""decision"": ""reject""}"
+"You have chosen to reject Bob's offer from round 4.
+Round 5
+Send your offer to divide $100.","{""alice_gain"": 28.18, ""bob_gain"": 71.82}"
+"Bob rejected your offer from round 5.
+
+Round 6
+Due to inflation,  the money Bob gains is worth 22.62% less than in the first round. The money you gains is worth the same as in the first round.
+Bob's offer:
+# Alice gain: 27.0 
+# Bob gain: 73.0 
+Do you accept this offer?","{""decision"": ""accept""}"

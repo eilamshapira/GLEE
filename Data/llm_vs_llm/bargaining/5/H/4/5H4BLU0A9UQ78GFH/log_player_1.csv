@@ -1,0 +1,36 @@
+prompt,response
+"Round 1
+Send your offer to divide $10,000.","Based on the classic alternating‐offers setup but with a twist – only Bob’s money devalues by 20% each round (while yours remains at full value)—we can analyze the subgame‑perfect equilibrium by “backing up” from the last (12th) round. (In round 12 Bob is the proposer; in round 11 you are, and so on.) Here’s a rough outline of the reasoning:
+
+• In round 12 Bob (the proposer) could offer you almost nothing (say, an arbitrarily small ε) and keep nearly all of the $10,000. However, because Bob’s dollars in round 12 are worth only 0.8^(11) of a round‑1 dollar, his “effective” (i.e. round‑1 equivalent) payoff by waiting would be about
+  10,000 × 0.8^(11) 
+(which is roughly $860 in today’s value).
+
+• In round 11 (your turn) you must offer Bob at least what he’d get in round 12 (when converted into round‑11 dollars, remembering that Bob’s discount factor in round 11 is 0.8^(10)). A short calculation shows that you must give him nominally at least $8,000 in round 11—leaving you $2,000 in that round.
+
+• Stepping back round‐by‐round, the equilibrium “shares” (when expressed in nominal dollars at the time of agreement, but converted to round‑1 value for Bob) turn out to “work backward” as follows. (For brevity, we denote Bob’s discount factor in round t by 0.8^(t–1); your dollars are not discounted.)
+
+  – In round 2 (Bob’s turn) one finds that you’d get $2,000 if you were to wait.
+  – In round 3 (your turn) you can secure about $3,600 for yourself.
+  – In round 5 your equilibrium share climbs to about $5,904.
+  – In round 7, about $4,880.
+  – In round 9, about $3,600.
+  – … and so on.
+
+Working through the recursion (it is a standard—but not entirely trivial—backward induction exercise) and converting Bob’s future nominal payoffs into today’s (round‑1) values, the equilibrium division when you (Alice) propose in round 1 comes out to be approximately:
+
+  Alice gets $7,378.56 
+  Bob gets $2,621.44
+
+(In round‑1, Bob’s money is still “fresh” so his discount factor is 1.0; that is why the proportions are calculated relative to full value here.)
+
+Since Bob’s continuation payoff if he were to wait would also be worth roughly $2,621.44 in round‑1 dollars, he would be indifferent and (by the usual tie‐breaking conventions) accept your offer.
+
+Below is the JSON formatted offer for Round 1:
+
+{
+  ""alice_gain"": 7378.56,
+  ""bob_gain"": 2621.44
+}
+
+This is our equilibrium offer given the discount structure."

@@ -1,0 +1,35 @@
+prompt,response
+"Round 1
+Alice's offer:
+# Bob gain: 40 
+# Alice gain: 60 
+Do you accept this offer?","Let's analyze this offer. I would get $40, and Alice would get $60.
+
+Since it's round 1, the money is worth its full value. Getting $40 out of $100 is a reasonable starting point. I need to consider the decreasing value in future rounds. If I reject, I risk getting less in later rounds due to inflation.
+
+However, if I accept now, I get $40. If I reject, and then propose 50 in the next round and Alice accepts I get 50*0.9=45. 
+If I reject and then propose 45, and Alice accepts, I get 45*0.9=40.5.
+
+Therefore, I will reject for now.
+
+{""decision"": ""reject""}"
+"You have chosen to reject Alice's offer from round 1.
+Round 2
+Send your offer to divide $100.","Okay, it's my turn to make an offer. Remembering that the money is worth 10% less to me and 20% less to Alice if we go to the next round, I'll try to be somewhat fair but also consider my declining value.
+
+{""bob_gain"": 52, ""alice_gain"": 48}"
+"Alice rejected your offer from round 2.
+
+Round 3
+Due to inflation, the money you gain is worth 19% less than in the first round. The money alice gains is worth 36% less than in the first round.
+Alice's offer:
+# Bob gain: 45 
+# Alice gain: 55 
+Do you accept this offer?","Okay, let's analyze this offer.
+
+*   **Alice's offer:** $45 for me, $55 for her.
+*   **Inflation:** My money is worth 19% less, so $45 is actually worth $45 * (1 - 0.19) = $45 * 0.81 = $36.45 in terms of the original value.
+
+If I reject, the money will further devalue. I need to consider what I could reasonably expect to get in the next round. With Alice's inflation at 36% and mine increasing again next round, accepting $36.45 is likely better than waiting.
+
+{""decision"": ""accept""}"

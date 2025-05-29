@@ -1,0 +1,56 @@
+prompt,response
+"Round 1
+Send your offer to divide $100 and a message to Bob.","Since this is the first round, I'll make a reasonable offer to divide the $100. I'll propose a 50-50 split, which is a fair and common starting point for negotiations.
+
+Here's my offer in JSON format:
+
+```json
+{
+  ""alice_gain"": 50,
+  ""bob_gain"": 50,
+  ""message"": ""Let's split it fairly and end the game quickly!""
+}
+```"
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 20% less than in the first round. The money bob gains is worth 10% less than in the first round.
+Bob's offer:
+# Bob's message: I'm feeling generous, let's settle this now. 
+# Alice gain: 40 
+# Bob gain: 60 
+Do you accept this offer?","Since the money I gain is worth 20% less due to inflation, I need to consider the actual value of Bob's offer.
+
+If I accept Bob's offer, I'll get $40, but its value will be 20% less, so the actual value for me will be:
+$40 * 0.8 = $32
+
+Considering this, I think I can try to negotiate a better deal, as $32 is a significant decrease from the initial 50-50 split I proposed.
+
+My response:
+
+```json
+{
+  ""decision"": ""reject""
+}
+```"
+"You have chosen to reject Bob's offer from round 2.
+Round 3
+Send your offer to divide $100 and a message to Bob.","Since I rejected Bob's offer, it's now my turn to make a new proposal. Considering the inflation, the money I gain is worth 20% less in each round, and we're already in the third round, I'll make a more generous offer to Bob to try to end the game quickly.
+
+The initial $100 is now worth less to me due to two rounds of inflation (20% less each round):
+$100 * 0.8 * 0.8 = $64
+
+However, for Bob, the value decreased by 10% in the second round:
+$100 * 0.9 = $90
+
+I'll propose a split that takes into account the decreased value for me and tries to find a mutually acceptable agreement.
+
+Here's my offer in JSON format:
+
+```json
+{
+  ""alice_gain"": 45,
+  ""bob_gain"": 55,
+  ""message"": ""Let's find a middle ground and settle this before more value is lost.""
+}
+```"

@@ -1,0 +1,42 @@
+prompt,response
+"Round 1
+Send your offer to divide $100.","Okay, I understand the rules. Here's my offer for round 1, keeping in mind the potential for inflation:
+
+```json
+{
+""alice_gain"": 60,
+""bob_gain"": 40
+}
+```
+
+My reasoning: I'm starting with a proposal that favors me slightly, but leaves Bob with a reasonable amount. I hope this will be enough to entice him to accept, avoiding the value loss from inflation in future rounds."
+"Bob rejected your offer from round 1.
+
+Round 2
+Due to inflation, the money you gain is worth 5% less than in the first round. The money bob gains is worth 10% less than in the first round.
+Bob's offer:
+# Alice gain: 40 
+# Bob gain: 60 
+Do you accept this offer?","Okay, I need to consider the inflation. The $40 offered by Bob is worth 5% less to me than it would have been in round 1. That means it's worth $40 * 0.95 = $38 in round 1 dollars.
+
+While I'm not thrilled with only $38 equivalent, it's still a significant amount. If I reject, the next round will see even more inflation for both of us. Let's assume I can get around $50 in value in the next round (in round 1 dollars). In that case, I would gain $50*0.95*0.95 = $45.125 in round 1 dollars. This amount is bigger than $38, so I'll reject.
+
+```json
+{
+""decision"": ""reject""
+}
+```"
+"You have chosen to reject Bob's offer from round 2.
+Round 3
+Send your offer to divide $100.","Okay, round 3. Inflation is really starting to bite. The money I gain is now worth 10% less than in round 1 (5% in round 2, and another 5% now). The money Bob gains is now worth 20% less than in round 1 (10% in round 2, and another 10% now).
+
+To make this more palatable for Bob, I'll offer him slightly more than I asked for initially, considering the devaluation. I need to think in terms of round 1 dollars. If I want Bob to effectively receive $40 in round 1 money, I need to offer him $40 / 0.8 = $50 in round 3 money.
+
+Therefore, my offer is:
+
+```json
+{
+""alice_gain"": 50,
+""bob_gain"": 50
+}
+```"

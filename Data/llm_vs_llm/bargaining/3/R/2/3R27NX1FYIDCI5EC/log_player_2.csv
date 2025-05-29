@@ -1,0 +1,69 @@
+prompt,response
+"Round 1
+Alice's offer:
+# Bob gain: 500000 
+# Alice gain: 500000 
+Do you accept this offer?","Let me think about this offer:
+
+1. Alice is proposing a 50-50 split of $1,000,000
+2. If I reject, we move to next round where:
+   * My value decreases by 20%
+   * Alice's value decreases by 10%
+   * I get to make the next offer
+
+3. This means in the next round:
+   * $500,000 would be worth $400,000 to me
+   * $500,000 would be worth $450,000 to Alice
+
+Given that:
+- It's a fair split at face value
+- The value decreases more quickly for me than Alice
+- I have the advantage of making the next offer if I reject
+- But any delay reduces total value for both of us
+
+I'll reject this offer, as I believe I can propose a better split in the next round given the asymmetric inflation rates.
+
+{""decision"": ""reject""}"
+"You have chosen to reject Alice's offer from round 1.
+Round 2
+Send your offer to divide $1,000,000.","Given that money is worth 20% less to me and 10% less to Alice in this round, I need to propose a split that:
+1. Accounts for the different depreciation rates
+2. Is attractive enough for Alice to accept (to avoid further value loss)
+3. Maximizes my gain while being reasonable
+
+I'll propose a 60-40 split in my favor:
+
+{""bob_gain"": 600000, ""alice_gain"": 400000}
+
+This way:
+- For me: $600,000 × 0.8 = $480,000 (actual value)
+- For Alice: $400,000 × 0.9 = $360,000 (actual value)
+
+This is better than a 50-50 split would be worth after depreciation, and if Alice rejects, both of us will lose more value in the next round. The split is not so extreme that it should trigger automatic rejection."
+"Alice rejected your offer from round 2.
+
+Round 3
+Due to inflation, the money you gain is worth 36% less than in the first round. The money alice gains is worth 19% less than in the first round.
+Alice's offer:
+# Bob gain: 550000 
+# Alice gain: 450000 
+Do you accept this offer?","Let me analyze this offer:
+
+1. The offered split is $550,000 for me and $450,000 for Alice
+
+2. Due to inflation:
+   * My $550,000 is worth only 64% = $352,000 (real value)
+   * Alice's $450,000 is worth 81% = $364,500 (real value)
+
+3. If I reject:
+   * Next round my money will be worth even less (44% less than original)
+   * Alice's money will be worth 27% less than original
+   * But I get to make the next offer
+
+This is actually a reasonable offer considering:
+- The real values after inflation are fairly close
+- Further delays will significantly reduce value for both of us
+- The split acknowledges my weaker position due to higher inflation rate
+- Getting a much better deal in future rounds is unlikely as Alice's money devalues slower
+
+{""decision"": ""accept""}"

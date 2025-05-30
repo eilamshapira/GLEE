@@ -1,70 +1,54 @@
 # GLEE: A Framework and Benchmark for LLM Evaluation in Language-based Economics
 
 
-## General information
+## Overview
 
-This repository contains the code for the GLEE framework, which is a framework for evaluating LLMs in language-based economics.
-The framework includes three games: bargaining, negotiation and persuasion. The framework includes a simulation environment
-for running games between LLM players and human players, and a human data collection system for running human experiments
-in which human players play against LLM players. The framework includes a set of metrics for evaluating the LLM players,
-and a set of baselines for comparison. The framework is used to evaluate the performance of several LLM players
-on the three games, and to compare the performance of the LLM players to the baselines.
+GLEE (Games in Language-based Economic Environments) is a comprehensive framework designed to systematically evaluate the performance of Large Language Models (LLMs) and human participants in strategic, language-driven economic interactions. The framework standardizes research across three fundamental economic games—bargaining, negotiation, and persuasion—each modeled to reflect real-world scenarios involving strategic decision-making and natural language communication.
 
-The repository include 3 main parts:
-1. The main part is the LLM vs. LLM games. It is run by the *main.py* script in the code directory.
-The script runs a game between two players, and receives a configuration path as an argument. 
-Several sample configurations are in the sample_configs directory, which includes
-both terminal and LLM games for each of the three games families. If tou want to run
-a large number of games, you can use the *create_YAMLs.py* script in the utils directory. This script uses the weights
-and biases API to create and run a large number of games.
-2. The human data collection system is in the otree_game directory. The system is based on the oTree package,
-and is used to run human experiments, in which human players play against LLM players.
-3. The analysis part is in the analyze directory. There are several scripts for analyzing the results of the games,
-and extracting the metrics from the results.
+GLEE addresses critical questions regarding the rationality, fairness, and efficiency of LLMs in strategic contexts. By providing extensive parameterization and controlled environments, the framework facilitates:
 
+*Simulation and experimentation* in automated interactions between LLM agents and between humans and LLMs.
 
-## Getting started
+*Human-data-collection* system leveraging the oTree platform to conduct structured human-vs-LLM experiments.
 
+*Analysis suite* for evaluating new and existing interaction data. The system enables comparison of fresh results with the extensive GLEE dataset and supports in-depth examination of model behavior across varied configurations.
 
-### Prerequisites
+In addition, the GLEE package supports new data collection for follow-up research and future publications.
 
-Before you begin, ensure you have the following tools installed on your system:
-- Git
-- Anaconda or Miniconda
+This repository includes all the necessary code and data to run experiments, collect new data, and replicate or extend the results from the corresponding research paper.
 
-### Installation
+## Quick Start
 
-
-1. Clone the repository
+1. Clone & Install
 
 ```
+# Clone repository
 git clone https://github.com/eilamshapira/GLEE.git
-```
-
-2. Create a new conda environment and install the required packages
-
-```
 cd GLEE
+
+# Install everything (creates a new conda env, downloads models, prepares Data/)
 bash installation_instructions.sh
 ```
 
-3. Optional - Download GLEE dataset
+Note The single script above replaces the multi‑step manual installation previously required.
+
+2. Provide API Keys (optional)
+
+If you plan to collect data using paid LLM endpoints (e.g., OpenAI, Anthropic) through litellm, create/edit the files inside the litellm/ directory and paste your keys there. The format is documented in that folder.
+
+3. Run the Streamlit Interface
+
+The same Streamlit app is used both for collecting fresh data and for analyzing existing GLEE logs:
+
 ```
-wget "https://technionmail-my.sharepoint.com/:u:/g/personal/eilamshapira_campus_technion_ac_il/EXFmHZ8eKg1Pp6-k25WVD38Bu1uQ_tGlOZI70y_vQ5YmMw?download=1" -O GLEE_data.zip
-unzip GLEE_data.zip -d DataStore
+streamlit run interface.py
 ```
 
-Complete installation instructions are in the installation_instructions.sh file. Notice that there are 
-different instructions for the code directory, the data directory, the human data collection system and the analysis subdirectory
-in the code directory.
-
-Complete installation instructions are in the installation_instructions.sh file. Notice that there are 
-different instructions for the code directory, the data directory, the human data collection system and the analysis subdirectory
-in the code directory.
+You will be prompted to choose between data‑collection mode and analysis mode.
 
 ## Running the code
 
-### Run a game of LLM vs. LLM
+### Run a game of LLM vs. LLM using command line
 
 In order to run games of LLMS vs. LLMS, you can use the *main.py* script in the code directory and the sample configurations
 in the sample_configs directory. For example, to run a game between two LLAMA3 players
@@ -92,26 +76,6 @@ Follow the instructions in the terminal to open the system in your browser. Ther
 run the games and collect the data. We created some sample configurations which will appear at the top of the configurations list.
 If you want to run the human data collection system in a public server you can use the heroku platform or any other server platform.
 
-### Analyze the results
-
-The folder "analyze" contains all the necessary files for data analysis as presented in the paper. 
-The file "main.py" should be executed to perform the analysis on all the files located in the "data" folder.
-
-```
-python analyze/main.py
-```
-
-
-## Main Files and Directories
-
-- **analyze/**: The directory includes the scripts for analyzing the results of the games. The main script is *main.py*.
-- **consts.py**: The file includes the constants used in the code.
-- **games/**: The directory includes the code for the three games: bargaining, negotiation and persuasion. 
-In addition, the directory includes code for the bots classes which is used in the human data collection system to simulate the LLM player.
-- **installation_instructions.sh**: The file includes the installation instructions for the repository.
-- **main.py**: The main script for running the LLM vs. LLM games.
-- **otree_game/**: The directory includes the otree code for the human data collection system. 
-The directory includes the models classes, the pages classes, the pages templates and some utils functions.
 In addition, the directory includes a script for creating the human data collection configurations and the script for processing the human data.
 - **players/**: The directory includes the code for the players classes. The directory includes the classes for the LLM players,
 the terminal player, the oTree player, the LLM player for the oTree system and the demo player, which is used for debugging.

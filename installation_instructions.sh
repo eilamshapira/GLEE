@@ -1,7 +1,3 @@
-## Clone the repository
-git clone https://github.com/eilamshapira/GLEE.git
-cd GLEE
-
 # Create the conda environment
 conda env create -f environment.yml
 conda activate GLEE

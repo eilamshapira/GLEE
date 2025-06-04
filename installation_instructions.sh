@@ -1,6 +1,21 @@
 # Create the conda environment
-conda env create -f environment.yml
+conda create --name GLEE -y python=3.11
 conda activate GLEE
+
+# requirements for the LLM games:
+pip install torch openai anthropic google.generativeai google-cloud-aiplatform vertexai
+pip install psutil
+pip install transformers
+pip install accelerate
+pip install pandas
+pip install pytest
+pip install flash_attn==2.5.8
+
+pip install wandb
+pip install litellm
+pip install joblib
+pip install streamlit
+pip install matplotlib statsmodels seaborn Levenshtein scikit-learn shap catboost xgboost 
 
 # Clone FastChat at specific commit
 git clone https://github.com/lm-sys/FastChat.git

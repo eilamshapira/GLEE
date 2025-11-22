@@ -99,7 +99,7 @@ def make_saving_path(family, config_files):
     return path
 
 def get_data_path_for_family(config_path):
-    path = config_path.replace("output/configs/Data_", "Data/")
+    path = config_path.replace("output/configs/", "Data/")
     path = path.split("_")[:-3]
     path = "_".join(path)
     return path

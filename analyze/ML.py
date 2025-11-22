@@ -1,4 +1,3 @@
-from metrics import BargainingMetrics, PersuasionMetrics, NegotiationMetrics
 import pandas as pd
 import numpy as np
 
@@ -14,12 +13,11 @@ from sklearn.metrics import mean_squared_error
 from catboost import CatBoostRegressor
 from xgboost import XGBRegressor
 from tqdm import tqdm
-import os
-import sys
 import argparse
-from collections import defaultdict
+import math
 import os
 import sys
+from collections import defaultdict
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 from metrics import BargainingMetrics, PersuasionMetrics, NegotiationMetrics
 import statsmodels.api as sm
@@ -73,18 +71,20 @@ def load_data(bargaining_files, negotiation_files, persuasion_files, games_per_m
         
         # if player_1_type is litellm player, set player_1_args_model_name to be player_1_args_model_name.split("/")[1:] and join them back
         def remove_litellm_provider_from_model_name(row, player_id):
-            assert player_id == 1 or player_id == 2
+            assert player_id in (1, 2)
             player_type_col = f"player_{player_id}_type"
             model_name_col = f"player_{player_id}_args_model_name"
+
+            # Some generated CSVs (e.g., after aggressive filtering such as myopic split)
+            # omit type columns. Fall back to the model name if that happens.
+            if player_type_col not in row.index or model_name_col not in row.index:
+                return row.get(model_name_col, None)
+
             if row[player_type_col] == "litellm":
-                if "/" in row[model_name_col]:
-                    model_name = row[model_name_col].split("/")
-                    model_name = "/".join(model_name[1:])
-                    return model_name
-                else:
-                    return row[model_name_col]
-            else:
-                return row[model_name_col]
+                model_name = row[model_name_col]
+                if isinstance(model_name, str) and "/" in model_name:
+                    return "/".join(model_name.split("/")[1:])
+            return row[model_name_col]
             
         for player_id in [1, 2]:        
             data[f"player_{player_id}_args_model_name"] = data.apply(lambda row: remove_litellm_provider_from_model_name(row, player_id), axis=1)
@@ -126,6 +126,7 @@ parser.add_argument("--models_interaction", action="store_true", default=False)
 parser.add_argument("--bargaining", type=str, nargs="+")
 parser.add_argument("--persuasion", type=str, nargs="+")
 parser.add_argument("--negotiation", type=str, nargs="+")
+parser.add_argument("--per_market", action="store_true", default=False)
 
 
 args = parser.parse_args()
@@ -351,13 +352,7 @@ def merge_features(X, merging_method, game_type):
         # game_args_max_rounds to one feature, called "market"
         # for bargaining: merge game_args_complete_information, game_args_messages_allowed, and
         # game_args_max_rounds to one feature, called "market"
-        def merge_persuasion(row):
-            return f"CI={row['game_args_is_seller_know_cv']}_MA={row['game_args_seller_message_type']}_MYOPIC={row['game_args_is_myopic']}"
-        def merge_negotiation(row):
-            return f"CI={row['game_args_complete_information']}_MA={row['game_args_messages_allowed']}_MR={row['game_args_max_rounds']}"
-        def merge_bargaining(row):
-            return f"CI={row['game_args_complete_information']}_MA={row['game_args_messages_allowed']}_MR={row['game_args_max_rounds']}"
-        X["market"] = X.apply(lambda row: merge_persuasion(row) if game_type == "persuasion" else merge_negotiation(row) if game_type == "negotiation" else merge_bargaining(row), axis=1)
+        X["market"] = X.apply(lambda row: get_market_string(row, game_type), axis=1)
         cols_to_remove = [c for c in ["game_args_is_seller_know_cv", "game_args_seller_message_type", "game_args_is_myopic", "game_args_complete_information", "game_args_messages_allowed", "game_args_max_rounds"] if c in X.columns]
         return X.drop(columns=cols_to_remove)
     elif merging_method == "all":
@@ -419,7 +414,17 @@ def fix_infinity(family, X):
         return X
     else:
         col = "game_args_max_rounds"
-        X[col] = X[col].apply(lambda x: x if x <=20 else "inf")
+        def normalize_rounds(value):
+            if isinstance(value, str):
+                return value
+            if value is None:
+                return value
+            if isinstance(value, (int, float)) and value > 20:
+                return "inf"
+            if isinstance(value, (int, float)):
+                return f"{float(value):.1f}"
+            return value
+        X[col] = X[col].apply(normalize_rounds)
         return X
 
 
@@ -440,7 +445,7 @@ forced_baselines_per_family = {
     "negotiation": {
         "game_args_complete_information": True,
         "game_args_messages_allowed": False,
-        "game_args_max_rounds": "1",
+        "game_args_max_rounds": "1.0",
         "game_args_seller_value": "1.0",
         "game_args_buyer_value": "1.0",
         "game_args_product_price_order": "10000.0",
@@ -448,12 +453,12 @@ forced_baselines_per_family = {
         "player_1_args_model_name": "gemini-1.5-flash",
         "player_2_args_model_name": "gemini-1.5-flash",
         "model_names": "alice_gemini-1.5-flash_bob_gemini-1.5-flash",
-        "market": "CI=True_MA=False_MR=1",
+        "market": "CI=True_MA=False_MR=1.0",
     },
     "bargaining": {
         "game_args_complete_information": True,
         "game_args_messages_allowed": False,
-        "game_args_max_rounds": "12",
+        "game_args_max_rounds": "12.0",
         "player_1_args_delta": "0.9",
         "player_2_args_delta": "0.9",
         "game_args_money_to_divide": "10000.0",
@@ -468,6 +473,76 @@ forced_baselines_per_family = {
     
 t_bar = tqdm(total=len(METRICS) * (len(FAMILIES) + int(args.myopic_split == True)))
 
+def get_market_string(row, game_type):
+    if game_type == "persuasion":
+        return f"CI={row['game_args_is_seller_know_cv']}_MA={row['game_args_seller_message_type']}_MYOPIC={row['game_args_is_myopic']}"
+    elif game_type == "negotiation":
+        return f"CI={row['game_args_complete_information']}_MA={row['game_args_messages_allowed']}_MR={row['game_args_max_rounds']}"
+    elif game_type == "bargaining":
+        return f"CI={row['game_args_complete_information']}_MA={row['game_args_messages_allowed']}_MR={row['game_args_max_rounds']}"
+    return "unknown"
+
+if args.per_market:
+    print("Running per-market analysis...")
+    per_market_coefs = []
+    
+    for metric in METRICS:
+        for family in FAMILIES:
+            family_data = data[data["game_type"] == family].copy()
+            family_data = fix_infinity(family, family_data)
+            
+            # Create market column
+            family_data["market"] = family_data.apply(lambda row: get_market_string(row, family), axis=1)
+            
+            unique_markets = family_data["market"].unique()
+            
+            for market in unique_markets:
+                market_data = family_data[family_data["market"] == market].copy()
+                
+                # Prepare X and y
+                # We only want models_names as feature
+                X = market_data[["models_names"]]
+                y = market_data[metric].values
+                
+                # Fit model
+                model = StatsModelOfOneHots()
+                
+                forced_baselines = {}
+                if family in forced_baselines_per_family:
+                    fb = forced_baselines_per_family[family]
+                    if "models_names" in fb:
+                        forced_baselines["models_names"] = fb["models_names"]
+                    if "model_names" in fb:
+                        forced_baselines["models_names"] = fb["model_names"]
+
+                try:
+                    model.fit(X, y, forced_baselines=forced_baselines)
+                    df_effects = model.get_params_and_ci_relative_to_baseline()
+                    
+                    for _, row in df_effects.iterrows():
+                        coef_tuple = (
+                            family,
+                            metric,
+                            row["param"], # This will be models_names
+                            row["value"], # The specific model pair
+                            row["coef"],
+                            row["ci_low"],
+                            row["ci_high"],
+                            market # Add market info
+                        )
+                        per_market_coefs.append(coef_tuple)
+                        
+                except Exception as e:
+                    print(f"Error fitting model for {family}, {metric}, {market}: {e}")
+            
+            t_bar.update(1)
+
+    # Save per_market_coefs
+    df_pm = pd.DataFrame(per_market_coefs, columns=["family", "metric", "paramter_coef", "value", "effect", "ci_low", "ci_high", "market"])
+    os.makedirs("output/analyze_coefs", exist_ok=True)
+    df_pm.to_csv(f"output/analyze_coefs/{args.exp_name}_per_market.csv", index=False)
+    print(f"Saved per-market analysis to output/analyze_coefs/{args.exp_name}_per_market.csv")
+    sys.exit(0)
 
 for metric in METRICS:
     for family in FAMILIES:
@@ -526,4 +601,6 @@ def analyze_coefs(args):
     
     # Save the analyzed coefficients
     df.to_csv(f"output/analyze_coefs/{args.exp_name}_analyzed.csv", index=False)
+
+
 

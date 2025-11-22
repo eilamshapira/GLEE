@@ -26,11 +26,10 @@ This repository includes all the necessary code and data to run experiments, col
 git clone https://github.com/eilamshapira/GLEE.git
 cd GLEE
 
-# Install everything (creates a new conda env, downloads models, prepares Data/)
-bash installation_instructions.sh
+# Install everything (creates a new uv Python environment, downloads models, prepares Data/)
+source init.sh
 ```
 
-Note The single script above replaces the multi‑step manual installation previously required.
 
 2. Provide API Keys (optional)
 

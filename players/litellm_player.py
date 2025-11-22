@@ -2,7 +2,7 @@ from players.base_player import Player
 import os
 import litellm
 import time
-from fastchat.model import load_model, get_conversation_template
+from utils.conversation import get_conv_template
 import subprocess
 
 class LiteLLMPlayer(Player):
@@ -15,7 +15,7 @@ class LiteLLMPlayer(Player):
         else:
             self.model_name = kwargs["model_name"]
         
-        self.conv = get_conversation_template("gpt-4")
+        self.conv = get_conv_template("default")
         self.user_name = "user"
         self.model_args = load_model_args(self.model_name)
 

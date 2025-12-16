@@ -32,15 +32,21 @@ class OtreeLiteLLMPlayer(Player):
         count = 0
         while count < 7:
             try:
+                kwargs = {}
+                if self.timeout:
+                    kwargs['timeout'] = self.timeout
                 response = litellm.completion(
                     model=self.model_name,
-                    messages=self.conv.to_openai_api_messages()
+                    messages=self.conv.to_openai_api_messages(),
+                    **kwargs
                 )
                 self.text_response = response['choices'][0]['message']['content'].strip()
                 if format_checker(self.text_response):
                     self.conv.append_message(self.conv.roles[1], self.text_response)
                     break
             except Exception as e:
+                if self.timeout and "timeout" in str(e).lower():
+                    raise e
                 print("Error generating content", e)
                 time.sleep(1)
             count += 1

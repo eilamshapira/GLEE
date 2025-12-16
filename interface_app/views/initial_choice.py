@@ -5,7 +5,7 @@ import streamlit as st
 def render_initial_choice():
     choice = st.radio(
         "Choose an Option",
-        ("Run New Experiment", "Continue Existing Experiment", "Analyze Results"),
+        ("Run New Experiment", "Continue Existing Experiment", "Analyze Results", "Competition"),
     )
 
     if st.button("Proceed"):

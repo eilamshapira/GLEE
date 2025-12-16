@@ -32,10 +32,14 @@ class LiteLLMPlayer(Player):
         count = 0
         while count < 7:
             try:
+                kwargs = self.model_args.copy()
+                if self.timeout:
+                    kwargs['timeout'] = self.timeout
+
                 response = litellm.completion(
                     model=self.model_name,
                     messages=self.conv.to_openai_api_messages(),
-                    **self.model_args
+                    **kwargs
                 )
                 self.text_response = response['choices'][0]['message']['content'].strip()
                 if format_checker(self.text_response):
@@ -43,6 +47,8 @@ class LiteLLMPlayer(Player):
                     self.conv.append_message(self.conv.roles[1], self.text_response)
                     break
             except Exception as e:
+                if self.timeout and "timeout" in str(e).lower():
+                    raise e
                 print(e)
                 time.sleep(4 ** (count + 1))
             count += 1

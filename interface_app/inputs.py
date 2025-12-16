@@ -130,3 +130,35 @@ def get_num_input(label, game_name=""):
         key=f"{game_name}_max_rounds",
     )
     return [choice]
+
+
+def get_single_numeric_input(label, min_val=0.0, max_val=1000.0, step=10.0, game_name="", default_options=None, astype=int):
+    default_options = default_options or []
+    key = f"{game_name}_{label}_single"
+    
+    if default_options:
+        options = list(default_options) + ["Custom"]
+        # Try to find a reasonable default index
+        idx = 0
+        if len(options) > 1:
+             idx = 0
+        
+        selection = st.selectbox(label, options, index=idx, key=f"{key}_select")
+        
+        if selection == "Custom":
+             val = st.number_input(f"{label} (Custom)", min_value=min_val, max_value=max_val, step=step, key=f"{key}_custom")
+             return [astype(val)]
+        else:
+             return [astype(selection)]
+    else:
+        val = st.number_input(label, min_value=min_val, max_value=max_val, step=step, key=key)
+        return [astype(val)]
+
+
+def get_single_bool_input(label, game_name="", options=None, default_options=None):
+    options = options or [True, False]
+    key = f"{game_name}_{label}_single"
+    # default_options is ignored for single selection, we just pick the first one or let user choose
+    val = st.radio(label, options, key=key)
+    return [val]
+

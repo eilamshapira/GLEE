@@ -122,3 +122,4 @@ def render_run_new_experiment():
                 time.sleep(1)
             status_text.text("All experiments completed!")
             st.stop()
+

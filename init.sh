@@ -1,6 +1,7 @@
 #!/bin/bash
 
 ENV_DIR=".GLEE-env"
+PIP="pip" # change this if you need to use pip3 or a specific pip version
 
 # Ensure uv is installed
 if ! command -v uv &>/dev/null; then

@@ -1,7 +1,5 @@
 # GLEE: A Framework and Benchmark for LLM Evaluation in Language-based Economics
 
-[![arXiv](https://img.shields.io/badge/arXiv-2410.05254-blue.svg)](https://arxiv.org/pdf/2410.05254)
-
 
 ## Overview
 
@@ -28,7 +26,7 @@ This repository includes all the necessary code and data to run experiments, col
 git clone https://github.com/eilamshapira/GLEE.git
 cd GLEE
 
-# Install everything
+# Install everything (creates a new uv Python environment, downloads models, prepares Data/)
 source init.sh
 ```
 
@@ -84,25 +82,3 @@ the terminal player, the oTree player, the LLM player for the oTree system and t
 - **settings.py**: The file includes the otree settings for the human data collection system.
 - **utils/**: The directory includes some utility functions for the whole project.
 - **templates/**: The directory includes the templates for the human data collection system.
-
-
-### Citation
-
-If you use TabSTAR in your research, please cite:
-
-```bibtex
-@article{shapira2024glee,
-  title={Glee: A unified framework and benchmark for language-based economic environments},
-  author={Shapira, Eilam and Madmon, Omer and Reinman, Itamar and Amouyal, Samuel Joseph and Reichart, Roi and Tennenholtz, Moshe},
-  journal={arXiv preprint arXiv:2410.05254},
-  year={2024}
-}
-```
-
-### License
-
-MIT
-
-## ❤️ Contributors
-
-[![langflow contributors](https://contrib.rocks/image?repo=eilamshapira/GLEE)](https://github.com/eilamshapira/GLEE/graphs/contributors)

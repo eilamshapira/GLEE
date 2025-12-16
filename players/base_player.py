@@ -18,6 +18,9 @@ class Player(ABC):
         self.last_action_json = None
         self.player_id = player_id
         self.rules = ""
+        self.timeout = None
+        self.game_params = {}
+        self.timeout = None
 
         print(f"Prompt to {self.public_name} will \033[{91 + self.player_id}mbe colored\033[0m.")
 
@@ -87,3 +90,6 @@ class Player(ABC):
         new_prompt = new_prompt.strip()
         self.set_system_message(new_prompt)
         print("System:", new_prompt)
+
+    def set_game_params(self, params):
+        self.game_params = params

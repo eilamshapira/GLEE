@@ -6,10 +6,12 @@ from interface_app.views import (
     render_continue_existing_experiment,
     render_initial_choice,
     render_run_new_experiment,
+    render_competition,
 )
 
 
 def main():
+    st.set_page_config(layout="wide")
     st.title("GLEE Experimentation Platform")
     initialize_session_state()
 
@@ -29,6 +31,8 @@ def main():
         render_continue_existing_experiment()
     elif mode == "Analyze Results":
         render_analyze_results()
+    elif mode == "Competition":
+        render_competition()
     else:
         st.error(f"Unsupported mode: {mode}")
 

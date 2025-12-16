@@ -7,6 +7,10 @@ def initialize_session_state():
         'selected_models': [],
         'parameters': {},
         'initial_choice_made': False,
+        'competition_step': 'setup',
+        'competition_config': {},
+        'competition_players': [],
+        'competition_results': {},
     }
 
     for key, value in defaults.items():

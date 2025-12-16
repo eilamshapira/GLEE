@@ -8,8 +8,8 @@ from utils.utils import pretty_number
 
 class BargainingGame(Game):
     def __init__(self, player_1: Player, player_2: Player, data_logger, money_to_divide, max_rounds,
-                 complete_information, messages_allowed, show_inflation_update=True):
-        super().__init__(player_1, player_2, data_logger)
+                 complete_information, messages_allowed, show_inflation_update=True, timeout=60):
+        super().__init__(player_1, player_2, data_logger, timeout)
         self.delta_1 = player_1.delta
         self.delta_2 = player_2.delta
         self.max_rounds = max_rounds
@@ -19,6 +19,19 @@ class BargainingGame(Game):
         self.complete_information = complete_information
         self.messages_allowed = messages_allowed
         self.show_inflation_update = show_inflation_update
+
+        # Pass game parameters to players
+        game_params = {
+            "money_to_divide": money_to_divide,
+            "max_rounds": max_rounds,
+            "complete_information": complete_information,
+            "messages_allowed": messages_allowed,
+            "show_inflation_update": show_inflation_update,
+            "delta_1": self.delta_1,
+            "delta_2": self.delta_2
+        }
+        self.player_1.set_game_params(game_params)
+        self.player_2.set_game_params(game_params)
 
         assert player_1.public_name != player_2.public_name, "Players should have different names"
 

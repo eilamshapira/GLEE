@@ -18,6 +18,12 @@ This repository contains the GLEE framework for evaluating LLMs in economic game
 
 ## Development Workflows
 
+### Environment Setup
+Before running any code, ensure you are in the `.GLEE-env` environment:
+```bash
+source init.sh
+```
+
 ### Running Simulations (LLM vs LLM)
 Use `main.py` with a configuration file:
 ```bash

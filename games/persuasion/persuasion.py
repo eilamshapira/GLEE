@@ -11,11 +11,11 @@ class PersuasionGame(Game):
     def __init__(self, player_1: Player, player_2: Player, data_logger,
                  is_myopic: bool, product_price, p: float,
                  c, v=0, total_rounds=20, is_seller_know_cv: bool = True, is_buyer_know_p: bool = True,
-                 seller_message_type: str = "text", allow_buyer_message: bool = False):
+                 seller_message_type: str = "text", allow_buyer_message: bool = False, timeout=60):
         """p: the probability item is good
         c: the value for the buyer if item is good
         v: the value for the buyer if item is bad"""
-        super().__init__(player_1, player_2, data_logger)
+        super().__init__(player_1, player_2, data_logger, timeout)
         self.is_myopic = is_myopic
         self.product_price = product_price
         assert 0 <= p <= 1

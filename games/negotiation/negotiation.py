@@ -13,8 +13,9 @@ class NegotiationGame(Game):
                  buyer_value: float,
                  complete_information: bool,
                  product_price_order: int,  # Note: final value is seller_value * product_price_order
-                 messages_allowed: bool):
-        super().__init__(player_1, player_2, data_logger)
+                 messages_allowed: bool,
+                 timeout=60):
+        super().__init__(player_1, player_2, data_logger, timeout)
         self.max_rounds = max_rounds
         self.player_1.final_value = product_price_order * seller_value
         self.player_2.final_value = product_price_order * buyer_value

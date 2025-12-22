@@ -5,7 +5,7 @@ from players.base_player import Player
 
 
 class Game(ABC):
-    def __init__(self, player_1: Player, player_2: Player, data_logger, timeout=60):
+    def __init__(self, player_1: Player, player_2: Player, data_logger, timeout=120):
         self.player_1 = player_1
         self.player_2 = player_2
         self.player_1.timeout = timeout

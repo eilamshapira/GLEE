@@ -49,7 +49,7 @@ def game_parameters(game_name, single_value=False):
     elif game_name == "Bargaining":
         params.update(
             {
-                'player_1_delta': num_input(
+                'delta_1': num_input(
                     f"{game_name} Player 1 Delta",
                     min_val=0.0,
                     max_val=1.0,
@@ -58,7 +58,7 @@ def game_parameters(game_name, single_value=False):
                     default_options=[0.8, 0.9, 0.95, 1],
                     astype=float,
                 ),
-                'player_2_delta': num_input(
+                'delta_2': num_input(
                     f"{game_name} Player 2 Delta",
                     min_val=0.0,
                     max_val=1.0,

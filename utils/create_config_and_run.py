@@ -65,6 +65,8 @@ parser.add_argument('--game_args_messages_allowed', type=str2bool, help='Are mes
 parser.add_argument('--game_args_money_to_divide', type=int, help='Money to divide')
 parser.add_argument('--game_args_max_rounds', type=int, help='Maximum rounds')
 parser.add_argument('--game_args_show_inflation_update', type=str2bool, help='Show inflation update')
+parser.add_argument('--game_args_delta_1', type=float, help='Delta value for player 1 (discount factor)')
+parser.add_argument('--game_args_delta_2', type=float, help='Delta value for player 2 (discount factor)')
 
 # Negotiation game
 parser.add_argument('--game_args_seller_value', type=float, help='Seller value')
@@ -172,6 +174,10 @@ if args.game_args_max_rounds is not None:
     game_args["max_rounds"] = args.game_args_max_rounds
 if args.game_args_show_inflation_update is not None:
     game_args["show_inflation_update"] = args.game_args_show_inflation_update
+if args.game_args_delta_1 is not None:
+    game_args["delta_1"] = args.game_args_delta_1
+if args.game_args_delta_2 is not None:
+    game_args["delta_2"] = args.game_args_delta_2
 
 # Negotiation game
 if args.game_args_seller_value is not None:

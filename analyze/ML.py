@@ -335,8 +335,8 @@ params_per_familiy = {
     "bargaining": ["game_args_complete_information",
                    "game_args_messages_allowed",
                    "game_args_max_rounds",
-                   "player_1_args_delta",
-                   "player_2_args_delta",
+                   "game_args_delta_1",
+                   "game_args_delta_2",
                    "game_args_money_to_divide",
                    #    "game_args_show_inflation_update"
                    ]
@@ -459,8 +459,8 @@ forced_baselines_per_family = {
         "game_args_complete_information": True,
         "game_args_messages_allowed": False,
         "game_args_max_rounds": "12.0",
-        "player_1_args_delta": "0.9",
-        "player_2_args_delta": "0.9",
+        "game_args_delta_1": "0.9",
+        "game_args_delta_2": "0.9",
         "game_args_money_to_divide": "10000.0",
         # "models_names": "alice_gpt-3.5-turbo_bob_gpt-3.5-turbo",
         "player_1_args_model_name": "gemini-1.5-flash",

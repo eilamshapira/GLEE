@@ -246,7 +246,10 @@ class Metrics:
             all_combinations_df[metric] = predicted_metrics
 
         if any(["delta" in c for c in all_combinations_df.columns]):
-            all_combinations_df["delta_diff"] = all_combinations_df["player_1_args_delta"].astype(float) - all_combinations_df["player_2_args_delta"].astype(float)
+            # Handle both old format (player_1_args_delta) and new format (game_args_delta_1)
+            delta_1_col = "game_args_delta_1" if "game_args_delta_1" in all_combinations_df.columns else "player_1_args_delta"
+            delta_2_col = "game_args_delta_2" if "game_args_delta_2" in all_combinations_df.columns else "player_2_args_delta"
+            all_combinations_df["delta_diff"] = all_combinations_df[delta_1_col].astype(float) - all_combinations_df[delta_2_col].astype(float)
             all_combinations_df["delta_diff"] = all_combinations_df["delta_diff"].apply(lambda x: float(f"{float(x):.2f}"))
             columns += ["delta_diff"]
 
@@ -296,18 +299,26 @@ class BargainingMetrics(Metrics):
                          player_1_name="Alice",
                          player_2_name="Bob", **args)
         self.add_to_drop("delta_diff")
-        self.interaction_features_couples = [("player_1_args_delta", "player_2_args_delta")]
+        # Handle both old format (player_1_args_delta) and new format (game_args_delta_1)
+        if "game_args_delta_1" in self.data.columns and "game_args_delta_2" in self.data.columns:
+            self.interaction_features_couples = [("game_args_delta_1", "game_args_delta_2")]
+            self.delta_1_col = "game_args_delta_1"
+            self.delta_2_col = "game_args_delta_2"
+        else:
+            self.interaction_features_couples = [("player_1_args_delta", "player_2_args_delta")]
+            self.delta_1_col = "player_1_args_delta"
+            self.delta_2_col = "player_2_args_delta"
 
 
     def calculate_metrics(self):
-        # self.data["p_star"] = (1 - self.data["player_2_args_delta"]) / (
-        #         1 - self.data["player_1_args_delta"] * self.data["player_2_args_delta"])
+        # self.data["p_star"] = (1 - self.data[self.delta_2_col]) / (
+        #         1 - self.data[self.delta_1_col] * self.data[self.delta_2_col])
         self.data["p_ev"] = self.data["alice_gain"] / self.data["game_args_money_to_divide"]
         assert (self.data["alice_gain"] + self.data["bob_gain"] == self.data["game_args_money_to_divide"]).any()
         self.data["alice_final_share"] = (self.data["p_ev"] *
-                                          self.data["player_1_args_delta"] ** (self.data["rounds_played"] - 1))
+                                          self.data[self.delta_1_col] ** (self.data["rounds_played"] - 1))
         self.data["bob_final_share"] = ((1 - self.data["p_ev"]) *
-                                        self.data["player_2_args_delta"] ** (self.data["rounds_played"] - 1))
+                                        self.data[self.delta_2_col] ** (self.data["rounds_played"] - 1))
         self.data["efficiency"] = self.data["alice_final_share"] + self.data["bob_final_share"]
         self.data["fairness"] = 1 - 4 * (self.data["p_ev"] - 0.5) ** 2
         

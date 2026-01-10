@@ -26,8 +26,8 @@ base_configs = {
                    'game_args_seller_message_type': "text",
                    'game_args_is_myopic': False
                    },
-    "Bargaining": {'player_1_args_delta': 0.95,
-                   'player_2_args_delta': 0.95,
+    "Bargaining": {'game_args_delta_1': 0.95,
+                   'game_args_delta_2': 0.95,
                    'game_args_money_to_divide': 10000,
                    'game_args_max_rounds': 99,
                    'game_args_complete_information': True,
@@ -54,6 +54,8 @@ pretty_x_features = {
     "Bargaining": {
         "player_1_args_delta": "$\delta_A$",
         "player_2_args_delta": "$\delta_B$",
+        "game_args_delta_1": "$\delta_A$",
+        "game_args_delta_2": "$\delta_B$",
         "game_args_money_to_divide": "$M$",
         "game_args_max_rounds": "$T$",
         "game_args_complete_information": "Complete Information",

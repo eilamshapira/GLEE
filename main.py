@@ -10,11 +10,25 @@ def create_players(config):
     """
     public_name_player_2 = "the buyer" if (config['game'] == "negotiation" and config.get('is_myopic', False)) else \
         config.get('player_2_name', 'Bob')
+
+    # For backwards compatibility with old configs, check if delta is in game_args (new style) or player_args (old style)
+    game_args = config.get('game_args', {})
+    default_delta_1 = game_args.get('delta_1', config.get('player_1_delta', 0.99))
+    default_delta_2 = game_args.get('delta_2', config.get('player_2_delta', 0.99))
+
     p1_args = config.get('player_1_args', {'public_name': config.get('player_1_name', 'Alice'),
-                                           'delta': config.get('player_1_delta', 0.99)})
-    p2_args = config.get('player_2_args', {'delta': config.get('player_2_delta', 0.99),
+                                           'delta': default_delta_1})
+    # Ensure delta is set for player 1 if not present
+    if 'delta' not in p1_args:
+        p1_args['delta'] = default_delta_1
+
+    p2_args = config.get('player_2_args', {'delta': default_delta_2,
                                            'public_name': public_name_player_2,
                                            'player_id': config.get('player_2_id', 3)})
+    # Ensure delta is set for player 2 if not present
+    if 'delta' not in p2_args:
+        p2_args['delta'] = default_delta_2
+
     p1 = player_factory(config.get('player_1_type', 'terminal'), p1_args)
     if config.get('player_2_type', 'terminal') == 'hf' and config.get('player_1_type', 'terminal') == 'hf':
         if (p1_args.get('model_name', None) == p2_args.get('model_name', None) and

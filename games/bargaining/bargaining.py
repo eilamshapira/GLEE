@@ -8,10 +8,12 @@ from utils.utils import pretty_number
 
 class BargainingGame(Game):
     def __init__(self, player_1: Player, player_2: Player, data_logger, money_to_divide, max_rounds,
-                 complete_information, messages_allowed, show_inflation_update=True, timeout=120):
+                 complete_information, messages_allowed, show_inflation_update=True, timeout=120,
+                 delta_1=None, delta_2=None):
         super().__init__(player_1, player_2, data_logger, timeout)
-        self.delta_1 = player_1.delta
-        self.delta_2 = player_2.delta
+        # Support delta from game_args (preferred) or fallback to player args for backwards compatibility
+        self.delta_1 = delta_1 if delta_1 is not None else player_1.delta
+        self.delta_2 = delta_2 if delta_2 is not None else player_2.delta
         self.max_rounds = max_rounds
         self.delta_1_loss = (1 - self.delta_1) * 100
         self.delta_2_loss = (1 - self.delta_2) * 100

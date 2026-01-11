@@ -253,8 +253,12 @@ def create_configs_file(
             eligible_commits["human"] = True
             df = df[df[commit_col].map(eligible_commits)]
 
-    if game_type == "bargaining" and "player_1_args_delta" in df.columns and "player_2_args_delta" in df.columns:
-        df["delta_diff"] = (df["player_1_args_delta"] - df["player_2_args_delta"]).apply(lambda x: f"{x:.2f}")
+    if game_type == "bargaining":
+        # Handle both old format (player_1_args_delta) and new format (game_args_delta_1)
+        if "game_args_delta_1" in df.columns and "game_args_delta_2" in df.columns:
+            df["delta_diff"] = (df["game_args_delta_1"] - df["game_args_delta_2"]).apply(lambda x: f"{x:.2f}")
+        elif "player_1_args_delta" in df.columns and "player_2_args_delta" in df.columns:
+            df["delta_diff"] = (df["player_1_args_delta"] - df["player_2_args_delta"]).apply(lambda x: f"{x:.2f}")
 
     config_path = Path(get_configs_csv_path(game_type, data_path=data_path, exp_name=exp_name))
     df.to_csv(config_path, index=False)

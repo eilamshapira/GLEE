@@ -35,9 +35,14 @@ def generate_configurations_without_models(parameters):
     for param_combo in param_combos:
         config = {
             "game_args": {key: param_combo[param_keys.index(key)] for key in param_keys if "player_1_" not in key and "player_2_" not in key},
-            "player_1_args": {key.replace("player_1_", ""): param_combo[param_keys.index(key)] for key in param_keys if "player_1_" in key},
-            "player_2_args": {key.replace("player_2_", ""): param_combo[param_keys.index(key)] for key in param_keys if "player_2_" in key},
+            "player_1_args": {key.replace("player_1_", ""): param_combo[param_keys.index(key)] for key in param_keys if "player_1_" in key and key != "player_1_delta"},
+            "player_2_args": {key.replace("player_2_", ""): param_combo[param_keys.index(key)] for key in param_keys if "player_2_" in key and key != "player_2_delta"},
         }
+        # Legacy support: handle player_1_delta and player_2_delta if they exist
+        if "player_1_delta" in param_keys:
+            config["player_1_args"]["delta"] = param_combo[param_keys.index("player_1_delta")]
+        if "player_2_delta" in param_keys:
+            config["player_2_args"]["delta"] = param_combo[param_keys.index("player_2_delta")]
         configurations.append(config)
 
     return configurations

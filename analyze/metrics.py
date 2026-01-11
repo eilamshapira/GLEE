@@ -294,13 +294,10 @@ class NegotiationMetrics(Metrics):
 
 class BargainingMetrics(Metrics):
     def __init__(self, config_with_statistics_path, **args):
-        super().__init__(config_with_statistics_path,
-                         family_name="Bargaining",
-                         player_1_name="Alice",
-                         player_2_name="Bob", **args)
-        self.add_to_drop("delta_diff")
-        # Handle both old format (player_1_args_delta) and new format (game_args_delta_1)
-        if "game_args_delta_1" in self.data.columns and "game_args_delta_2" in self.data.columns:
+        # Pre-read data to determine column format before calling super().__init__()
+        # which calls calculate_metrics() that needs delta_1_col and delta_2_col
+        data_columns = pd.read_csv(config_with_statistics_path, index_col=0, nrows=0).columns
+        if "game_args_delta_1" in data_columns and "game_args_delta_2" in data_columns:
             self.interaction_features_couples = [("game_args_delta_1", "game_args_delta_2")]
             self.delta_1_col = "game_args_delta_1"
             self.delta_2_col = "game_args_delta_2"
@@ -308,6 +305,12 @@ class BargainingMetrics(Metrics):
             self.interaction_features_couples = [("player_1_args_delta", "player_2_args_delta")]
             self.delta_1_col = "player_1_args_delta"
             self.delta_2_col = "player_2_args_delta"
+
+        super().__init__(config_with_statistics_path,
+                         family_name="Bargaining",
+                         player_1_name="Alice",
+                         player_2_name="Bob", **args)
+        self.add_to_drop("delta_diff")
 
 
     def calculate_metrics(self):

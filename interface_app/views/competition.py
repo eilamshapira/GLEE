@@ -3,7 +3,7 @@ import json
 import time
 import os
 import concurrent.futures
-from http_player.check_players import check_player
+from http_player.check_players import check_player, load_keys
 from games.game_factory import game_factory
 from players.player_factory import player_factory
 from utils.utils import DataLogger
@@ -16,6 +16,7 @@ from interface_app.models_manager import get_models
 
 def run_game_wrapper(args):
     config, p1_def, p2_def, experiment_name = args
+    dl = None
     try:
         # Merge player args
         p1_args = p1_def['args'].copy()
@@ -35,7 +36,7 @@ def run_game_wrapper(args):
         p1 = player_factory(p1_def['type'], p1_args)
         p2 = player_factory(p2_def['type'], p2_args)
         
-        timeout = config.get("game_args", {}).get("timeout", 30)
+        timeout = config.get("game_args", {}).get("timeout", 120)
         p1.timeout = timeout
         p2.timeout = timeout
         
@@ -83,34 +84,47 @@ def run_game_wrapper(args):
                             p2_gain = (raw_p2 / money) * 100
                             
         elif game_type == "negotiation":
-            if dl.actions:
-                last_action = dl.actions[-1]
-                decision = last_action.get("decision")
-                if decision == "AcceptOffer":
-                    if len(dl.actions) >= 2:
-                        offer = dl.actions[-2]
-                        price = offer.get("product_price")
-                        if isinstance(price, str):
-                             try:
-                                price = float(price.replace("$", ""))
-                             except:
-                                price = 0
-                        
-                        if price is not None:
-                            seller_val = game_args.get("seller_value", 0)
-                            buyer_val = game_args.get("buyer_value", 0)
-                            price_order = game_args.get("product_price_order", 1)
+            seller_val = game_args.get("seller_value", 0)
+            buyer_val = game_args.get("buyer_value", 0)
+            price_order = game_args.get("product_price_order", 1)
+            
+            seller_cost = seller_val * price_order
+            buyer_valuation = buyer_val * price_order
+            surplus = buyer_valuation - seller_cost
+
+            # Special case: Identical values
+            if abs(surplus) < 1e-9:
+                p1_gain = 50
+                p2_gain = 50
+            else:
+                # Default is 0 (no deal)
+                p1_gain = 0
+                p2_gain = 0
+                
+                if dl.actions:
+                    last_action = dl.actions[-1]
+                    decision = last_action.get("decision")
+                    if decision == "AcceptOffer":
+                        if len(dl.actions) >= 2:
+                            offer = dl.actions[-2]
+                            price = offer.get("product_price")
+                            if isinstance(price, str):
+                                    try:
+                                        price = float(price.replace("$", ""))
+                                    except:
+                                        price = 0
                             
-                            seller_cost = seller_val * price_order
-                            buyer_valuation = buyer_val * price_order
-                            
-                            raw_p1 = price - seller_cost
-                            raw_p2 = buyer_valuation - price
-                            
-                            # Normalize by monetary scale (product_price_order)
-                            if price_order > 0:
-                                p1_gain = (raw_p1 / price_order) * 100
-                                p2_gain = (raw_p2 / price_order) * 100
+                            if price is not None:
+                                raw_p1 = price - seller_cost
+                                raw_p2 = buyer_valuation - price
+                                
+                                # Normalize
+                                p1_gain = (raw_p1 / surplus) * 100
+                                p2_gain = (raw_p2 / surplus) * 100
+                
+                # Cap scores
+                p1_gain = max(-50, min(150, p1_gain))
+                p2_gain = max(-50, min(150, p2_gain))
 
         elif game_type == "persuasion":
             price = game_args.get("product_price", 10)
@@ -146,7 +160,52 @@ def run_game_wrapper(args):
         }
         
     except Exception as e:
-        return {"status": "error", "error": str(e)}
+        p1_gain = 0
+        p2_gain = 0
+        
+        # Attempt to recover partial payoff for persuasion
+        if config.get('game_type', '').lower() == 'persuasion' and dl is not None:
+            try:
+                game_args = config.get('game_args', {})
+                price = game_args.get("product_price", 10)
+                total_rounds = game_args.get("total_rounds", 20)
+                
+                current_worth = 0
+                seller_raw = 0
+                buyer_raw = 0
+                
+                # Use dl.player_2 if available, otherwise fallback to "Bob"
+                p2_name = dl.player_2.public_name if hasattr(dl, 'player_2') else "Bob"
+
+                for action in dl.actions:
+                    player_name = action.get("player")
+                    if player_name == NATURE_NAME:
+                        current_worth = action.get("product_worth", 0)
+                    elif player_name == p2_name: # Buyer
+                        decision = action.get("decision")
+                        if decision == "yes":
+                            seller_raw += price
+                            buyer_raw += current_worth - price
+                
+                # Normalize by monetary scale (total_rounds * product_price)
+                monetary_scale = total_rounds * price
+                if monetary_scale > 0:
+                    p1_gain = (seller_raw / monetary_scale) * 100
+                    p2_gain = (buyer_raw / monetary_scale) * 100
+            except Exception as calc_error:
+                # If calculation fails, keep 0
+                print(f"Failed to calculate partial payoff: {calc_error}")
+                pass
+
+        return {
+            "config_id": str(config.get("game_args")), 
+            "p1": p1_def['args']['public_name'], 
+            "p2": p2_def['args']['public_name'], 
+            "p1_gain": p1_gain,
+            "p2_gain": p2_gain,
+            "status": "error", 
+            "error": str(e)
+        }
 
 def render_competition():
     st.header("Competition Mode")
@@ -196,7 +255,7 @@ def render_competition():
                 # Ensure game_args has timeout
                 if "game_args" not in config:
                     config["game_args"] = {}
-                config["game_args"]["timeout"] = 30 # Default timeout
+                config["game_args"]["timeout"] = 120 # Default timeout
             
             st.session_state.competition_configs.extend(new_configs)
             st.success(f"Generated {len(new_configs)} configurations!")
@@ -311,6 +370,7 @@ def render_competition():
             st.warning("No players loaded.")
         else:
             active_players = []
+            keys = load_keys()
             cols = st.columns(6)
             for i, p in enumerate(players):
                 with cols[i % 6]:
@@ -321,17 +381,29 @@ def render_competition():
                     if p["type"] == "http":
                         url = p["args"].get("url", "")
                         
+                        # Normalize url for key lookup
+                        lookup_url = url
+                        if not lookup_url.startswith("http"):
+                            lookup_url = f"http://{lookup_url}"
+                        lookup_url = lookup_url.rstrip('/')
+                        
+                        key = keys.get(lookup_url)
+                        
                         # Let's store status in session_state
                         status_key = f"status_{p['args'].get('public_name')}"
                         if status_key not in st.session_state or next_check >= 29: # Just checked or button pressed
-                             is_alive_check, msg = check_player(url)
+                             is_alive_check, msg = check_player(url, key)
                              st.session_state[status_key] = (is_alive_check, msg)
                         
                         is_alive, msg = st.session_state[status_key]
                         
                         if is_alive:
-                            status_color = "green"
-                            status_text = "Online"
+                            if "Auth FAILED" in msg:
+                                status_color = "orange"
+                                status_text = "Not Verified"
+                            else:
+                                status_color = "green"
+                                status_text = "Online & Verified"
                         else:
                             status_color = "red"
                             status_text = "Offline"
@@ -432,6 +504,7 @@ def render_competition():
                             results.append(res)
                         else:
                             st.error(f"Game failed: {res['error']}")
+                            results.append(res)
                 
                 st.session_state.competition_results = results
                 st.session_state.competition_step = "finished"

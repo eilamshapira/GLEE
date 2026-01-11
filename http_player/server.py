@@ -35,7 +35,7 @@ def chat():
         llm = ChatOpenAI(
             api_key=os.getenv("OPENAI_API_KEY"),
             base_url="https://api.llmod.ai/v1",
-            model="ZLSXBEO-gemini-2.5-flash-lite"
+            model="NEW_MODEL_NAME!!!"
         )
         response_text = llm.invoke(messages).content
         # response_text = response.choices[0].message.content

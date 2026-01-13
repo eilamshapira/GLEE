@@ -49,7 +49,30 @@ class PersuasionGame(Game):
         self.set_rules(os.path.join(path, 'rules_prompt.json'), p_info, 'p1')
         self.set_rules(os.path.join(path, 'rules_prompt.json'), p_info, 'p2')
         self.player_1.req_offer_text, self.player_2.req_offer_text = self.build_offer_prompt()
-        self.game()
+
+        # Store game params for error logging
+        game_params = {
+            "is_myopic": is_myopic,
+            "product_price": product_price,
+            "p": p,
+            "c": c,
+            "v": v,
+            "total_rounds": total_rounds,
+            "is_seller_know_cv": is_seller_know_cv,
+            "is_buyer_know_p": is_buyer_know_p,
+            "seller_message_type": seller_message_type,
+            "allow_buyer_message": allow_buyer_message
+        }
+
+        # Run game with error handling
+        try:
+            self.game()
+        except AssertionError as e:
+            self._log_game_failure("AssertionError", e, game_params)
+            raise
+        except Exception as e:
+            self._log_game_failure("Exception", e, game_params)
+            raise
 
     def build_seller_intro(self):
         buyer = "random buyers" if self.is_myopic else self.player_2.public_name
@@ -161,48 +184,76 @@ class PersuasionGame(Game):
 
     @staticmethod
     def is_offer_in_format(string_action):
+        """
+        Check if offer/message is in correct JSON format.
+
+        Returns:
+            tuple: (is_valid: bool, error_message: str)
+        """
         # clean the string from words that are not inside the JSON format
-        action = re.search(r'\{.*?\}', string_action, re.DOTALL)
-        action = action.group() if action else ""
-        # Then, check if JSON is in format
+        action_match = re.search(r'\{.*?\}', string_action, re.DOTALL)
+        if not action_match:
+            return False, "No JSON object found in response"
+
+        action_str = action_match.group()
+
         try:
-            action = json.loads(action)
-            if not isinstance(action, dict):
-                return False
-            if not all(key in action for key in
-                       ["message"]):
-                return False
-            if not isinstance(action["message"], str):
-                return False
-            return True
-        except json.JSONDecodeError:
-            return False
+            action = json.loads(action_str)
+        except json.JSONDecodeError as e:
+            return False, f"JSON parse error: {e.msg} at position {e.pos}"
+
+        if not isinstance(action, dict):
+            return False, f"Expected dict, got {type(action).__name__}"
+
+        if "message" not in action:
+            return False, "Missing required key: 'message'"
+
+        if not isinstance(action["message"], str):
+            return False, f"message must be string, got {type(action['message']).__name__}"
+
+        return True, ""
 
     def is_decision_in_format(self, string_action, player_type):
+        """
+        Check if decision is in correct JSON format.
+
+        Returns:
+            tuple: (is_valid: bool, error_message: str)
+        """
         assert player_type in ["seller", "buyer"]
+
         # clean the string from words that are not inside the JSON format
-        action = re.search(r'\{.*?\}', string_action, re.DOTALL)
-        action = action.group() if action else ""
-        # Then, check if JSON is in format
+        action_match = re.search(r'\{.*?\}', string_action, re.DOTALL)
+        if not action_match:
+            return False, "No JSON object found in response"
+
+        action_str = action_match.group()
+
         try:
-            action = json.loads(action)
-            if not isinstance(action, dict):
-                return False
-            allowed_keys = ["decision"] + (["message"] if (player_type == "buyer" and self.allow_buyer_message) or
-                                                          (
-                                                                  player_type == "seller" and
-                                                                  self.seller_message_type == "text")
-                                           else [])
-            if not all(key in action for key in
-                       allowed_keys):
-                return False
-            if not isinstance(action["decision"], str):
-                return False
-            if action["decision"] not in ["yes", "no"]:
-                return False
-            return True
-        except json.JSONDecodeError:
-            return False
+            action = json.loads(action_str)
+        except json.JSONDecodeError as e:
+            return False, f"JSON parse error: {e.msg} at position {e.pos}"
+
+        if not isinstance(action, dict):
+            return False, f"Expected dict, got {type(action).__name__}"
+
+        # Determine required keys based on player type and game settings
+        required_keys = ["decision"]
+        if (player_type == "buyer" and self.allow_buyer_message) or \
+           (player_type == "seller" and self.seller_message_type == "text"):
+            required_keys.append("message")
+
+        missing_keys = [k for k in required_keys if k not in action]
+        if missing_keys:
+            return False, f"Missing required keys: {missing_keys}"
+
+        if not isinstance(action["decision"], str):
+            return False, f"decision must be string, got {type(action['decision']).__name__}"
+
+        if action["decision"] not in ["yes", "no"]:
+            return False, f"decision must be 'yes' or 'no', got '{action['decision']}'"
+
+        return True, ""
 
     def is_buyer_decision_in_format(self, string_action):
         return self.is_decision_in_format(string_action, "buyer")

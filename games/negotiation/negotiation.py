@@ -54,7 +54,25 @@ class NegotiationGame(Game):
         self.player_1.act_name = "sell the product"
         self.player_2.act_name = "buy the product"
 
-        self.game()
+        # Store game params for error logging
+        game_params = {
+            "max_rounds": max_rounds,
+            "seller_value": seller_value,
+            "buyer_value": buyer_value,
+            "complete_information": complete_information,
+            "product_price_order": product_price_order,
+            "messages_allowed": messages_allowed
+        }
+
+        # Run game with error handling
+        try:
+            self.game()
+        except AssertionError as e:
+            self._log_game_failure("AssertionError", e, game_params)
+            raise
+        except Exception as e:
+            self._log_game_failure("Exception", e, game_params)
+            raise
 
     def build_next_rounds_info_seller(self, seller_value, other_player_name):
         if self.max_rounds == 1:
@@ -121,64 +139,98 @@ class NegotiationGame(Game):
         return name.lower().replace(" ", "_")
 
     def is_offer_in_format(self, string_action):
-        # clean the string from words that are not inside the JSON format
-        action = re.search(r'\{.*?\}', string_action, re.DOTALL)
-        action = action.group() if action else ""
-        action = re.sub(r"(?<=\d),(?=\d{3})", "", action)
+        """
+        Check if offer is in correct JSON format.
 
-        # Then, check if JSON is in format
-        while True:
+        Returns:
+            tuple: (is_valid: bool, error_message: str)
+        """
+        # clean the string from words that are not inside the JSON format
+        action_match = re.search(r'\{.*?\}', string_action, re.DOTALL)
+        if not action_match:
+            return False, "No JSON object found in response"
+
+        action_str = action_match.group()
+        action_str = re.sub(r"(?<=\d),(?=\d{3})", "", action_str)
+
+        # Try parsing, with retry after removing $ if needed
+        action = None
+        for attempt in range(2):
             try:
-                action = json.loads(action)
-                if not isinstance(action, dict):
-                    return False
-                if not all(key in action for key in
-                           [f"product_price"] + (["message"] if self.messages_allowed else [])):
-                    return False
-                if not all(isinstance(action[key], (int, float, str)) for key in
-                           [f"product_price"]):
-                    return False
-                # if the product price is a string, it should be a number
-                if isinstance(action["product_price"], str):
-                    try:
-                        action["product_price"] = float(action["product_price"].replace("$", ""))
-                    except ValueError:
-                        return False
-                if self.messages_allowed and not isinstance(action["message"], str):
-                    return False
-                return True
-            except json.JSONDecodeError:
-                if "$" in action:
-                    action = action.replace("$", "")
+                action = json.loads(action_str)
+                break
+            except json.JSONDecodeError as e:
+                if "$" in action_str and attempt == 0:
+                    action_str = action_str.replace("$", "")
                 else:
-                    return False
+                    return False, f"JSON parse error: {e.msg} at position {e.pos}"
+
+        if not isinstance(action, dict):
+            return False, f"Expected dict, got {type(action).__name__}"
+
+        # Check required keys
+        required_keys = ["product_price"] + (["message"] if self.messages_allowed else [])
+        missing_keys = [k for k in required_keys if k not in action]
+        if missing_keys:
+            return False, f"Missing required keys: {missing_keys}"
+
+        # Check product_price type
+        if not isinstance(action["product_price"], (int, float, str)):
+            return False, f"product_price must be number or string, got {type(action['product_price']).__name__}"
+
+        # If product price is a string, try to convert to number
+        if isinstance(action["product_price"], str):
+            try:
+                float(action["product_price"].replace("$", ""))
+            except ValueError:
+                return False, f"product_price string '{action['product_price']}' cannot be converted to number"
+
+        # Check message type if required
+        if self.messages_allowed and not isinstance(action["message"], str):
+            return False, f"message must be string, got {type(action['message']).__name__}"
+
+        return True, ""
 
     @staticmethod
     def is_decision_in_format(string_action):
-        # clean the string from words that are not inside the JSON format
-        for i in range(2):
-            action = re.search(r'\{.*?\}', string_action, re.DOTALL)
-            action = action.group() if action else ""
-            # Then, check if JSON is in format
+        """
+        Check if decision is in correct JSON format.
+
+        Returns:
+            tuple: (is_valid: bool, error_message: str)
+        """
+        VALID_DECISIONS = ["DealWithJhon", "AcceptOffer", "SellToJhon", "BuyFromJhon", "RejectOffer"]
+
+        # Try parsing with retry after removing $ if needed
+        action_str = string_action
+        action = None
+        for attempt in range(2):
+            action_match = re.search(r'\{.*?\}', action_str, re.DOTALL)
+            if not action_match:
+                return False, "No JSON object found in response"
+
             try:
-                action = json.loads(action)
-                if not isinstance(action, dict):
-                    return False
-                if not all(key in action for key in
-                           ["decision"]):
-                    return False
-                if not isinstance(action["decision"], str):
-                    return False
-                if (action["decision"] not in 
-                        (["DealWithJhon", "AcceptOffer", "SellToJhon", "BuyFromJhon", "RejectOffer"])):
-                    return False
-                return True
-            except json.JSONDecodeError:
-                if "$" in string_action:
-                    string_action = string_action.replace("$", "")
+                action = json.loads(action_match.group())
+                break
+            except json.JSONDecodeError as e:
+                if "$" in action_str and attempt == 0:
+                    action_str = action_str.replace("$", "")
                 else:
-                    return False
-        return False
+                    return False, f"JSON parse error: {e.msg} at position {e.pos}"
+
+        if not isinstance(action, dict):
+            return False, f"Expected dict, got {type(action).__name__}"
+
+        if "decision" not in action:
+            return False, "Missing required key: 'decision'"
+
+        if not isinstance(action["decision"], str):
+            return False, f"decision must be string, got {type(action['decision']).__name__}"
+
+        if action["decision"] not in VALID_DECISIONS:
+            return False, f"decision must be one of {VALID_DECISIONS}, got '{action['decision']}'"
+
+        return True, ""
 
     def is_decision_in_format_yes_no(self, string_action):
         return self.is_decision_in_format(string_action)

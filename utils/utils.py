@@ -7,6 +7,7 @@ import string
 import random
 import pandas as pd
 import subprocess
+import shutil
 from datetime import datetime
 
 
@@ -54,6 +55,17 @@ class DataLogger:
         self.actions = []
         self.game_id = ''.join(random.choices(string.ascii_uppercase + string.digits, k=16))
         self.args = args
+        self.partial_save_enabled = True  # Enable partial saves by default
+        self._partial_save_counter = 0
+        self._output_path = None
+
+    def _get_output_path(self):
+        """Get the output path, creating it if needed."""
+        if self._output_path is None:
+            sub_folders = "/".join(self.game_id[:3])
+            exp_name_path = self.args.get('experiment_name', 'default')
+            self._output_path = f"{OUTPUT_DIR}/{exp_name_path}/{self.args['game_type']}/{sub_folders}/{self.game_id}"
+        return self._output_path
 
     def add_action(self, **kwargs):
         player_name, data, round_number = kwargs['player_name'], kwargs['data'], kwargs['round_number']
@@ -61,12 +73,55 @@ class DataLogger:
         data["round"] = round_number
         self.actions.append(data)
 
+        # Auto-save partial logs every 5 actions
+        self._partial_save_counter += 1
+        if self.partial_save_enabled and self._partial_save_counter % 5 == 0:
+            self._save_partial_logs()
+
+    def _save_partial_logs(self):
+        """Save player logs even if game hasn't completed."""
+        try:
+            output_path = self._get_output_path()
+            partial_dir = os.path.join(output_path, ".partial")
+            os.umask(0o002)
+            os.makedirs(partial_dir, exist_ok=True)
+
+            # Save player logs
+            for player_id, player in [(1, self.player_1), (2, self.player_2)]:
+                if player.history:
+                    filename = os.path.join(partial_dir, f"log_player_{player_id}.csv")
+                    df = pd.DataFrame(player.history, columns=['prompt', 'response'])
+                    df.to_csv(filename, index=False)
+
+            # Save actions so far
+            if self.actions:
+                actions_df = pd.DataFrame(self.actions)
+                actions_df.to_csv(os.path.join(partial_dir, "game.csv"), index=False)
+
+            # Save config
+            config = dict(self.args)
+            config['date'] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            config['commit'] = get_commit_hash()
+            config['partial'] = True  # Mark as partial save
+            with open(os.path.join(partial_dir, "config.json"), 'w') as f:
+                json.dump(config, f)
+
+        except Exception as e:
+            print(f"[WARNING] Failed to save partial logs: {e}")
+
     def save(self):
-        sub_folders = "/".join(self.game_id[:3])
-        exp_name_path = self.args['experiment_name'] if "experiment_name" in self.args else "default"
-        output_path = f"{OUTPUT_DIR}/{exp_name_path}/{self.args['game_type']}/{sub_folders}/{self.game_id}"
+        output_path = self._get_output_path()
         os.umask(0o002)
         os.makedirs(output_path, exist_ok=True)
+
+        # Remove partial logs directory if it exists (game completed successfully)
+        partial_dir = os.path.join(output_path, ".partial")
+        if os.path.exists(partial_dir):
+            try:
+                shutil.rmtree(partial_dir)
+            except Exception as e:
+                print(f"[WARNING] Failed to remove partial logs: {e}")
+
         with open(f"{output_path}/config.json", 'w') as f:
             # In addition to all arguments, we also save the date and time of the game
             self.args['date'] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")

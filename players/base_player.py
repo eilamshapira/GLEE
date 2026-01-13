@@ -31,7 +31,38 @@ class Player(ABC):
         # print the prompt in red
         print(f"\033[{91 + self.player_id}m{prompt}\033[0m")
         self.response = self.get_text_answer(format_checker, decision)
-        assert format_checker(self.response), "Invalid format."
+
+        # Log raw response before validation
+        print(f"[RESPONSE] Player {self.public_name} raw response:")
+        print(f"  {self.response[:500] if self.response else '(empty response)'}")
+
+        # Handle both old boolean and new tuple format from format_checker
+        format_check_result = format_checker(self.response)
+
+        if isinstance(format_check_result, tuple):
+            # New format: (is_valid, error_message)
+            is_valid, error_message = format_check_result
+        else:
+            # Legacy format: just boolean
+            is_valid = format_check_result
+            error_message = "Unknown validation error"
+
+        # Detailed error logging before assertion
+        if not is_valid:
+            print(f"[FORMAT_ERROR] Player {self.public_name} format validation failed")
+            print(f"  Error: {error_message}")
+            print(f"  Raw response: {self.response}")
+            print(f"  Decision mode: {decision}")
+
+            # Provide recovery suggestions for common errors
+            if "JSON parse error" in error_message:
+                print(f"  Suggestion: Check if response contains valid JSON")
+            elif "Missing required key" in error_message:
+                print(f"  Suggestion: Check if prompt clearly specifies required fields")
+            elif "No JSON object found" in error_message:
+                print(f"  Suggestion: LLM response did not include JSON - check prompt format instructions")
+
+        assert is_valid, f"Invalid format: {error_message}"
 
         action = re.search(r'\{.*?\}', self.response, re.DOTALL)
         action = action.group() if action else ""
@@ -49,7 +80,9 @@ class Player(ABC):
                 if "$" in action:
                     action = action.replace("$", "")
                 else:
-                    raise ValueError("Invalid JSON format.")
+                    print(f"[JSON_ERROR] Failed to parse JSON for player {self.public_name}")
+                    print(f"  Attempted: {action[:200]}")
+                    raise ValueError(f"Invalid JSON format: {action[:100]}")
         else:
             raise ValueError("Invalid JSON format.")
         self.history.append((prompt, self.response))

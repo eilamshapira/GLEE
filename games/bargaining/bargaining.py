@@ -51,7 +51,16 @@ class BargainingGame(Game):
 
         self.add_format(os.path.join(path, 'offer_format.txt'), p1_rules, 'p1')
         self.add_format(os.path.join(path, 'offer_format.txt'), p2_rules, 'p2')
-        self.game()
+
+        # Run game with error handling
+        try:
+            self.game()
+        except AssertionError as e:
+            self._log_game_failure("AssertionError", e, game_params)
+            raise
+        except Exception as e:
+            self._log_game_failure("Exception", e, game_params)
+            raise
 
     def build_max_round(self):
         if 0 < self.max_rounds <= 20:
@@ -109,52 +118,90 @@ class BargainingGame(Game):
         return name.lower().replace(" ", "_")
 
     def is_offer_in_format(self, string_action):
+        """
+        Check if offer is in correct JSON format.
+
+        Returns:
+            tuple: (is_valid: bool, error_message: str)
+                   If is_valid is True, error_message is empty string
+                   If is_valid is False, error_message explains why
+        """
         # clean the string from words that are not inside the JSON format
-        action = re.search(r'\{.*?\}', string_action, re.DOTALL)
-        action = action.group() if action else ""
-        action = re.sub(r"(?<=\d),(?=\d{3})", "", action)
+        action_match = re.search(r'\{.*?\}', string_action, re.DOTALL)
+        if not action_match:
+            return False, "No JSON object found in response"
+
+        action_str = action_match.group()
+        action_str = re.sub(r"(?<=\d),(?=\d{3})", "", action_str)
 
         # Then, check if JSON is in format
         try:
-            action = json.loads(action)
-            if not isinstance(action, dict):
-                return False
-            if not all(key in action for key in
-                       [f"{self.lower_name(name)}_gain" for name in self.all_names] +
-                       (["message"] if self.messages_allowed else [])):
-                return False
-            if not all(isinstance(action[key], (int, float)) for key in
-                       [f"{self.lower_name(name)}_gain" for name in self.all_names]):
-                return False
-            total_gain = [action[someone_gain] for someone_gain in action.keys() if "_gain" in someone_gain]
-            if sum(total_gain) != self.money_to_divide:
-                return False
-            if self.messages_allowed and not isinstance(action["message"], str):
-                return False
-            return True
-        except json.JSONDecodeError:
-            return False
+            action = json.loads(action_str)
+        except json.JSONDecodeError as e:
+            return False, f"JSON parse error: {e.msg} at position {e.pos}"
+
+        if not isinstance(action, dict):
+            return False, f"Expected dict, got {type(action).__name__}"
+
+        # Check required keys
+        required_keys = [f"{self.lower_name(name)}_gain" for name in self.all_names]
+        if self.messages_allowed:
+            required_keys.append("message")
+        missing_keys = [k for k in required_keys if k not in action]
+        if missing_keys:
+            return False, f"Missing required keys: {missing_keys}"
+
+        # Check types for gain values
+        gain_keys = [f"{self.lower_name(name)}_gain" for name in self.all_names]
+        for key in gain_keys:
+            if not isinstance(action[key], (int, float)):
+                return False, f"{key} must be number, got {type(action[key]).__name__}"
+
+        # Check sum equals money_to_divide
+        total_gain = [action[k] for k in action.keys() if "_gain" in k]
+        total = sum(total_gain)
+        if total != self.money_to_divide:
+            return False, f"Sum of gains ({total}) does not equal money_to_divide ({self.money_to_divide})"
+
+        # Check message type if required
+        if self.messages_allowed and not isinstance(action["message"], str):
+            return False, f"message must be string, got {type(action['message']).__name__}"
+
+        return True, ""
 
     @staticmethod
     def is_decision_in_format(string_action):
+        """
+        Check if decision is in correct JSON format.
+
+        Returns:
+            tuple: (is_valid: bool, error_message: str)
+        """
         # clean the string from words that are not inside the JSON format
-        action = re.search(r'\{.*?\}', string_action, re.DOTALL)
-        action = action.group() if action else ""
-        # Then, check if JSON is in format
+        action_match = re.search(r'\{.*?\}', string_action, re.DOTALL)
+        if not action_match:
+            return False, "No JSON object found in response"
+
+        action_str = action_match.group()
+
         try:
-            action = json.loads(action)
-            if not isinstance(action, dict):
-                return False
-            if not all(key in action for key in
-                       ["decision"]):
-                return False
-            if not isinstance(action["decision"], str):
-                return False
-            if action["decision"] not in ["accept", "reject"]:
-                return False
-            return True
-        except json.JSONDecodeError:
-            return False
+            action = json.loads(action_str)
+        except json.JSONDecodeError as e:
+            return False, f"JSON parse error: {e.msg} at position {e.pos}"
+
+        if not isinstance(action, dict):
+            return False, f"Expected dict, got {type(action).__name__}"
+
+        if "decision" not in action:
+            return False, "Missing required key: 'decision'"
+
+        if not isinstance(action["decision"], str):
+            return False, f"decision must be string, got {type(action['decision']).__name__}"
+
+        if action["decision"] not in ["accept", "reject"]:
+            return False, f"decision must be 'accept' or 'reject', got '{action['decision']}'"
+
+        return True, ""
 
     def get_inflation_update(self, **kwargs):
         round_number, self_player, other_player = kwargs["round_number"], kwargs["self_player"], kwargs["other_player"]

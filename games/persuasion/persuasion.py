@@ -50,6 +50,43 @@ class PersuasionGame(Game):
         self.set_rules(os.path.join(path, 'rules_prompt.json'), p_info, 'p2')
         self.player_1.req_offer_text, self.player_2.req_offer_text = self.build_offer_prompt()
 
+        # Pass game parameters to players
+        base_game_params = {
+            "is_myopic": is_myopic,
+            "product_price": product_price,
+            "total_rounds": total_rounds,
+            "seller_message_type": seller_message_type,
+            "allow_buyer_message": allow_buyer_message
+        }
+
+        # Player 1 is seller, Player 2 is buyer
+        seller_params = {
+            **base_game_params,
+            "role": "seller",
+            "p": p  # Seller always knows p
+        }
+
+        buyer_params = {
+            **base_game_params,
+            "role": "buyer"
+        }
+
+        # Add c, v to seller only if they should know
+        if is_seller_know_cv:
+            seller_params["c"] = c
+            seller_params["v"] = v
+
+        # Add p to buyer only if they should know
+        if is_buyer_know_p:
+            buyer_params["p"] = p
+
+        # Add c, v to buyer - they always know their own valuations
+        buyer_params["c"] = c
+        buyer_params["v"] = v
+
+        self.player_1.set_game_params(seller_params)
+        self.player_2.set_game_params(buyer_params)
+
         # Store game params for error logging
         game_params = {
             "is_myopic": is_myopic,

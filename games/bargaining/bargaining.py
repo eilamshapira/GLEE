@@ -23,17 +23,26 @@ class BargainingGame(Game):
         self.show_inflation_update = show_inflation_update
 
         # Pass game parameters to players
-        game_params = {
+        # Shared parameters for all players
+        base_game_params = {
             "money_to_divide": money_to_divide,
             "max_rounds": max_rounds,
             "complete_information": complete_information,
-            "messages_allowed": messages_allowed,
-            "show_inflation_update": show_inflation_update,
-            "delta_1": self.delta_1,
-            "delta_2": self.delta_2
+            "messages_allowed": messages_allowed
         }
-        self.player_1.set_game_params(game_params)
-        self.player_2.set_game_params(game_params)
+
+        # Player-specific parameters
+        if complete_information:
+            # In complete information mode, both players know both deltas
+            player_1_params = {**base_game_params, "delta_player_1": self.delta_1, "delta_player_2": self.delta_2}
+            player_2_params = {**base_game_params, "delta_player_1": self.delta_1, "delta_player_2": self.delta_2}
+        else:
+            # In incomplete information mode, each player only knows their own delta
+            player_1_params = {**base_game_params, "delta_player_1": self.delta_1}
+            player_2_params = {**base_game_params, "delta_player_2": self.delta_2}
+
+        self.player_1.set_game_params(player_1_params)
+        self.player_2.set_game_params(player_2_params)
 
         assert player_1.public_name != player_2.public_name, "Players should have different names"
 

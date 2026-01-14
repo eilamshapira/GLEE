@@ -54,6 +54,36 @@ class NegotiationGame(Game):
         self.player_1.act_name = "sell the product"
         self.player_2.act_name = "buy the product"
 
+        # Pass game parameters to players
+        base_game_params = {
+            "max_rounds": max_rounds,
+            "complete_information": complete_information,
+            "product_price_order": product_price_order,
+            "messages_allowed": messages_allowed
+        }
+
+        if complete_information:
+            # Both players know each other's values
+            player_1_params = {
+                **base_game_params,
+                "role": "seller",
+                "seller_value": seller_value,
+                "buyer_value": buyer_value
+            }
+            player_2_params = {
+                **base_game_params,
+                "role": "buyer",
+                "seller_value": seller_value,
+                "buyer_value": buyer_value
+            }
+        else:
+            # Each player only knows their own value
+            player_1_params = {**base_game_params, "role": "seller", "seller_value": seller_value}
+            player_2_params = {**base_game_params, "role": "buyer", "buyer_value": buyer_value}
+
+        self.player_1.set_game_params(player_1_params)
+        self.player_2.set_game_params(player_2_params)
+
         # Store game params for error logging
         game_params = {
             "max_rounds": max_rounds,

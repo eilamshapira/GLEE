@@ -1,3 +1,17 @@
+"""
+HTTP Player for GLEE framework.
+
+This player sends game state and parameters to an external HTTP server endpoint,
+which can implement custom game-playing logic.
+
+Note on game_params changes:
+- Bargaining: Parameter names changed from delta_1/delta_2 to delta_player_1/delta_player_2
+  In incomplete information mode, each player receives only their own delta parameter.
+- Negotiation: Now receives game_params with seller_value/buyer_value (filtered per player)
+- Persuasion: Now receives game_params with c,v,p (filtered based on information settings)
+
+HTTP servers should use game_params.get() for safe access to these parameters.
+"""
 import requests
 import json
 import os

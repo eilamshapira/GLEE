@@ -16,4 +16,4 @@ os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 OTREE_CONFIGS_PATH = "otree_game/configs"
 OTREE_PAGES = "otree_game/pages"
-OTREE_MAX_ROUNDS = 25
+OTREE_MAX_ROUNDS = 99

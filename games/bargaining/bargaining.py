@@ -65,10 +65,10 @@ class BargainingGame(Game):
         try:
             self.game()
         except AssertionError as e:
-            self._log_game_failure("AssertionError", e, game_params)
+            self._log_game_failure("AssertionError", e, base_game_params)
             raise
         except Exception as e:
-            self._log_game_failure("Exception", e, game_params)
+            self._log_game_failure("Exception", e, base_game_params)
             raise
 
     def build_max_round(self):

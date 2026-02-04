@@ -30,7 +30,11 @@ def create_players(config):
         p2_args['delta'] = default_delta_2
 
     p1 = player_factory(config.get('player_1_type', 'terminal'), p1_args)
-    if config.get('player_2_type', 'terminal') == 'hf' and config.get('player_1_type', 'terminal') == 'hf':
+    # Support model sharing for HuggingFace players (both 'hf' and 'huggingface' types)
+    hf_types = ('hf', 'huggingface')
+    p1_type = config.get('player_1_type', 'terminal')
+    p2_type = config.get('player_2_type', 'terminal')
+    if p1_type in hf_types and p2_type in hf_types:
         if (p1_args.get('model_name', None) == p2_args.get('model_name', None) and
                 p1_args.get('model_name', None) is not None):
             p2_args['load_hf_model'] = False

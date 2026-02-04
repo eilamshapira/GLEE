@@ -4,6 +4,7 @@ from players.otree_player import OtreePlayer
 from players.demo_player import DemoPlayer
 from players.otree_litellm_player import OtreeLiteLLMPlayer
 from players.http_player import HTTPPlayer
+from players.huggingface_player import HuggingFacePlayer
 
 
 PLAYERS = {
@@ -12,7 +13,9 @@ PLAYERS = {
     'demo': DemoPlayer,
     'otree_LLM': OtreeLiteLLMPlayer,
     'litellm': LiteLLMPlayer,
-    'http': HTTPPlayer
+    'http': HTTPPlayer,
+    'huggingface': HuggingFacePlayer,
+    'hf': HuggingFacePlayer,  # short alias
 }
 
 

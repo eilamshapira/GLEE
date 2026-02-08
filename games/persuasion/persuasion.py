@@ -11,7 +11,7 @@ class PersuasionGame(Game):
     def __init__(self, player_1: Player, player_2: Player, data_logger,
                  is_myopic: bool, product_price, p: float,
                  c, v=0, total_rounds=20, is_seller_know_cv: bool = True, is_buyer_know_p: bool = True,
-                 seller_message_type: str = "text", allow_buyer_message: bool = False, timeout=120):
+                 seller_message_type: str = "text", allow_buyer_message: bool = False, timeout=360):
         """p: the probability item is good
         c: the value for the buyer if item is good
         v: the value for the buyer if item is bad"""

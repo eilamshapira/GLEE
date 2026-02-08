@@ -8,7 +8,7 @@ from utils.utils import pretty_number
 
 class BargainingGame(Game):
     def __init__(self, player_1: Player, player_2: Player, data_logger, money_to_divide, max_rounds,
-                 complete_information, messages_allowed, show_inflation_update=True, timeout=120,
+                 complete_information, messages_allowed, show_inflation_update=True, timeout=360,
                  delta_1=None, delta_2=None):
         super().__init__(player_1, player_2, data_logger, timeout)
         # Support delta from game_args (preferred) or fallback to player args for backwards compatibility
